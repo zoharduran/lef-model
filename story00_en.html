@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prologue: The Eight Lunar Mysteries — The LEF Model</title>
+<meta name="description" content="Prologue to the story of the LEF model: the eight measured properties of the Moon that any theory of its birth must explain, and why release at the corotation line closes the angular-momentum budget.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story00_en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story00_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story00_en.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story00_he.html" hreflang="he">עברית</a> · <b>English</b></span></div></nav>
+<header class="hero"><div class="in"><svg class="moon" viewBox="0 0 300 300" aria-hidden="true"><defs><radialGradient id="mg" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#f6f1e4"/><stop offset=".6" stop-color="#d9d2bf"/><stop offset="1" stop-color="#9c967f"/></radialGradient><radialGradient id="glow" r=".5"><stop offset=".6" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle cx="150" cy="150" r="148" fill="url(#glow)"/><circle cx="150" cy="150" r="105" fill="url(#mg)"/><g fill="#a9a28b" opacity=".55"><ellipse cx="118" cy="120" rx="30" ry="22"/><ellipse cx="170" cy="105" rx="18" ry="14"/><ellipse cx="135" cy="168" rx="22" ry="15"/><circle cx="190" cy="175" r="9"/><circle cx="96" cy="182" r="6"/><circle cx="205" cy="135" r="5"/></g></svg>
+<p class="kick">LEF MODEL · PROLOGUE</p>
+<h1>Prologue: The Eight Lunar Mysteries</h1>
+<p>On the Earth's closest neighbour — and what it takes to explain its birth</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>The mystery: so close, and still a riddle</h2>
+<p class="lead">The Moon hangs so close in our night sky that we tend to think we already know everything about it. We have sent spacecraft to it, landed astronauts on it, brought back hundreds of kilograms of its rocks and dust, and mapped every crater, valley and ridge on its face to within a few metres. And yet, when all this data is laid out on the laboratory table and one simple question is asked —</p>
+<div class="q">How was the Moon born, and where did it come from?</div>
+<p>— the Moon turns out to be one of the most mysterious bodies in the Solar System.</p>
+<p>The problem is not a lack of information but an excess of strange properties that contradict one another. On the one hand, the Moon resembles the Earth to an almost unbelievable degree: its chemical and nuclear fingerprint is identical to the Earth's down to a few parts per million. On the other hand, it has a remarkably tiny iron core, its crust is much thicker on the far side than on the side facing us, its orbit is tilted by 5.145 degrees to the plane of the ecliptic, and its centre of mass is offset by about two kilometres toward the Earth.</p>
+<p>For more than a hundred and forty years planetary science has been trying to crack this combination of properties. The theory accepted today — the <strong>giant-impact theory</strong> — proposes that about 4.5 billion years ago a Mars-sized body (named "Theia") struck the young Earth, and the Moon coalesced from the cloud of debris thrown into space. The theory brought about a scientific revolution, but to explain the Moon's eight special properties it has had to add, again and again, auxiliary assumptions, special scenarios and later corrections.</p>
+<p>And what if there is an entirely different way? What if the Moon was never built from fragments that coalesced in space after a catastrophic collision — but was built <strong>from the Earth's own material, while still attached to it</strong>, and released into free orbit exactly at the point where the Earth's rotation had already given it the speed an orbit requires?</p>
+<div class="box"><span class="tag">LEF</span><p style="margin:0">This is the central idea of the <strong>LEF model</strong> (<em>Lunar Elevation and Fission</em>). Before we set out on the full journey to uncover the mechanism, let us get to know the eight measured facts that stand as the test — eight mysteries that any theory of the Moon's birth must explain.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>An image: a safe with eight locks</h2>
+<p>Imagine an ancient steel safe secured with eight different locks.</p>
+<div class="vault">
+<div class="side a"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#f4ecd8" stroke="#e3dccb"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#b23a2e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#b23a2e"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c47f2c" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c47f2c"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#7a5ea8" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#7a5ea8"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#3a7bbf" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#3a7bbf"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#9a6b4f" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#9a6b4f"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#5b6676" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#5b6676"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c86a5e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c86a5e"/><circle cy="3" r="2.4" fill="#fff"/></g><circle cx="110" cy="100" r="26" fill="#fff" stroke="#c9c0ab" stroke-dasharray="3 3"/><text x="110" y="105" text-anchor="middle" font-size="13" fill="#9a3f33" font-family="Heebo">8 tools</text></svg><h4>Eight different tools</h4><p>You could try to break each lock separately with a different tool: drill out one lock, open the second with an improvised key, saw through the third, and fit a special adapter to the fourth. In the end you might manage to open the door, but the floor would be strewn with eight different tools that have nothing to do with one another.</p></div>
+<div class="side b"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#e8f2ec" stroke="#cfe3d7"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110,100)"><circle cx="-12" r="11" fill="none" stroke="#2f7d57" stroke-width="5"/><rect x="-2" y="-3" width="30" height="6" fill="#2f7d57"/><rect x="18" y="3" width="4" height="7" fill="#2f7d57"/><rect x="24" y="3" width="4" height="5" fill="#2f7d57"/></g></svg><h4>One master key</h4><p>There is, however, a second possibility: to look for <strong>one master key</strong> — a single geometric and mechanical key — which, once turned, opens all eight locks one after another in the very same motion.</p></div>
+</div>
+<p>In science this principle is called <strong>scientific parsimony</strong>. When eight different phenomena are found on the same celestial body, we seek to find out whether they are the result of eight coincidences and later additions, or different expressions of one continuous, consistent physical process.</p>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science and model: the eight mysteries and the "patches" of the impact theory</h2>
+<p>When the Moon's eight measured properties are placed side by side, a fascinating gap appears between the way the family of giant-impact models handles them and the way they follow naturally in the LEF model:</p>
+<div class="legend"><span class="m">What is measured</span><span class="i">What the impact model requires</span><span class="l">The direction in the LEF model</span></div>
+<div class="cards">
+<article class="card"><header><span class="n">1</span><h3>Complete isotopic identity</h3></header><div class="row m"><div class="k">What is measured</div><div>Isotopes are different forms of the same chemical element that differ only in the mass of their nucleus, and they serve as an "identity card" of origin. In the Moon and the Earth, the isotope ratios of oxygen, titanium, chromium and tungsten are almost exactly identical: the difference in oxygen is only <span class="num">−1 ± 5 parts per million (ppm)</span>.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>Since a foreign impactor should bring with it a different isotopic signature, the model is forced to assume complete thermal and isotopic mixing between the impactor and the Earth (for example through an extreme intermediate state called a "synestia", or an impact of extreme energy).</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The Moon is made of the Earth's own material, so the isotopic identity is not a riddle that needs a mixing mechanism — it is the natural starting point.</div></div></article>
+<article class="card"><header><span class="n">2</span><h3>A tiny metallic core</h3></header><div class="row m"><div class="k">What is measured</div><div>Seismic measurements show that the Moon's iron core is remarkably small: its radius is only about <span class="num">330 km</span>, and it makes up about <span class="num">1.4%</span> of the Moon's mass (compared with about <span class="num">32%</span> of the Earth's mass).</div></div><div class="row i"><div class="k">What the impact model requires</div><div>The assumption is that the impactor's iron core sank into the Earth and merged with its core, and only a small fraction of it remained in the debris disc.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The feeding that built the Moon began at an early stage, when the Earth's iron was still sinking toward the centre, and the structure that connected the two bodies acted as a sorting column that sent most of the heavy iron back down into the Earth.</div></div></article>
+<article class="card"><header><span class="n">3</span><h3>Asymmetry in crustal thickness</h3></header><div class="row m"><div class="k">What is measured</div><div>Gravity measurements by the GRAIL spacecraft revealed that the crust on the far side of the Moon is thicker than on the near side by about <span class="num">8 to 10 km</span> (about 10 km between the centre of the near side and the far side, and about 8 km on average over the hemispheres).</div></div><div class="row i"><div class="k">What the impact model requires</div><div>The "companion moon" hypothesis was proposed — a second, small moon that collided slowly with the far side of the main Moon and smeared itself over it.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The far side was the upper dome of the rising body, to which the light crustal material (sial) migrated and piled up in layers, together with ejected material that landed on it again and again; the near side was the base of the connection to the Earth.</div></div></article>
+<article class="card"><header><span class="n">4</span><h3>Synchronous rotation — a fixed face toward the Earth</h3></header><div class="row m"><div class="k">What is measured</div><div>The Moon permanently turns only one side toward the Earth.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>A later tidal locking that slowed the Moon's rotation until it matched its orbital period.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The side facing us is simply the side by which the Moon was attached to the Earth before it separated from it.</div></div></article>
+<article class="card"><header><span class="n">5</span><h3>The order of preservation of the two hemispheres</h3></header><div class="row m"><div class="k">What is measured</div><div>The surface of the far side closed and was preserved earlier, and it is older than the dark basaltic maria of the near side.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>Uneven cooling of a global magma ocean.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The far side, which faced cold space, closed and preserved its record first; the near side, which kept receiving hot feeding from the Earth and faced the glowing Earth, calmed and cooled only after the separation.</div></div></article>
+<article class="card"><header><span class="n">6</span><h3>Water and volatiles in the ancient interior</h3></header><div class="row m"><div class="k">What is measured</div><div>Inside "melt inclusions" — tiny droplets of magma trapped inside ancient crystals as they grew — <span class="num">615 to 1,410 parts per million (ppm)</span> of water were measured. Since then the volatiles have escaped to space, and the Moon's interior as measured today is dry.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>A giant impact should vaporise most of the water and volatiles in enormous heat, so a late supply of water by secondary impacts is required.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The volatiles were not late guests — they were the engine itself. The deep magma was rich in volatiles that foamed it, lowered its density and allowed it to rise.</div></div></article>
+<article class="card"><header><span class="n">7</span><h3>The centre-of-mass offset</h3></header><div class="row m"><div class="k">What is measured</div><div>The Moon's centre of mass is displaced by about <span class="num">2 km</span> toward the Earth relative to its geometric centre of figure.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>A secondary consequence of the uneven crustal distribution created with the help of the companion moon.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>The same accumulation of a light, thick crust on the far side naturally pushes the balance point (the centre of mass) by about <span class="num">1.24 to 3.11 km</span> toward the near side.</div></div></article>
+<article class="card"><header><span class="n">8</span><h3>The 5.145-degree tilt of the orbital plane</h3></header><div class="row m"><div class="k">What is measured</div><div>The Moon's orbit around the Earth is inclined by <span class="num">5.145 degrees</span> to the plane of the ecliptic.</div></div><div class="row i"><div class="k">What the impact model requires</div><div>A debris disc settles into the equatorial plane, so a later dynamical mechanism is needed to excite the tilt — such as the evection resonance, encounters with planetesimals, or an Earth tilted by more than 70 degrees.</div></div><div class="row l"><div class="k">The direction in the LEF model</div><div>A body released from corotation with the Earth at latitude <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> enters at once an orbit whose initial inclination equals the latitude it left from (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>), with no need for a disc and no later corrections.</div></div></article>
+</div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>The mechanism in words: why was lifting the Moon off the Earth thought impossible for a hundred years?</h2>
+<p>If the idea that the Moon separated from the Earth itself is so parsimonious and simple, why did science abandon it for more than a century?</p>
+<p>In 1879 the astronomer and mathematician <strong>George Darwin</strong> (the son of Charles Darwin) proposed the <strong>classical fission theory</strong>: the young Earth spun so fast that part of it broke away from the surface and flew into space to become the Moon. The idea was rejected within a few decades because of <strong>a simple calculation of speed and angular momentum</strong>:</p>
+<ol class="steps">
+<li><strong>The speed gap at the surface:</strong> even with an ancient day of <span class="num">5.5 hours</span> (four times faster than today), the tangential speed at the equator was only about <span class="num">2,133 metres per second</span>, while a free orbit at the height of the surface requires <span class="num">7,701 metres per second</span>. The gap — about <span class="num">5.6 kilometres per second</span> — meant that any material released from the surface immediately fell back to the Earth.</li>
+<li><strong>The price in angular momentum:</strong> closing the gap at the surface requires a day of about <span class="num">2.73 hours</span> and an angular momentum <span class="num">2.74</span> times larger (and at the original reference point <span class="num">4.08</span> times larger) than the entire angular momentum of the Earth–Moon system today. Since the angular momentum of an isolated system is conserved, classical fission was ruled out.</li>
+</ol>
+<div class="box"><span class="tag">The LEF breakthrough</span>
+<p>Darwin's calculation was correct, <strong>but it was made in the wrong place</strong> — at the surface. The LEF model keeps the material attached to the Earth and turning together with it (<strong>corotation</strong>) while it rises upward. As the distance from the Earth's centre grows, the rotational speed increases while the speed needed for orbit decreases. At the <strong>corotation radius</strong> (<span class="num">15,818 km</span> for a 5.5-hour day), these two speeds meet and become equal at exactly <span class="num">5,020 metres per second</span>. A body brought there needs no throw — it is already moving at full orbital speed.</p></div>
+<div class="vs">
+<div><b>2,133</b><span>Rotational speed at the surface (m/s)</span></div>
+<div><b>7,701</b><span>Orbital speed at the surface (m/s)</span></div>
+<div class="hit"><b>5,020 = 5,020</b><span>Both at the corotation radius, 15,818 km</span></div>
+</div>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1,500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3,000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4,500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6,000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7,500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9,000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6,000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10,000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14,000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18,000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22,000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26,000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">A gap of ⁦5.6 km/s⁩ at the surface</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">Corotation line</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15,818 km · 5,020 m/s</text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Rotational speed ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Orbital speed ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Distance from the Earth's centre (km) · 5.5-hour day</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">Speed (m/s)</text>
+</svg><figcaption>The two speeds as a function of distance from the Earth's centre, for a 5.5-hour day. At the surface the orbital speed is far higher than the rotational speed; moving outward, rotation speeds up and the orbital speed slows, and they meet at the corotation line.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>Academic explanation and the key equation</h2>
+<p>The difference between the failure of classical fission at the surface and the success at the corotation line is expressed in one clean equation of classical mechanics:</p>
+<div class="eqs">
+<div class="eq"><div class="k">The tangential speed given by rotation</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Ω</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \Omega\, r</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">The speed required for a free circular orbit</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{orb}} = \sqrt{\dfrac{G M}{r}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>The point of equality — the corotation radius</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r_c</annotation></semantics></math></span></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mtext> </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>r</mi><mi>c</mi></msub></mfrac></mstyle></msqrt><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\Omega\, r_c = \sqrt{\dfrac{G M}{r_c}} \;\Longrightarrow\; r_c = \left(\dfrac{G M}{\Omega^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>where <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span> is the Earth's angular velocity, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span> is the universal gravitational constant, and <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> is the Earth's mass. When all of today's angular momentum is returned to the early Earth (plus about 1% lost to the solar tide), a day of 5.5 hours results; and at the time of separation (a day of <span class="num">5.77 hours</span>, corotation line at <span class="num">16,399 km</span>), the angular-momentum budget closes at <span class="num">1.007 times</span> today's angular momentum.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE ROAD AHEAD</span>
+<h2>The signature in reality: a road map of the journey ahead</h2>
+<p>The LEF model is built as a <strong>process model</strong>: it sets out a sequence of physical stages, computes for each stage its deciding number, checks that all the numbers agree with one another within the same system, and points to the measured observation in the field that tests each stage — from the deep source pressure of 150 gigapascals, through the maria, the craters, the poles and the South Pole–Aitken basin, to the floor of the Pacific Ocean, Mars and the rest of the Solar System.</p>
+<div class="road"><span>Deep source · 150 GPa</span><i>→</i><span>The maria</span><i>→</i><span>The craters</span><i>→</i><span>The poles</span><i>→</i><span>South Pole–Aitken basin</span><i>→</i><span>The Pacific floor</span><i>→</i><span>Mars</span><i>→</i><span class="end">The Solar System</span></div>
+</section>
+
+<section>
+<span class="lab">AT A GLANCE</span>
+<h2>The lab box: the 8 mysteries and the angular-momentum budget at a glance</h2>
+<div class="tw"><table><tr><th>#</th><th>The lunar mystery</th><th>What is measured in reality</th><th>What the impact model requires</th><th>What follows in the LEF model</th></tr><tr><td>1</td><td>Isotopic composition</td><td>Oxygen difference <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><mi mathvariant="normal">O</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta^{17}\mathrm{O} = -1 \pm 5</annotation></semantics></math></span></span> ppm; match in Ti, Cr, W</td><td>Complete mixing of impactor and Earth (synestia)</td><td>The material is the Earth's own material from the start</td></tr><tr><td>2</td><td>Small metallic core</td><td>Seismic radius ~330 km (~1.4% of the Moon's mass)</td><td>Most of the impactor's core sinks into the Earth</td><td>Transfer during an early sorting stage; the heavy iron sank back in the pear</td></tr><tr><td>3</td><td>Crustal-thickness asymmetry</td><td>8–10 km thicker on the far side (GRAIL)</td><td>A late collision with a second "companion moon"</td><td>The far side was the upper dome that gathered layers of sial and returning material</td></tr><tr><td>4</td><td>Synchronous rotation</td><td>A fixed face toward the Earth</td><td>Later tidal locking</td><td>The side facing us is the Moon's base of attachment to the pear</td></tr><tr><td>5</td><td>Order of preservation</td><td>The far side is old and closed before the near-side maria</td><td>Uneven cooling of a magma ocean</td><td>The far side faced space and closed early; the near side was fed and heated</td></tr><tr><td>6</td><td>Water and volatiles</td><td>615–1,410 ppm water in ancient melt inclusions</td><td>Shock vaporisation and "late delivery of water"</td><td>The volatiles foamed the magma and lowered its density for the lift</td></tr><tr><td>7</td><td>Centre-of-mass offset</td><td>Shifted about 2 km toward the Earth</td><td>A secondary result of the companion moon</td><td>The thick far-side crust pushes the centre of mass by 1.24–3.11 km</td></tr><tr><td>8</td><td>Orbital tilt</td><td>5.145° to the plane of the ecliptic</td><td>Evection resonance, encounters, or an extreme axial tilt</td><td>Release from latitude 22.5° immediately gives an inclination <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span> that decays to 5.145°</td></tr></table></div>
+<h3 style="margin-top:28px">The angular-momentum budget</h3>
+<div class="tw"><table class="am"><tr><th>Separation route / model</th><th>Where the speeds are matched</th><th>Length of the Earth's day</th><th>Angular-momentum ratio (today = 1.000)</th></tr><tr><td>Classical fission (original reference point)</td><td>The surface</td><td>—</td><td class="no">About 4 (4.08) — ruled out</td></tr><tr><td>Classical fission (Jacobi bifurcation point)</td><td>The surface</td><td>2.73 hours</td><td class="no">2.74 — ruled out</td></tr><tr class="hl"><td>LEF model (conserved budget)</td><td>The corotation line (<span class="ltr">15,818 → 16,399</span> km)</td><td><span class="ltr">5.50 → 5.77</span> hours</td><td><strong>1.007 — closes exactly</strong></td></tr></table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>The door ahead</h2>
+<p>We have laid the eight locks on the table and seen where the key begins to turn: not in a desperate throw above the Earth's surface, but in a slow, synchronised journey to the corotation line. In the next chapter — <strong>Chapter 1: Darwin's Problem and the Corotation Revolution</strong> — we will enter the control room of the mechanics and check the numbers up close.</p>
+<a href="story01_en.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapter 1</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Darwin's Problem and the Corotation Revolution →</p></div></a>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · The LEF Model · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
