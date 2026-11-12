@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 19 章：年轻的火星——塔尔西斯的尖锐隆起与火卫二、火卫一从帕弗尼斯山的抛射 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 19 章：年轻的火星——塔尔西斯的尖锐隆起与火卫二、火卫一从帕弗尼斯山的抛射。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story19_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story19_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story19_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story19_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story19_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story19_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story19_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story19_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story19_he.html" hreflang="he">עברית</a> · <a href="story19_en.html" hreflang="en">English</a> · <a href="story19_de.html" hreflang="de">Deutsch</a> · <a href="story19_es.html" hreflang="es">Español</a> · <a href="story19_fr.html" hreflang="fr">Français</a> · <a href="story19_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 19 章</p>
+<h1>第 19 章：年轻的火星——塔尔西斯的尖锐隆起与火卫二、火卫一从帕弗尼斯山的抛射</h1>
+<p>依据论文 10——火星：隆起与环（A–E 部分：膨胀而快速的火星、尖锐的隆起、帕弗尼斯山与抛射序列）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：火星的两颗卫星——火卫一和火卫二——是如何在共转线的两侧形成的？</h2>
+<p>火星有两颗小而轻、孔隙度惊人的卫星：<strong>火卫一</strong>（平均直径约 22 km，密度 1,853–1,887 kg/m³）和<strong>火卫二</strong>（直径约 12 km，密度 1,471 kg/m³）——它们的体积有三分之一到一半是空隙。两者都几乎正好在火星赤道上方（i = 1.09° 和 1.8°）沿近乎完美的圆轨道（e = 0.0151 和 0.0003）绕火星运行，但分处<strong>共转线</strong>（今天为 20,428 km）的两侧：</p>
+<ol class="steps">
+<li><strong>命运相反的两颗卫星（A.1）：</strong>火卫一（9,375 km，公转周期 7.65 小时——一个火星日内转三圈）位于共转线<em>之内</em>，因此潮汐把它向下拉，它正坠向火星；火卫二（23,463 km，周期 30.3 小时）位于共转线<em>之外</em>，因此潮汐把它向外推，它正在远离。</li>
+<li><strong>截然不同的面貌（A.2）：</strong>火卫二光滑圆润，没有沟槽，只有浅浅的、被磨平的小环形山；火卫一则粗糙，布满由长长的平行沟槽组成的系统、成串的凹坑，以及位于其钝端的斯蒂克尼环形山（9 km）。</li>
+<li><strong>公认理论的局限（A.4）：</strong>小行星俘获无法把两条轨道都在赤道面中变圆；而大碰撞或环–卫星循环则涉及外来物质（30%–65%）和强烈的熔融，会改变挥发性元素（锌和钾）的同位素。在论文 10 中，LEF 模型提出了一个统一的替代方案：<strong>年轻的火星在赤道上长出了一个“收窄的隆起”，而其顶端附近一座普通的火山——帕弗尼斯山——在没有任何外来天体的情况下，先后释放了两颗卫星！</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：赤道上的凸锥、躺倒的直角三角形，以及失重火山口中的塞子</h2>
+<p>三个简单的图景解释了年轻火星的火山如何把两颗卫星送上轨道：</p>
+<ul>
+<li><strong>尖锐的隆起与行星“梨形体”的对比（C.1）：</strong>年轻、炽热、富含水和气体的行星（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>1.5</mn><mo>×</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mn>5</mn><mo separator="true">,</mo><mn>084</mn></mrow><annotation encoding="application/x-tex">R = 1.5 \times R_{\mathrm{today}} = 5,084</annotation></semantics></math></span></span> km，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>166</mn></mrow><annotation encoding="application/x-tex">\rho = 1,166</annotation></semantics></math></span></span> kg/m³）快速自转（一天 7.3–8.3 小时）。这个速率过于温和，不足以把整颗行星变成“梨形体”（那需要一天短于 5.8 小时），但又足够强，能把岩浆和水驱向赤道。在质量积聚最多的地方，升起了一个<strong>由压力驱动的局部隆起</strong>——它冷却、固化，并从内部被塑造成一个顶端狭窄的凸锥，而火星的核心几乎没有移动！</li>
+<li><strong>向西躺倒的直角三角形（C.4–C.6）：</strong>当隆起立在赤道上时，它的顶端落后于火星的自转方向（向东），因此向<strong>西</strong>倾斜。当火星减速、冷却并分层时，隆起并没有突然坍塌，而是<strong>缓慢地向西躺倒</strong>——留下了<strong>塔尔西斯高原</strong>，其西坡比平缓的东坡陡 2–3 倍！今天在地表上从水手谷的底部到帕弗尼斯山的顶端测得的长度（2,996 km，在年轻、扁平的火星上为 4,800–4,920 km），就是<strong>直角三角形的斜边 L</strong>，其直立的高度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msqrt><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>−</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">h = \sqrt{L^2 - b^2}</annotation></semantics></math></span></span> 把帕弗尼斯山抬到了赤道以上 <strong>4,450–4,610 km</strong>！</li>
+<li><strong>零重量高度上火山口中的塞子（D.2–D.5）：</strong>在离火星中心 9,880–10,170 km 处，引力降到其地表值的四分之一（0.41–0.44 m/s²），而自转的离心推力把它完全抵消（<strong>净重为零！</strong>）。在那里，一座有着 5 km 深的浅岩浆房、具有普通伏尔坎式超压（10–50 MPa，就像地球上苏弗里耶尔山的喷发）的普通火山，以 110–250 m/s 的速度推出了两个“塞子”——而火星的自转（2.08–2.43 km/s）立即赋予了它们轨道速度！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：塔尔西斯的几何、帕弗尼斯山与抛射序列（B–E 部分）</h2>
+<p>论文 10 的 B–E 部分把每个阶段都与地形（MOLA）、重力（GMM-3）和轨道力学的数据联系起来：</p>
+<ol class="steps">
+<li><strong>隆起在火星地形和重力场中的印记（C.3–C.9）：</strong>隆起沿赤道（5°–12.5°S）延伸，从水手谷的底部（294.7°E，12.5°S，底部半宽 b 今天为 1,340 km，年轻时为 1,280–1,450 km）到帕弗尼斯山的顶端（243.9°E，5.4°S）。在 10°S–10°N 的带中，西坡陡（1,360 km 上 5.8 m/km），东坡缓（3,900 km 上 2.0 m/km）。在 GMM-3 重力场中，<strong>火星赤道的长轴恰好指向 255°E</strong>（指向隆起！），大地水准面的宽阔峰值（2–3 阶）位于隆起顶端（6.5°N，253.5°E），而火星的整体形状仍然<strong>向 262.7°E 偏移 1.37 km</strong>——也就是说，<strong>火星至今仍带着隆起的残余！</strong>火星通过直接观测满足 10 项诊断标准中的 9 项，第 10 项则由模型推出。</li>
+<li><strong>为什么是帕弗尼斯山，而不是阿尔西亚山、阿斯克劳山或奥林波斯山？（D.3）：</strong>对全部四座火山的轨道计算表明，奥林波斯山根本不在隆起上；阿斯克劳山在 8.3 小时时太低（位于共转线以内，因此其抛射物会落回）；阿尔西亚山会把火卫二抛到极端的轨道上（e = 0.66），把火卫一抛到椭圆轨道上（e = 0.19）；只有<strong>帕弗尼斯山</strong>（1.48°N，247.04°E，在隆起上高 4,450 km）恰好在 8.3 小时时与共转线相遇，并把火卫一直接释放到圆轨道上（e = 0.002），无需额外的推力！</li>
+<li><strong>两次抛射与火星 87% 的减速（E.1–E.3）：</strong>
+<ul>
+<li><strong>第一次抛射——火卫二（T = 7.3 h，共转线位于 9,083 km）：</strong>帕弗尼斯山的火山口位于共转线<em>以外</em> 1,090 km 处（侧向速度 2.43 km/s）。上部的塞子（轻、富含气体和水，约 20.7 km 宽）被抛到一条长椭圆轨道上（10,170–23,990 km，e = 0.41，倾角约 10°），每一圈都穿过环。</li>
+<li><strong>第二次抛射——火卫一（T = 8.3 h，共转线位于 9,870 km）：</strong>在自转减速一小时之后，共转线恰好到达帕弗尼斯山的火山口（2.08 km/s）。第二个塞子（更大、更致密、更干燥，22.9 km 宽）在环的内缘被直接释放到圆轨道上（9,877–9,919 km，e = 0.002）！</li>
+</ul></li></ol>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation radius against day length, with Tharsis vents" style="direction:ltr"><line x1="70" x2="560" y1="186.7" y2="186.7" stroke="#ece7da"/><text x="62" y="190.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9,000</text><line x1="70" x2="560" y1="131.1" y2="131.1" stroke="#ece7da"/><text x="62" y="135.1" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9,500</text><line x1="70" x2="560" y1="75.6" y2="75.6" stroke="#ece7da"/><text x="62" y="79.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10,000</text><line x1="70" x2="560" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10,500</text><text x="93.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">7.0</text><text x="210.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">7.5</text><text x="326.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8.0</text><text x="443.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8.5</text><text x="560.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">9.0</text><line x1="70" x2="560" y1="38.9" y2="38.9" stroke="#9aa3af" stroke-width="1.2" stroke-dasharray="6 4"/><text x="634.0" y="42.9" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >阿尔西亚</text><line x1="70" x2="560" y1="88.9" y2="88.9" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="634.0" y="92.9" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >帕弗尼斯</text><line x1="70" x2="560" y1="121.1" y2="121.1" stroke="#9aa3af" stroke-width="1.2" stroke-dasharray="6 4"/><text x="634.0" y="125.1" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >阿斯克劳</text><path d="M93.3,205.3 L163.3,177.4 L326.7,114.0 L396.7,90.0" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="93.3" cy="205.3" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="163.3" cy="177.4" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="326.7" cy="114.0" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="396.7" cy="90.0" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="163.3" y="199.4" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >火卫二</text><text x="396.7" y="112.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >火卫一</text><text x="315.0" y="260.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >年轻火星一天的长度（小时）· 共转线距火星中心（km）</text></svg><figcaption>随着火星减速，共转线上升：在 8.3 小时时，它恰好与帕弗尼斯山的火山口相遇（距火星中心 9,880 km）。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：复原直立隆起的三角形与火山口中的伏尔坎式推力</h2>
+<p>论文 10 的 C.6、D.2–D.5 和 E.2 部分表明，简单的直角三角形几何与地球上那种普通伏尔坎式火山爆炸的力学，足以把两颗卫星送上绕火星的轨道：</p>
+<ol class="steps">
+<li><strong>由躺倒的斜边复原直立高度（§C.6）：</strong>今天从水手谷底部的东端（294.7°E，12.5°S）到帕弗尼斯山的顶端（243.9°E，5.4°S）测得的 2,996 km，不是隆起的高度，而是从底部边缘画到底部中心（272°E，10°S，今天半宽 b = 1,340 km）上方顶点的直角三角形的<strong>斜边 L</strong>。在年轻、扁平的火星上（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mn>5</mn><mo separator="true">,</mo><mn>084</mn></mrow><annotation encoding="application/x-tex">R_{\mathrm{mean}} = 5,084</annotation></semantics></math></span></span> km），赤道上的东西向长度被放大 1.60–1.64 倍（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi></mrow></msub><mo>=</mo><mn>5</mn><mo separator="true">,</mo><mn>431</mn><mtext>–</mtext><mn>5</mn><mo separator="true">,</mo><mn>561</mn></mrow><annotation encoding="application/x-tex">R_{\mathrm{eq}} = 5,431\text{–}5,561</annotation></semantics></math></span></span> km，因此 L = 4,800–4,920 km），而南北宽度按 c²/a 的比例被压缩（b = 1,280–1,450 km）。由此得到直立隆起的高度：<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msqrt><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>−</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mrow><mn mathvariant="bold">4</mn><mo separator="true">,</mo><mn mathvariant="bold">580</mn><mtext>–</mtext><mn mathvariant="bold">4</mn><mo separator="true">,</mo><mn mathvariant="bold">740</mn></mrow></mrow><annotation encoding="application/x-tex">h = \sqrt{L^2 - b^2} = \mathbf{4,580\text{–}4,740}</annotation></semantics></math></span></span> km（按今天的尺寸为 2,680 km）！</li>
+<li><strong>零净重条件与普通的伏尔坎式推力（§D.2、§D.5）：</strong>在隆起的顶端坐落着帕弗尼斯山的火山口，在赤道以上 4,450–4,610 km（距火星中心 9,880–10,170 km）。在那里，引力降到地表值的四分之一（0.41–0.44 m/s²），而自转的离心推力把它抵消（7.3 h 时净重 −0.17 m/s²，8.3 h 时 0.00 m/s²）。在这种失重条件下，聚集在约 5 km 深的浅岩浆房中、具有普通伏尔坎式超压 <strong>10–50 MPa</strong> 的气体，把塞子沿其自身长度推出，出口速度为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≈</mo><msqrt><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>p</mi><mi mathvariant="normal">/</mi><mi>ρ</mi></mrow></msqrt><mo>=</mo><mrow><mn mathvariant="bold">110</mn><mtext>–</mtext><mn mathvariant="bold">250</mn></mrow></mrow><annotation encoding="application/x-tex">v \approx \sqrt{2\Delta p/\rho} = \mathbf{110\text{–}250}</annotation></semantics></math></span></span> m/s——而火山口本身的自转速度（2.08–2.43 km/s）提供了全部的轨道速度！</li>
+<li><strong>火星自转减速的账目（§E.2）：</strong>一个以 7–9 小时自转的年轻均匀火星（I = 0.4 M R²）所携带的角动量，是今天（I = 0.3644 M R²，一天 24.62 小时）的 <strong>6.8–8.7</strong> 倍，如果它在不损失角动量的情况下收缩，甚至会加速 2.5 倍。把 <strong>火星质量的 6%–11%</strong>（含水超过 30% 的年轻火星中 20%–33% 的水）通过共转线（9,080–20,428 km）抛出，带走了 87% 的自转，并在环干涸之前就把它减速到接近今天的速率（从 8.3 到 22.3 h 抛出了 6%–9% 的质量，而从 22.3 到 24.6 h 只有 0.1%）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>隆起的直立高度 h、超压 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span> 下火山口的抛射速度，以及旋转均匀行星（麦克劳林椭球体）的稳定性条件表述如下（§B.3–B.4、§C.6、§D.5）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msqrt><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>−</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mn>4</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>580</mn><mtext>–</mtext><mn>4</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>740</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">h = \sqrt{L^2 - b^2} = 4{,}580\text{–}4{,}740\text{ km}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mi>ρ</mi></mfrac></mstyle></msqrt><mo>=</mo><mn>110</mn><mtext>–</mtext><mn>250</mn><mtext> m/s</mtext></mrow><annotation encoding="application/x-tex">v_{\mathrm{exit}} \approx \sqrt{\dfrac{2\Delta p}{\rho}} = 110\text{–}250\text{ m/s}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle><mo>=</mo><mn>0.181</mn><mtext>–</mtext><mn>0.234</mn><mo>&lt;</mo><mn>0.374</mn><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mo separator="true">,</mo><mi mathvariant="normal">J</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi></mrow></msub><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo separator="true">,</mo><mtext>  </mtext><msub><mi>T</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">k</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>5.27</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\dfrac{\Omega^2}{\pi G \rho} = 0.181\text{–}0.234 &lt; 0.374 \quad (T_{\mathrm{limit,Jacobi}} = 5.77\text{ h}, \; T_{\mathrm{breakup}} = 5.27\text{ h})</annotation></semantics></math></span></div></div></div>
+<p>由于对于 7.3–8.3 小时的一天和 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>166</mn></mrow><annotation encoding="application/x-tex">\rho = 1,166</annotation></semantics></math></span></span> kg/m³ 的密度，无量纲自转参数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>π</mi><mi>G</mi><mi>ρ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Omega^2/(\pi G\rho)</annotation></semantics></math></span></span> 为 0.181–0.234（低于三轴椭球体门槛 0.374 和解体门槛 0.449），年轻的火星保持了全局的自转稳定性和适度的扁率（0.18–0.24），长出了一个由压力驱动的局部隆起，而不是分裂成两个大天体。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：塔尔西斯的重力图、地形与构造地质</h2>
+<p>除了火卫一和火卫二轨道的吻合之外，隆起还在今天的火星表面留下了四个可测量的地球物理印记（§C.5–C.8）：</p>
+<ul>
+<li><strong>自由空气重力梯度（GMM-3，2–90 阶）：</strong>自由空气重力从水手谷底部东端的 <strong>−565 mGal</strong>，经底部中心（272°E，10°S）的 <strong>+49 mGal</strong> 和隆起顶端（243.9°E，5.4°S）的 <strong>+393 mGal</strong>，连续增大到帕弗尼斯山的 <strong>+1,474 mGal</strong>、阿尔西亚山的 <strong>+1,661 mGal</strong> 和阿斯克劳山的 <strong>+2,307 mGal</strong>。</li>
+<li><strong>放射状断裂的焦点（Anderson et al. 2001）：</strong>在塔尔西斯周围跨越五个地质时期（从诺亚纪到亚马逊纪）的 24,452 条地堑和山脊中，放射状断裂的中心沿着隆起迁移，从早期的克拉里塔斯和叙利亚中心，在最后阶段迁到了<strong>帕弗尼斯山区域</strong>——而构造活动在火星历史早期最强，并随时间减弱。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：年轻火星的参数、直立的隆起与塔尔西斯的火山（论文 10，B–E 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>一天的长度（T）</th><th>扁率</th><th>赤道 / 极半径（km）</th><th>共转线距火星中心 / 赤道以上（km）</th><th>火星–卫星系统中的事件</th></tr>
+<tr><td>7.0 小时</td><td>0.26</td><td>5,618 / 4,164</td><td>8,832 / 3,214</td><td>隆起与早期环的建造</td></tr>
+<tr class="hl"><td><strong>7.3 小时</strong></td><td><strong>0.24</strong></td><td><strong>5,561 / 4,250</strong></td><td><strong>9,083 / 3,522</strong></td><td><strong>抛射火卫二</strong>（a = 10,170–23,990 km，e = 0.41）</td></tr>
+<tr><td>8.0 小时</td><td>0.19</td><td>5,461 / 4,407</td><td>9,654 / 4,193</td><td>共转线升向帕弗尼斯山的火山口</td></tr>
+<tr class="hl"><td><strong>8.3 小时</strong></td><td><strong>0.18</strong></td><td><strong>5,431 / 4,455</strong></td><td><strong>9,870 / 4,439</strong></td><td><strong>抛射火卫一</strong>，直接进入圆轨道（e = 0.002）</td></tr>
+<tr><td>22.0 小时（约 39 亿年前）</td><td>≈ 0.01</td><td>≈ 3,410</td><td>≈ 19,000 / ≈ 15,600</td><td>环干涸，火卫一的“牵绳”被松开</td></tr>
+<tr><td>24.62 小时（今天）</td><td>1/191</td><td>3,396 / 3,376</td><td>20,428 / 17,032</td><td>火卫一下坠（9,375 km），火卫二远离（23,463 km）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>塔尔西斯的火山</th><th>在隆起上的高度 / 距火星中心的距离（km）</th><th>共转线经过火山口时的一天</th><th>7.3 h 抛射的结果（火卫二）</th><th>8.3 h 抛射的结果（火卫一）</th></tr>
+<tr><td><strong>阿斯克劳山</strong></td><td>4,120 / 9,590</td><td>7.9 小时</td><td>轨道（e = 0.25）</td><td><strong>落回</strong>（火山口在线内！）</td></tr>
+<tr class="hl"><td><strong>帕弗尼斯山</strong></td><td><strong>4,450 / 9,880</strong></td><td><strong>8.3 小时</strong></td><td><strong>椭圆轨道（e = 0.41）</strong></td><td><strong>恰好在线上的圆（e = 0.002）</strong></td></tr>
+<tr><td><strong>阿尔西亚山</strong></td><td>4,950 / 10,330</td><td>8.9 小时</td><td>极端轨道（e = 0.66，最远 52,400 km）</td><td>椭圆轨道（e = 0.19）</td></tr>
+<tr><td><strong>奥林波斯山</strong></td><td>不在隆起上（距中心 5,600）</td><td>—</td><td><strong>无轨道</strong>（以尘埃形式返回）</td><td><strong>无轨道</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在本章中我们看到，一个膨胀而快速的年轻火星（R = 5,084 km，一天 7.3–8.3 小时）如何在赤道上长出塔尔西斯的尖锐隆起，把帕弗尼斯山抬到 4,450 km 的高度、进入零净重的条件，并以普通的伏尔坎式压力在 7.3 小时时释放出<strong>火卫二</strong>，在 8.3 小时时释放出<strong>火卫一</strong>。</p>
+<p>但火星周围<strong>凝结的蒸汽环</strong>是如何把火卫二变成一个光滑的遥远球体，把火卫一变成一个今天正坠向火星、布满沟槽的天体的——隆起又是如何通过水手谷向东排空其内容物的？在下一章——<strong>第 20 章：火星的蒸汽环、经由水手谷的排泄与 MMX 任务的检验</strong>（依据论文 10——F–O 部分及附录 B）——我们将完成整个故事和对 2031 年的实验室预测！</p>
+<a href="story20_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 20 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">火星的蒸汽环、经由水手谷的排泄与 MMX 任务的检验 →</p></div></a><p style="margin-top:22px"><a href="story18_zh.html">← 第 18 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

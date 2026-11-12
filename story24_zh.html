@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 24 章：作为研磨传送带的环、卫星和行星上的印记，以及阿塔卡马岩块的检验 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 24 章：作为研磨传送带的环、卫星和行星上的印记，以及阿塔卡马岩块的检验。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story24_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story24_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story24_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story24_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <a href="story24_de.html" hreflang="de">Deutsch</a> · <a href="story24_es.html" hreflang="es">Español</a> · <a href="story24_fr.html" hreflang="fr">Français</a> · <a href="story24_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 24 章</p>
+<h1>第 24 章：作为研磨传送带的环、卫星和行星上的印记，以及阿塔卡马岩块的检验</h1>
+<p>依据论文 12——12. 环：环破碎、研磨并归还（E–M 部分：研磨传送带、卫星和母体上的印记、阿塔卡马岩石与 5 项证伪标准）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：环如何塑造卫星和行星的表面——为什么卫星周围没有环？</h2>
+<p>在第 23 章中我们看到，当一天短于 13.4 小时时，行星环作为一股平衡流而存在，它从母体获得供给，又把物质还给母体。在论文 12 的 E–M 部分中，LEF 模型研究了环留下的形态和物理痕迹：</p>
+<ol class="steps">
+<li><strong>为什么土卫十八、土卫十五和土卫三十五有像飞碟一样的赤道“裙边”——而火卫二却被磨成了光滑的球（G.1–G.4）？</strong>尽管火卫二的自引力比土卫十八和土卫十五更强，土卫十八和土卫十五却积累了显著的赤道脊，而火卫二失去物质并被完全磨平！</li>
+<li><strong>太阳系中哪些环注定在不久的将来消失（F.3）？</strong>为什么天王星和海王星的某些窄环在没有牧羊卫星、也没有来自地面的供给的情况下暂时幸存？</li>
+<li><strong>在火星表面的何处可以找到其古老环的残余——为什么 2026 年 4 月钻探的“阿塔卡马”岩块被排除了（H.2–H.3）？</strong></li>
+<li><strong>为什么在太阳系的任何卫星周围都没有发现环——小天体（妊神星、女凯龙星、创神星）又是如何在 1:3 共振中保持环的（J.1–J.2）？</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：单向的研磨传送带、粘乎乎的雪球对比磨刀石，以及土星天空中的条纹</h2>
+<p>四个具体的图景解释了环内部的分选以及它在周围留下的印记：</p>
+<ul>
+<li><strong>团块进去、尘埃出来的单向研磨传送带（E.1–E.3）：</strong>在环内部，同一半径上的重粒子和轻粒子以相同的开普勒速度运动，因此不会按密度沉降。分选是<strong>通过碰撞中的动量传递</strong>进行的：一个约 100 m 宽的坚硬团块保持其稳定的轨道，并在土星 A 环中为自己清出<strong>“螺旋桨”</strong>形状的干净通道，而微小的粒子获得随机速度，在大团块的薄层（10 m）周围竖直地散开。尺寸分布 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> 是经典的研磨印记：大团块表明有新鲜物质进入了环！</li>
+<li><strong>覆盖着霜的雪球对比硅酸盐磨刀石（G.2–G.3）：</strong>环的成分决定了穿过它的卫星是<em>获得质量</em>还是<em>被磨损</em>：寒冷、覆霜的冰粒在缓慢接触时会相互粘连（Bridges et al. 1984），在土卫十八、土卫十五和土卫三十五上建起了赤道脊；而火星的古老环由凝结的蒸汽和坚硬的硅酸盐颗粒构成，它们像<strong>一块磨刀石</strong>，把火卫二磨光，却没有给它增加质量！</li>
+<li><strong>完全浸没在水中对比绕在球上的细线（D/H 比，G.4）：</strong>当卫星的直径小于环的厚度时（D &lt; H，就像位于火星厚蒸汽环中的火卫二，14–22 km，或土卫三十二），整个表面被浸没并被磨平；当 D &gt; H 时（位于数十米厚盘中的土卫十八、土卫十五和土卫三十五），两极伸出环外，建起一条宽阔的赤道带；而当 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span> 时（土卫八），环就像一根细线。</li>
+<li><strong>两个降雨通道——赤道上的中性物质与沿磁力线的暗色条纹（H.1）：</strong>在卡西尼号 2017 年的最后俯冲中，测得了从环落到土星上的两个通道：中性分子和纳米级硅酸盐颗粒直接落向赤道，而电离的水分子沿磁力线流向中纬度（赤道两侧 25°–55°），中和 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span> 离子，并在红外光中形成暗色条纹！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：环的生命周期、卫星上的印记与阿塔卡马岩块的检验（E–J 部分）</h2>
+<p>论文 12 的 E–J 部分给出了把环的残余与普通地质现象区分开来的尖锐观测检验：</p>
+<ol class="steps">
+<li><strong>环的生命周期与预计会消失的环（F.1–F.3）：</strong>一个既没有供给卫星、也没有来自地面泄漏的环处于衰亡阶段，预计会消失。因此，<strong>天王星的九条无卫星窄环</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>）以及<strong>海王星的伽勒环和拉塞尔环</strong>被归类为在水逃逸和冻结之后留在共转线以下的垂死之环，而天王星的 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span> 环以及海王星的亚当斯环和勒维耶环则由卫星维持。</li>
+<li><strong>识别穿过环的卫星的形态规则（G.1–G.5）：</strong>一颗完全光滑的硅酸盐卫星（没有像木卫二或土卫二那样更新表面的地质活动）表明它在环的中心长期停留过：火卫二上凹陷的中位深度是其宽度的 1.9%（比 6% 浅 84%），火卫一为 5.5%，而火卫二的轨道几乎是完美的圆（e = 0.0003）。穿越速率取决于卫星的质量：小卫星迁移缓慢，积累了深刻的印记，而大卫星被迅速推出，在短时间内穿过环。</li>
+<li><strong>排除卫星周围的环，以及小天体之环在 1:3 共振中的稳定（J.1–J.2）：</strong>太阳系中没有任何卫星拥有环（甚至曾被怀疑的土卫五环也在 Tiscareno et al. 2010 中被完全排除），因为母行星的引力占主导，会把从卫星抛出的任何物质俘获到母体的环中。相比之下，在小天体（妊神星、女凯龙星和创神星）周围，五个环中有四个位于共转线以上 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> 的范围内——恰好在<strong>1:3 自旋–轨道共振</strong>的半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>）上，在那里粒子每当母体自转三圈就完成一圈公转。</li>
+<li><strong>火星上“阿塔卡马”岩块的检验（2026 年 4 月 25 日，H.3）：</strong>当好奇号火星车在盖尔环形山中钻探分离的“阿塔卡马”岩块（约 45 cm，约 13 kg）时，检验了它是从火星古老环中落下的固体残余的可能性。检验完全排除了这一点（它是一块带有干裂纹的层状含水硫酸盐沉积岩，成分与其下方的层相同，属于夏普山单元），并确立了<strong>识别火星上真正环残余的四项严格标准</strong>：没有水成层理的火山/海绵状岩石、经历过加热的干燥矿物、进入大气形成的熔壳，以及与当地地质层不同的成分（与火卫一和火卫二吻合）。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="以共转线为单位的环位置" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >木星 · ⁦0.57–1.41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >土星 · ⁦0.60–1.23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >天王星 · ⁦0.51–0.62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >海王星 · ⁦0.50–0.75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >妊神星 · ⁦2.07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >女凯龙星 · ⁦2.10 ; 2.18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >创神星 · ⁦1.25 ; 2.01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >以共转线为单位的环位置 · 蓝色：共转线 · 红色：2.08 处的 1:3 共振</text></svg><figcaption>两个环族：巨行星的环位于共转线周围及以下，小天体的环位于其上方，聚集在 1:3 共振周围。</figcaption></figure><div class="callout"><span class="tag">太阳辐射对环的作用——“辐条”、电离雨与坡印廷–罗伯逊拖曳（I 部分）</span><p style="margin:0">太阳辐射通过三种机制作用于环：（1）微米级尘埃的静电充电，使其以<strong>“辐条”</strong>的形式漂浮在 B 环平面之上，在二分点前后达到峰值；（2）水分子的紫外电离，加速了沿磁力线的<strong>电离雨</strong>；（3）<strong>坡印廷–罗伯逊辐射拖曳</strong>，使微小的尘埃粒子减速，并让它们向内落回母体！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：火星上的识别标准、系统巡览与五项证伪检验</h2>
+<p>论文 12 的 H.2–H.3 和 K–M 部分汇集了行星表面上的地质痕迹，以及可用来验证或证伪 LEF 模型环理论的实验规则：</p>
+<ol class="steps">
+<li><strong>寻找火星古老环残余的四个目标（§H.2）：</strong>当火星的蒸汽–硅酸盐环在 35–37 亿年前干涸时，它的物质沉降到表面上。四个寻找目标是：（a）没有地面流动来源的厚而低密度的赤道沉积（例如<strong>美杜莎槽沟层</strong>）；（b）偏离当地环境、与火卫一和火卫二吻合的氘–氢（D/H）特征；（c）盖尔环形山中夏普山里火山成分的石块和暗色坚硬的标志层；以及（d）如果火星在环存在期间有活跃的偶极磁场，中纬度上对称的沉积带。</li>
+<li><strong>每个天体的系统巡览总结（K 部分）：</strong>太阳系中的每个系统在环的循环中都有明确的角色：地球（没有持久的环，因为梨形体扫过了赤道带）；火星（来自地面的古老环，推动了火卫二和火卫一，并在地壳封闭时消失）；木星（只有来自卫星的尘埃环，因为气体盖最厚）；土星（从地面和卫星以平衡流供给的巨大冰环）；天王星和海王星（水逃逸之后留在共转线以下的狭窄暗色残余，无卫星的环正在死去）；以及妊神星、女凯龙星和创神星（在 1:3 共振中位于共转线之上、不聚合成卫星的致密环）。</li>
+<li><strong>L.3 部分的五项尖锐证伪标准：</strong>模型列出了五个明确的证伪条件：（1）直接观测到一颗卫星从环盘中聚合；（2）发现一颗从未在环境中停留过、却完全光滑的硅酸盐卫星；（3）测得一个其同位素成分与母体矛盾、与系统外来源吻合的行星环；（4）发现一个远在大行星共转线之上、没有稳定轨道共振的巨大环；或（5）记录到一个既没有供给卫星、也没有来自地面的供给，却在地质时间尺度上保持质量而不被耗尽的环。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>研磨环中团块的尺寸分布，以及把环困在小天体周围的 1:3 自旋–轨道共振半径，表述如下（§E.2、§J.2）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>幂律 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> 刻画了一个在碰撞中不断破碎和研磨的系统（Zebker et al. 1985），而共振半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span> 解释了为什么妊神星、女凯龙星和创神星的五个环中有四个恰好位于共转线以上 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> 的范围内。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：阿塔卡马岩块的检验（2026 年 4 月）与预计会消失的环</h2>
+<p>两个核心的观测发现说明了 LEF 环理论如何经受住现场的经验检验（§F.3、§H.3）：</p>
+<ul>
+<li><strong>好奇号上阿塔卡马岩石的筛选协议（2026 年 4 月 25 日）：</strong>对盖尔环形山中分离的阿塔卡马岩块（约 45 cm，约 13 kg）的地球化学分析表明，它是一块带有干裂纹的含水硫酸盐沉积岩，与其下方的层相同——因此确立了识别火星上真正环残余的四项门槛条件（火山/海绵状结构、干燥矿物、熔壳和外来成分）。</li>
+<li><strong>太阳系中垂死之环的名单（§F.3）：</strong>天王星的九条无卫星窄环（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>）以及海王星的伽勒环和拉塞尔环，预计会继续变薄，并在未来的观测中消失，而土星的 D、C 和 B 环只要由内部的泵供给就会继续存在。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：环的成分与 D/H 比对卫星的影响、系统巡览与证伪标准（论文 12，E–M 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>卫星</th><th>直径 / 密度</th><th>自引力（m/s²）</th><th>环境与 D/H 比</th><th>形态印记</th></tr>
+<tr class="hl"><td><strong>火卫二</strong></td><td>12.4 km / 1,471 kg/m³</td><td>0.0025</td><td><strong>硅酸盐与蒸汽</strong>（D &lt; H，完全浸没）</td><td><strong>被完全磨成光滑的球</strong>（凹陷中位深度 1.9%）</td></tr>
+<tr><td><strong>火卫一</strong></td><td>22.2 km / 1,860 kg/m³</td><td>0.0058</td><td>逐渐消退的气体边缘</td><td>只有部分磨损；保留了沟槽（5.5%）</td></tr>
+<tr class="hl"><td><strong>土卫十八、土卫十五和土卫三十五</strong></td><td>7.6–30 km / 340–460 kg/m³</td><td>0.0004–0.0019</td><td><strong>水冰</strong>（D &gt; H，两极伸出）</td><td><strong>积累了显著的赤道脊</strong>（“飞碟”形状）</td></tr>
+<tr><td><strong>土卫三十二</strong></td><td>2.9 km / 310 kg/m³</td><td>0.0001</td><td>G 环附近弧中的冰（D &lt; H）</td><td>光滑并被覆盖</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>太阳系中的系统</th><th>今天环的状态</th><th>供给来源</th><th>相对共转线的位置与 LEF 解释</th></tr>
+<tr><td><strong>地球 / 火星</strong></td><td>没有 / 过去曾存在</td><td>火星：来自隆起的蒸汽和岩石</td><td>地球：梨形体扫过了这条线；火星：35–37 亿年前地壳封闭时消失</td></tr>
+<tr><td><strong>木星</strong></td><td>薄尘埃</td><td>内卫星（从木卫十六到木卫十四）</td><td>在线周围（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>）；厚的气体盖封闭了内部泄漏</td></tr>
+<tr class="hl"><td><strong>土星</strong></td><td><strong>巨大（95%–99% 的冰）</strong></td><td><strong>来自地面（D、C、B、A）和卫星（E、F、G）</strong></td><td><strong>一股恒定的平衡流</strong>（P = 10.6 h &lt; 13.4 h）；A 环边缘位于洛希极限</td></tr>
+<tr><td><strong>天王星 / 海王星</strong></td><td>狭窄而黑暗（以及环弧）</td><td>部分来自卫星，部分没有卫星</td><td>在线以下（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>）；无卫星的环预计会消失</td></tr>
+<tr class="hl"><td><strong>妊神星、女凯龙星、创神星</strong></td><td>致密</td><td>妊神星：长轴的两端</td><td>在线以上（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>），被困在<strong>1:3 共振</strong>中；不建造卫星</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在第 23–24 章中，我们完成了 LEF 模型的环理论：推导出了<strong>普遍的门槛之日 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 小时</strong>，把土星的环解释为动态平衡中的恒定流，追踪了天王星和海王星的水与角动量的命运，并定义了卫星上的形态印记（火卫二的磨损对比土卫十八和土卫十五的筑脊）以及火星上的印记（阿塔卡马岩石的检验与美杜莎槽沟沉积）。</p>
+<a href="story25_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 25 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF 模型的基本要求（R1–R8）——同位素、月核、月壳、质心偏移与暴露区 →</p></div></a>
+<p style="margin-top:22px"><a href="story23_zh.html">← 第 23 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

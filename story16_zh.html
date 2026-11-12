@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 16 章：SPA 的深处、嫦娥六号样品与连续体的势垒 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 16 章：SPA 的深处、嫦娥六号样品与连续体的势垒。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story16_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story16_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story16_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story16_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story16_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <a href="story16_en.html" hreflang="en">English</a> · <a href="story16_de.html" hreflang="de">Deutsch</a> · <a href="story16_es.html" hreflang="es">Español</a> · <a href="story16_fr.html" hreflang="fr">Français</a> · <a href="story16_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 16 章</p>
+<h1>第 16 章：SPA 的深处、嫦娥六号样品与连续体的势垒</h1>
+<p>依据论文 08——南极–艾特肯：环形山稀少的中心（B10–G 部分：深部异常 B10–B18、对跖几何、势垒虹吸与决定性的同位素检验）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：嫦娥六号的背面样品揭示了什么？热量又是如何翻越地球引力势垒的？</h2>
+<p>2024 年 6 月，中国的<strong>嫦娥六号</strong>任务带回了历史上第一批月球背面的土壤样品——来自 SPA 东北部的阿波罗盆地（41.625°S，206.022°E，距穹顶中心约 11.6°，距环形山最小值点 210 km）。实验室的发现，连同来自轨道的重力和磁场数据，揭示了一连串一次性的小行星撞击难以统一解释的发现：</p>
+<ol class="steps">
+<li><strong>一个埋在深处的致密质量（2.18 × 10¹⁸ kg，B10）：</strong>在中央月海区域的南半部之下（62°S，200°E，面积约 444,500 km²，等效半径 12.4°）隐藏着一个弥散的过剩质量，相当于一个直径约 95 km 的金属球——它没有沉入月核！</li>
+<li><strong>一个“烘烤过”的月幔，氧贫乏 13 倍，并带有重的钾和铁同位素（B11–B13）：</strong>嫦娥六号玄武岩的源区完全干燥，可用氧比正面贫乏<strong>约 13</strong> 倍（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn><mo>±</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span>，正面为 −0.80 ± 0.64），KREEP 元素亏损（28 亿年时 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span>，而同一区域 42.03 亿年的古老玄武岩为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>！），并携带<strong>同位素偏重的铁</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0.13</mn><mtext>–</mtext><mn>0.21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰）以及偏重的钾（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> 到 +0.09‰）。</li>
+<li><strong>中心被抹除、只在尾随侧强烈的磁性，以及 26.2 MJ/kg 的势垒（B16–D.3）：</strong>在 SPA 中心，磁性几乎为零（只有 0.8% 的面积超过 5 nT），而所有强磁性（32%–42%，峰值约 22 nT，靠近智海和明亮的漩涡）都集中在西北（尾随侧）——与钍新月在同一侧，但向北偏移约 8°。此外：来自地球的热量和物质是如何翻越势垒（26.2 MJ/kg）到达背面的？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：在小火上收汁的酱汁、一泡再泡的茶包，以及连续的虹吸</h2>
+<p>四个日常图景阐明了 LEF 模型中 SPA 深处的物理和化学：</p>
+<ul>
+<li><strong>在小火上收汁的酱汁（铁就地富集而不下沉，B10、B12）：</strong>与活跃的月海不同——在活跃月海中物质上下流动，可能把铁块卷到月核（像莫斯科海那样）——SPA <em>不是一个活跃的月海</em>：没有周期性的上下流动。从地球到达 SPA 底部、富含金属铁的物质就地被加热和烘烤：金属铁“喝下”并吸收了周围的氧（把 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> 降到 −1.93），当热量蒸发掉其他物质时，没有蒸发的铁就地富集，并随该区域冷却而冻结！</li>
+<li><strong>一泡再泡的茶包（从 42.0 亿年的富集源区转变为 28.1 亿年的亏损源区，B13）：</strong>经由梨形体从地球到达的物质落下时富含 KREEP 元素（42.03 亿年时 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>）。来自下方的长期加热一次又一次地熔化月幔，每次都移走最先的熔体（它把钍带到了新月），直到留下一个“被洗过”、难以熔融的残余（28.07 亿年时 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span>）——这也解释了为什么只有微量的晚期熔岩喷出！</li>
+<li><strong>倒进咖啡、尚未混匀就冻结的牛奶（智海明亮的漩涡与莫斯科海的对比，B17）：</strong>当双物质流——来自下方的铁和来自上方的铝硅——在月球自转下喷出并迅速冻结时（埃克曼数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>），拉长的颗粒在供给通道中竖立（暗色的富铁带），在扩展中平躺（明亮的富斜长石环），而在活跃的莫斯科海，铁在冻结之前就沉下去了，因此那里既没有形成磁场（1.3 nT，0% 超过 5 nT），也没有形成漩涡！</li>
+<li><strong>越过山顶的连续虹吸（翻越势垒，D.3–D.3a）：</strong>一个单独以 1.8–2.6 km/s（1.6–3.4 MJ/kg）发射的物质包，会在到达共转线（26.2 MJ/kg）之前落回。但这里我们面对的是<strong>一个充满物质的连续体</strong>，由约 <span class="ltr">150 GPa</span> 的源压从下方推动（论文 3）：一旦它的上部越过共转线并被自转向外拉，它就会降低底部的压力，并<strong>像虹吸一样</strong>从下方抽取更多物质——而压力永远不会变为负值！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：八个深部异常（B10–B17）与对跖几何</h2>
+<p>论文 08 的 B10–B17 和 C 部分解决了 SPA 17 个异常中剩下的部分，并绘出了背面的中心分布图：</p>
+<ol class="steps">
+<li><strong>刚性镜像检验与三组中心的分布图（C 部分）：</strong>把雨海和澄海的环和月海刚性地复制（“盖章”）到它们的对跖点上，得到一个窄椭圆（2,144 × 1,340 km，轴比 1.60），与 SPA 的形状（2,402 × 2,056 km，比值 1.17）不匹配——这个否定的结果被明确保留，以表明燃烧器决定了环形山在何处被抹除，而盆地的轮廓是由穹顶的塌陷决定的。当把所有中心放在一张图上（图 C.1）时，出现了<strong>一列从北到南、分为三组的有序排列</strong>：
+<ul>
+<li><strong>（a）北部——燃烧器的两个出口：</strong>雨海对跖点（37.6°S，160.0°E，其上 5.7° 处是智海的薄月壳穹顶）和澄海对跖点（27.3°S，198.4°E，其上 10° 处是阿波罗穹顶）。</li>
+<li><strong>（b）中部——热量和环形山抹除的焦点：</strong>穹顶/内环的中心（51.4°S，196.8°E）、椭圆的中心（53°S，191°E）、附近的磁峰值（51.0°S，190.0°E）以及环形山最小值点（45.4°S，197.9°E）——全部都在穹顶中心 6° 以内！</li>
+<li><strong>（c）南部——沉重的结构焦点：</strong>最低的底部（61°S，199°E）、致密质量（62°S，200°E）和最薄的月壳（61°S，184°E）——彼此都在约 230 km 以内！</li>
+</ul>
+</li>
+<li><strong>为什么穹顶位于两个出口以南？——梨形体中的水平推力与天体的圆化（§C.3–C.4）：</strong>月球所坐的梨形体顶端位于约北纬 22.5°，而其底座位于赤道附近。在旋转天体内部，离心力<strong>垂直于自转轴（水平地）</strong>作用，而不是沿着指向地心的连线——因此物质流在接触盘中心以北进入（雨海和澄海所在之处），并在背面<strong>对点以南最多约 22.5°</strong>处流出！在扁化阶段（1 : 0.637 : 0.601），穹顶中心位于澄海出口以南 17.0°、雨海出口东南 21.2°；而随后<strong>圆化为球体</strong>（第 13–14 章）把这些角距离加宽到恰好是今天测得的 <strong>24.1° 和 29.2°</strong>！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：回应七项挑战（E.1–E.7）并绘出从扁化到球体的位移</h2>
+<p>论文 08 的 C.3 和 E 部分对近期科学文献（包括 2025–2026 年嫦娥六号的发现）提出的全部七个问题和挑战给出了精确的定量回答：</p>
+<ol class="steps">
+<li><strong>嫦娥六号月壤中的铱和金（E.1）：</strong>Liu 等人（2026）发现的含 Ir 和 Au 的金属颗粒，是在<em>表层月壤中未定年的玄武岩和斜长岩碎片</em>里发现的（数十亿年间收集的后期太空尘埃，预测明确允许这一点），而不是在已定年的 42.5 亿年苏长岩中。此外，Ir 和 Au 的元素比值无法区分来自地球深处的金属与小行星——只有同位素测量（Cr、Ti、Mo、Ru、Os）才能作出判定。</li>
+<li><strong>致密质量、磁峰值和薄月壳并不在环形山最小值点之下（E.3–E.5）：</strong>最小值点（45.4°S，197.9°E）标示的是热量在朝向澄海出口方向抹除地表环形山的位置；磁峰值（51.0°S，190.0°E，相距 230 km）标示的是<strong>炽热核心的边缘</strong>，那里的磁性没有在居里温度以上被抹除（中心的场只有 0.85–1.9 nT）；而致密质量（62°S，200°E）位于盆地深部的结构性南部。</li>
+<li><strong>被掩埋的玄武岩作为浅环形山的原因（E.6）：</strong>在 LEF 模型中，被掩埋的玄武岩（8.7 × 10⁴ km²）是燃烧器的<em>产物</em>，而不是它的竞争者——决定性的检验是，环形山的浅化在被掩埋玄武岩区域之外也同样存在，因为烘烤过的地面被压实了。</li>
+<li><strong>从扁化到球体的圆化中的几何位移（表 §C.3）：</strong>在从拉长的天体（1 : 0.637 : 0.601）过渡到今天的球体时，没有任何一点在地面上滑动，但相对于长轴顶端的角度张开了：雨海出口从 32.3°S、158.1°E 移到 37.6°S、160.0°E（变化 5.5°），澄海出口从 27.4°S、185.1°E 移到 27.3°S、198.4°E（11.8°），穹顶中心从 44.0°S、180.8°E 移到 51.4°S、196.8°E（13.0°），环形山最小值点从 39.9°S、182.5°E 移到 45.4°S、197.9°E（12.6°）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>早期地球表面（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> km，北纬 25°，母体质量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg）与共转线（5.5 h 时 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> km，5.77 h 时 16,399 km）之间的有效势垒 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span>，以及决定自转如何使熔岩流偏转的埃克曼数（Ek），表述如下（§B17、§D.3–D.5）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26.2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>对于附着阶段快速自转（5.77 小时）下黏度为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> 的熔岩，埃克曼数在 100 m 尺度上为 0.012，在 1 km 上为 0.0001，在 10 km 上为 10⁻⁶——也就是说，自转力完全偏转了每一股熔岩流或抛射，形成了钍新月和智海明亮的漩涡！此外，在共转线（16,400 km）之外，月球的希尔球延伸到离其中心约 2,600 km（当时月球半径 1,890 km 的 1.4 倍），因此任何被抛射到低于约 700 km 高度的物质都会返回，并作为环形山落在月面上。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：17 个异常中的 16 个吻合——以及尚待检验的预测</h2>
+<p>在论文 08 第 B18 节系统比较的总结中：在 SPA 的 17 个异常里，主流科学完全解释了 6 个，部分解释了 9 个，勉强解释了 1 个（持续 20 亿年的长期火山作用），而对盆地中心环形山记录的模式<strong>则完全无法解释（0）</strong>。相比之下，<strong>LEF 模型的燃烧器机制</strong>一举吻合了 <strong>17 个异常中的 16 个</strong>，另有 <strong>1 个部分吻合（B14）</strong>，有待同位素检验：</p>
+<ul>
+<li><strong>对未来实验室测量最尖锐的预测（F 部分）：</strong>测量两块已定年的嫦娥六号苏长岩（`CE6C0100YJFM002-158` 和 `CE6C0200YJFM001EGP07-16`）中金属颗粒的 Cr、Ti、Mo、Ru、Os 同位素，将显示<strong>纯粹的地球特征，没有陨石偏差</strong>。</li>
+<li><strong>可从轨道检验的更多预测：</strong>（1）底部破裂的环形山集中在中央亏缺区之内；（2）环形山的浅化在被掩埋玄武岩区域之外也持续存在；（3）挥发分丢失和氧还原（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>）的径向梯度在最小值点周围最强、向边缘减弱；以及（4）SPA 中完全没有年轻于约 15 亿年的熔岩。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="170.0" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="247.6" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >6 项能解释</text><rect x="325.3" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="441.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >9 项部分</text><rect x="558.2" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="571.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="584.1" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >主流科学</text><rect x="170.0" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="377.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >16 项吻合</text><rect x="584.1" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >LEF 模型</text><text x="390.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >绿色：能解释/吻合 · 橙色：部分 · 浅橙色：勉强 · 红色：完全不能</text></svg><figcaption>对 SPA 17 个异常的判决（B18）：每一方完全、部分、勉强或完全不能解释其中多少个。</figcaption></figure><h3 style="margin-top:28px">实验框：SPA 17 个异常（B1–B18）与势垒的总结（论文 08，B10–G 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>异常（B1–B17）</th><th>核心经验发现</th><th>主流科学的判决</th><th>LEF 模型（燃烧器）的判决</th></tr>
+<tr class="hl"><td><strong>B1. 环形山记录</strong></td><td>中心亏缺 0.51；最小值 45.4°S，197.9°E（0.45）；20–40 km 缺失（0.47）；浅 18% 而边缘高（1.35）</td><td><strong>完全无法解释</strong></td><td><strong>吻合</strong>（来自下方的热量使其松弛并抹除；压实地面上的高边缘）</td></tr>
+<tr><td><strong>B2. 形状与深度</strong></td><td>月球上最低的区域（6–9 km）；中心在薄月壳之外还有 −1.1 到 −1.8 km 的深度残差</td><td>能解释（借助重质量）</td><td><strong>吻合</strong>（穹顶塌陷 + 9–15 km 内孔隙压实）</td></tr>
+<tr><td><strong>B3. 薄月壳</strong></td><td>月球上最薄的月壳（南部 12–20 km，61°S，184°E）；阿波罗和智海上方的小穹顶</td><td>能解释（向南的斜向撞击）</td><td><strong>吻合</strong>（月壳从穹顶滑落 + 从下方熔化）</td></tr>
+<tr><td><strong>B4–B5. 两道月壳环</strong></td><td>外环（50°–55°）：东侧厚（+7.8 km），西侧缺失；内环（36.7°）：向东北偏移 118 km</td><td>部分解释（西侧无解释）</td><td><strong>吻合</strong>（东侧在厚高地壁前堆积，西侧就近堆积）</td></tr>
+<tr><td><strong>B6. 密度与孔隙度</strong></td><td>表面 19.7%，但 10 km 处中心闭合到 2.9%–4.4%，向边缘升高（7.1%–8.8%）</td><td>部分解释（撞击使岩石破碎，而非封闭孔隙）</td><td><strong>吻合</strong>（从中心向外的长期烘烤与压实）</td></tr>
+<tr><td><strong>B7–B9. 化学、稀少的熔岩与 Th 新月</strong></td><td>FeO 从 9.48% 降到 4.43%；平坦的 K/Th（451）；4.1% 可见熔岩；15° 内被掩埋的熔岩；西北的 Th 新月</td><td>能解释 / 部分解释</td><td><strong>吻合</strong>（熔融而不喷发 + 5.77 h 时的中央月海）</td></tr>
+<tr class="hl"><td><strong>B10–B13. 重质量、挥发分、氧与 KREEP</strong></td><td>南部 2.18 × 10¹⁸ kg 的质量；偏重的 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> 和 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span>（氧少 13 倍）；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>部分解释 / 能解释</td><td><strong>吻合</strong>（吸收了氧并就地富集的地球铁 + 反复洗脱）</td></tr>
+<tr class="hl"><td><strong>B14. 苏长岩中的金属</strong></td><td>42.47 亿年苏长岩中的 Fe–Ni 颗粒（Ni/Co = 8.5–11），在 38.73 亿年时被重置</td><td>能解释（撞击体物质）</td><td><strong>部分吻合——同位素检验将作出判定（Cr、Ti、Mo、Ru、Os）</strong></td></tr>
+<tr><td><strong>B15. 长期火山作用</strong></td><td>在 20 亿年间少量地持续活动（42.5 → 38.7 → 36–32 → 28–22 亿年）</td><td>勉强解释（需要两次事件和两个源区）</td><td><strong>吻合</strong>（附着阶段的燃烧器、38.73 亿年的分离与冷却尾声）</td></tr>
+<tr><td><strong>B16–B17. 磁性与漩涡</strong></td><td>中心空白（0.8% &gt; 5 nT）；峰值在尾随侧（西北 42%）；智海有漩涡（5.9 nT），莫斯科海则没有（1.3 nT）</td><td>部分解释</td><td><strong>吻合</strong>（中心被抹除 + 尾随侧的铁输运；在莫斯科海铁沉下去了）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>动力学参数 / 势垒（D 部分）</th><th>地球一天 5.50 小时（最大扁化）</th><th>地球一天 5.77 小时（本系列中的分离状态）</th></tr>
+<tr><td><strong>共转线半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>）</strong></td><td>15,883 km（检验粒子为 15,818 km）</td><td><strong>16,399 km</strong>（≈ 2.6 个地球半径）</td></tr>
+<tr class="hl"><td><strong>源区纬度处的势垒（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> km）</strong></td><td>25.2 MJ/kg</td>
+<td>26.2 MJ/kg</td></tr></table></div></section>
+<section>
+<a href="story17_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 17 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">太平洋的条带——梨形体的前壁与月球的镜像印记 →</p></div></a>
+<p style="margin-top:22px"><a href="story15_zh.html">← 第 15 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

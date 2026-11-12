@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 2 章：一天长度之争与角动量平衡 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 2 章：减速的梨形体与加速的地核之间的较量，释放时刻 5.77 小时的一天，在 1.007 处闭合的角动量账目，洛希极限与潮汐分水岭。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story02_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:left}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story02_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story02_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story02_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story02_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story02_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story02_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story02_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story02_he.html" hreflang="he">עברית</a> · <a href="story02_en.html" hreflang="en">English</a> · <a href="story02_de.html" hreflang="de">Deutsch</a> · <a href="story02_es.html" hreflang="es">Español</a> · <a href="story02_fr.html" hreflang="fr">Français</a> · <a href="story02_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 2 章</p>
+<h1>第 2 章：一天长度之争与角动量平衡</h1>
+<p>依据论文 02——LEF 机制原理（A.4–A.8 节及 B 部分）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：月球在奔向终点线时，终点线是否也在逃离它？</h2>
+<p class="lead">在上一章中，我们发现了物质要成为月球必须到达的终点线：<strong>共转半径</strong>，在起点（一天 5.5 小时）时它位于离地心 15,818 km 处。但过程一开始、梨形体向上延伸，一个耐人寻味的物理陷阱就出现了。</p>
+<p>角动量守恒定律告诉我们，一个孤立系统的总转动量不能凭空产生。当地球把一大块质量抬到远离自转轴的地方，并迫使它以同样的速率继续与自己一同转动时，上升的质量就从地球的自转中“偷走”了角动量。结果，地球的自转变慢、一天变长——<strong>而共转线本身也随之后退、向外移动！</strong></p>
+<p>由此产生了三个决定整个模型命运的关键问题：</p>
+<div class="three">
+<div><b>01</b><p>第一，<strong>一天的变长是否会把共转线推得太远</strong>，还是同时发生着某种内部过程，使自转加速并与之平衡？</p></div>
+<div><b>02</b><p>第二，<strong>早期地球的角动量总账是否足够</strong>支付抬升月球的“税”，并且仍然恰好留下今天地月系统中测得的角动量？</p></div>
+<div><b>03</b><p>第三，<strong>在分离的那一刻，是什么阻止了年轻的月球</strong>被地球巨大的潮汐力撕成碎片？</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：伸出一只手臂——同时收回另一只的花样滑冰运动员</h2>
+<p>我们都熟悉花样滑冰运动员原地旋转的经典画面：当她向两侧张开双臂时，旋转立刻变慢；当她把双臂收回贴近身体时，便以令人眩晕的速度旋转。原因在于，远离转轴的质量会增大转动惯量，而靠近转轴的质量则会减小转动惯量。</p>
+<p>现在想象一个特别的杂技动作：运动员<strong>同时做两个相反的动作</strong>——她用一只手向外伸出一根又长又重的杆子（向共转线延伸、试图让她减速的“梨形体”），同时又把先前远离转轴握着的一块沉重铁砣向身体中心收回（向地心下沉、使她加速的“地核”）。</p>
+<div class="box"><span class="tag">两股相反的力</span><p style="margin:0">由于这两股相反的力同时作用，运动员几乎没有损失她的转速！她只是略微减慢，并稳定在完成整套动作恰好所需的速率上。</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：为什么“均匀的内部”是一个门槛条件</h2>
+<p>许多地球演化模型倾向于假设，地球沉重的铁核早在月球形成之前就以最快的速度形成并沉入中心。但论文 02 表明，这样的假设会堵死角动量账目：当全部铁都集中在中心时，地球的转动惯量很小（惯量因子从均匀球体的 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> 降到今天已分异地球的 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span>），在同样 5.5 小时的一天下，它无法储存足够的角动量。</p>
+<p>相反，在 LEF 模型中，地核的组织不是一次事先就已结束的事件，而是<strong>一个单一的连续过程</strong>：</p>
+<ul class="pts">
+<li><strong>物质转移开始时：</strong>年轻的地球炽热、膨胀（热膨胀 120 km，处于允许范围 98–520 km 之内），质量分布仍几乎均匀（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>）。在这种状态下，它储存的初始角动量为 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>。</li>
+<li class="c"><strong>梨形体上升期间：</strong>沉重的铁逐渐向内沉入中心（在双层模型中：半径比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>，密度比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>），恰好产生了平衡梨形体延伸所需的自转加速！</li>
+</ul>
+<div class="callout"><span class="tag">角动量代价的关键</span>
+<p style="margin:0">在雅可比的经典分裂路径中（地球试图把自身表面加速到断裂点，一天 2.73 小时），系统需要 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>——也就是今天地月系统角动量的 <strong>2.74 倍</strong>（在原始参考点上是 4.08 倍）。而在 LEF 模型中，物质被送到共转线上，母体的初始账目是今天角动量的 <strong>1.007 倍</strong>——仅有 0.7% 的微小盈余（在所检验角度下作矢量相加则为 1.5%–2.5%），与后来被太阳潮汐带走的损失恰好吻合！</p></div>
+<div class="vs"><div><b>4.08</b><span>经典分裂 · 原始参考点</span></div><div><b>2.74</b><span>经典分裂 · 雅可比分岔点</span></div><div class="hit"><b>1.007</b><span>LEF 模型 · 在共转线上释放</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：一天长度之争、洛希极限与分水岭</h2>
+<p>让我们一步一步追踪梨形体上升时地球内部那场引人入胜的较量的结果：</p>
+<ol class="steps">
+<li><strong>梨形体试图让地球减速（+0.94 小时）：</strong>在共转中向外转移质量，在基本计算中让上升物质获得了约 15.6% 的角动量账目（在耦合解中约为 16.5%）。这些角动量取自地球的自转。如果梨形体单独起作用，没有地核的组织（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>），一天就会从 5.50 小时延长到 <strong>6.44 小时</strong>，共转线会跑到 <strong>17,569 km</strong>。</li>
+<li><strong>下沉的地核使地球加速（−0.67 小时）：</strong>与此同时，沉重的铁沉入地心（在双层情景中 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>），把一天缩短了 <strong>0.67 小时</strong>。</li>
+<li><strong>释放时刻的平衡点（5.77 小时与 16,399 km）：</strong>当两个过程共同作用时，地核带来的加速抵消了梨形体造成的大部分减速。分离时刻的一天只有 <strong>5.77 小时</strong>，共转线稳定在 <strong>16,331 km</strong>（检验粒子近似）或 <strong>16,399 km</strong>（≃ 16,400 km，在二体问题中计入月球自身质量时）。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">起点 · ⁦5.50 h⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">梨形体减速 · ⁦+0.94 h⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">地核加速 · ⁦−0.67 h⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed">释放时刻 · ⁦5.77 h⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">一天的长度（小时）</text></svg><figcaption>一天长度之争：梨形体单独作用会把一天延长到 6.44 小时；下沉的地核还回 0.67 小时，释放时刻的一天为 5.77 小时。</figcaption></figure>
+<div class="q">月球如何在洛希极限下幸存，并立即开始远离？</div>
+<p>在释放的那一刻，月球是一个圆而坚硬的天体（半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> km，密度 2,600 kg/m³）：它的近侧离地心 14,509 km（在赤道半径为 6,701 km 的扁平地球表面以上约 7,800 km），远侧位于 18,289 km。这个位置处于<strong>流体洛希极限</strong>（19,971 km）以内——在此距离内，地球的潮汐力会把一个柔软的流体球撕成碎片——但远在<strong>刚体洛希极限</strong>（10,314 km）以外。由于月球在仍附着于梨形体时就已完成了圆化，并形成了坚硬的外壳（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>），它的轴比至多为 1.04（几乎是完美的球体），因而完好无损地幸存下来！</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9,000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12,000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15,000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18,000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21,000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">月球</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:ltr;unicode-bidi:embed">地球 · 6,701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">刚体洛希极限 · 10,314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">共转线 · 16,399</text><text x="636.0" y="58.0" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:ltr;unicode-bidi:embed">流体洛希极限 · 19,971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">近侧 · 14,509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">远侧 · 18,289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">离地心距离（km）· 释放时刻的月球，半径 1,890 km</text></svg><figcaption>释放时刻月球在距离轴上的位置：在刚体洛希极限之外、流体洛希极限之内，共转线从它中间穿过。</figcaption></figure>
+<p>最后，它为什么会立即远离而不是落回？因为共转线是一条<strong>潮汐分水岭</strong>：恰好位于线上的天体处于中性平衡；位于线内的天体被潮汐向内拖拽；而<strong>稍稍越过这条线</strong>释放的天体——以越过共转线 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km 的余量释放，此时月球约 58% 的体积已经越过了它——会被比月球转得更快的地球潮汐隆起向前、向外推动，从第一圈轨道开始就远离地球！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>系统的角动量账目（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>）在初始状态与释放时刻之间守恒，并在地球自转与月球轨道之间分配：</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>角动量守恒</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">释放时刻的共转线（<span class="ltr">5.77 h</span>）</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>在分离时刻，月球轨道持有 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>（占账目的 17%，采用约化质量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span>；若以全质量绕地心计算则为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span>），地球自转持有 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>。此刻推导出的地球转动惯量因子为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span>——与双层结构（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>）的值 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> 惊人地吻合：</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">地球自转 · ⁦2.88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">月球轨道 · 17%</text></svg><figcaption>释放时刻角动量账目的分配。</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">双层惯量因子</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">刚体洛希极限</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：火星周围的火卫一和火卫二</h2>
+<p>共转线作为潮汐“分水岭”的想法并不是理论假设——它正在我们的太阳系中、在<strong>火星</strong>周围现场上演。火星有两颗小卫星，分别在火星共转半径（20,428 km）的两侧绕它运行：</p>
+<ul class="pts">
+<li class="c"><strong>火卫二（Deimos，外侧卫星，23,463 km）：</strong>位于火星共转线<em>之外</em>（它的公转比火星的自转慢）。因此火星的潮汐把它向外推，它正逐渐远离火星——就像我们在共转线外约 210 km 处被释放的月球一样。</li>
+<li class="a"><strong>火卫一（Phobos，内侧卫星，约 9,376 km）：</strong>位于共转线<em>之内</em>（它跑在火星自转的前面）。因此火星的潮汐使它减速并把它向内拉，它正逐渐坠向火星，将在数千万年后撞上火星表面。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">火卫一 · 9,376 km · 被向内拉</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">火星共转线 · 20,428 km</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">火卫二 · 23,463 km · 逐渐远离</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:ltr;unicode-bidi:embed">火星</text></svg><figcaption>火星周围的潮汐分水岭：火卫一在线内并被向内拉，火卫二在线外并逐渐远离。</figcaption></figure>
+<h3 style="margin-top:28px">实验框：一天的平衡、角动量与洛希极限（论文 02，B 部分）</h3>
+<div class="tw"><table class="lt2"><tr><th>阶段 / 参数</th><th>地球一天的长度</th><th>共转线半径</th><th>意义与账目分配</th></tr>
+<tr><td><strong>1. 起点</strong></td><td>5.50 小时</td><td>15,818 km</td><td>初始账目 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>）</td></tr>
+<tr class="r1"><td><strong>2. 梨形体单独延伸</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>）</td><td>6.44 小时（<span class="ltr">+0.94 h</span>）</td><td>17,569 km</td><td>由于 15.6%–16.5% 的角动量转移给上升物质而减速</td></tr>
+<tr class="r2"><td><strong>3. 地核下沉</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>）</td><td><span class="ltr">−0.67</span> 小时</td><td>被向内拉</td><td>一次加速（“收回双臂的滑冰运动员”），抵消了大部分减速</td></tr>
+<tr class="hl"><td><strong>4. 综合释放状态</strong></td><td>5.77 小时</td><td>16,399 km（检验粒子 16,331）</td><td>账目在今天的 1.007 倍处闭合（17% 在轨道，83% 在地球自转）</td></tr>
+<tr><td><strong>5. 释放余量与洛希极限</strong></td><td>5.77 小时</td><td>在线外 +210 km 处释放</td><td>刚性月球（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>，轴比 ≤ 1.04）位于刚体洛希极限（10,314 km）之外</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>我们已经证明，自然的力学允许这一切发生：角动量账目在 1.007 以内闭合，梨形体与下沉地核之间的较量把一天稳定在 5.77 小时，月球以坚硬、圆整的状态在共转线外被释放，并立即开始远离。</p>
+<p>但论文 02 只证明了这条路径<em>在原理上</em>是可行的。现在出现了执行层面的问题：<strong>是什么巨大的发动机，克服引力把数十亿吨岩石推到数千千米的高度？</strong>在下一章——<strong>第 3 章：内部的发动机——<span class="ltr">150 GPa</span> 的源压与起泡的岩浆</strong>（依据论文 03——<em>LEF 机制实践</em>）——我们将深入早期地球的内部，认识抬起月球的那股压力。</p>
+<a href="story03_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 3 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">内部的发动机——<span class="ltr">150 GPa</span> 的源压与起泡的岩浆 →</p></div></a>
+<p style="margin-top:22px"><a href="story01_zh.html">← 第 1 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

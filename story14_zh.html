@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 14 章：外部自转分异——两极收缩、薄的极区月壳与环形山尺寸检验 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 14 章：外部自转分异——极区面积的收缩、能量平衡、薄的极区月壳与环形山尺寸的保存。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story14_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story14_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story14_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story14_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story14_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story14_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story14_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story14_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story14_he.html" hreflang="he">עברית</a> · <a href="story14_en.html" hreflang="en">English</a> · <a href="story14_de.html" hreflang="de">Deutsch</a> · <a href="story14_es.html" hreflang="es">Español</a> · <a href="story14_fr.html" hreflang="fr">Français</a> · <a href="story14_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 14 章</p>
+<h1>第 14 章：外部自转分异——两极收缩、薄的极区月壳与环形山尺寸检验</h1>
+<p>依据论文 07——两极：为什么两极更密集（C.3–E 部分：收缩的几何、能量平衡、4 项检验与 5 项直径保存检验）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：如果两极收缩了一半——为什么两极之下的月壳更薄，而环形山本身没有缩小？</h2>
+<p>在第 13 章中我们看到，年轻的月球从一个扁平、拉长的天体（a : b : c ≈ 1.8 : 1.4 : 1）在体积收缩的同时变成了球形，而这一过程使两极的环形山变得密集（全部环形山群为 1.20 ± 0.05，60–100 km 的环形山为 1.53 ± 0.19）。但这里立即出现了<strong>三个关键的物理问题</strong>，如果得不到解答，整个模型就会垮掉：</p>
+<ol class="steps">
+<li><strong>极区月壳厚度的悖论：</strong>如果在圆化过程中极区面积缩小到原来面积的约 <strong>0.55 倍</strong>，极区外壳中的物质就被向内压缩，两极之下的月壳应当比赤道之下的月壳<em>更厚</em>！事实上，GRAIL 的测量显示恰恰相反：<strong>两极之下的月壳比赤道之下的更薄、更致密！</strong></li>
+<li><strong>环形山尺寸保存的悖论：</strong>如果两极的表面收缩了，为什么环形山本身没有随之收缩？如果环形山的直径缩小了，接近计数门槛（20 km）的环形山就会跌到门槛以下，把密度过剩完全抹掉！</li>
+<li><strong>能量与压力的发动机：</strong>在越过共转线之后，是什么物理发动机驱动了向内圆化——这次圆化施加在刚性外壳上的巨大压力（2–<span class="ltr">12 GPa</span>）又去了哪里？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：重新放平的一碗蜂蜜、收缩布单上的硬瓷砖，以及“外部自转分异”</h2>
+<p>三个简单的图景解开了这三个谜，并把它们统一为一个地球动力学过程：</p>
+<ul>
+<li><strong>一碗被倾斜后又放平的蜂蜜（引力发动机，§C.4）：</strong>当月球附着在地球上并快速自转（5.5 小时）时，离心力使两极在能量上比赤道“抬高”120 km（像一座能量山丘，轻物质从上面滑向赤道）。一旦质心越过共转线（15,818–16,399 km），梨形体底部的拉伸降为零，密度从 1,700 升到 2,600 kg/m³。月球的自引力突然压倒了自转——就像一个体重一下子翻倍、再也无法伸开双臂的花样滑冰运动员——两极立刻从“山顶”变成了“谷底”，所有物质都在自身重量下流向那里！</li>
+<li><strong>收缩橡胶布单上的硬瓷砖（保存环形山尺寸，§C.7、§D.2）：</strong>上部外壳已经冻结，坚硬到足以把环形山作为<strong>坚硬、完整的瓷砖</strong>承载，保持其原始直径，而环形山之间的弹性间隙闭合，并被吸收进月壳的结构中！</li>
+<li><strong>“外部自转分异”（§C.8、§D.6）：</strong>尽管发生了收缩，为什么今天两极之下的月壳更薄？因为在<strong>扁化阶段的数千万年间</strong>（在收缩开始之前！），快速自转使外壳的轻物质<strong>从两极向赤道</strong>向外流动，形成了一层<em>特别薄</em>的极区外壳。当圆化阶段到来时，这层薄外壳被向内压缩，成为<strong>一层薄而致密的极区月壳</strong>（仍比厚的赤道月壳薄！），而均匀落在被拉伸外壳上的环形山则被挤向两极中心！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：计算面积收缩（0.55×）与能量平衡（1.5 × 10²⁸ 焦耳）</h2>
+<p>论文 07 的 C.3 和 C.4 部分以数学精度量化了月面上每一点的面积变化，以及圆化期间能量和内部压力的释放：</p>
+<ol class="steps">
+<li><strong>结合体积下降的绝对面积收缩（§C.3.1）：</strong>从最大扁化（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³，等效半径 2,180 km，尺寸 5,585 × 4,628 × 3,191 km）过渡到分离时的球形天体（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>2</mn><mo separator="true">,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">\rho \approx 2,600</annotation></semantics></math></span></span> kg/m³，球体直径 3,778 km，半径 1,890 km），体积下降 <strong>1.53</strong> 倍，等效半径收缩 13%，平均表面积降至 <strong>0.75 倍</strong>。但由于三轴形状的变化（族中心为 1.75 : 1.45 : 1），这种变化并不均匀：
+<ul>
+<li><strong>极区面积（c 轴）：</strong>缩小到原面积的约 <strong>0.55 倍</strong>（最大收缩！）。</li>
+<li><strong>两侧面积（前导和尾随，b 轴）：</strong>缩小到 <strong>0.80 倍</strong>。</li>
+<li><strong>地球连线两端的面积（a 轴）：</strong>只缩小到 <strong>0.97 倍</strong>（最小收缩！）。</li>
+<li><strong>极冠（0.58×）与赤道带（0.86×）之比：</strong>面积比为 0.67×，因此两极的环形山密度跃升 1/0.67 = 1.49 倍！</li>
+</ul>
+</li>
+<li><strong>引力能的释放与内部加热（§C.4）：</strong>体积塌缩和圆化释放出两部分引力能，它们在月球内部转化为热量和静水压力：
+<ul>
+<li><strong>形状变化（偏心率）的能量：</strong>释放 <strong>2 × 10²⁷ 焦耳</strong>（结合能的 2.1%，约 3 × 10⁴ 焦耳/kg），平均增加约 <strong>30 开尔文</strong>的加热，使月核保持黏稠和可流动。</li>
+<li><strong>体积收缩（压缩）的能量：</strong>大七倍——释放 <strong>1.5 × 10²⁸ 焦耳</strong>（约 2.1 × 10⁵ 焦耳/kg），相当于平均加热 <strong>206 开尔文</strong>（热容 1 kJ/kg·K）。</li>
+</ul>
+</li>
+<li><strong>对刚性外壳的压力与月海喷发的供给（§C.4）：</strong>迫使一层坚硬的岩石外壳（刚性模量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">\mu \ge 10\text{ GPa}</annotation></semantics></math></span></span>）改变 10%–20% 的形状，会产生 <strong>2–<span class="ltr">12 GPa</span></strong> 的内部剪切应力——是岩石剪切强度（约 <span class="ltr">0.1 GPa</span>）的 20 到 120 倍。外壳并没有碎裂，而是通过<strong>月海的供给开口</strong>（论文 5）释放静水压力，这些开口以弹道飞行的方式把岩浆向外射出，形成返回物质的环形山（论文 6）！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Area change from peak flattening to sphere" style="direction:ltr"><rect x="200.0" y="16" width="332.6" height="26" rx="4" fill="#9aa3af"/><text x="540.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦0.97×⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >地球连线两端（a 轴）</text><rect x="200.0" y="56" width="274.3" height="26" rx="4" fill="#c47f2c"/><text x="482.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦0.80×⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >两侧（b 轴）</text><rect x="200.0" y="96" width="257.1" height="26" rx="4" fill="#5f9a6e"/><text x="465.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦0.75×⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >全球平均</text><rect x="200.0" y="136" width="188.6" height="26" rx="4" fill="#2f7d57"/><text x="396.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.55×⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >两极（c 轴）</text></svg><figcaption>从最大扁化过渡到分离时球体的面积变化：两极收缩得比任何其他区域都多，因此其上的环形山被挤在一起。</figcaption></figure><div class="callout"><span class="tag">外部自转分异——论文 07 的核心论述（§C.8、§D.6）</span><p style="margin:0">当年轻的月球附着在地球上并与之一同转动时，扁化使外壳的轻物质逐渐<strong>从两极流向赤道</strong>，在环形山均匀落下的数千万年窗口期内留下了一层薄的极区外壳。在最后阶段，随着天体圆化直到在共转线上分离，极区面积向内汇聚，环形山被挤在一起，而在两极之下留下了<strong>一层薄而致密的月壳</strong>，今天在 GRAIL 数据中测得！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：四项统计检验与五项环形山尺寸保存检验</h2>
+<p>论文 07 的 D 部分让圆化与收缩模型接受双重定量检验：首先通过<strong>四项主要的统计检验</strong>，其次通过<strong>五项补充的形态测量检验</strong>，检查环形山本身是否随地面在物理上缩小，还是被完整地保存下来：</p>
+<ol class="steps">
+<li><strong>检验 1——干净计数中的极/赤道密度比：</strong>两侧去除月海和 SPA 盆地之后，20 km 及以上环形山的总比值为 <strong>1.20 ± 0.05</strong>（95% 置信区间：1.10–1.30），并从 20–30 km 环形山的 1.09 连续上升到 60–100 km 的 1.53 ± 0.19 和 100–300 km 的 1.84 ± 0.38——<strong>通过</strong>。</li>
+<li><strong>检验 2——环形山直径的变化（两极大环形山丰富）：</strong>两极环形山的中位直径是赤道的 <strong>1.06</strong> 倍（95% 置信区间：1.01–1.12）——<strong>通过</strong>（证实两极富含大而古老的环形山）。</li>
+<li><strong>检验 3——年轻环形山（圆化之后形成）的分布：</strong>在两个独立的、在天体已圆化为球体之后才落下的年轻环形山样本中，测得的极/赤道比为 <strong>0.92 和 1.12</strong>（在 1.00 附近，没有显著的极区过剩）——<strong>符合预测</strong>。</li>
+<li><strong>检验 4——两极之间的完全对称：</strong>去除覆盖了南极一部分的 SPA 盆地之后，在 75°–90° 带中，北极每百万 km² 测得 <strong>300 个环形山</strong>，南极为 <strong>305</strong>（在 15° 圆冠中：300 对 305，比值 1.02，置信区间 0.78–1.32）——<strong>通过</strong>（在计数误差范围内完全相等）。</li>
+<li><strong>五项环形山直径保存的形态测量检验（§D.2）：</strong>检查（a）每相等面积单位中最大的环形山，（b）尺寸分布的形状（累积曲线），（c）古老与新鲜环形山的比较，（d）环形山边缘的椭圆度，以及（e）从简单到复杂环形山的过渡直径——<strong>四项检验明确证实环形山直径被完整保存，没有任何一项检验显示环形山本身有缩小的迹象</strong>！如果环形山随地面缩小，20 km 左右的环形山就会跌到计数门槛以下，把测得的密度过剩（1.20）完全抹掉。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>从三轴椭球体（a、b、c）过渡到半径为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_s = (abc)^{1/3}</annotation></semantics></math></span></span> 的等效球体时，法向为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">n</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat{\mathbf{n}} = (n_x, n_y, n_z)</annotation></semantics></math></span></span> 的地面单元面积的微分变化，以及偏心率为 e 的扁平椭球体的引力结合能 W，由以下方程给出（§C.3–C.4）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">[</mo><msubsup><mi>n</mi><mi>x</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>y</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>b</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>z</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>c</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J^{-1} = \left[n_x^2\left(\dfrac{R_s}{a}\right)^2 + n_y^2\left(\dfrac{R_s}{b}\right)^2 + n_z^2\left(\dfrac{R_s}{c}\right)^2\right]^{-1/2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><mi>c</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\rho_{\mathrm{polar}}}{\rho_{\mathrm{equatorial}}} = \dfrac{a}{c}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msup><mi>M</mi><mn>2</mn></msup></mrow><msub><mi>R</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mi>e</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">W = -\dfrac{3}{5}\dfrac{GM^2}{R_s}\dfrac{\arcsin(e)}{e}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≈</mo><mn>1.5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>28</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{compression}} \approx 1.5 \times 10^{28}\text{ J} \quad (\Delta T \approx 206\text{ K})</annotation></semantics></math></span></div></div></div>
+<p>由雅可比方程 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">[</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><msup><mo stretchy="false">]</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J(\lambda, \phi) = R_s^{-1}[\cos^2\lambda(a^2\cos^2\phi + b^2\sin^2\phi) + c^2\sin^2\lambda]^{1/2}</annotation></semantics></math></span></span> 立即可知，在两极（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_z = 1</annotation></semantics></math></span></span>）密度乘以 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">R_s/c</annotation></semantics></math></span></span>，在两侧（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_y = 1</annotation></semantics></math></span></span>）乘以 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">R_s/b</annotation></semantics></math></span></span>，在地球连线两端（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_x = 1</annotation></semantics></math></span></span>）乘以 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">R_s/a</annotation></semantics></math></span></span>——这恰恰是在六个轴端周围测得的密度顺序！</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：扁化在分离前消失，形状在远离后保持</h2>
+<p>在圆化阶段结束时，当质心越过共转线约 210 km（r ≈ 16,610 km）的那一刻，月球<strong>已经完全是球形且刚性的</strong>（最大轴比 ≤ 1.04，§C.1、§C.5），从地球上分离：</p>
+<ul>
+<li><strong>早期的扁化在分离之前（而非之后）就消失了：</strong>分离之后，当月球远离到 30,000 km（周期 14 小时）和 60,000 km（41 小时）时，潮汐力和自转力只在刚性天体上抬起了一个微小的弹性隆起（30,000 km 时轴比 1.03，60,000 km 时 1.00），而月球今天的<strong>“化石扁率”</strong>（f ≈ 0.001，在 16 个地球半径之前冻结）比附着阶段的三轴扁化（1.8 : 1.4 : 1）小数百倍。</li>
+<li><strong>闭合论文 05、06 和 07 之间的环：</strong>刚性外壳在圆化期间施加的同一 2–<span class="ltr">12 GPa</span> 的收缩压力，正是它通过月海的供给开口把岩浆推出（论文 05），射出造成巨大环形山的返回物质（论文 06），并把它们挤向位于薄而致密的极区月壳之上的两极（论文 07）！</li>
+</ul>
+<h3 style="margin-top:28px">实验框：面积收缩、能量与压力平衡以及 4 项检验的总结（论文 07，C.3–E 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>月面区域（最大扁化 1.75:1.45:1，1,700 kg/m³）</th><th>绝对面积变化（含体积下降）</th><th>圆化期间表面的位移</th><th>对环形山密度和月壳厚度的影响</th></tr>
+<tr class="hl"><td><strong>两极区域（c 轴，几何锚点）</strong></td><td><strong>0.55×</strong>（30° 圆冠中 0.58×）</td><td>稳定的锚点（极半径约 +290 km）</td><td><strong>最大密度（相对赤道 1.49×）</strong>，位于薄而致密的月壳之上</td></tr>
+<tr><td><strong>前导和尾随两侧（b 轴）</strong></td><td><strong>0.80×</strong></td><td>向内塌缩约 430 km</td><td>沿外围环带的中等密度</td></tr>
+<tr><td><strong>地球连线两端（a 轴，地下点和反地球点）</strong></td><td><strong>0.97×</strong></td><td>向内塌缩约 900 km</td><td>最小收缩——地下点的最小密度（148）</td></tr>
+<tr><td><strong>月面全球平均</strong></td><td><strong>0.75×</strong>（体积下降 1.53 倍）</td><td>等效半径从 2,180 降到 1,890 km</td><td>压缩能 1.5 × 10²⁸ J（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T \approx 206\text{ K}</annotation></semantics></math></span></span>）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>经验检验（D 部分）</th><th>定义与样本</th><th>测量结果</th><th>状态</th></tr>
+<tr class="hl"><td><strong>检验 1：极/赤道密度比</strong></td><td>干净计数（不含月海和 SPA），30° 圆冠对比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi|&lt;15^\circ</annotation></semantics></math></span></span></td><td><strong>1.20 ± 0.05</strong>（20–30 km 时 1.09 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 60–100 km 时 <strong>1.53</strong>）</td><td><strong>通过</strong></td></tr>
+<tr class="hl"><td><strong>检验 2：环形山中位直径</strong></td><td>比较两极与赤道的环形山大小</td><td>两极的中位数大 <strong>1.06</strong> 倍（置信区间 1.01–1.12）</td><td><strong>通过</strong></td></tr>
+<tr><td><strong>检验 3：年轻环形山（圆化之后）</strong></td><td>两个独立的后期环形山样本</td><td>比值 <strong>0.92 和 1.12</strong>（无极区过剩）</td><td><strong>符合预测</strong></td></tr>
+<tr class="hl"><td><strong>检验 4：两极之间的对称</strong></td><td>75°–90° 带和 15° 圆冠（不含 SPA）</td><td>北 <strong>300</strong> 对南 <strong>305</strong> 个/百万 km²（1.02）</td><td><strong>通过</strong></td></tr>
+<tr><td><strong>5 项环形山尺寸保存检验</strong></td><td>最大者、尺寸分布、古老/新鲜、椭圆度、向复杂环形山的过渡</td><td><strong>5 项中 4 项</strong>证实完整保存，<strong>0 项</strong>显示环形山缩小</td><td><strong>通过</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在第 13–14 章中，我们解开了月球两极之谜（<em>为什么两极更密集</em>）：我们发现，从扁平的三轴天体（1.8 : 1.4 : 1）过渡到刚性球体（3,778 km），如何在一层经历了“外部自转分异”的薄极区月壳之上，把两极压缩了 1.20–1.53 倍，同时完整保存了原始的环形山直径。</p>
+<p>但在第 13 章中，南极中心出现了一个意外的发现：<strong>南极–艾特肯盆地（SPA）</strong>——月球上最大、最神秘的盆地（2,400 km），在其核心（0°–10°）环形山密度降到每百万 km² 132 个！在 LEF 模型中，SPA 盆地究竟是什么？为什么它的形状是椭圆而不是圆形？它是如何形成的？在下一章——<strong>第 15 章：南极–艾特肯盆地（SPA）——分离的伤口，还是最大的撞击坑？</strong>（依据论文 08——<em>南极–艾特肯</em>）——我们将潜入这个巨大的盆地！</p>
+<a href="story15_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 15 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">南极–艾特肯盆地（SPA）——分离的伤口，还是最大的撞击坑？ →</p></div></a><p style="margin-top:22px"><a href="story13_zh.html">← 第 13 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

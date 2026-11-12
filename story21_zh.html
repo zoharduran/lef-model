@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 21 章：太阳系的卫星定律——诞生模式的标尺、泵原理与大气盖 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 21 章：太阳系的卫星定律——诞生模式的标尺、泵原理与大气盖。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story21_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story21_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story21_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story21_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <a href="story21_de.html" hreflang="de">Deutsch</a> · <a href="story21_es.html" hreflang="es">Español</a> · <a href="story21_fr.html" hreflang="fr">Français</a> · <a href="story21_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 21 章</p>
+<h1>第 21 章：太阳系的卫星定律——诞生模式的标尺、泵原理与大气盖</h1>
+<p>依据论文 11——11. 卫星的诞生：卫星诞生的统一机制（A–B 部分：诞生标尺、泵原理与盖原理、分异阶段以及 13 项检查的协议）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：一条物理定律能否解释太阳系中所有卫星的诞生——从地球到冥王星？</h2>
+<p>在前面的章节中，我们看到了地球如何在梨形体的顶端创造了月球（第 1–9 章），以及火星如何从尖锐隆起顶部的一座火山中抛出火卫一和火卫二（第 19–20 章）。在论文 11 中，LEF 模型把这两个案例推广为<strong>“卫星定律”</strong>——一个适用于太阳系中每一颗行星和矮行星的统一机制：</p>
+<ol class="steps">
+<li><strong>为什么卫星在大小和成分上差异如此之大？</strong>地球的月球干燥，且相对于母体巨大（地球质量的 1.2%）；巨行星（木星、土星、天王星和海王星）的卫星微小（0.01%–0.02%），富含水和冰；而卡戎占冥王星–卡戎系统质量的 11%！</li>
+<li><strong>为什么卫星的密度随离太阳的距离而下降——然后在天王星处又跳升？</strong>地球的月球密度为 3,344 kg/m³，木星的伽利略卫星约 2,600 kg/m³，土星的卫星约 1,350 kg/m³——但在更远的天王星，密度又回升到 1,505 kg/m³！</li>
+<li><strong>为什么在五颗行星（火星、木星、土星、天王星和海王星）中，小卫星分布在共转线的两侧？</strong>又为什么水星和金星完全没有卫星？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：共转线的距离标尺、收拢双臂的滑冰运动员，以及两锅盖着泡沫的汤</h2>
+<p>四个具体的图景解释了整个太阳系中卫星诞生的物理：</p>
+<ul>
+<li><strong>收拢双臂、外衣却向外鼓起的花样滑冰运动员（内部收缩与外部膨胀，A.5）：</strong>行星分异如何把共转线拉近表面？一个在不损失角动量的情况下均匀膨胀的天体会减速，把共转线推远。但分异在内部和外部是相反的过程：沉重的核（携带大部分质量）<strong>向内下沉并收缩</strong>，像收拢双臂的滑冰运动员一样加快自转，而轻的水和挥发分被向上推，<strong>使外层包层膨胀</strong>，几乎不减慢自转。因此共转线的相对距离按照 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> 缩小，并与表面相遇！</li>
+<li><strong>“流体动力泵”（泵原理，A.4）：</strong>重物质沉入核中，借静水压力把水和轻硅酸盐向上推到抛射开口（梨形体的顶端或隆起上的火山口）。只要泵在运转、地壳没有被封闭，<strong>诞生窗口</strong>就保持开放。</li>
+<li><strong>火上的两锅汤——厚泡沫盖对比薄泡沫盖（大气盖原理，A.4 &amp; A.9）：</strong>离太阳的距离决定了每颗巨行星在原行星盘消散之前俘获了多少氢和氦。土星（9.5 AU）有<strong>厚厚的气体包层（占质量的 70%–85%）</strong>，像水上的一个热力学盖子：蒸汽凝结并落回内部，上层保持饱含水分而柔软，共转线留在原位（1.92 R），被抛出的卫星轻而富含冰（1,346 kg/m³）。天王星（19 AU）有<strong>薄的气体盖（10%–20%）</strong>：蒸汽通过共转线逃入太空，带走了把共转线推到 3.24 R 的角动量，并使上部抛射层变干、变致密——这就是为什么天王星的卫星更致密（1,505 kg/m³）！</li>
+<li><strong>太阳系中的三种诞生模式（A.4、L.4）：</strong>在炽热干燥的内缘（地球），一颗大而干燥的卫星在梨形体的顶端被建造出来（<strong>建造</strong>）；在潮湿的中部区域（从火星到海王星），富含水的小卫星从隆起上的火山中被抛出（<strong>抛射</strong>）；而在寒冷快速的外缘（冥王星–卡戎），一个统一的天体被拉长成“花生”，并在腰部被撕开（<strong>分裂</strong>）。</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：诞生定律、状态标尺与分异的四个阶段（A 部分）</h2>
+<p>论文 11 的 A 部分表述了卫星定律的精确定量条件：</p>
+<ol class="steps">
+<li><strong>诞生模式的标尺（A.3）：</strong>如果以母体半径为单位测量共转线的半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>），母体的半径就会完全消去！位置 x <strong>只取决于自转速率与平均密度之比</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>），因此同一把标尺适用于宇宙中的每一个天体：
+<ul>
+<li><strong>梨形体（在梨形体顶端建造）：</strong>x ≈ 2.29（5.77 小时、密度 3,940 kg/m³ 的地球——月球占母体质量的 1.2%）。</li>
+<li><strong>隆起与火山（在隆起上抛射）：</strong>x ≈ 1.74–2.06（7–9 小时、密度 1,170 kg/m³ 的火星，以及气态和冰巨行星——0.01%–0.02% 的微小卫星）。</li>
+<li><strong>没有隆起的火山（理论上的可能性）：</strong>x ≈ 1.1–1.5。</li>
+<li><strong>完全的花生分裂（在颈部分裂）：</strong>x ≈ 0.85–1.02（越过伸长门槛 x = 1.53 到撕裂门槛 x = 1——1.9–2.5 小时的冥王星和卡戎，卡戎占二者质量的 11%）。</li>
+</ul>
+</li>
+<li><strong>卫星的成分是母体分异阶段的时间切片（A.9）：</strong>随着分异的推进，共转线向内移动（在木星和土星的早期），因此<strong>较远的卫星诞生得较早</strong>，较近的卫星诞生得较晚：
+<ul>
+<li><strong>阶段 0（分异开始——水的离心喷洒）：</strong>从洛希极限以上的外层喷洒出原始水 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 轻盈的冰卫星（土卫八 1,088 kg/m³，土卫七 544 kg/m³）。</li>
+<li><strong>阶段 1（早期——混合物质）：</strong>在分选完成之前，抛射出代表整个母体成分的物质 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 密度与母体内部天体相近的大卫星（f ≈ 0.6–0.7：木卫四 1,834，木卫三 1,936，土卫六 1,880，天卫三 1,711，天卫四 1,630 kg/m³）。</li>
+<li><strong>阶段 2（流体动力泵的峰值）：</strong>推出饱含水和轻硅酸盐的岩浆；挥发分逃入太空，留下高孔隙度（“海绵状”，30%–40%）和低密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 火卫一（1,860）、火卫二（1,470）、土卫三（984）、天卫五（1,200 kg/m³）。</li>
+<li><strong>阶段 3（分异结束）：</strong>抛射出干燥、致密、带有明确金属核的硅酸盐残余 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 木卫一（3,528 kg/m³）。</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 222" role="img" aria-label="以母体半径计的共转线位置" style="direction:ltr"><g transform="translate(227.0,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >梨形体顶端建造 · ⁦2.29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >隆起上抛射 · ⁦1.74–2.06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >无隆起的火山 · ⁦1.1–1.5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >花生分裂 · ⁦0.85–1.02⁩</text><text x="320.0" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >以母体半径计的共转线位置 · 红线：撕裂门槛</text></svg><figcaption>诞生模式的标尺：同一个数 x 决定了一颗卫星是在顶端被建造、从火山中被抛出，还是从花生上被撕下——适用于任何天体，与母体的半径无关。</figcaption></figure><div class="callout"><span class="tag">正确的密度比较——把内部天体与气体包层分开（A.9）</span><p style="margin:0">卫星诞生于内部天体（岩石和冰），而不是氢氦包层。当把卫星的平均密度分解为硅酸盐–金属组分（3,500 kg/m³）和冰组分（950 kg/m³）时，硅酸盐质量分数 f 从地球（f = 0.98，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>）经木星（f = 0.83，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>）逐渐降到土星（f = 0.36，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>）——又在天王星回升（f = 0.49，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>），因为天王星薄薄的气体盖（10%–20%）让水逃逸，使上部抛射层变干了！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：卫星定律的十六条（A.10）与 13 项检查的协议（B 部分）</h2>
+<p>论文 11 的 A.10 和 B 部分把所有物理条件统一为一个定律体系，以及一个对太阳系中每个天体都适用的、由 13 项检查组成的统一测量协议：</p>
+<ol class="steps">
+<li><strong>作为热力学时钟的太阳——诞生之弧（A.10.4 &amp; L.4）：</strong>卫星的诞生同时需要活跃的分异、开放的时间窗口、未封闭的地壳以及低黏度的地下层。离太阳的距离决定了这四个条件能同时保持多久：在内缘（水星和金星），快速变干使诞生窗口过早关闭，只有地球成功地在梨形体的顶端建造了一颗卫星；在中部区域（从火星到土星），卫星被大量抛出，直到土星处达到峰值（约 24 颗规则卫星）；而在寒冷的外缘（天王星、海王星和冥王星），地壳的冻结逐渐堵塞了泵的开口，使系统转向机械分裂。</li>
+<li><strong>结构竞赛与卫星质量的反馈（A.4、A.10.16）：</strong>要诞生一颗卫星，梨形体或隆起的径向生长速率必须超过共转线后退的速率。诞生之后，如果卫星与母体的质量比很大（像地球的月球，1.2%），卫星就带走大部分角动量（84%）并使母体减速；但在巨行星和火星中，卫星的质量微小（0.01%–0.02%，只占角动量的 0.4%–1.4%），因此共转线的任何后退<strong>都只来自水和气体通过这条线的逃逸（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>）</strong>！</li>
+<li><strong>13 项检查的系统协议（B 部分）：</strong>为避免偏差，每颗行星和矮行星都按时间顺序用 13 个固定参数进行检查：（1）全球基本数据；（2）目录以及规则卫星与被俘获卫星的区分；（3）古代自转的动力学复原（检查 3——使用诞生时的半径和转动惯量系数 k！）；（4）诞生定律的验证；（5）水与挥发分的分析；（6）今天的分异程度（k = C/MR²）；（7）诞生窗口的界定；（8）潮汐迁移的路径（检查 8——积分 da/dt，以判断是否需要来自环的二次推力）；（9）存活参数（洛希极限与希尔半径）；（10）母体上的形态痕迹；（11）卫星上的结构痕迹（孔隙度、潮汐锁定与冻结的隆起）；（12）把环系作为连续流的分析；以及（13）异常的隔离。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>以母体半径为单位的共转线位置（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>）、诞生之日（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>），以及分异期间内部收缩与外部膨胀的效应，表述如下（§A.3、§A.5、§B）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>由于转动惯量系数 k 在分异公式 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> 中以平方出现，k 从 0.40（均匀天体）降到 0.20–0.25（致密的核），即使外层包层膨胀 1.3 倍，也会把共转线 x 从 2.10 R 拉近到 1.44–1.68 R——这就是让表面与共转线相遇的地球动力学发动机！</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：共转线的复原与卫星的混合方程</h2>
+<p>对行星应用协议中的检查 3 和 5，揭示了卫星的化学成分与角动量守恒之间令人印象深刻的定量吻合（§A.9、§B）：</p>
+<ul>
+<li><strong>卫星密度的双组分混合方程（§A.9）：</strong>按公式 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span>，在分异阶段 1 诞生的大卫星的硅酸盐质量分数 f，在整个外太阳系收敛到一个狭窄而统一的范围 <strong>f ≈ 0.6–0.7</strong>（木卫四、木卫三、土卫六、天卫三、天卫四，以及冥王星–卡戎系统）！</li>
+<li><strong>不损失质量的共转线复原检验（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>，B 部分）：</strong>当只把卫星的角动量归还给母体时，在木星（2.29 R → 2.28 R）和土星（1.92 R → 1.90 R）共转线几乎不动（与厚盖原理一致）；在地球，共转线回到 2.29 R（因为月球携带了 84% 的角动量）；而在火星（6.03 R）、天王星（3.24 R）和海王星（3.39 R），共转线仍远离诞生范围（x ≈ 2）——证明在这三者中，都有大量的水和气体通过共转线逃逸了！</li>
+</ul>
+<h3 style="margin-top:28px">实验框：诞生模式的标尺、分异阶段、两锅模型与 13 项检查的协议（论文 11，A–B 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>诞生模式</th><th>抬升物质的机制</th><th>共转线位置（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>）</th><th>卫星/母体质量比</th><th>太阳系中的区域与例子</th></tr>
+<tr class="hl"><td><strong>1. 在顶端建造</strong></td><td>在行星梨形体顶端长期积累；越过该线时分离</td><td><strong>2.29</strong>（5.77 h，3,940 kg/m³）</td><td><strong>1.2%</strong>（大而干燥）</td><td>干燥的内缘：<strong>地球的月球</strong>（唯一的案例）</td></tr>
+<tr class="hl"><td><strong>2. 在隆起上抛射</strong></td><td>赤道隆起与注入饱含水岩浆的火山</td><td><strong>1.74–2.06</strong>（火星 7–9 h，1,170 kg/m³）</td><td>巨行星中 <strong>0.01%–0.02%</strong>（火星为 1.9 × 10⁻⁸）</td><td>潮湿的中部区域：<strong>火卫一、火卫二与巨行星的卫星</strong></td></tr>
+<tr><td><strong>2b. 没有隆起的火山</strong></td><td>从局部火山的点状抛射</td><td>≈ 1.1–1.5</td><td>微小</td><td>理论上的可能性（无计算实例）</td></tr>
+<tr class="hl"><td><strong>3. 完全分裂</strong></td><td>自转超过分裂门槛（x = 1）；拉长成花生并在腰部撕裂</td><td><strong>0.85–1.02</strong>（1.9–2.5 h，1,840 kg/m³）</td><td><strong>11%–12%</strong>（双重锁定）</td><td>寒冷的外缘：<strong>冥王星与卡戎</strong>（以及分裂之前的妊神星）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>母体的分异阶段（A.9）</th><th>地球动力学机制与开口处的物质</th><th>所形成卫星的性质</th><th>太阳系中的例子</th></tr>
+<tr><td><strong>阶段 0：分异开始</strong></td><td>从洛希极限以上的外层离心喷洒出水</td><td>密度极低的轻盈海绵状冰卫星</td><td>土卫八（1,088）、土卫七（544 kg/m³）</td></tr>
+<tr class="hl"><td><strong>阶段 1：早期</strong></td><td>代表整个内部天体成分的混合物质</td><td>大卫星，密度与内部天体相近（f ≈ 0.6–0.7），部分分异</td><td>木卫四（1,834）、木卫三（1,936）、土卫六（1,880）、天卫三（1,711）、天卫四（1,630）</td></tr>
+<tr class="hl"><td><strong>阶段 2：泵的峰值</strong></td><td>核的快速下沉推出饱含水和轻硅酸盐的岩浆</td><td>挥发分的逃逸造成“海绵状”（30%–40% 孔隙度）和低密度</td><td>火卫一（1,860）、火卫二（1,470）、土卫三（984）、天卫五（1,200 kg/m³）</td></tr>
+<tr><td><strong>阶段 3：分异结束</strong></td><td>几乎完全的分选；抛射出干燥、致密的硅酸盐残余</td><td>致密的硅酸盐卫星，完全干燥并带有金属核</td><td>木卫一（3,528 kg/m³）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在本章中，我们表述了 LEF 模型的<strong>卫星定律</strong>：以母体半径为单位的共转线位置（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>）、流体动力泵原理、大气盖原理（土星对比天王星的两锅模型），以及把共转线带到表面的核的收缩。</p>
+<p>在下一章——<strong>第 22 章：完整的行星巡览——从水星和金星到冥王星、妊神星和谷神星</strong>（依据论文 11——C–N 部分）——我们将逐颗行星地运行 13 项检查的协议：我们将发现为什么水星和金星没有卫星，土星的环如何作为平衡中的连续流运作，为什么天王星倾斜了 98°，海卫一如何作为来自柯伊伯带的花生瓣被俘获，并绘出太阳系的 12 个开放问题！</p>
+<a href="story22_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 22 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">完整的行星巡览——从水星和金星到冥王星、妊神星和谷神星 →</p></div></a><p style="margin-top:22px"><a href="story20_zh.html">← 第 20 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

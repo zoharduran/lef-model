@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 25 章：LEF 模型的基本要求（R1–R8）——同位素、月核、月壳、质心偏移与暴露区 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 25 章：基本要求 R1–R8——同位素、月核、月壳、质心偏移与暴露区。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story25_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story25_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story25_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story25_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story25_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story25_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story25_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story25_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story25_he.html" hreflang="he">עברית</a> · <a href="story25_en.html" hreflang="en">English</a> · <a href="story25_de.html" hreflang="de">Deutsch</a> · <a href="story25_es.html" hreflang="es">Español</a> · <a href="story25_fr.html" hreflang="fr">Français</a> · <a href="story25_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 25 章</p>
+<h1>第 25 章：LEF 模型的基本要求（R1–R8）——同位素、月核、月壳、质心偏移与暴露区</h1>
+<p>依据论文 13——13. 要求：机制强加了什么、月球拥有什么，以及什么仍未解决（A–B 部分及附录 A：要求 R1–R8、质量平衡与统计检验 T1–T5）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题与方法论：把形成环境与现代月球分开，并拒绝“累积分数”</h2>
+<p>在前面的章节中建立了地球梨形体、轨道以及卫星和环的定律的力学之后，<strong>论文 13（要求）</strong>让整个模型接受严格的方法论检验。为了防止统计偏差或把假设与测量混为一谈，模型设定了四条基本规则：</p>
+<ol class="steps">
+<li><strong>形成环境与现代月球之间的方法论划分：</strong>形成环境是一个柔软、炽热、快速自转的系统（T = 5.5–5.77 小时，初始质量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = M_E + M_L = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg，赤道半径 6,721 km）；而现代月球是一个经历了数十亿年冷却和晚期火山活动的冻结演化产物。在没有把二者联系起来的物理模型的情况下，不得把晚期的测量用作初始条件。</li>
+<li><strong>每项要求的三重结构，以及拒绝“累积分数”：</strong>每项要求由以下三者定义：（a）模型所要求的力学条件，（b）检验它的定量量度，以及（c）会被视为不符的结果。模型<strong>禁止把成功累加成加权分数</strong>，因为月壳厚度、质心偏移和月海是<em>同一个质量分布</em>的不同表现（把它们相加会把同一个事实计算两次），也是为了不让某一项要求中的不符被其他要求中的成功所掩盖。</li>
+<li><strong>推导结果、事后符合与预测之间的时间区分：</strong>论文严格区分<em>推导结果</em>（直接由方程得出）、与文献中已有观测相符的<em>事后符合</em>，以及尚未检验的独立<em>预测</em>。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：增厚的头盔、剥离的吸盘，以及封在熔岩中的瓶子</h2>
+<p>四个具体的图景说明了八项基本要求（R1–R8）以及它们背后的质量平衡：</p>
+<ul>
+<li><strong>增厚三倍的头盔（R3——月壳的不对称）：</strong>在梨形体头部升起的地球穹顶，携带着一层 18 km 厚的古老岩石圈外壳（密度 2,800 kg/m³），覆盖在一个底宽 6,000 km 的半球上（总质量 2.85 × 10²¹ kg，约占月球质量的 3.9%）。当穹顶变圆并在面积小三倍的背面半球上闭合时，质量守恒迫使它线性增厚三倍——达到 <strong>50–60 km</strong>（在 55 km 时预测质量为 2.6 × 10²¹ kg，在没有任何调参的情况下吻合约 10%！）。</li>
+<li><strong>从边缘向中心剥离的吸盘（R8——三个暴露区）：</strong>穹顶的区域（背面）从一开始就暴露在太空中，而底座则紧压在地球上。在圆化过程中，底座从边缘向中心抬起并剥离，就像吸盘从玻璃上脱落——因此中央接触穹顶<em>最后</em>暴露在太空中，恰好在共转线（16,399 km）上分离的那一刻。</li>
+<li><strong>手拉手的两位舞者（R4——从诞生起的同步锁定）：</strong>一个以机械方式附着在梨形体顶端的天体，每公转一圈恰好绕自身轴转一圈（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><msub><mi>ω</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\mathrm{rot}} = \omega_{\mathrm{orb}}</annotation></semantics></math></span></span>），因此它附着的一面甚至在分离之前就始终朝向母体。</li>
+<li><strong>封在橄榄石晶体中的瓶子（R6——挥发分的保存）：</strong>在地表之下被困在橄榄石晶体中的微小岩浆液滴（熔体包裹体），保存了它们原始的含水量（615–1,410 ppm），免于在喷发中脱气，就像一个封在岩石中的瓶子。</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：前八项要求（R1–R8）与统计检验（T1–T5）</h2>
+<p>论文 13 的 A 和 B 部分把八项要求（R1–R8）中的每一项都与最新的经验数据进行对照：</p>
+<ol class="steps">
+<li><strong>R1——与地球来源的接近（氧同位素）：</strong>精确的实验室测量（Young et al. 2016）显示，月球与地球之间的氧同位素差距为 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></strong>——在测量分辨率内统计上为零，正如一个完全由地球储库（深部地幔和硅铝层）建造的天体所要求的那样。综合的多体系平衡（O、Ti、Cr、W）被定义为一项开放任务。</li>
+<li><strong>R2——作为输运目标的微小金属核：</strong>阿波罗地震仪网络（Weber et al. 2011）测得一个半径 240 km 的固态内核和一个半径 330 km 的液态外核——约<strong>只占月球质量的 1.4%</strong>。对于深部物质份额 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">f_{\mathrm{int}} = 0.95</annotation></semantics></math></span></span>，平衡方程 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{\mathrm{core}} = f_{\mathrm{int}} X_{\mathrm{met}} \epsilon_{\mathrm{core}}</annotation></semantics></math></span></span> 设定了一个明确的流体动力学目标：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}} \epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span></strong>。</li>
+<li><strong>R3 和 R7——月壳的不对称与质心偏移：</strong>GRAIL 重力图（Zuber et al. 2013）证实，背面的月壳明显厚于正面（全球平均 34–43 km）。正面月壳是从结构底座剥离下来的地球硅铝（SiAl）层（质量 1.4–1.7 × 10²¹ kg）。计算不对称月壳的力矩积分（附录 A），对于 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>300</mn><mtext>–</mtext><mn>750</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 300\text{–}750</annotation></semantics></math></span></span> kg/m³ 的密度反差，给出向正面 <strong>1.24–3.11 km</strong> 范围内的质心偏移——包含了月球上的实测值（<strong>约 2 km</strong>，并在 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>≃</mo><mn>480</mn></mrow><annotation encoding="application/x-tex">\Delta\rho \simeq 480</annotation></semantics></math></span></span> kg/m³ 时与之完全吻合）。</li>
+<li><strong>R5——区分四座地质年代时钟：</strong>论文禁止把晚期玄武岩的年龄（时钟 3——例如正面 20 亿年的嫦娥五号样品和背面 28 亿年的嫦娥六号样品）与原始月壳的结晶年龄（时钟 1）进行比较。稳定的顺序只能通过比较两侧同一成因类型的原始月壳单元来测量。</li>
+<li><strong>R8——三个同心暴露区与 T1–T5 检验的运行：</strong>围绕正面的中心（在更新的几何中围绕位于 24.1°N、335.2°E 的接触中心——与地下点 0°、0° 的角偏差为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\gamma = 34.0^\circ</annotation></semantics></math></span></span>），月球表面排列成三个同心带：接触穹顶（0°–31°，最薄的月壳，强质量瘤，无负环）、边缘带（31°–70°，带负环的质量瘤盆地，例如东海），以及背面（70°–180°，厚月壳，无质量瘤的盆地）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：穹顶的质量平衡、头盔模型，以及暴露区对比 PKT 的判定</h2>
+<p>论文 13 的 B.3、B.7–B.8 部分和附录 A 表明，月球圆化的几何如何把月壳厚度、质心偏移和盆地带连成一个闭合的方程组：</p>
+<ol class="steps">
+<li><strong>端值与半球平均值之间的关键区分（§B.3）：</strong>在长波长的头盔模型 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></span> 中，接触轴上 30 km 的点端值（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 0^\circ</annotation></semantics></math></span></span>）和背面 60 km 的点端值（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 180^\circ</annotation></semantics></math></span></span>）给出基线 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">h_0 = 45</annotation></semantics></math></span></span> km 和振幅 A = 15 km。由于 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\cos\psi</annotation></semantics></math></span></span> 在半球上的面积加权平均等于 0.5，这个例子的半球平均值是 <strong>37.5 km 和 52.5 km</strong>（而不是 30 和 60 km！）。</li>
+<li><strong>背面与正面各自的质量平衡（§B.3）：</strong>地球的半球穹顶（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">h_s = 18</annotation></semantics></math></span></span> km，<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>s</mi></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\rho_s = 2,800</annotation></semantics></math></span></span> kg/m³，底座半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>h</mi></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">R_h = 3,000</annotation></semantics></math></span></span> km）携带 <strong>2.85 × 10²¹ kg</strong> 的质量（占月球质量的 3.9%）。当它在面积小三倍的背面半球上闭合时，它在约 10% 的精度内提供了 55 km 厚的背面月壳的质量（<strong>2.6 × 10²¹ kg</strong>，占月球质量的 3.5%）；而正面月壳（30–35 km，质量 1.4–1.7 × 10²¹ kg）是从结构底座剥离下来的地球硅铝层。</li>
+<li><strong>对 PKT 热异常假说的结构性判定（§B.8）：</strong>其他模型用单侧热异常（风暴洋 KREEP 地体——炽热的正面和寒冷的背面），或者用古老“地照”的辐射（Roy et al. 2014），来解释月球的两面性。LEF 模型预测了<strong>一个同心的三区结构</strong>，其中包括<em>一个中间边缘带</em>（31°–70°），<strong>带负环的质量瘤盆地</strong>选择性地集中在其中（例如西缘的东海和东缘的史密斯海），因为底座穹顶的边缘是从各个方向逐渐释放的。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>同心月壳厚度方程、有限厚度层 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><msub><mi>R</mi><mi>L</mi></msub><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b = R_L - h_0</annotation></semantics></math></span></span> 的质心偏移质量力矩积分（附录 A），以及接触中心空间偏差角 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 的计算，表述如下（§B.3、§B.7、附录 A）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>h</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msubsup><mi>R</mi><mi>h</mi><mn>2</mn></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>2.85</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>21</mn></msup><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_{\mathrm{shell}} = \rho_s h_s (2\pi R_h^2) = 2.85 \times 10^{21}\text{ kg}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>x</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msub><mi>M</mi><mi>L</mi></msub></mrow></mfrac></mstyle><mrow><mo fence="true">(</mo><msup><mi>b</mi><mn>3</mn></msup><mi>A</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mi>b</mi><msup><mi>A</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>≃</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><msub><mover accent="true"><mi>ρ</mi><mo stretchy="true">‾</mo></mover><mi>L</mi></msub></mfrac></mstyle><mi>A</mi></mrow><annotation encoding="application/x-tex">\delta x = \dfrac{4\pi\Delta\rho}{3M_L}\left(b^3 A + \dfrac{3}{5}b A^3\right) \simeq \dfrac{\Delta\rho}{\overline{\rho}_L}A</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>γ</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>1</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>8</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\cos\gamma = \cos(24.1^\circ)\cos(24.8^\circ) \implies \gamma = 34.0^\circ</annotation></semantics></math></span></div></div></div>
+<p>在力矩积分 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mi>δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mi>u</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>A</mi><mi>u</mi><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mtext> </mtext><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">M_L \delta x = \frac{\pi\Delta\rho}{2}\int_{-1}^{1} u(b+Au)^4\,du</annotation></semantics></math></span></span> 中，所有 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">u = \cos\psi</annotation></semantics></math></span></span> 的奇次幂项都消失，因此只有不对称分量（A）对把质心推向正面有贡献（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 500</annotation></semantics></math></span></span> kg/m³ 时为 +2.072 km），而任何对称的球层（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_0</annotation></semantics></math></span></span>、月幔和月核）都完全抵消。</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Centre-of-mass offset against crustal density contrast" style="direction:ltr"><line x1="70" x2="600" y1="204.6" y2="204.6" stroke="#ece7da"/><text x="62" y="208.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#ece7da"/><text x="62" y="131.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="600" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="62" y="54.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">3</text><text x="118.2" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="214.5" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="310.9" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><text x="407.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">600</text><text x="503.6" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">700</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">800</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="530.0" y="119.7" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >月球实测 · ⁦~2⁩ km</text><path d="M118.2,185.9 L310.9,122.2 L551.8,42.5" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="118.2" cy="185.9" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="127.2" y="201.9" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.243</text><circle cx="291.6" cy="127.7" r="5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="296.0" y="143.7" text-anchor="end" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.000</text><circle cx="310.9" cy="122.2" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="319.9" y="138.2" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.072</text><circle cx="551.8" cy="42.5" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="560.8" y="58.5" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">3.108</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >密度反差 Δρ（kg/m³）· 质心向正面的偏移（km）</text></svg><figcaption>有限厚度积分得到的质心偏移（附录 A）：1.24–3.11 km 的范围包含实测值，并在 Δρ ≈ 480 时与之吻合。</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：T1、T2 和 T5 检验的运行结果，以及质心偏移的校准</h2>
+<p>在 GRAIL 数据和 Robbins 环形山目录（≥ 20 km）上运行脚本，给出了前八项要求状态的透明而精确的图景（§B.7–B.9）：</p>
+<ul>
+<li><strong>轴检验和环形山密度检验的明确成功（T5 和 T2）：</strong>围绕地下点轴的斯皮尔曼相关 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>（p = 2 × 10⁻⁴）超过了所有其他对照轴（东缘 +0.76，风暴洋 +0.74，南极 +0.43，北极 −0.43），背面大环形山的密度是接触穹顶的 2.21 倍（在更新的几何中，包括月海为 8.42 倍，不包括月海为 4.15 倍）。</li>
+<li><strong>T1 门槛的透明记录与 T3–T4 的继续检验：</strong>在 T1 检验中，单调顺序在全部四个 GRAIL 模型中都成立，但模型 1 中的差值（9.65 km 和 9.9 km）比下限门槛（10 km）低 0.1–0.35 km，因此被记录为<em>未通过</em>，而盆地检验 T3 和 T4 被安排在复现包中进行完整的定量运行。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：八项基本要求（R1–R8）、暴露区检验（T1–T5）与质心偏移敏感性的总结（论文 13，A–B 部分及附录 A）</h3>
+<div class="tw"><table class="lab">
+<tr><th>要求</th><th>主题与物理要求</th><th>今天测得的经验发现</th><th>状态与开放任务</th></tr>
+<tr class="hl"><td><strong>R1</strong></td><td>与地球来源的接近（地幔 + 硅铝的混合）</td><td>氧同位素一致：<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></td><td><strong>吻合</strong>（开放：多体系平衡 O、Ti、Cr、W）</td></tr>
+<tr class="hl"><td><strong>R2</strong></td><td>微小的金属核（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}}\epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span>）</td><td>半径 330 km 的地震核（≈ 月球质量的 1.4%）</td><td><strong>吻合</strong>（开放：铁液滴输运的流体动力学模型）</td></tr>
+<tr class="hl"><td><strong>R3</strong></td><td>月壳不对称与穹顶的质量平衡（18 km）</td><td>厚的背面月壳；平衡 2.85 对 2.6 × 10²¹ kg（约 10%）</td><td><strong>吻合</strong>（开放：完整的空间剖面与正面硅铝的来源）</td></tr>
+<tr><td><strong>R4</strong></td><td>从在共转线上分离的那一刻起同步锁定</td><td>1:1 同步锁定，正面朝向地球</td><td><strong>吻合</strong>（开放：轨道中取向矢量的连续性）</td></tr>
+<tr><td><strong>R5</strong></td><td>热稳定的顺序（背面先于正面）</td><td>各自的晚期玄武岩（20 亿年和 28 亿年，时钟 3）</td><td><strong>吻合</strong>（开放：比较原始高地月壳中的时钟 1）</td></tr>
+<tr class="hl"><td><strong>R6</strong></td><td>存在降低黏度和密度的挥发分</td><td>橄榄石熔体包裹体中的水：615–1,410 ppm</td><td><strong>吻合</strong>（开放：通量与相的热力学模型）</td></tr>
+<tr class="hl"><td><strong>R7</strong></td><td>月壳与质心偏移之间的定量联系</td><td>实测向正面偏移约 2 km；模型范围 1.24–3.11 km</td><td><strong>吻合</strong>（开放：联合矢量反演）</td></tr>
+<tr><td><strong>R8</strong></td><td>三个同心暴露区（0°–31°–70°–180°）</td><td><strong>T5 通过</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>），<strong>T2 通过</strong>，<strong>T1 未通过</strong>（9.65–9.9 km）</td><td><strong>有待完成</strong>（盆地检验 T3 和 T4 以及环形山年龄的分类）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>密度反差 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\Delta\rho</annotation></semantics></math></span></span>（kg/m³）</th><th>薄壳近似下的质心偏移（km）</th><th>有限厚度积分下的质心偏移（km）</th><th>与大地测量观测（约 2 km）的吻合</th></tr>
+<tr><td>300</td><td>1.345</td><td>1.243</td><td>敏感性范围的下限</td></tr>
+<tr class="hl"><td><strong>500（校准时约 480）</strong></td><td><strong>2.242</strong></td><td><strong>2.072（480 时为 2.000）</strong></td><td><strong>与实测量级（2 km）完全吻合</strong></td></tr>
+<tr><td>750</td><td>3.362</td><td>3.108</td><td>敏感性范围的上限</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在本章中，我们审视了论文 13 的方法论框架和八项基本要求（<strong>R1–R8</strong>）——从同位素一致（−1 ± 5 ppm），经微小的月核（1.4%）、月壳平衡（2.85 对 2.6 × 10²¹ kg）和质心偏移（2.07 km），到在同心暴露区上运行统计检验 T1、T2 和 T5。</p>
+<p>在下一章——<strong>第 26 章：另外十项要求（R9–R18）、铪–钨时钟与 LEF 未来研究的地图</strong>（依据论文 13——C–D 部分及附录 B）——我们将完成整个体系：我们将审视梨形体的 7 项要求（R9–R15：太平洋的 LLVP 下部异常、KREEP 复合体、外来物质的缺失以及两极环形山的压实）、梨形体之后的 3 项要求（R16–R18）、放射性衰变时钟 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> 在 6 亿年窗口上的约束，以及留给研究者的 7 项开放任务！</p>
+<a href="story26_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 26 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">另外十项要求（R9–R18）、铪–钨时钟与 LEF 未来研究的地图 →</p></div></a><p style="margin-top:22px"><a href="story24_zh.html">← 第 24 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

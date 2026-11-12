@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 4 章：从外部升起的表皮——穹顶的 4 个阶段与月面的转译规则 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 4 章：地球的硅铝外壳如何随天体升起并成为月球的表皮，穹顶的四个阶段，以及把月面划分为三个区域的转译规则。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story04_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story04_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story04_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story04_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story04_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story04_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story04_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story04_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story04_he.html" hreflang="he">עברית</a> · <a href="story04_en.html" hreflang="en">English</a> · <a href="story04_de.html" hreflang="de">Deutsch</a> · <a href="story04_es.html" hreflang="es">Español</a> · <a href="story04_fr.html" hreflang="fr">Français</a> · <a href="story04_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 4 章</p>
+<h1>第 4 章：从外部升起的表皮——穹顶的 4 个阶段与月面的转译规则</h1>
+<p>依据论文 03——LEF 机制实践（B 部分：§B.1–B.7）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：背面厚厚的月壳从何而来——又是谁在上面刻下了古老的环形山？</h2>
+<p>在上一章中，我们发现了地球内部的发动机如何以 <span class="ltr">150.26 GPa</span> 的压力把深部起泡的岩浆向上推。但即使内部供给完美无缺，我们在望远镜里和 GRAIL 探测器的重力图上看到的月球表面仍留下三个大谜团：</p>
+<ol class="steps">
+<li><strong>为什么背面的月壳比正面厚得多？</strong>背面的月壳平均厚度约 55 km，而正面只有约 30–35 km，在大型月海之下更薄。</li>
+<li><strong>为什么月球最古老的环形山遍布两个半球，甚至在两极周围尤其密集？</strong>如果月球是在太空中由灼热的碎片盘聚合而成的，它最初的表面应该是一片光滑、没有环形山的岩浆海。</li>
+<li><strong>为什么两个半球看起来如此不同</strong>——正面布满暗色、圆形的玄武岩月海，而背面是明亮的、伤痕累累的高地？</li>
+</ol>
+<p>LEF 模型的回答简单得令人惊讶：<strong>月球不仅是从内部建造的——它同时也是从外部建造的</strong>。位于建造区上方的年轻地球的轻质外壳（<strong>硅铝层</strong>，sial）既没有被撕裂，也没有被留下；它<strong>随着正在发育的天体一同升起，滑到其顶端，成为月球的外层表皮！</strong></p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：在地面布单下鼓起的气球——以及缩小地图的球</h2>
+<p>为了想象地表上一层平坦的覆盖物如何变成一个具有三个明确区域的完整球体，请设想两个简单的实验：</p>
+<ul>
+<li><strong>在布单下鼓起的气球（阶段 1 和 2）：</strong>在地上铺一块厚实而柔韧的布单（代表地球外部的硅铝层），在它的中心下方接一根供气管。当管子向里泵入空气和物质时，布单不会平铺在地上——它会鼓起成一个穹顶，并从边缘向中心收拢，就像从中间被提起的桌布。布单平铺在地上时已经画在上面的每一个记号或刻痕（古老的环形山！）都会随之升到穹顶的顶部。</li>
+<li><strong>一个被压扁后又向外鼓起变圆的海绵球（阶段 3——转译规则）：</strong>拿一个半瘪的海绵球，从上方把它压在一个圆形支架的圆头上（“梨形体的顶端”）。球的下部像一顶宽帽子一样包住支架，上部则鼓起成穹顶。现在逐渐给球充气，使它变成一个完美的圆球：随着它向外变圆，<strong>它的下缘从外向内脱离支架</strong>，直到只剩底部中心的一小圈还粘在支架上——而球面的每一部分都恰好保持了它在表面积中的相对份额！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：外部建造的四个阶段——从太平洋的平原到起泡的穹顶</h2>
+<p>论文 03 的 B 部分一步一步地追踪地球的外部地壳层——<strong>硅铝层</strong>（Sial：一种富含硅和铝的轻质岩石，密度约 2,800 kg/m³），它位于密度更大的<strong>硅镁层</strong>（Sima：富含硅和镁）之上——经历的四个连续阶段：</p>
+<h3>阶段 1——平坦阶段与地壳的收拢（约 45 亿年前）</h3>
+<p>在天体升起之前，硅铝层平铺在一个活跃供给区上方的地表上。深部物质通过地壳中的开口上升并被抛出；一部分抛射物落回裸露的地壳上，在其中造成环形山（将在环形山各章中深入探讨）。其意义令人震惊：<strong>月球最古老的表面并不是在月球上形成的——它早在月球与地球分离之前，就在地球表面上形成了！</strong></p>
+<p>在论文给出的地理复原中，被向内收拢进穹顶的地壳物质来自古太平洋盆地所在的区域（面积约 1.0–1.65 × 10¹⁴ m²，是下一阶段上部穹顶面积的 1.4 到 2.4 倍）。梨形体的底座位于东方，靠近基里巴斯的基里蒂马蒂岛（1.9°N，157.5°W），在地幔底部的低速区之上；由于地球自转和来自赤道以北的斜向供给，梨形体向后（向西）并向北倾斜，指向北纬 22.5°。</p>
+<h3>阶段 2——梨形体顶端上被压扁的天体（起泡状态）</h3>
+<p>当月球的全部质量（7.35 × 10²² kg）在梨形体顶部积累完毕时，它并不是作为一个自由的球体漂浮，而是作为一个由两个穹顶组成的扁平天体，坐落在一个宽达 <strong>6,000 km</strong> 的宽阔梨形顶端上：</p>
+<ul>
+<li><strong>下部穹顶（占表面积的 33%）：</strong>从上方紧贴梨形体凸起的顶端（其曲率半径约 4,000 km，伸入天体底部约 1,350 km）。</li>
+<li><strong>上部穹顶（占表面积的 67%）：</strong>升到接触边缘以上约 <strong>3,650 km</strong> 的高度，暴露在太空中。</li>
+</ul>
+<div class="callout"><span class="tag">形状与压力之间的完美联系（密度 1,300 kg/m³）</span><p style="margin:0">在 6,000 km 的底座上、穹顶高 3,650 km 时，天体的总体积为 5.65 × 10¹⁹ m³（是今天月球体积的 2.5 倍）。用月球质量除以这个体积，得到 <strong>1,300 kg/m³</strong> 的密度——恰好是第 3 章的压力检验为抬升物质所要求的、富含气泡的起泡岩浆的密度！高耸的穹顶不仅与内部发动机相匹配，它还在硅铝层与硅镁层之间一层“润滑的”弱剪切层上被向上托起，而一层寒冷、坚硬的外壳（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>）保护着其上的环形山免于坍塌。</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：转译规则、月海的暴露与月壳的分层建造</h2>
+<p>当上升天体的自引力压倒了局部的潮汐拉伸时，天体便进入<strong>阶段 3——向外圆化</strong>：扁平的天体在体积不变的情况下鼓起并圆化成球体（表面积缩小为 0.68 倍，正如球体在给定体积下拥有最小的表面积）。与梨形体的接触从 6,000 km 宽收窄为 <strong>3,000 km</strong> 的连接盘，下部穹顶的其余部分则连同其所坐落的硅铝层一起，逐渐从外向内脱离。</p>
+<p>由此得出<strong>几何转译规则</strong>：在向外圆化的过程中，<strong>每一部分都保持其在表面积中的相对份额</strong>。因此，月面围绕接触中心（24.1°N，335.2°E）被划分为三个同心区域：</p>
+<ol class="steps">
+<li><strong>正面帽区（0°–31°，约占面积 7%——直径约 1,900 km）：</strong>这是一直附着在梨形体上直到释放时刻的最后接触盘（3,000 km）。中央的内部供给通道穿过这里——<strong>澄海</strong>（最先脱离）和<strong>雨海</strong>（一直附着到最终分离的那一刻！）。</li>
+<li><strong>剥离带（31°–70°，约占面积 26%）：</strong>这是下部穹顶在向外圆化过程中逐渐剥离的环带，它带走了其所坐落的硅铝层。</li>
+<li><strong>背面（70°–180°，约占面积 67%）：</strong>这是从一开始就暴露在太空中的上部穹顶，它把古老的环形山一起带了上去。</li>
+</ol>
+<figure class="fig"><div class="zones"><svg viewBox="0 0 300 300" role="img" aria-label="Equal-area map of the three zones around the contact centre" style="direction:ltr"><circle cx="150" cy="150" r="130" fill="#d9d2bf" stroke="#8a846f"/><circle cx="150" cy="150" r="74.6" fill="#c9b48a"/><circle cx="150" cy="150" r="34.7" fill="#4a5568"/><circle cx="150" cy="150" r="34.7" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="150" r="74.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="150.0" y="155.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">7%</text><text x="150.0" y="100.3" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">26%</text><text x="150.0" y="52.7" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">67%</text><text x="188.7" y="160.9" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#fff" style="direction:ltr;unicode-bidi:embed">31°</text><text x="228.6" y="168.6" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">70°</text></svg><div><ul class="pts" style="margin:0">
+<li style="border-color:#4a5568"><strong>正面帽区 · <span class="ltr">0°–31°</span> · 7%</strong><br>最后的接触盘；澄海与雨海</li>
+<li style="border-color:#c9b48a"><strong>剥离带 · <span class="ltr">31°–70°</span> · 26%</strong><br>随硅铝层一起剥离的下部穹顶环带</li>
+<li style="border-color:#a49d86"><strong>背面 · <span class="ltr">70°–180°</span> · 67%</strong><br>上部穹顶，从一开始就暴露在太空中</li></ul></div></div><figcaption>等面积地图上围绕接触中心（24.1°N，335.2°E）的三个区域：地图上每个环的面积等于其在月球表面中所占的份额。</figcaption></figure><p>在<strong>阶段 4</strong>（自转造成的扁化以及天体被压实时的向内圆化）中，坚硬的月壳保持了已有环形山的大小，而它们之间的表面相互靠拢——这使得环形山在两极周围变得密集。与此同时，在整个旅程中，活跃开口不断射出物质并使其回落到上部穹顶上：背面厚厚的月壳就是这样<strong>一层又一层</strong>建造起来的，由迁移到顶端的硅铝层和一次又一次回落其上的物质构成！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>从扁平穹顶到具有三个同心带的球体的转变，由表面积比例的守恒所定义（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_i = A_i / A_{\mathrm{tot}}</annotation></semantics></math></span></span>）。对于一个从接触中心起中心角为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的球冠，它在整个球面积中的相对份额（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\pi R^2</annotation></semantics></math></span></span>）为：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi></mrow><mn>2</mn></mfrac></mstyle><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>θ</mi><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\theta) = \dfrac{2\pi R^2(1 - \cos\theta)}{4\pi R^2} = \dfrac{1 - \cos\theta}{2} \quad \Longrightarrow \quad \theta = \arccos(1 - 2f)</annotation></semantics></math></span></div></div></div>
+<p>代入阶段 2 的面积份额（3,000 km 接触盘为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>0.07</mn></mrow><annotation encoding="application/x-tex">f_1 = 0.07</annotation></semantics></math></span></span>，整个 6,000 km 下部穹顶为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">f_1 + f_2 = 0.33</annotation></semantics></math></span></span>），立刻得到月球上的精确角度：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≃</mo><mn>3</mn><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_1 \simeq 31^\circ</annotation></semantics></math></span></span></strong> 和 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>2</mn></msub><mo>≃</mo><mn>7</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_2 \simeq 70^\circ</annotation></semantics></math></span></span></strong>。与此同时，月壳的质量平衡完全闭合：背面月壳（平均厚度 55 km，密度 2,550 kg/m³）重约 2.6 × 10²¹ kg（占月球质量的 3.5%），正面月壳（30–35 km）重约 1.5 × 10²¹ kg——二者合计约占月球质量的 4%–6%，其余 94%–96% 是从内部供给的深部地幔物质。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：GRAIL 月壳厚度图与月海的嵌套</h2>
+<p>当把几何转译规则的两个圆（以 24.1°N、335.2°E 为中心的 31° 和 70°）画在 <strong>GRAIL</strong> 探测器测得的真实月壳厚度图和 <strong>LOLA</strong> 地表地形图上时，出现了惊人的吻合：</p>
+<ul>
+<li><strong>月海精确的地理嵌套：</strong>外圆（建造时为 6,000 km）包含了正面全部玄武岩月海的 <strong>99%</strong>；内部接触圆（3,000 km）包含其中的 <strong>66%</strong>；而雨海恰好位于内部接触圆之内。</li>
+<li><strong>两侧之间月壳厚度的反转：</strong>在正面中心、那些曾作为供给开口并因接触的高温而失去硅铝层的月海之下，月壳特别薄（在 GRAIL 图中呈蓝色）；而在 70° 界线以外的背面，耸立着古老而厚实、分层建造的高地。</li>
+<li><strong>对成分随深度变化的预测：</strong>由于地球内部的分选随时间推进，铺在背面月壳底部的最早层分选程度较低、富含铁，而上部较晚的层轻而贫铁——这一预测可以在撞击坑的中央峰中直接检验，因为中央峰暴露了来自不同深度的岩石！</li>
+</ul>
+<h3 style="margin-top:28px">实验框：穹顶的 4 个阶段、转译规则与月壳平衡（论文 03，B 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>建造时的区域（阶段 2）</th><th>表面积</th><th>相对份额</th><th>月球上距接触中心的角度</th><th>今天月球上的地理身份</th></tr>
+<tr class="hl"><td><strong>接触盘（3,000 km）</strong></td><td>7.3 × 10¹² m²</td><td><strong>7%</strong></td><td><strong>0° – 31°</strong></td><td>正面帽区（直径约 1,900 km）；包含 66% 的月海（澄海与雨海）</td></tr>
+<tr><td><strong>剥离环（至 6,000 km）</strong></td><td>2.7 × 10¹³ m²</td><td><strong>26%</strong></td><td><strong>31° – 70°</strong></td><td>过渡带——从梨形体上剥离的硅铝层；与帽区合计包含 99% 的月海</td></tr>
+<tr><td><strong>上部穹顶（高 3,650 km）</strong></td><td>7.0 × 10¹³ m²</td><td><strong>67%</strong></td><td><strong>70° – 180°</strong></td><td>背面——由硅铝层和回落物质层构成的厚月壳（约 55 km），环形山古老</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>天体状态（月球质量不变）</th><th>几何形状与尺寸</th><th>总体积</th><th>平均密度</th></tr>
+<tr><td><strong>在梨形体顶端（阶段 2）</strong></td><td>底座 6,000 km，穹顶高 3,650 km</td><td>5.65 × 10¹⁹ m³</td><td><strong>1,300 kg/m³</strong>（起泡状态）</td></tr>
+<tr><td><strong>释放时刻的球体（阶段 4）</strong></td><td>半径 1,890 km</td><td>2.83 × 10¹⁹ m³</td><td><strong>2,600 kg/m³</strong>（刚性外壳）</td></tr>
+<tr><td><strong>今天的月球</strong></td><td>半径 1,737 km</td><td>2.20 × 10¹⁹ m³</td><td><strong>3,344 kg/m³</strong>（已压实）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>我们看到了地球的外层表皮如何随天体升起、逐渐剥离，并把自己组织成月面的三个环带——以及内部供给与外部穹顶的结合如何造成了正面与背面之间的厚度差异。</p>
+<p>但现在还剩下最精妙、最富戏剧性的工程问题：<strong>是什么样的桥梁把这个穹顶与地球相连，而不会在北纬 22.5° 的剪切应力下断裂？它又是如何恰好在共转线外 210 km 处分离的？</strong>在下一章——<strong>第 5 章：梨形体与斯特藩释放——承载月球并恰好在共转线上断开的桥梁</strong>（论文 03，C 部分：§C.1–C.6）——我们将审视分离机制本身。</p>
+<a href="story05_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 5 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">梨形体与斯特藩释放——承载月球并恰好在共转线上断开的桥梁 →</p></div></a><p style="margin-top:22px"><a href="story03_zh.html">← 第 3 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

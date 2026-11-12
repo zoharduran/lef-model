@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 8 章：月海究竟是什么？——供给开口、73 个重力穹顶与像冰冻湖面一样下沉的底部 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 8 章：月海的四个组成部分，在 GRAIL 重力图中发现的 73 个供给穹顶（其中 44 个被掩埋，大多在背面），以及在中心下沉的平坦底部。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story08_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story08_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story08_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story08_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story08_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story08_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story08_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story08_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story08_he.html" hreflang="he">עברית</a> · <a href="story08_en.html" hreflang="en">English</a> · <a href="story08_de.html" hreflang="de">Deutsch</a> · <a href="story08_es.html" hreflang="es">Español</a> · <a href="story08_fr.html" hreflang="fr">Français</a> · <a href="story08_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 8 章</p>
+<h1>第 8 章：月海究竟是什么？——供给开口、73 个重力穹顶与像冰冻湖面一样下沉的底部</h1>
+<p>依据论文 05——月海（A–F 部分：研究 1–7 和 16）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：月球为什么有两张面孔——背面的月海藏在哪里？</h2>
+<p>任何人哪怕只用一副简单的双筒望远镜看月亮，也会立刻注意到塑造了“月亮里的人”的鲜明反差：始终朝向地球的<strong>正面</strong>布满了暗色、圆形的广阔区域（“月海”——拉丁语 <em>Maria</em>，因为古人以为那是海洋），而<strong>背面</strong>明亮、伤痕累累，几乎没有暗斑。</p>
+<p>公认的文献把每一个月海解释为两个彼此无关的独立事件：先是一颗巨大的小行星撞击月球，挖出一个深盆地；数亿年后，暗色的玄武岩熔岩从月幔中喷出，淹没了这个盆地。按照这个定义，月海只不过是<strong>一片暗色玄武岩的表面</strong>。</p>
+<p>但当检查 GRAIL 探测器的精确重力图时，出现了一个从根本上动摇这个故事的谜：在背面明亮的表面之下，隐藏着<strong>数十个圆形、致密、重力过剩的天体</strong>——它们在大小和强度上与正面巨大月海之下的那些完全相同，但表面却没有任何暗色玄武岩！这些隐藏的天体是什么？背面看起来没有月海，是否只是因为我们看的是它的颜色？</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：田野中被覆盖的水井，以及熔岩湖上冻结的外壳</h2>
+<p>为了理解论文 05 在月海定义上提出的转变，请想象两个简单的图景：</p>
+<ul>
+<li><strong>火山口中的熔岩湖：</strong>俯瞰一座死火山的火山口，你会看到一片暗色、冻结的岩石表面。这层暗色外壳并不是山本身——它只是流动停止后从上方冻结的最后一层。在它下面是熔岩曾经上升的深部火山通道。完全一样，<strong>月面上的暗色玄武岩并不是月海——月海是月球赖以建造的开口</strong>，玄武岩只是在开口顶部冻结的最后一层外壳！</li>
+<li><strong>两侧都有活跃水井的田野——当其中一侧被泥土覆盖时：</strong>想象一大片田野，里面挖了几十口井。在田野的一侧（正面），水井一直开着直到建造结束，因此可以看到井里暗色的水面。在田野的另一侧（背面），水井更早关闭，并被一层厚厚的明亮泥土铺平。只数“暗色水斑”的人会以为只有一侧有井——但一台测量地下的仪器会发现，被覆盖的一侧<strong>井更多</strong>！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：区分概念并清点 73 个供给穹顶</h2>
+<p>论文 05 的 A–D 部分把“月海”一词拆分为四个清晰的物理组成部分，自下而上：</p>
+<ol class="steps">
+<li><strong>供给穹顶：</strong>一个富含铁和钛的致密体，从地下焦点被向上推，抬升其中心并加宽其边缘。供给结束时，穹顶冻结成一个致密体，对 GRAIL 探测器的引力更强——这就是在重力中测得的<strong>质量瘤</strong>（mascon，质量集中区）。</li>
+<li><strong>开口：</strong>外壳中流动的低黏度区，物质通过它上升到地表。通过大多数开口，物质被向外射出并落回月球形成环形山（<strong>出口开口</strong>）；而通过位于与地球接触盘之内的<strong>雨海</strong>和<strong>澄海</strong>，压力和物质向内传入月球，而不向外射出（<strong>供给口</strong>）。</li>
+<li><strong>月海玄武岩：</strong>在开口顶部冻结的最后一层。相反，下方没有供给穹顶的广阔玄武岩表面——例如<strong>风暴洋</strong>、静海和丰富海——并不是结构意义上的“月海”，而是被附近地球的热量<strong>就地熔化的地壳平原</strong>！</li>
+<li><strong>盆地：</strong>环绕开口的隆起边缘——由开口本身向周围射出的炽热物质一层又一层地堆建而成。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of a mare: dome, opening, basalt, basin rim" style="direction:ltr"><rect x="0" y="120" width="640" height="110" fill="#e6dcc6"/><path d="M60,120 Q150,70 230,105 L410,105 Q490,70 580,120 Z" fill="#d6c7a4"/><path d="M220,230 Q320,120 420,230 Z" fill="#7a5a3a"/><path d="M270,152 Q320,118 370,152 L360,108 L280,108 Z" fill="#c4623a" opacity=".85"/><rect x="232" y="100" width="176" height="9" fill="#3a3f4a"/><text x="320.0" y="212.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >供给穹顶（质量瘤）</text><text x="320.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >开口</text><text x="320.0" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#3a3f4a" style="direction:ltr;unicode-bidi:embed" >玄武岩——最后冻结的外壳</text><text x="120.0" y="62.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#6b5a2a" style="direction:ltr;unicode-bidi:embed" >盆地：由射出物质堆成的边缘</text><line x1="120" y1="68" x2="140" y2="88" stroke="#6b5a2a"/></svg><figcaption>月海的四个组成部分，自下而上：供给穹顶、开口、玄武岩和盆地。（示意图。）</figcaption></figure><div class="callout"><span class="tag">重力中的决定性发现（研究 1、3 和 4）</span><p style="margin:0">当在 GRAIL 重力图（布格异常，6–660 阶）上自动扫描每一个直径 100 km 以上、强度 50 mGal 以上的圆形致密体时，月面上出现了 <strong>73 个供给穹顶</strong>：
+<br>• 在重力梯度图上识别出的 <strong>34 个月海中有 33 个</strong>恰好坐落在 73 个穹顶之一上（在 20,000 次随机运行中，没有一次达到 33！）。唯一不坐落在穹顶上的是<strong>智海</strong>，它的穹顶被南极–艾特肯盆地之下的巨大热量“烤”掉并抹去了。
+<br>• 在 73 个穹顶中，25 个位于开放的月海之下，4 个部分被覆盖，<strong>44 个穹顶完全被埋在明亮的高地之下</strong>——<strong>其中 36 个在背面</strong>！也就是说，背面的<strong>供给穹顶比正面更多（40 对 33）</strong>。
+<br>• <strong>月壳台阶（平均 17 km）：</strong>在开口中心之下，月壳比周围环带薄 8–29 km（中位数 17 km）（在 36 个已标记的开口中有 29 个如此，而在普通撞击坑中只有 2%）——证明是穹顶从下方推挤和抬升，而不是来自上方的外部撞击。
+<br>• <strong>被掩埋穹顶上的覆盖层：</strong>在 44 个被掩埋的穹顶之上，铁含量（−0.19 wt%）和钍含量（+0.05 ppm）与周围地面完全相同，而月壳厚 <strong>8–13 km</strong>——这正是覆盖了背面古老开口及其环形山的后期层的厚度！</p></div>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="73 feed domes by side and by cover" style="direction:ltr"><rect x="20.0" y="20" width="205.5" height="34" fill="#4a5568"/><text x="217.5" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >开放月海之下 · 25</text><rect x="225.5" y="20" width="32.9" height="34" fill="#8a94a6"/><rect x="258.4" y="20" width="361.6" height="34" fill="#c9b48a"/><text x="612.0" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed" >埋在高地之下 · 44</text><text x="241.9" y="74.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed" >部分 · 4</text><rect x="20.0" y="96" width="271.2" height="34" fill="#1f3a5f"/><text x="283.2" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >正面 · 33</text><rect x="291.2" y="96" width="328.8" height="34" fill="#a49d86"/><text x="612.0" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >背面 · 40（其中 36 个被掩埋）</text><text x="320.0" y="158.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >GRAIL 扫描中的 73 个供给穹顶——按覆盖（上）和按侧面（下）</text></svg><figcaption>背面的供给穹顶比正面多；其中大多数被埋在明亮的高地之下，因此看起来不像月海。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：冰冻湖面般的底部、中心的下沉与射出物质的领圈</h2>
+<p>一旦通过月海的供给停止，月海的底部会发生什么？为什么它的形状像一个被隆起边缘环绕的下沉盆地？论文 05 的 E 和 F 部分揭示了四种可测量的几何现象：</p>
+<ol class="steps">
+<li><strong>像冰冻湖面一样的单一水平面（研究 6）：</strong>在重力作用下静止的流体无法保持斜坡——它会沉降到单一的均匀水平面，并以这种方式冻结。在精确的高程测量（SLDEM2015）中，<strong>16 个大型月海底部中的 16 个</strong>（以及 189 个已测绘玄武岩单元中的 188 个）都显示出<strong>单一的高程水平</strong>，深深低于月海边缘（中位数 3.4 km，偶然概率为 1/65,000），也低于周围地面（中位数 1.6 km）。</li>
+<li><strong>中心在穹顶之上下沉——两个接触月海除外（研究 5）：</strong>当供给穹顶冻结成一个致密、富铁的天体时，它上方的中心会下沉（主要是冷却时的热收缩，同时还有致密体的重量和抽吸作用）。确实，在 <strong>12 个开放月海中的 10 个</strong>里，中心低于边缘（中位数 −267 m，例如东海为 −2.2 km，酒海为 −1.6 km），而重力穹顶越强，下沉越深（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn><mo separator="true">,</mo><mi>p</mi><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59, p = 0.04</annotation></semantics></math></span></span>）。
+<br><strong>仅有的两个例外，恰恰证实了这一规则：</strong>在<strong>澄海（+60 m）</strong>和<strong>雨海（+43 m）</strong>，中心反而略高于边缘！为什么？因为这正是位于接触盘之内、在离地球非常近的地方冻结的两个月海，地球强大的引力在它们冻结时把正面向外拉伸着！</li>
+<li><strong>被拉伸的边缘与被压缩的内部（§F.2）：</strong>就像池塘里的冰层在中间水位下降时一样，中心的下沉拉伸了月海的边缘，并在其中造成裂谷（<strong>地堑</strong>，位于 0.76–1.22 个半径处），并压缩了内部，形成<strong>皱脊</strong>（位于 0.71–0.77 个半径处）。</li>
+<li><strong>背面月海周围射出物质的领圈（研究 16）：</strong>为什么背面月海周围的边缘升得那么高？不是因为熔岩溢出了边缘（玄武岩只覆盖其周围环带的 0%–7%），而是因为从开口射出的炽热物质落在它周围，并被一层又一层地涂抹上去！结果，在背面月海周围 150–300 km 处建起了一个隆起的<strong>“领圈”</strong>（被掩埋月海周围的中位高度为 +742 m），而在接触月海周围——它们向内供给，不向外射出——完全没有领圈（−137 m）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>通过开口上升的通量速率与其闭合之间的关系，以及在表面上看到的环形山平衡，由以下方程描述：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}} = N_{\mathrm{bg}} + N_{\mathrm{return}} - N_{\mathrm{erased}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∫</mo><mi>Q</mi><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">M = \int Q\,dt</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>环形山方程（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}}</annotation></semantics></math></span></span>）确立了环形山计数并不是一个“简单的时钟”：每一个活跃的开口都会抹去并熔化落在其底部的环形山（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{erased}}</annotation></semantics></math></span></span>），同时射出在其周围造成环形山的物质（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{return}}</annotation></semantics></math></span></span>）。只有从开口底部冻结的那一刻起，它才开始积累新的环形山——来自仍不断从地球到达的最后一批物质（“最后的散射者”，§F.6）。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：标示冻结顺序的干净底部</h2>
+<p>如果一个月海底部只从它冻结的那一刻起才开始保留环形山，那么它上面的环形山数量就直接衡量了<strong>月海冻结的顺序</strong>（研究 7 和 12）：</p>
+<ul>
+<li><strong>底部比周围干净 12 倍：</strong>在所测量的全部 10 个开放月海中（在去除两侧的年轻辐射纹区之后），底部所携带的 2–5 km 环形山密度平均只有周围地面的 <strong>8%（1/12）</strong>！</li>
+<li><strong>大型环形山（10 km 及以上）的比值达 83 倍：</strong>接触月海（雨海和澄海）最后冻结，因此最干净（每百万 km² 有 256 个 2–5 km 环形山，10+ km 的只有 3.2 个）。相比之下，山丘上的月海携带的 10+ km 环形山多 33 倍（每百万 km² 106 个），而山丘以外的月海（东海、莫斯科海和庞加莱）多出 <strong>83 倍</strong>（每百万 km² 266 个）！</li>
+</ul>
+<h3 style="margin-top:28px">实验框：穹顶计数、重力检验与底部的洁净度（论文 05，C–F 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>量度 / 研究</th><th>样本与测量条件</th><th>测量结果</th><th>显著性 / 意义</th></tr>
+<tr class="hl"><td><strong>月海与供给穹顶的匹配（研究 1）</strong></td><td>重力梯度上的 34 个月海对比 73 个 GRAIL 穹顶</td><td><strong>34 个月海中 33 个</strong>坐落在穹顶上</td><td>在 20,000 次随机运行中没有一次达到 33</td></tr>
+<tr><td><strong>73 个供给穹顶的分布（研究 4）</strong></td><td>自动扫描（≥ 100 km，≥ 50 mGal）</td><td><strong>44 个被掩埋</strong>（36 个在背面），25 个开放，4 个部分</td><td>背面的穹顶（40）多于正面（33）</td></tr>
+<tr><td><strong>开口之下的月壳台阶（研究 3）</strong></td><td>36 个标记开口对比 169 个对照环形山</td><td>在 <strong>36 个中的 29 个</strong>存在 ≥ 8 km 的台阶（中位数 17 km）</td><td>对照环形山中：169 个中只有 4 个（2%，中位数 1 km）</td></tr>
+<tr><td><strong>被掩埋穹顶上覆盖层的厚度（研究 4）</strong></td><td>44 个被掩埋穹顶对比 25 个开放穹顶</td><td>月壳厚 <strong>8–13 km</strong>；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mtext>FeO</mtext><mo>=</mo><mo>−</mo><mn>0.19</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">\Delta\text{FeO} = -0.19\text{ wt\%}</annotation></semantics></math></span></span></td><td>覆盖层与周围地面相同，覆盖了古老的开口</td></tr>
+<tr class="hl"><td><strong>底部水平面与中心下沉（研究 5–6）</strong></td><td>16 个大型底部；12 个开放月海</td><td>16/16 为单一水平面（低于边缘 3.4 km）；10/12 下沉</td><td>相关系数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59</annotation></semantics></math></span></span>（p = 0.04）；雨海和澄海隆起</td></tr>
+<tr><td><strong>底部环形山的洁净度（研究 7 和 12）</strong></td><td>10 个开放月海（不含辐射纹区）</td><td>2–5 km 环形山的中位数为周围的 8%；接触区与远区之间相差 83 倍（10+ km）</td><td>接触月海最后冻结；地球是最后的散射者</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>我们发现，月球的月海并不是恰好闯入小行星撞击坑的熔岩湖，而是月球赖以建造的<strong>古老供给开口</strong>：73 个重力穹顶（其中 44 个被埋在背面高地之下），每一个都留下了一个像冰冻湖面一样均匀的底部，并在流动停止后从中心下沉。</p>
+<p>但随着时间推移，落在月海底部和平原上的环形山是什么样子——为什么其中最大的是熔融的、中等的是被涂抹的，而小的是锐利的？在下一章——<strong>第 9 章：底部上的时钟——熔融、涂抹与锐利的环形山，以及三代暴露</strong>（依据论文 05——<em>月海</em>，G–I 部分）——我们将学会阅读月面上温度与黏度的时钟！</p>
+<a href="story09_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 9 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">底部上的时钟——熔融、涂抹与锐利的环形山，以及三代暴露 →</p></div></a><p style="margin-top:22px"><a href="story07_zh.html">← 第 7 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 26 章：另外十项要求（R9–R18）、铪–钨时钟与 LEF 未来研究的地图 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 26 章：另外十项要求 R9–R18、铪–钨时钟与未来研究的地图。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story26_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story26_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story26_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story26_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story26_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story26_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story26_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story26_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story26_he.html" hreflang="he">עברית</a> · <a href="story26_en.html" hreflang="en">English</a> · <a href="story26_de.html" hreflang="de">Deutsch</a> · <a href="story26_es.html" hreflang="es">Español</a> · <a href="story26_fr.html" hreflang="fr">Français</a> · <a href="story26_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 26 章</p>
+<h1>第 26 章：另外十项要求（R9–R18）、铪–钨时钟与 LEF 未来研究的地图</h1>
+<p>依据论文 13——13. 要求（C–D 部分及附录 B：要求 R9–R18、论文之间的信息流、Hf–W 时钟与 7 项研究任务）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：这一过程在地球和月球上留下了哪些只属于地球梨形体的印记？</h2>
+<p>在第 25 章中，我们检查了前八项要求（R1–R8）。但像同位素一致或小月核这样的特征，在文献中可能得到其他解释，而<strong>论文 13 的 C 和 D 部分</strong>列出的另外十项要求（<strong>R9–R18</strong>），则只能从地球梨形体的几何、它塌回地幔的过程以及出口通道中推出：</p>
+<ol class="steps">
+<li><strong>梨形体在地球和月球上的痕迹（R9–R15，§C.1–C.6）：</strong>分离之后，梨形体本身的 7–12 个月球质量沉到了哪里？月球正面 KREEP 元素的富集是如何形成的？为什么两极环形山的密度恰恰随着环形山越大、越古老而增加？</li>
+<li><strong>梨形体之后的后续要求（R16–R18，§C.7）：</strong>如何证明月球的 34 个月海是古老环形山在其中熔化的抛射开口？为什么南极–艾特肯盆地（SPA）的中心相对于两个对立开口向南偏移？火星又如何作为一项独立的对照检验？</li>
+<li><strong>铪–钨时钟（Hf–W，§D.2）的时间约束与未来研究的地图：</strong>一个持续 6 亿年的逐渐积累，如何与半衰期只有 890 万年的放射性衰变时钟相容？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：滑油上的硬壳、剥离时卷起的果皮边缘，以及过早漏空的沙漏</h2>
+<p>四个具体的图景阐明了另外十项要求以及模型的时间约束：</p>
+<ul>
+<li><strong>在柔软的润滑层上滑动的坚硬外壳（环形山的纯压实，§C.1）：</strong>为了在梨形体升起时保存地壳穹顶上携带的古老圆形环形山，外部地壳必须保持非常坚硬（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>），而它的底部坐落在一个柔软的热–力学界面上（轻的硅铝层与致密的硅镁层之间的边界），使它能够以均匀的静水压实（纯压实）滑动和收缩，而不把环形山扭曲成椭圆！</li>
+<li><strong>剥离时向内卷起的果皮边缘（KREEP 复合体，R12）：</strong>当月球从地球梨形体的底座上剥离时，地球硅铝地壳被撕开的边缘以机械方式向内卷到正面底座的周边上（风暴洋 PKT 区域），并带走了不相容元素（钾 K、稀土 REE 和磷 P）——因此月球高地中最古老的斜长岩必然贫钾和钍！</li>
+<li><strong>沉到锅底的一堆沉重的铁（太平洋的 LLVP 下部异常，R10–R11）：</strong>在月球于共转线（16,399 km）被释放的那一刻，梨形体剩余的本体（约 9 个月球质量，约占地球质量的 11%，全部位于共转线以内，因此轨道上没有留下任何残余）塌回地幔，并在基里蒂马蒂岛（1.9°N，157.5°W）附近底座的正下方沉到核幔边界——形成了富铁的太平洋下部异常（太平洋 LLVP），而非洲异常是没有受到扰动的对侧瓣！</li>
+<li><strong>在数千万年内漏空的沙漏（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> 时钟，§D.2）：</strong>放射性同位素 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> 以 890 万年的半衰期衰变为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{W}</annotation></semantics></math></span></span>。6 亿年后只剩下 5.1 × 10⁻²¹ 的可忽略残余——也就是说，沙漏在积累窗口开始时就已完全停止，因此今天在月球上测得的钨特征是在开始时就被锁定、并完好无损地保存下来的，没有被抹去！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：梨形体的七项要求（R9–R15）与三项后续要求（R16–R18）</h2>
+<p>论文 13 的 C.6 和 C.7 部分详细列出了全部另外十项要求，并把在论文 6–8 中已获得定量支持的与有待最终计算的区分开来：</p>
+<ol class="steps">
+<li><strong>R9 和 R10——梨形体的平衡形状及其完全塌缩：</strong>梨形体本体（底部宽 9,000 km，收窄到 3,000 km 的接触处）作为一个静水–动力学平衡形状（自引力对抗内部压力和离心力，而不是岩石的抗拉强度）被完全保持在共转线以内，因此在分离时它完全向内塌缩，不在轨道上留下任何残余。</li>
+<li><strong>R11–R14——太平洋印记、核量规与外来物质的缺失：</strong>基里蒂马蒂的梨形体底座位于太平洋 LLVP 之上（R11）；月球微小的核（1.0%–2.0%）作为深度量规，显示了供给流离下沉的铁有多近（R13）；而在月球本体和太平洋的玄武岩地幔柱中，都不会发现任何外来的地外组分（R14）。</li>
+<li><strong>R15（已在论文 7 中获得定量支持）——两极环形山随直径的压实：</strong>机械圆化把古老的环形山向两极压实，而没有缩小它们的线性直径：两极与赤道之间的密度比从 20–30 km 环形山的 <strong>1.09</strong> 上升到 60–100 km 古老环形山的 <strong>1.53</strong>！</li>
+<li><strong>R16 和 R17（已在论文 6 和 8 中获得定量支持）——作为抛射开口的月海与 SPA 的封印：</strong>在 34 个活跃月海的底部，落在液态熔岩上的环形山熔化了，因此其中锐利环形山（≥ 20 km）的密度<strong>只有每百万 km² 0.8 个</strong>，而平原上为 18.3，高地中为 207（R16）；在南极–艾特肯盆地（SPA）中，穹顶中心、热中心和环形山最小值点相对于雨海和澄海的两个对跖点向南偏移（从扁平阶段的 17°–21° 到今天的 24°–29°）（R17）。</li>
+<li><strong>R18（论文 10 中的独立对照检验）——来自帕弗尼斯山的火星卫星：</strong>火卫一和火卫二作为塞子，从帕弗尼斯山（1.48°N）的单一抛射通道被发射到一个凝结的蒸汽环中；对纯火星成分的验证有待 MMX 任务的样品。</li>
+</ol>
+<div class="callout"><span class="tag">层级隔离原则（多层约束，§C.3 &amp; §D.3）</span><p style="margin:0">论文 13 强调，一个形态条款中的不符（例如 §C.3 中抛射开口的分类，或 R18 中的火星对照检验）只局限于该分支本身，并不否定论文 2 中基于质量和角动量守恒定律的共转线方程。</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：研究的透明性、铪–钨时钟的约束与七项开放任务</h2>
+<p>论文 13 的 D 部分、附录 B 和未来研究部分给出了一张完整的科学路线图，以理智的诚实把已有知识与模型的贡献区分开来，并标出了七个清晰的研究目标：</p>
+<ol class="steps">
+<li><strong>科学控制链与拒绝单点成功（§D.3）：</strong>要确立一项要求<em>未被满足</em>，需要数学证明在整个参数和测量误差范围内都不存在物理解（而不是单点检查）。同时，单点的成功也不能证实整条路径——每项主张都服从这样的链条：<strong>预测 → 数学细节 → 对噪声的稳健性 → 可供检验（Zenodo 上的代码包）→ 经验检验</strong>。</li>
+<li><strong>已有物理与 LEF 模型新颖性之间的明确区分（附录 B）：</strong>论文明确指出，引力定律、质量守恒、分异，以及古老“地照”理论（Roy et al. 2014）或风暴洋裂谷矩形的识别（Andrews-Hanna et al. 2014）都属于其原作者。LEF 独特的新颖之处在于<strong>在同一天体中的双重机械整合</strong>——由深部地幔流从下方进行的内部充填，以及地球岩石圈外壳从上方的抬升，在闭合的质量平衡和质心偏移之下。</li>
+<li><strong>未来研究的七项开放任务（Further Work）：</strong>（1）完成同心带的统计（T3、T4，以及在模型 2–4 和 GRGM1200B 上的 T1）；（2）建立统一的多体系同位素平衡（O、Ti、Cr、W）；（3）把铁液滴输运到核（1.4%）的多相流模型；（4）在真实接触几何中对月壳厚度和质心偏移的联合矢量反演；（5）对两侧原始高地月壳中时钟 1 的受控年代比较；（6）把 34 个月海作为抛射开口的定量分类；以及（7）对太平洋 LLVP 之上太平洋岩石圈的独立构造复原。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>短命的铪–钨分异时钟（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext><mo>→</mo><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf} \to {}^{182}\text{W}</annotation></semantics></math></span></span>，半衰期 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mn>8.9</mn><mtext> Myr</mtext></mrow><annotation encoding="application/x-tex">T_{1/2} = 8.9\text{ Myr}</annotation></semantics></math></span></span>）在 6 亿年积累窗口上的放射性衰变方程，以及方法论上的验证链，表述如下（§D.2–D.3）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8.9</mn><mtext> Myr</mtext><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(t)}{N_0} = 2^{-t / (8.9\text{ Myr})}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(600\text{ Ma})}{N_0} \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>prediction</mtext><mo>⟶</mo><mtext>detailed</mtext><mo>⟶</mo><mtext>robust</mtext><mo>⟶</mo><mtext>assessable</mtext><mo>⟶</mo><mtext>testable</mtext></mrow><annotation encoding="application/x-tex">\text{prediction} \longrightarrow \text{detailed} \longrightarrow \text{robust} \longrightarrow \text{assessable} \longrightarrow \text{testable}</annotation></semantics></math></span></div></div></div>
+<p>由于比值 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>0</mn></msub><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N(600\text{ Ma})/N_0 \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></span> 在积累结束时不留下任何活的 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> 原子，钨时钟无法在窗口结束时被重置——因此任何年代模型都必须在 6 亿年间保存在分异开始时确定的钨特征。</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Hf-182 remaining against time" style="direction:ltr"><line x1="70" x2="600" y1="220.0" y2="220.0" stroke="#ece7da"/><text x="62" y="224.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0%</text><line x1="70" x2="600" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="62" y="174.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25%</text><line x1="70" x2="600" y1="120.0" y2="120.0" stroke="#ece7da"/><text x="62" y="124.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50%</text><line x1="70" x2="600" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="62" y="74.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75%</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100%</text><text x="70.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="158.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="246.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="335.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">30</text><text x="423.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><text x="511.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">50</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">60</text><path d="M70.0,20.0 L74.4,27.6 L78.8,35.0 L83.2,42.1 L87.7,48.8 L92.1,55.4 L96.5,61.7 L100.9,67.7 L105.3,73.5 L109.8,79.1 L114.2,84.5 L118.6,89.7 L123.0,94.7 L127.4,99.4 L131.8,104.1 L136.2,108.5 L140.7,112.7 L145.1,116.8 L149.5,120.8 L153.9,124.6 L158.3,128.2 L162.8,131.7 L167.2,135.1 L171.6,138.3 L176.0,141.4 L180.4,144.4 L184.8,147.3 L189.2,150.1 L193.7,152.8 L198.1,155.3 L202.5,157.8 L206.9,160.2 L211.3,162.5 L215.8,164.7 L220.2,166.8 L224.6,168.8 L229.0,170.8 L233.4,172.7 L237.8,174.5 L242.2,176.2 L246.7,177.9 L251.1,179.5 L255.5,181.0 L259.9,182.5 L264.3,183.9 L268.8,185.3 L273.2,186.7 L277.6,187.9 L282.0,189.1 L286.4,190.3 L290.8,191.5 L295.2,192.6 L299.7,193.6 L304.1,194.6 L308.5,195.6 L312.9,196.5 L317.3,197.4 L321.8,198.3 L326.2,199.1 L330.6,199.9 L335.0,200.7 L339.4,201.4 L343.8,202.1 L348.2,202.8 L352.7,203.5 L357.1,204.1 L361.5,204.7 L365.9,205.3 L370.3,205.8 L374.8,206.4 L379.2,206.9 L383.6,207.4 L388.0,207.9 L392.4,208.3 L396.8,208.8 L401.2,209.2 L405.7,209.6 L410.1,210.0 L414.5,210.4 L418.9,210.8 L423.3,211.1 L427.8,211.5 L432.2,211.8 L436.6,212.1 L441.0,212.4 L445.4,212.7 L449.8,213.0 L454.2,213.2 L458.7,213.5 L463.1,213.8 L467.5,214.0 L471.9,214.2 L476.3,214.4 L480.8,214.7 L485.2,214.9 L489.6,215.1 L494.0,215.2 L498.4,215.4 L502.8,215.6 L507.2,215.8 L511.7,215.9 L516.1,216.1 L520.5,216.2 L524.9,216.4 L529.3,216.5 L533.8,216.6 L538.2,216.8 L542.6,216.9 L547.0,217.0 L551.4,217.1 L555.8,217.2 L560.2,217.3 L564.7,217.4 L569.1,217.5 L573.5,217.6 L577.9,217.7 L582.3,217.8 L586.8,217.9 L591.2,218.0 L595.6,218.1 L600.0,218.1" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="148.6" cy="120.0" r="4.5" fill="#b23a2e"/><circle cx="227.2" cy="170.0" r="4.5" fill="#b23a2e"/><circle cx="305.9" cy="195.0" r="4.5" fill="#b23a2e"/><circle cx="384.5" cy="207.5" r="4.5" fill="#b23a2e"/><text x="298.6" y="114.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >半衰期 · ⁦8.9⁩ 百万年</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >时间（百万年）· ¹⁸²Hf 残余 · 6 亿年窗口结束时：⁦5.1×10⁻²¹⁩</text></svg><figcaption>铪–钨时钟：大约 5,000 万年后几乎不再剩下 ¹⁸²Hf，因此钨特征在积累窗口开始时被锁定，并一直保持到窗口结束。</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：贯穿系列论文的数据流与 Zenodo 上的开放协议</h2>
+<p>论文 13 的 D.1 部分和代码部分把整个系列论文绑定为一个透明的依赖体系，任何外部研究者都可以完整复现（§D.1，数据与代码）：</p>
+<ul>
+<li><strong>从论文 2 到论文 13 的约束流（§D.1）：</strong>论文 2 确定了分离时的共转半径（赤道面上 16,399 km，在一天 5.77 小时、纬度 22.5° 处为 17,287 km）；论文 3 设定了一个约 1,000 km 的最小过渡半径，承载 0.46 个月球质量和侧向剪切负载 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≈</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{shear}} \approx 10^{22}\text{ N}</annotation></semantics></math></span></span>（排除了“细颈”），以及外壳黏度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>；而论文 4–10 增加了轨道、月海、环形山、两极、SPA 盆地和火星。</li>
+<li><strong>开放的复现包（Zenodo DOI: 10.5281/zenodo.22743615）：</strong>所有 Python 3（NumPy 和 SciPy）计算脚本、输入文件以及 T1、T2 和 T5 检验的输出，都永久存放在 Zenodo 仓库中，供独立复现。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：另外十项要求（R9–R18）与 LEF 模型的不符标准（论文 13，C–D 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>要求</th><th>模型所要求的物理条件</th><th>检验量度 / 不符的结果</th><th>当前状态</th></tr>
+<tr><td><strong>R9（平衡中的梨形体）</strong></td><td>一个宽 9,000 km、收窄到 3,000 km 的天体由自引力保持在共转线以内</td><td>不符：在密度和自转的范围内没有数学上的平衡形状</td><td>有待完整的平衡计算</td></tr>
+<tr><td><strong>R10（梨形体的塌缩）</strong></td><td>梨形体的残余（7–12 个月球质量，约占地球质量的 11%）完全向内塌缩，轨道上没有残余</td><td>不符：识别出轨道上的残余，或源区之下没有质量异常</td><td>开放（与论文 9 的褶皱一致）</td></tr>
+<tr><td><strong>R11（太平洋 LLVP）</strong></td><td>基里蒂马蒂的梨形体底座（1.9°N，157.5°W）位于富铁的太平洋 LLVP 之上</td><td>不符：底座在 LLVP 之外，或两个瓣（太平洋和非洲）完全相同</td><td>有待层析检验</td></tr>
+<tr><td><strong>R12（KREEP 复合体）</strong></td><td>向内卷起的地球硅铝边缘把 KREEP 固定在风暴洋；斜长岩贫 K 和 Th</td><td>不符：与底座边缘没有几何联系，或斜长岩中有硅铝特征</td><td>有待地球化学填图</td></tr>
+<tr><td><strong>R13–R14（核量规与零外来物质）</strong></td><td>核（1.4%）衡量与下沉铁的接近程度；月球和太平洋地幔柱中外来撞击体组分为零</td><td>不符：在月球本体或地幔柱中识别出地外的化学/同位素组分</td><td>有待多体系平衡</td></tr>
+<tr class="hl"><td><strong>R15（两极环形山的压实）</strong></td><td>圆化以随直径增大的比例把环形山向两极压实，而没有缩小其线性直径</td><td>两极/赤道密度比：<strong>1.09</strong>（20–30 km）→ <strong>1.53</strong>（60–100 km）</td><td><strong>成功通过（论文 7）</strong></td></tr>
+<tr class="hl"><td><strong>R16（作为抛射开口的 34 个月海）</strong></td><td>活跃月海的底部熔化了落在其上的古老环形山</td><td>≥ 20 km 锐利环形山的密度：月海中 <strong>0.8</strong>，平原上 18.3，高地中 207</td><td><strong>获得定量支持（论文 6）</strong></td></tr>
+<tr class="hl"><td><strong>R17（SPA 的两个开口与穹顶）</strong></td><td>SPA 中的穹顶中心、热中心和环形山最小值点相对于雨海和澄海的对跖点向南偏移（24°–29°）</td><td>不符：没有几何联系，或位于对跖点以北</td><td><strong>获得定量支持（论文 8）</strong></td></tr>
+<tr><td><strong>R18（来自帕弗尼斯山的火星卫星）</strong></td><td>火卫一和火卫二从帕弗尼斯山（1.48°N）的单一抛射通道被发射到蒸汽环中</td><td>不符：MMX 样品中的非火星成分，或帕弗尼斯山之下的质量过剩</td><td>开放（外部对照检验，论文 10）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在第 25–26 章中，我们完成了对<strong>论文 13（要求）</strong>的审视——这是 LEF 系列的方法论罗盘，汇集了全部 18 项要求（<strong>R1–R18</strong>）、统计检验的结果（<strong>T1–T5</strong>）、铪–钨时钟的约束以及未来研究的 7 项开放任务。</p>
+<a href="story27_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 27 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF 模型的研究地图（A 部分）——早期地球、月球的形成与 SPA 盆地（主题 1–79） →</p></div></a>
+<p style="margin-top:22px"><a href="story25_zh.html">← 第 25 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

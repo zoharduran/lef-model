@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 20 章：火星的蒸汽环、经由水手谷的排泄与 MMX 任务的检验 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 20 章：火星的蒸汽环、经由水手谷的排泄与 MMX 任务的检验。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story20_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story20_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story20_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story20_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story20_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story20_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story20_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story20_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story20_he.html" hreflang="he">עברית</a> · <a href="story20_en.html" hreflang="en">English</a> · <a href="story20_de.html" hreflang="de">Deutsch</a> · <a href="story20_es.html" hreflang="es">Español</a> · <a href="story20_fr.html" hreflang="fr">Français</a> · <a href="story20_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 20 章</p>
+<h1>第 20 章：火星的蒸汽环、经由水手谷的排泄与 MMX 任务的检验</h1>
+<p>依据论文 10——火星：隆起与环（F–O 部分及附录 B：环的动力学、水手谷、火卫一的沟槽与 2027–2031 年的预测）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：一个环如何塑造出两颗截然相反的卫星——MMX 任务将在 2031 年带来什么证据？</h2>
+<p>在第 19 章中我们看到，屹立在塔尔西斯尖锐隆起顶端（赤道以上 4,450 km）的帕弗尼斯山，如何在 7.3 小时时把<strong>火卫二</strong>释放到一条长椭圆轨道上（10,170–23,990 km，e = 0.41，倾角约 10°），并在 8.3 小时时把<strong>火卫一</strong>释放到共转线（9,870 km）上的圆轨道（e = 0.002）。现在还剩下三个关键的收尾之谜：</p>
+<ol class="steps">
+<li><strong>同一个环中相反的命运（F.1–F.6、G）：</strong>为什么火卫二变成了圆轨道、与赤道对齐、被磨到直径 12.4 km，并远离到 23,463 km，而更重、更快的火卫一却没有随潮汐向外逃逸，保留了它的沟槽，今天正从 19,100 km 坠向 9,375 km？</li>
+<li><strong>水手谷的巨大伤疤与水的平衡（H.1–H.6、M）：</strong>夜迷宫、水手谷峡谷以及通往克律塞的外流河道扮演了什么角色——年轻火星的水藏在哪里？</li>
+<li><strong>MMX 任务的实验室判决（第 III 部分及附录 B）：</strong>日本宇宙航空研究开发机构 JAXA 的 <strong>MMX</strong> 任务（2026 年 10 月发射，2027 年登陆火卫一，<strong>2031 年</strong>把样品带回地球）将测量火卫一的同位素、质心和沟槽，并在 LEF 模型与撞击和俘获理论之间作出明确的判决。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：交叉轨道上的砂纸、逆风的牵绳，以及轴承中的滚珠</h2>
+<p>四个具体的图景阐明了蒸汽环的动力学、排泄的伤疤以及火卫一上火山口的痕迹：</p>
+<ul>
+<li><strong>像砂纸一样穿过环形水流的天体，与顺流而行的小船对比（F.2–F.3）：</strong>在抛射之前，火星就建造了<strong>一个圆形的赤道蒸汽与尘埃环</strong>，它在共转线以外凝结成冰粒（并在 13,000 km 处冰的洛希极限以外聚成团块）。被抛到长椭圆轨道上的火卫二（e = 0.41），每一圈都以数百米每秒的相对速度穿过环：环<strong>把它从 20.7 km 磨到 12.4 km</strong>（损失了 76%–83% 的体积），把它的倾角从 10° 压平到 1.8°，并在远端（它比环运动得慢的地方）使它加速，直到把它的轨道变圆并把它移到 14,300 km（从那里，比今天强 8–20 倍的柔软火星的潮汐在 1.5–3.7 亿年内把它带到了 23,463 km）。相反，火卫一立即以环本身的速度进入了圆轨道——因此环既不能使它加速，也不能磨损它！</li>
+<li><strong>“气体牵绳”——与潮汐推力相平衡的微弱逆风（F.4–F.6）：</strong>在环的内缘，部分由自身压力支撑的气体运动得比轨道速度稍慢，形成<strong>约 100 m/s 的逆风</strong>。在 <strong>3–8 × 10⁻⁸ kg/m³</strong> 的极低气体密度下（像地球 115 km 高度处的空气一样稀薄），风的阻力恰好平衡了微小的潮汐加速度（约 10⁻¹¹ m/s²）。于是环的内缘起到了<strong>“牵绳”</strong>的作用，把火卫一保持在共转线附近，并随着火星减速而牵着它随这条线缓慢向外移动——直到蒸汽停止、环从外向内干涸，那是在 <strong>35–39 亿年前</strong>（当时火卫一位于约 19,100 km，火星的一天已延长到约 22 小时）！</li>
+<li><strong>像轴承中滚珠一样被夹住的岩石，以及火山口的凸起（K.1–K.3）：</strong>火卫一是第二个、更坚硬的塞子，在压力下被用力推过帕弗尼斯山狭窄的火山口（20–23 km 宽）。火山口壁上坚硬的岩石凸起（就像 2004–2006 年从圣海伦斯火山口挤出的固体岩刺）沿其运动方向在火卫一上刻出了<strong>平行的沟槽</strong>（当炽热的天体在太空中变圆时略微弯曲）；而夹在塞子与壁之间窄缝中的岩石像<strong>轴承中的滚珠</strong>一样滚动，在柔软的表面上压出<strong>成串的凹坑</strong>——它们间隔均匀，始终与沟槽平行，从不与之交叉！</li>
+<li><strong>下沉盆地的排水系统（H.2–H.4）：</strong>当隆起下沉并向西躺倒时，其中的液态和黏稠内容物沿隆起的轴线向东流动：从<strong>夜迷宫</strong>断裂的“颈部”，经过从西向东下降 10 km（从 +4.9 km 到 −5.2 km）的<strong>水手谷</strong>槽谷，以 −3,560 m 的统一水平面填满一个内湖，并经由厄俄斯深谷的门槛和西穆德、提乌外流河道向东溢出到克律塞平原上！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：火卫一的演化、帕弗尼斯山的破火山口与地表记录（F–M 部分）</h2>
+<p>论文 10 的 F–M 部分把火星及其两颗卫星上的每一个观测细节连成一个物理序列：</p>
+<ol class="steps">
+<li><strong>复原火卫一的下坠以及每天 3.2 圈这一比值的由来（G、K.7–K.8）：</strong>在 39 亿年前环干涸的那一刻，火卫一位于 19,100 km（公转周期 22.3 小时，火星的一天约 22 小时——也就是<strong>恰好一天一圈</strong>），共转线越过了它，火卫一开始向内下坠。由于潮汐力随距离的 5.5 次方减弱，在最初的 30 亿年里它只下降了 3,800 km（大约每世纪 4 cm），而在最近的 4 亿年里它骤降了 4,000 多千米（今天在 9,375 km 处达到每世纪 1.8 m，公转周期 7.65 小时——加速了 2.9 倍，再加上火星从 22 h 减慢到 24.6 h 的 1.1 倍，恰好得到 2.9 × 1.1 = 每天 3.2 圈的比值！）。</li>
+<li><strong>帕弗尼斯山破火山口的体积平衡与斯蒂克尼的记录（I.1–I.3、K.4–K.6）：</strong>帕弗尼斯山顶部的破火山口是一个单一的圆柱形坑，圆而陡峭，宽 47 km，深近 5 km（深宽比 0.10，塔尔西斯四座火山中最深的），体积为 <strong>8,300–8,700 km³</strong>——与浅岩浆房顶部塌陷之后从中抛出的两个塞子的总体积相吻合（今天约 6,740 km³）。火卫一的钝端有<strong>斯蒂克尼</strong>凹陷（9 km），它是在前导钝端撞击火山口口部的物质时形成的：在 Ernst 等人（2023）36 m 分辨率的形状模型上的测量证明，斯蒂克尼底部的沟槽<strong>被压扁且更宽</strong>（锐度 0.34，外部为 0.44——低于火卫一上 80 个随机地点中的 89%），且没有月壤覆盖，也就是说，沟槽是在斯蒂克尼于出口时被压出<em>之前</em>就在火山口中刻成的！</li>
+<li><strong>解开火星的双重水平衡与全球尘埃的来源（H.5–H.6、M）：</strong>通过共转线抛入环中的水被太阳辐射分解，在大气中留下了 6–7 倍的氘富集（至少 137 m 的全球水层，Villanueva et al. 2015），而环中被磨碎的尘埃沉降为火星均匀的全球尘埃；然而，年轻火星的大部分内部水<strong>从未离开</strong>，仍被封存在同一层不透水的地壳之下——在洞察号着陆器发现的 <strong>11.5–20 km</strong> 深的中地壳孔隙中（Wright et al. 2024，相当于 1–2 km 深的全球水层）！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Moon diameters at release and today" style="direction:ltr"><rect x="160.0" y="16" width="366.4" height="26" rx="4" fill="#9aa3af"/><text x="534.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦22.9⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >火卫一 · 抛射时</text><rect x="160.0" y="56" width="356.8" height="26" rx="4" fill="#1f3a5f"/><text x="524.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦22.3⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >火卫一 · 今天</text><rect x="160.0" y="96" width="331.2" height="26" rx="4" fill="#9aa3af"/><text x="499.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦20.7⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >火卫二 · 抛射时</text><rect x="160.0" y="136" width="198.4" height="26" rx="4" fill="#b23a2e"/><text x="366.4" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦12.4⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >火卫二 · 今天</text></svg><figcaption>两颗卫星在抛射时和今天的直径（km）：穿过环中心的火卫二失去了约 40% 的直径；漂浮在气体边缘的火卫一几乎没有变化。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：环如何把火卫一保持在共转线上，并扭转了两个倾角</h2>
+<p>论文 10 的 F.1–F.6 和 G 部分表明，一种物理相互作用——由从火星抛出的水供给的赤道蒸汽与尘埃环——如何既解释了火卫一与火卫二之间的极端差异，又解释了火卫一开始下坠的精确时间：</p>
+<ol class="steps">
+<li><strong>内部“气体牵绳”中的力平衡（§F.4）：</strong>在环的内缘、靠近共转线处，气体部分由自身压力支撑，因此转得比开普勒轨道速度稍慢。于是火卫一遇到了<strong>相对速度 v ≈ 100 m/s 的微弱逆风</strong>。在 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8 \times 10^{-8}</annotation></semantics></math></span></span> kg/m³</strong> 的气体密度下（像地球 115 km 高度处的大气一样稀薄），气体阻力恰好平衡了把火卫一向外推的潮汐加速度（约 10⁻¹¹ m/s²）。只要火星在抛出蒸汽并减速，共转线就向外移动，并牵着火卫一一直到约 19,100 km。</li>
+<li><strong>环从外向内干涸与牵绳的松开（§F.5–F.6）：</strong>环只从其位于共转线上的内基部获得供给（而在 13,000 km——冰的洛希极限——以外，物质聚成团块，不再作为环起作用）。当年轻火星的地壳变硬、分层并冷却时，蒸汽流停止，环在 <strong>35–39 亿年前</strong>（火星的一天约 22 小时）从外向内干涸。在那一刻，共转线越过了火卫一（19,100 km），火卫一开始向内坠向它今天的轨道（9,375 km）。如果环在它位于 9,900 km 时就早早干涸，它会在不到 1 亿年内坠落并解体！</li>
+<li><strong>磨损与环形山深度的差异（§J.1–J.2、§L）：</strong>火卫二在数百万圈中穿过环的中心和 13,000 km 以外的团块，因此失去了 76%–83% 的体积（从直径约 20.7 km 磨到 12.4 km），失去了原来的火山口沟槽，它的环形山比火卫一的浅三倍（中位深度为宽度的 1.9%，火卫一为 5.5%）。在内部气体边缘轻柔漂浮的火卫一只失去了约 1%（约 40 m 厚的一层），保留了它的沟槽和凹坑链。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>环内缘逆风阻力与年轻火星潮汐推力之间的平衡，以及轨道半长轴的潮汐变化率 da/dt，表述如下（§G、附录 A）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>ρ</mi><mi>g</mi></msub><mi>A</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>≈</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup><mtext> kg/m³</mtext><mo separator="true">,</mo><mtext>  </mtext><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≈</mo><mn>100</mn><mtext> m/s</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F_{\mathrm{drag}} = \dfrac{1}{2}\rho_g A v_{\mathrm{rel}}^2 = F_{\mathrm{tide}} \quad (\rho_g \approx 3\text{–}8\times 10^{-8}\text{ kg/m³}, \; v_{\mathrm{rel}} \approx 100\text{ m/s})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><mi>a</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mo>±</mo><mn>3</mn><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>k</mi><mn>2</mn></msub><mi>Q</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>m</mi><mi>M</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>R</mi><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>5</mn></msup><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\dfrac{da}{dt} = \pm 3\left(\dfrac{k_2}{Q}\right)\left(\dfrac{m}{M}\right)\left(\dfrac{R}{a}\right)^5 n a</annotation></semantics></math></span></div></div></div>
+<p>其中今天的潮汐耗散系数为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub><mi mathvariant="normal">/</mi><mi>Q</mi><mo>=</mo><mn>1.816</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k_2/Q = 1.816 \times 10^{-3}</annotation></semantics></math></span></span>（Lainey et al. 2021），而在年轻、炽热、柔软的火星上大 8–20 倍，火卫二在 1.5–3.7 亿年内从 14,300 km 爬升到最终共转线（20,428 km）之外，而火卫一则从 39 亿年前的 19,119 km 骤降到今天的 9,375 km，速率从每世纪 4 cm 加快到每世纪 1.8 m。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：MMX 任务的硬预测矩阵（2027–2031）</h2>
+<p>在第 III 部分和附录 B 中，论文 10 为即将到来的太空任务列出了 <strong>16 项定量证伪检验（B1–B16）</strong>——首当其冲的是 JAXA 的 <strong>MMX</strong> 任务（2026 年 10 月发射，2027 年登陆火卫一，2031 年把 ≥ 10 克月壤带回地球）：</p>
+<ul>
+<li><strong>决定性的同位素与化学检验（N.1、B1–B4）：</strong>在 MMX 带回的火卫一样品中，<strong>氧（O）、铬（Cr）和钛（Ti）</strong>的同位素将<strong>只落在纯粹的火星线上</strong>，完全没有外来撞击体或小行星的组分；<strong>锌（Zn）和钾（K）</strong>的挥发性同位素将不显示蒸发造成的偏移（不像熔融的大碰撞）；颗粒将显示出<strong>带有封闭孔隙和含水矿物的淬火火山泡沫</strong>的结构（而不是由蒸汽凝结而成的玻璃球粒）。</li>
+<li><strong>火卫一和火卫二的结构与重力检验（N.2–N.6、B5–B8）：</strong>火卫一的重力场将揭示<strong>质心向火星（钝端）偏移 300–500 m</strong>；把火卫一的形状复原为拉长的天体，将使平行沟槽族变直；MMX 飞掠火卫二时将证实其与火卫一相同的火星成分。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：环中火卫二与火卫一的比较、潮汐时间线与 MMX 任务的检验（论文 10，F–O 部分及附录 B）</h3>
+<div class="tw"><table class="lab">
+<tr><th>性质</th><th>火卫二（第一次抛射）</th><th>火卫一（第二次抛射）</th></tr>
+<tr class="hl"><td><strong>抛射时间与初始轨道</strong></td><td>一天 7.3 h；长椭圆轨道（10,170–23,990 km，e = 0.41，倾角约 10°）</td><td>一天 8.3 h；直接进入共转线上的圆（9,870 km，e = 0.002）</td></tr>
+<tr><td><strong>在环中的作用区</strong></td><td>以数百 m/s 穿过<strong>整个环的中心</strong>以及 13,000 km 以外的团块</td><td>在<strong>内部气体边缘</strong>轻柔漂浮（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8\times 10^{-8}</annotation></semantics></math></span></span> kg/m³）</td></tr>
+<tr class="hl"><td><strong>磨损与尺寸变化</strong></td><td>从直径约 20.7 km（6.8 × 10¹⁵ kg）磨到 <strong>12.4 km</strong>（失去 76%–83% 的体积）</td><td>只失去约 1%（约 40 m）；尺寸保持 <strong>22.3 km</strong>（1.07 × 10¹⁶ kg）</td></tr>
+<tr><td><strong>密度与表面</strong></td><td><strong>1,471 kg/m³</strong>（海绵状的上部塞子）；光滑圆润，没有沟槽（凹陷中位深度 1.9%）</td><td><strong>1,853–1,887 kg/m³</strong>（致密的第二个塞子）；平行沟槽、凹坑链和斯蒂克尼（9 km）</td></tr>
+<tr class="hl"><td><strong>今天的轨道与命运</strong></td><td><strong>23,463 km</strong>（e = 0.0003，i ≈ 1.8°，周期 30.3 h）——在线外，正在远离</td><td><strong>9,375 km</strong>（e = 0.0151，i = 1.09°，周期 7.65 h）——在线内，正在下坠（每世纪 1.8 m）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>检验编号</th><th>测量与任务</th><th>LEF 模型的预测（隆起与环）</th><th>主流解释的预测（撞击 / 俘获）</th></tr>
+<tr class="hl"><td><strong>B1–B3</strong></td><td>MMX 样品中 O、Cr、Ti、D/H 以及 Zn、K 的同位素（2031）</td><td><strong>只有纯粹的火星线</strong>，外来组分为零，Zn、K 没有蒸发偏移</td><td>撞击：火星 + 外来天体（30%–65%）的混合以及轻同位素的亏损；俘获：小行星</td></tr>
+<tr class="hl"><td><strong>B4</strong></td><td>火卫一的颗粒结构（MMX，2031）</td><td><strong>淬火的火山泡沫</strong>，带有封闭孔隙和含水矿物</td><td>熔融后由蒸汽凝结的玻璃球粒</td></tr>
+<tr><td><strong>B5</strong></td><td>火卫一的重力场（MMX，2027）</td><td><strong>质心向火星（钝端）偏移 300–500 m</strong></td><td>没有质心偏移的预测</td></tr>
+<tr><td><strong>B6–B7</strong></td><td>沟槽和凹坑链的成像（MMX，2027）</td><td>集中在西侧，在拉长的天体上变直，<strong>在斯蒂克尼底部被压扁</strong>；平行的凹坑链不与沟槽交叉</td><td>潮汐应力或斯蒂克尼抛射物（斯蒂克尼内部无差别，或随机交叉）</td></tr>
+<tr><td><strong>B10 / B14</strong></td><td>帕弗尼斯山之下的重力 / 塔尔西斯之下的地震学</td><td>帕弗尼斯山破火山口之下的<strong>质量亏损</strong>；整个塔尔西斯之下饱含液态水的中地壳</td><td>普通的盾状破火山口；卫星与深处被困的水之间没有联系</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>在第 19–20 章中，我们把 LEF 原理推广到地月系统之外，并展示了同一物理机制如何在<strong>火星</strong>上起作用：一颗年轻、膨胀而快速的行星在赤道上长出了<strong>塔尔西斯的尖锐隆起</strong>，把帕弗尼斯山抬到 4,450 km 的高度、进入零净重的条件，并以普通的伏尔坎式压力把<strong>火卫二</strong>（7.3 h）和<strong>火卫一</strong>（8.3 h）释放进<strong>凝结的蒸汽环</strong>——而将在 2031 年从火卫一带回样品的 MMX 任务，将提供决定性的实验室检验！</p>
+<a href="story21_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 21 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">太阳系的卫星定律——诞生模式的标尺、泵原理与大气盖 →</p></div></a>
+<p style="margin-top:22px"><a href="story19_zh.html">← 第 19 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

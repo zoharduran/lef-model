@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 9 章：底部上的时钟——熔融、涂抹与锐利的环形山，供给发动机与三代暴露 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 9 章：为什么月海底部的大环形山是熔融的、中等的被涂抹、小的则锐利，供给发动机的临界通量，以及三代开口。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story09_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story09_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story09_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story09_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story09_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story09_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story09_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story09_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story09_he.html" hreflang="he">עברית</a> · <a href="story09_en.html" hreflang="en">English</a> · <a href="story09_de.html" hreflang="de">Deutsch</a> · <a href="story09_es.html" hreflang="es">Español</a> · <a href="story09_fr.html" hreflang="fr">Français</a> · <a href="story09_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 9 章</p>
+<h1>第 9 章：底部上的时钟——熔融、涂抹与锐利的环形山，供给发动机与三代暴露</h1>
+<p>依据论文 05——月海（G–I 部分：研究 8 和 15）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：为什么雨海中的大环形山是熔融的、中等的被涂抹、小的却是锐利的？</h2>
+<p>看看正面的巨大月海——<strong>雨海</strong>的底部。在同一片均匀的玄武岩表面上，三个著名的环形山并排出现，处于三种完全不同的状态：</p>
+<ul>
+<li><strong>虹湾（直径 246 km）：</strong>一个被熔掉一半的巨大环形山——只有它的北缘作为侏罗山脉的山脊幸存下来，南缘则被完全抹去，底部与月海表面融为一体（深径比 0.008，只有同等大小的普通高地环形山的四分之一！）。</li>
+<li><strong>柏拉图（直径 101 km）：</strong>北岸上的一个中等环形山，环壁完整，但底部被填平、平坦，完全被涂抹（深径比 0.020，约为普通高地环形山的一半）。</li>
+<li><strong>基尔希（直径 11 km）：</strong>月海底部中心的一个小环形山，它保持着锐利、清晰，甚至比新鲜的高地环形山还要深（0.166 对 0.078）！</li>
+</ul>
+<p>这三个环形山都位于同一个月海、同一纬度、同一片地面上。如果它们都是数十亿年间随机的小行星撞击造成的，为什么雨海底部连一个直径 20 km 以上的锐利环形山都没有？为什么环形山的保存状态如此精确地遵循它们的大小？</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：压进一锅正在冷却的粥里的勺子——以及霜夜里开着的水龙头</h2>
+<p>两个简单的图景揭示了把环形山的大小、月海的冷却及其暴露顺序联系起来的物理机制：</p>
+<ul>
+<li><strong>一锅慢慢冷却的滚烫的粥（环形山的三种状态）：</strong>拿一锅刚从火上端下来的稠粥，分三个阶段把勺子压进去。当粥还滚烫、可流动时（低黏度，约 1 Pa·s），凹痕会立刻闭合消失——只在边缘留下一道淡淡的痕迹（像虹湾那样的<strong>熔融环形山</strong>）。当粥冷却成充满晶体的稠“泥浆”质地（晶粥）时，凹痕保留着环形的边缘，但底部会塌陷并被填平（像柏拉图那样的<strong>涂抹环形山</strong>）。而当粥冻结并完全固化（低于固相线，约 1,050°C）时，勺子一压就会永远留下一个锐利、清晰的小坑（像基尔希那样的<strong>锐利环形山</strong>）！</li>
+<li><strong>霜夜里流着水的水龙头（供给发动机的临界通量）：</strong>为什么有些开口很早就冻结了，而另一些一直开到最后？想象霜夜里户外的一根水管。只要水强劲地流过，它所携带的热量就能防止水管冻结；一旦流量减弱到某个门槛（<strong>临界通量</strong>）以下，寒冷就会获胜，水管就被冰封住了！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：同一座钟的两根指针——月海的冷却与地球射击的减弱</h2>
+<p>论文 05 的 G 部分给出了与论文 06 的联合研究（<strong>研究 8</strong>），它扫描了正面玄武岩上所有直径 3 km 以上的环形山（共 3,478 个：324 个位于供给穹顶之上的月海底部，3,154 个位于玄武岩平原上）。每个环形山都与直径完全相同的高地环形山进行比较，并被分类为<strong>锐利</strong>、<strong>涂抹</strong>（比 75% 的高地环形山浅）或<strong>熔融</strong>（比其中 95% 浅）：</p>
+<ol class="steps">
+<li><strong>在月海底部消失的环形山：</strong>在接触月海（雨海和澄海）的底部，2–5 km 的环形山只有旁边平原上的三分之一（263 对 836 个/百万 km²），而 20 km 及以上的环形山数量<strong>恰好为零（0）</strong>！每一个在它们仍是流体时落在上面的大环形山都被直接吞没并抹去了。</li>
+<li><strong>环形山大小与状态之间的清晰联系：</strong>在月海底部，<strong>锐利</strong>环形山的比例从 3–5 km 的 <strong>71%</strong> 降到 5–10 km 的 57%、10–20 km 的 35%，并在 20–40 km 降到 <strong>0%</strong>——而<strong>熔融</strong>环形山的比例从 17% 跃升到 <strong>85%</strong>，在 80 km 以上达到 <strong>100%</strong>（统计显著性优于百亿分之一！）。</li>
+<li><strong>为什么大的先到、小的最后到？（§G.4–G.5）：</strong>分离之后，地球继续向太空射出炽热的物质。随着月球远离地球，到达它所需的最低速度上升（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>R</mi><mo>⊕</mo></msub><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min} = \sqrt{2GM_\oplus(1/R_\oplus - 1/r)}</annotation></semantics></math></span></span>——从 17,000 km 距离时的 8.8 km/s 到 60,000 km 时的 10.6 km/s）。与此同时，地球上的岩浆风暴逐渐平息：先射出的是大块炽热团块（月球靠近、月海还是流体时 → 熔融环形山），然后是中等团块（月海处于“晶粥”状态时 → 涂抹环形山），最后是小的炽热液滴（月海已经冻结时 → 锐利环形山，例如在接触月海中，82% 的 3–10 km 环形山是锐利的！）。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Share of sharp craters on mare floors by diameter" style="direction:ltr"><rect x="120.0" y="16" width="416.5" height="26" rx="4" fill="#2f7d57"/><text x="544.5" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦71%⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >3–5 km</text><rect x="120.0" y="56" width="334.4" height="26" rx="4" fill="#5f9a6e"/><text x="462.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦57%⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >5–10 km</text><rect x="120.0" y="96" width="205.3" height="26" rx="4" fill="#c47f2c"/><text x="333.3" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦35%⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10–20 km</text><rect x="120.0" y="136" width="3.5" height="26" rx="4" fill="#b23a2e"/><text x="131.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦0%⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20–40 km</text></svg><figcaption>月海底部锐利环形山按直径的比例（研究 8）：环形山越大，撞上流体底部的时间就越早。</figcaption></figure><div class="callout"><span class="tag">来自下方的地球热量——接触平原上环形山边缘的证据（研究 15，§G.6）</span><p style="margin:0">公认的文献认为，平原上的大环形山（例如风暴洋中的）是被侧面来的熔岩淹没的——就像一座沙堡，周围的水位上涨，淹没了它较低的坡面，但边缘的顶部保持完好。在 LEF 模型中，接触平原是被附近地球的辐射<strong>从下方</strong>加热的（T ≈ 2,000 K，视角因子 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.205</mn><mo>→</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>345</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">0.205 \rightarrow T_{\mathrm{surface}} \approx 1,345\text{ K}</annotation></semantics></math></span></span>，高于玄武岩的熔点！）。
+<br>在每个直径 40 km 以上的环形山周围检查 36 条径向剖面，揭示了这种差异：在接触平原上，边缘在朝向平原的方向上<strong>完全消失的情况多出 +24%</strong>（相比之下，在接触区以外的平原上为 <strong>0%</strong>！），而幸存的顶部要钝得多、磨损得多（曲率低 −35 m/km²，宽度大 +0.14 km，角度宽 +5.3°）——这是来自下方的热磨损，侧向淹没永远无法造成！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：供给发动机、暴露锋面与三代开口</h2>
+<p>论文 05 的 H 和 I 部分表明，供给发动机的物理（压力、浮力、黏度和挥发分）如何与收缩的接触盘（从 6,000 km 到 3,000 km）的几何相结合，在月面上形成<strong>三代开口</strong>：</p>
+<ol class="steps">
+<li><strong>为什么只有流体能传递压力（§H.1–H.2）：</strong>外壳中的固体将不得不承受 13–<span class="ltr">16 GPa</span> 的应力（是其强度——约 <span class="ltr">0.2 GPa</span>——的 60–80 倍），会立即破裂。因此开口是一柱流体岩浆，传递静水压力和浮力，而水和挥发分的含量决定了它的黏度：低到足以在坚硬外壳下自由流动，又高到足以携带沉重的铁颗粒，使其不在途中下沉。</li>
+<li><strong>供给通量与开口关闭之间的联系（§H.3）：</strong>只要上升的通量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></span>）带来热量的速率超过向太空冷却的速率，开口就保持开放。当通量降到<strong>临界通量</strong>的门槛以下时，开口就会冻结并封闭（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>）。在正面，炽热地球的辐射（约 2,000 K，视角因子 0.205）使表面保持在约 <strong>1,345 K</strong> 的温度——高于玄武岩的熔点（约 1,320 K 或 1,050°C）——因此只要月球仍附着在地球上，<strong>正面的开口就不可能冻结</strong>！相反，在背面，随着梨形体延长、到达那里的地球热量减少，开口一个接一个地冻结了（只有<strong>莫斯科海</strong>例外，它通过一条笔直的内部通道由澄海供给）。</li>
+<li><strong>移动的暴露锋面与三代开口（§I.1–I.5）：</strong>当接触盘在向外圆化过程中从 6,000 km 缩小到 3,000 km 时，接触的边缘作为一个<strong>暴露锋面</strong>向内退缩：
+<ul>
+<li><strong>第一代（上部穹顶——背面，70° 以外）：</strong>从一开始就暴露在太空中的开口，向外射出物质，建起了自身的边缘和背面的环形山，在热量减少时较早冻结，并被埋在后来的建造层之下（36 个被掩埋的穹顶）。</li>
+<li><strong>第二代（剥离环——31°–70° 带，山丘）：</strong>起初作为向内输送物质的<strong>被覆盖的口</strong>，当暴露锋面经过它们时，便成为长时间向外发射物质的<strong>出口开口</strong>。</li>
+<li><strong>第三代（接触盘——31° 以内的正面帽区）：</strong>一直被覆盖并紧压在地球上、直到分离那一刻的开口（雨海、澄海、哥白尼 H 和暑湾）。它们作为地球压力进入月球的供给口；在分离的那一刻，压力一下子停止，喷发中止，它们深而可流动的底部在数亿年间从外向内缓慢冻结！</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Minimum launch speed from Earth to reach the receding Moon" style="direction:ltr"><line x1="70" x2="610" y1="221.3" y2="221.3" stroke="#ece7da"/><text x="62" y="225.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8.5</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9</text><line x1="70" x2="610" y1="133.8" y2="133.8" stroke="#ece7da"/><text x="62" y="137.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9.5</text><line x1="70" x2="610" y1="90.0" y2="90.0" stroke="#ece7da"/><text x="62" y="94.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10</text><line x1="70" x2="610" y1="46.3" y2="46.3" stroke="#ece7da"/><text x="62" y="50.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10.5</text><text x="127.4" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">20,000</text><text x="242.3" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">30,000</text><text x="357.2" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">40,000</text><text x="472.1" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">50,000</text><text x="587.0" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">60,000</text><path d="M93.0,191.1 L97.9,185.4 L102.9,180.0 L107.8,174.9 L112.7,170.0 L117.7,165.4 L122.6,161.1 L127.6,156.9 L132.5,153.0 L137.4,149.2 L142.4,145.6 L147.3,142.1 L152.3,138.8 L157.2,135.6 L162.1,132.6 L167.1,129.7 L172.0,126.9 L177.0,124.2 L181.9,121.6 L186.8,119.1 L191.8,116.7 L196.7,114.4 L201.7,112.2 L206.6,110.0 L211.5,107.9 L216.5,105.9 L221.4,103.9 L226.4,102.0 L231.3,100.2 L236.3,98.4 L241.2,96.7 L246.1,95.1 L251.1,93.5 L256.0,91.9 L261.0,90.4 L265.9,88.9 L270.8,87.4 L275.8,86.0 L280.7,84.7 L285.7,83.4 L290.6,82.1 L295.5,80.8 L300.5,79.6 L305.4,78.4 L310.4,77.2 L315.3,76.1 L320.2,75.0 L325.2,73.9 L330.1,72.9 L335.1,71.9 L340.0,70.9 L344.9,69.9 L349.9,68.9 L354.8,68.0 L359.8,67.1 L364.7,66.2 L369.6,65.3 L374.6,64.5 L379.5,63.6 L384.5,62.8 L389.4,62.0 L394.3,61.2 L399.3,60.4 L404.2,59.7 L409.2,59.0 L414.1,58.2 L419.0,57.5 L424.0,56.8 L428.9,56.1 L433.9,55.5 L438.8,54.8 L443.7,54.2 L448.7,53.5 L453.6,52.9 L458.6,52.3 L463.5,51.7 L468.5,51.1 L473.4,50.5 L478.3,50.0 L483.3,49.4 L488.2,48.9 L493.2,48.3 L498.1,47.8 L503.0,47.3 L508.0,46.8 L512.9,46.3 L517.9,45.8 L522.8,45.3 L527.7,44.8 L532.7,44.4 L537.6,43.9 L542.6,43.4 L547.5,43.0 L552.4,42.5 L557.4,42.1 L562.3,41.7 L567.3,41.3 L572.2,40.8 L577.1,40.4 L582.1,40.0 L587.0,39.6" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="93.0" cy="191.1" r="6" fill="#b23a2e"/><circle cx="587.0" cy="39.6" r="6" fill="#2f7d57"/><text x="103.0" y="197.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦8.8 km/s⁩</text><text x="103.0" y="215.1" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >17,000 km 处</text><text x="583.0" y="63.6" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦10.6 km/s⁩</text><text x="583.0" y="81.6" text-anchor="end" font-family="Heebo" font-size="12" font-weight="400" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >60,000 km 处</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >月地距离（km）· 到达所需的最低速度（km/s）</text></svg><figcaption>随着月球远离，需要地球以更高的发射速度才能到达它——而射击随时间减弱：起初是大的，最后是小的。</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>从上往下冻结的玄武岩盖层的冷却（时间平方根定律，§G.3），以及从地球射出的物质到达正在远离的月球所需的最低逃逸速度（§G.4），表示如下：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>2</mn><mi>λ</mi><msqrt><mrow><mi>κ</mi><mtext> </mtext><mi>t</mi></mrow></msqrt><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>∝</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi>h</mi><mn>2</mn></msup><mi>κ</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\delta(t) \approx 2\lambda\sqrt{\kappa\,t} \quad \Longrightarrow \quad t_{\mathrm{freeze}} \propto \dfrac{h^2}{\kappa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>R</mi><mo>⊕</mo></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min}(r) = \sqrt{2GM_\oplus\left(\dfrac{1}{R_\oplus} - \dfrac{1}{r}\right)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>由于冻结时间（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{freeze}}</annotation></semantics></math></span></span>）随岩浆储库<strong>深度的平方（h²）</strong>增长，深而炽热的接触月海（雨海和澄海）保持流体状态的时间比边缘浅开口长几十到几百倍——而条件 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span> 确立了：只有当暴露锋面经过时仍处于活跃状态的开口，才成为活跃的出口开口。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：开口的大小是供给时长的记忆</h2>
+<p>供给发动机的一个直接几何预测（§I.6）是，炽热岩浆在压力下的长期流动会逐渐加宽开口的颈部——就像流水在冰中冲宽一条水道（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mtext>feeding history</mtext><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>η</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = F(\text{feeding history}, P, T, Q, \eta)</annotation></semantics></math></span></span>）：</p>
+<ul>
+<li><strong>供给穹顶直径的清晰层级：</strong>在 34 个月海的目录中（论文 05 附录 A），<strong>月球上最大的六个供给穹顶（450–909 km）全部位于正面</strong>，正面穹顶的直径中位数为 <strong>375 km</strong>，而背面只有 <strong>227 km</strong>（背面最大的穹顶是东海，435 km）！</li>
+<li><strong>平滑底部上大环形山的稀少：</strong>在雨海底部，每百万 km² 只有 11 个直径 20 km 以上的环形山（澄海为 16 个），而背面高地上每百万 km² 有 <strong>205</strong> 个——相差 13–18 倍，表明接触区的底部是在大部分撞击风暴已经过去之后才冻结的。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：环形山的保存状态、边缘的磨损与暴露世代（论文 05，G–I 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>研究 / 量度</th><th>比较与样本</th><th>定量结果</th><th>显著性与物理意义</th></tr>
+<tr class="hl"><td><strong>按直径划分的环形山状态（研究 8）</strong></td><td>月海底部 324 个环形山（≥ 3 km）</td><td>锐利：<strong>71%</strong>（3–5 km）<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>0%</strong>（20–40 km）<br>熔融：<strong>17%</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>85%</strong>（80 km 以上为 100%）</td><td>Cochran–Armitage 趋势检验：p &lt; 10⁻¹⁰；大环形山较早撞上流体底部</td></tr>
+<tr><td><strong>在底部消失的环形山（研究 8）</strong></td><td>月海底部对比玄武岩平原（不含辐射纹）</td><td>接触区（2–5 km）：263 对 836 个/百万 km²<br>接触区（20+ km）：<strong>0</strong> 对 23 个/百万 km²</td><td>早期撞击在接触月海的流体岩浆中被吞没并抹去</td></tr>
+<tr class="hl"><td><strong>接触平原上边缘的磨损（研究 15）</strong></td><td>137 个环形山（≥ 40 km），36 条径向剖面</td><td>平原一侧边缘缺失：接触区内 <strong>+24%</strong>，接触区外 <strong>0%</strong>；顶部钝化 −35 m/km²，角度 +5.3°</td><td>接触平原是被地球（1,345 K）<strong>从下方</strong>熔化和加热的，而不仅仅是从侧面被淹没</td></tr>
+<tr><td><strong>三代暴露（§I.4）</strong></td><td>退缩接触的几何（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>000</mn><mo>→</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">6,000 \rightarrow 3,000</annotation></semantics></math></span></span> km）</td><td>第一代（&gt;70°）：立即暴露并较早关闭<br>第二代（31°–70°）：由口转为出口开口<br>第三代（&lt;31°）：在分离时关闭的接触口</td><td>冷却顺序：背面 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 环带 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 接触区（雨海和澄海）</td></tr>
+<tr><td><strong>供给穹顶直径作为记忆（§I.6）</strong></td><td>附录 A 目录中的 34 个月海</td><td>正面中位数：<strong>375 km</strong>（最大 909 km）<br>背面中位数：<strong>227 km</strong>（最大 435 km）</td><td>正面高温下的长期供给加宽了供给开口</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>月海底部的环形山揭示了冷却的精确时间表：当月球靠近、月海还是流体时，大团块落在上面，被吞没或熔成环；当它们变成晶体“晶粥”时，中等环形山被涂抹；只有当它们完全冻结时，来自地球的最后一批小液滴才留下锐利的环形山。</p>
+<p>但要一劳永逸地证明月海确实是向周围射出物质的<strong>源头</strong>，并且接触区正是月球一直附着在地球上直到最后一刻的地方，我们必须检查岩石的化学指纹。在下一章——<strong>第 10 章：化学指纹——铁环、接触区的钍之谜与五座时钟</strong>（依据论文 05——<em>月海</em>，J–O 部分及附录 A）——我们将合上月球月海的卷宗！</p>
+<a href="story10_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 10 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">化学指纹——铁环、接触区的钍之谜与五座时钟 →</p></div></a><p style="margin-top:22px"><a href="story08_zh.html">← 第 8 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

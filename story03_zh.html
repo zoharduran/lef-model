@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 3 章：内部的发动机——150 GPa 的源压与起泡的岩浆 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 3 章：150 GPa 的源压，起泡岩浆 3,864 kg/m³ 的密度门槛，流量，能量来源，以及为什么通道不是细管而是梨形体。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story03_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story03_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story03_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story03_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story03_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story03_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story03_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story03_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story03_he.html" hreflang="he">עברית</a> · <a href="story03_en.html" hreflang="en">English</a> · <a href="story03_de.html" hreflang="de">Deutsch</a> · <a href="story03_es.html" hreflang="es">Español</a> · <a href="story03_fr.html" hreflang="fr">Français</a> · <a href="story03_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 3 章</p>
+<h1>第 3 章：内部的发动机——<span class="ltr">150 GPa</span> 的源压与起泡的岩浆</h1>
+<p>依据论文 03——LEF 机制实践（引言及 A 部分：§A.1–A.13）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：是谁把 7,300 亿亿吨物质推到了 16,000 千米的高度？</h2>
+<p class="lead">在前几章中我们看到，共转线解开了速度之谜和角动量账目之谜：只要我们能把月球的物质带到离地心约 16,000 km 处，并让它与地球一同转动，它就已经以自由轨道的速度在运动了。但现在，我们面临现实中最难的问题：</p>
+<div class="q">世界上有什么力量，能够克服地球引力，抬起 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg 的巨大质量？</div>
+<p>为了理解这项任务有多么艰巨，让我们先审视两个诱人却行不通的提议。首先，<strong>仅靠自转什么也抬不起来</strong>：即使在每 5.5 小时转一圈的地球表面，在离中心 8,991 km 的高度（一个月球质量的天体贴着地表），引力以 <span class="ltr">4.93 m/s²</span> 的加速度向内拉，而向外的离心推力只有 <span class="ltr">0.905 m/s²</span>。每一千克仍然向下承受着大约相当于今天地表重量百分之四十的重量！自转确实减轻了重量，但它并不能托起重量。</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">向内的引力 · ⁦4.93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:ltr;unicode-bidi:embed">向外的离心推力 · ⁦0.905 m/s²⁩</text></svg><figcaption>在离中心 8,991 km 处、一天 5.5 小时时：引力是离心推力的五倍多。</figcaption></figure>
+<p>其次，<strong>浮力在太空中不起作用</strong>：油浮在水上，是因为周围更重的水把它向上推，但在地表上方并没有一片岩石的海洋能把月球托上去。</p>
+<div class="box"><span class="tag">结论</span><p style="margin:0">结论很清楚：要用地球自身的物质建造一颗卫星，需要一台<strong>巨大的内部压力发动机</strong>从内部运转——它从地球深处把一柱岩浆向上推，以足够的速率供给质量，并且不会在顶部正在建造的卫星的重压下崩溃。</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>图景：牙膏、升到屋顶的水，以及被打开的汽水瓶</h2>
+<p>为了亲手感受这台发动机如何运转，让我们把日常生活中的三个简单图景放在一起：</p>
+<div class="three t">
+<div><b>01 · 源压</b><h4>牙膏管</h4><p>在年轻地球的深处，上方所有岩层的重量造成了巨大的压力。当在某个有利区域打开一条从深处通往地表的流动通道时，内部压力就会把熔融岩石向上挤出——就像你挤压牙膏管时牙膏从管口出来一样。</p></div>
+<div><b>02 · 静水压头</b><h4>把水抽到屋顶水箱的水泵</h4><p>地下室的水泵要把水送到摩天大楼屋顶的水箱，它的压力必须大于管内整柱水的重量。如果水太重、楼太高，水柱就会停在半途。</p></div>
+<div><b>03 · 起泡的岩浆</b><h4>被打开的汽水瓶</h4><p>在巨大的深度和压力下，水和挥发性气体溶解在熔融岩石中，就像气体溶在密封的汽水瓶里。一旦岩浆上升、所受压力下降，气体就会析出，形成数十亿个气泡——<strong>起泡的岩浆</strong>。这种泡沫比固体岩石轻得多，因此同样的压力能把它抬得高得多！</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：为什么干燥的岩石会失败——只有富含挥发分的岩浆能越过门槛</h2>
+<p>在 LEF 模型中，我们不去猜测压力是否足够——而是在同一个引力场中<strong>为这次推送定价</strong>。在计算之前，论文 03 设定了一条严格的记账规则：在每一时刻，母体的初始质量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> kg）都被划分为四个清晰的储库，确保没有一千克被重复计算：</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>留在地球中的质量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>在正在发育的天体中积累的质量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>在二者之间运动途中或处于抛射中的质量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>以及从系统中损失的质量</span></div></div>
+<p>现在，论文沿着岩浆柱建立了一个一维压力检验，从年轻地球的中心（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> km，一天 5.5 小时）一直到整个母体的共转半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> km）：</p>
+<ul class="pts">
+<li><strong>源区可用的压力</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>：</strong>压在年轻地球中心的各层重量（减去快速自转带来的离心减压）给出 <strong><span class="ltr">150.26 GPa</span></strong> 的岩石静压源压（约一百五十万个大气压！）。</li>
+<li class="a"><strong>岩浆柱的代价</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>：</strong>要撑起一柱由密度为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> kg/m³ 的深部岩浆构成、在地表以上起泡至密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> kg/m³ 的岩浆柱，需要 <strong><span class="ltr">139.78 GPa</span></strong> 的压力。</li>
+<li class="c"><strong>推动月球的盈余：</strong><span class="ltr">150.26 − 139.78 = <strong><span class="ltr">+10.49 GPa</span></strong></span>！剩下超过十吉帕的正压力盈余，驱动物质向上流动。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">源压 · ⁦150.26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">岩浆柱代价 · ⁦139.78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:ltr;unicode-bidi:embed">盈余：⁦+⁦10.49 GPa⁩⁩</text></svg><figcaption>参考密度 3,500 kg/m³ 下的压力平衡：源压覆盖了岩浆柱的重量并留有盈余。</figcaption></figure>
+<div class="callout"><span class="tag">临界密度门槛 · 3,864 kg/m³</span>
+<p style="margin:0">当我们检查哪些岩浆密度能通过检验时，出现了一条鲜明的界线：任何密度低于 <strong>3,864 kg/m³</strong> 的深部岩浆（例如富含水和挥发分的岩浆）都会留下正的压力盈余并到达共转线；相反，密度为 4,000 kg/m³ 的干燥重岩浆需要 <span class="ltr">154.19 GPa</span>，以 <span class="ltr">−3.92 GPa</span> 的亏空失败。<strong>水和挥发分不是附带的添加物——它们正是让月球得以升起的物理条件！</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68.12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24.89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10.49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3.92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18.33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="end" style="direction:ltr;unicode-bidi:embed">门槛：3,864 kg/m³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">岩浆上升</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">失败</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">深部岩浆密度（kg/m³）</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:ltr;unicode-bidi:embed">压力盈余（GPa）</text></svg><figcaption>根据论文 03，压力盈余（计入负载和摩擦之前）随深部岩浆密度的变化：曲线在 3,864 kg/m³ 处穿过零点。</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：流量、能量来源与细管方案的否定</h2>
+<p>我们发现，<span class="ltr">10.49 GPa</span> 的压力盈余能够把一柱起泡的岩浆一直推到共转线。但要建造一整颗月球，这台内部发动机还必须在同一个系统内通过<strong>另外三项实际检验</strong>：</p>
+<div class="three">
+<div><b>TEST 1</b><h4>速率检验</h4><p>岩浆能按时到达吗？要在 6 亿年的建造窗口内（敏感性检验中为 1 亿年）输送一整颗月球的质量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg），需要 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> kg/s 的平均速率（短窗口下高达 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> kg/s）。根据黏性流动定律（泊肃叶定律），流量随<strong>通道半径的四次方</strong>增长（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>）：只要通道内部保持炽热和可流动，半径几百千米或更大的通道就能轻松输送这些质量。</p></div>
+<div><b>TEST 2</b><h4>能量检验</h4><p>抬起一颗月球所需的功从何而来？把月球的质量从地表（8,991 km）抬到释放半径（16,400 km）需要约 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span> 焦耳</strong>的引力功（不到地球结合能的百分之一）。这些能量从哪里来？来自驱动内部演化的同一个过程：<strong>沉重的铁沉入地核</strong>以及年轻地球的收缩，释放出约 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span> 焦耳的引力能——足以支付这次抬升还绰绰有余！</p></div>
+<div><b>TEST 3</b><h4>隔热外壳检验</h4><p>通道如何避免在途中冻结？通道内部从下方获得热量而保持液态，而它的外表面在与寒冷环境接触时会冻结。冻结锋面方程表明，外壳的第一米只需 <strong>1.9 到 23 天</strong>就会固化，一千米需要数千到数万年，而 50 km 的厚壳需要数百万年——于是形成一层坚固的隔热外壳，使内部的核心保持炽热和流动。</p></div>
+</div>
+<div class="box"><span class="tag">综合检验的惊人发现</span>
+<h3 style="margin-top:4px">为什么“细管”被彻底排除</h3>
+<p style="margin:0">当在最后的攀升阶段（一天 5.77 小时、纬度 22.5°、月心位于 15,397 km）同时检验压力、流动和月球重量时，出现了一个戏剧性的结果：如果通道是一根半径 500 km 的细管，压在管顶的月球重量会造成 <span class="ltr">46.18 GPa</span> 的负载，把全部压力盈余抹平为 <span class="ltr">−35.03 GPa</span> 的亏空。只有在<strong>通道半径超过 1,017 km</strong> 时，径向平衡才转为正值——而在这样的半径下，通道的外部本身就已重达<strong>月球质量的 0.46 倍</strong>（半径 1,500 km 时——一整个月球质量！），并承受着数吉帕的侧向剪切应力。<strong>结论：</strong>通道不是一根无质量的细管，而是地球自身一个宽阔、炽热而巨大的底座——<strong>梨形体</strong>！</p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>沿供给路径的压力平衡把中心的岩石静压源压（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>）、深部（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>）与外部（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>）岩浆柱的静水压头、柱顶天体的重量负载（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>）以及黏性摩擦损失（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>）联系在一起：</p>
+<div class="eqs">
+<div class="eq"><div class="k">源压</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">岩浆柱的代价</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>抬升条件与密度门槛</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>对于半径为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>、长度为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> 的通道中的层流（泊肃叶定律），以及外壳冻结锋面的增厚速率（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>）和抬升的引力功（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>）：</p>
+<div class="eqs">
+<div class="eq"><div class="k">流量（泊肃叶）</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">冻结锋面</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">抬升的功</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：月球晶体中的熔体包裹体</h2>
+<p>物理检验表明，只有富含水和挥发分（轻于 3,864 kg/m³）的岩浆才能越过 <span class="ltr">150.26 GPa</span> 的压力门槛，升到共转线。如果月球是由一次使水汽化的干燥、灼热的大碰撞形成的，它的古老岩石理应完全干燥。</p>
+<p>但当科学家用先进的显微技术检查<strong>熔体包裹体</strong>——被困在月球深处生长的橄榄石晶体中、保护水免于逃逸到太空的微小古老岩浆液滴——时，发现了一个令人惊讶的印记：高达 <strong>615 到 1,410 ppm</strong> 的含水量，与地球上地幔的浓度相近。</p>
+<div class="q">在月球晶体中发现的水，正是当年把月球向上推的那台“起泡发动机”的化石遗迹！</div>
+<h3 style="margin-top:28px">实验框：压力平衡、密度门槛与综合检验（论文 03，A 部分）</h3>
+<div class="tw"><table class="d"><tr><th>深部岩浆密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>可用源压 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>岩浆柱代价 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>负载与摩擦之前的压力盈余</th><th>抬升检验结果</th></tr>
+<tr><td>1,500 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">82.14 GPa</span></td><td class="ok2"><span class="ltr">+68.12 GPa</span></td><td class="ok2">轻松通过（强烈起泡的岩浆）</td></tr>
+<tr><td>3,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">125.37 GPa</span></td><td class="ok2"><span class="ltr">+24.89 GPa</span></td><td class="ok2">通过（富含挥发分的岩浆）</td></tr>
+<tr class="hl"><td>3,500 kg/m³（参考值）</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">139.78 GPa</span></td><td class="ok"><span class="ltr">+10.49 GPa</span></td><td class="ok">通过——盈余驱动建造</td></tr>
+<tr class="hl"><td>3,864 kg/m³（门槛）</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">150.26 GPa</span></td><td class="eq0"><span class="ltr">0.00 GPa</span></td><td class="eq0">恰好的平衡点</td></tr>
+<tr><td>4,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">154.19 GPa</span></td><td class="bad"><span class="ltr">−3.92 GPa</span></td><td class="bad">失败（岩浆过于干燥沉重）</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>通道半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>月球的径向负载</th><th>流动摩擦损失</th><th>径向盈余</th><th>侧向剪切应力（22.5°）</th><th>外部通道质量（以月球质量计）</th></tr>
+<tr><td>500 km</td><td><span class="ltr">46.18 GPa</span></td><td><span class="ltr">0.0103 GPa</span></td><td class="bad"><span class="ltr">−35.03 GPa</span>（失败）</td><td><span class="ltr">46.04 GPa</span></td><td>0.112</td></tr>
+<tr><td>1,000 km</td><td><span class="ltr">11.54 GPa</span></td><td><span class="ltr">0.0006 GPa</span></td><td class="bad2"><span class="ltr">−0.39 GPa</span>（门槛：1,017 km）</td><td><span class="ltr">11.51 GPa</span></td><td>0.448（几乎半个月球！）</td></tr>
+<tr class="hl"><td>1,500 km（接触盘）</td><td><span class="ltr">5.13 GPa</span></td><td><span class="ltr">0.0001 GPa</span></td><td class="ok"><span class="ltr">+6.02 GPa</span>（通过！）</td><td><span class="ltr">5.12 GPa</span></td><td class="ok">1.008（巨大的结构——梨形体）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>我们发现了内部发动机的工作方式：<span class="ltr">150.26 GPa</span> 的深部源压抬起轻于 3,864 kg/m³ 的起泡岩浆，而综合检验揭示，这里没有什么细管——而是一个从地球中升起的宽阔、巨大的通道。</p>
+<p>但恰好位于这一建造区上方的地球外壳发生了什么？在下一章——<strong>第 4 章：从外部升起的表皮——穹顶的 4 个阶段与月面的转译规则</strong>（论文 03，B 部分：§B.1–B.7）——我们将发现地球的硅铝外壳如何随天体一同升起，成为月球的表皮，并把月面划分为三个精确的地理区域。</p>
+<a href="story04_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 4 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">从外部升起的表皮——穹顶的 4 个阶段与月面的转译规则 →</p></div></a>
+<p style="margin-top:22px"><a href="story02_zh.html">← 第 2 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 13 章：月球的两极——为什么两极环形山密集、六种假说被否定与三轴形状的复原 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 13 章：为什么月球两极环形山密集——干净计数、六种假说的否定以及三轴形状的复原。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story13_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story13_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story13_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story13_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story13_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story13_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story13_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story13_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story13_he.html" hreflang="he">עברית</a> · <a href="story13_en.html" hreflang="en">English</a> · <a href="story13_de.html" hreflang="de">Deutsch</a> · <a href="story13_es.html" hreflang="es">Español</a> · <a href="story13_fr.html" hreflang="fr">Français</a> · <a href="story13_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 13 章</p>
+<h1>第 13 章：月球的两极——为什么两极环形山密集、六种假说被否定与三轴形状的复原</h1>
+<p>依据论文 07——两极：为什么两极更密集（A–C.2 部分：干净计数、6 种被否定的假说与扁化的几何）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：为什么月球的两极都密布大环形山——而且越大的越密集？</h2>
+<p>当在 Robbins（2019）精确的全球目录中统计所有大环形山（20 km 及以上）时，出现了一种前人从未解释过的鲜明双极模式：<strong>两个极冠（以北极和南极为中心、半径 30°）的环形山远比赤道带（15°S–15°N）密集</strong>！</p>
+<ul>
+<li><strong>在原始计数中：</strong>极冠每百万 km² 有 <strong>219 个环形山</strong>（北 227，南 211），而赤道带为 <strong>166</strong>——比值为 <strong>1.32</strong>（对于 40 km 及以上的环形山，比值跃升到 <strong>1.51</strong>）。</li>
+<li><strong>对地质偏差的怀疑——以及“干净计数”中的解答：</strong>怀疑者会立即指出，赤道富含年轻的玄武岩月海（占其面积 22%，两极为 1%），它们抹去了古老的环形山，而南极被南极–艾特肯盆地切过（SPA，覆盖极冠的 24%）。但当两侧都去除月海和 SPA 盆地后（<strong>干净计数</strong>），两极的过剩并没有消失——它稳定在 <strong>1.20 ± 0.05</strong>（在 75°–90° 带中南 305、北 300），并随环形山直径增大而持续攀升：从 20–30 km 的 <strong>1.09</strong> 到 60–100 km 的 <strong>1.53 ± 0.19</strong>，再到 100–300 km 的 <strong>1.84 ± 0.38</strong>！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：被两只手掌挤压后又松开的圆气球</h2>
+<p>为什么无论是来自外太空的小行星雨（还是来自地球的均匀返回物质雨），都无法在月球自转轴周围造成对称的双极集中？一个图景就能立刻解开这个谜：</p>
+<ul>
+<li><strong>被两只手掌挤压的带点气球（扁化阶段）：</strong>想象一个均匀布满圆点（环形山）的圆气球。现在用力从上下挤压它（一天 5.5 小时的快速自转产生的离心力），并把它向侧面拉向地球（洛希潮汐力）。气球变成一个扁平、拉长的天体，像<strong>“既是饼又是蛋”</strong>（轴比 a : b : c ≈ 1.8 : 1.4 : 1）：它的极区向两侧加宽、伸展成大而平坦的表面，环形山以均匀的密度落在上面！</li>
+<li><strong>松开双手、向内圆化（体积塌缩阶段）：</strong>一旦月球的质心越过共转线（15,818–16,399 km），在它仍附着于地球时拉伸被释放，月球的自引力就把它拉回球形，同时体积收缩（密度从 1,700 增加到 2,600 kg/m³）。气球弹回成球体：<strong>两极宽阔平坦的表面向内汇聚到两个极点中心</strong>（所有经线都向两极退缩！），坐在坚硬外壳上的环形山被挤进小得多的面积中，却没有失去原来的大小！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：把极向模式与经度模式分开，并否定 6 种替代假说</h2>
+<p>论文 07 的 A 和 B 部分在 12 个纬度带、12 个经度扇区、每个极点周围六个嵌套的圆冠（10°–60°）以及六个轴端周围的六个圆冠中扫描月面，并在作出判决之前，系统地检验了<strong>六种替代假说</strong>：</p>
+<ol class="steps">
+<li><strong>纬度模式与经度模式的完全分离（§A.1–A.5）：</strong>沿经线方向，在尾随侧（90°E，最密：30° 圆冠中 252）与地下点（0°，最稀：148）之间存在完全独立的不对称。相比之下，每个纬度带都环绕月球 360°，因而对所有经度作同等平均——因此两极过剩是一个完全独立的几何现象！</li>
+<li><strong>SPA 盆地仅限于内核（0°–10°）（环带研究 §A.10）：</strong>在 SPA 中心（53°S，191°E）周围的环带中测量密度揭示，环形山的短缺并非在整个盆地中均匀分布，而是作为一个“台阶”集中在 0°–10° 的内核中（每百万 km² <strong>132 个环形山</strong>，与边缘外的 222 相比比值为 0.59！），而在 10°–39.57° 环带中密度立即跃升到 193–202。去除 SPA 后，两极达到完全的统计相等（75°–90° 带中南 305 对北 300；20° 圆冠中 280 对 270）。</li>
+<li><strong>为什么全部六种替代假说都被否定（§B.1–B.6）？</strong>
+<ul>
+<li><strong>（B.1）古老高地中的保存：</strong>未通过遮罩检验和形状检验——即使去除月海和 SPA 之后仍有 1.20 ± 0.05 的过剩，两极（233–246）比古老的背面冠部（221）更密集，而在干净的北极存在向内的汇聚（60° 处 189 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 15° 处 300）。</li>
+<li><strong>（B.2）扁化本身（快速自转）：</strong>符号相反！挤压两极会使其面积向外伸展，让环形山变稀（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>a</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi></mrow></msub><mo>=</mo><mn>0.59</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{polar}} = (c/a)^2 \rho_{\mathrm{eq}} = 0.59\times</annotation></semantics></math></span></span>）。</li>
+<li><strong>（B.3）洛希潮汐拉伸：</strong>符号相反！拉伸朝向地球的轴会缩短极轴，但使极区面积向外伸展（0.83×），实际上反而压缩了地下点（1.38×）。</li>
+<li><strong>（B.4）两极更强的引力：</strong>在自转期间符号相反！在一个以 5.77 小时自转的扁平天体上，两极在能量上比赤道高 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>g</mi><mo>≈</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">\Delta H = \frac{1}{2}\Omega^2 R^2 / g \approx 120</annotation></semantics></math></span></span> km（一个“山顶”），因此物质会从那里向外滑向赤道——只有在自转被释放<em>之后</em>，两极才成为能量谷！</li>
+<li><strong>（B.5）向两极的排泄 / 点涡旋：</strong>未通过形状检验——在北极，密度在一个宽阔的平台上趋于平稳（15° 处 300，10° 处 298），没有地形坑，因为自转力在离地球连线 90° 处产生的是<strong>一个对称的环</strong>，而不是一个奇点。</li>
+<li><strong>（B.6）均匀（各向同性）的体积变化：</strong>均匀的球形收缩以同一比例改变所有距离，因此极/赤道比恰好保持为 1.00。</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Clean crater density at the six axis ends" style="direction:ltr"><rect x="170.0" y="16" width="364.0" height="26" rx="4" fill="#2f7d57"/><text x="542.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦252⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >尾随侧 · 90°E</text><rect x="170.0" y="56" width="355.3" height="26" rx="4" fill="#2f7d57"/><text x="533.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦246⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >南极</text><rect x="170.0" y="96" width="336.6" height="26" rx="4" fill="#2f7d57"/><text x="514.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦233⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >北极</text><rect x="170.0" y="136" width="319.2" height="26" rx="4" fill="#5f9a6e"/><text x="497.2" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦221⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >反地球点 · 180°</text><rect x="170.0" y="176" width="251.3" height="26" rx="4" fill="#c47f2c"/><text x="429.3" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦174⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >前导侧 · 90°W</text><rect x="170.0" y="216" width="213.8" height="26" rx="4" fill="#b23a2e"/><text x="391.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦148⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >地下点 · 0°</text></svg><figcaption>六个轴端周围 30° 圆冠中直径 20 km 以上环形山的干净密度（每百万 km²）：从地下点的最小值到两极和尾随侧。</figcaption></figure><div class="callout"><span class="tag">由两项独立检验证明的最大扁化时密度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³）（§C.1）</span><p style="margin:0">（1）<strong>麦克劳林椭球体：</strong>对于 5.5 小时的自转周期，测得的赤道/极轴比（b/c ≈ 1.41）恰好在 <strong>1,700 kg/m³</strong> 的密度下得到（低于 1,070 kg/m³ 时不存在平衡，天体会解体）。<br>
+（2）<strong>面积闭合极限：</strong>如果峰值密度高于 <strong>1,800 kg/m³</strong>，圆化期间的体积收缩就会太小，地球轴的两端就会被迫膨胀而不是闭合！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：“既是饼又是蛋”的几何，以及不调参数的形状复原</h2>
+<p>论文 07 的 B.7 和 C.1–C.2 部分表明，快速自转与地球潮汐拉伸的结合如何造就了一个明确的三轴天体（a : b : c ≈ 1.8 : 1.4 : 1），以及测量六个轴端周围的环形山如何精确地复原其原始形状：</p>
+<ol class="steps">
+<li><strong>附着天体的三个轴（§A.9、§C.1–C.2）：</strong>当年轻的月球附着在梨形体顶端、以 5.5 小时的同步自转绕地球旋转时，有两种畸变同时作用于它：
+<ul>
+<li><strong>“饼”的部分（b/c ≈ 1.41）：</strong>绕极轴（c）的快速自转使两极扁平、赤道加宽（密度约 1,700 kg/m³ 的麦克劳林椭球体）。</li>
+<li><strong>“蛋”的部分（a/c ≈ 1.8）：</strong>地球在近侧向内的引力与远侧向外的离心力相对抗，把天体沿地球轴拉长（a，从最大扁化时的 5,585 × 4,628 × 3,191 km 到分离时直径 3,778 km 的球体！）。</li>
+</ul>
+</li>
+<li><strong>六个轴端的排名（六轴研究，§A.9）：</strong>在六个相等的 30° 圆冠中测量环形山密度（20+ km，已去除月海和 20 个大盆地）揭示出清晰的三轴排名：
+<ul>
+<li><strong>（1）地下点（0°，0°）：</strong>最稀——<strong>148</strong>（原始 94），因为这里是梨形体的接触底座，压力和热量从这里流过，圆化期间收缩最小。</li>
+<li><strong>（2）前导侧（0°，90°W）：</strong><strong>174</strong>（原始 129；不含东海盆地为 162）。</li>
+<li><strong>（3）反地球点（0°，180°）：</strong><strong>221</strong>（原始 216）——作为穹顶顶部的“自由头部”，没有受到外部挤压。</li>
+<li><strong>（4–5）北极（90°N）和南极（90°S）：</strong><strong>233</strong>（原始 227）和 <strong>246</strong>（原始 211）——圆化期间最大汇聚的焦点。</li>
+<li><strong>（6）尾随侧（0°，90°E）：</strong><strong>252</strong>（原始 253）——结合了环的汇聚与在自转中落后的抛射物的聚集（第 11 章）。</li>
+</ul>
+</li>
+<li><strong>不调参数的盲拟合（零参数拟合，§C.3）：</strong>当从六个轴的比值（两极/两侧 = 1.12，两极/地球轴两端 = 1.30）复原整个环形山群（20+ km）的平均三轴形状时，得到 <strong>1.37 : 1.15 : 1</strong> 的轴比。把这一形状纯理论地圆化为球体，预测极冠（30°）与赤道带（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi| &lt; 15^\circ</annotation></semantics></math></span></span>）之间的干净密度比为 <strong>1.21</strong>——与表面上的直接测量（<strong>1.19</strong>，完整干净计数中为 <strong>1.20 ± 0.05</strong>）几乎完全吻合，而且完全没有自由参数！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学术解释与关键方程</h2>
+<p>麦克劳林椭球体的静水平衡方程（对于偏心率 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><msup><mi>a</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 - c^2/a^2}</annotation></semantics></math></span></span> 和自转速率 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span>）以及洛希潮汐稳定性判据（k &lt; 0.09）表示如下（§C.1–C.2）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup></mrow></msqrt></mrow><msup><mi>e</mi><mn>3</mn></msup></mfrac></mstyle><mo stretchy="false">(</mo><mn>3</mn><mo>−</mo><mn>2</mn><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>6</mn><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><msup><mi>e</mi><mn>2</mn></msup></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\Omega^2}{\pi G \rho} = \dfrac{2\sqrt{1-e^2}}{e^3}(3 - 2e^2)\arcsin(e) - \dfrac{6(1-e^2)}{e^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mn>0.4493</mn><mtext> </mtext><mi>π</mi><mi>G</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\rho_{\min} = \dfrac{\Omega^2}{0.4493\,\pi G}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>ρ</mi><mtext> </mtext><msup><mi>r</mi><mn>3</mn></msup></mrow><msub><mi>M</mi><mi>E</mi></msub></mfrac></mstyle><mo>&lt;</mo><mn>0.09</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{\rho\,r^3}{M_E} &lt; 0.09</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{\mathrm{Roche,rigid}} = 1.26\,R_\oplus\left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>对于 5.5 小时的周期，密度的稳定性下限为 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>070</mn></mrow><annotation encoding="application/x-tex">\rho_{\min} = 1,070</annotation></semantics></math></span></span> kg/m³（在 1,000 kg/m³ 时没有平衡解，天体会解体），而在分离时的密度（2,600 kg/m³）下，自由流体的洛希极限位于 19,971–20,100 km——这表明，在更早的分离距离（16,400–16,610 km）上，月球是靠<strong>一层已经冻结的刚性外壳</strong>才保持完整的！</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>现实中的印记：环形山直径作为圆化阶段的“年代时钟”</h2>
+<p>由于在月球从最大扁化（1.8 : 1.4 : 1）圆化到分离时的刚性球体（≤ 1.04）的过程中，环形山不断落在月球上，最大的环形山（在最大扁化附近形成）经历了两极的全部收缩，而较小、较晚的环形山只经历了圆化的末段（§A.8.5、§C.3）：</p>
+<ul>
+<li><strong>100–300 km 的环形山（最大扁化）：</strong>测得的极/赤道比为 <strong>1.84 ± 0.38</strong>（对最大扁化 1.8:1.4:1 的预测：<strong>1.49</strong>）。</li>
+<li><strong>60–100 km 的环形山（越过共转线）：</strong>测得比值 <strong>1.53 ± 0.19</strong>（对 1.40 形状的预测：<strong>1.34</strong>）。</li>
+<li><strong>40–60 km 的环形山（圆化中期）：</strong>测得比值 <strong>1.26 ± 0.12</strong>（对 1.30 形状的预测：<strong>1.26</strong>——完全吻合！）。</li>
+<li><strong>30–40 km 的环形山（圆化末期）：</strong>测得比值 <strong>1.15 ± 0.11</strong>（对 1.20 形状的预测：<strong>1.17</strong>）。</li>
+<li><strong>20–30 km 的环形山（分离前后）：</strong>测得比值 <strong>1.09 ± 0.07</strong>（对球形天体 1.0 的预测：<strong>1.00</strong>）。</li>
+</ul>
+<h3 style="margin-top:28px">实验框：按环形山大小的干净计数、六个轴与麦克劳林矩阵（论文 07，A–C.2 部分）</h3>
+<div class="tw"><table class="lab">
+<tr><th>环形山直径组 / 量度</th><th>对应的动力学阶段</th><th>理论形状（a:b:c）</th><th>预测比值（极/赤道）</th><th>干净计数中的测得比值</th></tr>
+<tr class="hl"><td><strong>全部环形山群（≥ 20 km）</strong></td><td>综合平均（六轴复原）</td><td>1.37 : 1.15 : 1</td><td><strong>1.21</strong>（未调参！）</td><td><strong>1.20 ± 0.05</strong>（直接 1.19）</td></tr>
+<tr><td><strong>100–300 km</strong></td><td>最大扁化（T = 5.5 h）</td><td>1.8 : 1.4 : 1</td><td>1.49</td><td><strong>1.84 ± 0.38</strong></td></tr>
+<tr class="hl"><td><strong>60–100 km</strong></td><td>越过共转线</td><td>1.40</td><td>1.34</td><td><strong>1.53 ± 0.19</strong></td></tr>
+<tr><td><strong>40–60 km</strong></td><td>向内圆化中期</td><td>1.30</td><td>1.26</td><td><strong>1.26 ± 0.12</strong></td></tr>
+<tr><td><strong>30–40 km</strong></td><td>圆化末期（2,600 kg/m³）</td><td>1.20</td><td>1.17</td><td><strong>1.15 ± 0.11</strong></td></tr>
+<tr><td><strong>20–30 km</strong></td><td>分离前后（球形天体）</td><td>1.00</td><td>1.00</td><td><strong>1.09 ± 0.07</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>轴端（30° 圆冠）</th><th>坐标</th><th>原始密度（≥ 20）</th><th>干净密度（≥ 20）</th><th>干净密度（≥ 40）</th><th>在三轴结构中的角色</th></tr>
+<tr class="hl"><td><strong>1. 地下点</strong></td><td>0°，0°</td><td>94</td><td><strong>148</strong></td><td>48</td><td>全局最小值——梨形体的接触底座</td></tr>
+<tr><td><strong>2. 前导侧</strong></td><td>0°，90°W</td><td>129</td><td><strong>174</strong>（不含东海为 162）</td><td>61</td><td>外围侧翼（猛烈的正面撞击）</td></tr>
+<tr><td><strong>3. 反地球点</strong></td><td>0°，180°</td><td>216</td><td><strong>221</strong></td><td>63</td><td>穹顶顶部的“自由头部”（无隔挡）</td></tr>
+<tr class="hl"><td><strong>4. 北极</strong></td><td>90°N</td><td>227</td><td><strong>233</strong>（15° 核心中 300）</td><td>89（10° 时 108）</td><td>两极汇聚的焦点（无 SPA 的干净月壳）</td></tr>
+<tr class="hl"><td><strong>5. 南极</strong></td><td>90°S</td><td>211</td><td><strong>246</strong>（15° 核心中 305）</td><td>80（10° 时 135）</td><td>两极汇聚的焦点（去除 SPA 核心后）</td></tr>
+<tr><td><strong>6. 尾随侧</strong></td><td>0°，90°E</td><td>253</td><td><strong>252</strong></td><td>92</td><td>环的峰值 + 来自后方的抛射物聚集</td></tr>
+</table></div>
+<figure class="fig"><svg viewBox="0 0 640 290" role="img" aria-label="Polar to equatorial ratio by crater size: predicted and measured" style="direction:ltr"><line x1="70" x2="610" y1="193.3" y2="193.3" stroke="#ece7da"/><text x="62" y="197.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><line x1="70" x2="610" y1="126.7" y2="126.7" stroke="#ece7da"/><text x="62" y="130.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.5</text><line x1="70" x2="610" y1="60.0" y2="60.0" stroke="#ece7da"/><text x="62" y="64.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2.0</text><path d="M120.0,193.3 L230.0,170.7 L340.0,158.7 L450.0,148.0 L560.0,128.0" fill="none" stroke="#9aa3af" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="120.0" x2="120.0" y1="190.7" y2="172.0" stroke="#1f3a5f" stroke-width="2"/><circle cx="120.0" cy="193.3" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="120.0" cy="181.3" r="6" fill="#1f3a5f"/><text x="130.0" y="185.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.09</text><text x="120.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦20–30⁩ km</text><line x1="230.0" x2="230.0" y1="188.0" y2="158.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="230.0" cy="170.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="230.0" cy="173.3" r="6" fill="#1f3a5f"/><text x="240.0" y="177.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.15</text><text x="230.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦30–40⁩ km</text><line x1="340.0" x2="340.0" y1="174.7" y2="142.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="340.0" cy="158.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="340.0" cy="158.7" r="6" fill="#1f3a5f"/><text x="350.0" y="162.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.26</text><text x="340.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦40–60⁩ km</text><line x1="450.0" x2="450.0" y1="148.0" y2="97.3" stroke="#1f3a5f" stroke-width="2"/><circle cx="450.0" cy="148.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="450.0" cy="122.7" r="6" fill="#1f3a5f"/><text x="460.0" y="126.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.53</text><text x="450.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦60–100⁩ km</text><line x1="560.0" x2="560.0" y1="132.0" y2="30.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="560.0" cy="128.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="560.0" cy="81.3" r="6" fill="#1f3a5f"/><text x="570.0" y="85.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.84</text><text x="560.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–300⁩ km</text><text x="340.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >蓝色圆点：干净计数实测值（含误差）· 灰色圆点：形状预测</text></svg><figcaption>按环形山直径的极/赤道密度比：环形山越大越古老，它经历的圆化就越多。</figcaption></figure></section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<a href="story14_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 14 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">外部自转分异——两极收缩、薄的极区月壳与环形山尺寸检验 →</p></div></a>
+<p style="margin-top:22px"><a href="story12_zh.html">← 第 12 章</a> · <a href="story00_zh.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

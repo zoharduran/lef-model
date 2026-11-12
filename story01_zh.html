@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 1 章：达尔文的难题与共转革命 — LEF 模型</title>
+<meta name="description" content="LEF 模型故事第 1 章：为什么从地表分裂行不通，共转如何在共转线上弥合速度缺口，以及地球静止轨道对此有何启示。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story01_zh.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans SC','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story01_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story01_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story01_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story01_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story01_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story01_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story01_zh.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story01_he.html" hreflang="he">עברית</a> · <a href="story01_en.html" hreflang="en">English</a> · <a href="story01_de.html" hreflang="de">Deutsch</a> · <a href="story01_es.html" hreflang="es">Español</a> · <a href="story01_fr.html" hreflang="fr">Français</a> · <a href="story01_ru.html" hreflang="ru">Русский</a> · <b>中文</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 1 章</p>
+<h1>第 1 章：达尔文的难题与共转革命</h1>
+<p>依据论文 02——LEF 机制原理（引言及 A.1–A.3 节）</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>谜题：如何离开地球，却不被甩出去？</h2>
+<p class="lead">在序章中，我们认识了月球的八大谜题——以及能同时打开它们的那把钥匙的第一个线索：月球是在仍与地球相连时，由地球自身的物质建造的。但恰恰在这里，出现了最尖锐的物理问题，正是它让“月球源自地球”的设想沉寂了一百多年。</p>
+<p>设想你正站在约 45 亿年前年轻地球的赤道上。这个早期地球炽热发光，因受热而膨胀，并以令人眩晕的速度自转：每 <strong>5.5 小时</strong>就绕轴转一整圈——比今天快四倍！然而，如果你试图从这个地球表面的高度释放一块岩石或一滴岩浆，它并不会飞上绕地轨道。它会像从塔顶扔下的石头一样，直接落回地面。</p>
+<p>为什么？因为即使以 5.5 小时的快速自转，地球表面的运动速度仍不足以克服引力。1879 年，英国天文学家兼数学家<strong>乔治·达尔文</strong>（查尔斯·达尔文之子）提出，年轻的地球自转得太快，以至于分裂开来，把月球从自身甩了出去。但在几十年之内，物理学家们就证明：如果月球是直接从地表脱离的，地球就必须以每天不到三小时的不可能速度自转——这种状态所需的角动量几乎是今天地月系统全部角动量的三倍（在早期计算中甚至高达四倍）。</p>
+<div class="q">历史的判决似乎已成定局：月球不可能从地球中被取出。</div>
+<p>但达尔文和他的后继者们作了一个无人质疑的隐含假设——<strong>物质必须从地表本身脱离</strong>。如果物质不是从地表被抛出，而是在始终附着于地球并与之一同转动的同时逐渐向上升起，又会怎样？</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>图景：从旋转木马中心走向边缘的女孩</h2>
+<div class="carousel"><div class="fig" style="margin:0"><svg viewBox="0 0 360 230" aria-hidden="true" style="direction:ltr"><circle cx="120" cy="115" r="100" fill="#f4ecd8" stroke="#d9cfb8" stroke-width="2"/><line x1="120" y1="115" x2="220.0" y2="115.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="190.7" y2="185.7" stroke="#e3dccb"/><line x1="120" y1="115" x2="120.0" y2="215.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="49.3" y2="185.7" stroke="#e3dccb"/><line x1="120" y1="115" x2="20.0" y2="115.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="49.3" y2="44.3" stroke="#e3dccb"/><line x1="120" y1="115" x2="120.0" y2="15.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="190.7" y2="44.3" stroke="#e3dccb"/><circle cx="120" cy="115" r="6" fill="#1f3a5f"/><path d="M160,35 A90,90 0 0 1 208,85" fill="none" stroke="#9aa3af" stroke-width="1.5" marker-end="url(#ah)"/><circle cx="142" cy="115" r="5.5" fill="#7a8aa0"/><line x1="142" y1="107.0" x2="142" y2="95.1" stroke="#7a8aa0" stroke-width="3" marker-end="url(#a0)"/><circle cx="168" cy="115" r="5.5" fill="#5b7ba6"/><line x1="168" y1="107.0" x2="168" y2="81.1" stroke="#5b7ba6" stroke-width="3" marker-end="url(#a1)"/><circle cx="192" cy="115" r="5.5" fill="#c47f2c"/><line x1="192" y1="107.0" x2="192" y2="68.1" stroke="#c47f2c" stroke-width="3" marker-end="url(#a2)"/><circle cx="216" cy="115" r="5.5" fill="#b23a2e"/><line x1="216" y1="107.0" x2="216" y2="55.2" stroke="#b23a2e" stroke-width="3" marker-end="url(#a3)"/><defs><marker markerUnits="userSpaceOnUse" id="a0" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7a8aa0"/></marker><marker markerUnits="userSpaceOnUse" id="a1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b7ba6"/></marker><marker markerUnits="userSpaceOnUse" id="a2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c47f2c"/></marker><marker markerUnits="userSpaceOnUse" id="a3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker markerUnits="userSpaceOnUse" id="ah" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3af"/></marker></defs><text x="236" y="150" font-family="Heebo" font-size="14" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" text-anchor="start">同样的转速，</text><text x="236" y="170" font-family="Heebo" font-size="14" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" text-anchor="start">更大的圆——</text><text x="236" y="190" font-family="Heebo" font-size="14" fill="#b23a2e" font-weight="700" style="direction:ltr;unicode-bidi:embed" text-anchor="start">更高的速度</text><text x="120" y="143" font-family="Heebo" font-size="12" fill="#5b6676" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">中心</text><text x="216" y="139" font-family="Heebo" font-size="12" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">边缘</text></svg></div>
+<div><p>想象游乐园里一座大型旋转木马以稳定、恒定的速度转动——比如说，每十秒转一整圈。没有人更用力地推它，它的电机也没有加速。现在想象一个站在旋转木马中心附近的女孩，开始一步一步地、慢慢地穿过转动的地板，走向外缘。</p></div></div>
+<p>她每离开中心一步，就有一件奇妙的事情发生，而且无需任何人抛掷她：她每十秒完成的那个圆圈变得越来越大。要在同样的十秒内走完更大的圆，<strong>她的线速度就必须增大</strong>。在中心轴附近她几乎不动；走到一半时风已扑面而来；而当她到达外缘时，她正以极高的速度飞驰——尽管旋转木马本身的转速连几分之一秒都没有改变！</p>
+<div class="box"><span class="tag">共转</span><p style="margin:0">这正是<strong>共转</strong>（一同转动）的原理：附着在旋转地球上的每一部分，每个地球日都完成一圈，因此它升得离地表越高，地球自身的自转赋予它的侧向速度就越大——而试图把它拉下来的引力反而变得越来越弱。</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学与模型：必须分开的两个问题</h2>
+<p>要认真检验任何“月球由地球中诞生”的理论，论文 02 明确指出，我们必须区分<strong>两个完全独立的力学问题</strong>，二者不可混淆：</p>
+<div class="twoq">
+<div><b>QUESTION 1</b><h4>释放速度问题（运动学检验）</h4><p>在物质被释放的那一刻，它的侧向（切向）速度是否足够大，能让它保持在绕地球的自由轨道上而不落回地表？</p></div>
+<div><b>QUESTION 2</b><h4>角动量账目问题（守恒检验）</h4><p>假设我们已经找到释放速度与轨道相匹配的那一点——早期地球最初是否拥有足够的角动量把物质送到那里，并且仍然剩下我们在今天地月系统中测得的角动量？</p></div>
+</div>
+<p>在达尔文的经典分裂理论中，这两个问题被捆绑在了错误的地方——地表——因而双双失败。相反，在 LEF 模型中，我们首先列出早期地球（这里称为<strong>“母体”</strong>）的确切环境条件，再看这两个问题如何都得到简单而干净的答案。</p>
+<div class="callout"><span class="tag">重要的质量说明 · 不重复计算</span>
+<p style="margin:0">在月球分离之前，构成它的全部物质都在年轻的地球内部。因此<strong>初始母体</strong>的质量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{tot}}</annotation></semantics></math></span></span>）是今天地球（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mo>⊕</mo></msub><mo>=</mo><mn>5.972</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_\oplus = 5.972 \times 10^{24}</annotation></semantics></math></span></span> kg）与今天月球（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">m = 7.35 \times 10^{22}</annotation></semantics></math></span></span> kg）质量之和：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg</strong>。没有质量消失，也没有质量被重复计算：随着月球的质量向外移动，地球的质量相应降至 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.972</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">5.972 \times 10^{24}</annotation></semantics></math></span></span> kg。</p></div>
+<p>此外，年轻的地球通体炽热，因而<strong>热膨胀</strong>（采用在冷半径 6,397 km 之外膨胀约 120 km），其体积半径为 <strong>6,517 km</strong>，平均密度约为 5,214 kg/m³。由于一天 5.5 小时的快速自转，半流体的母体呈现<strong>麦克劳林椭球体</strong>的形状（旋转流体的平衡形状——两极扁平、赤道隆起），赤道半径约 <strong>6,721 km</strong>，极半径约 <strong>6,128 km</strong>。</p>
+<div class="spec"><div><b class="ltr">6.0455×10²⁴</b><span>母体质量（kg）</span></div><div><b>6,517</b><span>体积半径（km）</span></div><div><b>6,721</b><span>赤道半径（km）</span></div><div><b>6,128</b><span>极半径（km）</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>用文字讲机制：跨越深渊与梨形体之桥</h2>
+<p>现在，让我们用真实的数字来检验在每 5.5 小时（19,800 秒）转一整圈的母体上会发生什么：</p>
+<ul class="pts">
+<li class="a"><strong>在地表（赤道，离中心 6,721 km）：</strong>地球自转只给地表上的一点 <strong>2,133 米/秒</strong>的侧向速度。相比之下，要在这一高度维持自由圆轨道而不下落，需要 <strong>7,701 米/秒</strong>。这一缺口——<strong>5,568 米/秒</strong>——是巨大的。在这里释放的物质会进入一条狭长的椭圆轨道，其半长轴只有 3,495 km，也就是说，这条轨道会立即深深扎进地球内部。</li>
+<li><strong>上升途中（共转）：</strong>当物质始终附着于地球并向上攀升时，两种速度相互靠近：自转给予的速度随距离线性增大，而自由轨道所需的速度随引力减弱而减小。</li>
+<li class="c"><strong>交汇点——共转线（15,818 km）：</strong>在离地心 <strong>15,818 km</strong>（约 2.4 个地球半径）处，两种速度恰好在 <strong>5,020 米/秒</strong>处相遇。在这里，缺口完全消失了！被送到这里并释放的天体不是被抛出的——在脱离的那一刻，它已经恰好以自由圆轨道的速度在运动。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1,500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3,000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4,500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6,000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7,500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9,000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6,000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10,000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14,000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18,000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22,000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26,000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">地表缺口 ⁦5.6 km/s⁩</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">共转线</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15,818 km · <tspan>5,020 m/s</tspan></text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">自转速度 ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">轨道速度 ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">离地心距离（km）· 一天 5.5 小时</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">速度（m/s）</text>
+</svg><figcaption>一天 5.5 小时时，两种速度随离地心距离的变化：地表 <span class="ltr">5,568 m/s</span> 的缺口在共转线上闭合。</figcaption></figure>
+<div class="q">可是，物质如何能到达这样的高度，而不在途中崩解？</div>
+<p>这时，模型的核心结构登场了：<strong>“梨形体”</strong>。它不是一根细管，也不是一座向太空喷射熔岩的火山，而是一座由地球自身物质构成的巨大而连续的山丘：它在地表的底座宽得惊人——约 <strong>9,000 km</strong>（全范围为 9,000–11,000 km），侧面以平滑的弧线弯曲，没有任何可能折断的狭窄“腰部”，而它的上端顶部通过一个宽约 <strong>3,000 km</strong> 的接触盘与正在形成的月球相接。</p>
+<figure class="fig"><svg viewBox="0 0 640 350" role="img" aria-label="Earth, the pear and the Moon at the corotation line, to scale" style="direction:ltr"><defs><radialGradient id="eg" cx="40%" cy="40%"><stop offset="0" stop-color="#e98a4f"/><stop offset="1" stop-color="#9b3d22"/></radialGradient><radialGradient id="mg2" cx="40%" cy="40%"><stop offset="0" stop-color="#f1ebdc"/><stop offset="1" stop-color="#a49d86"/></radialGradient><marker id="e1" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M10,0 L0,5 L10,10" fill="none" stroke="#5b6676" stroke-width="1.5"/></marker><marker id="e2" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="none" stroke="#5b6676" stroke-width="1.5"/></marker></defs><path d="M372.4,50.0 A276.8,276.8 0 0 1 372.4,310.0" fill="none" stroke="#2f7d57" stroke-width="2" stroke-dasharray="7 5"/><path d="M220.2,107.0 C285.6,115.0 319.5,147.8 389.5,153.8 L389.5,206.2 C319.5,212.2 285.6,245.0 220.2,253.0 Z" fill="#d98a5a" opacity=".85"/><circle cx="128" cy="180" r="117.6" fill="url(#eg)"/><circle cx="404.8" cy="180" r="30.4" fill="url(#mg2)" stroke="#8a846f"/><text x="128.0" y="185.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">地球</text><text x="321.6" y="185.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">梨形体</text><text x="443.2" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed">月球</text><text x="382.4" y="56.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">共转线 · 15,818 km</text><text x="220" y="282" text-anchor="start" font-family="Heebo" font-size="13" font-weight="400" fill="#9a3f33" style="direction:ltr;unicode-bidi:embed">底座宽约 9,000 km</text><text x="417.0" y="232.4" text-anchor="start" font-family="Heebo" font-size="13" font-weight="400" fill="#9a3f33" style="direction:ltr;unicode-bidi:embed">接触盘宽约 3,000 km</text><line x1="245.6" x2="374.4" y1="334" y2="334" stroke="#5b6676" stroke-width="1.5" marker-start="url(#e1)" marker-end="url(#e2)"/><text x="249.6" y="326.0" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">地表到月球约 7,800 km</text></svg><figcaption>按比例绘制的地球、梨形体和月球：整个梨形体都位于共转线以内，月球位于其上端顶部。（示意图；尺寸如正文所述。）</figcaption></figure>
+<p>这个梨形体跨越了地表与月球之间约 <strong>7,800 km</strong> 的距离，并且<strong>完全位于共转线以内</strong>。其物理意义极其重大：沿梨形体的每一点上，地球引力都强于自转的离心推力。因此梨形体作为地球不可分割的一部分被牢牢地束缚在地球上，不会飞离；只有坐落在其上端顶部的天体才会到达共转线，并作为一个完整的整体被释放！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>学术解释与关键方程</h2>
+<p>为了求出共转半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub></mrow><annotation encoding="application/x-tex">R_{\mathrm{sync}}</annotation></semantics></math></span></span>），我们令以角速度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\omega = 2\pi/T</annotation></semantics></math></span></span> 与地球一同转动的天体的切向速度，等于在中心引力场中维持自由圆轨道所需的速度：</p>
+<div class="eqs">
+<div class="eq"><div class="k">自转给予的速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi>ω</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \omega R</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">自由圆轨道的速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>R</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{circ}} = \sqrt{\dfrac{GM}{R}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">相等点</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">\omega R_{\mathrm{sync}} = \sqrt{\dfrac{GM}{R_{\mathrm{sync}}}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>共转半径</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi><msup><mi>T</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{\mathrm{sync}} = \left(\dfrac{GM}{\omega^{2}}\right)^{1/3} = \left(\dfrac{GMT^{2}}{4\pi^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>这个公式告诉我们一条简单的基本规律：共转半径只取决于中心天体的质量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span>）和它一天长度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span>）的三分之二次方（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">T^{2/3}</annotation></semantics></math></span></span>）。地球转得越快（一天越短），共转线就离它越近；它的自转越慢（一天越长），共转线就越向外移。</p>
+<div class="box"><span class="tag">为什么是 5.5 小时？</span>
+<p style="margin:0"><strong>为什么 5.5 小时是自然的起点？</strong><br>因为如果我们把今天地球和月球的全部角动量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.441</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">3.441 \times 10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>）归还给一个年轻、膨胀（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>V</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_{V,0} = 6{,}517</annotation></semantics></math></span></span> km）且相对均匀（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span>）的地球，就得到 <strong>5.54 小时</strong>的一天。由于在此后的 45 亿年里太阳潮汐带走了系统约 1% 的角动量，真正的起点稍快一些——一天 <strong>5.50 小时</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466 \times 10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>）。</p></div>
+</section>
+
+<section>
+<span class="lab">06 · IN THE SKY TODAY</span>
+<h2>现实中的印记：我们头顶上的地球静止轨道</h2>
+<p>共转公式不是黑板上的理论练习——此刻它正在我们头顶上发挥作用，使现代全球通信成为可能。通信卫星和气象卫星（地球静止卫星）正是被发射到<strong>今天地球的共转半径</strong>上。</p>
+<p>在 24 小时的一天（准确地说是 23 小时 56 分的恒星自转）下，这条线位于地表以上约 <strong>35,786 km</strong> 的高度（离地心约 42,164 km）。那里的任何卫星完成一圈公转的时间恰好等于地球自转一圈的时间，因此它永久“悬停”在赤道上同一点的上空。45 亿年前，当一天只有 5.5 小时，这条神奇的线要近得多——离地心只有 15,818 km！</p>
+<figure class="fig"><svg viewBox="0 0 640 120" role="img" aria-label="Corotation radius then and now" style="direction:ltr"><circle cx="40" cy="38" r="9" fill="#2f6fb0"/><line x1="40" x2="250.1" y1="38" y2="38" stroke="#2f7d57" stroke-width="4"/><circle cx="250.1" cy="38" r="6" fill="#2f7d57"/><text x="262.1" y="26" text-anchor="start" font-family="Heebo" font-size="13" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">45 亿年前 · 一天 5.5 小时 · 15,818 km</text><circle cx="40" cy="92" r="9" fill="#2f6fb0"/><line x1="40" x2="600.0" y1="92" y2="92" stroke="#1f3a5f" stroke-width="4"/><circle cx="600.0" cy="92" r="6" fill="#1f3a5f"/><text x="596.0" y="80" text-anchor="end" font-family="Heebo" font-size="13" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">今天 · 一天 23 小时 56 分 · 42,164 km（地球静止轨道）</text></svg><figcaption>当时与现在的共转线，按同一比例尺（离地心的距离）绘制。</figcaption></figure>
+<h3 style="margin-top:28px">实验框：弥合速度缺口与初始条件（论文 02，A 部分）</h3>
+<div class="tw"><table class="lt"><tr><th>参数 / 检验</th><th>在地表（赤道）</th><th>在初始共转线上</th><th>物理意义</th></tr>
+<tr><td><strong>一天的长度</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span></span></td><td>5.5 小时（19,800 s）</td><td>5.5 小时（19,800 s）</td><td>自转比今天快约 4 倍（由角动量守恒导出）</td></tr>
+<tr><td><strong>离地心的距离</strong></td><td>6,721 km（赤道半径）</td><td><strong>15,818 km</strong>（约 2.4 个地球半径）</td><td>梨形体跨越地表以上约 7,800 km</td></tr>
+<tr><td><strong>自转速度</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}}</annotation></semantics></math></span></span></td><td><span class="ltr">2,133 m/s</span></td><td><strong><span class="ltr">5,020 m/s</span></strong></td><td>随离轴距离线性增大（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\omega r</annotation></semantics></math></span></span>）</td></tr>
+<tr><td><strong>圆轨道速度</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{\mathrm{circ}}</annotation></semantics></math></span></span></td><td><span class="ltr">7,701 m/s</span></td><td><strong><span class="ltr">5,020 m/s</span></strong></td><td>随距离增加、引力减弱而下降（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mi>G</mi><mi>M</mi><mi mathvariant="normal">/</mi><mi>r</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{GM/r}</annotation></semantics></math></span></span>）</td></tr>
+<tr class="hl"><td><strong>速度缺口</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">\Delta v</annotation></semantics></math></span></span></td><td><span class="ltr">−5,568 m/s</span>（落回）</td><td><span class="ltr">0 m/s</span>（立即进入自由轨道！）</td><td>击垮达尔文模型的速度缺口被弥合了</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>前方的门</h2>
+<p>我们解开了第一个谜：当释放点从地表移到共转线上，速度缺口就完全消失了。但梨形体一旦开始升起并把质量向外运送，一个新的、引人入胜的问题便随之出现：<strong>梨形体的升起难道不会减慢地球的自转，把共转线推得太远吗？</strong></p>
+<p>在下一章——<strong>第 2 章：一天长度之争与角动量平衡</strong>（论文 02，A.4–A.8 节及 B 部分）——我们将发现两个相反的过程如何争夺早期地球的自转速度，并看到角动量账目如何在 1.007 以内闭合。</p>
+<a href="story02_zh.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 2 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">一天长度之争与角动量平衡 →</p></div></a>
+<p style="margin-top:22px"><a href="story00_zh.html">← 返回序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 模型 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
