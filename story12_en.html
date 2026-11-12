@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 12: The Chemistry of the Crater Interior, the Foreign Mass That Is Not There, and the Earth as the Last Scatterer — The LEF Model</title>
+<meta name="description" content="Chapter 12 of the story of the LEF model: the uniform crater interior, the foreign mass that is missing from the Moon&#x27;s crust, the terrestrial ruthenium isotopes, and the Earth as the last scatterer.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story12_en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story12_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story12_en.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story12_he.html" hreflang="he">עברית</a> · <b>English</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 12</p>
+<h1>Chapter 12: The Chemistry of the Crater Interior, the Foreign Mass That Is Not There, and the Earth as the Last Scatterer</h1>
+<p>Based on Paper 06 — The Craters (Parts L–Q and the reproduction appendix: Studies 2, 7, 8, 9, 12, 14)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>The mystery: where did 4.4–5.0 × 10¹⁹ kg of external metal disappear to — and why is the crater interior uniform?</h2>
+<p>In the previous chapter we saw that material fired from the feeding openings of the parent body and returning to the shell can produce shock pressures of tens of gigapascals, and that the morphology of the craters follows the asymmetry between the leading and trailing hemispheres. Now we put the model to the sharpest chemical test — a test that separates it from the asteroid theory at the level of the atom and the isotope:</p>
+<ol class="steps">
+<li><strong>The foreign mass missing from the Moon's crust:</strong> chondritic asteroids that never separated a core are very rich in <strong>siderophile ("iron-loving") elements</strong> — iridium, osmium, platinum and ruthenium — while the Moon's crust is almost completely poor in them. If asteroids dug the 1.32 million craters seen on the Moon today, where is the foreign metal they brought with them?</li>
+<li><strong>The crater interior — a hole dug through layers, or a cup filled with returning material?</strong> If a crater is a pit violently dug into a layered crust, its central peak should lift deep rocks that differ in composition from the walls, the rim and the surroundings — and in addition, a hard head-on impact on the leading hemisphere (90°W) should expose deeper layers than a soft impact on the trailing hemisphere (90°E). Is this really what is measured over thousands of craters?</li>
+<li><strong>The riddle of the missing craters above the hidden domes (Study 3):</strong> in Chapter 8 we discovered 44 buried feeding domes (36 of them on the far side). If every dome fired craters around itself while it was active, why is there no unusual crater density around them today?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>An image: drops of ink in a glass of clear water, and a hot wax seal</h2>
+<p>Two simple images make clear why the chemistry of the crater interior and of the Moon's crust decides in favour of a returning Earth source:</p>
+<ul>
+<li><strong>Drops of ink in a glass of clear water (the siderophile elements and the ruthenium isotopes):</strong> the Moon's crust is like a glass of clear water almost free of iron-loving metals, while a chondritic asteroid is like dark ink. Even a small addition of asteroidal material would at once colour the upper crust — and in addition, the ruthenium atoms of asteroids have an isotopic "accent" different from the Earth's. In fact, there is almost no foreign metal in the crust, and the ruthenium isotopes measured in the impact-melt rocks of the craters are <strong>those of the Earth itself</strong>!</li>
+<li><strong>A hot wax seal pressed onto paper (the uniformity of the crater interior):</strong> a crater in the LEF model is not an excavation that brings up foreign layers from below, but a lump of hot returning material that landed and was smeared from edge to edge — so from the centre, through the floor and up to the rim, <strong>one uniform chemical composition</strong> prevails, identical to the composition of the nearby surroundings into which the material was fired from the same mare!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science and model: the uniform crater interior (7,227 craters) and "the foreign mass that is not there" (1.32 million craters)</h2>
+<p>Parts D and L of Paper 06 present four large-scale quantitative studies that close the chemical and structural proof:</p>
+<ol class="steps">
+<li><strong>The buried craters of the far side and the melted craters in the maria (Studies 3, 4 and 14):</strong>
+<ul>
+<li><strong>Around the 44 buried domes (Study 3):</strong> the crater density above the buried domes is equal to or lower than at a distance of 3–5 radii (0.93 at 2–10 km, 1.00 at 10–50 km, 1.02 at 50–100 km) — because the craters fired by the ancient openings of the far side <strong>were buried together with them</strong> beneath the layers of sial and returning material that built the thick crust of the far side!</li>
+<li><strong>The mass without a rim beneath the melted craters in the maria (Studies 4 and 14):</strong> on the mare floors, <strong>62% (49 of 79)</strong> of the craters 10 km or more across are melted into rings, and only one sharp crater 20+ km across exists on all 1.18 million km² of floors (0.8 per million km² against 207 in the highlands!). Beneath 16 melted craters in the maria (Study 14), the base of the crust is raised by <strong>+0.8 km</strong> above the floor of the mare itself (in 13 of 16, p = 0.04), <strong>but with no sharp rim at all in the Bouguer gravity</strong> (edge steepness 1.04 against 1.00) — because the returning material sank and mixed into the fluid magma of the mare rather than filling a solid crater from outside!</li>
+</ul>
+</li>
+<li><strong>The crater interior is one uniform material (Study 7, §L.4):</strong> examining 7,227 craters 10–60 km across in six radial rings (centre 0–0.3R, floor 0.3–0.7R, inner wall 0.7–0.95R, rim 0.95–1.1R, ejecta 1.2–2R, surroundings 3–4R) shows that the difference in iron and titanium between the centre and the inner wall is only <strong>+0.08 wt% FeO</strong> and <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>0.060</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">+0.060\text{ wt\% TiO}_2</annotation></semantics></math></span></span> (8–10 times smaller than the calibration scatter of the maps, 0.81 and 0.43 wt%!), and the difference between the floor and the surroundings is <strong>0.00 wt% FeO and <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong>. Moreover, in a paired comparison of 1,214–1,235 pairs of identical craters between the leading hemisphere (90°W) and the trailing hemisphere (90°E), the chemical difference is <strong>absolutely zero (0.00 wt%)</strong> — a hard head-on impact changed the shape, but exposed no foreign layers!</li>
+<li><strong>The foreign mass that is not there and the terrestrial ruthenium isotopes (Study 8, §L.5):</strong> calculating the mass needed to create all 1,318,387 craters seen on the Moon (1 km and more, at 18 km/s) gives <strong>4.4–5.0 × 10¹⁹ kg</strong> of impactor mass (68% for the SPA basin alone, 30% for the 32 other large basins, 2% for the 6,940 craters of 20–300 km, and 0.03% for the 1.31 million craters of 1–20 km). Had it been left in the upper crust (5 km) at the accepted retention rate (20%–60%), it would make up <strong>2%–6%</strong> of the layer (0.9–3.0 × 10¹⁹ kg) — while all the siderophile elements in the whole lunar crust add up to <strong>only 0.9%–2% (0.45–1.0 × 10¹⁹ kg)</strong>, that is, 6.7 times less than required (and 14–18 times less than the total bombardment of 3.7 × 10²⁰ kg)! And in the two samples in which <strong>ruthenium isotopes</strong> were measured in the impact-melt rocks of the craters, they are <strong>identical to the Earth's silicate</strong>!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 175" role="img" aria-label="Foreign mass: required against found" style="direction:ltr"><line x1="40.0" x2="40.0" y1="12" y2="140" stroke="#ece7da"/><text x="40.0" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><line x1="118.2" x2="118.2" y1="12" y2="140" stroke="#ece7da"/><text x="118.2" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1</text><line x1="196.4" x2="196.4" y1="12" y2="140" stroke="#ece7da"/><text x="196.4" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><line x1="274.5" x2="274.5" y1="12" y2="140" stroke="#ece7da"/><text x="274.5" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">3</text><line x1="352.7" x2="352.7" y1="12" y2="140" stroke="#ece7da"/><text x="352.7" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><line x1="430.9" x2="430.9" y1="12" y2="140" stroke="#ece7da"/><text x="430.9" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">5</text><rect x="40.0" y="18" width="390.9" height="26" rx="4" fill="#b23a2e" opacity=".25"/><rect x="384.0" y="18" width="46.9" height="26" rx="4" fill="#b23a2e"/><text x="634.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Required for all craters · ⁦4.4–5.0⁩</text><rect x="40.0" y="58" width="234.5" height="26" rx="4" fill="#c47f2c" opacity=".25"/><rect x="110.4" y="58" width="164.2" height="26" rx="4" fill="#c47f2c"/><text x="634.0" y="76.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Required to remain in the upper crust · ⁦0.9–3.0⁩</text><rect x="40.0" y="98" width="78.2" height="26" rx="4" fill="#2f7d57" opacity=".25"/><rect x="75.2" y="98" width="43.0" height="26" rx="4" fill="#2f7d57"/><text x="634.0" y="116.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >Actually found in the whole crust · ⁦0.45–1.0⁩</text><text x="250.0" y="172.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Mass (×10¹⁹ kg)</text></svg><figcaption>The foreign-mass budget (Study 8): what asteroids would have left compared with all the siderophile elements found in the Moon's crust — 6.7 times less.</figcaption></figure><div class="callout"><span class="tag">An answer to the claim of the single meteorite grains in Chang'e-5 and Chang'e-6 (§L.5)</span><p style="margin:0">The discovery of a single chondrule grain in the Chang'e-5 samples or of microscopic meteorite remnants in Chang'e-6 does not contradict the model: every airless body in the Solar System collects a tiny amount of <strong>micrometeoritic space dust</strong> — and this is exactly the amount the model allows ("space dust on the side"), unlike the tens of billions of tonnes of foreign metal that would have been needed to dig the Moon's basins!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>The mechanism in words: the Earth as "the last scatterer", the captured craters and the ring test</h2>
+<p>Parts L.6–M.1 of Paper 06 complete the chronological history of the craters from the moment the Moon detached from the Earth (3.873 Ga) to the final freezing of the surface:</p>
+<ol class="steps">
+<li><strong>The Earth kept firing light material at the Moon after the detachment (Study 12, §L.6):</strong> at the moment of detachment the internal pressure in the Moon stopped and its feeding openings sealed; but the Earth itself did not fall silent — the pear slowly drew back inward (over tens to hundreds of millions of years), and its openings kept firing material into space. Since the heavy material sank back down into the Earth and the light material floated up, the material that managed to reach 8.8–10.75 km/s and get to the Moon was <strong>the light, thorium-rich (and iron-poor) part</strong> of the Earth's ejecta. Indeed, in all 3,478 craters on the near-side basalt, the ejecta around the craters is poorer in iron than the basalt around them (by −0.20 wt% on the mare floors and up to −3.8 wt% in large craters, and by −0.36 wt% on the plains; and the Apollo 12 samples linked to the rays of Copernicus carry 14.0–15.7 wt% FeO against 20.5 wt% in the local basalt, and 7.6–9.4 ppm thorium against 0.83 ppm).</li>
+<li><strong>The near side kept more of the last small craters — the Earth is "the last scatterer" (Study 9, §L.7):</strong> since the Earth always stood in the sky of the near side (0°), the last material fired from it landed on the highlands of both sides but struck the near side at a higher rate. Counting the fresh craters 1–2 km across on the highlands alone (after removing all the maria, the SPA basin and the secondary fields of 16 young ray craters) shows <strong>an excess of +19% on the near side</strong> (14,103 against 11,814 per million km²; confidence interval 1.12–1.27, and more than 600 km from any mare even 1.51 times!), while in the larger, older craters the near side is much poorer (0.86 at 2–5 km, 0.63 at 5–10 km and 0.53 at 10–20 km), because it was erased by the heat of the contact and the maria!</li>
+<li><strong>The captured ejecta on the maria and a Moon that never passed through a ring (§L.8, §M.1):</strong> the few young craters on the frozen mare floors are <strong>captured ejecta</strong> fired from the Earth near the escape ceiling (10.748 km/s) and captured by the Moon's gravity at a speed far lower than that of an asteroid. In addition, unlike Deimos of Mars (which spent a long time in a dense ring, so its craters are flat and smooth — median depth 1.9% against 5.5% on Phobos), the Moon <strong>never passed through a ring of ice and dust</strong>: the pear swept the zone out to the corotation line and the heat prevented ice from condensing, so the Moon kept highlands saturated with sharp craters from the start.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 250" role="img" aria-label="Near-to-far ratio of craters on the highlands by size" style="direction:ltr"><line x1="70" x2="610" y1="200.0" y2="200.0" stroke="#ece7da" /><text x="62" y="204.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="130.8" y2="130.8" stroke="#ece7da" /><text x="62" y="134.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0.5</text><line x1="70" x2="610" y1="61.5" y2="61.5" stroke="#5b6676" stroke-dasharray="6 4"/><text x="62" y="65.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><rect x="76.0" y="35.2" width="68" height="164.8" rx="3" fill="#2f7d57"/><text x="110.0" y="29.2" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">×1.19</text><text x="110.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦1–2⁩ km</text><rect x="229.3" y="80.9" width="68" height="119.1" rx="3" fill="#9aa3af"/><text x="263.3" y="74.9" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.86</text><text x="263.3" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦2–5⁩ km</text><rect x="382.7" y="112.8" width="68" height="87.2" rx="3" fill="#9aa3af"/><text x="416.7" y="106.8" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.63</text><text x="416.7" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦5–10⁩ km</text><rect x="536.0" y="126.6" width="68" height="73.4" rx="3" fill="#9aa3af"/><text x="570.0" y="120.6" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.53</text><text x="570.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦10–20⁩ km</text><text x="340.0" y="240.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Near-to-far ratio of craters on the highlands, by diameter</text></svg><figcaption>The Earth as the last scatterer (Study 9): in the small fresh craters the near side is richer, and in the large, older ones it is poorer.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Academic explanation and the Keplerian reproduction recipe (Appendix A)</h2>
+<p>The appendix of Paper 06 gives the full analytic reproduction recipe for computing every row of the flight table (§K.1) from the specific energy <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span></span> and the specific angular momentum <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> of a Keplerian ellipse around the parent (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">K = GM_0</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mrow><mn>2</mn><mi mathvariant="script">E</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">a = -\dfrac{K}{2\mathcal{E}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi mathvariant="script">E</mi><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup></mrow><msup><mi>K</mi><mn>2</mn></msup></mfrac></mstyle></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 + \dfrac{2\mathcal{E}\ell^2}{K^2}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>a</mi><mn>3</mn></msup></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">n = \sqrt{\dfrac{K}{a^3}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mn>1</mn></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_0 = \arccos\left(\dfrac{\ell^2/(Kr_0) - 1}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_0 = \arccos\left(\dfrac{1 - r_0/a}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mo stretchy="false">(</mo><mi>π</mi><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo>+</mo><mi>e</mi><mi>sin</mi><mo>⁡</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mi>n</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">t_f = \dfrac{2(\pi - E_0 + e\sin E_0)}{n}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><mrow><mo fence="true">[</mo><mi>ω</mi><msub><mi>t</mi><mi>f</mi></msub><mo>−</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mo>−</mo><mn>2</mn><msub><mi>f</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">s_W = r_0\left[\omega t_f - (2\pi - 2f_0)\right]</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub><mo>=</mo><mi>a</mi><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_{\max} = a(1+e) - r_0</annotation></semantics></math></span></div></div></div>
+<p>These formulas allow any researcher to enter any launch speed u &lt; 10.748 km/s and obtain at once the peak height <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">h_{\max}</annotation></semantics></math></span></span>, the flight time <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">t_f</annotation></semantics></math></span></span>, and the westward deflection <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub></mrow><annotation encoding="application/x-tex">s_W</annotation></semantics></math></span></span> along the rotating equator.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>The signature in reality: a prediction for the MMX mission at Phobos and a summary of the 14 studies</h2>
+<p>Paper 06 extends the mechanism beyond the Moon to any moon built from its parent planet and exposed to its ejecta (§O.1):</p>
+<ul>
+<li><strong>The direct prediction for the MMX mission (Martian Moons eXploration) at Phobos:</strong> since Phobos and Deimos were fired from Mars (the subject of Paper 10), the model predicts that the crater rocks on Phobos returned by the MMX mission will have <strong>the composition and isotopes of Mars itself</strong> — with no excess of external metal beyond micrometeoritic space dust!</li>
+<li><strong>The balance of the 14 studies of Paper 06 (§O.2):</strong> of the 14 numbered studies in the paper, <strong>11 received a full green light</strong> and <strong>3 received an amber light</strong> (partial confirmation with a limit of resolution or a small sample, and zero studies with a red light).</li>
+</ul>
+<h3 style="margin-top:28px">The lab box: the foreign-mass budget, the chemistry of the crater interior and a summary of the 14 studies (Paper 06, Parts L–Q)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Crater group / crustal layer (Study 8)</th><th>Number of craters</th><th>Mass required at 18 km/s (kg)</th><th>Retention in the upper crust (5 km) against the measurement</th></tr>
+<tr><td><strong>The South Pole–Aitken basin (SPA)</strong></td><td>1</td><td>3.3 × 10¹⁹ kg (68%)</td><td rowspan="4">Required from the visible craters (20%–60% retention):<br><strong>0.9–3.0 × 10¹⁹ kg (2%–6% of the layer)</strong><br>Required from the total bombardment in the literature: <strong>7.4 × 10¹⁹ kg (15%)</strong></td></tr>
+<tr><td><strong>Other large basins (≥ 300 km)</strong></td><td>32</td><td>1.4 × 10¹⁹ kg (30%)</td></tr>
+<tr><td><strong>Medium-large craters (20–300 km)</strong></td><td>6,940</td><td>1.0 × 10¹⁸ kg (2%)</td></tr>
+<tr><td><strong>Small craters (1–20 km)</strong></td><td>1,311,414</td><td>1.2 × 10¹⁶ kg (0.03%)</td></tr>
+<tr class="hl"><td><strong>Total against the actual finding in the Moon's crust</strong></td><td><strong>1,318,387</strong></td><td><strong>4.4–5.0 × 10¹⁹ kg</strong></td><td><strong>Actually found in the whole crust: 0.45–1.0 × 10¹⁹ kg (0.9%–2%)</strong> — 6.7 times less, and the ruthenium isotopes are <strong>the Earth's</strong>!</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Chemical / chronological measure (Studies 7, 9, 12, 14)</th><th>Sample and measurement conditions</th><th>Measured result</th><th>Conclusion in the LEF model</th></tr>
+<tr class="hl"><td><strong>Uniformity of the crater interior (Study 7)</strong></td><td>7,227 craters (10–60 km), 6 rings</td><td>Floor minus surroundings: <strong>0.00 wt% FeO</strong>, <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong>; centre minus wall: +0.08 wt%</td><td>The crater interior is one uniform returning material; identical also in 1,235 leading/trailing pairs</td></tr>
+<tr class="hl"><td><strong>The last scatterer after the detachment (Study 9)</strong></td><td>Fresh craters 1–2 km on the highlands (without maria and rays)</td><td>Near side: <strong>14,103</strong> against far side: <strong>11,814</strong> per million km² (ratio <strong>× 1.19</strong>, interval 1.12–1.27)</td><td>The Earth kept firing light material at the near side after the detachment; above 2 km the ratio reverses (0.53–0.86)</td></tr>
+<tr><td><strong>Light material after the detachment (Study 12)</strong></td><td>3,478 craters on near-side basalt</td><td>The ejecta is poorer in iron than the basalt by −0.20 wt% (maria) and by −0.36 wt% (plains)</td><td>The material that escaped the Earth (&gt; 8.8 km/s) was the light part of the ejecta</td></tr>
+<tr><td><strong>The mass beneath melted craters (Study 14)</strong></td><td>16 melted craters in the maria against 50 random points</td><td>Crustal base raised by <strong>+0.8 km</strong> (13/16, p=0.04), with no sharp rim in the Bouguer gravity (1.04 against 1.00)</td><td>The returning material sank and mixed into the fluid magma of the mare rather than filling a solid crater from outside</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>The door ahead</h2>
+<p>In Chapters 11–12 we completed the investigation of the Moon's craters (<em>Craters Without Asteroids</em>): we saw that the craters were dug by returning Earth material fired from the feeding openings at 2–8 km/s, which struck with a force of 13–<span class="ltr">46 GPa</span>, created an excess of craters on the trailing hemisphere and hard head-on impacts on the leading hemisphere, filled every crater with a uniform composition, and left in the crust exactly the ruthenium isotopes of the Earth, with no external metal.</p>
+<p>But after the Moon was flattened as a squashed sphere above the Earth and gathered all these craters on its shell, <strong>how did it round back into a whole sphere, and why are the Moon's poles (the north pole and the south pole) more crowded with large craters than any other region on its face?</strong> In the next chapter — <strong>Chapter 13: The Poles of the Moon — the Convergence of the Shell to the Poles and the Geometry of the Inward Rounding</strong> (from Paper 07 — <em>The Poles</em>) — we will discover the geometric key of the poles!</p>
+<a href="story13_en.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapter 13</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">The Poles of the Moon — the Convergence of the Shell to the Poles and the Geometry of the Inward Rounding →</p></div></a><p style="margin-top:22px"><a href="story11_en.html">← Chapter 11</a> · <a href="story00_en.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · The LEF Model · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

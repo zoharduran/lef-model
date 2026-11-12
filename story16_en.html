@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 16: The Depths of SPA, the Chang'e-6 Samples and the Potential Barrier of a Continuous Body — The LEF Model</title>
+<meta name="description" content="Chapter 16 of the story of the LEF model: the depths of SPA, the Chang&#x27;e-6 samples and the potential barrier of a continuous body.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <b>English</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 16</p>
+<h1>Chapter 16: The Depths of SPA, the Chang'e-6 Samples and the Potential Barrier of a Continuous Body</h1>
+<p>Based on Paper 08 — South Pole–Aitken: The Crater-Poor Centre (Parts B10–G: the deep anomalies B10–B18, the antipode geometry, the potential-barrier siphon and the decisive isotope test)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>The mystery: what did the far-side samples of Chang'e-6 reveal, and how did the heat climb over the Earth's gravity barrier?</h2>
+<p>In June 2024 the Chinese <strong>Chang'e-6</strong> mission returned the first soil samples in history from the far side of the Moon — from the Apollo basin in north-eastern SPA (41.625°S, 206.022°E, about 11.6° from the centre of the dome and 210 km from the crater minimum). The laboratory findings, together with gravity and magnetic data from orbit, reveal a chain of discoveries that a momentary asteroid impact struggles to unify:</p>
+<ol class="steps">
+<li><strong>A dense mass buried at depth (2.18 × 10¹⁸ kg, B10):</strong> beneath the southern half of the central mare area (62°S, 200°E, over an area of ~ 444,500 km², equivalent radius 12.4°) hides a diffuse excess mass equivalent to a metal sphere ~ 95 km across — which did not sink into the Moon's core!</li>
+<li><strong>A "baked" mantle 13 times poorer in oxygen, with heavy isotopes of potassium and iron (B11–B13):</strong> the source of the Chang'e-6 basalt is completely dry, <strong>~ 13</strong> times poorer in available oxygen than the near side (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn><mo>±</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> against −0.80 ± 0.64), depleted in KREEP elements (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> at an age of 2.8 Ga against <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> in an ancient 4.203 Ga basalt in the same area!), and carries <strong>isotopically heavy iron</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0.13</mn><mtext>–</mtext><mn>0.21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰) together with heavy potassium (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> to +0.09‰).</li>
+<li><strong>Magnetism erased at the centre and strong on the trailing side only, and the potential barrier of 26.2 MJ/kg (B16–D.3):</strong> at the centre of SPA the magnetism is almost zero (0.8% of the area above 5 nT), and all the strong magnetism (32%–42%, peak ~ 22 nT near Mare Ingenii and the bright swirls) is concentrated in the north-west (the trailing side) — on the same side as the thorium crescent, but shifted about 8° north of it. And in addition: how did the heat and material from the Earth manage to climb over the potential barrier (26.2 MJ/kg) to the far side?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>An image: a sauce reducing over a low flame, a tea bag steeped again and again, and a continuous siphon</h2>
+<p>Four everyday images illuminate the physics and chemistry of the depths of SPA in the LEF model:</p>
+<ul>
+<li><strong>A sauce reducing over a low flame (the concentration of iron in place without sinking, B10, B12):</strong> unlike an active mare, in which material rises and falls and can sweep lumps of iron down to the core (as in Mare Moscoviense), SPA <em>was not an active mare</em> — there was no cyclic up-and-down flow. Material rich in metallic iron that arrived from the Earth at the base of SPA was heated and baked in place: the metallic iron "drank" and absorbed the oxygen around it (lowering <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> to −1.93), and when the heat evaporated the other materials, the iron that did not evaporate concentrated in place and froze as the area cooled!</li>
+<li><strong>A tea bag steeped again and again (the shift from an enriched source at 4.20 Ga to a depleted source at 2.81 Ga, B13):</strong> the material that arrived from the Earth through the pear landed rich in KREEP elements (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> at 4.203 Ga). Prolonged heating from below melted the mantle again and again and each time removed the first melt (which carried the thorium with it to the crescent), until a "washed-out" residue resistant to melting remained (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> at 2.807 Ga) — which also explains why only tiny amounts of late lava erupted!</li>
+<li><strong>Milk poured into coffee and frozen before it mixed (the bright swirls of Mare Ingenii against Moscoviense, B17):</strong> when the two-material stream — iron from below and alumina-silica from above — burst out and froze quickly under the Moon's rotation (Ekman number <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>), the elongated grains stood vertically in the feeding conduit (dark iron-rich lanes) and lay horizontally in the spreading (bright plagioclase-rich loops), whereas in active Moscoviense the iron sank before freezing, so neither a magnetic field (1.3 nT, 0% above 5 nT) nor swirls formed there!</li>
+<li><strong>A continuous siphon over the top of a hill (crossing the potential barrier, D.3–D.3a):</strong> a single parcel of material launched alone at 1.8–2.6 km/s (1.6–3.4 MJ/kg) would fall back before the corotation line (26.2 MJ/kg). But here we are dealing with <strong>a continuous body full of material</strong> pushed from below by a source pressure of ~ <span class="ltr">150 GPa</span> (Paper 3): the moment its upper part passes the corotation line and is drawn outward by the rotation, it lowers the pressure at the base and draws more material from below <strong>like a siphon</strong> — without the pressure ever becoming negative!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science and model: the eight deep anomalies (B10–B17) and the antipode geometry</h2>
+<p>Parts B10–B17 and C of Paper 08 close the remaining of the 17 anomalies of SPA and the map of centres on the far side:</p>
+<ol class="steps">
+<li><strong>The rigid-mirror test against the map of the three groups of centres (Part C):</strong> a rigid copy (a "stamp") of the rings and maria of Imbrium and Serenitatis onto their antipodes gives a narrow ellipse (2,144 × 1,340 km, axis ratio 1.60) that does not match the shape of SPA (2,402 × 2,056 km, ratio 1.17) — and this negative result is kept explicitly, to make clear that the burner determined where the craters were erased, while the outline of the basin was set by the collapse of the dome. When all the centres are placed on one map (Figure C.1), <strong>an orderly row from north to south in three groups</strong> emerges:
+<ul>
+<li><strong>(a) In the north — the two exits of the burner:</strong> the Imbrium antipode (37.6°S, 160.0°E, with the thin-crust dome of Ingenii 5.7° away above it) and the Serenitatis antipode (27.3°S, 198.4°E, with the Apollo dome 10° away above it).</li>
+<li><strong>(b) In the centre — the focus of heat and crater erasure:</strong> the centre of the dome/inner ring (51.4°S, 196.8°E), the centre of the ellipse (53°S, 191°E), the nearby magnetic peak (51.0°S, 190.0°E) and the crater minimum (45.4°S, 197.9°E) — all within 6° of the centre of the dome!</li>
+<li><strong>(c) In the south — the heavy structural focus:</strong> the lowest floor (61°S, 199°E), the dense mass (62°S, 200°E) and the thinnest crust (61°S, 184°E) — all within ~ 230 km of each other!</li>
+</ul>
+</li>
+<li><strong>Why does the dome sit south of the two exits? — the horizontal push in the pear and the rounding of the body (§C.3–C.4):</strong> the tip of the pear on which the Moon sat stood at latitude ~ 22.5°N, while its base sat around the equator. Inside a rotating body, the centrifugal force acts <strong>perpendicular to the rotation axis (horizontally)</strong> and not along the line to the Earth's centre — so the stream entered the contact disc north of its centre (where Imbrium and Serenitatis lie) and exited on the far side <strong>up to ~ 22.5° south of the opposite point</strong>! In the flattened stage (1 : 0.637 : 0.601), the centre of the dome sat 17.0° south of the Serenitatis exit and 21.2° south-east of the Imbrium exit; and afterwards <strong>the rounding into a sphere</strong> (Chapters 13–14) widened these angular distances to exactly the <strong>24.1° and 29.2°</strong> measured today!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>The mechanism in words: answering the seven challenges (E.1–E.7) and mapping the shift from flattening to sphere</h2>
+<p>Parts C.3 and E of Paper 08 provide precise quantitative answers to all seven questions and challenges raised by the recent scientific literature (including the Chang'e-6 findings of 2025–2026):</p>
+<ol class="steps">
+<li><strong>Iridium and gold in the Chang'e-6 regolith (E.1):</strong> the metal grains bearing Ir and Au found by Liu et al. (2026) were found inside <em>undated basalt and anorthosite fragments in the surface regolith</em> (late space dust gathered over billions of years, which the prediction explicitly allows), and not inside the dated 4.25 Ga norites. Moreover, elemental ratios of Ir and Au do not distinguish between metal from the Earth's depths and an asteroid — only an isotope measurement (Cr, Ti, Mo, Ru, Os) decides.</li>
+<li><strong>The dense mass, the magnetic peaks and the thin crust are not beneath the crater minimum (E.3–E.5):</strong> the minimum (45.4°S, 197.9°E) marks where the heat erased craters at the surface in the direction of the Serenitatis exit; the magnetic peak (51.0°S, 190.0°E, 230 km away) marks <strong>the edges of the hot core</strong>, where the magnetism was not erased above the Curie temperature (at the centre the field is only 0.85–1.9 nT); and the dense mass (62°S, 200°E) sits in the deep structural south of the basin.</li>
+<li><strong>Buried basalt as the cause of the shallow craters (E.6):</strong> in the LEF model the buried basalt (8.7 × 10⁴ km²) is a <em>product</em> of the burner and not its rival — and the decisive test is that the shallowness of the craters continues even outside the buried-basalt areas, because of the compaction of the baked ground.</li>
+<li><strong>The geometric shift in the rounding from flattening to sphere (table §C.3):</strong> in the transition from the elongated body (1 : 0.637 : 0.601) to today's sphere, no point slid across the ground, but the angles relative to the tip of the long axis opened up: the Imbrium exit moved from 32.3°S, 158.1°E to 37.6°S, 160.0°E (a change of 5.5°), the Serenitatis exit moved from 27.4°S, 185.1°E to 27.3°S, 198.4°E (11.8°), the centre of the dome moved from 44.0°S, 180.8°E to 51.4°S, 196.8°E (13.0°), and the crater minimum from 39.9°S, 182.5°E to 45.4°S, 197.9°E (12.6°).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Academic explanation and the key equations</h2>
+<p>The effective potential barrier <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span> between the surface of the early Earth (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> km at latitude 25°N, parent mass <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg) and the corotation line (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> km at 5.5 h and 16,399 km at 5.77 h), together with the Ekman number (Ek) that sets how the rotation deflects the lava flow, are formulated as follows (§B17, §D.3–D.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26.2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>For lava with a viscosity of <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> in the fast rotation of the attached stage (5.77 hours), the Ekman number is 0.012 on a scale of 100 m, 0.0001 at 1 km and 10⁻⁶ at 10 km — that is, the rotational force completely deflects every lava flow or ejection and creates the thorium crescent and the bright swirls of Ingenii! In addition, beyond the corotation line (16,400 km), the Moon's Hill sphere extends to ≈ 2,600 km from its centre (1.4 lunar radii of that time, 1,890 km), so any material ejected to a height of less than ≈ 700 km returns and lands on the Moon's surface as craters.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>The signature in reality: 16 of 17 anomalies matched — and the open predictions</h2>
+<p>In the summary of the systematic comparison in section B18 of Paper 08: of the 17 anomalies of SPA, mainstream science fully explains 6, partly 9, barely 1 (the prolonged volcanism over 2 billion years), and <strong>0 (does not explain at all)</strong> the pattern of the crater record at the centre of the basin. By contrast, <strong>the burner mechanism of the LEF model</strong> matches at once <strong>16 of the 17 anomalies</strong>, and <strong>1 partly (B14)</strong>, awaiting the isotope test:</p>
+<ul>
+<li><strong>The sharpest prediction for a future laboratory measurement (Part F):</strong> measuring the isotopes of Cr, Ti, Mo, Ru, Os in the metal grains inside the two dated Chang'e-6 norites (`CE6C0100YJFM002-158` and `CE6C0200YJFM001EGP07-16`) will show <strong>a pure terrestrial signature with no meteoritic deviation</strong>.</li>
+<li><strong>Further predictions testable from orbit:</strong> (1) a concentration of floor-fractured craters inside the central deficit area; (2) the shallowness of the craters persisting even outside the buried-basalt areas; (3) a radial gradient of volatile loss and oxygen reduction (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>) strongest around the minimum point and weakening toward the rim; and (4) a complete absence of lava in SPA younger than ~ 1.5 Ga.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="314.7" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="392.4" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >6 explained</text><rect x="81.8" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="198.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >9 partly</text><rect x="55.9" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="68.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="30.0" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="42.9" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="634.0" y="40.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Mainstream science</text><rect x="55.9" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="262.9" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >16 match</text><rect x="30.0" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="42.9" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="634.0" y="98.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >LEF model</text><text x="250.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Green: explains/matches · orange: partly · light orange: barely · red: not at all</text></svg><figcaption>The verdicts on the 17 anomalies of SPA (B18): how many of them each side explains fully, partly, barely or not at all.</figcaption></figure><h3 style="margin-top:28px">The lab box: summary of the 17 anomalies of SPA (B1–B18) and the potential barrier (Paper 08, Parts B10–G)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Anomaly (B1–B17)</th><th>The central empirical finding</th><th>Verdict of mainstream science</th><th>Verdict of the LEF model (the burner)</th></tr>
+<tr class="hl"><td><strong>B1. The crater record</strong></td><td>Deficit of 0.51 at the centre; minimum 45.4°S, 197.9°E (0.45); 20–40 km missing (0.47); 18% shallower with high rims (1.35)</td><td><strong>Does not explain at all</strong></td><td><strong>Matches</strong> (heat from below relaxed and erased; high rims on compacted ground)</td></tr>
+<tr><td><strong>B2. Shape and depth</strong></td><td>The lowest area on the Moon (6–9 km); depth residual of −1.1 to −1.8 km at the centre beyond the thin crust</td><td>Explains (with the heavy mass)</td><td><strong>Matches</strong> (collapse of the dome + compaction of pores over 9–15 km)</td></tr>
+<tr><td><strong>B3. Thin crust</strong></td><td>The thinnest crust on the Moon (12–20 km in the south, 61°S, 184°E); small domes above Apollo and Ingenii</td><td>Explains (oblique impact to the south)</td><td><strong>Matches</strong> (crust sliding off the dome + melting from below)</td></tr>
+<tr><td><strong>B4–B5. The two crustal rings</strong></td><td>Outer (50°–55°): thick in the east (+7.8 km) and missing in the west; inner (36.7°): shifted 118 km NE</td><td>Explains partly (no explanation for the west)</td><td><strong>Matches</strong> (piling against the thick highland wall in the E, and close by in the W)</td></tr>
+<tr><td><strong>B6. Density and porosity</strong></td><td>Surface 19.7%, but at 10 km closed to 2.9%–4.4% at the centre, rising toward the rim (7.1%–8.8%)</td><td>Explains partly (an impact breaks, it does not close)</td><td><strong>Matches</strong> (prolonged baking and compaction from the centre outward)</td></tr>
+<tr><td><strong>B7–B9. Chemistry, little lava and the Th crescent</strong></td><td>FeO falls from 9.48% to 4.43%; flat K/Th (451); 4.1% visible lava; buried lava within 15°; Th crescent in the NW</td><td>Explains / explains partly</td><td><strong>Matches</strong> (melting without eruption + a central mare at 5.77 h)</td></tr>
+<tr class="hl"><td><strong>B10–B13. Heavy mass, volatiles, oxygen and KREEP</strong></td><td>Mass of 2.18 × 10¹⁸ kg in the south; heavy <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> and <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span> (13 times less oxygen); <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>Explains partly / explains</td><td><strong>Matches</strong> (terrestrial iron that absorbed oxygen and concentrated in place + repeated washing out)</td></tr>
+<tr class="hl"><td><strong>B14. Metal in the norites</strong></td><td>Fe–Ni grains (Ni/Co = 8.5–11) in 4.247 Ga norites that were reset at 3.873 Ga</td><td>Explains (impactor material)</td><td><strong>Matches partly — the isotope test will decide (Cr, Ti, Mo, Ru, Os)</strong></td></tr>
+<tr><td><strong>B15. Prolonged volcanism</strong></td><td>Continuous activity over 2 billion years (4.25 → 3.87 → 3.6–3.2 → 2.8–2.2 Ga) in small amounts</td><td>Barely explains (requires two events and sources)</td><td><strong>Matches</strong> (burner in the attached stage, detachment at 3.873 Ga and a cooling tail)</td></tr>
+<tr><td><strong>B16–B17. Magnetism and swirls</strong></td><td>Empty centre (0.8% &gt; 5 nT); peak on the trailing side (42% in the NW); swirls at Ingenii (5.9 nT) against Moscoviense (1.3 nT)</td><td>Explains partly</td><td><strong>Matches</strong> (erasure at the centre + iron transport on the trailing side; at Moscoviense the iron sank)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Dynamic parameter / potential barrier (Part D)</th><th>Earth day of 5.50 hours (peak flattening)</th><th>Earth day of 5.77 hours (detachment state in the series)</th></tr>
+<tr><td><strong>Radius of the corotation line (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>)</strong></td><td>15,883 km (15,818 km for a test particle)</td><td><strong>16,399 km</strong> (≈ 2.6 Earth radii)</td></tr>
+<tr class="hl"><td><strong>Potential barrier at the source latitude (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> km)</strong></td><td>25.2 MJ/kg</td>
+<td>26.2 MJ/kg</td></tr></table></div></section>
+<section>
+<a href="story17_en.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapter 17</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">The Pacific Stripes — the Front Wall of the Pear and the Mirror Imprint of the Moon →</p></div></a>
+<p style="margin-top:22px"><a href="story15_en.html">← Chapter 15</a> · <a href="story00_en.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · The LEF Model · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
