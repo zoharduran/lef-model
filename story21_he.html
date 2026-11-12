@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 21: חוק הירחים במערכת השמש — סרגל אופני הלידה, עקרון המשאבה והמכסה האטמוספירי — מודל LEF</title>
+<meta name="description" content="פרק 21 בסיפור מודל LEF: חוק הירחים — סרגל אופני הלידה, עקרון המשאבה והמכסה האטמוספירי.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story21_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 21</p>
+<h1>פרק 21: חוק הירחים במערכת השמש — סרגל אופני הלידה, עקרון המשאבה והמכסה האטמוספירי</h1>
+<p>מבוסס על מאמר 11 — 11. Moon Births: One mechanism for the births of moons (חלקים A–B: סרגל הלידה, עקרון המשאבה והמכסה, שלבי ההתמיינות ופרוטוקול 13 הבדיקות)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: האם חוק פיזיקלי אחד מסביר את הולדת כל הירחים במערכת השמש — מכדור הארץ ועד פלוטו?</h2>
+
+    <p>בפרקים הקודמים ראינו כיצד כדור הארץ יצר את הירח על קצה של אגס (פרקים 1–9), וכיצד מאדים פלט את פובוס ודיימוס מתוך הר געש בראש בליטה מחודדת (פרקים 19–20). במאמר 11 מכליל מודל LEF את שני המקרים הללו לכדי <strong>"חוק הירחים" (The Moon Law)</strong> — מנגנון אחיד התקף לכל כוכב לכת וכוכב לכת ננסי במערכת השמש:</p>
+    <ol class="steps">
+      <li><strong>מדוע הירחים שונים כל כך בגודלם ובהרכבם?</strong> הירח של כדור הארץ יבש וענק ביחס להורהו (1.2% ממסת כדור הארץ); ירחי הענקים (צדק, שבתאי, אורנוס ונפטון) זעירים (0.01%–0.02%) ועשירים במים ובקרח; ואילו כארון מהווה 11% ממסת המערכת פלוטו–כארון!</li>
+      <li><strong>מדוע צפיפות הירחים יורדת עם המרחק מהשמש — ואז קופצת שוב באורנוס?</strong> צפיפות הירח של כדור הארץ היא 3,344 ק"ג/מ"ק, ירחי צדק הגליליאניים ~ 2,600 ק"ג/מ"ק, ירחי שבתאי ~ 1,350 ק"ג/מ"ק — אך באורנוס המרוחק יותר הצפיפות עולה חזרה ל-1,505 ק"ג/מ"ק!</li>
+      <li><strong>מדוע בחמישה כוכבי לכת (מאדים, צדק, שבתאי, אורנוס ונפטון) יושבים ירחים קטנים משני צדי קו הסיבוב המשותף?</strong> ומדוע מרקורי ונוגה נותרו חסרי ירחים לחלוטין?</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: סרגל המרחק של קו הסיבוב, מחליקה המצמידה ידיים, ושני סירי מרק עם מכסי קצף</h2>
+
+    <p>ארבעה דימויים מוחשיים מסבירים את הפיזיקה של הולדת ירחים בכל רחבי מערכת השמש:</p>
+    <ul>
+      <li><strong>המחליקה על הקרח המצמידה את ידיה פנימה בזמן שמעילה מתנפח החוצה (התכווצות מבפנים והתנפחות מבחוץ, A.5):</strong> כיצד התמיינות פלנטרית מביאה את קו הסיבוב המשותף קרוב אל פני השטח? גוף שמתנפח באופן אחיד ללא איבוד תנע זוויתי היה מאט ומרחיק את קו הסיבוב המשותף. אלא שהתמיינות היא תהליך הפוך מבפנים ומבחוץ: הליבה הכבדה (המכילה את רוב המסה) <strong>שוקעת ומתכווצת פנימה</strong> ומאיצה את הסיבוב כמחליקה המצמידה ידיים, בעוד המים והנדיפים הקלים נדחפים למעלה ו-<strong>מנפחים את המעטפת החיצונית</strong> כמעט בלי להאט את הסיבוב. כך המרחק היחסי של קו הסיבוב המשותף מצטמצם לפי <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> ופוגש את פני השטח!</li>
+      <li><strong>"המשאבה ההידרודינמית" (The Pump Principle, A.4):</strong> שקיעת החומרים הכבדים אל הליבה דוחפת בלחץ הידרוסטטי מים וסיליקטים קלים כלפי מעלה אל פתחי הפליטה (קצה האגס או לוע הר הגעש שעל הבליטה). כל עוד המשאבה פעילה והקרום אינו אטום, <strong>חלון הלידה (The Birth Window)</strong> נשאר פתוח.</li>
+      <li><strong>שני סירי מרק על האש — מכסה קצף עבה מול מכסה קצף דק (עקרון המכסה האטמוספירי, A.4 &amp; A.9):</strong> המרחק מהשמש קבע כמה מימן והליום לכד כל ענק לפני שהדיסקה הפרוטו-פלנטרית התפזרה. לשבתאי (9.5 AU) יש <strong>מעטפת גז עבה (70%–85% מהמסה)</strong> המשמשת מכסה תרמודינמי מעל המים: האדים מתעבים ויורדים חזרה פנימה, השכבה העליונה נשארת רוויה במים ורכה, קו הסיבוב המשותף נשאר במקומו (1.92 R), והירחים הנפלטים קלים ועשירי קרח (1,346 ק"ג/מ"ק). לאורנוס (19 AU) יש <strong>מכסה גז דק (10%–20%)</strong>: האדים ברחו לחלל דרך קו הסיבוב המשותף, נשאו עמם תנע זוויתי שהרחיק את הקו ל-3.24 R, וייבשו וצופפו את שכבת הפליטה העליונה — ולכן ירחי אורנוס צפופים יותר (1,505 ק"ג/מ"ק)!</li>
+      <li><strong>שלושת אופני הלידה לאורך מערכת השמש (A.4, L.4):</strong> בקצה הפנימי החם והיבש (כדור הארץ) נבנה ירח יבש וגדול על קצה אגס (<strong>Built</strong>); באזור המרכזי הרטוב (ממאדים ועד נפטון) נפלטו ירחים קטנים ועשירי מים מתוך הרי געש על בליטות (<strong>Ejected</strong>); ובקצה החיצוני הקר והמהיר (פלוטו–כארון) נמתח גוף מאוחד ל"בוטן" ונקרע במותניו (<strong>Split</strong>).</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: חוק הלידה, סרגל המצבים וארבעת שלבי ההתמיינות (חלק A)</h2>
+
+    <p>חלק A של מאמר 11 מנסח את התנאים הכמותיים המדויקים של חוק הירחים:</p>
+    <ol class="steps">
+      <li><strong>סרגל אופני הלידה (The Ruler of Birth Modes, A.3):</strong> אם מודדים את רדיוס קו הסיבוב המשותף ביחידות של רדיוס ההורה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), רדיוס ההורה מצטמצם לחלוטין! המיקום x תלוי <strong>אך ורק ביחס שבין מהירות הסיבוב לצפיפות הממוצעת</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>), ולכן סרגל אחד חל על כל גוף ביקום:
+        <ul>
+          <li><strong>אגס (Built on Pear Tip):</strong> x ≈ 2.29 (כדור הארץ ב-5.77 שעות וצפיפות 3,940 ק"ג/מ"ק — הירח מהווה 1.2% ממסת ההורה).</li>
+          <li><strong>בליטה והר געש (Ejected on Bulge):</strong> x ≈ 1.74–2.06 (מאדים ב-7–9 שעות וצפיפות 1,170 ק"ג/מ"ק, וכן ענקי הגז והקרח — ירחים זעירים של 0.01%–0.02%).</li>
+          <li><strong>הר געש ללא בליטה (אפשרות תיאורטית):</strong> x ≈ 1.1–1.5.</li>
+          <li><strong>פיצול בוטן מלא (Split at Neck):</strong> x ≈ 0.85–1.02 (מעבר סף ההתארכות x = 1.53 אל סף הקריעה x = 1 — פלוטו וכארון ב-1.9–2.5 שעות, כארון 11% ממסת הזוג).</li>
+        </ul>
+      </li>
+      <li><strong>הרכב הירח כחתך כרונולוגי של שלבי ההתמיינות בהורה (A.9):</strong> ככל שההתמיינות מתקדמת, קו הסיבוב המשותף נע פנימה (בצדק ובראשית חיי שבתאי), ולכן <strong>ירחים רחוקים יותר נולדו מוקדם יותר</strong> וירחים קרובים יותר נולדו מאוחר יותר:
+        <ul>
+          <li><strong>שלב 0 (ראשית ההתמיינות — התזת מים צנטריפוגלית):</strong> התזת מים קדמוניים מהשכבה החיצונית מעל גבול רוש <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> ירחי קרח אווריריים (יאפטוס 1,088 ק"ג/מ"ק, היפריון 544 ק"ג/מ"ק).</li>
+          <li><strong>שלב 1 (מוקדם — חומר מעורב):</strong> פליטת חומר המייצג את הרכב ההורה כולו בטרם הושלם המיון <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> ירחים גדולים בצפיפות דומה לגוף הפנימי של ההורה (f ≈ 0.6–0.7: קליסטו 1,834, גנימד 1,936, טיטאן 1,880, טיטניה 1,711, אוברון 1,630 ק"ג/מ"ק).</li>
+          <li><strong>שלב 2 (שיא המשאבה ההידרודינמית):</strong> דחיפת מאגמה רוויה במים ובסיליקטים קלים; בריחת הנדיפים לחלל מותירה נקבוביות גבוהה ("ספוגיות", 30%–40%) וצפיפות נמוכה <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> פובוס (1,860), דיימוס (1,470), טתיס (984), מירנדה (1,200 ק"ג/מ"ק).</li>
+          <li><strong>שלב 3 (סוף ההתמיינות):</strong> פליטת שארית סיליקטית יבשה וצפופה בעלת ליבה מתכתית מוגדרת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> איו (3,528 ק"ג/מ"ק).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <figure class="fig"><svg viewBox="0 0 640 222" role="img" aria-label="מיקום קו הסיבוב המשותף ברדיוסי ההורה" style="direction:ltr"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><text x="634.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:rtl;unicode-bidi:embed" >בנייה על קצה אגס · ⁦2.29⁩</text><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><text x="634.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >פליטה על בליטה · ⁦1.74–2.06⁩</text><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><text x="634.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:rtl;unicode-bidi:embed" >הר געש ללא בליטה · ⁦1.1–1.5⁩</text><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/><text x="634.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >פיצול בוטן · ⁦0.85–1.02⁩</text><text x="230.0" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >מיקום קו הסיבוב המשותף ברדיוסי ההורה · קו אדום: סף הקריעה</text></svg><figcaption>סרגל אופני הלידה: אותו מספר x קובע אם ירח נבנה על קצה, נפלט מהר געש או נקרע מבוטן — לכל גוף, בלי תלות ברדיוס ההורה.</figcaption></figure><div class="callout"><span class="tag">השוואת צפיפות נכונה — בידוד הגוף הפנימי ממעטפת הגז (A.9)</span><p style="margin:0">ירחים נולדים מהגוף הפנימי (סלע וקרח) ולא ממעטפת המימן וההליום. כאשר מפרקים את הצפיפות הממוצעת של הירחים לרכיב סיליקטי-מתכתי (3,500 ק"ג/מ"ק) ורכיב קרח (950 ק"ג/מ"ק), שבר המסה הסיליקטי f יורד בהדרגה מכדור הארץ (f = 0.98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>), דרך צדק (f = 0.83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>) ועד שבתאי (f = 0.36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>) — ועולה חזרה באורנוס (f = 0.49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>) משום שמכסה הגז הדק של אורנוס (10%–20%) איפשר למים לברוח וייבש את שכבת הפליטה העליונה!</p></div>
+    </section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: ששת עשר סעיפי חוק הירחים (A.10) ופרוטוקול 13 הבדיקות (חלק B)</h2>
+
+    <p>חלקים A.10 ו-B של מאמר 11 מאחדים את כל התנאים הפיזיקליים לכדי מערכת חוקים אחת ופרוטוקול מדידה אחיד של 13 בדיקות לכל גוף במערכת השמש:</p>
+    <ol class="steps">
+      <li><strong>השמש כשעון תרמודינמי — קשת הלידות (A.10.4 &amp; L.4):</strong> הולדת ירחים דורשת בו-זמנית התמיינות פעילה, חלון זמן פתוח, קרום לא אטום ושכבה תת-קרקעית בעלת צמיגות נמוכה. המרחק מהשמש קובע כמה זמן ארבעת התנאים מתקיימים יחד: בקצה הפנימי (מרקורי ונוגה) התייבשות מהירה סוגרת את חלון הלידה מוקדם, ורק כדור הארץ הספיק לבנות ירח אחד על קצה אגס; באזור המרכזי (ממאדים ועד שבתאי) הירחים נפלטים בשפע עד השיא בשבתאי (~ 24 ירחים סדירים); ובקצה החיצוני הקר (אורנוס, נפטון ופלוטו) קיפאון הקרום חוסם בהדרגה את פתחי המשאבה ומעביר את המערכת לפיצול מכני.</li>
+      <li><strong>המרוץ המבני ומשוב מסת הירח (A.4, A.10.16):</strong> כדי שייוולד ירח, קצב הצמיחה הרדיאלי של האגס או הבליטה חייב לעלות על קצב התרחקותו של קו הסיבוב המשותף. לאחר הלידה, אם יחס המסה של הירח להורה גדול (כמו הירח של כדור הארץ, 1.2%), הירח נושא עמו את רוב התנע הזוויתי (84%) ומאט את ההורה; אך בענקים ובמאדים מסת הירחים זעירה (0.01%–0.02%, רק 0.4%–1.4% מהתנע), ולכן כל נסיגה של קו הסיבוב המשותף נובעת <strong>אך ורק מבריחת מים וגז דרך הקו (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)</strong>!</li>
+      <li><strong>פרוטוקול 13 הבדיקות השיטתי (חלק B):</strong> כדי למנוע הטיה, כל כוכב לכת וכוכב לכת ננסי נבדק לפי 13 פרמטרים קבועים ברצף כרונולוגי: (1) נתוני יסוד גלובליים; (2) קטלוג והפרדת ירחים סדירים מלכודים; (3) שחזור דינמי של הסיבוב הקדום (בדיקה 3 — תוך שימוש ברדיוס ובמקדם מומנט ההתמד k של זמן הלידה!); (4) אימות חוק הלידה; (5) ניתוח מים ונדיפים; (6) דרגת ההתמיינות כיום (k = C/MR²); (7) הגדרת חלון הלידה; (8) מסלול הנדידה הגיאותית (בדיקה 8 — אינטגרציית da/dt לזיהוי הצורך בדחיפה משנית מטבעת); (9) פרמטרי הישרדות (גבול רוש ורדיוס היל); (10) עקבות מורפולוגיים על ההורה; (11) עקבות מבניים על הירחים (נקבוביות, נעילה גיאותית ובליטה קפואה); (12) ניתוח מערכות טבעות כזרימה רציפה; ו-(13) בידוד חריגים.</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>מיקום קו הסיבוב המשותף ביחידות רדיוס ההורה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), יממת הלידה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>), והשפעת ההתכווצות הפנימית וההתנפחות החיצונית בזמן ההתמיינות מנוסחים כך (§A.3, §A.5, §B):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+    <p>מכיוון שמקדם מומנט ההתמד k מופיע בריבוע בנוסחת ההתמיינות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span>, ירידת k מ-0.40 (גוף הומוגני) ל-0.20–0.25 (ליבה דחוסה) מקרבת את קו הסיבוב המשותף x מ-2.10 R ל-1.44–1.68 R אפילו כאשר המעטפת החיצונית מתנפחת פי 1.3 — וזהו המנוע הגיאודינמי המפגיש את פני השטח עם קו הסיבוב המשותף!</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: שחזור קו הסיבוב המשותף ומשוואת התערובת של הירחים</h2>
+
+    <p>יישום בדיקות 3 ו-5 של הפרוטוקול על כוכבי הלכת חושף התאמה כמותית מרשימה בין ההרכב הכימי של הירחים לבין שימור התנע הזוויתי (§A.9, §B):</p>
+    <ul>
+      <li><strong>משוואת התערובת הדו-רכיבית של צפיפות הירחים (§A.9):</strong> על פי הנוסחה <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span>, שבר המסה הסיליקטי f של הירחים הגדולים שנולדו בשלב 1 של ההתמיינות מתכנס לטווח צר ואחיד של <strong>f ≈ 0.6–0.7</strong> בכל רחבי מערכת השמש החיצונית (קליסטו, גנימד, טיטאן, טיטניה, אוברון, וגם מערכת פלוטו–כארון)!</li>
+      <li><strong>בדיקת השחזור של קו הסיבוב המשותף ללא איבוד מסה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, חלק B):</strong> כאשר מחזירים רק את התנע הזוויתי של הירחים להורה, בצדק (2.29 R → 2.28 R) ובשבתאי (1.92 R → 1.90 R) הקו כמעט אינו זז (בהתאם לעקרון המכסה העבה); בכדור הארץ הקו חוזר ל-2.29 R (שכן הירח נושא 84% מהתנע); ואילו במאדים (6.03 R), באורנוס (3.24 R) ובנפטון (3.39 R) הקו נותר רחוק מטווח הלידה (x ≈ 2) — הוכחה לכך שבשלושתם ברחו כמויות אדירות של מים וגז דרך קו הסיבוב המשותף!</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: סרגל אופני הלידה, שלבי ההתמיינות, מודל שני הסירים ופרוטוקול 13 הבדיקות (מאמר 11, חלקים A–B)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>אופן הלידה</th>
+            <th>מנגנון הרמת החומר</th>
+            <th>מיקום קו הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th>
+            <th>יחס מסת הירח/הורה</th>
+            <th>אזור במערכת השמש ודוגמה</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>1. בנייה על קצה (Built)</strong></td>
+            <td>הצטברות ממושכת בקצה אגס פלנטרי; ניתוק במעבר הקו</td>
+            <td><strong>2.29</strong> (5.77 שע', 3,940 ק"ג/מ"ק)</td>
+            <td><strong>1.2%</strong> (גדול ויבש)</td>
+            <td>הקצה הפנימי היבש: <strong>הירח של כדור הארץ</strong> (מקרה יחיד)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>2. פליטה על בליטה (Ejected on Bulge)</strong></td>
+            <td>בליטה משוונית והר געש המזריק מאגמה רוויה במים</td>
+            <td><strong>1.74–2.06</strong> (מאדים 7–9 שע', 1,170 ק"ג/מ"ק)</td>
+            <td><strong>0.01%–0.02%</strong> בענקים (1.9× 10⁻⁸ במאדים)</td>
+            <td>האזור המרכזי הרטוב: <strong>פובוס, דיימוס וירחי הענקים</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2ב. הר געש ללא בליטה</strong></td>
+            <td>פליטה נקודתית מהר געש מקומי</td>
+            <td>≈ 1.1–1.5</td>
+            <td>זעיר</td>
+            <td>אפשרות תיאורטית (ללא דוגמה מחושבת)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>3. פיצול מלא (Split)</strong></td>
+            <td>סיבוב מעבר לסף הבקיעה (x=1); התארכות לבוטן וקריעה במותן</td>
+            <td><strong>0.85–1.02</strong> (1.9–2.5 שע', 1,840 ק"ג/מ"ק)</td>
+            <td><strong>11%–12%</strong> (נעילה כפולה)</td>
+            <td>הקצה החיצוני הקר: <strong>פלוטו וכארון</strong> (והאומאה לפני פיצול)</td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>שלב ההתמיינות בהורה (A.9)</th>
+            <th>המנגנון הגיאודינמי והחומר בפתח</th>
+            <th>תכונות הירח שנוצר</th>
+            <th>דוגמאות במערכת השמש</th>
+          </tr>
+        
+        
+          <tr>
+            <td><strong>שלב 0: ראשית ההתמיינות</strong></td>
+            <td>התזת מים צנטריפוגלית מהשכבה החיצונית מעל גבול רוש</td>
+            <td>ירח קרח אוורירי וספוגי בצפיפות נמוכה מאוד</td>
+            <td>יאפטוס (1,088), היפריון (544 ק"ג/מ"ק)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>שלב 1: שלב מוקדם</strong></td>
+            <td>חומר מעורב המייצג את הרכב הגוף הפנימי כולו</td>
+            <td>ירח גדול, צפיפות דומה לגוף הפנימי (f ≈ 0.6–0.7), התמיינות חלקית</td>
+            <td>קליסטו (1,834), גנימד (1,936), טיטאן (1,880), טיטניה (1,711), אוברון (1,630)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>שלב 2: שיא המשאבה</strong></td>
+            <td>שקיעת ליבה מהירה הדוחפת מאגמה רוויה במים ובסיליקטים קלים</td>
+            <td>בריחת נדיפים יוצרת "ספוגיות" (30%–40% נקבוביות) וצפיפות נמוכה</td>
+            <td>פובוס (1,860), דיימוס (1,470), טתיס (984), מירנדה (1,200 ק"ג/מ"ק)</td>
+          </tr>
+          <tr>
+            <td><strong>שלב 3: סוף ההתמיינות</strong></td>
+            <td>מיון כמעט שלם; פליטת שארית סיליקטית יבשה וצפופה</td>
+            <td>ירח סיליקטי צפוף, יבש לחלוטין ובעל ליבה מתכתית</td>
+            <td>איו (3,528 ק"ג/מ"ק)</td>
+          </tr>
+        
+      </table></div>
+    
+
+    </section>
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+
+    <p>בפרק זה ניסחנו את <strong>חוק הירחים (The Moon Law)</strong> של מודל LEF: מיקום קו הסיבוב המשותף ביחידות רדיוס ההורה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), עקרון המשאבה ההידרודינמית, עקרון המכסה האטמוספירי (מודל שני הסירים של שבתאי מול אורנוס), והתכווצות הליבה המביאה את קו הסיבוב אל פני השטח.</p>
+    <p>בפרק הבא — <strong>פרק 22: סקירה פלנטרית מלאה — ממרקורי ונוגה ועד פלוטו, האומאה וקרס</strong> (מתוך מאמר 11 — חלקים C–N) — נפעיל את פרוטוקול 13 הבדיקות כוכב לכת אחר כוכב: נגלה מדוע מרקורי ונוגה חסרי ירחים, כיצד טבעות שבתאי פועלות כזרימה רציפה בשיווי משקל, מדוע אורנוס נטוי ב-98°, כיצד טריטון נלכד כאונת בוטן מחגורת קויפר, ונמפה את 12 השאלות הפתוחות של מערכת השמש!</p>
+  <a href="story22_he.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">פרק 22</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">סקירה פלנטרית מלאה — ממרקורי ונוגה ועד פלוטו, האומאה וקרס ←</p></div></a><p style="margin-top:22px"><a href="story20_he.html">→ פרק 20</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 23: הטבעות הפלנטריות — מקור החומר, יממת הסף 13.4 שעות וזרימת שיווי המשקל של שבתאי — מודל LEF</title>
+<meta name="description" content="פרק 23 בסיפור מודל LEF: הטבעות הפלנטריות — מקור החומר, יממת הסף של 13.4 שעות וזרימת שיווי המשקל של שבתאי.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story23_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 23</p>
+<h1>פרק 23: הטבעות הפלנטריות — מקור החומר, יממת הסף 13.4 שעות וזרימת שיווי המשקל של שבתאי</h1>
+<p>מבוסס על מאמר 12 — 12. The Rings: A ring breaks, grinds and returns (חלקים A–D: שני הקווים, שני נתיבי ההזנה, יממת הסף 13.4 שע', שיווי המשקל של שבתאי ובריחת המים)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: מאין מגיע חומר הטבעות, מדוע רק לשבתאי יש טבעות אדירות, ומדוע טבעות אינן בונות ירחים?</h2>
+
+    <p>בפרקים 21–22 ראינו שהירחים במערכת השמש נולדים ישירות מהוריהם על קו הסיבוב המשותף. במאמר 12 מרחיב מודל LEF עיקרון זה אל <strong>מערכות הטבעות הפלנטריות</strong> וקובע כלל חד-משמעי: <strong>טבעת אינה אתר בנייה של ירחים אלא מנגנון של שבירה, שחיקה והחזרת חומר אל ההורה!</strong> מתוך תצפיות קאסיני, וויאג'ר והטלסקופים עולות ארבע שאלות מרכזיות:</p>
+    <ol class="steps">
+      <li><strong>הבדלי הקיצון בין טבעות מערכת השמש (A.1–A.3):</strong> מדוע טבעות שבתאי ענקיות (1.54 × 10¹⁹ ק"ג) ובוהקות (95%–99% קרח מים טהור), טבעות צדק עשויות אבק קלוש, טבעות אורנוס ונפטון צרות וכהות — ואילו סביב גופים קטנים (האומאה, כריקלו וקואוואר) מקיפות טבעות צפופות <em>הרבה מעבר לגבול רוש</em> בלי להתגבש לירחים?</li>
+      <li><strong>פרדוקס הגיל הצעיר של טבעות שבתאי (D.3):</strong> קאסיני מדדה "גשם טבעות" היורד לשבתאי בקצב של <strong>432 עד45,000 ק"ג לשנייה</strong> — קצב שהיה מרוקן את הטבעות לחלוטין בתוך 11 מיליון עד 1.1 מיליארד שנה. כיצד הטבעות קיימות כיום?</li>
+      <li><strong>התנאי האוניברסלי לטבעת מאסיבית (B.5):</strong> מדוע מבין כל כוכבי הלכת במערכת השמש, רק <strong>שבתאי כיום ומאדים הצעיר</strong> פיתחו טבעת מאסיבית ישירות מן הקרקע?</li>
+      <li><strong>לאן נעלם התנע הזוויתי של אורנוס ונפטון (D.4)?</strong> הירחים של אורנוס ונפטון נושאים רק 1% ו-0.002% מהתנע הזוויתי שאיבדו כוכבי הלכת הללו — מה נשא החוצה את השאר?</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: רשת וכדורים, משפך שוחק, ומזרקת מים בשיווי משקל</h2>
+
+    <p>ארבעה דימויים מוחשיים מסבירים את הפיזיקה והמחזוריות של טבעות במערכת השמש:</p>
+    <ul>
+      <li><strong>רשת וכדורים — קו הסיבוב המשותף בתוך גבול רוש (B.5):</strong> כדי ללכוד חומר כטבעת מאסיבית סביב כוכב לכת דרושים בו-זמנית <strong>רשת במיקום הנכון</strong> ו-<strong>כדורים הנזרקים אליה</strong>. כאשר חומר דולף ממעמקי כוכב הלכת אל קו הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>), אם הקו שוכן <em>בתוך</em> גבול רוש (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>), כוחות הגאות הדיפרנציאליים מונעים ממנו להתגבש לירח וכולאים אותו כטבעת. חלוקת שתי המשוואות מצמצמת לחלוטין את צפיפות כוכב הלכת ומניבה <strong>יממת סף אוניברסלית זהה לכל גוף ביקום: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> שעות!</strong></li>
+      <li><strong>משפך צמיג השוחק גושים ומחזיר אבק הביתה (C.1–C.4, D.1):</strong> בתוך דיסקת טבעת, חלקיקים פנימיים נעים מהר מחלקיקים חיצוניים. התנגשויות לא-אלסטיות הופכות אנרגיה מסלולית לחום תוך שימור התנע הזוויתי הכולל — ולכן רוב החומר מאבד אנרגיה וזורם פנימה אל ההורה, בעוד מיעוטו נדחף החוצה (כך טבעת A של שבתאי מסתיימת בדיוק בגבול רוש לקרח ב-135,300 ק"מ, וגם טבעת קואוואר ב-2.4 גבולות רוש אינה מתגבשת לירח!).</li>
+      <li><strong>בריכת מזרקה שבה ההזנה מלמטה שווה לגשם מלמעלה (שיווי המשקל של שבתאי, D.3):</strong> טבעות שבתאי אינן שריד סטטי שנוצר לאחרונה, אלא <strong>זרימה רציפה בשיווי משקל דינמי</strong>: המשאבה הפנימית מדליפה מים אל קו הסיבוב המשותף (1.92 R) בדיוק באותו קצב שבו גשם הטבעות מוריד מים לאטמוספירה (עלות מצטברת של עד 1.1 × 10⁻⁵ ממסת שבתאי לאורך 4.5 מיליארד שנה). המראה "הצעיר" נובע מהתחלופה המתמדת של החומר!</li>
+      <li><strong>משאבה מכנית המעלה מים מבאר רדודה (בריחת המים מאורנוס ונפטון, D.4):</strong> אורנוס ונפטון רחוקים מהשמש וקרים, אך הם איבדו מים בכמות של פי <strong>270 ממסת כל ירחיהם</strong> (2.5× 10²⁴ ק"ג באורנוס ו-3.2× 10²⁴ ק"ג בנפטון) — לא בגלל אידוי תרמי, אלא בגלל <strong>הרמה מכנית אל קו הסיבוב המשותף</strong> בסיבוב המהיר (7–8 שעות), דרך מכסה גז דק (10%–20%) ובאר כבידה רדודה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21.3</mn><mtext>–</mtext><mn>23.5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> ק"מ/שנ' לעומת 59.5 ק"מ/שנ' בצדק)!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: שתי משפחות הטבעות, שני נתיבי ההזנה ומטריצת התנאים (חלקים A–D)</h2>
+
+    <p>חלקים A–D של מאמר 12 מציגים הוכחות כמותיות לארבעה חוקים יסודיים של מערכות טבעות:</p>
+    <ol class="steps">
+      <li><strong>חלוקה לשתי משפחות דינמיות ביחס לקו הסיבוב המשותף (A.3):</strong>
+        <ul>
+          <li><strong>משפחת הענקים (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>):</strong> טבעות צדק (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>), שבתאי (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.60</mn><mtext>–</mtext><mn>1.23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>), אורנוס (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.51</mn><mtext>–</mtext><mn>0.62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>) ונפטון (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>) יושבות מתחת לקו הסיבוב המשותף או חוצות אותו, בעיקר בתוך גבול רוש; החלק שמתחת לקו נופל פנימה להורה (כפי שמעידים גם "החישורים" — Spokes — בטבעת B של שבתאי המופיעים ב-102,000–112,000 ק"מ, בדיוק עד קו הסיבוב המשותף ב-111,600 ק"מ!).</li>
+          <li><strong>משפחת הגופים הקטנים (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>):</strong> טבעות האומאה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>), כריקלו (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.10</mn><mo separator="true">;</mo><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>) וקואוואר (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mo separator="true">;</mo><mn>2.01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>) יושבות הרחק <em>מעל</em> קו הסיבוב המשותף ומתקבצות סביב רדיוס <strong>תהודת סיבוב–מסלול 1:3</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), שבו הגאות דוחפת חומר החוצה והתהודה כולאת אותו!</li>
+        </ul>
+      </li>
+      <li><strong>שלילת מקור של אבק בין-פלנטרי והגדרת שני נתיבי ההזנה (B.2–B.4):</strong> הניקיון הכימי של טבעות שבתאי (95%–99% קרח מים טהור בדיסקה משוונית בעובי 10–30 מ'), היעדר תנע זוויתי משותף לאבק חלל איזוטרופי (שמזהם את טבעת C הכהה מבחוץ ואינו בונה אותה), והמתאם המדויק לעובי המכסה האטמוספירי מוכיחים שכל חומר הטבעות מגיע מן ההורה בשני נתיבים: <strong>(א) הזנה ישירה מהקרקע</strong> מתחת לקו הסיבוב (טבעות D, C, B של שבתאי וטבעת מאדים הקדומה), ו-<strong>(ב) הזנה דרך ירחים מקוריים פעילים</strong> (אנקלדוס המזין את טבעת E בגייזרים, ארבעת הירחים הפנימיים של צדק המזינים אבק, ומאב המזין את טבעת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> של אורנוס — בעוד ירחים לכודים כמו פיבי מוצאים מן הכלל).</li>
+      <li><strong>יישום שני התנאים לטבעת מאסיבית על כל כוכבי הלכת (B.5):</strong> שבתאי כיום (P = 10.6 שע' < 13.4 שע', <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + מכסה דולף) ומאדים הצעיר (P = 7–9 שע' < 13.4 שע', <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.74</mn><mtext>–</mtext><mn>2.05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + הר געש על בליטה) הם היחידים שמקיימים את שני התנאים יחד. צדק (9.9 שע') מהיר דיו אך מכסה הגז שלו אטום לחלוטין; כדור הארץ בלידה (5.8 שע') התייבש מהר מדי; ואורנוס ונפטון כיום (17.2 ו-16.1 שע') איטיים מדי (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>) וקפואים.</li>
+    </ol>
+
+    <div class="callout"><span class="tag">עקומת ה-U של קו הסיבוב המשותף ביחס לגבול רוש (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>, איור B.3)</span><p style="margin:0">במרכז מערכת השמש, בצדק ובשבתאי בעלי המכסה העבה, קו הסיבוב המשותף נשאר בתוך אזור הטבעות (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span> ו-0.86); ואילו בשני הקצוות, היכן שמסה ברחה דרך הקו והאטה את הסיבוב, הקו יצא מאזור הטבעות — מעט באורנוס ובנפטון (1.18 ו-1.13, שם נותרו טבעות צרות), הרבה במאדים (1.50, שם הטבעת נעלמה) ובכדור הארץ (1.47), ועד פי 22 ו-57 במרקורי ובנוגה!</p></div>
+    <figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="284.8" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="276.8" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦0.82⁩</text><text x="634.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >צדק</text><rect x="274.2" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="266.2" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦0.86⁩</text><text x="634.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >שבתאי</text><rect x="203.4" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="195.4" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:rtl;unicode-bidi:embed" >⁦1.13⁩</text><text x="634.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >נפטון</text><rect x="190.2" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="182.2" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:rtl;unicode-bidi:embed" >⁦1.18⁩</text><text x="634.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >אורנוס</text><rect x="114.1" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="106.1" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >⁦1.47⁩</text><text x="634.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >כדור הארץ</text><rect x="106.2" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="98.2" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >⁦1.50⁩</text><text x="634.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >מאדים</text></svg><figcaption>יחס קו הסיבוב המשותף לגבול רוש (x_c/x_R) כיום: מתחת ל-1 הקו בתוך אזור הטבעות; מרקורי (22) ונוגה (57) רחוקים מחוץ לסולם.</figcaption></figure></section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: גזירת יממת הסף האוניברסלית (13.4 שעות) ושיווי המשקל של שבתאי</h2>
+
+    <p>חלקים B.5 ו-D.1–D.4 של מאמר 12 מראים כיצד גיאומטריית המסלולים וחוקי השימור מכתיבים את קיומן, גילן והרכבן של הטבעות הפלנטריות:</p>
+    <ol class="steps">
+      <li><strong>גזירת יממת הסף האוניברסלית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> שעות (§B.5):</strong> קו הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>) תלוי במסת ההורה ובמהירות הסיבוב שלו, ואילו גבול רוש לחלקיקי קרח (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>) תלוי ברדיוס ההורה ובצפיפותו הממוצעת. כאשר מחלקים את <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> ב-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>, מסת ההורה, רדיוסו וצפיפותו <strong>מצטמצמים לחלוטין</strong>! התוצאה היא שיממת הסיבוב הקריטית שמתחת לה קו הסיבוב המשותף שוכן בתוך גבול רוש זהה לכל כוכב לכת, ירח או אסטרואיד ביקום: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> שעות</strong> (עבור קרח בצפיפות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> ק"ג/מ"ק). לכן לכבידה החזקה של צדק או לחלשה של מאדים הצעיר אין השפעה על עצם הסף — רק קצב הסיבוב (P < 13.4 שעות) ודליפת החומר מן הקרקע קובעים.</li>
+      <li><strong>התפשטות צמיגה — מדוע הטבעת היא משפך המחזיר חומר הביתה (§D.1):</strong> בתוך דיסקת הטבעת, חלקיקים פנימיים נעים מהר מחיצוניים (תנועה קפלריאנית דיפרנציאלית). התנגשויות לא-אלסטיות הופכות אנרגיה מסלולית לחום תוך שימור התנע הזוויתי הכולל. כדי לקיים את שני חוקי השימור יחד, הדיסקה מתפשטת: <strong>רוב מסת הטבעת מאבדת אנרגיה וזורמת פנימה אל ההורה</strong>, בעוד מיעוטה נדחף החוצה ונושא עמו את עודף התנע הזוויתי.</li>
+      <li><strong>פתרון פרדוקס גיל טבעות שבתאי (§D.3):</strong> קאסיני מדדה נפילת חומר מהטבעות אל שבתאי בשני ערוצים מקבילים — גשם ניטרלי אל קו המשווה בקצב <strong>4,800–45,000 ק"ג/שנ'</strong> (Waite et al. 2018) וגשם מיונן לאורך קווי השדה המגנטי בקצב <strong>432–2,870 ק"ג/שנ'</strong> (O'Donoghue et al. 2019). ללא הזנה, מסת הטבעות (1.54 × 10¹⁹ ק"ג) הייתה מתרוקנת בתוך 11 מיליון עד 1.1 מיליארד שנה. במודל LEF, הטבעת היא <strong>זרימה מתמדת בשיווי משקל דינמי</strong>: דליפת מים מהמעטפת הפנימית מחדשת אותה מלמטה באותו קצב שבו הגשם מרוקן אותה מלמעלה — בעלות מצטברת של <strong>10⁻⁷ עד 1.1 × 10⁻⁵ בלבד ממסת שבתאי</strong> לאורך 4.5 מיליארד שנה!</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>היחס בין קו הסיבוב המשותף <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> לבין גבול רוש לקרח <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>, ויממת הסף האוניברסלית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span> מנוסחים כך (§A.2, §B.5):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2.46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2.4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13.4</mn><mtext> שעות</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ שעות}</annotation></semantics></math></span></div></div></div>
+    <p>כאשר <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> ק"ג/מ"ק, מתקבל <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span> אם ורק אם P < 13.4 שעות. בצירוף התנאי השני (דליפה פעילה של מים וחומר מן הקרקע או המעטפת), מתקבלת חלוקה חדה של מערכת השמש כולה.</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: בדיקת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> שעות ותקציב התנע הזוויתי של ענקי הקרח</h2>
+
+    <p>השוואת נתוני החלליות קאסיני וויאג'ר אל משוואות השימור מאשרת שני ממצאים כמותיים בולטים (§B.5, §D.4):</p>
+    <ul>
+      <li><strong>התאמת תנאי הטבעת המאסיבית על פני שמונה מצבים פלנטריים (§B.5):</strong> רק שבתאי כיום (P = 10.6 שע', <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + מכסה דולף) ומאדים הצעיר (P = 7–9 שע', <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.65</mn><mtext>–</mtext><mn>0.76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + הר געש על בליטה) מקיימים את שני התנאים לטבעת מאסיבית ישירות מן הקרקע.</li>
+      <li><strong>הפער של פי 270 במסת המים שברחו מאורנוס ונפטון (§D.4):</strong> האטת אורנוס מ-8.3 ל-17.2 שעות הוציאה תנע זוויתי של 1.3 × 10³⁶ ק"ג·מ²/שנ', מתוכו הירחים מחזיקים רק 1% (1.4 × 10³⁴). המים שברחו דרך קו הסיבוב המשותף (2.5 × 10²⁴ ק"ג, כ-2.8% ממסת אורנוס) שקלו <strong>פי 270 ממסת כל ירחיו יחד</strong> (9 × 10²¹ ק"ג), ובנפטון (3.2 × 10²⁴ ק"ג, כ-3.1% ממסת הכוכב) נשאו 99.998% מהתנע שאבד!</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: מטריצת תנאי הטבעת המאסיבית (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> שע'), קצב גשם הטבעות בשבתאי ותקציב התנע הזוויתי (מאמר 12, חלקים A–D)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>כוכב לכת ותקופה</th>
+            <th>יממה P (שע')</th>
+            <th>קו הסיבוב / גבול רוש (R)</th>
+            <th>תנאי 1 (P < 13.4 שע')</th>
+            <th>תנאי 2 (דליפה מהקרקע)</th>
+            <th>התוצאה הדינמית</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>שבתאי כיום</strong></td>
+            <td><strong>10.6</strong></td>
+            <td>1.92 / 2.24 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>)</td>
+            <td><strong>כן</strong></td>
+            <td><strong>כן (המכסה דולף)</strong></td>
+            <td><strong>טבעת מאסיבית ישירות מהקרקע</strong></td>
+          </tr>
+          <tr class="hl">
+            <td><strong>מאדים הצעיר</strong></td>
+            <td><strong>7–9</strong></td>
+            <td>1.74–2.05 / 2.68</td>
+            <td><strong>כן</strong></td>
+            <td><strong>כן (הר געש על בליטה)</strong></td>
+            <td><strong>התקיימה טבעת קדומה</strong></td>
+          </tr>
+          <tr>
+            <td><strong>צדק כיום</strong></td>
+            <td>9.9</td>
+            <td>2.29 / 2.80 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>)</td>
+            <td>כן</td>
+            <td>כמעט אפס (מכסה עבה)</td>
+            <td>טבעת אבק דלילה מירחים בלבד</td>
+          </tr>
+          <tr>
+            <td><strong>כדור הארץ בלידה</strong></td>
+            <td>5.8</td>
+            <td>2.29 / 4.02</td>
+            <td>כן</td>
+            <td>לא (התייבש מהר)</td>
+            <td>ללא טבעת; הירח נבנה על אגס</td>
+          </tr>
+          <tr>
+            <td><strong>אורנוס / נפטון כיום</strong></td>
+            <td>17.2 / 16.1</td>
+            <td>3.26/2.76 ; 3.39/3.00</td>
+            <td><strong>לא</strong></td>
+            <td>לא (המים ברחו וקפא)</td>
+            <td>שרידים צרים וטבעות ירחים</td>
+          </tr>
+          <tr>
+            <td><strong>מאדים / ארץ כיום</strong></td>
+            <td>24.6 / 23.9</td>
+            <td>6.03/4.02 ; 6.62/4.49</td>
+            <td><strong>לא</strong></td>
+            <td>לא (הקרום נאטם)</td>
+            <td>הטבעת נעלמה / ללא טבעת</td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>קצב גשם טבעות בשבתאי (ק"ג/שנ')</th>
+            <th>זמן ריקון ללא הזנה</th>
+            <th>הזנה כוללת נדרשת ב-4.5 Ga</th>
+            <th>חלק ממסת שבתאי הכוללת</th>
+          </tr>
+        
+        
+          <tr>
+            <td>432 (גשם מיונן — סף תחתון)</td>
+            <td>1.1 מיליארד שנה</td>
+            <td>4 מסות טבעת</td>
+            <td>1 × 10⁻⁷</td>
+          </tr>
+          <tr>
+            <td>2,870 (גשם מיונן — סף עליון)</td>
+            <td>170 מיליון שנה</td>
+            <td>26 מסות טבעת</td>
+            <td>7 × 10⁻⁷</td>
+          </tr>
+          <tr>
+            <td>4,800 (גשם ניטרלי — סף תחתון)</td>
+            <td>100 מיליון שנה</td>
+            <td>44 מסות טבעת</td>
+            <td>1.2 × 10⁻⁶</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>45,000 (גשם ניטרלי — סף עליון)</strong></td>
+            <td><strong>11 מיליון שנה</strong></td>
+            <td><strong>415 מסות טבעת</strong></td>
+            <td><strong>1.1 × 10⁻⁵ (בתוך שימור המסה!)</strong></td>
+          </tr>
+        
+      </table></div>
+    
+
+    </section>
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+
+    <p>בפרק זה גזרנו את <strong>יממת הסף האוניברסלית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> שעות</strong> לטבעת מאסיבית, ראינו כיצד טבעות שבתאי מתקיימות כזרימת שיווי משקל מתמדת, והוכחנו שבריחת מים מכנית דרך קו הסיבוב המשותף נשאה 99%–99.998% מהתנע הזוויתי שאבד לאורנוס ולנפטון.</p>
+    <p>בפרק הבא — <strong>פרק 24: הטבעת כמסוע שחיקה, החתימות על ירחים וכוכבי לכת, ובדיקת בלוק אטקאמה</strong> (מתוך מאמר 12 — חלקים E–M) — נבחן כיצד טבעת ממיינת גושים בהתנגשויות ומייצרת "מדחפים", מדוע טבעת קרח בונה רכסי קו משווה על פאן ואטלס בעוד טבעת סיליקטית שוחקת את דיימוס, כיצד נפסלה השערת סלע אטקאמה ב-Curiosity באפריל 2026, ונרכז את 5 קריטריוני ההפרכה של חלק L!</p>
+  <a href="story24_he.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">פרק 24</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">הטבעת כמסוע שחיקה, החתימות על ירחים וכוכבי לכת, ובדיקת בלוק אטקאמה ←</p></div></a><p style="margin-top:22px"><a href="story22_he.html">→ פרק 22</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
