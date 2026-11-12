@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 23: Los anillos planetarios — el origen del material, el día umbral de 13,4 horas y el flujo de equilibrio de Saturno — El modelo LEF</title>
+<meta name="description" content="Capítulo 23 de la historia del modelo LEF: los anillos planetarios — el origen del material, el día umbral de 13,4 horas y el flujo de equilibrio de Saturno.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story23_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story23_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story23_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story23_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story23_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story23_he.html" hreflang="he">עברית</a> · <a href="story23_en.html" hreflang="en">English</a> · <a href="story23_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 23</p>
+<h1>Capítulo 23: Los anillos planetarios — el origen del material, el día umbral de 13,4 horas y el flujo de equilibrio de Saturno</h1>
+<p>Basado en el artículo 12 — 12. The Rings: A ring breaks, grinds and returns (partes A–D: las dos líneas, las dos vías de alimentación, el día umbral de 13,4 h, el equilibrio de Saturno y el escape del agua)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: ¿de dónde viene el material de los anillos, por qué solo Saturno tiene anillos enormes, y por qué los anillos no construyen lunas?</h2>
+<p>En los capítulos 21–22 vimos que las lunas del sistema solar nacen directamente de sus progenitores sobre la línea de corrotación. En el artículo 12 el modelo LEF extiende este principio a <strong>los sistemas de anillos planetarios</strong> y fija una regla inequívoca: <strong>¡un anillo no es una obra de construcción de lunas, sino un mecanismo que rompe, muele y devuelve material al progenitor!</strong> De las observaciones de Cassini, Voyager y los telescopios surgen cuatro preguntas centrales:</p>
+<ol class="steps">
+<li><strong>Las diferencias extremas entre los anillos del sistema solar (A.1–A.3):</strong> ¿por qué los anillos de Saturno son enormes (1,54 × 10¹⁹ kg) y brillantes (95%–99% de hielo de agua puro), los de Júpiter están hechos de polvo tenue, los de Urano y Neptuno son estrechos y oscuros — mientras que alrededor de cuerpos pequeños (Haumea, Cariclo y Quaoar) orbitan anillos densos <em>muy más allá del límite de Roche</em> sin agregarse en lunas?</li>
+<li><strong>La paradoja de la juventud de los anillos de Saturno (D.3):</strong> Cassini midió una «lluvia de anillo» que cae sobre Saturno a un ritmo de <strong>432 a 45 000 kg por segundo</strong> — un ritmo que habría vaciado por completo los anillos en 11 millones a 1,1 mil millones de años. ¿Cómo existen hoy los anillos?</li>
+<li><strong>La condición universal para un anillo masivo (B.5):</strong> ¿por qué, de todos los planetas del sistema solar, solo <strong>el Saturno actual y el Marte joven</strong> desarrollaron un anillo masivo directamente desde el suelo?</li>
+<li><strong>¿Adónde fue el momento angular de Urano y Neptuno (D.4)?</strong> Las lunas de Urano y Neptuno llevan solo el 1% y el 0,002% del momento angular que perdieron estos planetas — ¿qué se llevó el resto?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: una red y unas pelotas, un embudo de molienda y una fuente de agua en equilibrio</h2>
+<p>Cuatro imágenes tangibles explican la física y el ciclo de los anillos del sistema solar:</p>
+<ul>
+<li><strong>Una red y unas pelotas — la línea de corrotación dentro del límite de Roche (B.5):</strong> para capturar material como un anillo masivo alrededor de un planeta hacen falta dos cosas a la vez: <strong>una red en el lugar adecuado</strong> y <strong>pelotas lanzadas a ella</strong>. Cuando el material se filtra desde las profundidades del planeta hasta la línea de corrotación (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>), si la línea está <em>dentro</em> del límite de Roche (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>), las fuerzas de marea diferenciales le impiden agregarse en una luna y lo atrapan como un anillo. ¡Dividir las dos ecuaciones cancela por completo la densidad del planeta y da <strong>un día umbral universal, idéntico para todo cuerpo del universo: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> horas!</strong></li>
+<li><strong>Un embudo viscoso que muele los fragmentos y devuelve el polvo a casa (C.1–C.4, D.1):</strong> dentro de un disco de anillo, las partículas interiores se mueven más deprisa que las exteriores. Las colisiones inelásticas convierten energía orbital en calor conservando el momento angular total — de modo que la mayor parte del material pierde energía y fluye hacia dentro, hacia el progenitor, mientras una minoría es empujada hacia fuera (¡por eso el anillo A de Saturno termina exactamente en el límite de Roche para el hielo, a 135 300 km, y por eso tampoco el anillo de Quaoar, a 2,4 límites de Roche, se agrega en una luna!).</li>
+<li><strong>Un estanque de fuente en el que la alimentación desde abajo iguala a la lluvia desde arriba (el equilibrio de Saturno, D.3):</strong> los anillos de Saturno no son un resto estático formado recientemente, sino <strong>un flujo continuo en equilibrio dinámico</strong>: la bomba interior filtra agua hacia la línea de corrotación (1,92 R) exactamente al mismo ritmo al que la lluvia de anillo devuelve agua a la atmósfera (un coste acumulado de hasta 1,1 × 10⁻⁵ de la masa de Saturno en 4,5 mil millones de años). ¡El aspecto «joven» procede de la renovación constante del material!</li>
+<li><strong>Una bomba mecánica que eleva agua de un pozo poco profundo (el escape de agua de Urano y Neptuno, D.4):</strong> Urano y Neptuno están lejos del Sol y son fríos, y sin embargo perdieron agua por <strong>270 veces la masa de todas sus lunas</strong> (2,5 × 10²⁴ kg en Urano y 3,2 × 10²⁴ kg en Neptuno) — no por evaporación térmica, sino por <strong>elevación mecánica hasta la línea de corrotación</strong> en la rotación rápida (7–8 horas), a través de una delgada tapa de gas (10%–20%) y un pozo de gravedad poco profundo (¡<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21,3</mn><mtext>–</mtext><mn>23,5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> km/s frente a 59,5 km/s en Júpiter)!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: las dos familias de anillos, las dos vías de alimentación y la matriz de condiciones (partes A–D)</h2>
+<p>Las partes A–D del artículo 12 presentan pruebas cuantitativas de cuatro leyes fundamentales de los sistemas de anillos:</p>
+<ol class="steps">
+<li><strong>La división en dos familias dinámicas respecto a la línea de corrotación (A.3):</strong>
+<ul>
+<li><strong>La familia de los gigantes (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>):</strong> los anillos de Júpiter (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,57</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>), Saturno (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,60</mn><mtext>–</mtext><mn>1,23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>), Urano (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,51</mn><mtext>–</mtext><mn>0,62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>) y Neptuno (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>0,75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>) están por debajo de la línea de corrotación o la cruzan, en su mayoría dentro del límite de Roche; la parte que está por debajo de la línea cae hacia dentro, hacia el progenitor (como muestran también los «radios» del anillo B de Saturno, que aparecen a 102 000–112 000 km, ¡exactamente hasta la línea de corrotación a 111 600 km!).</li>
+<li><strong>La familia de los cuerpos pequeños (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>):</strong> los anillos de Haumea (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>), Cariclo (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,10</mn><mo separator="true">;</mo><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>) y Quaoar (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mo separator="true">;</mo><mn>2,01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>) están muy <em>por encima</em> de la línea de corrotación y se agrupan alrededor del radio de <strong>la resonancia espín–órbita 1:3</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), ¡donde la marea empuja el material hacia fuera y la resonancia lo atrapa!</li>
+</ul>
+</li>
+<li><strong>Descartar el polvo interplanetario como fuente y definir las dos vías de alimentación (B.2–B.4):</strong> la limpieza química de los anillos de Saturno (95%–99% de hielo de agua puro en un disco ecuatorial de 10–30 m de espesor), la ausencia de momento angular común en el polvo espacial isótropo (que contamina desde fuera el oscuro anillo C y no lo construye) y la correlación precisa con el espesor de la tapa atmosférica demuestran que todo el material de los anillos procede del progenitor por dos vías: <strong>(a) alimentación directa desde el suelo</strong> por debajo de la línea de corrotación (los anillos D, C y B de Saturno y el antiguo anillo de Marte), y <strong>(b) alimentación a través de lunas originales activas</strong> (Encélado alimenta el anillo E con géiseres, las cuatro lunas interiores de Júpiter alimentan polvo y Mab alimenta el anillo <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> de Urano — mientras que las lunas capturadas como Febe quedan excluidas).</li>
+<li><strong>Aplicar las dos condiciones de un anillo masivo a todos los planetas (B.5):</strong> el Saturno actual (P = 10,6 h &lt; 13,4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1,92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2,24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + una tapa con fugas) y el Marte joven (P = 7–9 h &lt; 13,4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1,74</mn><mtext>–</mtext><mn>2,05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2,68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + un volcán sobre una protuberancia) son los únicos que cumplen ambas condiciones a la vez. Júpiter (9,9 h) es lo bastante rápido, pero su tapa de gas está completamente sellada; la Tierra en el nacimiento (5,8 h) se secó demasiado rápido; y Urano y Neptuno hoy (17,2 y 16,1 h) son demasiado lentos (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>) y están helados.</li>
+</ol>
+<div class="callout"><span class="tag">La curva en U de la línea de corrotación respecto al límite de Roche (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>, figura B.3)</span><p style="margin:0">En el centro del sistema solar, en Júpiter y Saturno con sus tapas gruesas, la línea de corrotación permanece dentro de la zona de anillos (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span> y 0,86); mientras que en ambos extremos, donde escapó masa a través de la línea y frenó la rotación, la línea salió de la zona de anillos — un poco en Urano y Neptuno (1,18 y 1,13, donde quedaron anillos estrechos), mucho en Marte (1,50, donde el anillo desapareció) y en la Tierra (1,47), ¡y hasta 22 y 57 veces en Mercurio y Venus!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="140.0" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="363.2" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,82⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Júpiter</text><rect x="140.0" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="373.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,86⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Saturno</text><rect x="140.0" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="444.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,13⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Neptuno</text><rect x="140.0" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="457.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,18⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Urano</text><rect x="140.0" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="533.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,47⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Tierra</text><rect x="140.0" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="541.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,50⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Marte</text></svg><figcaption>La razón entre la línea de corrotación y el límite de Roche (x_c/x_R) hoy: por debajo de 1 la línea está dentro de la zona de anillos; Mercurio (22) y Venus (57) quedan muy fuera de la escala.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: la deducción del día umbral universal (13,4 horas) y el equilibrio de Saturno</h2>
+<p>Las partes B.5 y D.1–D.4 del artículo 12 muestran cómo la geometría de las órbitas y las leyes de conservación dictan la existencia, la edad y la composición de los anillos planetarios:</p>
+<ol class="steps">
+<li><strong>La deducción del día umbral universal <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> horas (§B.5):</strong> la línea de corrotación (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>) depende de la masa del progenitor y de su ritmo de rotación, mientras que el límite de Roche para partículas de hielo (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>) depende del radio del progenitor y de su densidad media. Cuando se divide <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> entre <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>, ¡la masa, el radio y la densidad del progenitor <strong>se cancelan por completo</strong>! El resultado es que el día de rotación crítico por debajo del cual la línea de corrotación está dentro del límite de Roche es idéntico para todo planeta, luna o asteroide del universo: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> horas</strong> (para hielo con una densidad de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³). Así, la fuerte gravedad de Júpiter o la débil gravedad del Marte joven no tienen ningún efecto sobre el propio umbral — solo deciden el ritmo de rotación (P &lt; 13,4 horas) y la filtración de material desde el suelo.</li>
+<li><strong>Dispersión viscosa — por qué el anillo es un embudo que devuelve el material a casa (§D.1):</strong> dentro del disco del anillo, las partículas interiores se mueven más deprisa que las exteriores (movimiento kepleriano diferencial). Las colisiones inelásticas convierten energía orbital en calor conservando el momento angular total. Para cumplir ambas leyes de conservación a la vez, el disco se dispersa: <strong>la mayor parte de la masa del anillo pierde energía y fluye hacia dentro, hacia el progenitor</strong>, mientras una minoría es empujada hacia fuera llevándose el exceso de momento angular.</li>
+<li><strong>La solución de la paradoja de la edad de los anillos de Saturno (§D.3):</strong> Cassini midió material que cae de los anillos sobre Saturno por dos canales paralelos — lluvia neutra hacia el ecuador a un ritmo de <strong>4 800–45 000 kg/s</strong> (Waite et al. 2018) y lluvia ionizada a lo largo de las líneas del campo magnético a un ritmo de <strong>432–2 870 kg/s</strong> (O'Donoghue et al. 2019). Sin alimentación, la masa de los anillos (1,54 × 10¹⁹ kg) se vaciaría en 11 millones a 1,1 mil millones de años. En el modelo LEF, el anillo es <strong>un flujo constante en equilibrio dinámico</strong>: el agua que se filtra desde la envoltura interior lo renueva desde abajo al mismo ritmo al que la lluvia lo vacía desde arriba — ¡con un coste acumulado de <strong>solo 10⁻⁷ a 1,1 × 10⁻⁵ de la masa de Saturno</strong> en 4,5 mil millones de años!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>La razón entre la línea de corrotación <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> y el límite de Roche para el hielo <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>, y el día umbral universal <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span>, se formulan así (§A.2, §B.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2,46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2,4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13,4</mn><mtext> horas</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ horas}</annotation></semantics></math></span></div></div></div>
+<p>Con <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³ se obtiene <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span> si y solo si P &lt; 13,4 horas. Junto con la segunda condición (filtración activa de agua y material desde el suelo o la envoltura), se sigue una división nítida de todo el sistema solar.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: la prueba de las <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> horas y el balance de momento angular de los gigantes de hielo</h2>
+<p>La comparación de los datos de las sondas Cassini y Voyager con las ecuaciones de conservación confirma dos hallazgos cuantitativos destacados (§B.5, §D.4):</p>
+<ul>
+<li><strong>La coincidencia de la condición de anillo masivo en ocho estados planetarios (§B.5):</strong> solo el Saturno actual (P = 10,6 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + una tapa con fugas) y el Marte joven (P = 7–9 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,65</mn><mtext>–</mtext><mn>0,76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + un volcán sobre una protuberancia) cumplen ambas condiciones para un anillo masivo directamente desde el suelo.</li>
+<li><strong>La brecha de 270 veces en la masa de agua que escapó de Urano y Neptuno (§D.4):</strong> frenar a Urano de 8,3 a 17,2 horas eliminó un momento angular de 1,3 × 10³⁶ kg·m²/s, del que las lunas solo conservan el 1% (1,4 × 10³⁴). El agua que escapó a través de la línea de corrotación (2,5 × 10²⁴ kg, alrededor del 2,8% de la masa de Urano) pesaba <strong>270 veces la masa de todas sus lunas juntas</strong> (9 × 10²¹ kg), ¡y en Neptuno (3,2 × 10²⁴ kg, alrededor del 3,1% de la masa del planeta) se llevó el 99,998% del momento perdido!</li>
+</ul>
+<h3 style="margin-top:28px">La caja de laboratorio: la matriz de condiciones para anillos masivos (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> h), el ritmo de la lluvia de anillo en Saturno y el balance de momento angular (artículo 12, partes A–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Planeta y periodo</th><th>Día P (h)</th><th>Línea de corrotación / límite de Roche (R)</th><th>Condición 1 (P &lt; 13,4 h)</th><th>Condición 2 (filtración desde el suelo)</th><th>El resultado dinámico</th></tr>
+<tr class="hl"><td><strong>Saturno hoy</strong></td><td><strong>10,6</strong></td><td>1,92 / 2,24 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>)</td><td><strong>Sí</strong></td><td><strong>Sí (la tapa tiene fugas)</strong></td><td><strong>Un anillo masivo directamente desde el suelo</strong></td></tr>
+<tr class="hl"><td><strong>Marte joven</strong></td><td><strong>7–9</strong></td><td>1,74–2,05 / 2,68</td><td><strong>Sí</strong></td><td><strong>Sí (un volcán sobre una protuberancia)</strong></td><td><strong>Existió un anillo antiguo</strong></td></tr>
+<tr><td><strong>Júpiter hoy</strong></td><td>9,9</td><td>2,29 / 2,80 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>)</td><td>Sí</td><td>Casi nula (tapa gruesa)</td><td>Un anillo de polvo tenue solo a partir de lunas</td></tr>
+<tr><td><strong>La Tierra en el nacimiento</strong></td><td>5,8</td><td>2,29 / 4,02</td><td>Sí</td><td>No (se secó rápido)</td><td>Sin anillo; la Luna se construyó sobre una pera</td></tr>
+<tr><td><strong>Urano / Neptuno hoy</strong></td><td>17,2 / 16,1</td><td>3.26/2.76 ; 3.39/3.00</td><td><strong>No</strong></td><td>No (el agua escapó y se heló)</td><td>Restos estrechos y anillos de lunas</td></tr>
+<tr><td><strong>Marte / la Tierra hoy</strong></td><td>24,6 / 23,9</td><td>6.03/4.02 ; 6.62/4.49</td><td><strong>No</strong></td><td>No (la corteza se selló)</td><td>El anillo desapareció / sin anillo</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Ritmo de la lluvia de anillo en Saturno (kg/s)</th><th>Tiempo de vaciado sin alimentación</th><th>Alimentación total necesaria en 4,5 Ga</th><th>Fracción de la masa total de Saturno</th></tr>
+<tr><td>432 (lluvia ionizada — límite inferior)</td><td>1,1 mil millones de años</td><td>4 masas del anillo</td><td>1 × 10⁻⁷</td></tr>
+<tr><td>2 870 (lluvia ionizada — límite superior)</td><td>170 millones de años</td><td>26 masas del anillo</td><td>7 × 10⁻⁷</td></tr>
+<tr><td>4 800 (lluvia neutra — límite inferior)</td><td>100 millones de años</td><td>44 masas del anillo</td><td>1,2 × 10⁻⁶</td></tr>
+<tr class="hl"><td><strong>45 000 (lluvia neutra — límite superior)</strong></td><td><strong>11 millones de años</strong></td><td><strong>415 masas del anillo</strong></td><td><strong>1,1 × 10⁻⁵ (¡dentro de la conservación de la masa!)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>En este capítulo dedujimos <strong>el día umbral universal de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> horas</strong> para un anillo masivo, vimos cómo los anillos de Saturno existen como un flujo constante de equilibrio y demostramos que el escape mecánico del agua a través de la línea de corrotación se llevó el 99%–99,998% del momento angular perdido por Urano y Neptuno.</p>
+<p>En el próximo capítulo — <strong>Capítulo 24: El anillo como cinta de molienda, las firmas en lunas y planetas y la prueba del bloque Atacama</strong> (del artículo 12 — partes E–M) — examinaremos cómo un anillo clasifica los fragmentos en colisiones y produce «hélices», por qué un anillo de hielo construye crestas ecuatoriales en Pan y Atlas mientras que un anillo de silicato desgasta a Deimos, cómo se descartó en Curiosity en abril de 2026 la hipótesis de la roca Atacama, ¡y reuniremos los 5 criterios de refutación de la parte L!</p>
+<a href="story24_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 24</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">El anillo como cinta de molienda, las firmas en lunas y planetas y la prueba del bloque Atacama →</p></div></a><p style="margin-top:22px"><a href="story22_es.html">← Capítulo 22</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

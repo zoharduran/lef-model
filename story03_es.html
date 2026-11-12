@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 3: El motor interior — la presión de la fuente de 150 GPa y el magma espumado — El modelo LEF</title>
+<meta name="description" content="Capítulo 3 de la historia del modelo LEF: la presión de la fuente de 150 GPa, el umbral de densidad de 3 864 kg/m³ para el magma espumado, el caudal, la fuente de energía y por qué el paso no es un tubo delgado sino la pera.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story03_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story03_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story03_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story03_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story03_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story03_he.html" hreflang="he">עברית</a> · <a href="story03_en.html" hreflang="en">English</a> · <a href="story03_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 3</p>
+<h1>Capítulo 3: El motor interior — la presión de la fuente de <span class="ltr">150 GPa</span> y el magma espumado</h1>
+<p>Basado en el artículo 03 — LEF Mechanism in Practice (introducción y parte A: §A.1–A.13)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: ¿quién empujó 73 trillones de toneladas hasta una altura de 16 000 kilómetros?</h2>
+<p class="lead">En los capítulos anteriores vimos que la línea de corrotación resuelve el enigma de la velocidad y del balance del momento angular: si logramos llevar el material de la Luna a una distancia de unos 16 000 km del centro de la Tierra mientras gira con ella, ya se moverá a la velocidad de una órbita libre. Pero ahora nos enfrentamos a la pregunta más difícil de la realidad:</p>
+<div class="q">¿Qué fuerza en el mundo puede elevar una masa enorme de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7,35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg contra la gravedad de la Tierra?</div>
+<p>Para entender lo exigente que es esta tarea, examinemos primero dos propuestas tentadoras pero fallidas. Primero, <strong>la rotación sola no eleva nada</strong>: incluso en la superficie de una Tierra que gira cada 5,5 horas, a una altura de 8 991 km del centro (un cuerpo con la masa de la Luna tocando la superficie), la gravedad tira hacia dentro con una aceleración de <span class="ltr">4,93 m/s²</span>, mientras que el empuje centrífugo hacia fuera es de solo <span class="ltr">0,905 m/s²</span>. ¡Cada kilogramo sigue pesando hacia abajo alrededor del cuarenta por ciento de su peso actual en la superficie terrestre! La rotación aligera el peso, pero no lo transporta.</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">Gravedad hacia dentro · ⁦4,93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:ltr;unicode-bidi:embed">Empuje centrífugo hacia fuera · ⁦0,905 m/s²⁩</text></svg><figcaption>A 8 991 km del centro, con un día de 5,5 horas: la gravedad es más de cinco veces el empuje centrífugo.</figcaption></figure>
+<p>Segundo, <strong>la flotación no funciona en el espacio</strong>: el aceite flota sobre el agua porque el agua más pesada que lo rodea lo empuja hacia arriba, pero sobre la superficie de la Tierra no hay un océano de roca que haga flotar la Luna hacia arriba.</p>
+<div class="box"><span class="tag">La conclusión</span><p style="margin:0">La conclusión es clara: para construir una luna con el propio material de la Tierra hace falta <strong>un enorme motor de presión interno</strong> que trabaje desde dentro — un motor que empuje una columna de magma hacia arriba desde las profundidades de la Tierra, suministre masa a un ritmo suficiente y no se desplome bajo el peso de la luna que se construye en su cima.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>Una imagen: la pasta de dientes, el agua que sube hasta el tejado y la botella de refresco que se abre</h2>
+<p>Para sentir de forma concreta cómo funciona este motor, juntemos tres imágenes sencillas de la vida cotidiana:</p>
+<div class="three t">
+<div><b>01 · Presión de la fuente</b><h4>El tubo de pasta de dientes</h4><p>En lo profundo de la Tierra joven, el peso de todas las capas superiores crea una presión tremenda. Cuando se abre una vía de flujo desde las profundidades hasta la superficie en una región favorecida, la presión interna exprime la roca fundida hacia arriba — igual que la pasta de dientes sale por la boquilla cuando se aprieta el tubo.</p></div>
+<div><b>02 · Carga hidrostática</b><h4>Una bomba que sube agua a un depósito en el tejado</h4><p>Para que una bomba en el sótano envíe agua a un depósito en el tejado de un rascacielos, su presión debe ser mayor que el peso de toda la columna de agua dentro de la tubería. Si el agua es demasiado pesada y el edificio demasiado alto, la columna se detiene a medio camino.</p></div>
+<div><b>03 · Magma espumado</b><h4>Una botella de refresco que se abre</h4><p>A gran profundidad, bajo una presión enorme, el agua y los gases volátiles están disueltos en la roca fundida como el gas en una botella de refresco cerrada. En cuanto el magma asciende y la presión sobre él disminuye, los gases salen y forman miles de millones de burbujas — <strong>magma espumado</strong>. Esta espuma es mucho más ligera que la roca sólida, ¡así que exactamente la misma presión puede elevarla mucho más alto!</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: por qué la roca seca fracasa — y solo el magma rico en volátiles supera el umbral</h2>
+<p>En el modelo LEF no suponemos que la presión basta — <strong>ponemos precio al empuje</strong> a partir del mismo campo gravitatorio. Antes de calcular, el artículo 03 fija una regla contable estricta: en cada momento, la masa inicial del cuerpo progenitor (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6,0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> kg) se reparte en cuatro reservas claras, de modo que ningún kilogramo se cuenta dos veces:</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>La masa que queda en la Tierra</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>La masa acumulada en el cuerpo en desarrollo</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>La masa en movimiento en el camino entre ambos o en eyección</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>Y la masa perdida del sistema</span></div></div>
+<p>Ahora el artículo plantea una prueba de presión unidimensional a lo largo de la columna de magma, desde el centro de la Tierra joven (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mspace width="0.17em"></mspace><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> km, un día de 5,5 horas) hasta el radio de corrotación de todo el cuerpo progenitor (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mspace width="0.17em"></mspace><mn>882,9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> km):</p>
+<ul class="pts">
+<li><strong>La presión disponible en la fuente</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>:</strong> el peso de las capas que presionan sobre el centro de la Tierra joven (menos el alivio centrífugo de la rápida rotación) da una presión litostática en la fuente de <strong><span class="ltr">150,26 GPa</span></strong> (¡alrededor de un millón y medio de atmósferas!).</li>
+<li class="a"><strong>El coste de la columna de magma</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>:</strong> para sostener una columna de magma hecha de magma profundo con una densidad de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mspace width="0.17em"></mspace><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> kg/m³ que se espuma sobre la superficie hasta una densidad de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mspace width="0.17em"></mspace><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> kg/m³, se necesita una presión de <strong><span class="ltr">139,78 GPa</span></strong>.</li>
+<li class="c"><strong>El excedente que empuja la Luna:</strong> <span class="ltr">150,26 − 139,78 = <strong><span class="ltr">+10,49 GPa</span></strong></span>! Queda un excedente de presión positivo de más de diez gigapascales que impulsa el flujo hacia arriba.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">Presión de la fuente · ⁦150,26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">Coste de la columna de magma · ⁦139,78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:ltr;unicode-bidi:embed">Excedente: ⁦+⁦10,49 GPa⁩⁩</text></svg><figcaption>El balance de presión a la densidad de referencia de 3 500 kg/m³: la presión de la fuente cubre el peso de la columna de magma y deja un excedente.</figcaption></figure>
+<div class="callout"><span class="tag">El umbral crítico de densidad · 3 864 kg/m³</span>
+<p style="margin:0">Cuando comprobamos qué densidades de magma superan la prueba, aparece un límite nítido: cualquier magma profundo con una densidad inferior a <strong>3 864 kg/m³</strong> (como el magma rico en agua y volátiles) deja un excedente de presión positivo y alcanza la línea de corrotación; en cambio, un magma seco y pesado con una densidad de 4 000 kg/m³ requiere <span class="ltr">154,19 GPa</span> y fracasa con un déficit de <span class="ltr">−3,92 GPa</span>. <strong>¡El agua y los volátiles no son un añadido incidental — son la condición física que permite a la Luna ascender!</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1 500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2 000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2 500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3 000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3 500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4 000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4 500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68,12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24,89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10,49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3,92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18,33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="end" style="direction:ltr;unicode-bidi:embed">Umbral: 3 864 kg/m³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">El magma asciende</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Fracasa</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Densidad del magma profundo (kg/m³)</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:ltr;unicode-bidi:embed">Excedente de presión (GPa)</text></svg><figcaption>El excedente de presión (antes de carga y fricción) en función de la densidad del magma profundo, según el artículo 03: la línea cruza el cero en 3 864 kg/m³.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: el caudal, la fuente de energía y el rechazo del tubo delgado</h2>
+<p>Hemos visto que un excedente de presión de <span class="ltr">10,49 GPa</span> puede empujar una columna de magma espumado hasta la línea de corrotación. Pero para construir una luna entera, el motor interno debe superar además <strong>tres pruebas prácticas más</strong> dentro del mismo sistema:</p>
+<div class="three">
+<div><b>PRUEBA 1</b><h4>La prueba del ritmo</h4><p>¿Llega el magma a tiempo? Para suministrar la masa de una luna entera (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7,35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg) durante la ventana de construcción de 600 millones de años (o 100 millones de años en la prueba de sensibilidad), se necesita un ritmo medio de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3,88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> kg/s (y hasta <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> kg/s en la ventana corta). Según la ley del flujo viscoso (Poiseuille), el caudal crece con <strong>la cuarta potencia del radio del paso</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>): un paso con un radio de varios cientos de kilómetros o más transporta la masa con facilidad, siempre que su interior se mantenga caliente y móvil.</p></div>
+<div><b>PRUEBA 2</b><h4>La prueba de la energía</h4><p>¿De dónde sale el trabajo de elevar una luna? Elevar la masa de la Luna desde la superficie (8 991 km) hasta el radio de liberación (16 400 km) requiere un trabajo gravitatorio de unos <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span> julios</strong> (menos del uno por ciento de la energía de enlace de la Tierra). ¿De dónde procede esta energía? Del mismo proceso que impulsa la evolución interna: <strong>el hundimiento del hierro pesado en el núcleo de la Tierra</strong> y la contracción de la Tierra joven liberan una energía gravitatoria de unos <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span> julios — ¡más que suficiente para financiar la elevación!</p></div>
+<div><b>PRUEBA 3</b><h4>La prueba de la corteza aislante</h4><p>¿Cómo evita el paso congelarse por el camino? Mientras el interior del paso se alimenta de calor desde abajo y permanece líquido, su superficie exterior se congela al contacto con el entorno frío. La ecuación del frente de congelación muestra que el primer metro de la corteza exterior se solidifica en solo <strong>1,9 a 23 días</strong>, un kilómetro en miles a decenas de miles de años, mientras que una corteza gruesa de 50 km tarda millones de años — así se forma una envoltura sólida y aislante que mantiene caliente y fluido el núcleo interior.</p></div>
+</div>
+<div class="box"><span class="tag">El sorprendente descubrimiento de la prueba combinada</span>
+<h3 style="margin-top:4px">Por qué se descarta por completo un «tubo delgado»</h3>
+<p style="margin:0">Cuando se comprueban juntos la presión, el flujo y el peso de la Luna en la última etapa de ascenso (un día de 5,77 horas, latitud 22,5°, el centro de la Luna a 15 397 km), aparece un resultado dramático: si el paso fuera un tubo estrecho con un radio de 500 km, el peso de la Luna presionando sobre la punta del tubo crearía una carga de <span class="ltr">46,18 GPa</span> y convertiría todo el excedente de presión en un déficit de <span class="ltr">−35,03 GPa</span>. El balance radial solo se vuelve positivo por encima de <strong>un radio de paso de 1 017 km</strong> — y con tal radio, la parte exterior del propio paso ya pesa <strong>0,46 masas lunares</strong> (y con un radio de 1 500 km — ¡una masa lunar entera!) y soporta un esfuerzo cortante lateral de gigapascales. <strong>La conclusión:</strong> el paso no es un tubo delgado sin masa, sino una base ancha, caliente y masiva de la propia Tierra — <strong>¡la pera!</strong></p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>El balance de presión a lo largo de la vía de alimentación relaciona la presión litostática de la fuente en el centro (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>), la carga hidrostática de la columna de magma profunda (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>) y exterior (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>), la carga del peso del cuerpo en la cima de la columna (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>) y las pérdidas por fricción viscosa (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>):</p>
+<div class="eqs">
+<div class="eq"><div class="k">La presión de la fuente</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150,26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">El coste de la columna de magma</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>La condición de elevación y el umbral de densidad</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mspace width="0.17em"></mspace><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>Para un flujo laminar en un paso de radio <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> y longitud <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> (ley de Poiseuille), y para el ritmo de engrosamiento del frente de congelación de la corteza exterior (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>) y el trabajo gravitatorio de la elevación (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>):</p>
+<div class="eqs">
+<div class="eq"><div class="k">El caudal (Poiseuille)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">El frente de congelación</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">El trabajo de la elevación</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1,47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: las inclusiones de fundido dentro de los cristales lunares</h2>
+<p>La prueba física estableció que solo un magma rico en agua y volátiles (más ligero que 3 864 kg/m³) puede superar el umbral de presión de <span class="ltr">150,26 GPa</span> y ascender hasta la línea de corrotación. Si la Luna se hubiera formado en un impacto gigante, seco y abrasador que vaporizó el agua, sus rocas antiguas deberían ser completamente secas.</p>
+<p>Pero cuando los científicos examinaron con microscopía avanzada las <strong>inclusiones de fundido</strong> — diminutas gotas de magma antiguo atrapadas en cristales de olivino que crecieron en lo profundo de la Luna y protegieron el agua de escapar al espacio — se encontró una firma sorprendente: un alto contenido de agua de <strong>615 a 1 410 ppm</strong>, similar a las concentraciones del manto superior de la Tierra.</p>
+<div class="q">¡El agua hallada dentro de los cristales lunares es el resto fósil de aquel antiguo «motor espumante» que empujó la Luna hacia arriba!</div>
+<h3 style="margin-top:28px">La caja de laboratorio: el balance de presión, el umbral de densidad y la prueba combinada (artículo 03, parte A)</h3>
+<div class="tw"><table class="d"><tr><th>Densidad del magma profundo <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>Presión disponible en la fuente <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>Coste de la columna de magma <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>Excedente de presión antes de carga y fricción</th><th>Resultado de la prueba de elevación</th></tr>
+<tr><td>1 500 kg/m³</td><td><span class="ltr">150,26 GPa</span></td><td><span class="ltr">82,14 GPa</span></td><td class="ok2"><span class="ltr">+68,12 GPa</span></td><td class="ok2">Supera con facilidad (magma muy espumado)</td></tr>
+<tr><td>3 000 kg/m³</td><td><span class="ltr">150,26 GPa</span></td><td><span class="ltr">125,37 GPa</span></td><td class="ok2"><span class="ltr">+24,89 GPa</span></td><td class="ok2">Supera (magma rico en volátiles)</td></tr>
+<tr class="hl"><td>3 500 kg/m³ (referencia)</td><td><span class="ltr">150,26 GPa</span></td><td><span class="ltr">139,78 GPa</span></td><td class="ok"><span class="ltr">+10,49 GPa</span></td><td class="ok">Supera — el excedente impulsa la construcción</td></tr>
+<tr class="hl"><td>3 864 kg/m³ (umbral)</td><td><span class="ltr">150,26 GPa</span></td><td><span class="ltr">150,26 GPa</span></td><td class="eq0"><span class="ltr">0,00 GPa</span></td><td class="eq0">El punto exacto de equilibrio</td></tr>
+<tr><td>4 000 kg/m³</td><td><span class="ltr">150,26 GPa</span></td><td><span class="ltr">154,19 GPa</span></td><td class="bad"><span class="ltr">−3,92 GPa</span></td><td class="bad">Fracasa (magma demasiado seco y pesado)</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>Radio del paso <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>Carga radial de la Luna</th><th>Pérdida por fricción del flujo</th><th>Excedente radial</th><th>Esfuerzo cortante lateral (22,5°)</th><th>Masa del paso exterior (en masas lunares)</th></tr>
+<tr><td>500 km</td><td><span class="ltr">46,18 GPa</span></td><td><span class="ltr">0,0103 GPa</span></td><td class="bad"><span class="ltr">−35,03 GPa</span> (fracasa)</td><td><span class="ltr">46,04 GPa</span></td><td>0,112</td></tr>
+<tr><td>1 000 km</td><td><span class="ltr">11,54 GPa</span></td><td><span class="ltr">0,0006 GPa</span></td><td class="bad2"><span class="ltr">−0,39 GPa</span> (umbral: 1 017 km)</td><td><span class="ltr">11,51 GPa</span></td><td>0,448 (¡casi media Luna!)</td></tr>
+<tr class="hl"><td>1 500 km (el disco de contacto)</td><td><span class="ltr">5,13 GPa</span></td><td><span class="ltr">0,0001 GPa</span></td><td class="ok"><span class="ltr">+6,02 GPa</span> (¡supera!)</td><td><span class="ltr">5,12 GPa</span></td><td class="ok">1,008 (una estructura masiva — la pera)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>Hemos descubierto cómo funciona el motor interior: la presión profunda de la fuente de <span class="ltr">150,26 GPa</span> eleva un magma espumado más ligero que 3 864 kg/m³, y la prueba combinada reveló que aquí no hay ningún tubo delgado — sino un paso ancho y masivo que se eleva desde la Tierra.</p>
+<p>Pero ¿qué ocurrió con la corteza exterior de la Tierra que se encontraba justo encima de esa zona de construcción? En el próximo capítulo — <strong>Capítulo 4: La piel que asciende desde fuera — las 4 etapas de la cúpula y la regla de traslación de la cara de la Luna</strong> (artículo 03, parte B: §B.1–B.7) — descubriremos cómo la envoltura de sial de la Tierra ascendió con el cuerpo, se convirtió en la piel de la Luna y dividió la cara de la Luna en tres zonas geográficas precisas.</p>
+<a href="story04_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 4</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">La piel que asciende desde fuera — las 4 etapas de la cúpula y la regla de traslación de la cara de la Luna →</p></div></a>
+<p style="margin-top:22px"><a href="story02_es.html">← Capítulo 2</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

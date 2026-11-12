@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 25: Los requisitos fundamentales del modelo LEF (R1–R8) — isótopos, el núcleo, la corteza, el desplazamiento del centro de masa y las zonas de exposición — El modelo LEF</title>
+<meta name="description" content="Capítulo 25 de la historia del modelo LEF: los requisitos fundamentales R1–R8 — isótopos, el núcleo, la corteza, el desplazamiento del centro de masa y las zonas de exposición.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story25_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story25_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story25_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story25_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story25_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story25_he.html" hreflang="he">עברית</a> · <a href="story25_en.html" hreflang="en">English</a> · <a href="story25_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 25</p>
+<h1>Capítulo 25: Los requisitos fundamentales del modelo LEF (R1–R8) — isótopos, el núcleo, la corteza, el desplazamiento del centro de masa y las zonas de exposición</h1>
+<p>Basado en el artículo 13 — 13. The Requirements: What the mechanism forces, what the Moon has, and what remains unresolved (partes A–B y apéndice A: los requisitos R1–R8, los balances de masa y las pruebas estadísticas T1–T5)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio y la metodología: separar el entorno de formación de la Luna moderna, y descartar una «puntuación acumulada»</h2>
+<p>Tras haber construido, en los capítulos anteriores, la mecánica de la pera terrestre, la órbita y las leyes de las lunas y los anillos, <strong>el artículo 13 (The Requirements)</strong> somete todo el modelo a una prueba metodológica estricta. Para evitar sesgos estadísticos o mezclar supuestos con mediciones, el modelo fija cuatro reglas básicas:</p>
+<ol class="steps">
+<li><strong>Una partición metodológica entre el entorno de formación y la Luna moderna:</strong> el entorno de formación es un sistema blando, caliente y de giro rápido (T = 5,5–5,77 horas, masa inicial <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>6,0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = M_E + M_L = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg, radio ecuatorial de 6 721 km); mientras que la Luna moderna es un producto evolutivo congelado que pasó por miles de millones de años de enfriamiento y actividad volcánica tardía. Una medición tardía no puede usarse como condición inicial sin un modelo físico que una ambas.</li>
+<li><strong>Una estructura triple para cada requisito, y el rechazo de una «puntuación acumulada»:</strong> cada requisito se define por (a) la condición mecánica que exige el modelo, (b) la medida cuantitativa que la pone a prueba y (c) el resultado que contaría como discordancia. El modelo <strong>prohíbe sumar éxitos en una puntuación ponderada</strong>, tanto porque el espesor cortical, el desplazamiento del centro de masa y los mares son expresiones distintas de <em>una misma distribución de masa</em> (y sumarlos contaría un hecho dos veces), como para no ocultar una discordancia en un requisito tras los éxitos en otros.</li>
+<li><strong>Una distinción cronológica entre resultado derivado, posdicción y predicción:</strong> el artículo separa estrictamente un <em>resultado derivado</em> (que se sigue directamente de las ecuaciones), una <em>posdicción</em> que coincide con observaciones existentes en la literatura y una <em>predicción</em> independiente aún no comprobada.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: el casco que se engrosa, la ventosa que se despega y la botella sellada en lava</h2>
+<p>Cuatro imágenes tangibles ilustran los ocho requisitos fundamentales (R1–R8) y los balances de masa que los sustentan:</p>
+<ul>
+<li><strong>El casco que se triplica (R3 — la asimetría de la corteza):</strong> la cúpula de la Tierra que se elevó sobre la cabeza de la pera llevaba una antigua envoltura litosférica de 18 km de espesor (densidad 2 800 kg/m³) sobre un hemisferio con una base de 6 000 km (masa total 2,85 × 10²¹ kg, alrededor del 3,9% de la masa de la Luna). Cuando la cúpula se redondeó y se cerró sobre el hemisferio oculto, tres veces menor en área, la conservación de la masa obligó a un engrosamiento lineal triple — hasta <strong>50–60 km</strong> (¡masa predicha de 2,6 × 10²¹ kg a 55 km, una coincidencia de alrededor del 10% sin ningún ajuste!).</li>
+<li><strong>La ventosa que se despega de los bordes hacia dentro (R8 — las tres zonas de exposición):</strong> mientras que el área de la cúpula (la cara oculta) estaba expuesta al espacio desde el principio, la base estaba apretada contra la Tierra. Durante el redondeo, la base se levantó y se despegó de sus bordes hacia su centro como una ventosa que se suelta de un cristal — de modo que la cúpula de contacto central quedó expuesta al espacio <em>la última</em>, justo en el momento del desprendimiento en la línea de corrotación (16 399 km).</li>
+<li><strong>Dos bailarines cogidos de la mano (R4 — acoplamiento síncrono desde el nacimiento):</strong> un cuerpo unido mecánicamente a la punta de la pera completa exactamente una rotación sobre su eje por cada órbita (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><msub><mi>ω</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\mathrm{rot}} = \omega_{\mathrm{orb}}</annotation></semantics></math></span></span>), de modo que su lado unido siempre mira al progenitor incluso antes del momento del desprendimiento.</li>
+<li><strong>La botella sellada dentro de un cristal de olivino (R6 — la conservación de los volátiles):</strong> diminutas gotas de magma (inclusiones de fundido) atrapadas dentro de cristales de olivino bajo la superficie conservaron su contenido original de agua (615–1 410 ppm) a salvo de la desgasificación en la erupción, como una botella sellada dentro de una roca.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: los ocho primeros requisitos (R1–R8) y las pruebas estadísticas (T1–T5)</h2>
+<p>Las partes A y B del artículo 13 enfrentan cada uno de los ocho requisitos (R1–R8) a los datos empíricos más actualizados:</p>
+<ol class="steps">
+<li><strong>R1 — cercanía a una fuente terrestre (isótopos de oxígeno):</strong> mediciones de laboratorio precisas (Young et al. 2016) muestran que la diferencia en los isótopos de oxígeno entre la Luna y la Tierra es de <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></strong> — un cero estadístico dentro de la resolución de medida, como se exige a un cuerpo construido por completo a partir de los reservorios de la Tierra (manto profundo y capa de sial). El balance multisistema combinado (O, Ti, Cr, W) se define como tarea abierta.</li>
+<li><strong>R2 — un núcleo metálico diminuto como objetivo del transporte:</strong> la red sísmica de Apolo (Weber et al. 2011) midió un núcleo interno sólido con un radio de 240 km y un núcleo externo líquido con un radio de 330 km — alrededor de <strong>solo el 1,4% de la masa de la Luna</strong>. Para una fracción de material profundo <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0,95</mn></mrow><annotation encoding="application/x-tex">f_{\mathrm{int}} = 0.95</annotation></semantics></math></span></span>, la ecuación de balance <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{\mathrm{core}} = f_{\mathrm{int}} X_{\mathrm{met}} \epsilon_{\mathrm{core}}</annotation></semantics></math></span></span> fija un objetivo hidrodinámico nítido: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1,47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}} \epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span></strong>.</li>
+<li><strong>R3 y R7 — la asimetría de la corteza y el desplazamiento del centro de masa:</strong> los mapas de gravedad de GRAIL (Zuber et al. 2013) confirman que la corteza de la cara oculta es significativamente más gruesa que la de la cara visible (media global 34–43 km). La corteza visible es la capa de sial (SiAl) de la Tierra que se despegó de la base de la estructura (masa 1,4–1,7 × 10²¹ kg). Calcular la integral de momento de una corteza asimétrica (apéndice A) da un desplazamiento del centro de masa hacia la cara visible en el rango de <strong>1,24–3,11 km</strong> para contrastes de densidad de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>300</mn><mtext>–</mtext><mn>750</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 300\text{–}750</annotation></semantics></math></span></span> kg/m³ — que contiene el valor medido en la Luna (<strong>~ 2 km</strong>, y coincide exactamente con él a <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>≃</mo><mn>480</mn></mrow><annotation encoding="application/x-tex">\Delta\rho \simeq 480</annotation></semantics></math></span></span> kg/m³).</li>
+<li><strong>R5 — separar los cuatro relojes geocronológicos:</strong> el artículo prohíbe comparar la edad de un basalto tardío (reloj 3 — como las muestras de Chang'e-5, de 2,0 Ga en la cara visible, y de Chang'e-6, de 2,8 Ga en la cara oculta) con la edad de cristalización de la corteza primaria (reloj 1). El orden de estabilización solo debe medirse comparando unidades de corteza primaria del mismo tipo genético de ambas caras.</li>
+<li><strong>R8 — las tres zonas de exposición concéntricas y la ejecución de las pruebas T1–T5:</strong> alrededor del centro de la cara visible (en la geometría actualizada, alrededor del centro de contacto en 24,1°N, 335,2°E — una desviación angular de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\gamma = 34.0^\circ</annotation></semantics></math></span></span> respecto al punto subterrestre 0°, 0°), la superficie de la Luna se ordena en tres cinturones concéntricos: la cúpula de contacto (0°–31°, la corteza más delgada y mascones fuertes sin anillos negativos), el cinturón del borde (31°–70°, cuencas de mascón con anillo negativo, como Orientale) y la cara oculta (70°–180°, corteza gruesa y cuencas sin mascones).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: el balance de masa de la cúpula, el modelo del casco y la decisión sobre las zonas de exposición frente al PKT</h2>
+<p>Las partes B.3, B.7–B.8 y el apéndice A del artículo 13 muestran cómo la geometría del redondeo de la Luna une el espesor cortical, el desplazamiento del centro de masa y el cinturón de cuencas en un único sistema cerrado de ecuaciones:</p>
+<ol class="steps">
+<li><strong>Una distinción crucial entre valores extremos y medias hemisféricas (§B.3):</strong> en el modelo del casco de longitud de onda larga <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></span>, los valores extremos puntuales de 30 km en el eje de contacto (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 0^\circ</annotation></semantics></math></span></span>) y de 60 km en la cara oculta (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 180^\circ</annotation></semantics></math></span></span>) dan una línea de base de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">h_0 = 45</annotation></semantics></math></span></span> km y una amplitud A = 15 km. Como la media ponderada por área de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\cos\psi</annotation></semantics></math></span></span> sobre un hemisferio es igual a 0,5, las medias hemisféricas de este ejemplo son <strong>37,5 km y 52,5 km</strong> (¡y no 30 y 60 km!).</li>
+<li><strong>El balance de masa separado de la cara oculta y de la cara visible (§B.3):</strong> la cúpula hemisférica de la Tierra (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">h_s = 18</annotation></semantics></math></span></span> km, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>s</mi></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\rho_s = 2,800</annotation></semantics></math></span></span> kg/m³, radio de la base <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>h</mi></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">R_h = 3,000</annotation></semantics></math></span></span> km) lleva una masa de <strong>2,85 × 10²¹ kg</strong> (el 3,9% de la masa de la Luna). Al cerrarse sobre el hemisferio oculto, tres veces menor en área, aporta, con un margen de alrededor del 10%, la masa de la corteza oculta con un espesor de 55 km (<strong>2,6 × 10²¹ kg</strong>, el 3,5% de la masa de la Luna); mientras que la corteza visible (30–35 km, masa 1,4–1,7 × 10²¹ kg) es la capa de sial de la Tierra que se despegó de la base de la estructura.</li>
+<li><strong>Una decisión estructural frente a la hipótesis de la anomalía térmica del PKT (§B.8):</strong> los modelos alternativos explican la doble cara de la Luna por una anomalía térmica unilateral (el Procellarum KREEP Terrane — una cara visible caliente y una cara oculta fría), o por la radiación de un antiguo «brillo terrestre» (Roy et al. 2014). El modelo LEF predice <strong>una estructura concéntrica de tres zonas</strong> que incluye <em>un cinturón de borde intermedio</em> (31°–70°) en el que se concentran selectivamente <strong>cuencas de mascón con anillo negativo</strong> (como Orientale en el borde occidental y Smythii en el oriental), porque los bordes de la cúpula de la base se soltaron gradualmente por todos los lados.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>La ecuación del espesor cortical concéntrico, la integral de momento de masa para el desplazamiento del centro de masa de una capa de espesor finito <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><msub><mi>R</mi><mi>L</mi></msub><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b = R_L - h_0</annotation></semantics></math></span></span> (apéndice A) y el cálculo del ángulo de desviación espacial <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> del centro de contacto se formulan así (§B.3, §B.7, apéndice A):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>h</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msubsup><mi>R</mi><mi>h</mi><mn>2</mn></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>2,85</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>21</mn></msup><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_{\mathrm{shell}} = \rho_s h_s (2\pi R_h^2) = 2.85 \times 10^{21}\text{ kg}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>x</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msub><mi>M</mi><mi>L</mi></msub></mrow></mfrac></mstyle><mrow><mo fence="true">(</mo><msup><mi>b</mi><mn>3</mn></msup><mi>A</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mi>b</mi><msup><mi>A</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>≃</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><msub><mover accent="true"><mi>ρ</mi><mo stretchy="true">‾</mo></mover><mi>L</mi></msub></mfrac></mstyle><mi>A</mi></mrow><annotation encoding="application/x-tex">\delta x = \dfrac{4\pi\Delta\rho}{3M_L}\left(b^3 A + \dfrac{3}{5}b A^3\right) \simeq \dfrac{\Delta\rho}{\overline{\rho}_L}A</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>γ</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>1</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>8</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\cos\gamma = \cos(24.1^\circ)\cos(24.8^\circ) \implies \gamma = 34.0^\circ</annotation></semantics></math></span></div></div></div>
+<p>En la integral de momento <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mi>δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mi>u</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>A</mi><mi>u</mi><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mtext> </mtext><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">M_L \delta x = \frac{\pi\Delta\rho}{2}\int_{-1}^{1} u(b+Au)^4\,du</annotation></semantics></math></span></span> se anulan todos los términos con una potencia impar de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">u = \cos\psi</annotation></semantics></math></span></span>, de modo que solo la componente asimétrica (A) contribuye a desplazar el centro de masa hacia la cara visible (+2,072 km para <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 500</annotation></semantics></math></span></span> kg/m³), mientras que toda capa esférica simétrica (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_0</annotation></semantics></math></span></span>, el manto y el núcleo) se cancela por completo.</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Centre-of-mass offset against crustal density contrast" style="direction:ltr"><line x1="70" x2="600" y1="204.6" y2="204.6" stroke="#ece7da"/><text x="62" y="208.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#ece7da"/><text x="62" y="131.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="600" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="62" y="54.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">3</text><text x="118.2" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="214.5" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="310.9" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><text x="407.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">600</text><text x="503.6" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">700</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">800</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="530.0" y="119.7" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Medido en la Luna · ⁦~2⁩ km</text><path d="M118.2,185.9 L310.9,122.2 L551.8,42.5" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="118.2" cy="185.9" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="127.2" y="201.9" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1,243</text><circle cx="291.6" cy="127.7" r="5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="296.0" y="143.7" text-anchor="end" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2,000</text><circle cx="310.9" cy="122.2" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="319.9" y="138.2" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2,072</text><circle cx="551.8" cy="42.5" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="560.8" y="58.5" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">3,108</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Contraste de densidad Δρ (kg/m³) · desplazamiento del centro de masa hacia la cara visible (km)</text></svg><figcaption>El desplazamiento del centro de masa a partir de la integración de espesor finito (apéndice A): el rango 1,24–3,11 km contiene el valor medido y coincide con él en Δρ ≈ 480.</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: los resultados de las pruebas T1, T2 y T5, y la calibración del desplazamiento del centro de masa</h2>
+<p>Ejecutar los scripts sobre los datos de GRAIL y sobre el catálogo de cráteres de Robbins (≥ 20 km) da una imagen transparente y precisa del estado de los ocho primeros requisitos (§B.7–B.9):</p>
+<ul>
+<li><strong>Un éxito claro en las pruebas del eje y de la densidad de cráteres (T5 y T2):</strong> la correlación de Spearman <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0,87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span> (p = 2 × 10⁻⁴) alrededor del eje subterrestre supera a todos los demás ejes de control (el borde oriental +0,76, Procellarum +0,74, el polo sur +0,43, el norte −0,43), y la densidad de cráteres grandes en la cara oculta es 2,21 veces mayor que en la cúpula de contacto (y en la geometría actualizada 8,42 veces incluidos los mares, y 4,15 veces sin ellos).</li>
+<li><strong>Un registro transparente del umbral T1 y la continuación de las pruebas T3–T4:</strong> en la prueba T1, el orden monótono se mantiene en los cuatro modelos de GRAIL, pero la diferencia en el modelo 1 (9,65 km y 9,9 km) está 0,1–0,35 km por debajo del umbral inferior (10 km) y por eso se registra como <em>no superada</em>, mientras que las pruebas de cuencas T3 y T4 quedan previstas para una ejecución cuantitativa completa en el paquete de reproducción.</li>
+</ul>
+<h3 style="margin-top:28px">La caja de laboratorio: resumen de los ocho requisitos fundamentales (R1–R8), las pruebas de las zonas de exposición (T1–T5) y la sensibilidad del desplazamiento del centro de masa (artículo 13, partes A–B y apéndice A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Requisito</th><th>Tema y requisito físico</th><th>El hallazgo empírico medido hoy</th><th>Estado y tarea abierta</th></tr>
+<tr class="hl"><td><strong>R1</strong></td><td>Cercanía a una fuente terrestre (mezcla de manto + sial)</td><td>Identidad en los isótopos de oxígeno: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></td><td><strong>Concuerda</strong> (abierto: balance multisistema O, Ti, Cr, W)</td></tr>
+<tr class="hl"><td><strong>R2</strong></td><td>Un núcleo metálico diminuto (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1,47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}}\epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span>)</td><td>Un núcleo sísmico con un radio de 330 km (≈ 1,4% de la masa de la Luna)</td><td><strong>Concuerda</strong> (abierto: un modelo hidrodinámico del transporte de gotas de hierro)</td></tr>
+<tr class="hl"><td><strong>R3</strong></td><td>Asimetría cortical y balance de masa de la cúpula (18 km)</td><td>Una corteza oculta gruesa; balance de 2,85 frente a 2,6 × 10²¹ kg (~ 10%)</td><td><strong>Concuerda</strong> (abierto: un perfil espacial completo y la fuente del sial visible)</td></tr>
+<tr><td><strong>R4</strong></td><td>Acoplamiento síncrono desde el momento del desprendimiento en la línea de corrotación</td><td>Acoplamiento síncrono 1:1 con la cara visible orientada a la Tierra</td><td><strong>Concuerda</strong> (abierto: continuidad del vector de orientación en la órbita)</td></tr>
+<tr><td><strong>R5</strong></td><td>Orden de estabilización térmica (cara oculta antes que la visible)</td><td>Basaltos tardíos separados (2,0 Ga y 2,8 Ga, reloj 3)</td><td><strong>Concuerda</strong> (abierto: comparar el reloj 1 en corteza primaria de las tierras altas)</td></tr>
+<tr class="hl"><td><strong>R6</strong></td><td>Presencia de volátiles para bajar la viscosidad y la densidad</td><td>Agua en inclusiones de fundido en olivino: 615–1 410 ppm</td><td><strong>Concuerda</strong> (abierto: un modelo termodinámico de flujos y fases)</td></tr>
+<tr class="hl"><td><strong>R7</strong></td><td>Un vínculo cuantitativo entre la corteza y el desplazamiento del centro de masa</td><td>Desplazamiento medido de ~ 2 km hacia la cara visible; rango del modelo 1,24–3,11 km</td><td><strong>Concuerda</strong> (abierto: una inversión vectorial conjunta)</td></tr>
+<tr><td><strong>R8</strong></td><td>Tres zonas de exposición concéntricas (0°–31°–70°–180°)</td><td><strong>T5 superada</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0,87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>), <strong>T2 superada</strong>, <strong>T1 no superada</strong> (9,65–9,9 km)</td><td><strong>Abierto para completar</strong> (pruebas de cuencas T3 y T4 y clasificación de edades de cráteres)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Contraste de densidad <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\Delta\rho</annotation></semantics></math></span></span> (kg/m³)</th><th>Desplazamiento del centro de masa en la aproximación de capa delgada (km)</th><th>Desplazamiento del centro de masa en la integración de espesor finito (km)</th><th>Coincidencia con la observación geodésica (~ 2 km)</th></tr>
+<tr><td>300</td><td>1,345</td><td>1,243</td><td>Límite inferior del rango de sensibilidad</td></tr>
+<tr class="hl"><td><strong>500 (~ 480 calibrado)</strong></td><td><strong>2,242</strong></td><td><strong>2,072 (2,000 a 480)</strong></td><td><strong>Una coincidencia exacta con el orden de magnitud medido (2 km)</strong></td></tr>
+<tr><td>750</td><td>3,362</td><td>3,108</td><td>Límite superior del rango de sensibilidad</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>En este capítulo repasamos el marco metodológico del artículo 13 y los ocho requisitos fundamentales (<strong>R1–R8</strong>) — desde la identidad isotópica (−1 ± 5 ppm), pasando por el núcleo diminuto (1,4%), el balance cortical (2,85 frente a 2,6 × 10²¹ kg) y el desplazamiento del centro de masa (2,07 km), hasta la ejecución de las pruebas estadísticas T1, T2 y T5 sobre las zonas de exposición concéntricas.</p>
+<p>En el próximo capítulo — <strong>Capítulo 26: Los diez requisitos adicionales (R9–R18), el reloj hafnio–wolframio y el mapa de la investigación futura de LEF</strong> (del artículo 13 — partes C–D y apéndice B) — completaremos todo el sistema: examinaremos los 7 requisitos de la pera (R9–R15: la anomalía inferior LLVP del Pacífico, el complejo KREEP, la ausencia de material ajeno y la compactación de cráteres en los polos), los 3 requisitos posteriores a la pera (R16–R18), la restricción del reloj de desintegración radiactiva <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> en una ventana de 600 millones de años, ¡y las 7 tareas abiertas para los investigadores!</p>
+<a href="story26_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 26</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Los diez requisitos adicionales (R9–R18), el reloj hafnio–wolframio y el mapa de la investigación futura de LEF →</p></div></a><p style="margin-top:22px"><a href="story24_es.html">← Capítulo 24</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

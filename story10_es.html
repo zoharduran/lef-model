@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 10: La huella química — los anillos de hierro, el enigma del torio en la zona de contacto y los cinco relojes — El modelo LEF</title>
+<meta name="description" content="Capítulo 10 de la historia del modelo LEF: los halos de hierro y titanio que llegan a 600 km alrededor de los mares, el 95% del exceso de torio de la Luna dentro del disco de contacto, los fondos de los mares pobres en torio, la masa ajena que falta y los cinco relojes de cada abertura.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 10</p>
+<h1>Capítulo 10: La huella química — los anillos de hierro, el enigma del torio en la zona de contacto y los cinco relojes</h1>
+<p>Basado en el artículo 05 — The Maria (partes J–O y apéndice A: estudios 9, 10, 11, 13 y el resumen de los 16 estudios)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: ¿por qué la radiactividad de la Luna se concentra en un solo círculo — y por qué los fondos de los mares son pobres en ella?</h2>
+<p>Uno de los descubrimientos más sorprendentes de las misiones Apolo y del satélite Lunar Prospector es la extrema desigualdad química de la cara de la Luna: el elemento radiactivo <strong>torio</strong> — junto con el potasio, las tierras raras y el fósforo (un material llamado <strong>KREEP</strong> en la literatura) — no está repartido de forma uniforme por la Luna, sino que se concentra casi por completo en una mancha en el oeste de la cara visible.</p>
+<p>La literatura aceptada interpreta esta mancha (el «Procellarum KREEP Terrane») como el último resto de un «océano de magma» global que cristalizó en la Luna, y sostiene que el calor radiactivo del KREEP es lo que fundió las rocas de la cara visible y creó los mares basálticos. Pero en cuanto se examinan los datos con alta resolución, aparecen <strong>tres contradicciones nítidas</strong> en esta explicación:</p>
+<ol class="steps">
+<li><strong>El centro geométrico exacto:</strong> ¿por qué la mancha de torio se sitúa precisamente alrededor del punto 24,1°N, 335,2°E — exactamente el punto fijado de antemano en el artículo 3 como <strong>el centro del último disco de contacto</strong> entre la Luna y la Tierra?</li>
+<li><strong>La paradoja dentro de la zona de contacto:</strong> si el calor del KREEP es lo que hizo brotar los mares y trajo consigo el torio, los fondos de los mares deberían ser los más ricos en torio. En realidad ocurre exactamente lo contrario: <strong>¡los fondos de los mares dentro de la zona de contacto son el terreno más pobre en torio de esa región!</strong></li>
+<li><strong>La ausencia de masa ajena en las cuencas:</strong> si las grandes cuencas de los mares (como Imbrium y Serenitatis) hubieran sido excavadas por asteroides gigantes del espacio exterior, sus rocas fundidas deberían contener la huella de los metales afines al hierro (<strong>elementos siderófilos</strong>) de esos cuerpos ajenos — ¡pero no la contienen!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: agua de mar que se congela (el torio se retira con la salmuera) y un campo de tiro que mantiene sus distancias</h2>
+<p>Para ver cómo estos tres misterios químicos se resuelven de un solo golpe, imagine dos sencillos experimentos de la vida cotidiana:</p>
+<ul>
+<li><strong>Agua de mar que se congela en un depósito conectado a un desagüe (el enigma del torio):</strong> cuando el agua de mar salada empieza a congelarse desde arriba, los cristales de hielo que se forman son casi agua dulce — y toda la sal es empujada a la salmuera líquida que queda debajo. Si esta salmuera se encuentra en una llanura cerrada sin drenaje (como <strong>las llanuras de basalto</strong> que se fundieron in situ), la sal queda atrapada en la roca cuando todo se congela. Pero si la salmuera se encuentra sobre <strong>un tubo abierto hacia abajo</strong> (como el fondo de un <strong>mar</strong>, ¡conectado al canal de alimentación hacia las profundidades!), la salmuera pesada y rica en torio se hunde y drena de vuelta por el canal hacia las profundidades — ¡dejando el fondo del mar pobre en torio en comparación con las llanuras y las tierras altas que lo rodean!</li>
+<li><strong>Un campo de tiro de magma ligero, temprano y lejano, y de magma pesado, tardío y cercano (los anillos de hierro):</strong> al comienzo de la actividad de una abertura de alimentación, el magma es rico en gases volátiles y pobre en hierro, por lo que es muy ligero y fluido — y se dispara hasta cientos de kilómetros (hasta 600 km). A medida que escapan los gases, el magma se vuelve más pesado, más viscoso y más rico en hierro (FeO) y titanio (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>), y aterriza muy cerca del borde de la abertura — ¡creando <strong>un halo de hierro graduado</strong> alrededor de cada mar!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: los anillos de hierro y titanio, el 95% del torio en el disco de contacto y la ausencia de masa ajena</h2>
+<p>La parte J del artículo 05 examina los mapas químicos satelitales de Kaguya (hierro y titanio con una resolución de 240 m) y de Lunar Prospector (torio con una resolución de 60 km) y presenta cuatro hallazgos decisivos:</p>
+<ol class="steps">
+<li><strong>El halo de hierro y titanio alrededor de los mares llega a 600 km (estudio 9, §J.1–J.2):</strong> alrededor de seis mares (Smythii, Imbrium, Serenitatis, Crisium, Moscoviense y Nectaris), tras eliminar todos los píxeles de basalto, el contenido de hierro del terreno baja gradualmente del <strong>6,9% en peso</strong> en el anillo de 0–25 km, al 5,1 a 25–50 km, al 3,9 a 50–100 km y al <strong>3,1% en peso</strong> a 100–150 km, y se mantiene por encima del nivel de fondo (2,3% en peso) incluso a <strong>300–600 km (3,4% en peso)</strong> — ¡diez veces el alcance de la mezcla lateral por cráteres posteriores! En cambio, alrededor de <strong>Oceanus Procellarum</strong> — una llanura de basalto sin abertura de alimentación que simplemente se desbordó por sus bordes — el hierro baja del 10,9% en peso al 2,4% en peso (el nivel de las tierras altas lejanas) a 300–600 km.</li>
+<li><strong>El 95% del exceso de torio de la Luna está atrapado en el disco de contacto (estudio 10, §J.3):</strong> el disco de contacto (radio de 1 500 km alrededor de 24,1°N, 335,2°E) cubre solo el <strong>17,5%</strong> de la superficie de la Luna, y sin embargo contiene el <strong>95,0% de todo el exceso de torio por encima de 3 ppm</strong> (mediana de 5,39 ppm dentro del contacto frente a 1,52 ppm fuera de él). Cuando un disco del mismo tamaño se desplaza sobre <strong>16 200 posibles puntos centrales</strong> en toda la Luna, el centro de contacto fijado de antemano en el artículo 3 ocupa el <strong>tercer lugar de 16 200</strong> (¡a solo 47 km del punto máximo teórico, que reúne el 95,14% frente al 94,99%)!</li>
+<li><strong>Dentro de la zona de contacto — los mares son pobres en torio mientras que llanuras y tierras altas son idénticas (estudio 13, §J.4):</strong> ¡dentro del disco de contacto, las llanuras de basalto (5,62 ppm) y las tierras altas (5,48 ppm) presentan casi exactamente la misma concentración de torio! En cambio, los cuatro mares dentro del contacto (Imbrium, Serenitatis, Copernicus H y Sinus Aestuum) son un <strong>30%</strong> más pobres en torio que las llanuras (solo 3,99 ppm, y cada uno de los cuatro mares es más pobre que el anillo que lo rodea en 0,58–1,39 ppm), mientras que su contenido de titanio se mantiene casi sin cambios (−5%, razón <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0,74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>) — ¡porque el titanio está encerrado en cristales de ilmenita y se queda, mientras que el último líquido rico en torio drenó por los canales de alimentación!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Fondo:<tspan x="527.6" dy="14">⁦2,3⁩ % en peso</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6,9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5,1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Anillo alrededor del mar (km) · FeO en el suelo sin basalto (% en peso)</text></svg><figcaption>El halo de hierro alrededor de seis mares (estudio 9): el hierro disminuye con la distancia, pero se mantiene por encima del fondo hasta 600 km.</figcaption></figure><figure class="fig"><svg viewBox="0 0 694.0 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><g transform="translate(54.0,0)"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3,99 ppm⁩</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,48 ppm⁩</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,62 ppm⁩</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1,52 ppm⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Mares de contacto</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Tierras altas en el contacto</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Llanuras en el contacto</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Fuera del contacto</text></svg><figcaption>El torio dentro y fuera del disco de contacto (estudios 10 y 13): las llanuras y las tierras altas son idénticas, y los mares son un 30% más pobres — el líquido rico en torio drenó por los canales.</figcaption></figure><div class="callout"><span class="tag">La prueba de la masa ajena en las cuencas (estudio 11, §J.7)</span><p style="margin:0">Si las grandes cuencas de los mares hubieran sido excavadas por cuerpos del espacio exterior a una velocidad de 18 km/s, habrían requerido una masa de impacto de alrededor de <strong>1 × 10¹⁹ kg</strong> (y solo para Imbrium 3 × 10¹⁸ kg por escalado, o 2 × 10¹⁹ kg para un cuerpo de 250 km, que habría dejado de 6 × 10¹⁷ a 4 × 10¹⁸ kg de material ajeno). En realidad, las proporciones de elementos siderófilos en las rocas fundidas de Imbrium <strong>no coinciden con ningún grupo conocido de condritas</strong>, y la mayoría ya existían en la corteza antes de Imbrium y Serenitatis — ¡porque las cuencas son <strong>aberturas de alimentación terrestres</strong>, no impactos de cuerpos ajenos!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: los cinco relojes de cada abertura — y la descodificación de las edades de Apolo y Chang'e</h2>
+<p>La parte K del artículo 05 resuelve uno de los mayores malentendidos de la investigación lunar: <strong>¿por qué las rocas de basalto traídas por las misiones espaciales se datan en 3,1–3,9 mil millones de años (Apolo), 2,8 mil millones de años (Chang'e-6 en la cara oculta) e incluso 2,0 mil millones de años (Chang'e-5 en Oceanus Procellarum)?</strong> ¿Significa esto que las aberturas se formaron miles de millones de años después de que la Luna dejara la Tierra?</p>
+<p>La respuesta es <strong>no</strong> — porque cada abertura de alimentación lleva <strong>cinco relojes separados</strong> que no deben mezclarse (como un pozo que se excava, se abre, lleva agua, se sella, y solo al final se seca el último charco en su parte superior):</p>
+<ol class="steps">
+<li><strong>El momento de creación de la estructura (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>):</strong> el momento en que se crearon la abertura y la cúpula que tiene debajo durante la etapa de construcción (durante los 600 millones de años anteriores al desprendimiento, a 3,873 Ga).</li>
+<li><strong>El momento de exposición (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>):</strong> el momento en que el borde del contacto retrocedió sobre la abertura y la expuso al espacio (la generación I de inmediato, la generación II durante el redondeo, la generación III hacia el desprendimiento).</li>
+<li><strong>El momento de erupción (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>):</strong> el periodo durante el cual la abertura disparó material hacia fuera, creando los cráteres y los anillos de hierro a su alrededor.</li>
+<li><strong>El momento de cierre (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>):</strong> el momento en que el flujo cayó por debajo del umbral crítico (o la presión se detuvo en el momento del desprendimiento) y la abertura dejó de estar activa (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>).</li>
+<li><strong>La edad de la superficie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>):</strong> <strong>la edad del enfriamiento final</strong> de la última gota de magma que se congeló en la superficie. ¡Un reloj radiométrico empieza a funcionar solo desde el momento en que la roca se enfría por debajo de su temperatura de cierre y atrapa los átomos hijos radiactivos!</li>
+</ol>
+<p>Así, todas las rocas de basalto de Apolo, Chang'e-5 y Chang'e-6 miden <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span> — el momento de congelación final del líquido caliente</strong> (mantenido caliente durante mucho tiempo por el calor interno de la Luna o por la concentración de torio en la zona de contacto), ¡y no el momento en que se abrió la abertura (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>)!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y la ecuación clave</h2>
+<p>La razón química que distingue los fondos de los mares de las llanuras de basalto dentro de la zona de contacto, y la distribución del torio por cuartos de la Luna, se resumen en las siguientes expresiones:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0,74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0,60</mn><mtext>–</mtext><mn>0,88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mtext>dentro del contacto</mtext></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{dentro del contacto}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5,39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>frente a</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1,52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{frente a} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>Por longitud (§J.5), la concentración mediana de torio baja gradualmente desde el cuarto visible orientado a la Tierra (<strong>5,12 ppm</strong>), al hemisferio delantero alrededor de 90°W en el que se encuentra el centro de contacto (3,27 ppm), a la cara oculta (2,20 ppm) y al hemisferio trasero alrededor de 90°E (2,01 ppm) — 1,5 veces mayor en toda la cara visible que en la cara oculta (2,56 frente a 1,76 ppm).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: una imagen unificada a lo largo de 15 estudios y 34 aberturas catalogadas</h2>
+<p>Las partes L–O del artículo 05 unen las cinco líneas de evidencia independientes en un único sistema de alimentación completo:</p>
+<ul>
+<li><strong>El balance de los estudios (13 en verde y 2 en ámbar de 15 estudios, §M.2):</strong> todos los estudios principales fueron plenamente verificados — la correspondencia de 33/34 mares con las cúpulas de gravedad, las 44 cúpulas enterradas, el escalón cortical (17 km), el hundimiento del centro (10/12), el nivel uniforme (16/16), los fondos limpios (12 veces y 83 veces), los halos de hierro (600 km), el centro del torio (3/16 200), la ausencia de masa ajena y el desgaste de los bordes en las llanuras de contacto. Los dos estudios que recibieron una luz «ámbar» (confirmación parcial) se presentaron con total transparencia: en el estudio 13 la razón <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span> también cayó más allá del contacto debido a una relativa riqueza de titanio en los fondos, y en el estudio 16 el collar de disparo es significativo alrededor de los mares de la cara oculta en conjunto (p = 0,009) y alrededor de los enterrados (p = 0,001), pero no se separa del control alrededor de los 10 mares abiertos de la cara oculta por sí solos.</li>
+<li><strong>Cinco preguntas decisivas que separan el modelo de la literatura (§N.2):</strong> la literatura no puede explicar cómo los asteroides crearon 44 cúpulas de gravedad sin cuencas encima, por qué el fondo de un mar se congela en un solo nivel y se hunde solo sobre una cúpula fuerte, por qué el halo de hierro llega a 600 km, por qué el torio es idéntico en las llanuras y las tierras altas del contacto y bajo precisamente en los mares, y adónde desaparecieron 10¹⁹ kg de metal externo.</li>
+</ul>
+<h3 style="margin-top:28px">La caja de laboratorio: la tabla química, una muestra de las aberturas principales y un resumen de las 8 conclusiones (artículo 05, partes J–O y apéndice A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Estudio / medida química</th><th>Región / grupo de comparación</th><th>Hallazgo medido</th><th>Significado en el modelo LEF</th></tr>
+<tr class="hl"><td><strong>Anillos de hierro (FeO) y titanio (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) (estudio 9)</strong></td><td>6 mares combinados (de 0–25 a 300–600 km)</td><td>FeO: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,9</mn><mo>→</mo><mn>3,1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong> (150 km), se mantiene en <strong>3,4</strong> a 600 km (control 2,3)</td><td>Los mares dispararon el material ligero lejos y el pesado cerca; en Procellarum cae a 2,4 (desbordamiento local)</td></tr>
+<tr class="hl"><td><strong>Concentración de torio en el disco de contacto (estudio 10)</strong></td><td>El disco de contacto (17,5% de la superficie de la Luna) frente a 16 200 centros</td><td><strong>95,0%</strong> del exceso de torio (&gt;3 ppm); mediana <strong>5,39</strong> frente a 1,52 ppm</td><td>El centro de contacto ocupa el lugar <strong>3 de 16 200</strong> (a 47 km del máximo); la marca del último agarre</td></tr>
+<tr><td><strong>Reparto del torio dentro del contacto (estudio 13)</strong></td><td>Los 4 mares frente a las llanuras y tierras altas dentro del contacto</td><td>Mares: <strong>3,99 ppm</strong> (−30%); llanuras: <strong>5,62</strong>; tierras altas: <strong>5,48</strong></td><td>El último líquido rico en torio drenó de vuelta por los canales de los mares</td></tr>
+<tr><td><strong>La masa ajena de las cuencas (estudio 11)</strong></td><td>Todas las cuencas de mares (Imbrium la primera) a 18 km/s</td><td>Se requieren unos 10¹⁹ kg; en realidad <strong>ninguna coincidencia con ninguna condrita</strong></td><td>No hubo impactores ajenos — las cuencas son aberturas de alimentación terrestres</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>N.º en el catálogo</th><th>Nombre de la abertura (apéndice A)</th><th>Coordenadas y distancia al punto subterrestre</th><th>Zona y generación de exposición</th><th>Cúpula de alimentación (GRAIL) y diámetro</th><th>Cobertura actual</th></tr>
+<tr class="hl"><td>#1</td><td><strong>Serenitatis</strong></td><td>26°N, 18°E (31°)</td><td>Contacto (generación III)</td><td>M660_008 — <strong>610 km</strong></td><td>Abierta (bajo un mar)</td></tr>
+<tr class="hl"><td>#34</td><td><strong>Imbrium</strong></td><td>38°N, 341°E (42°)</td><td>Contacto (generación III)</td><td>M660_015 — <strong>671 km</strong></td><td>Abierta (bajo un mar)</td></tr>
+<tr><td>#35–36</td><td>Copernicus H / Sinus Aestuum</td><td>6°N, 342°E / 10°N, 352°E</td><td>Contacto (generación III)</td><td>M660_042 (170) / M660_020 (235 km)</td><td>Abierta (bajo un mar)</td></tr>
+<tr><td>#3–4, #6, #33</td><td>Nectaris, Crisium, Smythii, Humorum</td><td>Distancia de 36°–86°</td><td>Colina (generación II)</td><td>375–518 km</td><td>Abierta (bajo un mar)</td></tr>
+<tr><td>#32</td><td>Schiller–Zucchius</td><td>57°S, 316°E (67°)</td><td>Colina (generación II)</td><td>M660_014 — <strong>909 km</strong> (la mayor)</td><td>Enterrada (bajo las tierras altas)</td></tr>
+<tr><td>#10, #26</td><td>Moscoviense / Orientale</td><td>140° / 95° (cara oculta)</td><td>Más allá de la colina (generación I)</td><td>M660_002 (313) / M660_001 (435 km)</td><td>Abiertas (excepciones en la cara oculta)</td></tr>
+<tr><td>#7, #9, #13, #18–19, #23–24, #37</td><td>Milne, Mendeléiev, Freundlich–Sharonov, Korolev, Hertzsprung, Schrödinger y otras</td><td>100°–162° (cara oculta)</td><td>Más allá de la colina (generación I)</td><td>106–346 km (de las 36 cúpulas enterradas de la cara oculta)</td><td>Enterradas bajo las capas de la cara oculta</td></tr>
+<tr><td>#12, #20, #29</td><td>Ingenii, Apollo, Bailly</td><td>82°–146° (sobre SPA)</td><td>Más allá de la colina (generación I)</td><td>Su cúpula fue cocida y borrada por el calor de la cuenca Polo Sur–Aitken</td><td>Sobre la cuenca SPA</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>En los capítulos 8–10 completamos la investigación de los mares de la Luna: resulta que no son heridas tardías de impactos, sino <strong>las antiguas aberturas de alimentación</strong> a través de las cuales se construyó la Luna sobre 73 cúpulas de gravedad — aberturas que se cerraron en el orden del retroceso del contacto, se congelaron como niveles de lago que se hundieron en su centro, pintaron su entorno con anillos de hierro hasta 600 km y dejaron en el disco de contacto la marca de torio del último agarre a la Tierra.</p>
+<p>Pero si los mares fueron los cañones desde los que se disparó material hacia fuera, <strong>¿qué ocurrió con este material después de ser disparado al espacio — y cómo volvió y golpeó la Luna para excavar los cientos de miles de cráteres de su cara?</strong> En el próximo capítulo — <strong>Capítulo 11: Los cráteres de la Luna — un 99% de material de retorno, no asteroides ajenos</strong> (del artículo 06 — <em>The Craters</em>) — ¡descifraremos la historia de los cráteres!</p>
+<a href="story11_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 11</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Los cráteres de la Luna — un 99% de material de retorno, no asteroides ajenos →</p></div></a><p style="margin-top:22px"><a href="story09_es.html">← Capítulo 9</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

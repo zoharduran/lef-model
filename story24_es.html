@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 24: El anillo como cinta de molienda, las firmas en lunas y planetas y la prueba del bloque Atacama — El modelo LEF</title>
+<meta name="description" content="Capítulo 24 de la historia del modelo LEF: el anillo como cinta de molienda, las firmas en lunas y planetas y la prueba del bloque Atacama.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story24_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <a href="story24_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 24</p>
+<h1>Capítulo 24: El anillo como cinta de molienda, las firmas en lunas y planetas y la prueba del bloque Atacama</h1>
+<p>Basado en el artículo 12 — 12. The Rings: A ring breaks, grinds and returns (partes E–M: la cinta de molienda, las firmas en lunas y progenitores, la roca Atacama y los 5 criterios de refutación)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: ¿cómo da forma un anillo a las superficies de lunas y planetas — y por qué no hay anillos alrededor de las lunas?</h2>
+<p>En el capítulo 23 vimos que un anillo planetario existe como un flujo de equilibrio que se alimenta del progenitor y le devuelve material cuando su día es más corto que 13,4 horas. En las partes E–M del artículo 12 el modelo LEF examina las huellas morfológicas y físicas que deja el anillo:</p>
+<ol class="steps">
+<li><strong>¿Por qué Pan, Atlas y Dafnis tienen una «falda» ecuatorial como un platillo volante — mientras que Deimos fue pulida en una bola lisa (G.1–G.4)?</strong> Aunque Deimos tiene una autogravedad más fuerte que Pan y Atlas, ¡Pan y Atlas acumularon una cresta ecuatorial prominente, mientras que Deimos perdió material y se desgastó por completo!</li>
+<li><strong>¿Qué anillos del sistema solar están condenados a desaparecer en un futuro próximo (F.3)?</strong> ¿Por qué ciertos anillos estrechos de Urano y Neptuno sobreviven por ahora sin luna pastora y sin alimentación desde el suelo?</li>
+<li><strong>¿Dónde, en la superficie de Marte, pueden encontrarse restos de su antiguo anillo — y por qué se descartó el bloque de roca «Atacama», perforado en abril de 2026 (H.2–H.3)?</strong></li>
+<li><strong>¿Por qué no se ha descubierto ningún anillo alrededor de ninguna luna del sistema solar — y cómo mantienen los cuerpos pequeños (Haumea, Cariclo, Quaoar) anillos en una resonancia 1:3 (J.1–J.2)?</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: una cinta de molienda de sentido único, una bola de nieve pegajosa contra una muela y franjas en el cielo de Saturno</h2>
+<p>Cuatro imágenes tangibles explican la clasificación interna del anillo y las firmas que imprime en su entorno:</p>
+<ul>
+<li><strong>Una cinta de molienda de sentido único en la que entran fragmentos y sale polvo (E.1–E.3):</strong> dentro del anillo, una partícula pesada y una ligera en el mismo radio se mueven a la misma velocidad kepleriana y por eso no se asientan por densidad. La clasificación ocurre <strong>a través de la transferencia de momento en las colisiones</strong>: un fragmento rígido de ~ 100 m conserva su órbita estable y se abre carriles limpios en forma de <strong>«hélices»</strong> en el anillo A de Saturno, mientras que las partículas diminutas reciben velocidades aleatorias y se reparten verticalmente alrededor de la capa delgada (10 m) de los fragmentos grandes. La distribución de tamaños <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> es una firma clásica de molienda: ¡los fragmentos grandes indican una entrada fresca en el anillo!</li>
+<li><strong>Una bola de nieve cubierta de escarcha frente a una muela de silicato (G.2–G.3):</strong> la composición del anillo dicta si una luna que lo atraviesa <em>ganará masa</em> o <em>se desgastará</em>: los granos de hielo fríos cubiertos de escarcha se pegan entre sí en un contacto lento (Bridges et al. 1984) y construyeron las crestas ecuatoriales de Pan, Atlas y Dafnis; mientras que el antiguo anillo de Marte estaba hecho de vapores condensados y granos duros de silicato que actuaron como <strong>una muela</strong> y pulieron a Deimos sin añadirle masa.</li>
+<li><strong>Inmersión total en agua frente a un hilo delgado alrededor de una bola (la razón D/H, G.4):</strong> cuando el diámetro de la luna es menor que el espesor del anillo (D &lt; H, como Deimos, 14–22 km, dentro del grueso anillo de vapor de Marte, o Metone), toda la superficie queda sumergida y alisada; cuando D &gt; H (Pan, Atlas y Dafnis dentro de un disco de decenas de metros de espesor), los polos sobresalen del anillo y se construye un ancho cinturón ecuatorial; y cuando <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span> (Jápeto), el anillo actúa como un hilo delgado.</li>
+<li><strong>Dos canales de lluvia — material neutro en el ecuador y franjas oscuras a lo largo de las líneas del campo magnético (H.1):</strong> en la inmersión final de Cassini en 2017 se midieron dos canales de caída desde los anillos sobre Saturno: moléculas neutras y granos de silicato nanométricos bajan directamente al ecuador, mientras que las moléculas de agua ionizadas fluyen a lo largo de las líneas del campo magnético hacia las latitudes medias (25°–55° a ambos lados del ecuador), neutralizan iones <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span> ¡y crean franjas oscuras en la luz infrarroja!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: el ciclo de vida del anillo, las firmas en las lunas y la prueba del bloque Atacama (partes E–J)</h2>
+<p>Las partes E–J del artículo 12 presentan pruebas observacionales nítidas para distinguir los restos de anillos de los fenómenos geológicos ordinarios:</p>
+<ol class="steps">
+<li><strong>El ciclo de vida del anillo y los anillos que se espera que desaparezcan (F.1–F.3):</strong> un anillo que no tiene luna que lo alimente ni filtración desde el suelo está en una etapa de decadencia y se espera que desaparezca. Por eso <strong>los nueve anillos estrechos sin luna de Urano</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) y <strong>los anillos Galle y Lassell de Neptuno</strong> se clasifican como anillos moribundos que quedaron por debajo de la línea de corrotación tras el escape del agua y la congelación, frente a los anillos <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span> de Urano y los anillos Adams y Le Verrier de Neptuno, que están sostenidos por lunas.</li>
+<li><strong>La regla de identificación morfológica de una luna que atravesó un anillo (G.1–G.5):</strong> una luna de silicato completamente lisa (sin actividad geológica renovadora como en Europa o Encélado) indica una larga estancia en el corazón de un anillo: en Deimos la profundidad mediana de las hondonadas es el 1,9% de su anchura (un 84% menos profundas que el 6%) frente al 5,5% en Fobos, y su órbita es casi perfectamente circular (e = 0,0003). El ritmo de cruce depende de la masa de la luna: una luna pequeña migra despacio y acumula una firma profunda, mientras que una luna grande es empujada rápido y cruza el anillo en poco tiempo.</li>
+<li><strong>Descartar anillos alrededor de lunas y la estabilización de los anillos de cuerpos pequeños en una resonancia 1:3 (J.1–J.2):</strong> ninguna luna del sistema solar sostiene un anillo (incluso el supuesto anillo alrededor de Rea quedó completamente descartado en Tiscareno et al. 2010), porque la gravedad del planeta progenitor domina y captura cualquier material eyectado desde una luna hacia el anillo del progenitor. En cambio, alrededor de cuerpos pequeños (Haumea, Cariclo y Quaoar), cuatro de los cinco anillos están por encima de la línea de corrotación en el rango <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> — justo en el radio de <strong>la resonancia espín–órbita 1:3</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), donde una partícula completa una órbita por cada tres rotaciones del progenitor.</li>
+<li><strong>La prueba del bloque de roca «Atacama» en Marte (25 de abril de 2026, H.3):</strong> cuando el rover Curiosity perforó el bloque de roca suelto «Atacama» (~ 45 cm, ~ 13 kg) en el cráter Gale, se examinó la posibilidad de que fuera un resto sólido caído del antiguo anillo de Marte. La prueba lo descartó por completo (una roca sedimentaria estratificada de sales sulfatadas hidratadas con grietas de desecación y una composición idéntica a la de la capa inferior, perteneciente a la unidad del monte Sharp) y fijó <strong>cuatro criterios estrictos para identificar un verdadero resto de anillo en Marte</strong>: una roca volcánica/esponjosa sin estratificación depositada por agua, minerales secos que sufrieron calentamiento, una corteza de fusión por la entrada atmosférica y una composición ajena a la capa geológica local (que coincida con Fobos y Deimos).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="Posición del anillo en unidades de la línea de corrotación" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Júpiter · ⁦0,57–1,41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Saturno · ⁦0,60–1,23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Urano · ⁦0,51–0,62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Neptuno · ⁦0,50–0,75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Haumea · ⁦2,07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Cariclo · ⁦2,10 ; 2,18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Quaoar · ⁦1,25 ; 2,01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Posición del anillo en unidades de la línea de corrotación · azul: línea de corrotación · rojo: resonancia 1:3 en 2,08</text></svg><figcaption>Las dos familias de anillos: los anillos de los gigantes alrededor y por debajo de la línea de corrotación, y los anillos de los cuerpos pequeños por encima de ella, agrupados alrededor de la resonancia 1:3.</figcaption></figure><div class="callout"><span class="tag">El efecto de la radiación solar sobre los anillos — los «radios», la lluvia ionizada y el arrastre de Poynting–Robertson (parte I)</span><p style="margin:0">La radiación solar actúa sobre los anillos mediante tres mecanismos: (1) la carga electrostática del polvo micrométrico, que flota sobre el plano del anillo B como <strong>«radios»</strong>, con un máximo alrededor de los equinoccios; (2) la ionización UV de las moléculas de agua, que acelera <strong>la lluvia ionizada</strong> a lo largo de las líneas del campo magnético; y (3) <strong>el arrastre por radiación de Poynting–Robertson</strong>, ¡que frena las partículas de polvo diminutas y las hace caer de vuelta hacia dentro, sobre el progenitor!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: los criterios de identificación en Marte, el repaso sistemático y las cinco pruebas de refutación</h2>
+<p>Las partes H.2–H.3 y K–M del artículo 12 reúnen las huellas geológicas en las superficies de los planetas y las reglas experimentales con las que se puede verificar o refutar la teoría de los anillos del modelo LEF:</p>
+<ol class="steps">
+<li><strong>Los cuatro objetivos de búsqueda de restos del antiguo anillo de Marte (§H.2):</strong> cuando el anillo de vapor y silicato de Marte se secó hace 3,5–3,7 mil millones de años, su material se depositó en la superficie. Los cuatro objetivos de búsqueda son: (a) depósitos ecuatoriales gruesos y de baja densidad sin fuente de flujo en el suelo (como <strong>la formación Medusae Fossae</strong>); (b) una firma de deuterio–hidrógeno (D/H) que se aparte del entorno local y coincida con Fobos y Deimos; (c) piedras de composición volcánica y una capa guía oscura y dura en el monte Sharp, en el cráter Gale; y (d) bandas de sedimentos simétricas en latitudes medias si Marte tuvo un campo magnético dipolar activo mientras existió el anillo.</li>
+<li><strong>Resumen del repaso sistemático de cada cuerpo (parte K):</strong> cada sistema del sistema solar tiene un papel claro en el ciclo de los anillos: la Tierra (sin anillo duradero porque la pera barrió la banda ecuatorial); Marte (un anillo antiguo desde el suelo que desplazó a Deimos y Fobos y desapareció cuando se cerró la corteza); Júpiter (un anillo de polvo solo a partir de lunas debido a la tapa de gas más gruesa); Saturno (un anillo de hielo gigante en flujo de equilibrio desde el suelo y desde las lunas); Urano y Neptuno (restos estrechos y oscuros por debajo de la línea de corrotación tras el escape del agua, con los anillos sin luna muriendo); y Haumea, Cariclo y Quaoar (anillos densos por encima de la línea de corrotación en una resonancia 1:3 que no se agregan en lunas).</li>
+<li><strong>Los cinco criterios nítidos de refutación de la parte L.3:</strong> el modelo establece cinco condiciones explícitas de refutación: (1) la observación directa de una luna que se agrega a partir de un disco de anillo; (2) el descubrimiento de una luna de silicato completamente lisa que nunca estuvo en un entorno de anillo; (3) la medición de un anillo planetario cuya composición isotópica contradiga al progenitor y coincida con una fuente externa al sistema; (4) el descubrimiento de un anillo masivo muy por encima de la línea de corrotación de un planeta grande sin una resonancia orbital estabilizadora; o (5) la documentación de un anillo sin luna que lo alimente ni alimentación desde el suelo que conserve su masa a lo largo del tiempo geológico sin agotarse.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>La distribución de tamaños de los fragmentos en un anillo de molienda y el radio de la resonancia espín–órbita 1:3 que atrapa anillos alrededor de cuerpos pequeños se formulan así (§E.2, §J.2):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>La ley de potencias <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> caracteriza un sistema de trituración y molienda constantes en colisiones (Zebker et al. 1985), mientras que el radio de resonancia <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span> explica por qué cuatro de los cinco anillos de Haumea, Cariclo y Quaoar se sitúan exactamente en el rango <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> por encima de la línea de corrotación.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: la prueba del bloque Atacama (abril de 2026) y los anillos que se espera que desaparezcan</h2>
+<p>Dos hallazgos observacionales centrales ilustran cómo la teoría de los anillos de LEF resiste una prueba empírica en vivo (§F.3, §H.3):</p>
+<ul>
+<li><strong>El protocolo de cribado de la roca Atacama en Curiosity (25 de abril de 2026):</strong> el análisis geoquímico del bloque suelto Atacama (~ 45 cm, ~ 13 kg) en el cráter Gale mostró que es una roca sedimentaria de sales sulfatadas hidratadas con grietas de desecación, idéntica a la capa inferior — y así se fijaron las cuatro condiciones umbral (textura volcánica/esponjosa, minerales secos, una corteza de fusión y una composición ajena) para identificar un verdadero resto de anillo en Marte.</li>
+<li><strong>La lista de anillos moribundos del sistema solar (§F.3):</strong> se espera que los nueve anillos estrechos sin luna de Urano (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) y los anillos Galle y Lassell de Neptuno sigan adelgazando y desaparezcan en observaciones futuras, mientras que los anillos D, C y B de Saturno seguirán existiendo mientras la bomba interior los alimente.</li>
+</ul>
+<h3 style="margin-top:28px">La caja de laboratorio: el efecto de la composición del anillo y de la razón D/H en las lunas, el repaso sistemático y los criterios de refutación (artículo 12, partes E–M)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Luna</th><th>Diámetro / densidad</th><th>Autogravedad (m/s²)</th><th>Entorno de anillo y razón D/H</th><th>La firma morfológica</th></tr>
+<tr class="hl"><td><strong>Deimos</strong></td><td>12,4 km / 1 471 kg/m³</td><td>0,0025</td><td><strong>Silicato y vapores</strong> (D &lt; H, inmersión total)</td><td><strong>Completamente desgastada en una bola lisa</strong> (profundidad mediana de las hondonadas 1,9%)</td></tr>
+<tr><td><strong>Fobos</strong></td><td>22,2 km / 1 860 kg/m³</td><td>0,0058</td><td>Un borde gaseoso que se desvanece</td><td>Solo desgaste parcial; conservó sus surcos (5,5%)</td></tr>
+<tr class="hl"><td><strong>Pan, Atlas y Dafnis</strong></td><td>7,6–30 km / 340–460 kg/m³</td><td>0,0004–0,0019</td><td><strong>Hielo de agua</strong> (D &gt; H, los polos sobresalen)</td><td><strong>Acumulación de una cresta ecuatorial prominente</strong> (forma de «platillo»)</td></tr>
+<tr><td><strong>Metone</strong></td><td>2,9 km / 310 kg/m³</td><td>0,0001</td><td>Hielo en un arco cerca del anillo G (D &lt; H)</td><td>Lisa y recubierta</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Sistema del sistema solar</th><th>Estado del anillo hoy</th><th>Fuente de alimentación</th><th>Posición respecto a la línea de corrotación e interpretación LEF</th></tr>
+<tr><td><strong>La Tierra / Marte</strong></td><td>Ninguno / existió en el pasado</td><td>Marte: vapor y roca desde la protuberancia</td><td>La Tierra: la pera barrió la línea; Marte: desapareció hace 3,5–3,7 Ga cuando se cerró la corteza</td></tr>
+<tr><td><strong>Júpiter</strong></td><td>Polvo tenue</td><td>Lunas interiores (de Metis a Tebe)</td><td>Alrededor de la línea (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,57</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>); la gruesa tapa de gas sella la filtración interior</td></tr>
+<tr class="hl"><td><strong>Saturno</strong></td><td><strong>Masivo (95%–99% de hielo)</strong></td><td><strong>Desde el suelo (D, C, B, A) y desde lunas (E, F, G)</strong></td><td><strong>Un flujo constante de equilibrio</strong> (P = 10,6 h &lt; 13,4 h); borde de A en el límite de Roche</td></tr>
+<tr><td><strong>Urano / Neptuno</strong></td><td>Estrechos y oscuros (y arcos)</td><td>Unos desde lunas, otros sin luna</td><td>Por debajo de la línea (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>0,75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>); se espera que los anillos sin luna desaparezcan</td></tr>
+<tr class="hl"><td><strong>Haumea, Cariclo, Quaoar</strong></td><td>Densos</td><td>Haumea: los extremos del eje largo</td><td>Por encima de la línea (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>), atrapados en <strong>la resonancia 1:3</strong>; no construyen lunas</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>En los capítulos 23–24 completamos la teoría de los anillos del modelo LEF: dedujimos <strong>el día umbral universal de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> horas</strong>, explicamos los anillos de Saturno como un flujo constante en equilibrio dinámico, seguimos el destino del agua y del momento angular de Urano y Neptuno, y definimos las firmas morfológicas en las lunas (el desgaste de Deimos frente a la construcción de crestas en Pan y Atlas) y en Marte (la prueba de la roca Atacama y los depósitos de Medusae Fossae).</p>
+<a href="story25_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 25</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Los requisitos fundamentales del modelo LEF (R1–R8) — isótopos, el núcleo, la corteza, el desplazamiento del centro de masa y las zonas de exposición →</p></div></a>
+<p style="margin-top:22px"><a href="story23_es.html">← Capítulo 23</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

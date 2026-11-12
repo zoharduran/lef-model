@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 2: La batalla por la duración del día y el balance del momento angular — El modelo LEF</title>
+<meta name="description" content="Capítulo 2 de la historia del modelo LEF: la batalla entre la pera que frena y el núcleo que acelera, un día de 5,77 horas en el momento de la liberación, un balance del momento angular que cierra en 1,007, los límites de Roche y la divisoria de mareas.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story02_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:left}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story02_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story02_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story02_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story02_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story02_he.html" hreflang="he">עברית</a> · <a href="story02_en.html" hreflang="en">English</a> · <a href="story02_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 2</p>
+<h1>Capítulo 2: La batalla por la duración del día y el balance del momento angular</h1>
+<p>Basado en el artículo 02 — LEF Mechanism in Principle (secciones A.4–A.8 y parte B)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: ¿se aleja la Luna de la meta mientras corre hacia ella?</h2>
+<p class="lead">En el capítulo anterior descubrimos la meta a la que debe llegar el material para convertirse en la Luna: <strong>el radio de corrotación</strong>, que en el punto de partida (un día de 5,5 horas) estaba a 15 818 km del centro de la Tierra. Pero en el momento en que comienza el proceso y la pera se alarga hacia arriba, aparece una intrigante trampa física.</p>
+<p>La ley de conservación del momento angular dice que la cantidad total de rotación de un sistema aislado no puede crearse de la nada. Cuando la Tierra eleva una gran masa lejos de su eje y la obliga a seguir girando con ella al mismo ritmo, la masa que asciende «roba» momento angular a la rotación de la Tierra. Como resultado, la rotación de la Tierra se frena, el día se alarga — <strong>¡y la propia línea de corrotación retrocede y se desplaza hacia fuera!</strong></p>
+<p>Aquí nacen tres preguntas decisivas que sellan el destino de todo el modelo:</p>
+<div class="three">
+<div><b>01</b><p>Primero, <strong>¿aleja demasiado el alargamiento del día la línea de corrotación</strong>, o tiene lugar al mismo tiempo un proceso interno que acelera la rotación y la equilibra?</p></div>
+<div><b>02</b><p>Segundo, <strong>¿basta el balance total de momento angular de la Tierra temprana</strong> para pagar el «impuesto» de elevar la Luna, y dejarnos aun así exactamente el momento angular que se mide hoy en el sistema Tierra–Luna?</p></div>
+<div><b>03</b><p>Y tercero, <strong>¿qué impide que la Luna joven sea despedazada</strong> por las enormes fuerzas de marea de la Tierra en el momento de la separación?</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: la patinadora que extiende un brazo — y recoge el otro</h2>
+<p>Todos conocemos la imagen clásica de una patinadora artística girando sobre sí misma: cuando abre los brazos hacia los lados, su giro se frena de inmediato; y cuando los recoge hacia el cuerpo, gira a una velocidad vertiginosa. La razón es que la masa alejada del eje de rotación aumenta el momento de inercia, y la masa cercana al eje lo disminuye.</p>
+<p>Imagine ahora una rutina acrobática especial en la que la patinadora realiza <strong>dos acciones opuestas al mismo tiempo</strong>: con una mano extiende una pértiga larga y pesada (la «pera» que se alarga hacia la línea de corrotación e intenta frenarla), y al mismo tiempo atrae hacia dentro, hacia el centro de su cuerpo, una pesada pesa de hierro que antes sostenía lejos del eje (el «núcleo» que se hunde hacia el centro de la Tierra y la acelera).</p>
+<div class="box"><span class="tag">Dos fuerzas opuestas</span><p style="margin:0">¡Como estas dos fuerzas opuestas actúan juntas, la patinadora apenas pierde ritmo de giro! Solo se frena ligeramente y se mantiene estable exactamente al ritmo necesario para completar la rutina.</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: por qué un «interior uniforme» es una condición umbral</h2>
+<p>Muchos modelos de la evolución de la Tierra suelen suponer que su pesado núcleo de hierro se formó y se hundió hacia el centro a toda velocidad, incluso antes de que se formara la Luna. Pero el artículo 02 muestra que tal suposición bloquea el balance del momento angular: cuando todo el hierro se concentra en el centro, el momento de inercia de la Tierra es pequeño (el factor de inercia baja de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> para una esfera uniforme a <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0,33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span> para la Tierra diferenciada actual), y con el mismo día de 5,5 horas no puede almacenar suficiente momento angular.</p>
+<p>En el modelo LEF, en cambio, la organización del núcleo no es un acontecimiento único que terminó antes, sino <strong>un solo proceso continuo</strong>:</p>
+<ul class="pts">
+<li><strong>Al comienzo de la transferencia de masa:</strong> la Tierra joven estaba caliente, dilatada (una expansión térmica de 120 km, dentro del rango permitido de 98–520 km) y todavía casi uniforme en su distribución de masa (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>). En este estado almacenaba un balance inicial de momento angular de <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>.</li>
+<li class="c"><strong>Durante el ascenso de la pera:</strong> el hierro pesado se hundió gradualmente hacia el centro (en el modelo de dos capas: una razón de radios <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span> y una razón de densidades <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>), ¡produciendo exactamente la aceleración de la rotación necesaria para equilibrar el alargamiento de la pera!</li>
+</ul>
+<div class="callout"><span class="tag">La clave del precio en momento angular</span>
+<p style="margin:0">En la vía clásica de fisión de Jacobi (en la que la Tierra intenta acelerar su propia superficie hasta el punto de ruptura, un día de 2,73 horas), el sistema necesita <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9,42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> — es decir, <strong>2,74 veces</strong> el momento angular del sistema Tierra–Luna actual (y en el punto de referencia original 4,08 veces). En el modelo LEF, donde el material se lleva a la línea de corrotación, el balance inicial del cuerpo progenitor es de <strong>1,007 veces</strong> el momento angular actual — un excedente mínimo de solo el 0,7% (y con suma vectorial en los ángulos probados: 1,5%–2,5%), ¡que coincide exactamente con la pérdida posterior por la marea solar!</p></div>
+<div class="vs"><div><b>4,08</b><span>Fisión clásica · punto de referencia original</span></div><div><b>2,74</b><span>Fisión clásica · punto de bifurcación de Jacobi</span></div><div class="hit"><b>1,007</b><span>Modelo LEF · liberación en la línea de corrotación</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: la batalla por el día, el límite de Roche y la divisoria</h2>
+<p>Sigamos, paso a paso, el resultado de la fascinante batalla que tiene lugar dentro de la Tierra mientras asciende la pera:</p>
+<ol class="steps">
+<li><strong>La pera intenta frenar la Tierra (+0,94 horas):</strong> transferir masa hacia fuera en corrotación da al material que asciende alrededor del 15,6% del balance de momento angular en el cálculo básico (y alrededor del 16,5% en la solución acoplada). Este momento angular se toma de la rotación de la Tierra. Si la pera hubiera actuado sola, sin la organización del núcleo (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>), el día se habría alargado de 5,50 a <strong>6,44 horas</strong> y la línea de corrotación se habría ido hasta <strong>17 569 km</strong>.</li>
+<li><strong>El núcleo que se hunde acelera la Tierra (−0,67 horas):</strong> al mismo tiempo, el hierro pesado se hunde hacia el centro de la Tierra (en el escenario de dos capas <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) y acorta el día en <strong>0,67 horas</strong>.</li>
+<li><strong>El punto de equilibrio en el momento de la liberación (5,77 horas y 16 399 km):</strong> cuando los dos procesos actúan juntos, la aceleración del núcleo compensa la mayor parte del frenado de la pera. El día en el momento de la separación es de solo <strong>5,77 horas</strong>, y la línea de corrotación se sitúa a una distancia de <strong>16 331 km</strong> (en la aproximación de partícula de prueba) o de <strong>16 399 km</strong> (≃ 16 400 km) cuando se incluye la propia masa de la Luna en un problema de dos cuerpos.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">Punto de partida · ⁦5,50 h⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">La pera frena · ⁦+0,94 h⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">El núcleo acelera · ⁦−0,67 h⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed">Momento de la liberación · ⁦5,77 h⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Duración del día (horas)</text></svg><figcaption>La batalla por la duración del día: la pera sola la habría alargado a 6,44 horas; el núcleo que se hunde devuelve 0,67 horas, y el día en el momento de la liberación es de 5,77 horas.</figcaption></figure>
+<div class="q">¿Cómo sobrevive la Luna al límite de Roche y empieza a alejarse de inmediato?</div>
+<p>En el momento de la liberación, la Luna es un cuerpo redondo y rígido (radio <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mspace width="0.17em"></mspace><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> km con una densidad de 2 600 kg/m³): su cara visible está a 14 509 km del centro de la Tierra (unos 7 800 km sobre la superficie de la Tierra achatada, cuyo radio ecuatorial es de 6 701 km) y su cara oculta a 18 289 km. Esta posición se encuentra dentro del <strong>límite de Roche fluido</strong> (19 971 km) — la distancia dentro de la cual las fuerzas de marea de la Tierra despedazarían una esfera fluida blanda — pero muy fuera del <strong>límite de Roche rígido</strong> (10 314 km). ¡Como la Luna ya había completado su redondeo y desarrollado una capa exterior rígida (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>) mientras seguía unida a la pera, su razón de ejes se mantiene como máximo en 1,04 (casi una esfera perfecta) y sobrevive intacta!</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6 000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9 000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12 000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15 000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18 000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21 000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">La Luna</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:ltr;unicode-bidi:embed">Tierra · 6 701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Límite de Roche rígido · 10 314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Línea de corrotación · 16 399</text><text x="636.0" y="58.0" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:ltr;unicode-bidi:embed">Límite de Roche fluido · 19 971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Cara visible · 14 509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Cara oculta · 18 289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Distancia al centro de la Tierra (km) · la Luna en la liberación, radio 1 890 km</text></svg><figcaption>La Luna en el momento de la liberación sobre el eje de distancias: fuera del límite de Roche rígido y dentro del límite de Roche fluido, con la línea de corrotación atravesándola.</figcaption></figure>
+<p>Y por último, ¿por qué se aleja de inmediato en lugar de volver a caer? Porque la línea de corrotación es una <strong>divisoria de mareas</strong>: un cuerpo situado exactamente sobre la línea está en equilibrio neutro; un cuerpo dentro de la línea es arrastrado hacia dentro por la marea; mientras que un cuerpo liberado <strong>ligeramente más allá de la línea</strong> — con un margen de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km más allá de la línea de corrotación, cuando alrededor del 58% del volumen de la Luna ya la ha cruzado — es empujado hacia delante y hacia fuera por el abultamiento de marea de la Tierra, que gira más deprisa que la Luna, ¡y empieza a alejarse desde la primera órbita!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>El balance de momento angular del sistema (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>) se conserva entre el estado inicial y el momento de la liberación, y se reparte entre la rotación de la Tierra y la órbita de la Luna:</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>Conservación del momento angular</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">La línea de corrotación en el momento de la liberación (<span class="ltr">5,77 h</span>)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mspace width="0.17em"></mspace><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>En el momento de la separación, la órbita de la Luna contiene <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5,9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> (el 17% del balance, con la masa reducida <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span>; o <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span> calculando con la masa completa alrededor del centro de la Tierra), y la rotación de la Tierra contiene <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>. El factor de momento de inercia derivado para la Tierra en este momento es <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span> — una coincidencia notable con el valor <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> de una estructura de dos capas (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>):</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Rotación de la Tierra · ⁦2,88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Órbita lunar · 17%</text></svg><figcaption>El reparto del balance de momento angular en el momento de la liberación.</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">El factor de inercia de dos capas</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">El límite de Roche rígido</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1,26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mspace width="0.17em"></mspace><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: Fobos y Deimos alrededor de Marte</h2>
+<p>La idea de que la línea de corrotación actúa como una «divisoria» de mareas no es una hipótesis teórica — se exhibe en vivo en nuestro sistema solar, alrededor del planeta <strong>Marte</strong>. Marte tiene dos pequeñas lunas que lo orbitan a ambos lados del radio de corrotación marciano (20 428 km):</p>
+<ul class="pts">
+<li class="c"><strong>Deimos (la luna exterior, 23 463 km):</strong> se encuentra <em>fuera</em> de la línea de corrotación de Marte (orbita más despacio de lo que gira Marte). Por eso la marea de Marte la empuja hacia fuera y se aleja gradualmente de Marte — igual que nuestra Luna, que fue liberada unos 210 km más allá de la línea de corrotación.</li>
+<li class="a"><strong>Fobos (la luna interior, unos 9 376 km):</strong> se encuentra <em>dentro</em> de la línea de corrotación (se adelanta a la rotación de Marte). Por eso la marea de Marte la frena y tira de ella hacia dentro, y cae gradualmente hacia un choque con la superficie de Marte dentro de decenas de millones de años.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Fobos · 9 376 km · atraída hacia dentro</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Línea de corrotación de Marte · 20 428 km</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Deimos · 23 463 km · se aleja</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:ltr;unicode-bidi:embed">Marte</text></svg><figcaption>La divisoria de mareas alrededor de Marte: Fobos dentro de la línea y atraída hacia dentro, Deimos fuera de ella y alejándose.</figcaption></figure>
+<h3 style="margin-top:28px">La caja de laboratorio: el balance del día, el momento angular y los límites de Roche (artículo 02, parte B)</h3>
+<div class="tw"><table class="lt2"><tr><th>Etapa / parámetro</th><th>Duración del día terrestre</th><th>Radio de la línea de corrotación</th><th>Significado y reparto del balance</th></tr>
+<tr><td><strong>1. El punto de partida</strong></td><td>5,50 horas</td><td>15 818 km</td><td>Balance inicial <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)</td></tr>
+<tr class="r1"><td><strong>2. La pera se alarga sola</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>)</td><td>6,44 horas (<span class="ltr">+0,94 h</span>)</td><td>17 569 km</td><td>Frenado por la transferencia del 15,6%–16,5% del momento angular al material que asciende</td></tr>
+<tr class="r2"><td><strong>3. El núcleo se hunde</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>)</td><td><span class="ltr">−0,67</span> horas</td><td>Atraída hacia dentro</td><td>Una aceleración («la patinadora que recoge los brazos») que compensa la mayor parte del frenado</td></tr>
+<tr class="hl"><td><strong>4. El estado combinado en la liberación</strong></td><td>5,77 horas</td><td>16 399 km (16 331 partícula de prueba)</td><td>El balance cierra en 1,007 × el actual (17% en la órbita, 83% en la rotación de la Tierra)</td></tr>
+<tr><td><strong>5. El margen de liberación y Roche</strong></td><td>5,77 horas</td><td>Liberación a +210 km más allá de la línea</td><td>Una Luna rígida (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>, razón de ejes ≤ 1,04) fuera del límite de Roche rígido (10 314 km)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>Hemos mostrado que la mecánica de la naturaleza lo permite: el balance del momento angular cierra dentro de 1,007, la batalla entre la pera y el núcleo que se hunde estabiliza el día en 5,77 horas, y la Luna se libera rígida y redonda más allá de la línea de corrotación y empieza a alejarse de inmediato.</p>
+<p>Pero el artículo 02 solo demostró que la vía es posible <em>en principio</em>. Ahora surge la pregunta de la ejecución: <strong>¿qué motor enorme empujó miles de millones de toneladas de roca a una altura de miles de kilómetros contra la gravedad?</strong> En el próximo capítulo — <strong>Capítulo 3: El motor interior — la presión de la fuente de <span class="ltr">150 GPa</span> y el magma espumado</strong> (del artículo 03 — <em>LEF Mechanism in Practice</em>) — descenderemos a las profundidades de la Tierra temprana y conoceremos la presión que elevó la Luna.</p>
+<a href="story03_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 3</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">El motor interior — la presión de la fuente de <span class="ltr">150 GPa</span> y el magma espumado →</p></div></a>
+<p style="margin-top:22px"><a href="story01_es.html">← Capítulo 1</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

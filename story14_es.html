@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capítulo 14: Diferenciación rotacional externa — la contracción polar, la delgada corteza de los polos y las pruebas del tamaño de los cráteres — El modelo LEF</title>
+<meta name="description" content="Capítulo 14 de la historia del modelo LEF: diferenciación rotacional externa — la contracción del área polar, el balance de energía, la delgada corteza de los polos y la conservación del tamaño de los cráteres.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story14_es.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story14_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story14_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story14_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story14_es.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story14_he.html" hreflang="he">עברית</a> · <a href="story14_en.html" hreflang="en">English</a> · <a href="story14_de.html" hreflang="de">Deutsch</a> · <b>Español</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CAPÍTULO 14</p>
+<h1>Capítulo 14: Diferenciación rotacional externa — la contracción polar, la delgada corteza de los polos y las pruebas del tamaño de los cráteres</h1>
+<p>Basado en el artículo 07 — The Poles: Why the Poles Are Crowded (partes C.3–E: la geometría de la contracción, el balance de energía, las 4 pruebas y las 5 pruebas de conservación del diámetro)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>El misterio: si los polos se contrajeron a la mitad — ¿por qué la corteza bajo los polos es más delgada, y por qué no se encogieron los propios cráteres?</h2>
+<p>En el capítulo 13 vimos que la Luna joven pasó de un cuerpo achatado y alargado (a : b : c ≈ 1,8 : 1,4 : 1) a una forma esférica mientras su volumen se contraía, y que este proceso apiñó los cráteres polares (1,20 ± 0,05 en toda la población y 1,53 ± 0,19 en cráteres de 60–100 km). Pero aquí surgen de inmediato <strong>tres preguntas físicas clave</strong> que, si quedaran sin resolver, derribarían todo el modelo:</p>
+<ol class="steps">
+<li><strong>La paradoja del espesor de la corteza polar:</strong> si el área polar se encogió hasta alrededor de <strong>0,55×</strong> de su área original durante el redondeo, el material de la envoltura polar se comprimió hacia dentro y la corteza bajo los polos debería ser <em>más gruesa</em> que la corteza bajo el ecuador. En realidad, las mediciones de GRAIL muestran exactamente lo contrario: <strong>¡la corteza bajo los polos es más delgada y más densa que la corteza bajo el ecuador!</strong></li>
+<li><strong>La paradoja de la conservación del tamaño de los cráteres:</strong> si la superficie de los polos se contrajo, ¿por qué no se contrajeron con ella los propios cráteres? ¡Si los cráteres se hubieran encogido en diámetro, los cráteres cercanos al umbral de recuento (20 km) habrían caído por debajo de él y habrían borrado por completo el exceso de densidad!</li>
+<li><strong>El motor de energía y presión:</strong> ¿qué motor físico impulsó el redondeo hacia dentro tras cruzarse la línea de corrotación — y qué ocurrió con la enorme presión (2–<span class="ltr">12 GPa</span>) que este redondeo ejerció sobre la envoltura exterior rígida?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Una imagen: un cuenco de miel que se nivela, baldosas rígidas sobre una lámina que se encoge y la «diferenciación rotacional externa»</h2>
+<p>Tres imágenes sencillas resuelven los tres enigmas y los unen en un solo proceso geodinámico:</p>
+<ul>
+<li><strong>Un cuenco de miel que se inclinó y se volvió a poner nivelado (el motor de la gravedad, §C.4):</strong> mientras la Luna estaba unida a la Tierra y giraba rápido (5,5 horas), la fuerza centrífuga mantenía los polos «energéticamente elevados» 120 km sobre el ecuador (como una colina de energía desde la que el material ligero resbalaba hacia el ecuador). En el momento en que el centro de masa cruzó la línea de corrotación (15 818–16 399 km), el estiramiento en la base de la pera cayó a cero y la densidad subió de 1 700 a 2 600 kg/m³. La autogravedad de la Luna venció de pronto a la rotación — como una patinadora cuyo peso se duplicara de golpe y que ya no pudiera mantener los brazos extendidos —, ¡y el polo pasó de inmediato de ser una «cima de montaña» a ser un «fondo de valle» hacia el que fluye todo el material por su propio peso!</li>
+<li><strong>Baldosas cerámicas rígidas sobre una lámina de goma que se encoge (la conservación del tamaño de los cráteres, §C.7, §D.2):</strong> la envoltura superior ya se había congelado y era lo bastante rígida para llevar los cráteres como <strong>baldosas rígidas y enteras</strong> que conservan su diámetro original, ¡mientras que los huecos elásticos entre los cráteres se cerraron y quedaron absorbidos en la estructura de la corteza!</li>
+<li><strong>La «diferenciación rotacional externa» (§C.8, §D.6):</strong> ¿por qué la corteza bajo los polos es hoy más delgada a pesar de la contracción? Porque durante <strong>las decenas de millones de años de la etapa achatada</strong> (¡antes de que empezara la contracción!), la rápida rotación hizo fluir el material ligero de la envoltura exterior hacia fuera, <strong>desde los polos hacia el ecuador</strong>, creando una envoltura polar <em>especialmente delgada</em>. Cuando llegó la etapa de redondeo, esta envoltura delgada se comprimió hacia dentro y se convirtió en <strong>una corteza polar delgada y densa</strong> (¡todavía más delgada que la gruesa corteza ecuatorial!), mientras que los cráteres que habían aterrizado uniformemente sobre la envoltura estirada se apiñaron hacia los centros de los polos.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Ciencia y modelo: el cálculo de la contracción del área (0,55×) y el balance de energía (1,5 × 10²⁸ julios)</h2>
+<p>Las partes C.3 y C.4 del artículo 07 cuantifican con precisión matemática tanto el cambio de área en cada punto de la cara de la Luna como la liberación de energía y presión interna durante el redondeo:</p>
+<ol class="steps">
+<li><strong>La contracción absoluta del área combinada con la caída de volumen (§C.3.1):</strong> al pasar del achatamiento máximo (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³, radio equivalente de 2 180 km, dimensiones de 5 585 × 4 628 × 3 191 km) al cuerpo esférico del desprendimiento (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>2</mn><mo separator="true">,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">\rho \approx 2,600</annotation></semantics></math></span></span> kg/m³, diámetro esférico de 3 778 km, radio de 1 890 km), el volumen cae en un factor de <strong>1,53</strong>, el radio equivalente se contrae un 13% y el área media de la superficie cae a <strong>0,75×</strong>. Pero debido al cambio de forma triaxial (1,75 : 1,45 : 1 en el centro de la familia), el cambio no es uniforme:
+<ul>
+<li><strong>El área polar (eje c):</strong> se encoge hasta alrededor de <strong>0,55×</strong> su área original (¡contracción máxima!).</li>
+<li><strong>El área de los lados (delantero y trasero, eje b):</strong> se encoge a <strong>0,80×</strong>.</li>
+<li><strong>El área de los extremos de la línea de la Tierra (eje a):</strong> se encoge a solo <strong>0,97×</strong> (¡una contracción mínima!).</li>
+<li><strong>La razón entre los casquetes polares (0,58×) y el cinturón ecuatorial (0,86×):</strong> la razón de áreas es 0,67×, ¡de modo que la densidad de cráteres en los polos salta en 1/0.67 = 1,49×!</li>
+</ul>
+</li>
+<li><strong>La liberación de energía gravitatoria y el calentamiento interno (§C.4):</strong> el colapso de volumen y el redondeo liberan dos componentes de energía gravitatoria que se convierten en calor y presión hidrostática dentro de la Luna:
+<ul>
+<li><strong>La energía del cambio de forma (excentricidad):</strong> libera <strong>2 × 10²⁷ julios</strong> (el 2,1% de la energía de enlace, ~ 3 × 10⁴ julios/kg), añadiendo un calentamiento medio de unos <strong>30 kelvin</strong> y manteniendo el núcleo viscoso y móvil.</li>
+<li><strong>La energía de la contracción de volumen (compresión):</strong> siete veces mayor — libera <strong>1,5 × 10²⁸ julios</strong> (~ 2,1 × 10⁵ julios/kg), equivalente a un calentamiento medio de <strong>206 kelvin</strong> (con una capacidad calorífica de 1 kJ/kg·K).</li>
+</ul>
+</li>
+<li><strong>La presión sobre la envoltura rígida y la alimentación de las erupciones de los mares (§C.4):</strong> obligar a una envoltura rocosa rígida (módulo de rigidez <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">\mu \ge 10\text{ GPa}</annotation></semantics></math></span></span>) a cambiar su forma en un 10%–20% crea esfuerzos cortantes internos de <strong>2–<span class="ltr">12 GPa</span></strong> — de 20 a 120 veces la resistencia al corte de la roca (~ <span class="ltr">0,1 GPa</span>). La envoltura no se hace añicos, sino que libera la presión hidrostática a través de <strong>las aberturas de alimentación de los mares</strong> (artículo 05), ¡que disparan el magma hacia fuera en vuelos balísticos y crean los cráteres de material de retorno (artículo 06)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 745.0 190" role="img" aria-label="Area change from peak flattening to sphere" style="direction:ltr"><g transform="translate(105.0,0)"><rect x="200.0" y="16" width="332.6" height="26" rx="4" fill="#9aa3af"/><text x="540.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦0,97×⁩</text><rect x="200.0" y="56" width="274.3" height="26" rx="4" fill="#c47f2c"/><text x="482.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦0,80×⁩</text><rect x="200.0" y="96" width="257.1" height="26" rx="4" fill="#5f9a6e"/><text x="465.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦0,75×⁩</text><rect x="200.0" y="136" width="188.6" height="26" rx="4" fill="#2f7d57"/><text x="396.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,55×⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Extremos de la línea de la Tierra (eje a)</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Los lados (eje b)</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Media global</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Los polos (eje c)</text></svg><figcaption>El cambio de área al pasar del achatamiento máximo a la esfera del desprendimiento: los polos se contraen más que cualquier otra región, por lo que los cráteres que hay en ellos se apiñan.</figcaption></figure><div class="callout"><span class="tag">La diferenciación rotacional externa — la afirmación clave del artículo 07 (§C.8, §D.6)</span><p style="margin:0">Mientras la Luna joven estaba unida a la Tierra y giraba con ella, el achatamiento hizo fluir gradualmente el material ligero de la envoltura exterior <strong>desde los polos hacia el ecuador</strong>, dejando una envoltura polar delgada durante una ventana de decenas de millones de años en la que los cráteres aterrizaron de forma uniforme. En la etapa final, mientras el cuerpo se redondeaba hasta el desprendimiento en la línea de corrotación, el área polar convergió hacia dentro, los cráteres se apiñaron y bajo los polos quedó <strong>una corteza delgada y densa</strong>, ¡que hoy se mide en los datos de GRAIL!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>El mecanismo en palabras: las cuatro pruebas estadísticas y las cinco pruebas de conservación del tamaño de los cráteres</h2>
+<p>La parte D del artículo 07 somete el modelo de redondeo y contracción a una doble prueba cuantitativa: primero mediante <strong>cuatro pruebas estadísticas principales</strong>, y segundo mediante <strong>cinco pruebas morfométricas complementarias</strong> que comprueban si los propios cráteres se encogieron físicamente con el suelo o se conservaron enteros:</p>
+<ol class="steps">
+<li><strong>Prueba 1 — la razón de densidad polo/ecuador en el recuento limpio:</strong> tras eliminar de ambos lados los mares y la cuenca SPA, la razón total para cráteres de 20 km o más es <strong>1,20 ± 0,05</strong> (intervalo de confianza del 95%: 1,10–1,30), y sube de forma continua de 1,09 para cráteres de 20–30 km a 1,53 ± 0,19 para cráteres de 60–100 km y 1,84 ± 0,38 para cráteres de 100–300 km — <strong>superada</strong>.</li>
+<li><strong>Prueba 2 — un cambio en el diámetro de los cráteres (riqueza de cráteres grandes en los polos):</strong> el diámetro mediano de los cráteres en los polos es <strong>1,06</strong> veces el diámetro mediano en el ecuador (intervalo de confianza del 95%: 1,01–1,12) — <strong>superada</strong> (confirma una riqueza de cráteres grandes y antiguos en los polos).</li>
+<li><strong>Prueba 3 — la distribución de los cráteres jóvenes (formados después del redondeo):</strong> en dos muestras independientes de cráteres jóvenes que aterrizaron cuando el cuerpo ya se había redondeado en una esfera, se midieron razones polo/ecuador de <strong>0,92 y 1,12</strong> (alrededor de 1,00, sin un exceso polar significativo) — <strong>coincide con la predicción</strong>.</li>
+<li><strong>Prueba 4 — simetría completa entre los dos polos:</strong> tras eliminar la cuenca SPA, que cubría parte del polo sur, se midieron <strong>300 cráteres</strong> por millón de km² en la banda de 75°–90° del polo norte frente a <strong>305</strong> en el polo sur (y en el casquete de 15°: 300 frente a 305, razón 1,02, intervalo de confianza 0,78–1,32) — <strong>superada</strong> (igualdad completa dentro del error de recuento).</li>
+<li><strong>Las cinco pruebas morfométricas de conservación del diámetro de los cráteres (§D.2):</strong> examinar (a) los cráteres más grandes por unidad igual de área, (b) la forma de la distribución de tamaños (la curva acumulada), (c) una comparación de cráteres antiguos frente a frescos, (d) el grado de elipticidad de los bordes de los cráteres y (e) el diámetro de transición de cráter simple a complejo — ¡<strong>cuatro pruebas establecieron sin ambigüedad que los diámetros de los cráteres se conservaron enteros, y ni una sola prueba mostró indicio alguno de que los propios cráteres se encogieran</strong>! Si los cráteres se hubieran encogido con el suelo, los cráteres de alrededor de 20 km habrían caído por debajo del umbral de recuento y habrían borrado por completo el exceso de densidad medido (1,20).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explicación académica y las ecuaciones clave</h2>
+<p>El cambio diferencial del área de una unidad de suelo con normal <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">n</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat{\mathbf{n}} = (n_x, n_y, n_z)</annotation></semantics></math></span></span> al pasar de un elipsoide triaxial (a, b, c) a una esfera equivalente de radio <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_s = (abc)^{1/3}</annotation></semantics></math></span></span>, y la energía de enlace gravitatoria W de un esferoide achatado con excentricidad e, se dan en las siguientes ecuaciones (§C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">[</mo><msubsup><mi>n</mi><mi>x</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>y</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>b</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>z</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>c</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J^{-1} = \left[n_x^2\left(\dfrac{R_s}{a}\right)^2 + n_y^2\left(\dfrac{R_s}{b}\right)^2 + n_z^2\left(\dfrac{R_s}{c}\right)^2\right]^{-1/2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><mi>c</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\rho_{\mathrm{polar}}}{\rho_{\mathrm{equatorial}}} = \dfrac{a}{c}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msup><mi>M</mi><mn>2</mn></msup></mrow><msub><mi>R</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mi>e</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">W = -\dfrac{3}{5}\dfrac{GM^2}{R_s}\dfrac{\arcsin(e)}{e}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≈</mo><mn>1,5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>28</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{compression}} \approx 1.5 \times 10^{28}\text{ J} \quad (\Delta T \approx 206\text{ K})</annotation></semantics></math></span></div></div></div>
+<p>De la ecuación del jacobiano <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">[</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><msup><mo stretchy="false">]</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J(\lambda, \phi) = R_s^{-1}[\cos^2\lambda(a^2\cos^2\phi + b^2\sin^2\phi) + c^2\sin^2\lambda]^{1/2}</annotation></semantics></math></span></span> se sigue de inmediato que en el polo (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_z = 1</annotation></semantics></math></span></span>) la densidad se multiplica por <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">R_s/c</annotation></semantics></math></span></span>, en los lados (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_y = 1</annotation></semantics></math></span></span>) por <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">R_s/b</annotation></semantics></math></span></span>, y en los extremos de la línea de la Tierra (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_x = 1</annotation></semantics></math></span></span>) por <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">R_s/a</annotation></semantics></math></span></span> — ¡exactamente el orden de densidades medido alrededor de los seis extremos de los ejes!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La firma en la realidad: el achatamiento que desaparece antes del desprendimiento y la forma que se conserva tras el alejamiento</h2>
+<p>Al final de la etapa de redondeo, en el momento en que el centro de masa rebasó la línea de corrotación en unos 210 km (r ≈ 16 610 km), la Luna se desprendió de la Tierra <strong>ya completamente esférica y rígida</strong> (razón de ejes máxima ≤ 1,04, §C.1, §C.5):</p>
+<ul>
+<li><strong>El achatamiento temprano desapareció antes del desprendimiento (no después):</strong> tras el desprendimiento, cuando la Luna se alejó a 30 000 km (periodo de 14 horas) y a 60 000 km (41 horas), las fuerzas de marea y de rotación solo elevaron un diminuto abultamiento elástico sobre el cuerpo rígido (razón de ejes 1,03 a 30 000 km y 1,00 a 60 000 km), y el <strong>«achatamiento fósil»</strong> actual de la Luna (f ≈ 0,001, congelado antes de 16 radios terrestres) es cientos de veces menor que el achatamiento triaxial de la etapa unida (1,8 : 1,4 : 1).</li>
+<li><strong>Cerrar el círculo entre los artículos 05, 06 y 07:</strong> ¡la misma presión de contracción de 2–<span class="ltr">12 GPa</span> que la envoltura rígida ejerció durante el redondeo es la que empujó el magma hacia fuera por las aberturas de alimentación de los mares (artículo 05), disparó el material de retorno que creó los cráteres gigantes (artículo 06) y los apiñó hacia los dos polos sobre una corteza polar delgada y densa (artículo 07)!</li>
+</ul>
+<h3 style="margin-top:28px">La caja de laboratorio: la contracción del área, el balance de energía y presión, y un resumen de las 4 pruebas (artículo 07, partes C.3–E)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Región de la cara de la Luna (achatamiento máximo 1,75:1,45:1, 1 700 kg/m³)</th><th>Cambio absoluto del área (incluida la caída de volumen)</th><th>Desplazamiento de la superficie durante el redondeo</th><th>Efecto sobre la densidad de cráteres y el espesor cortical</th></tr>
+<tr class="hl"><td><strong>Las regiones polares (eje c, ancla geométrica)</strong></td><td><strong>0,55×</strong> (0,58× en los casquetes de 30°)</td><td>Un ancla estable (~ +290 km de radio polar)</td><td><strong>Densidad máxima (1,49× frente al ecuador)</strong> sobre una corteza delgada y densa</td></tr>
+<tr><td><strong>Los lados delantero y trasero (eje b)</strong></td><td><strong>0,80×</strong></td><td>Colapso hacia dentro de ~ 430 km</td><td>Densidad intermedia a lo largo del anillo periférico</td></tr>
+<tr><td><strong>Los extremos de la línea de la Tierra (eje a, subterrestre y antiterrestre)</strong></td><td><strong>0,97×</strong></td><td>Colapso hacia dentro de ~ 900 km</td><td>Contracción mínima — la densidad mínima en el punto subterrestre (148)</td></tr>
+<tr><td><strong>La media global de la cara de la Luna</strong></td><td><strong>0,75×</strong> (el volumen cae 1,53 veces)</td><td>El radio equivalente baja de 2 180 a 1 890 km</td><td>Energía de compresión 1,5 × 10²⁸ J (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T \approx 206\text{ K}</annotation></semantics></math></span></span>)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Prueba empírica (parte D)</th><th>Definición y muestra</th><th>Resultado medido</th><th>Estado</th></tr>
+<tr class="hl"><td><strong>Prueba 1: razón de densidad polo/ecuador</strong></td><td>Recuento limpio (sin mares ni SPA), casquetes de 30° frente a <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi|&lt;15^\circ</annotation></semantics></math></span></span></td><td><strong>1,20 ± 0,05</strong> (1,09 a 20–30 km <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>1,53</strong> a 60–100 km)</td><td><strong>Superada</strong></td></tr>
+<tr class="hl"><td><strong>Prueba 2: diámetro mediano de los cráteres</strong></td><td>Comparar el tamaño de los cráteres en los polos frente al ecuador</td><td>La mediana polar es <strong>1,06</strong> veces mayor (intervalo de confianza 1,01–1,12)</td><td><strong>Superada</strong></td></tr>
+<tr><td><strong>Prueba 3: cráteres jóvenes (tras el redondeo)</strong></td><td>Dos muestras independientes de cráteres tardíos</td><td>Razones de <strong>0,92 y 1,12</strong> (sin exceso polar)</td><td><strong>Coincide con la predicción</strong></td></tr>
+<tr class="hl"><td><strong>Prueba 4: simetría entre los dos polos</strong></td><td>La banda de 75°–90° y el casquete de 15° (sin SPA)</td><td><strong>300</strong> en el norte frente a <strong>305</strong> en el sur por millón de km² (1,02)</td><td><strong>Superada</strong></td></tr>
+<tr><td><strong>5 pruebas de conservación del tamaño de los cráteres</strong></td><td>Los mayores, distribución de tamaños, antiguos/frescos, elipticidad, transición a complejo</td><td><strong>4 de 5</strong> confirman la conservación completa, <strong>0</strong> muestran encogimiento de los cráteres</td><td><strong>Superada</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La puerta siguiente</h2>
+<p>En los capítulos 13–14 resolvimos el enigma de los polos de la Luna (<em>Why the Poles Are Crowded</em>): descubrimos cómo el paso de un cuerpo triaxial achatado (1,8 : 1,4 : 1) a una esfera rígida (3 778 km) comprimió los polos de 1,20 a 1,53 veces sobre una delgada corteza polar que había sufrido una «diferenciación rotacional externa», conservando por completo los diámetros originales de los cráteres.</p>
+<p>Pero en el capítulo 13 apareció un descubrimiento inesperado en el corazón del polo sur: <strong>la cuenca Polo Sur–Aitken (SPA)</strong> — la cuenca más grande y misteriosa de la Luna (2 400 km), ¡en cuyo núcleo (0°–10°) la densidad de cráteres cae a 132 por millón de km²! ¿Qué es realmente la cuenca SPA en el modelo LEF, por qué su forma es elíptica en lugar de redonda y cómo se formó? En el próximo capítulo — <strong>Capítulo 15: La cuenca Polo Sur–Aitken (SPA) — ¿una herida de desprendimiento o el mayor cráter de impacto?</strong> (del artículo 08 — <em>South Pole–Aitken</em>) — ¡nos sumergiremos en esta cuenca gigante!</p>
+<a href="story15_es.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Capítulo 15</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">La cuenca Polo Sur–Aitken (SPA) — ¿una herida de desprendimiento o el mayor cráter de impacto? →</p></div></a><p style="margin-top:22px"><a href="story13_es.html">← Capítulo 13</a> · <a href="story00_es.html">Prólogo</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · El modelo LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
