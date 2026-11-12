@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 5 : La poire et la libération de Stefan — le pont qui porte la Lune et se rompt exactement sur la ligne de corotation — Le modèle LEF</title>
+<meta name="description" content="Chapitre 5 de l&#x27;histoire du modèle LEF : le large disque de contact qui tient la Lune à la latitude 22,5°, la libération de Stefan qui la relâche environ 210 km au-delà de la ligne de corotation, et les deux tests orbitaux qui se rejoignent à cette distance.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story05_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story05_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story05_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story05_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story05_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story05_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story05_he.html" hreflang="he">עברית</a> · <a href="story05_en.html" hreflang="en">English</a> · <a href="story05_de.html" hreflang="de">Deutsch</a> · <a href="story05_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 5</p>
+<h1>Chapitre 5 : La poire et la libération de Stefan — le pont qui porte la Lune et se rompt exactement sur la ligne de corotation</h1>
+<p>D'après l'article 03 — Le mécanisme LEF en pratique (partie C : §C.1–C.6)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : comment tenir une lune entière à la latitude 22,5° — et la détacher sans laisser de queue ?</h2>
+<p>Dans les chapitres précédents, nous avons vu comment le moteur interne pousse le magma moussé vers le haut (chapitre 3), et comment la croûte extérieure de sial enveloppe le corps qui monte comme une coupole (chapitre 4). Mais dès que nous regardons le tableau technique de <strong>la liaison entre la Terre et la Lune</strong> vers la fin de la montée, une énigme double et complexe apparaît :</p>
+<ol class="steps">
+<li><strong>L'énorme force latérale à la latitude 22,5° :</strong> la Lune ne se trouve pas sur l'équateur, mais à la latitude <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span> (à 17 287 km du centre de la Terre, avec un jour de 5,77 heures). Alors que sur la ligne de corotation la traction radiale s'équilibre exactement (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span>), la poussée centrifuge de la rotation est dirigée à l'opposé de l'axe de rotation — et elle a donc une composante latérale (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><mn>0,559</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a_\lambda = 0.559\text{ m/s}^2</annotation></semantics></math></span></span>) qui tire fortement la Lune vers l'équateur ! C'est une énorme charge de cisaillement latérale de <strong>4,06 × 10²² newtons</strong>. Comment un « cou » chaud et fondu peut-il tenir une telle force sans plier et glisser vers l'équateur ?</li>
+<li><strong>La rupture nette sans cou étroit :</strong> dans la mécanique des fluides familière, lorsqu'une goutte se détache d'une seringue ou d'un robinet, elle s'étire en un fil mince et se rompt — laissant une partie de la matière derrière elle. Si la Lune s'était séparée de cette manière, elle aurait été entraînée avec une « queue » déformée ou se serait brisée. Comment est-elle libérée comme un corps rond, entier et rigide, à une distance précise d'environ <strong>210 km</strong> au-delà de la ligne de corotation ?</li>
+</ol>
+<p>La partie C de l'article 03 résout les deux énigmes ensemble : la liaison n'est pas un « cou » mince mais <strong>un large disque de contact chaud de 3 000 km de diamètre</strong>, posé sur le large dos d'une poire gravitationnellement solide ; et la séparation n'est pas une rupture fragile d'un solide, mais <strong>un phénomène d'adhérence visqueuse (l'adhérence de Stefan)</strong> dans lequel une mince couche de magma s'ouvre progressivement dès que le centre de masse franchit la ligne de corotation !</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : deux plaques de verre avec une goutte de miel entre elles</h2>
+<p>Pour comprendre comment se sépare un large disque de contact chaud, imaginez une simple expérience de cuisine : prenez deux plaques de verre plates et mettez entre elles une mince couche d'eau ou de miel.
+<br>• Si vous tentez de <strong>faire glisser</strong> les plaques latéralement l'une sur l'autre, vous rencontrerez très peu de résistance.
+<br>• Mais si vous tentez de <strong>les écarter droit l'une de l'autre</strong>, à angle droit, vous sentirez soudain une forte force de résistance ! Pourquoi ? Non parce que le miel ou l'eau serait une colle solide, mais parce que, pour que l'interstice entre elles s'ouvre, du fluide nouveau doit s'écouler des bords vers le centre — et quand l'interstice est très étroit, cet écoulement vers l'intérieur est lent et résiste à la vitesse d'ouverture.</p>
+<p>Et que se passe-t-il si vous continuez à tirer ? Dès que l'interstice s'ouvre un peu (disons jusqu'à trois fois son épaisseur initiale), le fluide s'engouffre facilement, <strong>la résistance s'effondre d'un coup (elle est divisée par 27 !)</strong>, et les deux plaques se séparent complètement !</p>
+<p>En physique, ce phénomène s'appelle <strong>la libération de Stefan</strong>. La couche de contact chaude entre la poire et la Lune se comporte exactement comme cette couche de miel entre deux plaques géantes de 3 000 km de large : tant que le centre de masse de la Lune se trouve en deçà de la ligne de corotation, la gravité presse les plaques l'une contre l'autre ; dès que le centre de masse franchit la ligne vers l'extérieur, la force s'inverse en traction, la couche de contact s'ouvre d'abord lentement puis s'effondre d'un coup environ <strong>210 km</strong> au-delà de la ligne !</p>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Stefan resistance falling as the cube of the gap" style="direction:ltr"><path d="M70.0,20.0 L74.9,32.1 L79.8,43.3 L84.7,53.7 L89.6,63.3 L94.5,72.2 L99.5,80.5 L104.4,88.3 L109.3,95.5 L114.2,102.2 L119.1,108.5 L124.0,114.4 L128.9,119.9 L133.8,125.0 L138.7,129.9 L143.6,134.4 L148.5,138.7 L153.5,142.7 L158.4,146.5 L163.3,150.1 L168.2,153.5 L173.1,156.7 L178.0,159.7 L182.9,162.5 L187.8,165.2 L192.7,167.8 L197.6,170.2 L202.5,172.5 L207.5,174.7 L212.4,176.8 L217.3,178.7 L222.2,180.6 L227.1,182.4 L232.0,184.1 L236.9,185.7 L241.8,187.3 L246.7,188.7 L251.6,190.1 L256.5,191.5 L261.5,192.8 L266.4,194.0 L271.3,195.2 L276.2,196.3 L281.1,197.4 L286.0,198.4 L290.9,199.4 L295.8,200.3 L300.7,201.2 L305.6,202.1 L310.5,202.9 L315.5,203.8 L320.4,204.5 L325.3,205.3 L330.2,206.0 L335.1,206.7 L340.0,207.3 L344.9,208.0 L349.8,208.6 L354.7,209.2 L359.6,209.7 L364.5,210.3 L369.5,210.8 L374.4,211.3 L379.3,211.8 L384.2,212.3 L389.1,212.7 L394.0,213.2 L398.9,213.6 L403.8,214.0 L408.7,214.4 L413.6,214.8 L418.5,215.2 L423.5,215.5 L428.4,215.9 L433.3,216.2 L438.2,216.6 L443.1,216.9 L448.0,217.2 L452.9,217.5 L457.8,217.8 L462.7,218.1 L467.6,218.3 L472.5,218.6 L477.5,218.8 L482.4,219.1 L487.3,219.3 L492.2,219.6 L497.1,219.8 L502.0,220.0 L506.9,220.2 L511.8,220.4 L516.7,220.6 L521.6,220.8 L526.5,221.0 L531.5,221.2 L536.4,221.4 L541.3,221.6 L546.2,221.7 L551.1,221.9 L556.0,222.1 L560.9,222.2 L565.8,222.4 L570.7,222.5 L575.6,222.7 L580.5,222.8 L585.5,223.0 L590.4,223.1 L595.3,223.2 L600.2,223.3 L605.1,223.5 L610.0,223.6" fill="none" stroke="#c47f2c" stroke-width="3"/><line x1="70.0" x2="70.0" y1="20" y2="230" stroke="#ece7da"/><text x="70.0" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">d₀</text><line x1="315.5" x2="315.5" y1="20" y2="230" stroke="#ece7da"/><text x="315.5" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">2d₀</text><line x1="560.9" x2="560.9" y1="20" y2="230" stroke="#ece7da"/><text x="560.9" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">3d₀</text><line x1="70" x2="610" y1="230" y2="230" stroke="#9aa3af"/><circle cx="70.0" cy="20.0" r="6" fill="#b23a2e"/><circle cx="560.9" cy="222.2" r="6" fill="#2f7d57"/><text x="82.0" y="25.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Résistance totale</text><text x="560.9" y="208.2" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">1/27 · la Lune est libérée</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Épaisseur de la couche de contact (multiple de l'épaisseur initiale)</text><text transform="rotate(-90 18 125)" x="18.0" y="125.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Résistance</text></svg><figcaption>La libération de Stefan : la résistance à l'ouverture de la couche diminue comme la puissance trois de son épaisseur ; à trois fois l'épaisseur, elle est 27 fois plus petite — un déplacement d'environ 210 km.</figcaption></figure></section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : distinguer les notions — force, contrainte et ancrage</h2>
+<p>Pour éviter les erreurs courantes dans le calcul des charges planétaires, l'article 03 sépare soigneusement trois notions de base : <strong>la force</strong> (la poussée ou traction totale, en newtons), <strong>la contrainte</strong> (la force divisée par la surface qui la porte, en gigapascals), et <strong>la déformation</strong>. Voici les trois conclusions principales qui en découlent :</p>
+<ol class="steps">
+<li><strong>La coupole supérieure ne porte pas la pression de la source de <span class="ltr">150 GPa</span> :</strong> à l'équilibre hydrostatique, la plus grande partie de la pression profonde sert à soulever la colonne de roche située en dessous. La pression propre au centre de la Lune (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>b</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_b = 1,890</annotation></semantics></math></span></span> km, densité 2 600 kg/m³) n'est que de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>c</mi></msub><mo>≃</mo><mn>3,37</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">p_c \simeq 3.37\text{ GPa}</annotation></semantics></math></span></span> — quarante fois moins que la pression de la source !</li>
+<li><strong>Pourquoi un cou étroit échoue — et un large disque de contact (3 000 km) l'emporte :</strong> la charge latérale de 4,06 × 10²² newtons à la latitude 22,5° se répartit sur la surface de la liaison. Si la liaison avait été un cou d'un rayon de 1 000 km, la contrainte de cisaillement sur lui aurait été de <span class="ltr">12,92 GPa</span> (et pour un cou de 500 km — <span class="ltr">46,04 GPa</span>), une contrainte qui ferait couler la matière chaude et l'étalerait vers l'équateur. En revanche, sur le large disque de contact de l'étape 3 (3 000 km de diamètre, rayon <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> km), la contrainte moyenne tombe à <strong><span class="ltr">5,74 GPa</span></strong>, et elle est portée par la large structure de la poire en dessous, tenue par la propre gravité de la Terre !</li>
+<li><strong>Pourquoi la Lune n'a pas glissé vers l'équateur pendant la montée :</strong> deux systèmes d'ancrage ont empêché le corps en ascension de glisser vers l'équateur sous la force centrifuge latérale : à l'étape de la large coupole (6 000 km), le corps était ancré dans l'ouverture de la coque rigide de sial (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>, la même coque qui tient des cratères de 100 km sans effondrement) ; et à l'étape de l'arrondissement vers l'extérieur (3 000 km), la charge latérale était transmise directement à la poire massive en dessous.</li>
+</ol>
+<div class="callout"><span class="tag">Une double séparation simultanée (décollement + traction)</span><p style="margin:0">La séparation de la Lune et de la Terre s'est faite de deux manières complémentaires : le long de l'anneau extérieur de la coupole inférieure (de 6 000 à 3 000 km), la couche de sial sur laquelle reposait le corps <strong>s'est progressivement décollée</strong> le long de la limite « lubrifiée » au-dessus du sima et a rejoint la Lune (créant la ceinture 31°–70°) ; tandis que dans le disque de contact central (3 000 km), la chaleur extrême a fondu et éliminé le sial, et la couche chaude a été tirée et ouverte dans la <strong>libération de Stefan</strong> juste après le franchissement de la ligne de corotation !</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : la libération de Stefan et la marge de 210 km qui explique deux faits lunaires à la fois</h2>
+<p>Que se passe-t-il exactement au moment où le centre de masse de la Lune franchit la ligne de corotation (située à la latitude 22,5°, à une distance de 17 287 km, avec un jour de 5,77 heures) ?</p>
+<ol class="steps">
+<li><strong>Le point de bascule au centre de masse :</strong> la face éloignée de la Lune franchit la ligne de corotation plus tôt pendant la montée, mais tant que le centre de masse se trouve en deçà de la ligne, la partie intérieure de la Lune est (gravitationnellement) plus lourde que la partie extérieure, et le contact reste en compression. Dès que le centre de masse franchit la ligne, la somme des forces s'inverse en traction vers l'extérieur (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi>m</mi><mo>⋅</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">F_{\mathrm{net}} = m \cdot 3\omega^2 \Delta r</annotation></semantics></math></span></span>).</li>
+<li><strong>L'effondrement de la couche de Stefan (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>) :</strong> la couche de contact chaude (épaisseur initiale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">d_0 \approx 105</annotation></semantics></math></span></span> km, viscosité <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\eta_c</annotation></semantics></math></span></span>) résiste d'abord à la vitesse d'ouverture, mais à mesure que l'interstice s'ouvre, la résistance chute comme la puissance trois de l'interstice (d⁻³). Lorsque l'interstice atteint trois fois son épaisseur initiale (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>, c'est-à-dire un déplacement de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km au-delà de la ligne de corotation, quand environ 58% du volume de la Lune a déjà franchi la ligne), la résistance est divisée par 27 et la Lune est libérée.</li>
+<li><strong>Un couplage en rotation sans rupture prématurée :</strong> tout au long de la montée (à une vitesse d'environ 1 km par an), le même disque de contact donne à la Lune le couple nécessaire pour la maintenir en corotation — avec une contrainte de cisaillement infime d'environ <span class="ltr">0,2 kPa</span> seulement (environ un cinq-centième de la pression de l'air au niveau de la mer !).</li>
+</ol>
+<p><strong>La double preuve par l'orbite lunaire actuelle (§C.5a) :</strong><br>
+Pourquoi la Lune a-t-elle été libérée environ <strong>210 km</strong> au-delà de la ligne de corotation, et non exactement sur la ligne elle-même ? Il s'avère qu'une libération exactement sur la ligne (0 km) placerait la Lune sur une orbite parfaitement circulaire (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e_0 = 0</annotation></semantics></math></span></span>), et la marée de la Terre maintient une orbite circulaire circulaire pour toujours — ce qui signifie que l'excentricité (l'aplatissement elliptique) de l'orbite lunaire actuelle (e = 0,0549) n'aurait jamais pu apparaître ! La recherche numérique de l'article 03 trouve que deux tests indépendants se rejoignent exactement à la même distance de libération :</p>
+<ul>
+<li><strong>Le test de l'inclinaison orbitale :</strong> une libération à la latitude 22,5° environ 210 km au-delà de la ligne (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 = 0.037</annotation></semantics></math></span></span>) donne, au fil de l'évolution orbitale, une inclinaison finale de <strong>5,145°</strong> — l'angle mesuré de l'orbite lunaire aujourd'hui !</li>
+<li><strong>Le test de l'excentricité :</strong> exactement la même marge (≈ 210 km) reproduit, pour une Lune jeune et chaude (A ≈ 3,0), l'excentricité mesurée aujourd'hui — <strong>0,0549</strong> !</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 300" role="img" aria-label="Final orbital inclination against release distance beyond the corotation line" style="direction:ltr"><line x1="70" x2="610" y1="237.9" y2="237.9" stroke="#ece7da"/><text x="62" y="241.9" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,0°</text><line x1="70" x2="610" y1="177.4" y2="177.4" stroke="#ece7da"/><text x="62" y="181.4" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,1°</text><line x1="70" x2="610" y1="116.8" y2="116.8" stroke="#ece7da"/><text x="62" y="120.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,2°</text><line x1="70" x2="610" y1="56.3" y2="56.3" stroke="#ece7da"/><text x="62" y="60.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,3°</text><text x="90.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="190.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">100</text><text x="290.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">200</text><text x="390.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="490.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="590.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><line x1="70" x2="610" y1="150.1" y2="150.1" stroke="#2f7d57" stroke-width="1.5" stroke-dasharray="6 4"/><text x="606.0" y="142.1" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Inclinaison mesurée aujourd'hui · ⁦5,145°⁩</text><path d="M90.0,225.8 L190.0,190.1 L300.0,150.1 L390.0,115.6 L590.0,35.7" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="90.0" cy="225.8" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="190.0" cy="190.1" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="300.0" cy="150.1" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><circle cx="390.0" cy="115.6" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="590.0" cy="35.7" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="310.0" y="172.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">210 km</text><text x="340.0" y="290.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Distance de libération au-delà de la ligne de corotation (km)</text></svg><figcaption>L'inclinaison orbitale finale selon la distance de libération (article 03, partie C) : seule une libération environ 210 km au-delà de la ligne donne 5,145° — et à la même distance aussi l'excentricité de 0,0549.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et les équations clés</h2>
+<p>Les charges qui agissent sur la liaison à la latitude <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> (la radiale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">a_r</annotation></semantics></math></span></span> et la latérale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub></mrow><annotation encoding="application/x-tex">a_\lambda</annotation></semantics></math></span></span>) et la force de résistance de la couche de Stefan d'épaisseur d et de rayon <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> km s'expriment par les équations suivantes :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_r = \dfrac{G(M_E+m)}{r^2} - \omega^2 r \cos^2\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mi>sin</mi><mo>⁡</mo><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_\lambda = \omega^2 r \sin\lambda \cos\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msub><mi>m</mi><mi>r</mi></msub><msqrt><mrow><msubsup><mi>a</mi><mi>r</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>a</mi><mi>λ</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = m_r\sqrt{a_r^2 + a_\lambda^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msub><mi>η</mi><mi>c</mi></msub><msubsup><mi>R</mi><mi>c</mi><mn>4</mn></msubsup><mover accent="true"><mi>d</mi><mo>˙</mo></mover></mrow><mrow><mn>2</mn><msup><mi>d</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mi>m</mi><mo stretchy="false">(</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{Stefan}} = \dfrac{3\pi \eta_c R_c^4 \dot{d}}{2d^3} = m(3\omega^2)(d - d_0) \quad \Longrightarrow \quad \Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210\text{ km}</annotation></semantics></math></span></div></div></div>
+<p>Au point de libération adopté (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span>, un jour de 5,77 heures), le rayon de la ligne de corotation est de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi></mrow></msub><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi>λ</mi><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>287</mn></mrow><annotation encoding="application/x-tex">r = r_{\mathrm{co}}\cos^{-2/3}\lambda = 17,287</annotation></semantics></math></span></span> km, et le centre de la Lune au moment du détachement complet se trouve à <strong>17 496 km</strong> (et pour l'équateur : la ligne à 16 399 km et la libération à 16 610 km). La libération laisse une orbite presque circulaire, d'excentricité initiale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>≃</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 \simeq 0.037</annotation></semantics></math></span></span> et de demi-grand axe <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km, qui sont transmis comme données d'entrée directes à l'article 04 (<em>L'orbite</em>).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : la dernière liaison à Mare Imbrium et les crêtes de spatule</h2>
+<p>La libération de Stefan et la séparation en deux temps ont laissé des empreintes tangibles sur le visage même de la Lune :</p>
+<ul>
+<li><strong>L'ordre de séparation des grandes mers :</strong> le long de l'anneau de décollement, <strong>Mare Serenitatis</strong> a été mise à nu et s'est décollée la première, tandis que <strong>Mare Imbrium</strong> (située au cœur du disque de contact de 3 000 km) a servi de dernier conduit d'alimentation interne et est restée attachée à la poire jusqu'au moment du détachement final ! Une fois Imbrium coupée, la pression interne de la Terre sur la Lune a cessé, et les grandes mers de la face visible ont lentement gelé en surfaces lisses comme un lac gelé.</li>
+<li><strong>Les crêtes de spatule :</strong> lorsque le centre de masse de la Lune a franchi la ligne de corotation et que les forces de traction vers l'extérieur ont vaincu la résistance du contact chaud et mou, la forte traction vers l'extérieur a étiré et strié la surface de la zone de détachement, créant les <strong>crêtes de spatule</strong> caractéristiques.</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : les forces de la liaison, la libération de Stefan et la recherche de la distance de libération (article 03, partie C)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Distance au-delà de la ligne de corotation (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta r</annotation></semantics></math></span></span>)</th><th>Volume de la Lune au-delà de la ligne</th><th>Demi-grand axe initial (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span></span>)</th><th>Excentricité initiale (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">e_0</annotation></semantics></math></span></span>)</th><th>Inclinaison orbitale finale (aujourd'hui)</th><th>Signification et résultat du test</th></tr>
+<tr class="bad"><td>0 km (exactement sur la ligne)</td><td>50%</td><td>17 287 km</td><td>0,000</td><td>5,020°</td><td>Une orbite circulaire pour toujours — ne reproduit pas e = 0,0549</td></tr>
+<tr class="mid"><td>100 km</td><td>54%</td><td>17 696 km</td><td>0,017</td><td>5,079°</td><td>Inclinaison trop faible ; excentricité trop faible (0,013 pour A=3)</td></tr>
+<tr class="hl"><td><strong>≈ 210 km (l'état adopté)</strong></td><td><strong>58%</strong></td><td><strong>18 163 km</strong></td><td><strong>0,037</strong></td><td><strong>5,145° (mesurée !)</strong></td><td><strong>Reproduit à la fois l'inclinaison de 5,145° et e ≈ 0,0549</strong></td></tr>
+<tr class="mid"><td>300 km</td><td>62%</td><td>18 571 km</td><td>0,053</td><td>5,202°</td><td>Inclinaison et excentricité (0,11) trop élevées</td></tr>
+<tr class="bad"><td>500 km</td><td>69%</td><td>19 531 km</td><td>0,089</td><td>5,334°</td><td>Un écart significatif par rapport aux données lunaires actuelles</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Latitude de libération</th><th>Durée du jour terrestre</th><th>La ligne de corotation</th><th>Le centre de la Lune à la libération complète</th><th>Charge sur la liaison au moment de la libération</th></tr>
+<tr><td><strong>0° (l'équateur)</strong></td><td>5,77 heures</td><td>16 399 km</td><td>~ 16 610 km</td><td>Équilibre radial complet ; seulement une résistance de Stefan négligeable</td></tr>
+<tr class="hl"><td><strong>22,5° (la voie adoptée)</strong></td><td><strong>5,77 heures</strong></td><td><strong>17 287 km</strong></td><td><strong>17 496 km</strong></td><td><strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span> ; charge latérale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mn>4,06</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = 4.06 \times 10^{22}\text{ N}</annotation></semantics></math></span></span> (<span class="ltr">5,74 GPa</span>)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Nous avons vu comment la Lune est libérée comme une sphère rigide et entière exactement 210 km au-delà de la ligne de corotation, sans cou étroit et sans laisser de queue de fragments dans l'espace. Mais qu'est-il advenu de l'énorme corps resté en arrière sous le disque de contact — <strong>la poire elle-même</strong>, longue d'environ 8 700 km et d'une masse de neuf à douze masses lunaires ?</p>
+<p>Dans le prochain chapitre — <strong>Chapitre 6 : Le sort de la poire et les cicatrices de la réalité — du bassin du Pacifique au noyau de la Terre</strong> (article 03, parties C.7–C.11, D et E) — nous découvrirons pourquoi toute la poire a été ramenée dans la Terre, où se trouve son empreinte sur le fond de l'océan Pacifique et au fond du manteau, et comment elle a même étiré le noyau de la Terre primitive !</p>
+<a href="story06_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 6</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Le sort de la poire et les cicatrices de la réalité — du bassin du Pacifique au noyau de la Terre →</p></div></a><p style="margin-top:22px"><a href="story04_fr.html">← Chapitre 4</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

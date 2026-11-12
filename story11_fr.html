@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 11 : Des cratères sans astéroïdes — la physique du vol balistique, la pression de choc et l'asymétrie avant/arrière — Le modèle LEF</title>
+<meta name="description" content="Chapitre 11 de l&#x27;histoire du modèle LEF : des cratères créés par de la matière de retour plutôt que par des astéroïdes — la physique du vol balistique, des pressions de choc de dizaines de GPa, et l&#x27;asymétrie entre les hémisphères avant et arrière.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story11_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story11_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story11_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story11_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story11_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story11_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story11_he.html" hreflang="he">עברית</a> · <a href="story11_en.html" hreflang="en">English</a> · <a href="story11_de.html" hreflang="de">Deutsch</a> · <a href="story11_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 11</p>
+<h1>Chapitre 11 : Des cratères sans astéroïdes — la physique du vol balistique, la pression de choc et l'asymétrie avant/arrière</h1>
+<p>D'après l'article 06 — Les cratères (parties A–K : la physique du lancement, du choc, de la traversée de la vapeur et de la morphologie aux quatre longitudes)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : de la matière tirée depuis le sol et retombant sur lui peut-elle creuser des cratères géants — et pourquoi sont-ils plus denses à l'arrière ?</h2>
+<p>La littérature admise tient pour acquis que presque chaque cratère sur le visage de la Lune a été creusé par un astéroïde ou une comète venus de l'espace à une vitesse formidable de 15–20 km/s. Mais cette hypothèse se heurte à deux problèmes observationnels aigus qui n'ont jamais été pleinement expliqués :</p>
+<ol class="steps">
+<li><strong>L'inverse de ce qu'on attend — un excès de cratères sur l'hémisphère arrière (90°E), et non sur l'hémisphère avant (90°W) :</strong> la Lune présente toujours la même face à la Terre, de sorte que sa moitié ouest (autour de 90°W, <strong>l'hémisphère avant</strong>) fait toujours face vers l'avant dans la direction de son mouvement orbital — exactement comme le pare-brise d'une voiture en mouvement — tandis que sa moitié est (autour de 90°E, <strong>l'hémisphère arrière</strong>) fait face vers l'arrière. Si des astéroïdes extérieurs bombardaient la Lune, le pare-brise (90°W) devrait recevoir des dizaines de pour cent de cratères de plus que la lunette arrière. En réalité, c'est exactement l'inverse : <strong>l'hémisphère arrière (90°E) est bien plus dense en grands cratères (249–252 par million de km² contre 139–175 sur l'hémisphère avant) !</strong></li>
+<li><strong>La question physique fondamentale :</strong> dans le modèle LEF, environ 99% des cratères ont été créés par de la <strong>matière de retour</strong> tirée hors des ouvertures d'alimentation du corps parent (la Terre primitive, d'un rayon de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km et avec un jour de 5,5 heures) qui est retombée sur la coque extérieure, laquelle est ensuite montée et est devenue le visage de la Lune. Mais de la matière lancée vers le haut à 2–8 km/s peut-elle seulement revenir avec assez de force pour produire des pressions de choc de dizaines de gigapascals et imprimer des cratères complexes ?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : la balle lancée vers le haut, la patineuse et le coureur sous la pluie</h2>
+<p>Trois images simples de la vie quotidienne éclairent la physique du vol balistique et l'asymétrie est–ouest :</p>
+<ul>
+<li><strong>Une balle lancée droit vers le haut (la vitesse d'atterrissage égale la vitesse de lancement) :</strong> lorsqu'une balle est lancée droit vers le haut sans frottement de l'air, elle convertit la vitesse en hauteur en montant, et reconvertit toute la hauteur en vitesse en descendant — et revient dans la main exactement à la vitesse à laquelle elle a été lancée (5 km/s à l'aller → 5 km/s au retour !).</li>
+<li><strong>Une patineuse qui écarte les bras (la déviation vers l'ouest) :</strong> pendant que le bloc monte à une grande hauteur, son moment cinétique se conserve — de sorte que son rythme angulaire de rotation autour du centre de la Terre ralentit (exactement comme une patineuse qui écarte les bras). Le sol en dessous continue de tourner vers l'est à un rythme constant, de sorte que lorsque le bloc redescend au même rayon, le sol s'est déjà déplacé vers l'est et il atterrit <strong>à l'ouest du point de lancement</strong> (à 5 km/s : jusqu'à une hauteur de 1 932 km, en 28 minutes, et 1 032 km vers l'ouest !).</li>
+<li><strong>Une personne qui court vers la pluie face à une personne qui la fuit (l'hémisphère avant face à l'arrière) :</strong> une fois le corps lunaire monté, ses propres ouvertures d'alimentation ont aussi tiré de la matière (à une vitesse relativement faible, jusqu'à sa vitesse d'échappement de ~ 2,0–2,3 km/s). Sur l'hémisphère arrière (90°E), le sol s'éloigne de la matière qui tombe et la « rattrape » donc doucement par derrière (et recueille aussi la matière qui dérive vers l'ouest depuis la face cachée, 180°) ; tandis que sur l'hémisphère avant (90°W), le sol fonce vers la matière qui tombe et la rencontre <strong>de front</strong> — comme un coureur qui reçoit les gouttes de pluie en pleine face !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : une pression de choc de <span class="ltr">45,6 GPa</span>, la traversée de la vapeur et la limite d'échappement (10,75 km/s)</h2>
+<p>Les parties J et K de l'article 06 montrent par un calcul analytique exact qu'un lancement interne à des vitesses de 2–8 km/s suffit amplement à créer de véritables cratères de choc :</p>
+<ol class="steps">
+<li><strong>Des pressions de choc de dizaines de gigapascals (l'équation d'Hugoniot pour le basalte, §J.2) :</strong> dans une collision frontale de basalte contre basalte (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho_0 = 2,700</annotation></semantics></math></span></span> kg/m³), la vitesse particulaire derrière le front de choc est la moitié de la vitesse d'impact (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>p</mi></msub><mo>=</mo><msub><mi>v</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_p = v_n / 2</annotation></semantics></math></span></span>), et la vitesse du front de choc lui-même est <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mi>s</mi><msub><mi>u</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">U_s = C_0 + s u_p</annotation></semantics></math></span></span> (avec <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>3,5</mn></mrow><annotation encoding="application/x-tex">C_0 = 3.5</annotation></semantics></math></span></span> km/s et s = 1,3). Cela donne une pression de contact de <strong><span class="ltr">12,96 GPa</span> dès 2 km/s</strong>, <strong><span class="ltr">22,07 GPa</span> à 3 km/s</strong>, et <strong><span class="ltr">45,56 GPa</span> à 5 km/s</strong> — bien au-dessus des seuils du métamorphisme de choc des minéraux ! (Et même une goutte liquide crée une forte onde de compression, car un liquide résiste à la compression presque autant qu'un solide.)</li>
+<li><strong>L'énergie nécessaire à l'ouverture et la limite d'échappement (§J.1, §J.5) :</strong> pour lancer un kilogramme à 2, 3, 5 ou 8 km/s, il faut une énergie cinétique <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_{\mathrm{kin}} = u^2/2</annotation></semantics></math></span></span> de 2, 4,5, 12,5 ou 32 MJ/kg, fournie par la pression interne de la Terre (transmise par la poire) aidée par l'expansion des gaz volatils (l'eau). D'autre part, pour que la matière ne s'échappe pas pour toujours dans l'espace mais revienne sur la coque, la vitesse de lancement radiale doit être inférieure à la vitesse d'échappement combinée à la rotation : <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>&lt;</mo><msub><mi>u</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>≃</mo><mn>10,748</mn></mrow><annotation encoding="application/x-tex">u &lt; u_{\mathrm{esc}} \simeq 10.748</annotation></semantics></math></span></span> km/s</strong>.</li>
+<li><strong>La traversée de l'atmosphère de vapeur (§J.3) :</strong> un bloc d'un kilomètre de diamètre qui traverse deux fois (en montant et en descendant) une colonne de vapeur avec une pression de base de 100 bars (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mn>8,25</mn></mrow><annotation encoding="application/x-tex">g_{\mathrm{eff}} = 8.25</annotation></semantics></math></span></span> m/s²) conserve environ <strong>51% de sa vitesse</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>v</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>−</mo><msub><mi mathvariant="normal">Σ</mi><mi>a</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v_{\mathrm{out}}/v_{\mathrm{in}} = \exp(-\Sigma_a / 2B)</annotation></semantics></math></span></span>) — de sorte qu'un lancement à 5 km/s atterrit encore à 2,5 km/s et produit un choc de plus de <span class="ltr">13 GPa</span> !</li>
+<li><strong>La loi d'échelle sous la gravité du corps parent (§C.6) :</strong> comme la surface du corps parent exerçait une gravité cinq fois plus forte que celle de la Lune aujourd'hui (g = 8,25 contre 1,62 m/s²) et que la vitesse d'impact était trois fois plus faible (5 contre 15 km/s), créer un cratère de même diamètre exige un corps de retour <strong>7,45 à 23,47</strong> fois plus lourd (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>p</mi></msub><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m_p \propto g^{3\mu/2} v^{-3\mu}</annotation></semantics></math></span></span> pour <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0,35</mn><mtext>–</mtext><mn>0,55</mn></mrow><annotation encoding="application/x-tex">\mu = 0.35\text{–}0.55</annotation></semantics></math></span></span>).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Shock pressure in basalt against impact speed" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100</text><text x="70.0" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="195.6" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="321.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="446.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="572.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><path d="M70.0,230.0 L75.0,229.2 L80.0,228.4 L85.1,227.5 L90.1,226.6 L95.1,225.7 L100.1,224.8 L105.2,223.9 L110.2,222.9 L115.2,221.9 L120.2,220.9 L125.3,219.8 L130.3,218.8 L135.3,217.7 L140.3,216.6 L145.3,215.4 L150.4,214.3 L155.4,213.1 L160.4,211.9 L165.4,210.7 L170.5,209.4 L175.5,208.1 L180.5,206.8 L185.5,205.5 L190.6,204.2 L195.6,202.8 L200.6,201.4 L205.6,200.0 L210.7,198.5 L215.7,197.1 L220.7,195.6 L225.7,194.1 L230.7,192.5 L235.8,191.0 L240.8,189.4 L245.8,187.8 L250.8,186.1 L255.9,184.5 L260.9,182.8 L265.9,181.1 L270.9,179.4 L276.0,177.6 L281.0,175.9 L286.0,174.1 L291.0,172.2 L296.0,170.4 L301.1,168.5 L306.1,166.6 L311.1,164.7 L316.1,162.8 L321.2,160.8 L326.2,158.8 L331.2,156.8 L336.2,154.8 L341.3,152.7 L346.3,150.7 L351.3,148.6 L356.3,146.4 L361.3,144.3 L366.4,142.1 L371.4,139.9 L376.4,137.7 L381.4,135.4 L386.5,133.2 L391.5,130.9 L396.5,128.6 L401.5,126.2 L406.6,123.9 L411.6,121.5 L416.6,119.1 L421.6,116.6 L426.7,114.2 L431.7,111.7 L436.7,109.2 L441.7,106.7 L446.7,104.1 L451.8,101.6 L456.8,99.0 L461.8,96.3 L466.8,93.7 L471.9,91.0 L476.9,88.3 L481.9,85.6 L486.9,82.9 L492.0,80.1 L497.0,77.3 L502.0,74.5 L507.0,71.7 L512.0,68.8 L517.1,65.9 L522.1,63.0 L527.1,60.1 L532.1,57.1 L537.2,54.2 L542.2,51.2 L547.2,48.2 L552.2,45.1 L557.3,42.0 L562.3,38.9 L567.3,35.8 L572.3,32.7" fill="none" stroke="#b23a2e" stroke-width="3"/><circle cx="195.6" cy="202.8" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.6" y="194.8" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">12,96</text><circle cx="258.4" cy="183.6" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="250.4" y="175.6" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">22,07</text><circle cx="384.0" cy="134.3" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="376.0" y="126.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">45,56</text><circle cx="572.3" cy="32.7" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="564.3" y="24.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">93,96</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Vitesse d'impact (km/s) · pression de choc dans le basalte (GPa)</text></svg><figcaption>La pression de choc dans un impact basalte sur basalte selon l'équation d'Hugoniot du chapitre (ρ₀ = 2,700, C₀ = 3,5, s = 1,3) : dès 2 km/s environ <span class="ltr">13 GPa</span>.</figcaption></figure><div class="callout"><span class="tag">Décomposer la notion de « profondeur » en trois hauteurs distinctes (§A.2)</span><p style="margin:0">Pour décoder ce que nous disent les cratères aux quatre longitudes, l'article 06 décompose le mot « profondeur » en trois grandeurs géométriques indépendantes (sur 72 azimuts autour de chaque cratère, après masquage du pic central) :
+<br><strong>(1) La hauteur du rebord au-dessus du terrain environnant</strong> — enregistre <em>les forces agissant au moment de l'impact</em> ;
+<br><strong>(2) La profondeur du fond sous le terrain environnant</strong> — enregistre <em>la rigidité des couches sous le cratère</em> ;
+<br><strong>(3) La profondeur totale du rebord du cratère jusqu'à son fond</strong> — la somme des deux premières.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : les quatre longitudes — chaque partie d'un cratère a sa propre mémoire</h2>
+<p>Les parties C.3 et F–I de l'article 06 balaient 1 457 cratères de 20–100 km de diamètre dans quatre calottes égales sur l'équateur (rayon 30°, après suppression des mers et du bassin SPA) et montrent comment chaque partie d'un cratère enregistre un aspect différent du même processus :</p>
+<ol class="steps">
+<li><strong>Le comptage des cratères — l'hémisphère arrière (90°E) est 1,44–1,79 fois plus dense que l'hémisphère avant (étude 1, §C.3) :</strong> sur l'hémisphère arrière, on a compté <strong>249 cratères</strong> de 20 km ou plus de diamètre par million de km² (252 après suppression des 20 grands bassins), contre <strong>139</strong> (175) sur l'hémisphère avant à 90°W et <strong>135</strong> (148) sur la face visible à 0° (intervalle de confiance à 95% pour le rapport : 1,56–2,05, et en échantillonnage par cellules 1,48–2,19). L'écart se concentre dans les petits et moyens cratères (&lt; 70 km, 1,2–2,4 fois), qui ont été créés par de la matière tirée depuis la Lune elle-même et recueillie à l'arrière, tandis que les cratères géants (&gt; 70 km) ont été créés tôt, à l'étape aplatie, et sont répartis plus uniformément.</li>
+<li><strong>Le rebord du cratère (les forces au moment de l'impact, partie F) :</strong>
+<ul>
+<li><strong>Sur la face cachée (180°), les rebords les plus hauts (18,7 × 10⁻³D à 30–50 km) :</strong> la face cachée faisait face vers l'extérieur dans la rotation commune autour du centre de masse partagé avec la Terre, de sorte que la force centrifuge tirait la matière éjectée vers l'extérieur et laissait des rebords hauts (ainsi que des pics centraux hauts, 30 × 10⁻³D).</li>
+<li><strong>Sur la face visible (0°), les rebords les plus bas parmi les grands cratères (10,3 × 10⁻³D) :</strong> la force centrifuge pressait la matière vers l'intérieur contre le sol.</li>
+<li><strong>Sur l'hémisphère avant (90°W), les rebords sont dentelés, allongés et bas à 20–30 km :</strong> l'impact frontal a fracassé et entaillé le rebord (irrégularité du rebord 1,25 fois, sauts entre azimuts 1,14 fois, et rebords allongés e &gt; 1,2 dans <strong>17%</strong> des cas contre 12% à 90°E) et l'a écrasé vers le bas (12,7 contre 17,2 × 10⁻³D).</li>
+</ul>
+</li>
+<li><strong>Le fond du cratère sous la surface (la rigidité des couches, partie G.1) :</strong>
+<ul>
+<li><strong>Sur la face cachée (180°), le fond est le plus profond (54 × 10⁻³D à 20–30 km) :</strong> la face cachée est bâtie de couches molles de sial et de matière de retour empilées les unes sur les autres ; la matière incandescente qui y atterrissait les écrasait et les fondait, et le fond s'enfonçait profondément.</li>
+<li><strong>Sur la face visible (0°), le fond le moins profond (27 × 10⁻³D, moitié de celui de la face cachée) :</strong> le sol rigide ne s'est pas effondré, et le remplissage des mers par en dessous a encore relevé les fonds.</li>
+<li><strong>Entre les hémisphères avant (90°W) et arrière (90°E), aucune différence de hauteur du fond :</strong> l'impact frontal a façonné le rebord, le pic et la rugosité — mais la profondeur du fond n'est fixée que par le substrat en dessous !</li>
+</ul>
+</li>
+<li><strong>Le pic central et la rugosité du fond (l'énergie d'impact, parties H–I) :</strong> autour de la transition vers les cratères complexes (20–30 km), un impact frontal franchit le seuil d'énergie nécessaire pour former un rebond central : à <strong>90°W, 60% des cratères ont un pic central</strong> (contre 46% à 180° et 49% à 90°E), et la rugosité du fond est <strong>1,50</strong> fois plus élevée (4,5° contre 3,0°, corrélée à r = 0,40 avec l'entaillage du rebord) — tandis que dans les cratères géants (50–100 km), les impacts combinés de la Lune et de la Terre sur la face cachée produisent un pic dans <strong>98%</strong> des cratères !</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 673.0 190" role="img" aria-label="Crater density at four longitudes" style="direction:ltr"><g transform="translate(33.0,0)"><rect x="160.0" y="16" width="368.9" height="26" rx="4" fill="#2f7d57"/><text x="536.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦249⁩</text><rect x="160.0" y="56" width="300.7" height="26" rx="4" fill="#5f9a6e"/><text x="468.7" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦203⁩</text><rect x="160.0" y="96" width="205.9" height="26" rx="4" fill="#c47f2c"/><text x="373.9" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦139⁩</text><rect x="160.0" y="136" width="200.0" height="26" rx="4" fill="#9aa3af"/><text x="368.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦135⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°E · hémisphère arrière</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >180° · face cachée</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°W · hémisphère avant</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0° · face visible</text></svg><figcaption>La densité des cratères de 20 km et plus de diamètre par million de km² dans quatre calottes sur l'équateur (étude 1, mers et SPA supprimés) : l'hémisphère arrière est plus dense que l'hémisphère avant.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et les équations clés</h2>
+<p>Les lois de conservation de l'énergie et du moment cinétique sur une orbite képlérienne autour du corps parent (équations 10–14 de l'article 06) fixent à la fois la vitesse d'impact à la même hauteur (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{land}} = u</annotation></semantics></math></span></span>) et la vitesse d'impact relative sur une cible plus haute en rotation (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r &gt; r_0</annotation></semantics></math></span></span>) :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{E} = \dfrac{u^2 + \omega^2 r_0^2}{2} - \dfrac{K}{r_0}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mi>ω</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\ell = \omega r_0^2 \quad \Longrightarrow \quad v_{\mathrm{land}}(r_0) = u</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><mi mathvariant="script">E</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi mathvariant="normal">ℓ</mi><mi>r</mi></mfrac></mstyle><mo>−</mo><mi>ω</mi><mi>r</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v_{\mathrm{rel}}^2(r) = 2\left(\mathcal{E} + \dfrac{K}{r}\right) - \dfrac{\ell^2}{r^2} + \left(\dfrac{\ell}{r} - \omega r\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup></mrow><mrow><mi>d</mi><mi>r</mi></mrow></mfrac></mstyle><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d v_{\mathrm{rel}}^2}{dr} = 2\left(\omega^2 r - \dfrac{K}{r^2}\right)</annotation></semantics></math></span></div></div></div>
+<p>La dérivée <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">dv_{\mathrm{rel}}^2/dr</annotation></semantics></math></span></span> (§K.3) montre qu'en deçà du rayon de corotation (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">r_{\mathrm{corot}} \approx 15,883</annotation></semantics></math></span></span> km avec les données de l'étape précoce), la gravité domine, de sorte que la vitesse d'impact relative sur une cible plus haute diminue avec la hauteur (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8,0</mn><mo>→</mo><mn>6,83</mn><mo>→</mo><mn>5,49</mn><mo>→</mo><mn>4,60</mn></mrow><annotation encoding="application/x-tex">8.0 \rightarrow 6.83 \rightarrow 5.49 \rightarrow 4.60</annotation></semantics></math></span></span> km/s à des rayons de 6,721, 8,000, 10 000 et 12 000 km), mais il s'agit d'une relation géométrique pour une orbite donnée qui n'implique pas un déclin universel dans le temps.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : des fonds de cratères qui se dressent bien au-dessus du basalte environnant</h2>
+<p>Les études 10 et 11 de l'article 06 (§G.2–G.3) examinent les 86 grands cratères (40+ km) sur le basalte de la face visible et révèlent un phénomène que l'inondation latérale ne peut pas expliquer :</p>
+<ul>
+<li><strong>Un tiers des cratères fondus et étalés se dressent au-dessus de la surface de basalte qui les entoure (étude 10) :</strong> si de la lave extérieure avait inondé un cratère latéralement, le niveau de son fond n'aurait jamais pu s'élever au-dessus du niveau du basalte à l'extérieur (comme le principe des vases communicants). En réalité, <strong>24 sur 76</strong> cratères fondus et étalés (32%) se dressent <strong>à plus de 50 m au-dessus du basalte environnant</strong> (par exemple <strong>Platon</strong>, à +500 m au-dessus du basalte d'Imbrium, et un cratère de 182 km de diamètre dans Oceanus Procellarum, à +518 m au-dessus de la plaine !), contre seulement 12 sur 411 (3%) dans les hauts plateaux !</li>
+<li><strong>La physique de la vague figée et la séparation du fer (étude 11) :</strong> un grand bloc tombé sur une plaine basaltique fluide ou molle a fait rebondir une vague vers le haut en son centre ; le fond a commencé à se réaffaisser, mais là où le refroidissement l'a emporté, le soulèvement s'est figé sur place. En effet, les fonds surélevés (&gt; +50 m) sont riches en volatils légers et donc <strong>pauvres en fer et en titane</strong> (13,3 % en masse de FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>) par rapport aux fonds qui se sont affaissés (14,4 % en masse de FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span> ; signification p = 0,018 et p = 0,010) !</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : les tableaux du vol, du choc, des longitudes et des fonds surélevés (article 06, parties C–K)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Vitesse de lancement u (km/s)</th><th>Énergie de lancement (MJ/kg)</th><th>Hauteur maximale au-dessus de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> (km)</th><th>Durée du vol (minutes)</th><th>Déviation vers l'ouest (km)</th><th>Vitesse d'atterrissage et pression de choc dans le basalte</th></tr>
+<tr><td><strong>2 km/s</strong></td><td>2,0 MJ/kg</td><td>251 km</td><td>8,46 min</td><td>51,7 km</td><td>2 km/s → <strong><span class="ltr">12,96 GPa</span></strong></td></tr>
+<tr><td><strong>3 km/s</strong></td><td>4,5 MJ/kg</td><td>591 km</td><td>13,50 min</td><td>184,1 km</td><td>3 km/s → <strong><span class="ltr">22,07 GPa</span></strong></td></tr>
+<tr class="hl"><td><strong>5 km/s (l'exemple de référence)</strong></td><td>12,5 MJ/kg</td><td>1 932 km</td><td>28,01 min</td><td>1 031,6 km</td><td>5 km/s → <strong><span class="ltr">45,56 GPa</span></strong></td></tr>
+<tr><td><strong>8 km/s</strong></td><td>32,0 MJ/kg</td><td>8 684 km</td><td>97,28 min</td><td>8 438,7 km</td><td>8 km/s → <strong><span class="ltr">93,96 GPa</span></strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Mesure morphologique (études 1 et 6)</th><th>90°W (avant)</th><th>180° (cachée)</th><th>90°E (arrière)</th><th>0° (visible)</th><th>Signification physique</th></tr>
+<tr class="hl"><td><strong>Densité des cratères de 20+ km (par million de km²)</strong></td><td>139 (175)</td><td>203 (221)</td><td><strong>249 (252)</strong></td><td>135 (148)</td><td>L'hémisphère arrière a recueilli les éjectas de la Lune et de la face cachée (rapport 1,79, intervalle 1,56–2,05)</td></tr>
+<tr><td><strong>Pic central à 20–30 km / 50–100 km</strong></td><td><strong>60%</strong> / 94%</td><td>46% / <strong>98%</strong></td><td>49% / 81%</td><td>56% / 68%</td><td>Un impact frontal franchit le seuil de rebond à 90°W</td></tr>
+<tr><td><strong>Irrégularité du rebord / saut entre azimuts (20–30 km)</strong></td><td><strong>9,2 / 3,9</strong></td><td>7,5 / 3,5</td><td>7,4 / 3,5</td><td>7,1 / 3,4</td><td>1,25 et 1,14 fois à 90°W ; rebords allongés 17% contre 12%</td></tr>
+<tr><td><strong>Rugosité du fond / surface plane (20–30 km)</strong></td><td><strong>4,5° / 4%</strong></td><td>2,7° / 14%</td><td>3,0° / 11%</td><td>3,6° / 9%</td><td>Le choc de l'impact rend le fond rugueux à 90°W (r=0,40 avec l'entaillage du rebord)</td></tr>
+<tr><td><strong>Hauteur du rebord au-dessus du sol (30–50 km, × 10⁻³D)</strong></td><td>14,4 (12,7 à 20–30)</td><td><strong>18,7</strong></td><td>13,1 (17,2 à 20–30)</td><td>13,6 (10,3 dans les grands)</td><td>La face cachée faisait face vers l'extérieur dans la rotation commune : la force centrifuge a soulevé la matière éjectée et les rebords sont hauts ; sur la face visible, la même force pressait la matière contre le sol</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Dans ce chapitre, nous avons vu que de la matière terrestre tirée depuis le sol et y retombant à 2–8 km/s produit des pressions de choc de dizaines de GPa — bien plus qu'il n'en faut pour creuser des cratères géants sans aucun astéroïde. Nous avons aussi vu que chaque partie d'un cratère garde sa propre mémoire : le comptage montre que l'hémisphère arrière est 1,44–1,79 fois plus dense que l'hémisphère avant, le rebord enregistre les forces au moment de l'atterrissage (haut sur la face cachée, dentelé sur l'hémisphère avant), et le fond enregistre le sol en dessous. Enfin, nous avons vu des fonds de cratères qui se dressent bien au-dessus du basalte environnant — ce que l'inondation latérale ne peut pas créer.</p>
+<p>Mais si les cratères ont été créés par de la matière terrestre de retour, la chimie à l'intérieur doit en témoigner. Dans le prochain chapitre — <strong>Chapitre 12 : La chimie de l'intérieur des cratères, la masse étrangère qui n'est pas là, et la Terre comme dernier disperseur</strong> (d'après l'article 06 — parties L–Q) — nous examinerons l'intérieur des cratères, chercherons la masse étrangère que des astéroïdes auraient dû laisser dans la croûte de la Lune, et verrons comment la Terre a continué de disperser de la matière sur la Lune même après le détachement.</p>
+<a href="story12_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 12</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">La chimie de l'intérieur des cratères, la masse étrangère qui n'est pas là, et la Terre comme dernier disperseur →</p></div></a><p style="margin-top:22px"><a href="story10_fr.html">← Chapitre 10</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

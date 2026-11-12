@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 4 : La peau qui monte de l'extérieur — les 4 étapes de la coupole et la règle de translation du visage de la Lune — Le modèle LEF</title>
+<meta name="description" content="Chapitre 4 de l&#x27;histoire du modèle LEF : comment la coque de sial de la Terre est montée avec le corps et est devenue la peau de la Lune, les quatre étapes de la coupole, et la règle de translation qui divise le visage de la Lune en trois zones.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story04_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story04_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story04_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story04_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story04_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story04_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story04_he.html" hreflang="he">עברית</a> · <a href="story04_en.html" hreflang="en">English</a> · <a href="story04_de.html" hreflang="de">Deutsch</a> · <a href="story04_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 4</p>
+<h1>Chapitre 4 : La peau qui monte de l'extérieur — les 4 étapes de la coupole et la règle de translation du visage de la Lune</h1>
+<p>D'après l'article 03 — Le mécanisme LEF en pratique (partie B : §B.1–B.7)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : d'où vient l'épaisse croûte de la face cachée — et qui y a creusé les cratères anciens ?</h2>
+<p>Dans le chapitre précédent, nous avons découvert comment le moteur interne de la Terre pousse vers le haut un magma profond et moussé à une pression de <span class="ltr">150,26 GPa</span>. Mais même une alimentation interne parfaite laisse trois grandes énigmes à la surface de la Lune que nous voyons dans les télescopes et dans les cartes de gravité de la sonde GRAIL :</p>
+<ol class="steps">
+<li><strong>Pourquoi la croûte de la face cachée est-elle bien plus épaisse que celle de la face visible ?</strong> Sur la face cachée, la croûte atteint une épaisseur moyenne d'environ 55 km, tandis que sur la face visible elle n'a qu'environ 30–35 km d'épaisseur, et sous les grandes mers elle est plus mince encore.</li>
+<li><strong>Pourquoi les plus anciens cratères de la Lune sont-ils répartis sur les deux hémisphères, et même particulièrement nombreux autour des pôles ?</strong> Si la Lune s'était agrégée dans l'espace à partir d'un disque de débris brûlant, sa première surface aurait dû être un océan de magma lisse et sans cratères.</li>
+<li><strong>Pourquoi les deux hémisphères sont-ils si différents l'un de l'autre</strong> — la face visible couverte de mers basaltiques sombres et rondes, tandis que la face cachée est un haut plateau clair criblé de cratères ?</li>
+</ol>
+<p>La réponse du modèle LEF est d'une simplicité surprenante : <strong>la Lune n'a pas été bâtie seulement de l'intérieur — elle a été bâtie en même temps de l'extérieur aussi</strong>. La croûte extérieure légère de la Terre jeune (la couche de <strong>sial</strong>) qui se trouvait au-dessus de la zone de construction n'a été ni déchirée ni laissée en arrière ; elle <strong>est montée avec le corps en formation, a glissé jusqu'à sa pointe et est devenue la peau extérieure de la Lune !</strong></p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : le ballon qui se gonfle sous un drap posé au sol — et la balle qui rétrécit une carte</h2>
+<p>Pour se représenter comment une couverture plate à la surface de la Terre se transforme en une sphère entière avec trois zones définies, imaginez deux expériences simples :</p>
+<ul>
+<li><strong>Le ballon qui se gonfle sous un drap de tissu (étapes 1 et 2) :</strong> posez au sol un drap de tissu épais et souple (qui représente la couche extérieure de sial de la Terre), et branchez un tuyau d'alimentation sous son centre. Quand le tuyau pompe de l'air et de la matière vers l'intérieur, le drap ne reste pas à plat au sol — il se soulève en coupole, et se rassemble des bords vers le centre, comme une nappe qu'on soulève par son milieu. Chaque marque ou gravure déjà dessinée sur le drap quand il était à plat au sol (les cratères anciens !) monte avec lui jusqu'au sommet de la coupole.</li>
+<li><strong>Une balle en mousse écrasée qui se gonfle et s'arrondit vers l'extérieur (étape 3 — la règle de translation) :</strong> prenez une balle en mousse à moitié vide et pressez-la par le haut sur la tête ronde d'un support rond (la « pointe de la poire »). La partie inférieure de la balle enveloppe le support comme un large bonnet, et la partie supérieure se dresse en coupole. Gonflez maintenant progressivement la balle pour qu'elle devienne une sphère parfaitement ronde : à mesure qu'elle s'arrondit, <strong>ses bords inférieurs se détachent du support de l'extérieur vers l'intérieur</strong>, jusqu'à ce que seul un petit cercle au centre du fond reste collé au support — et chaque partie de la surface de la balle conserve exactement sa part relative de la superficie !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : les quatre étapes de la construction extérieure — de la plaine du Pacifique à la coupole moussée</h2>
+<p>La partie B de l'article 03 suit pas à pas la couche crustale extérieure de la Terre — la couche de <strong>sial</strong> (Sial : une roche légère riche en silicium et en aluminium, d'une densité d'environ 2 800 kg/m³), posée sur la couche plus dense de <strong>sima</strong> (Sima : riche en silicium et en magnésium) — à travers quatre étapes continues :</p>
+<h3>Étape 1 — l'étape plane et le rassemblement de la croûte (il y a environ 4,5 milliards d'années)</h3>
+<p>Avant que le corps ne monte, la couche de sial repose à plat sur la surface de la Terre au-dessus d'une zone d'alimentation active. Par des ouvertures dans la croûte, de la matière profonde monte et est éjectée ; une partie de la matière éjectée retombe sur la croûte exposée et y crée des cratères (que nous explorerons en profondeur dans les chapitres sur les cratères). La signification est stupéfiante : <strong>la plus ancienne surface de la Lune ne s'est pas formée sur la Lune — elle s'est formée à la surface de la Terre avant même que la Lune ne s'en sépare !</strong></p>
+<p>Dans la reconstruction géographique présentée dans l'article, la matière crustale rassemblée vers l'intérieur dans la coupole provenait de la région de l'ancien bassin du Pacifique (une superficie d'environ 1,0–1,65 × 10¹⁴ m², 1,4 à 2,4 fois la superficie de la coupole supérieure à l'étape suivante). La base de la poire se trouvait à l'est, près de l'île de Kiritimati à Kiribati (1,9°N, 157,5°W), au-dessus de la province lente au fond du manteau ; et en raison de la rotation de la Terre et d'une alimentation oblique venant du nord de l'équateur, la poire penchait vers l'arrière (vers l'ouest) et vers le nord, en direction de la latitude 22,5°N.</p>
+<h3>Étape 2 — le corps écrasé sur la pointe de la poire (l'état moussé)</h3>
+<p>Lorsque toute la masse de la Lune (7,35 × 10²² kg) s'est accumulée au sommet de la poire, elle ne flotte pas comme une sphère libre mais repose comme un corps écrasé fait de deux coupoles sur une large pointe de poire de <strong>6 000 km</strong> de diamètre :</p>
+<ul>
+<li><strong>La coupole inférieure (33% de la superficie) :</strong> épouse par le haut la pointe convexe de la poire (dont le rayon de courbure est d'environ 4 000 km et qui pénètre d'environ 1 350 km dans la base du corps).</li>
+<li><strong>La coupole supérieure (67% de la superficie) :</strong> s'élève à une hauteur d'environ <strong>3 650 km</strong> au-dessus du bord de contact et est exposée à l'espace.</li>
+</ul>
+<div class="callout"><span class="tag">Le lien parfait entre forme et pression (densité 1 300 kg/m³)</span><p style="margin:0">Avec une coupole de 3 650 km de haut sur une base de 6 000 km, le volume total du corps est de 5,65 × 10¹⁹ m³ (2,5 fois le volume actuel de la Lune). En divisant la masse de la Lune par ce volume, on obtient une densité de <strong>1 300 kg/m³</strong> — exactement la densité du magma moussé, riche en bulles de gaz, que le test de pression du chapitre 3 exigeait pour soulever la matière ! La haute coupole ne s'accorde pas seulement avec le moteur interne, elle est aussi portée vers le haut sur une couche de cisaillement faible et « lubrifiée » entre le sial et le sima, tandis qu'une coque extérieure froide et rigide (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>) protège de l'effondrement les cratères qu'elle porte.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : la règle de translation, la mise à nu des mers et la construction de la croûte en couches</h2>
+<p>Lorsque l'autogravité du corps qui monte l'emporte sur l'étirement local de marée, le corps passe à <strong>l'étape 3 — l'arrondissement vers l'extérieur</strong> : le corps écrasé se gonfle et s'arrondit en sphère à volume constant (la superficie diminue d'un facteur 0,68, puisqu'une sphère possède la superficie minimale pour un volume donné). Le contact avec la poire se rétrécit d'une largeur de 6 000 km à un disque de liaison de <strong>3 000 km</strong>, et tout le reste de la coupole inférieure se détache progressivement de l'extérieur vers l'intérieur, avec la couche de sial sur laquelle elle reposait.</p>
+<p>De là découle la <strong>règle de translation géométrique</strong> : lors de l'arrondissement vers l'extérieur, <strong>chaque partie conserve sa part relative de la superficie</strong>. Le visage de la Lune se divise donc en trois zones concentriques autour du centre de contact (24,1°N, 335,2°E) :</p>
+<ol class="steps">
+<li><strong>La calotte de la face visible (0°–31°, environ 7% de la superficie — environ 1 900 km de diamètre) :</strong> c'est le dernier disque de contact (3 000 km) qui est resté attaché à la poire jusqu'au moment de la libération. Par lui passaient les conduits d'alimentation internes centraux — <strong>Mare Serenitatis</strong> (qui s'est détachée la première) et <strong>Mare Imbrium</strong> (qui est restée attachée jusqu'au moment du détachement final !).</li>
+<li><strong>La ceinture de décollement (31°–70°, environ 26% de la superficie) :</strong> c'est l'anneau de la coupole inférieure qui s'est progressivement détaché pendant l'arrondissement vers l'extérieur et a emporté avec lui la couche de sial sur laquelle il reposait.</li>
+<li><strong>La face cachée (70°–180°, environ 67% de la superficie) :</strong> c'est la coupole supérieure, exposée à l'espace dès le premier instant, qui a emporté avec elle ses cratères anciens.</li>
+</ol>
+<figure class="fig"><div class="zones"><svg viewBox="0 0 300 300" role="img" aria-label="Equal-area map of the three zones around the contact centre" style="direction:ltr"><circle cx="150" cy="150" r="130" fill="#d9d2bf" stroke="#8a846f"/><circle cx="150" cy="150" r="74.6" fill="#c9b48a"/><circle cx="150" cy="150" r="34.7" fill="#4a5568"/><circle cx="150" cy="150" r="34.7" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="150" r="74.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="150.0" y="155.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">7%</text><text x="150.0" y="100.3" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">26%</text><text x="150.0" y="52.7" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">67%</text><text x="188.7" y="160.9" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#fff" style="direction:ltr;unicode-bidi:embed">31°</text><text x="228.6" y="168.6" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">70°</text></svg><div><ul class="pts" style="margin:0">
+<li style="border-color:#4a5568"><strong>La calotte de la face visible · <span class="ltr">0°–31°</span> · 7%</strong><br>Le dernier disque de contact ; Serenitatis et Imbrium</li>
+<li style="border-color:#c9b48a"><strong>La ceinture de décollement · <span class="ltr">31°–70°</span> · 26%</strong><br>L'anneau de la coupole inférieure qui s'est détaché avec le sial</li>
+<li style="border-color:#a49d86"><strong>La face cachée · <span class="ltr">70°–180°</span> · 67%</strong><br>La coupole supérieure, exposée à l'espace dès le départ</li></ul></div></div><figcaption>Les trois zones autour du centre de contact (24,1°N, 335,2°E) sur une carte à aires égales : la superficie de chaque anneau sur la carte est égale à sa part de la surface de la Lune.</figcaption></figure><p>À <strong>l'étape 4</strong> (aplatissement par la rotation et arrondissement vers l'intérieur pendant le compactage du corps), la croûte rigide conserve la taille des cratères existants tandis que les surfaces entre eux se resserrent — ce qui entasse les cratères autour des pôles. Et en même temps, tout au long du voyage, le tir de matière depuis les ouvertures actives et son retour sur la coupole supérieure se poursuivaient : c'est ainsi que l'épaisse croûte de la face cachée a été bâtie <strong>couche après couche</strong>, à partir du sial qui a migré vers la pointe et de la matière qui est revenue s'y poser encore et encore !</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et l'équation clé</h2>
+<p>Le passage d'une coupole écrasée à une sphère à trois bandes concentriques est défini par la conservation des rapports de superficie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_i = A_i / A_{\mathrm{tot}}</annotation></semantics></math></span></span>). Pour une calotte sphérique d'angle central <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> depuis le centre de contact, sa part relative de la superficie totale de la sphère (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\pi R^2</annotation></semantics></math></span></span>) est :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi></mrow><mn>2</mn></mfrac></mstyle><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>θ</mi><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\theta) = \dfrac{2\pi R^2(1 - \cos\theta)}{4\pi R^2} = \dfrac{1 - \cos\theta}{2} \quad \Longrightarrow \quad \theta = \arccos(1 - 2f)</annotation></semantics></math></span></div></div></div>
+<p>En insérant les parts de superficie de l'étape 2 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>0,07</mn></mrow><annotation encoding="application/x-tex">f_1 = 0.07</annotation></semantics></math></span></span> pour le disque de contact de 3 000 km, et <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>0,33</mn></mrow><annotation encoding="application/x-tex">f_1 + f_2 = 0.33</annotation></semantics></math></span></span> pour toute la coupole inférieure de 6 000 km), on obtient aussitôt les angles exacts sur la Lune : <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≃</mo><mn>3</mn><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_1 \simeq 31^\circ</annotation></semantics></math></span></span></strong> et <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>2</mn></msub><mo>≃</mo><mn>7</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_2 \simeq 70^\circ</annotation></semantics></math></span></span></strong>. En même temps, le bilan de masse de la croûte se boucle complètement : la croûte de la face cachée (épaisseur moyenne de 55 km pour une densité de 2 550 kg/m³) pèse environ 2,6 × 10²¹ kg (3,5% de la masse de la Lune), et la croûte de la face visible (30–35 km) pèse environ 1,5 × 10²¹ kg — ensemble environ 4%–6% de la masse de la Lune, tandis que les 94%–96% restants sont de la matière du manteau profond fournie de l'intérieur.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : la carte d'épaisseur crustale de GRAIL et l'emboîtement des mers</h2>
+<p>Lorsque les deux cercles de la règle de translation géométrique (31° et 70° autour de 24,1°N, 335,2°E) sont tracés sur la carte réelle d'épaisseur crustale de la Lune mesurée par la sonde <strong>GRAIL</strong> et sur la topographie de surface de <strong>LOLA</strong>, une concordance remarquable apparaît :</p>
+<ul>
+<li><strong>Un emboîtement géographique précis des mers :</strong> le cercle extérieur (6 000 km au moment de la construction) contient <strong>99%</strong> de toutes les mers basaltiques de la face visible ; le cercle de contact intérieur (3 000 km) en contient <strong>66%</strong> ; et Mare Imbrium se trouve en plein dans le cercle de contact intérieur.</li>
+<li><strong>L'inversion de l'épaisseur crustale entre les faces :</strong> au centre de la face visible, sous les mers qui ont servi d'ouvertures d'alimentation et ont perdu leur couche de sial dans la chaleur du contact, la croûte est particulièrement mince (bleue sur les cartes de GRAIL) ; tandis qu'au-delà de la limite des 70°, sur la face cachée, s'élèvent les hauts plateaux anciens et épais bâtis en couches.</li>
+<li><strong>Une prédiction de la composition en fonction de la profondeur :</strong> comme le tri interne de la Terre a progressé avec le temps, les couches les plus anciennes déposées au fond de la croûte de la face cachée étaient moins triées et plus riches en fer, tandis que les couches supérieures, plus tardives, sont légères et pauvres en fer — une prédiction qui peut être testée directement dans les pics centraux des cratères d'impact, qui exposent des roches de différentes profondeurs !</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : les 4 étapes de la coupole, la règle de translation et le bilan crustal (article 03, partie B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>La zone au moment de la construction (étape 2)</th><th>Superficie</th><th>Part relative</th><th>Angle depuis le centre de contact sur la Lune</th><th>L'identité géographique sur la Lune aujourd'hui</th></tr>
+<tr class="hl"><td><strong>Le disque de contact (3 000 km)</strong></td><td>7,3 × 10¹² m²</td><td><strong>7%</strong></td><td><strong>0° – 31°</strong></td><td>La calotte de la face visible (~1 900 km de diamètre) ; contient 66% des mers (Serenitatis et Imbrium)</td></tr>
+<tr><td><strong>L'anneau de décollement (jusqu'à 6 000 km)</strong></td><td>2,7 × 10¹³ m²</td><td><strong>26%</strong></td><td><strong>31° – 70°</strong></td><td>La ceinture de transition — le sial détaché de la poire ; avec la calotte, elle contient 99% des mers</td></tr>
+<tr><td><strong>La coupole supérieure (hauteur 3 650 km)</strong></td><td>7,0 × 10¹³ m²</td><td><strong>67%</strong></td><td><strong>70° – 180°</strong></td><td>La face cachée — une croûte épaisse (~55 km) bâtie de couches de sial et de matière de retour, ancienne par ses cratères</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>État du corps (masse lunaire constante)</th><th>Géométrie et dimensions</th><th>Volume total</th><th>Densité moyenne</th></tr>
+<tr><td><strong>Sur la pointe de la poire (étape 2)</strong></td><td>Base 6 000 km, hauteur de la coupole 3 650 km</td><td>5,65 × 10¹⁹ m³</td><td><strong>1 300 kg/m³</strong> (état moussé)</td></tr>
+<tr><td><strong>Une sphère au moment de la libération (étape 4)</strong></td><td>Rayon 1 890 km</td><td>2,83 × 10¹⁹ m³</td><td><strong>2 600 kg/m³</strong> (coque rigide)</td></tr>
+<tr><td><strong>La Lune aujourd'hui</strong></td><td>Rayon 1 737 km</td><td>2,20 × 10¹⁹ m³</td><td><strong>3 344 kg/m³</strong> (compactée)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Nous avons vu comment la peau extérieure de la Terre est montée avec le corps, s'est progressivement détachée et s'est organisée en trois bandes sur le visage de la Lune — et comment la combinaison de l'alimentation interne et de la coupole extérieure a créé les différences d'épaisseur entre la face visible et la face cachée.</p>
+<p>Mais il reste maintenant la question d'ingénierie la plus délicate et la plus spectaculaire : <strong>quel pont reliait cette coupole à la Terre sans se rompre sous les contraintes de cisaillement de la latitude 22,5°, et comment s'est-il séparé exactement 210 km au-delà de la ligne de corotation ?</strong> Dans le prochain chapitre — <strong>Chapitre 5 : La poire et la libération de Stefan — le pont qui porte la Lune et se rompt exactement sur la ligne de corotation</strong> (article 03, partie C : §C.1–C.6) — nous examinerons le mécanisme de séparation lui-même.</p>
+<a href="story05_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 5</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">La poire et la libération de Stefan — le pont qui porte la Lune et se rompt exactement sur la ligne de corotation →</p></div></a><p style="margin-top:22px"><a href="story03_fr.html">← Chapitre 3</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

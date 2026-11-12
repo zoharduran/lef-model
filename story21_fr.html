@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 21 : La loi des lunes dans le système solaire — la règle des modes de naissance, le principe de la pompe et le couvercle atmosphérique — Le modèle LEF</title>
+<meta name="description" content="Chapitre 21 de l&#x27;histoire du modèle LEF : la loi des lunes dans le système solaire — la règle des modes de naissance, le principe de la pompe et le couvercle atmosphérique.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story21_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story21_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <a href="story21_de.html" hreflang="de">Deutsch</a> · <a href="story21_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 21</p>
+<h1>Chapitre 21 : La loi des lunes dans le système solaire — la règle des modes de naissance, le principe de la pompe et le couvercle atmosphérique</h1>
+<p>D'après l'article 11 — 11. Naissances de lunes : un seul mécanisme pour la naissance des lunes (parties A–B : la règle de naissance, les principes de la pompe et du couvercle, les étapes de la différenciation et le protocole de 13 vérifications)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : une seule loi physique explique-t-elle la naissance de toutes les lunes du système solaire — de la Terre à Pluton ?</h2>
+<p>Dans les chapitres précédents, nous avons vu comment la Terre a créé la Lune sur la pointe d'une poire (chapitres 1–9), et comment Mars a éjecté Phobos et Déimos depuis un volcan au sommet d'un renflement pointu (chapitres 19–20). Dans l'article 11, le modèle LEF généralise ces deux cas en <strong>« la loi des lunes »</strong> — un mécanisme uniforme valable pour toute planète et toute planète naine du système solaire :</p>
+<ol class="steps">
+<li><strong>Pourquoi les lunes sont-elles si différentes en taille et en composition ?</strong> La Lune de la Terre est sèche et énorme par rapport à son parent (1,2% de la masse de la Terre) ; les lunes des géantes (Jupiter, Saturne, Uranus et Neptune) sont minuscules (0,01%–0,02%) et riches en eau et en glace ; tandis que Charon représente 11% de la masse du système Pluton–Charon !</li>
+<li><strong>Pourquoi la densité des lunes diminue-t-elle avec la distance au Soleil — puis remonte-t-elle à Uranus ?</strong> La densité de la Lune de la Terre est de 3 344 kg/m³, celle des lunes galiléennes de Jupiter ~ 2 600 kg/m³, celle des lunes de Saturne ~ 1 350 kg/m³ — mais à Uranus, plus lointaine, la densité remonte à 1 505 kg/m³ !</li>
+<li><strong>Pourquoi, chez cinq planètes (Mars, Jupiter, Saturne, Uranus et Neptune), de petites lunes se trouvent-elles des deux côtés de la ligne de corotation ?</strong> Et pourquoi Mercure et Vénus sont-elles restées entièrement sans lunes ?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : la règle des distances de la ligne de corotation, une patineuse qui ramène les bras, et deux casseroles de soupe à couvercle de mousse</h2>
+<p>Quatre images concrètes expliquent la physique de la naissance des lunes à travers tout le système solaire :</p>
+<ul>
+<li><strong>La patineuse qui ramène les bras tandis que son manteau gonfle vers l'extérieur (contraction à l'intérieur et gonflement à l'extérieur, A.5) :</strong> comment la différenciation planétaire rapproche-t-elle la ligne de corotation de la surface ? Un corps qui gonfle uniformément sans perdre de moment cinétique ralentirait et repousserait la ligne de corotation. Mais la différenciation est un processus opposé à l'intérieur et à l'extérieur : le noyau lourd (qui détient la plus grande partie de la masse) <strong>coule et se contracte vers l'intérieur</strong> et accélère la rotation comme une patineuse qui ramène les bras, tandis que l'eau et les volatils légers sont poussés vers le haut et <strong>gonflent l'enveloppe extérieure</strong> presque sans ralentir la rotation. La distance relative de la ligne de corotation diminue donc selon <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> et rejoint la surface !</li>
+<li><strong>« La pompe hydrodynamique » (The Pump Principle, A.4) :</strong> la chute des matériaux lourds dans le noyau pousse, par la pression hydrostatique, l'eau et les silicates légers vers le haut jusqu'aux ouvertures d'éjection (la pointe de la poire ou la cheminée du volcan sur le renflement). Tant que la pompe est active et que la croûte n'est pas scellée, <strong>la fenêtre de naissance</strong> reste ouverte.</li>
+<li><strong>Deux casseroles de soupe sur le feu — un épais couvercle de mousse contre un mince couvercle de mousse (le principe du couvercle atmosphérique, A.4 &amp; A.9) :</strong> la distance au Soleil a déterminé combien d'hydrogène et d'hélium chaque géante a capturé avant que le disque protoplanétaire ne se disperse. Saturne (9,5 UA) possède <strong>une épaisse enveloppe de gaz (70%–85% de la masse)</strong> qui agit comme un couvercle thermodynamique au-dessus de l'eau : les vapeurs se condensent et retombent vers l'intérieur, la couche supérieure reste saturée d'eau et molle, la ligne de corotation reste en place (1,92 R), et les lunes éjectées sont légères et riches en glace (1 346 kg/m³). Uranus (19 UA) possède <strong>un mince couvercle de gaz (10%–20%)</strong> : les vapeurs se sont échappées dans l'espace à travers la ligne de corotation, ont emporté du moment cinétique qui a repoussé la ligne à 3,24 R, et ont asséché et compacté la couche d'éjection supérieure — c'est pourquoi les lunes d'Uranus sont plus denses (1 505 kg/m³) !</li>
+<li><strong>Les trois modes de naissance à travers le système solaire (A.4, L.4) :</strong> au bord intérieur chaud et sec (la Terre), une grande lune sèche a été bâtie sur la pointe d'une poire (<strong>Built</strong>) ; dans la zone centrale humide (de Mars à Neptune), de petites lunes riches en eau ont été éjectées par des volcans sur des renflements (<strong>Ejected</strong>) ; et au bord extérieur froid et rapide (Pluton–Charon), un corps unifié a été étiré en « cacahuète » et s'est déchiré à la taille (<strong>Split</strong>).</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : la loi de naissance, la règle des états et les quatre étapes de la différenciation (partie A)</h2>
+<p>La partie A de l'article 11 formule les conditions quantitatives précises de la loi des lunes :</p>
+<ol class="steps">
+<li><strong>La règle des modes de naissance (Ruler of Birth Modes, A.3) :</strong> si l'on mesure le rayon de la ligne de corotation en unités du rayon du parent (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), le rayon du parent s'élimine complètement ! La position x ne dépend <strong>que du rapport entre le rythme de rotation et la densité moyenne</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>), de sorte qu'une seule règle s'applique à tout corps de l'univers :
+<ul>
+<li><strong>Poire (Built on Pear Tip) :</strong> x ≈ 2,29 (la Terre à 5,77 heures et une densité de 3 940 kg/m³ — la Lune représente 1,2% de la masse du parent).</li>
+<li><strong>Renflement et volcan (Ejected on Bulge) :</strong> x ≈ 1,74–2,06 (Mars à 7–9 heures et une densité de 1 170 kg/m³, ainsi que les géantes gazeuses et glacées — de minuscules lunes de 0,01%–0,02%).</li>
+<li><strong>Un volcan sans renflement (une possibilité théorique) :</strong> x ≈ 1,1–1,5.</li>
+<li><strong>Une scission complète en cacahuète (Split at Neck) :</strong> x ≈ 0,85–1,02 (franchissement du seuil d'élongation x = 1,53 jusqu'au seuil de déchirure x = 1 — Pluton et Charon à 1,9–2,5 heures, Charon 11% de la masse du couple).</li>
+</ul>
+</li>
+<li><strong>La composition de la lune comme coupe chronologique des étapes de différenciation du parent (A.9) :</strong> à mesure que la différenciation progresse, la ligne de corotation se déplace vers l'intérieur (chez Jupiter et au début de la vie de Saturne), de sorte que <strong>les lunes plus lointaines sont nées plus tôt</strong> et les lunes plus proches plus tard :
+<ul>
+<li><strong>Étape 0 (le début de la différenciation — pulvérisation centrifuge de l'eau) :</strong> pulvérisation d'eau primordiale depuis la couche extérieure au-dessus de la limite de Roche <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> des lunes de glace aériennes (Japet 1 088 kg/m³, Hypérion 544 kg/m³).</li>
+<li><strong>Étape 1 (précoce — matière mélangée) :</strong> éjection d'une matière représentant la composition de tout le parent avant la fin du tri <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> de grandes lunes d'une densité semblable à celle du corps intérieur du parent (f ≈ 0,6–0,7 : Callisto 1,834, Ganymède 1,936, Titan 1,880, Titania 1,711, Obéron 1 630 kg/m³).</li>
+<li><strong>Étape 2 (le pic de la pompe hydrodynamique) :</strong> poussée d'un magma saturé d'eau et de silicates légers ; l'échappement des volatils dans l'espace laisse une forte porosité (« spongiosité », 30%–40%) et une faible densité <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Phobos (1 860), Déimos (1 470), Téthys (984), Miranda (1 200 kg/m³).</li>
+<li><strong>Étape 3 (la fin de la différenciation) :</strong> éjection d'un résidu silicaté sec et dense avec un noyau métallique défini <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Io (3 528 kg/m³).</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 665.1 222" role="img" aria-label="Position de la ligne de corotation en rayons du parent" style="direction:ltr"><g transform="translate(252.1,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >Bâtie sur une poire · ⁦2,29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >Éjectée sur un renflement · ⁦1,74–2,06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >Volcan sans renflement · ⁦1,1–1,5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Scission en cacahuète · ⁦0,85–1,02⁩</text><text x="332.5" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Position de la ligne de corotation en rayons du parent · ligne rouge : seuil de déchirure</text></svg><figcaption>La règle des modes de naissance : le même nombre x détermine si une lune a été bâtie sur une pointe, éjectée d'un volcan ou arrachée d'une cacahuète — pour tout corps, quel que soit le rayon du parent.</figcaption></figure><div class="callout"><span class="tag">La bonne comparaison de densité — isoler le corps intérieur de l'enveloppe de gaz (A.9)</span><p style="margin:0">Les lunes naissent du corps intérieur (roche et glace) et non de l'enveloppe d'hydrogène et d'hélium. Lorsqu'on décompose la densité moyenne des lunes en une composante silicates-métal (3 500 kg/m³) et une composante glace (950 kg/m³), la fraction massique de silicates f diminue progressivement de la Terre (f = 0,98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>), en passant par Jupiter (f = 0,83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>), jusqu'à Saturne (f = 0,36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>) — et remonte à Uranus (f = 0,49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>), car le mince couvercle de gaz d'Uranus (10%–20%) a laissé l'eau s'échapper et a asséché la couche d'éjection supérieure !</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : les seize clauses de la loi des lunes (A.10) et le protocole de 13 vérifications (partie B)</h2>
+<p>Les parties A.10 et B de l'article 11 réunissent toutes les conditions physiques en un seul système de lois et un seul protocole de mesure uniforme de 13 vérifications pour chaque corps du système solaire :</p>
+<ol class="steps">
+<li><strong>Le Soleil comme horloge thermodynamique — l'arc des naissances (A.10.4 &amp; L.4) :</strong> la naissance des lunes exige à la fois une différenciation active, une fenêtre temporelle ouverte, une croûte non scellée et une couche souterraine de faible viscosité. La distance au Soleil détermine combien de temps les quatre conditions sont réunies : au bord intérieur (Mercure et Vénus), un assèchement rapide referme tôt la fenêtre de naissance, et seule la Terre a réussi à bâtir une lune sur la pointe d'une poire ; dans la zone centrale (de Mars à Saturne), les lunes sont éjectées en abondance jusqu'au pic de Saturne (~ 24 lunes régulières) ; et au bord extérieur froid (Uranus, Neptune et Pluton), le gel de la croûte bloque progressivement les ouvertures de la pompe et fait basculer le système vers la scission mécanique.</li>
+<li><strong>La course structurelle et la rétroaction de la masse de la lune (A.4, A.10.16) :</strong> pour qu'une lune naisse, le rythme de croissance radiale de la poire ou du renflement doit dépasser le rythme auquel la ligne de corotation recule. Après la naissance, si le rapport de masse entre la lune et le parent est grand (comme pour la Lune de la Terre, 1,2%), la lune emporte la plus grande partie du moment cinétique (84%) et ralentit le parent ; mais chez les géantes et chez Mars, la masse des lunes est minuscule (0,01%–0,02%, seulement 0,4%–1,4% du moment), de sorte que tout recul de la ligne de corotation provient <strong>uniquement de l'échappement de l'eau et du gaz à travers la ligne (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)</strong> !</li>
+<li><strong>Le protocole systématique de 13 vérifications (partie B) :</strong> pour éviter les biais, chaque planète et chaque planète naine est vérifiée selon 13 paramètres fixes dans une séquence chronologique : (1) données globales de base ; (2) catalogue et séparation des lunes régulières et des lunes capturées ; (3) reconstitution dynamique de la rotation ancienne (vérification 3 — en utilisant le rayon et le coefficient de moment d'inertie k au moment de la naissance !) ; (4) vérification de la loi de naissance ; (5) analyse de l'eau et des volatils ; (6) le degré de différenciation aujourd'hui (k = C/MR²) ; (7) définition de la fenêtre de naissance ; (8) le chemin de migration par marée (vérification 8 — intégration de da/dt pour identifier la nécessité d'une poussée secondaire par un anneau) ; (9) paramètres de survie (limite de Roche et rayon de Hill) ; (10) traces morphologiques sur le parent ; (11) traces structurelles sur les lunes (porosité, verrouillage de marée et renflement figé) ; (12) analyse des systèmes d'anneaux comme flux continu ; et (13) isolement des anomalies.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et les équations clés</h2>
+<p>La position de la ligne de corotation en unités du rayon du parent (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), le jour de naissance (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>), et l'effet de la contraction intérieure et du gonflement extérieur pendant la différenciation se formulent ainsi (§A.3, §A.5, §B) :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>Comme le coefficient de moment d'inertie k apparaît au carré dans la formule de différenciation <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span>, une baisse de k de 0,40 (un corps homogène) à 0,20–0,25 (un noyau compact) ramène la ligne de corotation x de 2,10 R à 1,44–1,68 R, même lorsque l'enveloppe extérieure gonfle d'un facteur 1,3 — et c'est le moteur géodynamique qui rapproche la surface et la ligne de corotation !</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : la reconstitution de la ligne de corotation et l'équation de mélange des lunes</h2>
+<p>L'application des vérifications 3 et 5 du protocole aux planètes révèle une concordance quantitative impressionnante entre la composition chimique des lunes et la conservation du moment cinétique (§A.9, §B) :</p>
+<ul>
+<li><strong>L'équation de mélange à deux composantes de la densité des lunes (§A.9) :</strong> selon la formule <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span>, la fraction massique de silicates f des grandes lunes nées à l'étape 1 de la différenciation converge vers une plage étroite et uniforme de <strong>f ≈ 0,6–0,7</strong> dans tout le système solaire extérieur (Callisto, Ganymède, Titan, Titania, Obéron, ainsi que le système Pluton–Charon) !</li>
+<li><strong>Le test de reconstitution de la ligne de corotation sans perte de masse (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, partie B) :</strong> lorsqu'on ne rend au parent que le moment cinétique des lunes, chez Jupiter (2,29 R → 2,28 R) et Saturne (1,92 R → 1,90 R) la ligne bouge à peine (conforme au principe du couvercle épais) ; chez la Terre, la ligne revient à 2,29 R (puisque la Lune emporte 84% du moment) ; tandis que chez Mars (6,03 R), Uranus (3,24 R) et Neptune (3,39 R), la ligne reste loin de la plage de naissance (x ≈ 2) — preuve que chez toutes trois, d'énormes quantités d'eau et de gaz se sont échappées à travers la ligne de corotation !</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : la règle des modes de naissance, les étapes de la différenciation, le modèle des deux casseroles et le protocole de 13 vérifications (article 11, parties A–B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Mode de naissance</th><th>Mécanisme qui soulève la matière</th><th>Position de la ligne de corotation (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th><th>Rapport de masse lune/parent</th><th>Zone du système solaire et exemple</th></tr>
+<tr class="hl"><td><strong>1. Bâtie sur une pointe</strong></td><td>Accumulation prolongée à la pointe d'une poire planétaire ; détachement au franchissement de la ligne</td><td><strong>2,29</strong> (5,77 h, 3 940 kg/m³)</td><td><strong>1,2%</strong> (grande et sèche)</td><td>Le bord intérieur sec : <strong>la Lune de la Terre</strong> (cas unique)</td></tr>
+<tr class="hl"><td><strong>2. Éjectée sur un renflement</strong></td><td>Un renflement équatorial et un volcan injectant un magma saturé d'eau</td><td><strong>1,74–2,06</strong> (Mars 7–9 h, 1 170 kg/m³)</td><td><strong>0,01%–0,02%</strong> chez les géantes (1,9 × 10⁻⁸ chez Mars)</td><td>La zone centrale humide : <strong>Phobos, Déimos et les lunes des géantes</strong></td></tr>
+<tr><td><strong>2b. Un volcan sans renflement</strong></td><td>Éjection ponctuelle depuis un volcan local</td><td>≈ 1,1–1,5</td><td>Minuscule</td><td>Une possibilité théorique (aucun exemple calculé)</td></tr>
+<tr class="hl"><td><strong>3. Scission complète</strong></td><td>Rotation au-delà du seuil de fission (x = 1) ; élongation en cacahuète et déchirure à la taille</td><td><strong>0,85–1,02</strong> (1,9–2,5 h, 1 840 kg/m³)</td><td><strong>11%–12%</strong> (double verrouillage)</td><td>Le bord extérieur froid : <strong>Pluton et Charon</strong> (et Hauméa avant la scission)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Étape de différenciation du parent (A.9)</th><th>Le mécanisme géodynamique et la matière à l'ouverture</th><th>Propriétés de la lune formée</th><th>Exemples dans le système solaire</th></tr>
+<tr><td><strong>Étape 0 : le début de la différenciation</strong></td><td>Pulvérisation centrifuge de l'eau depuis la couche extérieure au-dessus de la limite de Roche</td><td>Une lune de glace aérienne et spongieuse, de très faible densité</td><td>Japet (1 088), Hypérion (544 kg/m³)</td></tr>
+<tr class="hl"><td><strong>Étape 1 : étape précoce</strong></td><td>Matière mélangée représentant la composition de tout le corps intérieur</td><td>Une grande lune, de densité semblable au corps intérieur (f ≈ 0,6–0,7), différenciation partielle</td><td>Callisto (1 834), Ganymède (1 936), Titan (1 880), Titania (1 711), Obéron (1 630)</td></tr>
+<tr class="hl"><td><strong>Étape 2 : le pic de la pompe</strong></td><td>Chute rapide du noyau poussant un magma saturé d'eau et de silicates légers</td><td>L'échappement des volatils crée une « spongiosité » (porosité de 30%–40%) et une faible densité</td><td>Phobos (1 860), Déimos (1 470), Téthys (984), Miranda (1 200 kg/m³)</td></tr>
+<tr><td><strong>Étape 3 : la fin de la différenciation</strong></td><td>Tri presque complet ; éjection d'un résidu silicaté sec et dense</td><td>Une lune silicatée dense, entièrement sèche et avec un noyau métallique</td><td>Io (3 528 kg/m³)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Dans ce chapitre, nous avons formulé <strong>la loi des lunes</strong> du modèle LEF : la position de la ligne de corotation en unités du rayon du parent (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), le principe de la pompe hydrodynamique, le principe du couvercle atmosphérique (le modèle des deux casseroles de Saturne face à Uranus), et la contraction du noyau qui amène la ligne de corotation jusqu'à la surface.</p>
+<p>Dans le prochain chapitre — <strong>Chapitre 22 : Un tour d'horizon planétaire complet — de Mercure et Vénus à Pluton, Hauméa et Cérès</strong> (d'après l'article 11 — parties C–N) — nous appliquerons le protocole de 13 vérifications planète par planète : nous découvrirons pourquoi Mercure et Vénus n'ont pas de lunes, comment les anneaux de Saturne fonctionnent comme un flux continu en équilibre, pourquoi Uranus est inclinée de 98°, comment Triton a été capturé comme lobe d'une cacahuète venue de la ceinture de Kuiper, et nous cartographierons les 12 questions ouvertes du système solaire !</p>
+<a href="story22_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 22</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Un tour d'horizon planétaire complet — de Mercure et Vénus à Pluton, Hauméa et Cérès →</p></div></a><p style="margin-top:22px"><a href="story20_fr.html">← Chapitre 20</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

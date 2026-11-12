@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 8 : Qu'est-ce vraiment qu'une mer ? — les ouvertures d'alimentation, les 73 coupoles de gravité et le fond qui s'est affaissé comme un lac gelé — Le modèle LEF</title>
+<meta name="description" content="Chapitre 8 de l&#x27;histoire du modèle LEF : les quatre composantes d&#x27;une mer, les 73 coupoles d&#x27;alimentation trouvées dans la carte de gravité de GRAIL (44 d&#x27;entre elles enfouies, la plupart sur la face cachée), et les fonds de niveau qui se sont affaissés en leur centre.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story08_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story08_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story08_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story08_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story08_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story08_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story08_he.html" hreflang="he">עברית</a> · <a href="story08_en.html" hreflang="en">English</a> · <a href="story08_de.html" hreflang="de">Deutsch</a> · <a href="story08_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 8</p>
+<h1>Chapitre 8 : Qu'est-ce vraiment qu'une mer ? — les ouvertures d'alimentation, les 73 coupoles de gravité et le fond qui s'est affaissé comme un lac gelé</h1>
+<p>D'après l'article 05 — Les mers (parties A–F : études 1–7 et 16)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : pourquoi la Lune a-t-elle deux visages — et où se cachent les mers de la face cachée ?</h2>
+<p>Quiconque regarde la Lune, même avec de simples jumelles, remarque aussitôt le contraste saisissant qui a façonné « l'homme dans la Lune » : <strong>la face visible</strong>, toujours tournée vers la Terre, est couverte d'étendues sombres et rondes (les « mers » — <em>Maria</em> en latin, parce que les Anciens croyaient que c'étaient des océans), tandis que <strong>la face cachée</strong> est claire, balafrée et presque sans taches sombres.</p>
+<p>La littérature admise interprète chaque mer comme deux événements séparés et sans lien : d'abord un astéroïde géant a frappé la Lune et y a creusé un bassin profond ; puis des centaines de millions d'années plus tard, une lave basaltique sombre a jailli du manteau et a inondé le bassin. Selon cette définition, une mer est simplement <strong>une surface de basalte sombre</strong>.</p>
+<p>Mais lorsqu'on examine les cartes de gravité précises de la sonde GRAIL, un mystère apparaît qui ébranle cette histoire jusque dans ses fondations : sous la surface claire de la face cachée se cachent <strong>des dizaines de corps ronds et denses d'excès de gravité</strong> — identiques en taille et en intensité à ceux qui se trouvent sous les mers géantes de la face visible, mais sans aucun basalte sombre à leur surface ! Que sont ces corps cachés, et la face cachée ne semble-t-elle dépourvue de mers que parce que nous regardons sa couleur ?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : des puits couverts dans un champ et une croûte gelée sur un lac de lave</h2>
+<p>Pour comprendre le retournement que propose l'article 05 dans la définition des mers, imaginez deux images simples :</p>
+<ul>
+<li><strong>Un lac de lave dans le cratère d'un volcan :</strong> en regardant d'en haut un cratère volcanique éteint, on voit une surface de roche sombre et gelée. Cette croûte sombre n'est pas la montagne elle-même — elle n'est que la dernière couche qui a gelé par le haut après l'arrêt de l'écoulement. En dessous se trouve la cheminée profonde par laquelle la lave est montée. Exactement de la même façon, <strong>le basalte sombre sur le visage de la Lune n'est pas la mer — la mer est l'ouverture par laquelle la Lune a été bâtie</strong>, et le basalte n'est que la dernière croûte qui a gelé au sommet de l'ouverture !</li>
+<li><strong>Un champ avec des puits actifs des deux côtés — dont un côté a été recouvert de terre :</strong> imaginez un grand champ dans lequel on a creusé des dizaines de puits. D'un côté du champ (la face visible), les puits sont restés ouverts jusqu'à la fin de la construction, de sorte qu'on voit les surfaces d'eau sombres à l'intérieur. De l'autre côté du champ (la face cachée), les puits se sont fermés plus tôt et ont été recouverts d'une épaisse couche de terre claire. Quelqu'un qui ne compte que les « taches d'eau sombres » croira qu'il n'y a des puits que d'un côté — mais un instrument qui mesure sous le sol trouvera que le côté recouvert compte même <strong>plus de puits</strong> !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : distinguer les notions et compter les 73 coupoles d'alimentation</h2>
+<p>Les parties A–D de l'article 05 décomposent le mot « mer » en quatre composantes physiques claires, de bas en haut :</p>
+<ol class="steps">
+<li><strong>La coupole d'alimentation :</strong> un corps dense riche en fer et en titane, poussé vers le haut depuis un foyer souterrain, qui a soulevé son centre et élargi ses bords. Lorsque l'alimentation a pris fin, la coupole a gelé en un corps dense qui attire plus fortement la sonde GRAIL — et c'est le <strong>mascon</strong> (concentration de masse) mesuré en gravité.</li>
+<li><strong>L'ouverture :</strong> la zone fluide et peu visqueuse de la coque par laquelle la matière est montée jusqu'à la surface. Par la plupart des ouvertures, de la matière a été tirée vers l'extérieur et est retombée sur la Lune pour créer les cratères (<strong>ouvertures de sortie</strong>) ; tandis qu'à travers <strong>Mare Imbrium</strong> et <strong>Mare Serenitatis</strong> — qui se trouvaient dans le disque de contact avec la Terre — la pression et la matière passaient vers l'intérieur de la Lune sans être tirées vers l'extérieur (<strong>bouches d'alimentation</strong>).</li>
+<li><strong>Le basalte des mers :</strong> la dernière couche qui a gelé au sommet de l'ouverture. En revanche, les vastes surfaces de basalte sans coupole d'alimentation en dessous — comme <strong>Oceanus Procellarum</strong>, Mare Tranquillitatis et Mare Fecunditatis — ne sont pas des « mers » au sens structurel, mais <strong>des plaines crustales fondues sur place</strong> par la chaleur de la Terre toute proche !</li>
+<li><strong>Le bassin :</strong> le rebord surélevé qui entoure l'ouverture — bâti couche après couche à partir de la matière chaude que l'ouverture elle-même a tirée autour d'elle.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of a mare: dome, opening, basalt, basin rim" style="direction:ltr"><rect x="0" y="120" width="640" height="110" fill="#e6dcc6"/><path d="M60,120 Q150,70 230,105 L410,105 Q490,70 580,120 Z" fill="#d6c7a4"/><path d="M220,230 Q320,120 420,230 Z" fill="#7a5a3a"/><path d="M270,152 Q320,118 370,152 L360,108 L280,108 Z" fill="#c4623a" opacity=".85"/><rect x="232" y="100" width="176" height="9" fill="#3a3f4a"/><text x="320.0" y="212.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >Coupole (mascon)</text><text x="320.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >L'ouverture</text><text x="320.0" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#3a3f4a" style="direction:ltr;unicode-bidi:embed" >Le basalte — la dernière croûte gelée</text><text x="120.0" y="62.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#6b5a2a" style="direction:ltr;unicode-bidi:embed" >Le bassin : bords de matière tirée</text><line x1="120" y1="68" x2="140" y2="88" stroke="#6b5a2a"/></svg><figcaption>Les quatre composantes d'une mer, de bas en haut : coupole d'alimentation, ouverture, basalte et bassin. (Dessin schématique.)</figcaption></figure><div class="callout"><span class="tag">La découverte décisive en gravité (études 1, 3 et 4)</span><p style="margin:0">Lorsque la carte de gravité de GRAIL (anomalie de Bouguer, degrés 6–660) est balayée automatiquement à la recherche de tout corps dense et rond de 100 km de diamètre ou plus et de 50 mGal d'intensité ou plus, <strong>73 coupoles d'alimentation</strong> apparaissent sur le visage de la Lune :
+<br>• <strong>33 des 34 mers</strong> identifiées sur la carte des gradients de gravité se trouvent exactement sur l'une des 73 coupoles (sur 20 000 tirages aléatoires, pas un seul n'a atteint 33 !). La seule qui ne repose pas sur une coupole est <strong>Mare Ingenii</strong>, dont la coupole a été « cuite » et effacée par l'énorme chaleur sous le bassin Pôle Sud–Aitken.
+<br>• Sur les 73 coupoles, 25 se trouvent sous une mer ouverte, 4 sont partiellement couvertes, et <strong>44 coupoles sont entièrement enfouies sous les hauts plateaux clairs</strong> — <strong>dont 36 sur la face cachée</strong> ! Autrement dit, la face cachée compte <strong>plus de coupoles d'alimentation que la face visible (40 contre 33)</strong>.
+<br>• <strong>La marche crustale (17 km en moyenne) :</strong> sous le centre de l'ouverture, la croûte est plus mince de 8–29 km (médiane 17 km) que dans l'anneau qui l'entoure (dans 29 des 36 ouvertures marquées, contre seulement 2% dans les cratères d'impact ordinaires) — preuve que la coupole a poussé et soulevé par le bas, et non qu'un impact extérieur a frappé par le haut.
+<br>• <strong>La couverture sur les coupoles enfouies :</strong> au-dessus des 44 coupoles enfouies, la teneur en fer (−0,19 % en masse) et en thorium (+0,05 ppm) est entièrement identique au terrain environnant, et la croûte est plus épaisse de <strong>8–13 km</strong> — l'épaisseur des couches tardives qui ont recouvert les anciennes ouvertures de la face cachée avec leurs cratères !</p></div>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="73 feed domes by side and by cover" style="direction:ltr"><rect x="20.0" y="20" width="205.5" height="34" fill="#4a5568"/><text x="217.5" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >Sous une mer ouverte · 25</text><rect x="225.5" y="20" width="32.9" height="34" fill="#8a94a6"/><rect x="258.4" y="20" width="361.6" height="34" fill="#c9b48a"/><text x="612.0" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed" >Enfouies sous les hauts plateaux · 44</text><text x="241.9" y="74.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed" >Partielle · 4</text><rect x="20.0" y="96" width="271.2" height="34" fill="#1f3a5f"/><text x="283.2" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >Face visible · 33</text><rect x="291.2" y="96" width="328.8" height="34" fill="#a49d86"/><text x="612.0" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >Face cachée · 40 (dont 36 enfouies)</text><text x="320.0" y="158.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >73 coupoles d'alimentation dans GRAIL — par couverture (haut) et par face (bas)</text></svg><figcaption>La face cachée compte plus de coupoles d'alimentation que la face visible ; la plupart sont enfouies sous les hauts plateaux clairs et ne ressemblent donc pas à des mers.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : le fond d'un lac gelé, l'affaissement du centre et le collier de matière tirée</h2>
+<p>Qu'arrive-t-il au fond d'une mer une fois que l'alimentation qui la traverse s'arrête, et pourquoi a-t-il la forme d'un bassin affaissé entouré de bords surélevés ? Les parties E et F de l'article 05 révèlent quatre phénomènes géométriques mesurables :</p>
+<ol class="steps">
+<li><strong>Un seul niveau, comme un lac gelé (étude 6) :</strong> un fluide au repos sous la gravité ne peut pas maintenir une pente — il se stabilise à un seul niveau uniforme et gèle ainsi. Dans les mesures d'altitude précises (SLDEM2015), <strong>16 grands fonds de mers sur 16</strong> (et aussi 188 des 189 unités basaltiques cartographiées) présentent <strong>un seul niveau d'altitude</strong>, situé profondément sous le rebord de la mer (médiane 3,4 km, probabilité fortuite de 1 sur 65 000) et sous le terrain environnant (médiane 1,6 km).</li>
+<li><strong>Le centre s'est affaissé au-dessus de la coupole — sauf dans les deux mers de contact (étude 5) :</strong> lorsque la coupole d'alimentation gèle en un corps dense et riche en fer, le centre situé au-dessus s'affaisse (surtout par contraction thermique au refroidissement, avec le poids du corps dense et la succion). En effet, dans <strong>10 des 12 mers ouvertes</strong>, le centre est plus bas que les bords (médiane −267 m, par exemple −2,2 km à Orientale et −1,6 km à Nectaris), et plus la coupole de gravité est forte, plus l'affaissement est profond (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0,59</mn><mo separator="true">,</mo><mi>p</mi><mo>=</mo><mn>0,04</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59, p = 0.04</annotation></semantics></math></span></span>).
+<br><strong>Les deux seules exceptions, qui confirment la règle :</strong> à <strong>Mare Serenitatis (+60 m)</strong> et à <strong>Mare Imbrium (+43 m)</strong>, le centre est même légèrement plus haut que les bords ! Pourquoi ? Parce que ce sont les deux mers qui se trouvaient dans le disque de contact et ont gelé tout près de la Terre, dont la forte attraction maintenait la face visible étirée vers l'extérieur pendant qu'elles gelaient !</li>
+<li><strong>Des bords étirés et un intérieur comprimé (§F.2) :</strong> comme une plaque de glace sur un étang dont l'eau baisse au milieu, l'affaissement du centre a étiré les bords de la mer et y a créé des fossés (<strong>grabens</strong> à 0,76–1,22 rayon), et a comprimé l'intérieur pour former des <strong>rides</strong> (à 0,71–0,77 rayon).</li>
+<li><strong>Le collier de matière tirée autour des mers de la face cachée (étude 16) :</strong> pourquoi les bords autour des mers de la face cachée s'élèvent-ils si haut ? Non parce que la lave aurait débordé du rebord (le basalte ne couvre que 0%–7% de l'anneau qui les entoure), mais parce que la matière chaude tirée de l'ouverture a atterri autour d'elle et s'y est étalée couche après couche ! En conséquence, un <strong>« collier »</strong> surélevé s'est construit autour des mers de la face cachée à 150–300 km (avec une hauteur médiane de +742 m autour des mers enfouies), tandis qu'autour des mers de contact — qui alimentaient vers l'intérieur et ne tiraient pas vers l'extérieur — il n'y a aucun collier (−137 m).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et l'équation clé</h2>
+<p>La relation entre le débit du flux montant par l'ouverture et sa fermeture, ainsi que le bilan des cratères visibles en surface, sont décrits par les équations suivantes :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}} = N_{\mathrm{bg}} + N_{\mathrm{return}} - N_{\mathrm{erased}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∫</mo><mi>Q</mi><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">M = \int Q\,dt</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>L'équation des cratères (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}}</annotation></semantics></math></span></span>) établit qu'un comptage de cratères n'est pas une « horloge simple » : chaque ouverture active effaçait et fondait les cratères qui tombaient sur son fond (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{erased}}</annotation></semantics></math></span></span>) tandis qu'elle tirait de la matière qui créait des cratères autour d'elle (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{return}}</annotation></semantics></math></span></span>). Ce n'est qu'à partir du moment où le fond de l'ouverture a gelé qu'il a commencé à accumuler de nouveaux cratères — à partir de la dernière matière qui continuait d'arriver de la Terre (« le dernier disperseur », §F.6).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : des fonds propres qui classent l'ordre du gel</h2>
+<p>Si le fond d'une mer ne commence à conserver des cratères qu'à partir du moment où il a gelé, alors le nombre de cratères qu'il porte sert de mesure directe de <strong>l'ordre dans lequel les mers ont gelé</strong> (études 7 et 12) :</p>
+<ul>
+<li><strong>Des fonds 12 fois plus propres que leur environnement :</strong> dans les 10 mers ouvertes mesurées (après suppression des champs de jeunes rayons des deux côtés), le fond ne porte en moyenne que <strong>8% (1/12)</strong> de la densité de cratères de 2–5 km du terrain environnant !</li>
+<li><strong>Un rapport de 83 pour les grands cratères (10 km et plus) :</strong> les mers de contact (Imbrium et Serenitatis) ont gelé en dernier et sont donc les plus propres (256 cratères de 2–5 km par million de km², et seulement 3,2 cratères de 10+ km par million de km²). En revanche, les mers sur la colline portent 33 fois plus de cratères de 10+ km (106 par million de km²), et les mers situées au-delà (Orientale, Moscoviense et Poincaré) en portent <strong>83 fois</strong> plus (266 par million de km²) !</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : le comptage des coupoles, les tests de gravité et la propreté des fonds (article 05, parties C–F)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Mesure / étude</th><th>Échantillon et conditions de mesure</th><th>Résultat mesuré</th><th>Signification</th></tr>
+<tr class="hl"><td><strong>Correspondance des mers aux coupoles d'alimentation (étude 1)</strong></td><td>34 mers sur les gradients de gravité face à 73 coupoles GRAIL</td><td><strong>33 des 34 mers</strong> reposent sur une coupole</td><td>Sur 20 000 tirages aléatoires, aucun n'a atteint 33</td></tr>
+<tr><td><strong>Répartition des 73 coupoles d'alimentation (étude 4)</strong></td><td>Balayage automatique (≥ 100 km, ≥ 50 mGal)</td><td><strong>44 enfouies</strong> (36 sur la face cachée), 25 ouvertes, 4 partielles</td><td>La face cachée compte plus de coupoles (40) que la face visible (33)</td></tr>
+<tr><td><strong>La marche crustale sous les ouvertures (étude 3)</strong></td><td>36 ouvertures marquées face à 169 cratères témoins</td><td>Une marche de ≥ 8 km dans <strong>29 sur 36</strong> (médiane 17 km)</td><td>Dans les cratères témoins : seulement 4 sur 169 (2%, médiane 1 km)</td></tr>
+<tr><td><strong>Épaisseur de la couverture sur les coupoles enfouies (étude 4)</strong></td><td>44 coupoles enfouies face à 25 coupoles ouvertes</td><td>Croûte plus épaisse de <strong>8–13 km</strong> ; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mtext>FeO</mtext><mo>=</mo><mo>−</mo><mn>0,19</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">\Delta\text{FeO} = -0.19\text{ wt\%}</annotation></semantics></math></span></span></td><td>La couverture est identique au terrain environnant et a recouvert les anciennes ouvertures</td></tr>
+<tr class="hl"><td><strong>Niveau du fond et affaissement du centre (études 5–6)</strong></td><td>16 grands fonds ; 12 mers ouvertes</td><td>Un seul niveau dans 16/16 (3,4 km sous le rebord) ; affaissement dans 10/12</td><td>Corrélation <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0,59</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59</annotation></semantics></math></span></span> (p = 0,04) ; Imbrium et Serenitatis surélevées</td></tr>
+<tr><td><strong>Propreté des fonds en cratères (études 7 et 12)</strong></td><td>10 mers ouvertes (sans champs de rayons)</td><td>Médiane de 8% des cratères de 2–5 km par rapport à l'environnement ; 83 fois entre contact et lointaines (10+ km)</td><td>Les mers de contact ont gelé en dernier ; la Terre était le dernier disperseur</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Nous avons découvert que les mers de la Lune ne sont pas des lacs de lave qui auraient fait irruption par hasard dans des cratères d'astéroïdes, mais <strong>les anciennes ouvertures d'alimentation</strong> par lesquelles la Lune a été bâtie : 73 coupoles de gravité (dont 44 enfouies sous les hauts plateaux de la face cachée), chacune ayant laissé un fond uniforme comme un lac gelé qui s'est affaissé en son centre après l'arrêt de l'écoulement.</p>
+<p>Mais à quoi ressemblent les cratères qui sont tombés au fil du temps sur les fonds et les plaines des mers — et pourquoi les plus grands sont-ils fondus, les moyens étalés et les petits nets ? Dans le prochain chapitre — <strong>Chapitre 9 : L'horloge sur le fond — cratères fondus, étalés et nets, et les trois générations de mise à nu</strong> (d'après l'article 05 — <em>Les mers</em>, parties G–I) — nous apprendrons à lire l'horloge de la température et de la viscosité sur le visage de la Lune !</p>
+<a href="story09_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 9</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">L'horloge sur le fond — cratères fondus, étalés et nets, et les trois générations de mise à nu →</p></div></a><p style="margin-top:22px"><a href="story07_fr.html">← Chapitre 7</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

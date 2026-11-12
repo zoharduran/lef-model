@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 18 : La convergence de tout le Pacifique, les crêtes de spatule et la solution de l'énigme du jeune âge du fond — Le modèle LEF</title>
+<meta name="description" content="Chapitre 18 de l&#x27;histoire du modèle LEF : la convergence de tout le Pacifique, les crêtes de spatule et la solution de l&#x27;énigme du jeune âge du fond océanique.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story18_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story18_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story18_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story18_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story18_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story18_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story18_he.html" hreflang="he">עברית</a> · <a href="story18_en.html" hreflang="en">English</a> · <a href="story18_de.html" hreflang="de">Deutsch</a> · <a href="story18_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 18</p>
+<h1>Chapitre 18 : La convergence de tout le Pacifique, les crêtes de spatule et la solution de l'énigme du jeune âge du fond</h1>
+<p>D'après l'article 09 — Les bandes : le côté avant de la poire sur le fond du Pacifique (parties C.5–H : le traçage GEBCO 2026, les crêtes de spatule, l'ancien équateur, les 3 défis et les 10 études)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : toutes les lignes du Pacifique mènent-elles à la pointe de la poire — et comment des bandes vieilles de milliards d'années survivent-elles dans un fond de moins de 180 millions d'années ?</h2>
+<p>Au chapitre 17, nous avons vu comment les six bandes parallèles du Pacifique Nord délimitent, entre deux genoux, l'empreinte en miroir de la Lune à l'ouest. Mais pour transformer une intuition visuelle en science mesurable, l'article 09 (parties C.5–F) soulève trois questions fondamentales qui, si elles n'étaient pas résolues, laisseraient toute l'explication à l'état d'hypothèse :</p>
+<ol class="steps">
+<li><strong>Les bandes du Pacifique central et sud convergent-elles aussi vers la même pointe (C.5) ?</strong> Au sud de l'équateur s'étendent d'autres systèmes géants — la chaîne Sala y Gómez–île de Pâques–Tuamotu au centre, et le système Eltanin–Louisville–Tuvalu dans l'extrême sud. Dans une mesure quantitative à l'aveugle sur la grille bathymétrique globale GEBCO 2026, ces dix tracés convergent-ils tous vers la zone de contact final de la Lune (8,7°N, 167,7°E) ?</li>
+<li><strong>Pourquoi les chaînes d'îles géantes des Marshall et des îles de la Ligne n'ont-elles pas de progression d'âge de panache mantellique (D.1–D.3) ?</strong> Dans le modèle tectonique dominant, les chaînes d'îles du Pacifique se forment quand une plaque océanique se déplace au-dessus d'un « point chaud » fixe du manteau — de sorte que l'âge doit progresser continûment d'une extrémité à l'autre (comme dans Hawaï–Empereur, de 0 à 81 Ma). Mais dans les îles de la Ligne et les îles Marshall, les âges sautent sans ordre, avec des éruptions simultanées sur des milliers de kilomètres !</li>
+<li><strong>Le paradoxe d'âge géochronologique (F.1) :</strong> le fond du Pacifique entre les bandes est daté (par les anomalies magnétiques et les basaltes) de 180 millions d'années au plus — des milliards d'années plus jeune que le moment du détachement de la Lune (3,873 Ga). Comment des bandes créées lorsque la poire a été ramenée vers l'intérieur peuvent-elles être imprimées dans un fond formé des milliards d'années plus tard ?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : de la neige fraîche sur un champ labouré, du plâtre tiré sous une spatule, et un bloc de pâte à modeler enfoncé dans une balle qui tourne</h2>
+<p>Trois images simples et concrètes résolvent ces trois questions et les réunissent en une seule image physique :</p>
+<ul>
+<li><strong>De la neige fraîche tombée sur un champ labouré (la solution de l'énigme du jeune âge du fond océanique, F.1) :</strong> imaginez un champ labouré en sillons profonds il y a quelques mois, sur lequel une neige légère est tombée la nuit dernière. La neige fraîche enveloppe les sillons et continue de laisser voir les lignes du labour à travers la couverture blanche. Si vous datez la neige, vous obtenez la date de la tempête de neige de la nuit dernière — et non la date du labour ! De la même façon, le fond océanique accumule de nouvelles couches par le haut tandis que les couches inférieures se renouvellent par en dessous : la datation radiométrique ne mesure que <strong>la dernière couche supérieure (&lt; 180 Ma)</strong>, tandis que les bandes sont <strong>des plis de densité profonds</strong> dans la couche inférieure que les jeunes couches ont enveloppée — c'est pourquoi les bandes sont faibles dans la topographie extérieure mais remarquablement nettes sur la carte du gradient de gravité (VGG), qui voit en profondeur !</li>
+<li><strong>Un plâtrier qui arrache une spatule plate d'un plâtre mou (« les crêtes de spatule », D.1) :</strong> pressez une spatule plate contre un mur enduit de plâtre mou et arrachez-la d'un coup sec : le plâtre colle à la spatule et au mur, s'étire entre les deux, et se déchire finalement en deux <strong>crêtes surélevées le long des bords de la spatule</strong>. Quand la Lune s'est décollée et s'est arrachée avec force au-delà de la ligne de corotation (tandis que la zone de contact se rétrécissait de 6 000 à 3 000 km), la matière molle de la zone de contact a été tirée vers le haut en deux chaînes de crêtes — <strong>la chaîne Marshall–Gilbert–Tuvalu à l'ouest et la chaîne des îles de la Ligne à l'est</strong> (distantes de 2 800–3 500 km !) — qui sont descendues sur le fond océanique avec la pointe quand la poire a été ramenée vers l'intérieur !</li>
+<li><strong>Un lourd bloc de pâte à modeler enfoncé depuis l'équateur dans les profondeurs d'une balle qui tourne (l'inclinaison de l'équateur des bandes, E.3) :</strong> collez un lourd bloc de pâte à modeler (7–12 masses lunaires) sur l'équateur d'une balle qui tourne ; la balle tournera de façon stable. Enfoncez maintenant le bloc vers l'intérieur, dans les profondeurs de la balle : le moment d'inertie change, l'équilibre est perturbé, et la balle roule lentement par rapport à son axe de rotation jusqu'à trouver un nouvel équilibre — c'est pourquoi l'ancien équateur enregistré dans les bandes est aujourd'hui incliné de <strong>≥ 10°</strong> par rapport à l'équateur actuel !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : le traçage GEBCO 2026 sur tout le Pacifique et les schémas d'âge des crêtes de spatule (parties C.5–E)</h2>
+<p>Les parties C.5–E de l'article 09 présentent un test quantitatif sans précédent de tous les systèmes de lignes du Pacifique :</p>
+<ol class="steps">
+<li><strong>L'étude de convergence sur tout le Pacifique sur la grille GEBCO 2026 (C.5) :</strong> l'auteur a défini à l'avance, par écrit, un protocole algorithmique (un filtre directionnel par pas de 0,5° sur la carte en relief ombré de GEBCO 2026 à une résolution de 30 points par degré) et deux cibles fixes : <strong>le contact final</strong> (8,7°N, 167,7°E, rayon 1 500 km) et <strong>la large zone de la pointe</strong> (6°N, 179,5°W, rayon 3 000 km). Les résultats :
+<ul>
+<li><strong>Les 10 tracés</strong> (du nord, du centre et du sud) atteignent tous la zone de la pointe (3 000 km).</li>
+<li><strong>6 des 10 tracés</strong> (dont cinq à seulement 450 km !) passent profondément à l'intérieur du cercle du contact final (1 500 km) : le tracé sud supérieur (Eltanin nord + Louisville) à <strong>166 km</strong>, la chaîne Tuvalu–Gilbert–Ratak entrant directement dans le contact à <strong>190 km</strong>, Clarion à <strong>288 km</strong>, le tracé sud inférieur (Eltanin sud) à <strong>300 km</strong>, Molokai à <strong>434 km</strong>, et Murray à 1 274 km (et Clipperton le manque de seulement 14 km — 1 514 km).</li>
+<li><strong>0 des 3 lignes témoins</strong> (Pioneer, Galápagos et Marquises, qui n'étaient pas marquées comme tracés vers la pointe) n'entrent dans le cercle du contact final (1 656–2 590 km) !</li>
+</ul>
+</li>
+<li><strong>L'espacement des crêtes de spatule et l'absence de progression d'âge de panache mantellique (D.1–D.3) :</strong> la distance entre la chaîne Marshall–Gilbert–Tuvalu à l'ouest et la chaîne des îles de la Ligne à l'est est de <strong>2 800–3 500 km</strong> (Majuro à Kiritimati 3 490 km, Tarawa à Palmyra 2 810 km, milieu à milieu 3 290 km) — identique à la largeur de la zone de contact (3 000 km) et à la distance entre les deux genoux (3 360 km). De plus, la paire de chaînes est décalée d'environ une demi-largeur vers l'est en direction de la base (Kiritimati se trouve sur les îles de la Ligne, et Kwajalein dans les Marshall passe à 180 km du centre de la pointe), parce que les crêtes de spatule ont été tirées vers le haut dans <strong>la bande de décollement</strong> entre 6 000 et 3 000 km ! Et au test des âges : dans les îles de la Ligne, on a mesuré deux éruptions simultanées sur 1 200 à &gt;4 000 km (81–86 Ma et 68–73 Ma) sans aucune progression d'âge (et la littérature les attribue à un étirement lithosphérique !), et dans les îles Marshall des âges de 66–140 Ma sans ordre de panache.</li>
+<li><strong>L'inclinaison de l'équateur des bandes (≥ 10°, partie E) :</strong> la mesure de la pente de chaque bande par rapport aux lignes de latitude actuelles révèle que toutes les bandes montent vers le nord en allant vers l'est : Murray (+12,7°), Clarion (+9,0°), Clipperton (+11,0°), la bande sud (+11,7°) et Mendocino (+2,4°). Un ajustement conjoint exige un équateur incliné d'<strong>au moins 10°</strong> (et jusqu'à ~ 20° ; dans l'ajustement à 11°, il croise l'équateur actuel à 159°W, à seulement 1,6° de Kiritimati).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 675.0 348" role="img" aria-label="Distance of each traced path from the final contact" style="direction:ltr"><g transform="translate(35.0,0)"><rect x="200.0" y="16" width="22.1" height="24" rx="4" fill="#2f7d57"/><text x="230.1" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦166⁩</text><rect x="200.0" y="52" width="25.3" height="24" rx="4" fill="#2f7d57"/><text x="233.3" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦190⁩</text><rect x="200.0" y="88" width="38.4" height="24" rx="4" fill="#2f7d57"/><text x="246.4" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦288⁩</text><rect x="200.0" y="124" width="40.0" height="24" rx="4" fill="#2f7d57"/><text x="248.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦300⁩</text><rect x="200.0" y="160" width="57.9" height="24" rx="4" fill="#2f7d57"/><text x="265.9" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦434⁩</text><rect x="200.0" y="196" width="169.9" height="24" rx="4" fill="#2f7d57"/><text x="377.9" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦1 274⁩</text><rect x="200.0" y="232" width="201.9" height="24" rx="4" fill="#c47f2c"/><text x="409.9" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1 514⁩</text><rect x="420.8" y="268" width="124.5" height="24" rx="4" fill="#b23a2e" opacity=".35"/><rect x="200.0" y="268" width="220.8" height="24" rx="4" fill="#b23a2e"/><text x="553.3" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1 656–2 590⁩</text><line x1="400.0" x2="400.0" y1="8" y2="322" stroke="#1f3a5f" stroke-dasharray="5 4"/><text x="400.0" y="338.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >Cercle du contact final · ⁦1 500⁩ km</text></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Eltanin N. + Louisville</text><text x="6.0" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Tuvalu–Gilbert–Ratak</text><text x="6.0" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Clarion</text><text x="6.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Eltanin S.</text><text x="6.0" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Molokai</text><text x="6.0" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Murray</text><text x="6.0" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Clipperton</text><text x="6.0" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Pioneer / Galápagos / Marquises</text></svg><figcaption>La distance du dernier point de chaque tracé (prolongé) au centre du contact final, dans le traçage GEBCO 2026 : six tracés pénètrent dans le cercle de 1 500 km, aucune des lignes témoins.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : la réponse aux trois défis géologiques (partie F)</h2>
+<p>La partie F de l'article 09 affronte de face les trois principaux défis que soulèvent les géologues contre l'interprétation des bandes et des crêtes de spatule, et définit pour chacun le test physique décisif :</p>
+<ol class="steps">
+<li><strong>Défi 1 — le jeune âge du fond océanique (&lt; 180 Ma, §F.1) :</strong> le fond du Pacifique entre les bandes est daté par les anomalies magnétiques et les basaltes de 180 millions d'années au plus. Dans le modèle LEF, le fond océanique n'est pas « un bloc » créé en un instant, mais <strong>une croûte renouvelée par couches</strong> : de nouvelles couches s'accumulent par le haut tandis que les couches inférieures sont reprises et renouvelées par en dessous. La datation radiométrique ne mesure que <strong>la dernière couverture supérieure</strong> (comme dater la neige tombée la nuit dernière sur un champ labouré), tandis que les bandes sont <strong>des plis de densité profonds</strong> laissés dans les couches inférieures ! C'est pourquoi les bandes sont floues dans la topographie extérieure mais remarquablement nettes sur la carte du gradient de gravité (VGG), qui expose les contrastes de densité en profondeur (et qui était d'ailleurs décrite par Sandwell et al. 2014 comme révélant une « structure tectonique enfouie »). <strong>Le test (étude 9) :</strong> dans les profils sismiques et les forages traversant les bandes, le pli se poursuivra sous les jeunes couches, et les couches au-dessus seront plus minces sur les crêtes du pli et plus épaisses dans ses creux.</li>
+<li><strong>Défi 2 — l'ordre de formation des bandes et des crêtes (§F.2) :</strong> le fait que les bandes passent sous les crêtes volcaniques sans les couper (B.5) prouve que les bandes se sont formées par plissement par en dessous et par les côtés, mais ne détermine pas à lui seul lequel est venu en premier — les crêtes ont pu déjà se dresser sur le fond pendant que le pli se formait sous elles (comme une table posée sur une nappe qui se froisse sous elle). <strong>Le test (étude 6) :</strong> une mesure précise des coordonnées sur une carte plane sans exagération verticale vérifiera si les crêtes elles-mêmes ont subi un <strong>raccourcissement, un compactage ou une flexion</strong> exactement aux points où les bandes passent sous elles.</li>
+<li><strong>Défi 3 — la progression d'âge ordonnée de la chaîne Hawaï–Empereur (§F.3) :</strong> contrairement aux îles de la Ligne (81–86 et 68–73 Ma simultanément) et aux îles Marshall (66–140 Ma sans ordre), la chaîne Hawaï–Empereur montre une progression d'âge nette de 0 Ma à Hawaï à ~ 81 Ma à l'extrémité Empereur, compatible avec un panache mantellique classique. L'auteur précise que <strong>la théorie ne repose pas sur Hawaï–Empereur</strong> (proposée seulement comme hypothèse secondaire), mais sur les îles de la Ligne et les Marshall — et qu'elle se prête à une comparaison contrôlée avec des crêtes de panache hors du Pacifique (Ninetyeast, Walvis et Chagos–Laccadives) sur cinq mesures : âges, forme morphologique, fosse de flexion, racine crustale et direction (étude 7).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et les équations clés</h2>
+<p>La mesure de l'angle d'inclinaison <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> de chaque bande par rapport aux lignes de latitude actuelles sur une sphère, et la conservation du moment d'inertie I de la Terre à mesure que la masse de la poire (7–12 masses lunaires) était entraînée de la surface vers les profondeurs du manteau inférieur, se formulent ainsi (§E.1, §E.3) :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mi>θ</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mover accent="true"><mi>ϕ</mi><mo>ˉ</mo></mover></mrow></mfrac></mstyle><mo>≥</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan\theta = \dfrac{\Delta\phi}{\Delta\lambda \cos\bar{\phi}} \ge \tan(10^\circ)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mo>∫</mo><msubsup><mi>r</mi><mo>⊥</mo><mn>2</mn></msubsup><mtext> </mtext><mi>d</mi><mi>m</mi><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi mathvariant="normal">Δ</mi><msub><mi>I</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>→</mo><mtext>Axial Roll </mtext><mo stretchy="false">(</mo><mo>≥</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I = \int r_\perp^2\,dm \implies \Delta I_{\mathrm{pear}} \rightarrow \text{Axial Roll } (\ge 10^\circ)</annotation></semantics></math></span></div></div></div>
+<p>Comme le déplacement d'une masse de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mtext>–</mtext><mn>12</mn><mtext> </mtext><msub><mi>M</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">7\text{–}12\,M_{\mathrm{Moon}}</annotation></semantics></math></span></span> depuis une distance de milliers de kilomètres au-dessus de l'équateur jusqu'à la base du manteau (la LLVP du Pacifique) modifie le tenseur d'inertie de la Terre, la Terre a lentement roulé jusqu'à trouver un nouvel équilibre de rotation — laissant l'équateur du système de bandes incliné de ≥ 10° par rapport à l'équateur moderne.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : les dix études de la partie G et le résumé en feux de signalisation de la partie H</h2>
+<p>Dans le résumé de l'article 09 (parties G–H) sont présentés <strong>6 résultats vérifiés (« feu vert »)</strong> et <strong>4 observations en attente du protocole des 10 études quantitatives (« feu orange »)</strong> :</p>
+<ul>
+<li><strong>Les six ancrages vérifiés (« feu vert ») :</strong> (1) la base de la poire à Kiritimati se trouve à 1,6° de l'équateur des bandes, à côté de Clipperton (1,8°) ; (2) la largeur de la pointe entre les genoux (3 360 km) correspond au contact (3 000 km) et à la coupole (3 650 km) ; (3) la longueur du système de bandes (9 360 km) correspond à la longueur du corps de la poire (8 890–9 000 km) ; (4) l'empreinte en miroir à × 1,37 place Imbrium, Serenitatis et le centre de contact dans l'empreinte ; (5) les bandes passent continûment sous les crêtes à quatre intersections ; et (6) dans le traçage GEBCO 2026, les 10 tracés du nord, du centre et du sud atteignent la zone de la pointe, et 6 d'entre eux pénètrent dans le contact final (1 500 km), contre 0 des lignes témoins.</li>
+<li><strong>Les quatre directions de recherche ultérieures (« feu orange ») :</strong> quantifier les arcs froissés du côté arrière (8 100–10 300 km), mesurer les angles de convergence sur une carte plane sans exagération verticale (étude 6), comparer les crêtes de spatule sur cinq mesures aux crêtes de panache du monde entier (étude 7), et examiner les profils sismiques et les forages sous la jeune couche du fond (étude 9).</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : résultats du traçage GEBCO 2026 (C.5), des crêtes de spatule (D) et des 10 études (article 09, parties C.5–H)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Système / tracé dans GEBCO 2026</th><th>Dernier point fiable et direction</th><th>Distance au centre du contact final (8,7°N, 167,7°E)</th><th>Distance au centre de la large pointe (6°N, 179,5°W)</th><th>Verdict prédéfini</th></tr>
+<tr class="hl"><td><strong>Sud supérieur : Eltanin (branche nord) + Louisville</strong></td><td>174,6°W, 26,8°S (NNO 335°)</td><td><strong>166 km</strong> (prolongement 4 380 km)</td><td>1 025 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr class="hl"><td><strong>Sud supérieur au-delà des Fidji : Tuvalu–Gilbert–Ratak</strong></td><td>167,9°E, 10,7°N (NO 319°)</td><td><strong>190 km</strong> (<strong>prolongement 0 km — entre directement !</strong>)</td><td>851 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr class="hl"><td><strong>Nord : Clarion</strong></td><td>154,3°W, 13,8°N (O 270°)</td><td><strong>288 km</strong> (prolongement 4 170 km)</td><td>760 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr class="hl"><td><strong>Sud inférieur : Eltanin (branche sud)</strong></td><td>154,2°W, 52,5°S (NO 325°)</td><td><strong>300 km</strong> (prolongement 7 690 km)</td><td>928 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr class="hl"><td><strong>Nord : Molokai</strong></td><td>169,7°W, 18,9°N (OSO 257°)</td><td><strong>434 km</strong> (prolongement 2 660 km)</td><td>1 147 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr class="hl"><td><strong>Nord : Murray</strong></td><td>168,6°W, 27,0°N (O 260°)</td><td><strong>1 274 km</strong> (prolongement 2 980 km)</td><td>2 004 km</td><td><strong>Dans le contact final (&lt; 1 500 km)</strong></td></tr>
+<tr><td><strong>Nord : Clipperton / Mendocino</strong></td><td>165,7°W, 0,1°S / 169,1°W, 36,8°N</td><td>1 514 km / 1 826 km</td><td>944 km / 2 770 km</td><td>Dans la zone de la pointe (&lt; 3 000 km)</td></tr>
+<tr><td><strong>Centre : Sala y Gómez–Pâques–Tuamotu–Ligne (+ branche ouest)</strong></td><td>169,7°W, 16,4°N / 171,6°W, 11,2°N</td><td>2 441 km / 2 094 km</td><td>1 601 km / 1 340 km</td><td>Dans la zone de la pointe (&lt; 3 000 km)</td></tr>
+<tr><td><strong>3 lignes témoins (Pioneer, Galápagos, Marquises)</strong></td><td>Non marquées comme tracés vers la pointe</td><td><strong>1 656–2 590 km</strong></td><td>1 769–2 563 km</td><td><strong>0 sur 3 entrent dans le contact final</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Chaîne de crêtes (partie D)</th><th>Le schéma d'âge mesuré</th><th>Interprétation dans le modèle LEF</th></tr>
+<tr class="hl"><td><strong>Les îles de la Ligne (crête de spatule est)</strong></td><td>Deux épisodes synchrones (81–86 et 68–73 Ma) sur 1 200–4 000+ km, <strong>sans progression d'âge</strong></td><td>Tirée vers le haut dans la bande de décollement est (à 2 800–3 500 km des Marshall) ; passe par Kiritimati</td></tr>
+<tr class="hl"><td><strong>Marshall–Gilbert–Tuvalu (crête de spatule ouest)</strong></td><td>66–140 Ma, <strong>sans progression d'âge simple</strong>, éruptions fragmentées</td><td>Tirée vers le haut dans la bande de décollement ouest ; passe par le centre de la pointe (Kwajalein à 180 km du centre)</td></tr>
+<tr><td><strong>Hawaï–Empereur</strong></td><td>Une progression nette de 0 Ma à ~ 81 Ma</td><td>Proposée seulement comme hypothèse secondaire (non requise) ; à tester dans l'étude 7 face à Ninetyeast, Walvis et Chagos–Laccadives</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<a href="story19_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 19</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Mars jeune — le renflement pointu de Tharsis et l'éjection de Déimos et Phobos depuis Pavonis Mons →</p></div></a>
+<p style="margin-top:22px"><a href="story17_fr.html">← Chapitre 17</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

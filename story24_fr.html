@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 24 : L'anneau comme convoyeur broyeur, les signatures sur les lunes et les planètes, et le test du bloc d'Atacama — Le modèle LEF</title>
+<meta name="description" content="Chapitre 24 de l&#x27;histoire du modèle LEF : l&#x27;anneau comme convoyeur broyeur, les signatures sur les lunes et les planètes, et le test du bloc d&#x27;Atacama.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story24_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story24_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <a href="story24_de.html" hreflang="de">Deutsch</a> · <a href="story24_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 24</p>
+<h1>Chapitre 24 : L'anneau comme convoyeur broyeur, les signatures sur les lunes et les planètes, et le test du bloc d'Atacama</h1>
+<p>D'après l'article 12 — 12. Les anneaux : un anneau brise, broie et rend (parties E–M : le convoyeur broyeur, les signatures sur les lunes et les parents, la roche d'Atacama et les 5 critères de réfutation)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : comment un anneau façonne-t-il la surface des lunes et des planètes — et pourquoi n'y a-t-il pas d'anneaux autour des lunes ?</h2>
+<p>Au chapitre 23, nous avons vu qu'un anneau planétaire existe en tant que flux d'équilibre qui se nourrit du parent et lui rend la matière quand son jour est plus court que 13,4 heures. Dans les parties E–M de l'article 12, le modèle LEF examine les traces morphologiques et physiques que l'anneau laisse derrière lui :</p>
+<ol class="steps">
+<li><strong>Pourquoi Pan, Atlas et Daphnis ont-elles une « jupe » équatoriale comme une soucoupe volante — tandis que Déimos a été polie en une boule lisse (G.1–G.4) ?</strong> Bien que Déimos ait une autogravité plus forte que Pan et Atlas, Pan et Atlas ont accumulé une crête équatoriale saillante, tandis que Déimos a perdu de la matière et a été entièrement usée !</li>
+<li><strong>Quels anneaux du système solaire sont voués à disparaître dans un avenir proche (F.3) ?</strong> Pourquoi certains anneaux étroits d'Uranus et de Neptune survivent-ils pour l'instant sans lune bergère et sans alimentation depuis le sol ?</li>
+<li><strong>Où à la surface de Mars peut-on trouver des vestiges de son ancien anneau — et pourquoi le bloc rocheux « Atacama », foré en avril 2026, a-t-il été écarté (H.2–H.3) ?</strong></li>
+<li><strong>Pourquoi n'a-t-on découvert d'anneau autour d'aucune lune du système solaire — et comment de petits corps (Hauméa, Chariklo, Quaoar) conservent-ils des anneaux dans une résonance 1:3 (J.1–J.2) ?</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : un convoyeur broyeur à sens unique, une boule de neige collante contre une meule, et des bandes dans le ciel de Saturne</h2>
+<p>Quatre images concrètes expliquent le tri interne de l'anneau et les signatures qu'il imprime sur son environnement :</p>
+<ul>
+<li><strong>Un convoyeur broyeur à sens unique où des blocs entrent et de la poussière sort (E.1–E.3) :</strong> dans l'anneau, une particule lourde et une particule légère au même rayon se déplacent à la même vitesse képlérienne et ne se trient donc pas par densité. Le tri se fait <strong>par le transfert de quantité de mouvement lors des collisions</strong> : un bloc rigide de ~ 100 m de diamètre garde son orbite stable et se dégage des couloirs propres en forme d'<strong>« hélices »</strong> dans l'anneau A de Saturne, tandis que les particules minuscules reçoivent des vitesses aléatoires et s'étalent verticalement autour de la couche mince (10 m) des grands blocs. La distribution des tailles <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> est une signature classique de broyage : de grands blocs indiquent une entrée récente dans l'anneau !</li>
+<li><strong>Une boule de neige givrée face à une meule de silicates (G.2–G.3) :</strong> la composition de l'anneau dicte si une lune qui le traverse va <em>gagner de la masse</em> ou <em>être usée</em> : les grains de glace froids et givrés se collent les uns aux autres lors d'un contact lent (Bridges et al. 1984) et ont bâti les crêtes équatoriales de Pan, Atlas et Daphnis ; tandis que l'ancien anneau de Mars était fait de vapeurs condensées et de grains de silicates durs qui ont agi comme <strong>une meule</strong>, polissant Déimos sans lui ajouter de masse !</li>
+<li><strong>Une immersion complète dans l'eau face à un fil mince autour d'une balle (le rapport D/H, G.4) :</strong> quand le diamètre de la lune est plus petit que l'épaisseur de l'anneau (D &lt; H, comme pour Déimos, 14–22 km, dans l'épais anneau de vapeur de Mars, ou Méthone), toute la surface est immergée et lissée ; quand D &gt; H (Pan, Atlas et Daphnis dans un disque de quelques dizaines de mètres d'épaisseur), les pôles dépassent au-dessus de l'anneau et une large ceinture équatoriale se construit ; et quand <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span> (Japet), l'anneau agit comme un fil mince.</li>
+<li><strong>Deux canaux de pluie — matière neutre à l'équateur et bandes sombres le long des lignes de champ magnétique (H.1) :</strong> lors de la plongée finale de Cassini en 2017, deux canaux de chute des anneaux vers Saturne ont été mesurés : les molécules neutres et les grains de silicates nanométriques descendent droit vers l'équateur, tandis que les molécules d'eau ionisées s'écoulent le long des lignes de champ magnétique vers les latitudes moyennes (25°–55° de part et d'autre de l'équateur), neutralisent les ions <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span> et créent des bandes sombres en lumière infrarouge !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : le cycle de vie de l'anneau, les signatures sur les lunes et le test du bloc d'Atacama (parties E–J)</h2>
+<p>Les parties E–J de l'article 12 présentent des tests observationnels tranchants pour distinguer les vestiges d'anneaux des phénomènes géologiques ordinaires :</p>
+<ol class="steps">
+<li><strong>Le cycle de vie de l'anneau et les anneaux appelés à disparaître (F.1–F.3) :</strong> un anneau qui n'a ni lune nourricière ni fuite depuis le sol est en phase de déclin et devrait disparaître. Ainsi, <strong>les neuf anneaux étroits sans lune d'Uranus</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) et <strong>les anneaux Galle et Lassell de Neptune</strong> sont classés comme anneaux mourants laissés sous la ligne de corotation après l'échappement de l'eau et le gel, contrairement aux anneaux <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span> d'Uranus et aux anneaux Adams et Le Verrier de Neptune, qui sont tenus par des lunes.</li>
+<li><strong>La règle d'identification morphologique d'une lune passée par un anneau (G.1–G.5) :</strong> une lune silicatée entièrement lisse (sans activité géologique de resurfaçage comme sur Europe ou Encelade) indique un long séjour au cœur d'un anneau : sur Déimos, la profondeur médiane des creux est de 1,9% de leur largeur (84% moins de 6%) contre 5,5% sur Phobos, et son orbite est presque parfaitement circulaire (e = 0,0003). Le rythme de traversée dépend de la masse de la lune : une petite lune migre lentement et accumule une signature profonde, tandis qu'une grande lune est poussée vite et traverse l'anneau en peu de temps.</li>
+<li><strong>L'exclusion des anneaux autour des lunes et la stabilisation des anneaux des petits corps dans une résonance 1:3 (J.1–J.2) :</strong> aucune lune du système solaire ne porte d'anneau (même l'anneau soupçonné autour de Rhéa a été entièrement exclu dans Tiscareno et al. 2010), car la gravité de la planète parente domine et capture toute matière éjectée d'une lune dans l'anneau du parent. En revanche, autour des petits corps (Hauméa, Chariklo et Quaoar), quatre des cinq anneaux se trouvent au-dessus de la ligne de corotation dans la plage <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> — juste au rayon de <strong>la résonance spin–orbite 1:3</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), où une particule accomplit une orbite pour trois rotations du parent.</li>
+<li><strong>Le test du bloc rocheux « Atacama » sur Mars (25 avril 2026, H.3) :</strong> quand le rover Curiosity a foré le bloc rocheux détaché « Atacama » (~ 45 cm, ~ 13 kg) dans le cratère Gale, on a examiné la possibilité qu'il s'agisse d'un vestige solide tombé de l'ancien anneau de Mars. Le test l'a entièrement exclu (une roche sédimentaire stratifiée de sels de sulfate hydratés avec des fentes de dessiccation et une composition identique à la couche sous-jacente, appartenant à l'unité du mont Sharp) et a fixé <strong>quatre critères stricts pour identifier un véritable vestige d'anneau sur Mars</strong> : une roche volcanique/spongieuse sans stratification déposée par l'eau, des minéraux secs ayant subi un chauffage, une croûte de fusion due à l'entrée atmosphérique, et une composition étrangère à la couche géologique locale (correspondant à Phobos et Déimos).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="Position de l'anneau en unités de la ligne de corotation" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Jupiter · ⁦0,57–1,41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Saturne · ⁦0,60–1,23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Uranus · ⁦0,51–0,62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Neptune · ⁦0,50–0,75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Hauméa · ⁦2,07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Chariklo · ⁦2,10 ; 2,18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Quaoar · ⁦1,25 ; 2,01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Position de l'anneau en unités de la ligne de corotation · bleu : la ligne · rouge : résonance 1:3 à 2,08</text></svg><figcaption>Les deux familles d'anneaux : les anneaux des géantes autour et sous la ligne de corotation, et les anneaux des petits corps au-dessus, regroupés autour de la résonance 1:3.</figcaption></figure><div class="callout"><span class="tag">L'effet du rayonnement solaire sur les anneaux — les « rayons », la pluie ionisée et la traînée de Poynting–Robertson (partie I)</span><p style="margin:0">Le rayonnement solaire agit sur les anneaux par trois mécanismes : (1) la charge électrostatique de la poussière micrométrique qui flotte au-dessus du plan de l'anneau B sous forme de <strong>« rayons »</strong>, avec un pic autour des équinoxes ; (2) l'ionisation UV des molécules d'eau, qui accélère <strong>la pluie ionisée</strong> le long des lignes de champ magnétique ; et (3) <strong>la traînée de rayonnement de Poynting–Robertson</strong>, qui freine les minuscules particules de poussière et les fait retomber vers l'intérieur sur le parent !</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : les critères d'identification sur Mars, le tour d'horizon systématique et les cinq tests de réfutation</h2>
+<p>Les parties H.2–H.3 et K–M de l'article 12 rassemblent les traces géologiques à la surface des planètes et les règles expérimentales par lesquelles la théorie des anneaux du modèle LEF peut être vérifiée ou réfutée :</p>
+<ol class="steps">
+<li><strong>Les quatre cibles de recherche des vestiges de l'ancien anneau de Mars (§H.2) :</strong> quand l'anneau de vapeur et de silicates de Mars s'est asséché il y a 3,5–3,7 milliards d'années, sa matière s'est déposée en surface. Les quatre cibles de recherche sont : (a) des dépôts équatoriaux épais et de faible densité sans source d'écoulement au sol (comme <strong>la formation de Medusae Fossae</strong>) ; (b) une signature deutérium–hydrogène (D/H) qui s'écarte de l'environnement local et correspond à Phobos et Déimos ; (c) des pierres de composition volcanique et une couche repère sombre et dure dans le mont Sharp du cratère Gale ; et (d) des bandes de sédiments symétriques aux latitudes moyennes si Mars avait un champ magnétique dipolaire actif pendant l'existence de l'anneau.</li>
+<li><strong>Le résumé du tour d'horizon systématique pour chaque corps (partie K) :</strong> chaque système du système solaire a un rôle clair dans le cycle des anneaux : la Terre (pas d'anneau durable car la poire a balayé la bande équatoriale) ; Mars (un ancien anneau venu du sol qui a déplacé Déimos et Phobos et a disparu quand la croûte s'est fermée) ; Jupiter (un anneau de poussière venant seulement des lunes en raison du couvercle de gaz le plus épais) ; Saturne (un anneau de glace géant en flux d'équilibre depuis le sol et les lunes) ; Uranus et Neptune (des vestiges étroits et sombres sous la ligne de corotation après l'échappement de l'eau, les anneaux sans lune étant mourants) ; et Hauméa, Chariklo et Quaoar (des anneaux denses au-dessus de la ligne de corotation dans une résonance 1:3 qui ne s'agrègent pas en lunes).</li>
+<li><strong>Les cinq critères de réfutation tranchants de la partie L.3 :</strong> le modèle pose cinq conditions explicites de réfutation : (1) l'observation directe d'une lune s'agrégeant à partir d'un disque d'anneau ; (2) la découverte d'une lune silicatée entièrement lisse qui n'aurait jamais séjourné dans un environnement d'anneau ; (3) la mesure d'un anneau planétaire dont la composition isotopique contredit le parent et correspond à une source extérieure au système ; (4) la découverte d'un anneau massif bien au-dessus de la ligne de corotation d'une grande planète sans résonance orbitale stabilisatrice ; ou (5) la documentation d'un anneau sans lune nourricière ni alimentation depuis le sol qui conserverait sa masse sur des temps géologiques sans s'épuiser.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et les équations clés</h2>
+<p>La distribution des tailles des blocs dans un anneau broyeur et le rayon de la résonance spin–orbite 1:3 qui piège les anneaux autour des petits corps se formulent ainsi (§E.2, §J.2) :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>La loi de puissance <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> caractérise un système de fragmentation et de broyage constants par collisions (Zebker et al. 1985), tandis que le rayon de résonance <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span> explique pourquoi quatre des cinq anneaux de Hauméa, Chariklo et Quaoar se trouvent exactement dans la plage <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> au-dessus de la ligne de corotation.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : le test du bloc d'Atacama (avril 2026) et les anneaux appelés à disparaître</h2>
+<p>Deux résultats observationnels centraux illustrent comment la théorie LEF des anneaux résiste à un test empirique en direct (§F.3, §H.3) :</p>
+<ul>
+<li><strong>Le protocole de tri de la roche d'Atacama par Curiosity (25 avril 2026) :</strong> l'analyse géochimique du bloc détaché d'Atacama (~ 45 cm, ~ 13 kg) dans le cratère Gale a montré qu'il s'agit d'une roche sédimentaire de sels de sulfate hydratés avec des fentes de dessiccation, identique à la couche sous-jacente — et c'est ainsi qu'ont été fixées les quatre conditions de seuil (texture volcanique/spongieuse, minéraux secs, croûte de fusion et composition étrangère) pour identifier un véritable vestige d'anneau sur Mars.</li>
+<li><strong>La liste des anneaux mourants du système solaire (§F.3) :</strong> les neuf anneaux étroits sans lune d'Uranus (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) et les anneaux Galle et Lassell de Neptune devraient continuer de s'amincir et disparaître dans les observations futures, tandis que les anneaux D, C et B de Saturne continueront d'exister tant que la pompe intérieure les alimente.</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : l'effet de la composition de l'anneau et du rapport D/H sur les lunes, le tour d'horizon systématique et les critères de réfutation (article 12, parties E–M)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Lune</th><th>Diamètre / densité</th><th>Autogravité (m/s²)</th><th>Environnement d'anneau et rapport D/H</th><th>La signature morphologique</th></tr>
+<tr class="hl"><td><strong>Déimos</strong></td><td>12,4 km / 1 471 kg/m³</td><td>0,0025</td><td><strong>Silicates et vapeurs</strong> (D &lt; H, immersion complète)</td><td><strong>Entièrement usée en boule lisse</strong> (profondeur médiane des creux 1,9%)</td></tr>
+<tr><td><strong>Phobos</strong></td><td>22,2 km / 1 860 kg/m³</td><td>0,0058</td><td>Un bord gazeux qui s'estompe</td><td>Usure seulement partielle ; a gardé ses sillons (5,5%)</td></tr>
+<tr class="hl"><td><strong>Pan, Atlas et Daphnis</strong></td><td>7,6–30 km / 340–460 kg/m³</td><td>0,0004–0,0019</td><td><strong>Glace d'eau</strong> (D &gt; H, les pôles dépassent)</td><td><strong>Accumulation d'une crête équatoriale saillante</strong> (forme de « soucoupe »)</td></tr>
+<tr><td><strong>Méthone</strong></td><td>2,9 km / 310 kg/m³</td><td>0,0001</td><td>Glace dans un arc près de l'anneau G (D &lt; H)</td><td>Lisse et enrobée</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Système du système solaire</th><th>État de l'anneau aujourd'hui</th><th>Source d'alimentation</th><th>Position par rapport à la ligne de corotation et interprétation LEF</th></tr>
+<tr><td><strong>Terre / Mars</strong></td><td>Aucun / a existé dans le passé</td><td>Mars : vapeur et roche du renflement</td><td>Terre : la poire a balayé la ligne ; Mars : disparu il y a 3,5–3,7 Ga quand la croûte s'est fermée</td></tr>
+<tr><td><strong>Jupiter</strong></td><td>Poussière ténue</td><td>Lunes intérieures (de Métis à Thébé)</td><td>Autour de la ligne (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,57</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>) ; l'épais couvercle de gaz scelle la fuite intérieure</td></tr>
+<tr class="hl"><td><strong>Saturne</strong></td><td><strong>Massif (95%–99% de glace)</strong></td><td><strong>Depuis le sol (D, C, B, A) et depuis des lunes (E, F, G)</strong></td><td><strong>Un flux d'équilibre constant</strong> (P = 10,6 h &lt; 13,4 h) ; bord de A à la limite de Roche</td></tr>
+<tr><td><strong>Uranus / Neptune</strong></td><td>Étroits et sombres (et des arcs)</td><td>Certains depuis des lunes, certains sans lune</td><td>Sous la ligne (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>0,75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>) ; les anneaux sans lune devraient disparaître</td></tr>
+<tr class="hl"><td><strong>Hauméa, Chariklo, Quaoar</strong></td><td>Denses</td><td>Hauméa : les extrémités du grand axe</td><td>Au-dessus de la ligne (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>), piégés dans <strong>la résonance 1:3</strong> ; ils ne bâtissent pas de lunes</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Dans les chapitres 23–24, nous avons achevé la théorie des anneaux du modèle LEF : nous avons dérivé <strong>le jour seuil universel de <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> heures</strong>, expliqué les anneaux de Saturne comme un flux constant en équilibre dynamique, suivi le sort de l'eau et du moment cinétique d'Uranus et de Neptune, et défini les signatures morphologiques sur les lunes (l'usure de Déimos face à la construction de crêtes sur Pan et Atlas) et sur Mars (le test de la roche d'Atacama et les dépôts de Medusae Fossae).</p>
+<a href="story25_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 25</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Les exigences fondamentales du modèle LEF (R1–R8) — les isotopes, le noyau, la croûte, le décalage du centre de masse et les zones de mise à nu →</p></div></a>
+<p style="margin-top:22px"><a href="story23_fr.html">← Chapitre 23</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

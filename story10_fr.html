@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapitre 10 : L'empreinte chimique — les anneaux de fer, l'énigme du thorium dans la zone de contact et les cinq horloges — Le modèle LEF</title>
+<meta name="description" content="Chapitre 10 de l&#x27;histoire du modèle LEF : les halos de fer et de titane qui atteignent 600 km autour des mers, 95% de l&#x27;excès de thorium de la Lune dans le disque de contact, les fonds de mers pauvres en thorium, la masse étrangère absente, et les cinq horloges de chaque ouverture.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story10_fr.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <a href="story10_es.html" hreflang="es">Español</a> · <b>Français</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPITRE 10</p>
+<h1>Chapitre 10 : L'empreinte chimique — les anneaux de fer, l'énigme du thorium dans la zone de contact et les cinq horloges</h1>
+<p>D'après l'article 05 — Les mers (parties J–O et annexe A : études 9, 10, 11, 13 et la synthèse des 16 études)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Le mystère : pourquoi la radioactivité de la Lune est-elle concentrée dans un seul cercle — et pourquoi les fonds des mers en sont-ils pauvres ?</h2>
+<p>L'une des découvertes les plus surprenantes des missions Apollo et du satellite Lunar Prospector est l'extrême inégalité chimique du visage de la Lune : l'élément radioactif <strong>thorium</strong> — avec le potassium, les terres rares et le phosphore (une matière appelée <strong>KREEP</strong> dans la littérature) — n'est pas réparti uniformément sur la Lune, mais est concentré presque entièrement dans une seule tache à l'ouest de la face visible.</p>
+<p>La littérature admise interprète cette tache (le « Procellarum KREEP Terrane ») comme le dernier vestige d'un « océan de magma » global qui a cristallisé sur la Lune, et soutient que la chaleur radioactive du KREEP est ce qui a fondu les roches de la face visible et créé les mers basaltiques. Mais dès que les données sont examinées à haute résolution, <strong>trois contradictions aiguës</strong> de cette explication apparaissent :</p>
+<ol class="steps">
+<li><strong>Le centre géométrique exact :</strong> pourquoi la tache de thorium se trouve-t-elle précisément autour du point 24,1°N, 335,2°E — exactement le point fixé à l'avance dans l'article 3 comme <strong>le centre du dernier disque de contact</strong> entre la Lune et la Terre ?</li>
+<li><strong>Le paradoxe à l'intérieur de la zone de contact :</strong> si c'est la chaleur du KREEP qui a fait jaillir les mers et y a amené le thorium, les fonds des mers devraient être les plus riches en thorium. En réalité, c'est exactement l'inverse : <strong>les fonds des mers à l'intérieur de la zone de contact sont le sol le plus pauvre en thorium de cette région !</strong></li>
+<li><strong>L'absence de masse étrangère dans les bassins :</strong> si les grands bassins des mers (comme Imbrium et Serenitatis) avaient été creusés par des astéroïdes géants venus de l'espace, leurs roches fondues devraient contenir l'empreinte des métaux sidérophiles (<strong>éléments sidérophiles</strong>) de ces corps étrangers — mais ce n'est pas le cas !</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Une image : l'eau de mer qui gèle (le thorium recule avec la saumure) et un champ de tir qui garde ses distances</h2>
+<p>Pour voir comment ces trois mystères chimiques se résolvent d'un seul coup, imaginez deux expériences simples de la vie quotidienne :</p>
+<ul>
+<li><strong>De l'eau de mer qui gèle dans une cuve reliée à un tuyau d'évacuation (l'énigme du thorium) :</strong> quand l'eau de mer salée commence à geler par le haut, les cristaux de glace qui se forment sont presque de l'eau douce — et tout le sel est repoussé dans la saumure liquide restée en dessous. Si cette saumure se trouve dans une plaine fermée sans drainage (comme <strong>les plaines basaltiques</strong> qui ont fondu sur place), le sel reste piégé dans la roche quand tout gèle. Mais si la saumure se trouve au-dessus d'<strong>un tuyau ouvert vers le bas</strong> (comme le fond d'une <strong>mer</strong>, relié au canal d'alimentation vers les profondeurs !), la saumure lourde et riche en thorium coule et s'écoule par le canal vers les profondeurs — laissant le fond de la mer pauvre en thorium par rapport aux plaines et aux hauts plateaux environnants !</li>
+<li><strong>Un champ de tir où le magma léger part tôt et loin, et le magma lourd tard et près (les anneaux de fer) :</strong> au début de l'activité d'une ouverture d'alimentation, le magma est riche en gaz volatils et pauvre en fer, il est donc très léger et fluide — et il est tiré jusqu'à des centaines de kilomètres (jusqu'à 600 km). À mesure que les gaz s'échappent, le magma devient plus lourd, plus visqueux et plus riche en fer (FeO) et en titane (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>), et retombe tout près du bord de l'ouverture — créant <strong>un halo de fer gradué</strong> autour de chaque mer !</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Science et modèle : les anneaux de fer et de titane, 95% du thorium dans le disque de contact, et l'absence de masse étrangère</h2>
+<p>La partie J de l'article 05 examine les cartes chimiques satellitaires de Kaguya (fer et titane à une résolution de 240 m) et de Lunar Prospector (thorium à une résolution de 60 km) et présente quatre résultats décisifs :</p>
+<ol class="steps">
+<li><strong>Le halo de fer et de titane autour des mers atteint 600 km (étude 9, §J.1–J.2) :</strong> autour de six mers (Smythii, Imbrium, Serenitatis, Crisium, Moscoviense et Nectaris), après suppression de tous les pixels de basalte, la teneur en fer du sol diminue progressivement de <strong>6,9 % en masse</strong> dans l'anneau 0–25 km, à 5,1 à 25–50 km, à 3,9 à 50–100 km, et à <strong>3,1 % en masse</strong> à 100–150 km, et reste supérieure au niveau de fond (2,3 % en masse) même à <strong>300–600 km (3,4 % en masse)</strong> — dix fois la portée du mélange latéral par des cratères ultérieurs ! En revanche, autour d'<strong>Oceanus Procellarum</strong> — une plaine basaltique sans ouverture d'alimentation qui a simplement débordé de ses bords — le fer chute de 10,9 % à 2,4 % en masse (le niveau des hauts plateaux lointains) à 300–600 km.</li>
+<li><strong>95% de l'excès de thorium de la Lune est piégé dans le disque de contact (étude 10, §J.3) :</strong> le disque de contact (rayon de 1 500 km autour de 24,1°N, 335,2°E) ne couvre que <strong>17,5%</strong> de la surface de la Lune, et pourtant il contient <strong>95,0% de tout l'excès de thorium au-dessus de 3 ppm</strong> (médiane de 5,39 ppm dans le contact contre 1,52 ppm en dehors). Lorsqu'on déplace un disque de même taille sur <strong>16 200 centres possibles</strong> sur toute la Lune, le centre de contact fixé à l'avance dans l'article 3 se classe <strong>troisième sur 16 200</strong> (à seulement 47 km du point maximal théorique, qui rassemble 95,14% contre 94,99%) !</li>
+<li><strong>Dans la zone de contact — les mers sont pauvres en thorium tandis que les plaines et les hauts plateaux sont identiques (étude 13, §J.4) :</strong> à l'intérieur du disque de contact, les plaines basaltiques (5,62 ppm) et les hauts plateaux (5,48 ppm) portent presque exactement la même concentration de thorium ! En revanche, les quatre mers situées dans le contact (Imbrium, Serenitatis, Copernicus H et Sinus Aestuum) sont <strong>30%</strong> plus pauvres en thorium que les plaines (seulement 3,99 ppm, et chacune des quatre mers est plus pauvre que l'anneau qui l'entoure de 0,58–1,39 ppm), tandis que leur teneur en titane reste presque inchangée (−5%, rapport <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0,74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>) — car le titane est verrouillé dans des cristaux d'ilménite et reste, tandis que le dernier liquide riche en thorium s'est écoulé par les canaux d'alimentation !</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Fond :<tspan x="527.6" dy="14">⁦2,3⁩ % en masse</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6,9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5,1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Anneau autour de la mer (km) · FeO du sol sans basalte (% en masse)</text></svg><figcaption>Le halo de fer autour de six mers (étude 9) : le fer diminue avec la distance, mais reste au-dessus du niveau de fond jusqu'à 600 km.</figcaption></figure><figure class="fig"><svg viewBox="0 0 673.0 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><g transform="translate(33.0,0)"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3,99 ppm⁩</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,48 ppm⁩</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,62 ppm⁩</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1,52 ppm⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Mers de contact</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Hauts plateaux du contact</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Plaines du contact</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Hors du contact</text></svg><figcaption>Le thorium à l'intérieur et à l'extérieur du disque de contact (études 10 et 13) : les plaines et les hauts plateaux sont identiques, et les mers sont 30% plus pauvres — le liquide riche en thorium s'est écoulé par les canaux.</figcaption></figure><div class="callout"><span class="tag">Le test de la masse étrangère dans les bassins (étude 11, §J.7)</span><p style="margin:0">Si les grands bassins des mers avaient été creusés par des corps venus de l'espace à une vitesse de 18 km/s, ils auraient exigé une masse d'impact d'environ <strong>1 × 10¹⁹ kg</strong> (et pour Imbrium seul 3 × 10¹⁸ kg par mise à l'échelle, ou 2 × 10¹⁹ kg pour un corps de 250 km de diamètre, qui aurait laissé 6 × 10¹⁷ à 4 × 10¹⁸ kg de matière étrangère). En réalité, les rapports d'éléments sidérophiles dans les roches fondues d'Imbrium <strong>ne correspondent à aucun groupe de chondrites connu</strong>, et la plupart existaient déjà dans la croûte avant Imbrium et Serenitatis — car les bassins sont des <strong>ouvertures d'alimentation terrestres</strong>, et non des impacts de corps étrangers !</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Le mécanisme en mots : les cinq horloges de chaque ouverture — et le décodage des âges d'Apollo et de Chang'e</h2>
+<p>La partie K de l'article 05 dissipe l'un des plus grands malentendus de la recherche lunaire : <strong>pourquoi les roches basaltiques rapportées par les missions spatiales sont-elles datées de 3,1–3,9 milliards d'années (Apollo), de 2,8 milliards d'années (Chang'e-6 sur la face cachée) et même de 2,0 milliards d'années (Chang'e-5 dans Oceanus Procellarum) ?</strong> Cela signifie-t-il que les ouvertures se sont formées des milliards d'années après que la Lune a quitté la Terre ?</p>
+<p>La réponse est <strong>non</strong> — car chaque ouverture d'alimentation porte <strong>cinq horloges distinctes</strong> qu'il ne faut pas confondre (comme un puits qu'on creuse, qu'on ouvre, qui porte de l'eau, qu'on scelle, et dont ce n'est qu'à la fin que la dernière flaque au sommet s'assèche) :</p>
+<ol class="steps">
+<li><strong>Le moment de création de la structure (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>) :</strong> le moment où l'ouverture et la coupole sous-jacente ont été créées pendant l'étape de construction (au cours des 600 millions d'années précédant le détachement à 3,873 Ga).</li>
+<li><strong>Le moment de mise à nu (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>) :</strong> le moment où le bord du contact a reculé au-dessus de l'ouverture et l'a exposée à l'espace (génération I aussitôt, génération II pendant l'arrondissement, génération III vers le détachement).</li>
+<li><strong>Le moment de l'éruption (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>) :</strong> la période pendant laquelle l'ouverture a tiré de la matière vers l'extérieur, créant les cratères et les anneaux de fer autour d'elle.</li>
+<li><strong>Le moment de fermeture (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>) :</strong> le moment où le flux est tombé sous le seuil critique (ou où la pression s'est arrêtée au moment du détachement) et où l'ouverture a cessé d'être active (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>).</li>
+<li><strong>L'âge de la surface (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>) :</strong> <strong>l'âge du refroidissement final</strong> de la dernière goutte de magma qui a gelé en surface. Une horloge radiométrique ne commence à tourner qu'à partir du moment où la roche refroidit sous sa température de fermeture et piège les atomes fils radioactifs !</li>
+</ol>
+<p>Ainsi, toutes les roches basaltiques d'Apollo, de Chang'e-5 et de Chang'e-6 mesurent <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span> — le moment du gel final du liquide chaud</strong> (maintenu chaud longtemps par la chaleur interne de la Lune ou par la concentration de thorium dans la zone de contact), et non le moment où l'ouverture s'est ouverte (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>) !</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Explication académique et l'équation clé</h2>
+<p>Le rapport chimique qui distingue les fonds des mers des plaines basaltiques à l'intérieur de la zone de contact, et la répartition du thorium par quartiers de la Lune, sont résumés dans les expressions suivantes :</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0,74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0,60</mn><mtext>–</mtext><mn>0,88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mrow><mover accent="true"><mtext>a</mtext><mo>ˋ</mo></mover><mtext> l’int</mtext><mover accent="true"><mtext>e</mtext><mo>ˊ</mo></mover><mtext>rieur du contact</mtext></mrow></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{à l&#x27;intérieur du contact}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5,39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>contre</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1,52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{contre} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>Selon la longitude (§J.5), la concentration médiane de thorium diminue progressivement du quartier proche tourné vers la Terre (<strong>5,12 ppm</strong>), à l'hémisphère avant autour de 90°W dans lequel se trouve le centre de contact (3,27 ppm), à la face cachée (2,20 ppm) et à l'hémisphère arrière autour de 90°E (2,01 ppm) — 1,5 fois plus élevée sur toute la face visible que sur la face cachée (2,56 contre 1,76 ppm).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>La signature dans la réalité : une image unifiée à travers 15 études et 34 ouvertures cataloguées</h2>
+<p>Les parties L–O de l'article 05 réunissent les cinq lignes de preuves indépendantes en un seul système d'alimentation complet :</p>
+<ul>
+<li><strong>Le bilan des études (13 vertes et 2 orange sur 15 études, §M.2) :</strong> toutes les études principales ont été entièrement vérifiées — la correspondance de 33/34 mers aux coupoles de gravité, les 44 coupoles enfouies, la marche crustale (17 km), l'affaissement du centre (10/12), le niveau uniforme (16/16), les fonds propres (12 fois et 83 fois), les halos de fer (600 km), le centre du thorium (3/16 200), l'absence de masse étrangère, et l'usure des rebords sur les plaines de contact. Les deux études qui ont reçu un feu « orange » (confirmation partielle) ont été rapportées en toute transparence : dans l'étude 13, le rapport <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span> est aussi tombé au-delà du contact en raison d'une richesse relative en titane des fonds, et dans l'étude 16, le collier de tir est significatif autour des mers de la face cachée dans leur ensemble (p = 0,009) et autour des mers enfouies (p = 0,001), mais ne se distingue pas du témoin autour des 10 mers ouvertes de la face cachée seules.</li>
+<li><strong>Cinq questions décisives qui séparent le modèle de la littérature (§N.2) :</strong> la littérature ne peut pas expliquer comment des astéroïdes ont créé 44 coupoles de gravité sans bassins au-dessus d'elles, pourquoi un fond de mer gèle à un seul niveau et ne s'affaisse qu'au-dessus d'une coupole forte, pourquoi le halo de fer atteint 600 km, pourquoi le thorium est identique sur les plaines et les hauts plateaux du contact et bas précisément dans les mers, et où ont disparu 10¹⁹ kg de métal extérieur.</li>
+</ul>
+<h3 style="margin-top:28px">La boîte du laboratoire : le tableau chimique, un échantillon des principales ouvertures et le résumé des 8 conclusions (article 05, parties J–O et annexe A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Étude / mesure chimique</th><th>Région / groupe de comparaison</th><th>Résultat mesuré</th><th>Signification dans le modèle LEF</th></tr>
+<tr class="hl"><td><strong>Anneaux de fer (FeO) et de titane (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) (étude 9)</strong></td><td>6 mers combinées (de 0–25 à 300–600 km)</td><td>FeO : <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,9</mn><mo>→</mo><mn>3,1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong> (150 km), reste à <strong>3,4</strong> à 600 km (témoin 2,3)</td><td>Les mers ont tiré la matière légère loin et la lourde près ; à Procellarum il tombe à 2,4 (débordement local)</td></tr>
+<tr class="hl"><td><strong>Concentration du thorium dans le disque de contact (étude 10)</strong></td><td>Le disque de contact (17,5% de la surface lunaire) face à 16 200 centres</td><td><strong>95,0%</strong> de l'excès de thorium (&gt;3 ppm) ; médiane <strong>5,39</strong> contre 1,52 ppm</td><td>Le centre de contact se classe <strong>3 sur 16 200</strong> (à 47 km du pic) ; la marque de la dernière prise</td></tr>
+<tr><td><strong>Répartition du thorium dans le contact (étude 13)</strong></td><td>Les 4 mers face aux plaines et aux hauts plateaux du contact</td><td>Mers : <strong>3,99 ppm</strong> (−30%) ; plaines : <strong>5,62</strong> ; hauts plateaux : <strong>5,48</strong></td><td>Le dernier liquide riche en thorium s'est écoulé par les canaux des mers</td></tr>
+<tr><td><strong>La masse étrangère des bassins (étude 11)</strong></td><td>Tous les bassins des mers (Imbrium en tête) à 18 km/s</td><td>Environ 10¹⁹ kg nécessaires ; en réalité <strong>aucune correspondance avec une chondrite</strong></td><td>Il n'y a pas eu d'impacteurs étrangers — les bassins sont des ouvertures d'alimentation terrestres</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>N° au catalogue</th><th>Nom de l'ouverture (annexe A)</th><th>Coordonnées et distance au point subterrestre</th><th>Zone et génération de mise à nu</th><th>Coupole d'alimentation (GRAIL) et diamètre</th><th>Couverture aujourd'hui</th></tr>
+<tr class="hl"><td>#1</td><td><strong>Serenitatis</strong></td><td>26°N, 18°E (31°)</td><td>Contact (génération III)</td><td>M660_008 — <strong>610 km</strong></td><td>Ouverte (sous une mer)</td></tr>
+<tr class="hl"><td>#34</td><td><strong>Imbrium</strong></td><td>38°N, 341°E (42°)</td><td>Contact (génération III)</td><td>M660_015 — <strong>671 km</strong></td><td>Ouverte (sous une mer)</td></tr>
+<tr><td>#35–36</td><td>Copernicus H / Sinus Aestuum</td><td>6°N, 342°E / 10°N, 352°E</td><td>Contact (génération III)</td><td>M660_042 (170) / M660_020 (235 km)</td><td>Ouverte (sous une mer)</td></tr>
+<tr><td>#3–4, #6, #33</td><td>Nectaris, Crisium, Smythii, Humorum</td><td>Distance 36°–86°</td><td>Colline (génération II)</td><td>375–518 km</td><td>Ouverte (sous une mer)</td></tr>
+<tr><td>#32</td><td>Schiller–Zucchius</td><td>57°S, 316°E (67°)</td><td>Colline (génération II)</td><td>M660_014 — <strong>909 km</strong> (la plus grande)</td><td>Enfouie (sous les hauts plateaux)</td></tr>
+<tr><td>#10, #26</td><td>Moscoviense / Orientale</td><td>140° / 95° (face cachée)</td><td>Au-delà de la colline (génération I)</td><td>M660_002 (313) / M660_001 (435 km)</td><td>Ouvertes (exceptions sur la face cachée)</td></tr>
+<tr><td>#7, #9, #13, #18–19, #23–24, #37</td><td>Milne, Mendeleev, Freundlich–Sharonov, Korolev, Hertzsprung, Schrödinger et d'autres</td><td>100°–162° (face cachée)</td><td>Au-delà de la colline (génération I)</td><td>106–346 km (parmi les 36 coupoles enfouies de la face cachée)</td><td>Enfouies sous les couches de la face cachée</td></tr>
+<tr><td>#12, #20, #29</td><td>Ingenii, Apollo, Bailly</td><td>82°–146° (au-dessus de SPA)</td><td>Au-delà de la colline (génération I)</td><td>Leur coupole a été cuite et effacée par la chaleur du bassin Pôle Sud–Aitken</td><td>Au-dessus du bassin SPA</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>La porte suivante</h2>
+<p>Dans les chapitres 8–10, nous avons achevé l'enquête sur les mers de la Lune : il s'avère qu'elles ne sont pas des blessures d'impact tardives, mais <strong>les anciennes ouvertures d'alimentation</strong> par lesquelles la Lune a été bâtie au-dessus de 73 coupoles de gravité — des ouvertures qui se sont fermées dans l'ordre du recul du contact, ont gelé en niveaux de lac qui se sont affaissés en leur centre, ont peint leur environnement d'anneaux de fer jusqu'à 600 km, et ont laissé dans le disque de contact la marque du thorium de la dernière prise sur la Terre.</p>
+<p>Mais si les mers étaient les canons d'où la matière était tirée vers l'extérieur, <strong>qu'est-il advenu de cette matière après avoir été tirée dans l'espace — et comment est-elle revenue frapper la Lune pour creuser les centaines de milliers de cratères de son visage ?</strong> Dans le prochain chapitre — <strong>Chapitre 11 : Les cratères de la Lune — 99% de matière de retour, et non des astéroïdes étrangers</strong> (d'après l'article 06 — <em>Les cratères</em>) — nous décoderons l'histoire des cratères !</p>
+<a href="story11_fr.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Chapitre 11</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Les cratères de la Lune — 99% de matière de retour, et non des astéroïdes étrangers →</p></div></a><p style="margin-top:22px"><a href="story09_fr.html">← Chapitre 9</a> · <a href="story00_fr.html">Prologue</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Le modèle LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
