@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 20: טבעת הקיטור של מאדים, הניקוז בוואליס מארינריס ומבחן משימת MMX — מודל LEF</title>
+<meta name="description" content="פרק 20 בסיפור מודל LEF: טבעת הקיטור של מאדים, הניקוז בוואליס מארינריס ומבחני משימת MMX.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story20_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 20</p>
+<h1>פרק 20: טבעת הקיטור של מאדים, הניקוז בוואליס מארינריס ומבחן משימת MMX</h1>
+<p>מבוסס על מאמר 10 — Mars: The Protrusion and the Ring (חלקים F–O ונספח B: דינמיקת הטבעת, ואליס מארינריס, חריצי פובוס ותחזיות 2027–2031)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: כיצד טבעת אחת עיצבה שני ירחים הפוכים — ואיזו הוכחה תביא משימת MMX בשנת 2031?</h2>
+
+    <p>בפרק 19 ראינו כיצד פאבוניס מונס, הניצב בראש הבליטה המחודדת של תארסיס (4,450 ק"מ מעל קו המשווה), שחרר את <strong>דיימוס</strong> למסלול אליפטי ארוך (10,170–23,990 ק"מ, e = 0.41, נטייה ~ 10°) ב-7.3 שעות, ואת <strong>פובוס</strong> למסלול מעגלי (e = 0.002) על קו הסיבוב המשותף (9,870 ק"מ) ב-8.3 שעות. כעת נותרו שלוש תעלומות סגירה קריטיות:</p>
+    <ol class="steps">
+      <li><strong>גורלות הפוכים באותה טבעת (F.1–F.6, G):</strong> מדוע דיימוס התעגל, התיישר אל קו המשווה, נשחק לקוטר 12.4 ק"מ והתרחק ל-23,463 ק"מ, בעוד פובוס הכבד והמהיר יותר לא ברח החוצה עם הגאות, שמר על חריציו, וצונח כיום מ-19,100 ק"מ אל 9,375 ק"מ?</li>
+      <li><strong>הצלקת האדירה של ואליס מארינריס ומאזן המים (H.1–H.6, M):</strong> מהו תפקידם של מבוך נוקטיס לבירינתוס, קניון ואליס מארינריס וערוצי ההצפה אל קרייסה — והיכן מסתתרים המים של מאדים הצעיר?</li>
+      <li><strong>הכרעת המעבדה של משימת MMX (חלק III ונספח B):</strong> משימת <strong>MMX</strong> של סוכנות החלל היפנית JAXA (שיגור באוקטובר 2026, נחיתה על פובוס ב-2027 והחזרת דגימות לכדור הארץ ב-<strong>2031</strong>) תמדוד את האיזוטופים, מרכז המסה והחריצים של פובוס ותכריע חד-משמעית בין מודל LEF לבין תיאוריות הפגיעה והלכידה.</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: נייר לטש על מסלול חוצה, רצועת רוח נגדית, וכדוריות במיסב כדורי</h2>
+
+    <p>ארבעה דימויים מוחשיים מאירים את הדינמיקה של טבעת הקיטור, צלקת הניקוז וסימני הלוע שעל פובוס:</p>
+    <ul>
+      <li><strong>גוף החוצה זרם מעגלי כמו נייר לטש לעומת סירה השטה עם הזרם (F.2–F.3):</strong> לפני הפליטות בנה מאדים <strong>טבעת משוונית עגולה מקיטור ואבק</strong> שהתעבו לגרגירי קרח מעבר לקו הסיבוב המשותף (והתגבשו לגושים מעבר לגבול רוש לקרח ב-13,000 ק"מ). דיימוס, שנזרק למסלול אליפטי ארוך (e = 0.41), חצה את הטבעת בכל הקפה במהירות יחסית של מאות מטרים לשנייה: הטבעת <strong>שחקה אותו מ-20.7 ל-12.4 ק"מ</strong> (איבוד 76%–83% מנפחו), שיטחה את נטייתו מ-10° ל-1.8°, והאיצה אותו בקצה הרחוק (שם נע לאט מהטבעת) עד שעגלה והרחיקה אותו ל-14,300 ק"מ (ומשם הגאות של מאדים הרך, החזקה פי 8–20 מהיום, נשאה אותו ל-23,463 ק"מ בתוך 150–370 מיליון שנה). לעומתו, פובוס נכנס מיד למסלול מעגלי במהירות הטבעת עצמה — ולכן הטבעת לא יכלה להאיץ אותו או לשחוק אותו!</li>
+      <li><strong>"רצועת הגז" — רוח נגדית קלושה המאוזנת מול דחיפת הגאות (F.4–F.6):</strong> בשפה הפנימית של הטבעת, גז המוחזק חלקית בלחץ עצמי נע מעט לאט יותר ממהירות המסלול, ויוצר <strong>רוח פנים של ~ 100 מ'/שנ'</strong>. בצפיפות גז זעירה של <strong>3–8 × 10⁻⁸ ק"ג/מ"ק</strong> (דלילה כאוויר כדור הארץ בגובה 115 ק"מ), גרר הרוח מאזן בדיוק את תאוצת הגאות הזעירה (~ 10⁻¹¹ מ'/שנ'²). כך שימשה השפה הפנימית של הטבעת <strong>"רצועה" (Leash)</strong> שהחזיקה את פובוס צמוד לקו הסיבוב המשותף והובילה אותו החוצה לאט יחד עם הקו ככל שמאדים האט — עד שהקיטור פסק והטבעת התייבשה מבחוץ פנימה לפני <strong>3.5–3.9 מיליארד שנה</strong> (כאשר פובוס עמד ב-~ 19,100 ק"מ ויממת מאדים התארכה ל-~ 22 שעות)!</li>
+      <li><strong>סלעים כלואים ככדוריות במיסב כדורי וזיזי לוע הר געש (K.1–K.3):</strong> פובוס היה הפקק השני והקשיח יותר שנדחף בכוח בלחץ דרך לוע פאבוניס הצר (20–23 ק"מ רוחב). זיזי סלע קשיחים בדופן הלוע (בדומה למחטים המוצקות שנפלטו מלוע הר סנט הלנס ב-2004–2006) חרטו בפובוס את <strong>החריצים המקבילים</strong> לאורך כיוון תנועתו (שהתעקמו קלות כשהגוף החם התעגל בחלל); וסלעים שנלכדו ברווח הצר שבין הפקק לדופן התגלגלו כ-<strong>כדוריות במיסב כדורי</strong> ולחצו אל פני השטח הרכים את <strong>שרשראות הבורות</strong> המרווחות באופן אחיד והמקבילות תמיד לחריצים בלי לחצות אותם לעולם!</li>
+      <li><strong>מערכת ניקוז של אגן ששקע (H.2–H.4):</strong> כאשר הבליטה שקעה ונשכבה מערבה, התוכן הנוזלי והצמיג שבתוכה זרם מזרחה לאורך ציר הבליטה: מ"הצוואר" השבור של <strong>נוקטיס לבירינתוס</strong>, דרך תעלת <strong>ואליס מארינריס</strong> היורדת ב-10 ק"מ ממערב למזרח (מ-+4.9 ק"מ ל-−5.2 ק"מ), מילאה אגם פנימי בגובה אחיד של −3,560 מ', וגלשה מזרחה דרך סף אאוס כאסמה וערוצי ההצפה סימוד וטיו אל מישור קרייסה!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: האבולוציה של פובוס, קלדרת פאבוניס ורשומות פני השטח (חלקים F–M)</h2>
+
+    <p>חלקים F–M של מאמר 10 מחברים כל פרט תצפיתי על מאדים ועל שני ירחיו לתוך רצף פיזיקלי אחד:</p>
+    <ol class="steps">
+      <li><strong>שחזור הנפילה של פובוס והיווצרות היחס 3.2 הקפות ליממה (G, K.7–K.8):</strong> ברגע שהטבעת התייבשה לפני 3.9 Ga כשפובוס עמד ב-19,100 ק"מ (זמן הקפה 22.3 שעות מול יממה מאדימית של ~ 22 שעות — כלומר <strong>הקפה אחת בדיוק ביממה</strong>), קו הסיבוב המשותף חלף מעבר לו ופובוס החל ליפול פנימה. מכיוון שכוח הגאות נחלש לפי חזקת 5.5 של המרחק, ב-3 מיליארד השנים הראשונות הוא ירד רק 3,800 ק"מ (בכ-4 ס"מ למאה שנה), וב-400 מיליון השנים האחרונות צנח למעלה מ-4,000 ק"מ (עד 1.8 מ' למאה שנה כיום ב-9,375 ק"מ, זמן הקפה 7.65 שעות — האצה פי 2.9, שיחד עם האטת מאדים מ-22 ל-24.6 שע' פי 1.1 יוצרת בדיוק את היחס 2.9 × 1.1 = 3.2 הקפות ביממה!).</li>
+      <li><strong>מאזן הנפח של קלדרת פאבוניס ורשומת סטיקני (I.1–I.3, K.4–K.6):</strong> הקלדרה בראש פאבוניס מונס היא בור גלילי יחיד, עגול ותלול ברוחב 47 ק"מ ובעומק כמעט 5 ק"מ (יחס עומק/רוחב 0.10, העמוק ביותר מבין ארבעת הרי הגעש של תארסיס), שנפחו <strong>8,300–8,700 קמ"ק</strong> — תואם לנפח הכולל של שני הפקקים שנפלטו ממנו (~ 6,740 קמ"ק כיום) לאחר קריסת תקרת התא הרדוד. בקצה הקהה של פובוס שוכן שקע <strong>סטיקני</strong> (9 ק"מ), שנוצר כאשר הקצה הקהה המוביל פגע בחומר שבפי הלוע: מדידה על מודל הצורה של Ernst et al. (2023) ברזולוציית 36 מ' מוכיחה שהחריצים על קרקעית סטיקני <strong>מעוכים ורחבים יותר</strong> (חדות 0.34 לעומת 0.44 מחוצה לו — נמוך מ-89% מ-80 אתרים אקראיים על פובוס) ללא כיסוי רגולית, כלומר החריצים נחרטו בלוע <em>לפני</em> שסטיקני נלחץ ביציאה!</li>
+      <li><strong>פתרון מאזן המים הכפול של מאדים ומקור האבק הגלובלי (H.5–H.6, M):</strong> המים שנפלטו דרך קו הסיבוב המשותף אל הטבעת התפרקו מקרינת השמש והותירו העשרה של פי 6–7 בדאוטריום באטמוספירה (שכבה גלובלית של לפחות 137 מ', Villanueva et al. 2015), והאבק הטחון של הטבעת שקע כאבק הגלובלי האחיד של מאדים; ואילו רוב המים הפנימיים של מאדים הצעיר <strong>מעולם לא יצאו</strong> ונשארו חתומים מתחת לאותו קרום אטום — בנקבוביות הקרום האמצעי בעומק <strong>11.5–20 ק"מ</strong> שגילתה הנחתת InSight (Wright et al. 2024, שקול לשכבה גלובלית בעומק 1–2 ק"מ)!</li>
+    </ol>
+
+        <figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Moon diameters at release and today" style="direction:ltr"><rect x="113.6" y="16" width="366.4" height="26" rx="4" fill="#9aa3af"/><text x="105.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:rtl;unicode-bidi:embed" >⁦22.9⁩</text><text x="634.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >פובוס · בפליטה</text><rect x="123.2" y="56" width="356.8" height="26" rx="4" fill="#1f3a5f"/><text x="115.2" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:rtl;unicode-bidi:embed" >⁦22.3⁩</text><text x="634.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >פובוס · היום</text><rect x="148.8" y="96" width="331.2" height="26" rx="4" fill="#9aa3af"/><text x="140.8" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:rtl;unicode-bidi:embed" >⁦20.7⁩</text><text x="634.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >דיימוס · בפליטה</text><rect x="281.6" y="136" width="198.4" height="26" rx="4" fill="#b23a2e"/><text x="273.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >⁦12.4⁩</text><text x="634.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >דיימוס · היום</text></svg><figcaption>קוטר שני הירחים (ק"מ) בפליטה ובימינו: דיימוס, שחצה את לב הטבעת, איבד כ-40% מקוטרו; פובוס, שריחף בשפה הגזית, כמעט לא השתנה.</figcaption></figure></section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: כיצד הטבעת החזיקה את פובוס בקו הסיבוב המשותף והפכה את שתי הנטיות</h2>
+
+    <p>חלקים F.1–F.6 ו-G של מאמר 10 מראים כיצד אינטראקציה פיזיקלית אחת — טבעת משוונית של קיטור ואבק שהוזנה מפליטת המים של מאדים — מסבירה הן את ההבדלים הקיצוניים בין פובוס לדיימוס והן את התזמון המדויק של נפילת פובוס:</p>
+    <ol class="steps">
+      <li><strong>איזון הכוחות ב"רצועת הגז" הפנימית (§F.4):</strong> בשפה הפנימית של הטבעת, צמוד לקו הסיבוב המשותף, הגז מוחזק חלקית על ידי לחץ עצמי ולכן מסתובב מעט לאט יותר ממהירות המסלול הקפלריאנית. כך פוגש פובוס <strong>רוח פנים קלושה במהירות יחסית v ≈ 100 מ'/שנ'</strong>. בצפיפות גז של <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8 \times 10^{-8}</annotation></semantics></math></span></span> ק"ג/מ"ק</strong> (דלילה כאטמוספירת כדור הארץ בגובה 115 ק"מ), כוח הגרר של הגז מאזן בדיוק את תאוצת הגאות הדוחפת את פובוס החוצה (~ 10⁻¹¹ מ'/שנ'²). כל עוד מאדים פלט קיטור והאט, קו הסיבוב המשותף נע החוצה והוביל עמו את פובוס עד ~ 19,100 ק"מ.</li>
+      <li><strong>התייבשות הטבעת מבחוץ פנימה ושחרור הרצועה (§F.5–F.6):</strong> הטבעת הוזנה רק מבסיסה הפנימי שעל קו הסיבוב המשותף (ואילו מעבר ל-13,000 ק"מ, גבול רוש לקרח, התגבש החומר לגושים שכבר לא תפקדו כטבעת). כאשר הקרום של מאדים הצעיר התקשח, התמיין והתקרר, פסק שטף הקיטור והטבעת התייבשה מבחוץ פנימה לפני <strong>3.5–3.9 מיליארד שנה</strong> (יממת מאדים ~ 22 שעות). באותו רגע חלף קו הסיבוב המשותף מעבר לפובוס (19,100 ק"מ), ופובוס החל ליפול פנימה אל מסלולו כיום (9,375 ק"מ). אילו התייבשה הטבעת מוקדם כשהיה ב-9,900 ק"מ, הוא היה נופל ומתפרק תוך פחות מ-100 מיליון שנה!</li>
+      <li><strong>הבדלי השחיקה והעומק של המכתשים (§J.1–J.2, §L):</strong> דיימוס חצה את לב הטבעת ואת הגושים שמעבר ל-13,000 ק"מ במשך מיליוני הקפות, ולכן איבד 76%–83% מנפחו (נשחק מקוטר ~ 20.7 ק"מ ל-12.4 ק"מ), איבד את חריצי הלוע המקוריים שלו, והמכתשים שלו רדודים פי שלושה משל פובוס (עומק חציוני 1.9% מהרוחב לעומת 5.5% בפובוס). פובוס, שריחף בעדינות בשפה הגזית הפנימית, איבד כ-1% בלבד (שכבה בעובי ~ 40 מ') ושמר על החריצים ושרשראות הבורות.</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>האיזון בין גרר הרוח הנגדית בשפה הפנימית של הטבעת לבין דחיפת הגאות של מאדים הצעיר, וקצב השינוי הגיאותי של ציר המסלול הגדול da/dt מנוסחים כך (§G, נספח A):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>ρ</mi><mi>g</mi></msub><mi>A</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>≈</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup><mtext> ק&quot;ג/מ&quot;ק</mtext><mo separator="true">,</mo><mtext>  </mtext><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≈</mo><mn>100</mn><mtext> מ’/שנ’</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F_{\mathrm{drag}} = \dfrac{1}{2}\rho_g A v_{\mathrm{rel}}^2 = F_{\mathrm{tide}} \quad (\rho_g \approx 3\text{–}8\times 10^{-8}\text{ ק&quot;ג/מ&quot;ק}, \; v_{\mathrm{rel}} \approx 100\text{ מ&#x27;/שנ&#x27;})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><mi>a</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mo>±</mo><mn>3</mn><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>k</mi><mn>2</mn></msub><mi>Q</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>m</mi><mi>M</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>R</mi><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>5</mn></msup><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\dfrac{da}{dt} = \pm 3\left(\dfrac{k_2}{Q}\right)\left(\dfrac{m}{M}\right)\left(\dfrac{R}{a}\right)^5 n a</annotation></semantics></math></span></div></div></div>
+    <p>כאשר מקדם הפיזור הגיאותי כיום הוא <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub><mi mathvariant="normal">/</mi><mi>Q</mi><mo>=</mo><mn>1.816</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k_2/Q = 1.816 \times 10^{-3}</annotation></semantics></math></span></span> (Lainey et al. 2021) ועל מאדים הצעיר, החם והרך היה גדול פי 8–20, דיימוס טופס מ-14,300 ק"מ אל מעבר לקו הסיבוב המשותף הסופי (20,428 ק"מ) בתוך 150–370 מיליון שנה, ואילו פובוס צנח מ-19,119 ק"מ לפני 3.9 Ga אל 9,375 ק"מ כיום בקצב המואץ מ-4 ס"מ/מאה שנה ל-1.8 מ'/מאה שנה.</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: מטריצת התחזיות הנחרצות למשימת MMX (2027–2031)</h2>
+
+    <p>בחלק III ובנספח B מציב מאמר 10 <strong>16 מבחני הפרכה כמותיים (B1–B16)</strong> עבור משימות החלל הקרובות — ובראשן משימת <strong>MMX</strong> של JAXA (שיגור באוקטובר 2026, נחיתה על פובוס ב-2027 והחזרת ≥ 10 גרם רגולית לכדור הארץ ב-2031):</p>
+    <ul>
+      <li><strong>המבחן האיזוטופי והכימי המכריע (N.1, B1–B4):</strong> בדגימות פובוס שתחזיר MMX, האיזוטופים של <strong>חמצן (O), כרום (Cr) וטיטניום (Ti)</strong> יימצאו <strong>על קו מאדים הטהור בלבד</strong> ללא שום רכיב של גוף פוגע זר או אסטרואיד; האיזוטופים הנדיפים של <strong>אבץ (Zn) ואשלגן (K)</strong> לא יראו הסטת אידוי (בניגוד לפגיעת ענק מותכת); והגרגירים יציגו מרקם של <strong>קצף וולקני מקורר בעל נקבוביות סגורות ומינרלים ממוימים</strong> (ולא כדוריות זכוכית שהתעבו מאדים).</li>
+      <li><strong>מבחן המבנה והכבידה של פובוס ודיימוס (N.2–N.6, B5–B8):</strong> שדה הכבידה של פובוס יחשוף <strong>היסט של מרכז המסה ב-300–500 מ' לעבר מאדים (הקצה הקהה)</strong>; שחזור צורת פובוס לגוף מוארך יישר את משפחות החריצים המקבילים; ויעפי MMX ליד דיימוס יאשרו הרכב מאדימי זהה לפובוס.</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: השוואת דיימוס ופובוס בטבעת, ציר הזמן הגיאותי ומבחני משימת MMX (מאמר 10, חלקים F–O ונספח B)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>מאפיין</th>
+            <th>דיימוס (Deimos — הפליטה הראשונה)</th>
+            <th>פובוס (Phobos — הפליטה השנייה)</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>מועד הפליטה והמסלול ההתחלתי</strong></td>
+            <td>יממה 7.3 שע'; מסלול אליפטי ארוך (10,170–23,990 ק"מ, e = 0.41, נטייה ~ 10°)</td>
+            <td>יממה 8.3 שע'; ישירות למעגל על קו הסיבוב המשותף (9,870 ק"מ, e = 0.002)</td>
+          </tr>
+          <tr>
+            <td><strong>אזור הפעולה בטבעת</strong></td>
+            <td>חצה את <strong>כל לב הטבעת</strong> ואת הגושים שמעבר ל-13,000 ק"מ במאות מ'/שנ'</td>
+            <td>ריחף בעדינות ב-<strong>שפה הגזית הפנימית</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8\times 10^{-8}</annotation></semantics></math></span></span> ק"ג/מ"ק)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>שחיקה ושינוי גודל</strong></td>
+            <td>נשחק מקוטר ~ 20.7 ק"מ (6.8× 10¹⁵ ק"ג) ל-<strong>12.4 ק"מ</strong> (איבד 76%–83% מנפחו)</td>
+            <td>איבד ~ 1% בלבד (~ 40 מ'); נשאר בגודל <strong>22.3 ק"מ</strong> (1.07× 10¹⁶ ק"ג)</td>
+          </tr>
+          <tr>
+            <td><strong>צפיפות ופני שטח</strong></td>
+            <td><strong>1,471 ק"ג/מ"ק</strong> (פקק עליון ספוגי); חלק ומעוגל, ללא חריצים (עומק שקעים חציוני 1.9%)</td>
+            <td><strong>1,853–1,887 ק"ג/מ"ק</strong> (פקק שני דחוס); חריצים מקבילים, שרשראות בורות וסטיקני (9 ק"מ)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>מסלול וגורל כיום</strong></td>
+            <td><strong>23,463 ק"מ</strong> (e = 0.0003, i ≈ 1.8°, הקפה 30.3 שע') — מעבר לקו, מתרחק</td>
+            <td><strong>9,375 ק"מ</strong> (e = 0.0151, i = 1.09°, הקפה 7.65 שע') — בתוך הקו, נופל (1.8 מ'/מאה שנה)</td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>קוד מבחן</th>
+            <th>מדידה ומשימה</th>
+            <th>תחזית מודל LEF (הבליטה והטבעת)</th>
+            <th>תחזית ההסבר המקובל (פגיעה / לכידה)</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>B1–B3</strong></td>
+            <td>איזוטופי O, Cr, Ti, D/H ו-Zn, K בדגימות MMX (2031)</td>
+            <td><strong>קו מאדים הטהור בלבד</strong>, אפס רכיב זר, וללא הסטת אידוי ב-Zn, K</td>
+            <td>פגיעה: תערובת מאדים + גוף זר (30%–65%) והתדלדלות איזוטופים קלים; לכידה: אסטרואיד</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>B4</strong></td>
+            <td>מרקם הגרגירים של פובוס (MMX, 2031)</td>
+            <td><strong>קצף וולקני מקורר</strong> בעל נקבוביות סגורות ומינרלים ממוימים</td>
+            <td>כדוריות זכוכית שהותכו והתעבו מאדים</td>
+          </tr>
+          <tr>
+            <td><strong>B5</strong></td>
+            <td>שדה הכבידה של פובוס (MMX, 2027)</td>
+            <td><strong>מרכז המסה מוסט ב-300–500 מ' לעבר מאדים (הקצה הקהה)</strong></td>
+            <td>אין תחזית להיסט מרכז מסה</td>
+          </tr>
+          <tr>
+            <td><strong>B6–B7</strong></td>
+            <td>צילום החריצים ושרשראות הבורות (MMX, 2027)</td>
+            <td>מרוכזים בצד המערבי, מתיישרים בגוף מוארך, <strong>מעוכים בקרקעית סטיקני</strong>; שרשראות מקבילות שאינן חוצות חריצים</td>
+            <td>מאמצי גאות או פליטת סטיקני (ללא הבדל בתוך סטיקני או חצייה אקראית)</td>
+          </tr>
+          <tr>
+            <td><strong>B10 / B14</strong></td>
+            <td>כבידה מתחת לפאבוניס / סייסמולוגיה מתחת לתארסיס</td>
+            <td><strong>גירעון מסה</strong> מתחת לקלדרת פאבוניס; קרום אמצעי רווי במים נוזליים מתחת לכל תארסיס</td>
+            <td>קלדרת מגן רגילה; אין קשר בין הירחים למים הכלואים בעומק</td>
+          </tr>
+        
+      </table></div>
+    
+
+    </section>
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+
+    <p>בפרקים 19–20 הרחבנו את עקרון LEF מעבר למערכת כדור הארץ–הירח והראינו כיצד אותו מנגנון פיזיקלי פועל על <strong>מאדים</strong>: כוכב לכת צעיר, מורחב ומהיר הצמיח על קו המשווה שלו את <strong>הבליטה המחודדת של תארסיס</strong>, נשא את פאבוניס מונס לגובה 4,450 ק"מ לתנאי אפס משקל נטו, ושחרר בלחץ וולקניאני שגרתי את <strong>דיימוס</strong> (7.3 שע') ואת <strong>פובוס</strong> (8.3 שע') אל תוך <strong>טבעת הקיטור המעובה</strong> — ומשימת MMX שתחזיר דגימות מפובוס בשנת 2031 תספק את מבחן המעבדה החותך!</p>
+  <p style="margin-top:22px"><a href="story19_he.html">→ פרק 19</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
