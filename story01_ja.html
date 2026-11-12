@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 1 章：ダーウィンの難問と共回転の革命 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 1 章：なぜ表面からの分裂はうまくいかないのか、共回転が共回転線で速度の隔たりをどう埋めるのか、そして静止軌道がそれについて何を教えてくれるのか。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story01_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story01_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story01_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story01_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story01_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story01_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story01_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story01_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story01_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story01_he.html" hreflang="he">עברית</a> · <a href="story01_en.html" hreflang="en">English</a> · <a href="story01_de.html" hreflang="de">Deutsch</a> · <a href="story01_es.html" hreflang="es">Español</a> · <a href="story01_fr.html" hreflang="fr">Français</a> · <a href="story01_ru.html" hreflang="ru">Русский</a> · <a href="story01_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 1 章</p>
+<h1>第 1 章：ダーウィンの難問と共回転の革命</h1>
+<p>論文 02——LEF 機構の原理（序論および A.1–A.3 節）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：地球から投げ出されずに、どうやって地球を離れるのか？</h2>
+<p class="lead">序章で私たちは月の八つの大きな謎に出会い——それらすべてを一度に開ける鍵の最初の手がかりを得ました。月は、まだ地球につながっているあいだに、地球自身の物質から建造されたのです。しかし、まさにここで、もっとも鋭い物理的な問いが生まれます。地球起源という考えを百年以上も葬ってきた問いです。</p>
+<p>しばらくのあいだ、約 45 億年前の若い地球の赤道に立っていると想像してください。この初期の地球は赤熱し、熱で膨らみ、目もくらむ速さで自転しています。<strong>5.5 時間</strong>ごとに軸のまわりを一回転——今日の 4 倍の速さです！それでも、この地球の表面の高さから岩の塊やマグマの滴を放っても、それは地球をめぐる軌道へ舞い上がりはしません。塔のてっぺんから投げた石のように、まっすぐ地面へ落ちてきます。</p>
+<p>なぜでしょう？5.5 時間という速い自転でさえ、地球の表面は重力に打ち勝つほど速くは動いていないからです。1879 年、イギリスの天文学者で数学者の<strong>ジョージ・ダーウィン</strong>（チャールズ・ダーウィンの息子）は、若い地球はあまりに速く回っていたので分裂し、自分の中から月を放り出したと提案しました。しかし数十年のうちに物理学者たちは、もし月が表面から直接はがれたのなら、地球は一日 3 時間未満というありえない速さで回っていなければならないことを示しました——今日の地球–月系に存在するすべての角運動量のほぼ 3 倍（初期の計算では 4 倍にも）を必要とする状態です。</p>
+<div class="q">歴史の判決は確定したように見えました。月を地球から取り出すことはできない、と。</div>
+<p>しかしダーウィンと後継者たちは、誰も疑わなかったひとつの隠れた仮定を置いていました——<strong>物質は表面そのものから離れなければならない</strong>という仮定です。もし物質が表面から投げ出されるのではなく、地球につながったまま、地球とともに回りながら、少しずつ上へ持ち上がっていくとしたら、どうなるでしょう？</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：メリーゴーラウンドの中心から縁へ歩く少女</h2>
+<div class="carousel"><div class="fig" style="margin:0"><svg viewBox="0 0 360 230" aria-hidden="true" style="direction:ltr"><circle cx="120" cy="115" r="100" fill="#f4ecd8" stroke="#d9cfb8" stroke-width="2"/><line x1="120" y1="115" x2="220.0" y2="115.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="190.7" y2="185.7" stroke="#e3dccb"/><line x1="120" y1="115" x2="120.0" y2="215.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="49.3" y2="185.7" stroke="#e3dccb"/><line x1="120" y1="115" x2="20.0" y2="115.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="49.3" y2="44.3" stroke="#e3dccb"/><line x1="120" y1="115" x2="120.0" y2="15.0" stroke="#e3dccb"/><line x1="120" y1="115" x2="190.7" y2="44.3" stroke="#e3dccb"/><circle cx="120" cy="115" r="6" fill="#1f3a5f"/><path d="M160,35 A90,90 0 0 1 208,85" fill="none" stroke="#9aa3af" stroke-width="1.5" marker-end="url(#ah)"/><circle cx="142" cy="115" r="5.5" fill="#7a8aa0"/><line x1="142" y1="107.0" x2="142" y2="95.1" stroke="#7a8aa0" stroke-width="3" marker-end="url(#a0)"/><circle cx="168" cy="115" r="5.5" fill="#5b7ba6"/><line x1="168" y1="107.0" x2="168" y2="81.1" stroke="#5b7ba6" stroke-width="3" marker-end="url(#a1)"/><circle cx="192" cy="115" r="5.5" fill="#c47f2c"/><line x1="192" y1="107.0" x2="192" y2="68.1" stroke="#c47f2c" stroke-width="3" marker-end="url(#a2)"/><circle cx="216" cy="115" r="5.5" fill="#b23a2e"/><line x1="216" y1="107.0" x2="216" y2="55.2" stroke="#b23a2e" stroke-width="3" marker-end="url(#a3)"/><defs><marker markerUnits="userSpaceOnUse" id="a0" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7a8aa0"/></marker><marker markerUnits="userSpaceOnUse" id="a1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b7ba6"/></marker><marker markerUnits="userSpaceOnUse" id="a2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c47f2c"/></marker><marker markerUnits="userSpaceOnUse" id="a3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker markerUnits="userSpaceOnUse" id="ah" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9aa3af"/></marker></defs><text x="236" y="150" font-family="Heebo" font-size="14" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" text-anchor="start">同じ回転の速さ、</text><text x="236" y="170" font-family="Heebo" font-size="14" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" text-anchor="start">より大きな円——</text><text x="236" y="190" font-family="Heebo" font-size="14" fill="#b23a2e" font-weight="700" style="direction:ltr;unicode-bidi:embed" text-anchor="start">より速い速度</text><text x="120" y="143" font-family="Heebo" font-size="12" fill="#5b6676" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">中心</text><text x="216" y="139" font-family="Heebo" font-size="12" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">縁</text></svg></div>
+<div><p>遊園地の大きなメリーゴーラウンドが、一定の安定した速さで回っていると想像してください——たとえば 10 秒に一回転です。誰もそれを強く押さず、モーターも速くなりません。今、メリーゴーラウンドの中心近くに立っている少女が、回る床の上をゆっくりと一歩ずつ、外の縁へ向かって歩きはじめたとします。</p></div></div>
+<p>中心から一歩離れるたびに、誰も彼女を投げていないのに、驚くべきことが起こります。彼女が 10 秒ごとにめぐる円がどんどん大きくなるのです。より大きな円をまったく同じ 10 秒でめぐるには、<strong>彼女の線速度は増さなければなりません</strong>。中心の軸の近くではほとんど動かず、半分まで来るともう風が顔に当たり、外の縁に着くころにはものすごい速さで飛ぶように動いています——メリーゴーラウンド自体の回転の速さは、ほんの一瞬も変わっていないのに！</p>
+<div class="box"><span class="tag">共回転</span><p style="margin:0">これがまさに<strong>共回転</strong>（いっしょに回ること）の原理です。回る地球につながったあらゆる部分は、地球の一日ごとに一周するので、表面から高く持ち上がるほど、地球自身の自転が与える横向きの速度は大きくなり——一方で、それを引き下ろそうとする重力はかえって弱くなっていくのです。</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：分けて考えなければならない二つの問い</h2>
+<p>月が地球の中から生まれたとするあらゆる理論をまじめに検証するために、論文 02 は、混同してはならない<strong>まったく別々の二つの力学的な問い</strong>を分けなければならないことを明らかにします：</p>
+<div class="twoq">
+<div><b>QUESTION 1</b><h4>解放速度の問い（運動学的検証）</h4><p>物質が解放された瞬間、その横向き（接線方向）の速度は、表面に落ち戻ることなく地球をめぐる自由な軌道にとどまるのに十分な大きさか？</p></div>
+<div><b>QUESTION 2</b><h4>角運動量の収支の問い（保存の検証）</h4><p>解放速度が軌道に一致する点を見つけたとして——初期の地球には、そもそも物質をその点まで運び、なおかつ今日の地球–月系で測定される角運動量を残すだけの角運動量があったのか？</p></div>
+</div>
+<p>ダーウィンの古典的分裂説では、この二つの問いがまちがった場所——地球の表面——で結びつけられていたため、両方とも失敗しました。これに対して LEF モデルでは、まず初期の地球（ここでは<strong>「母天体」</strong>と呼びます）の正確な環境条件を示し、二つの問いがどちらも単純ですっきりした答えを得ることを見ていきます。</p>
+<div class="callout"><span class="tag">質量についての重要な注意 · 二重に数えない</span>
+<p style="margin:0">月が分離する前、月をつくる物質はすべて若い地球の中にありました。したがって<strong>初期の母天体</strong>の質量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{tot}}</annotation></semantics></math></span></span>）は、今日の地球（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mo>⊕</mo></msub><mo>=</mo><mn>5.972</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_\oplus = 5.972 \times 10^{24}</annotation></semantics></math></span></span> kg）と今日の月（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">m = 7.35 \times 10^{22}</annotation></semantics></math></span></span> kg）の質量の和、<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg</strong> です。質量が消えることも、二重に数えられることもありません。月の質量が外へ移るにつれて、地球の質量はそれに応じて <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.972</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">5.972 \times 10^{24}</annotation></semantics></math></span></span> kg まで減ります。</p></div>
+<p>さらに、若い地球は全体が高温で、そのため<strong>熱膨張</strong>していました（冷えた半径 6,397 km より約 120 km の膨張を採用）。その体積半径は <strong>6,517 km</strong>、平均密度は約 5,214 kg/m³ でした。一日 5.5 時間という速い自転のために、半流動的な母天体は<strong>マクローリン回転楕円体</strong>（回転する流体天体の平衡形——極で扁平、赤道でふくらむ）の形をとり、赤道半径は約 <strong>6,721 km</strong>、極半径は約 <strong>6,128 km</strong> でした。</p>
+<div class="spec"><div><b class="ltr">6.0455×10²⁴</b><span>母天体の質量（kg）</span></div><div><b>6,517</b><span>体積半径（km）</span></div><div><b>6,721</b><span>赤道半径（km）</span></div><div><b>6,128</b><span>極半径（km）</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：深淵を埋めることと、洋梨の橋</h2>
+<p>では、5.5 時間（19,800 秒）ごとに一回転する母天体の上で、実際の数字で何が起こるかを確かめてみましょう：</p>
+<ul class="pts">
+<li class="a"><strong>表面（赤道、中心から 6,721 km）：</strong>地球の自転は、表面の一点に <strong>2,133 メートル毎秒</strong>の横向きの速度しか与えません。これに対して、この高さで落ちずに自由な円軌道にとどまるには <strong>7,701 メートル毎秒</strong>が必要です。その隔たり——<strong>5,568 メートル毎秒</strong>——は巨大です。ここで解放された物質は、長半径がわずか 3,495 km の細い楕円軌道に入ります。つまり、ただちに地球の奥深くへ突っこむ軌道です。</li>
+<li><strong>上昇の途中（共回転）：</strong>物質が地球につながったまま上へ登っていくと、二つの速度は互いに近づきます。自転が与える速度は距離とともに直線的に増し、自由な軌道に必要な速度は重力が弱まるにつれて減るのです。</li>
+<li class="c"><strong>出会いの点——共回転線（15,818 km）：</strong>地球の中心から <strong>15,818 km</strong>（地球半径の約 2.4 倍）の距離で、二つの速度はちょうど <strong>5,020 メートル毎秒</strong>で出会います。ここで隔たりは完全に消えます！ここまで運ばれて解放された天体は投げ出されるのではありません——切り離された瞬間、すでに自由な円軌道の速度ちょうどで動いているのです。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1,500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3,000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4,500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6,000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7,500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9,000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6,000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10,000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14,000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18,000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22,000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26,000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">表面での差 ⁦5.6 km/s⁩</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">共回転線</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15,818 km · <tspan>5,020 m/s</tspan></text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">自転速度 ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">軌道速度 ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">地球の中心からの距離（km）· 一日 5.5 時間</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">速度（m/s）</text>
+</svg><figcaption>一日 5.5 時間のときの、地球の中心からの距離に対する二つの速度：表面での <span class="ltr">5,568 m/s</span> の隔たりが共回転線で閉じる。</figcaption></figure>
+<div class="q">しかし、物質はどうやって途中でばらばらにならずに、そんな高さまで届くのでしょう？</div>
+<p>ここでモデルの中心となる構造が登場します。<strong>「洋梨」</strong>です。それは細い管でも、宇宙へ溶岩を噴き上げる火山でもなく、地球自身の物質でできた巨大で連続した丘です。地表での基部は驚くほど広く——約 <strong>9,000 km</strong>（全範囲では 9,000〜11,000 km）——側面はなめらかな弧を描いて曲がり、折れてしまうような細い「くびれ」はなく、上端の先端は幅約 <strong>3,000 km</strong> の接触円盤で、形成されつつある月と接しています。</p>
+<figure class="fig"><svg viewBox="0 0 640 350" role="img" aria-label="Earth, the pear and the Moon at the corotation line, to scale" style="direction:ltr"><defs><radialGradient id="eg" cx="40%" cy="40%"><stop offset="0" stop-color="#e98a4f"/><stop offset="1" stop-color="#9b3d22"/></radialGradient><radialGradient id="mg2" cx="40%" cy="40%"><stop offset="0" stop-color="#f1ebdc"/><stop offset="1" stop-color="#a49d86"/></radialGradient><marker id="e1" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M10,0 L0,5 L10,10" fill="none" stroke="#5b6676" stroke-width="1.5"/></marker><marker id="e2" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10" fill="none" stroke="#5b6676" stroke-width="1.5"/></marker></defs><path d="M372.4,50.0 A276.8,276.8 0 0 1 372.4,310.0" fill="none" stroke="#2f7d57" stroke-width="2" stroke-dasharray="7 5"/><path d="M220.2,107.0 C285.6,115.0 319.5,147.8 389.5,153.8 L389.5,206.2 C319.5,212.2 285.6,245.0 220.2,253.0 Z" fill="#d98a5a" opacity=".85"/><circle cx="128" cy="180" r="117.6" fill="url(#eg)"/><circle cx="404.8" cy="180" r="30.4" fill="url(#mg2)" stroke="#8a846f"/><text x="128.0" y="185.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">地球</text><text x="321.6" y="185.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">洋梨</text><text x="443.2" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed">月</text><text x="382.4" y="56.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">共回転線 · 15,818 km</text><text x="220" y="282" text-anchor="start" font-family="Heebo" font-size="13" font-weight="400" fill="#9a3f33" style="direction:ltr;unicode-bidi:embed">基部の幅 約 9,000 km</text><text x="417.0" y="232.4" text-anchor="start" font-family="Heebo" font-size="13" font-weight="400" fill="#9a3f33" style="direction:ltr;unicode-bidi:embed">接触円盤の幅 約 3,000 km</text><line x1="245.6" x2="374.4" y1="334" y2="334" stroke="#5b6676" stroke-width="1.5" marker-start="url(#e1)" marker-end="url(#e2)"/><text x="249.6" y="326.0" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">地表から月まで約 7,800 km</text></svg><figcaption>縮尺どおりの地球、洋梨、月：洋梨全体が共回転線の内側にあり、月はその上端の先端にある。（模式図；寸法は本文のとおり。）</figcaption></figure>
+<p>この洋梨は、地表と月のあいだの約 <strong>7,800 km</strong> の距離を橋渡ししており、<strong>完全に共回転線の内側</strong>にあります。その物理的な意味は大きなものです。洋梨に沿ったどの点でも、地球の重力が自転の遠心的な押しより強いのです。そのため洋梨は地球の切り離せない一部としてしっかりと地球につなぎとめられ、飛び去ることはありません。上端の先端にある天体だけが共回転線に達し、ひとつのまとまりとして解放されるのです！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>共回転半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub></mrow><annotation encoding="application/x-tex">R_{\mathrm{sync}}</annotation></semantics></math></span></span>）を求めるには、角速度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\omega = 2\pi/T</annotation></semantics></math></span></span> で地球とともに回る天体の接線速度を、中心重力場で自由な円軌道に必要な速度と等しいとおきます：</p>
+<div class="eqs">
+<div class="eq"><div class="k">自転が与える速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi>ω</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \omega R</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">自由な円軌道の速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>R</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{circ}} = \sqrt{\dfrac{GM}{R}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">等しくなる点</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">\omega R_{\mathrm{sync}} = \sqrt{\dfrac{GM}{R_{\mathrm{sync}}}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>共回転半径</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi><msup><mi>T</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{\mathrm{sync}} = \left(\dfrac{GM}{\omega^{2}}\right)^{1/3} = \left(\dfrac{GMT^{2}}{4\pi^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>この式は単純な基本法則を教えてくれます。共回転半径は、中心天体の質量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span>）と、その一日の長さ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span>）の 3 分の 2 乗（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">T^{2/3}</annotation></semantics></math></span></span>）だけで決まるのです。地球が速く回るほど（一日が短いほど）共回転線は地球に近づき、自転が遅くなるほど（一日が長いほど）共回転線は遠ざかります。</p>
+<div class="box"><span class="tag">なぜ 5.5 時間なのか？</span>
+<p style="margin:0"><strong>では、なぜ 5.5 時間が自然な出発点なのでしょう？</strong><br>今日の地球と月の角運動量のすべて（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.441</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">3.441 \times 10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>）を、若く膨らんだ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>V</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_{V,0} = 6{,}517</annotation></semantics></math></span></span> km）比較的一様な（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span>）地球に戻すと、<strong>5.54 時間</strong>の一日が得られるからです。それ以来の 45 億年のあいだに太陽潮汐が系の角運動量の約 1% を取り去ったので、本当の出発点はわずかに速く——<strong>5.50 時間</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466 \times 10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span>）の一日でした。</p></div>
+</section>
+
+<section>
+<span class="lab">06 · IN THE SKY TODAY</span>
+<h2>現実に残る署名：私たちの頭上の静止軌道</h2>
+<p>共回転の式は黒板の上の理論的な練習ではありません——いまこの瞬間も私たちの頭上で働き、現代の地球規模の通信を可能にしています。通信衛星や気象衛星（静止衛星）は、まさに<strong>今日の地球の共回転半径</strong>へ打ち上げられているのです。</p>
+<p>24 時間の一日（正確には 23 時間 56 分の恒星自転）では、この線は地表から約 <strong>35,786 km</strong> の高さ（地球の中心から約 42,164 km）にあります。そこにある衛星は、地球が一回自転するのとちょうど同じ時間で一周するので、赤道上の同じ地点の上空に永遠に「浮かんで」いるのです。45 億年前、一日がわずか 5.5 時間だったころ、この不思議な線はずっと近く——地球の中心から 15,818 km——にありました！</p>
+<figure class="fig"><svg viewBox="0 0 640 120" role="img" aria-label="Corotation radius then and now" style="direction:ltr"><circle cx="40" cy="38" r="9" fill="#2f6fb0"/><line x1="40" x2="250.1" y1="38" y2="38" stroke="#2f7d57" stroke-width="4"/><circle cx="250.1" cy="38" r="6" fill="#2f7d57"/><text x="262.1" y="26" text-anchor="start" font-family="Heebo" font-size="13" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">45 億年前 · 一日 5.5 時間 · 15,818 km</text><circle cx="40" cy="92" r="9" fill="#2f6fb0"/><line x1="40" x2="600.0" y1="92" y2="92" stroke="#1f3a5f" stroke-width="4"/><circle cx="600.0" cy="92" r="6" fill="#1f3a5f"/><text x="596.0" y="80" text-anchor="end" font-family="Heebo" font-size="13" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">今日 · 一日 23 時間 56 分 · 42,164 km（静止軌道）</text></svg><figcaption>当時と現在の共回転線を同じ縮尺で（地球の中心からの距離）。</figcaption></figure>
+<h3 style="margin-top:28px">ラボボックス：速度の隔たりを埋めることと出発条件（論文 02、A 部）</h3>
+<div class="tw"><table class="lt"><tr><th>パラメータ / 検証</th><th>表面（赤道）</th><th>初期の共回転線</th><th>物理的な意味</th></tr>
+<tr><td><strong>一日の長さ</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span></span></td><td>5.5 時間（19,800 s）</td><td>5.5 時間（19,800 s）</td><td>今日より約 4 倍速い自転（角運動量保存から導出）</td></tr>
+<tr><td><strong>地球の中心からの距離</strong></td><td>6,721 km（赤道半径）</td><td><strong>15,818 km</strong>（地球半径の約 2.4 倍）</td><td>洋梨は地表から約 7,800 km を橋渡しする</td></tr>
+<tr><td><strong>自転速度</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}}</annotation></semantics></math></span></span></td><td><span class="ltr">2,133 m/s</span></td><td><strong><span class="ltr">5,020 m/s</span></strong></td><td>軸からの距離とともに直線的に増す（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\omega r</annotation></semantics></math></span></span>）</td></tr>
+<tr><td><strong>円軌道速度</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{\mathrm{circ}}</annotation></semantics></math></span></span></td><td><span class="ltr">7,701 m/s</span></td><td><strong><span class="ltr">5,020 m/s</span></strong></td><td>距離とともに重力が弱まって減る（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mi>G</mi><mi>M</mi><mi mathvariant="normal">/</mi><mi>r</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{GM/r}</annotation></semantics></math></span></span>）</td></tr>
+<tr class="hl"><td><strong>速度の隔たり</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">\Delta v</annotation></semantics></math></span></span></td><td><span class="ltr">−5,568 m/s</span>（落下する）</td><td><span class="ltr">0 m/s</span>（ただちに自由な軌道へ！）</td><td>ダーウィンのモデルを倒した速度の隔たりが閉じる</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>最初の謎は解けました。解放点を表面から共回転線へ移すと、速度の隔たりは完全に消えるのです。しかし洋梨が立ち上がって質量を外へ運びはじめた瞬間、新しい、魅力的な問いが生まれます。<strong>洋梨が立ち上がることで、地球の自転は遅くなり、共回転線が遠くへ追いやられてしまうのではないか？</strong></p>
+<p>次の章——<strong>第 2 章：一日の長さをめぐる戦いと角運動量のつり合い</strong>（論文 02、A.4–A.8 節および B 部）——では、二つの相反する過程が初期の地球の自転の速さをめぐってどのように争うかを発見し、角運動量の収支が 1.007 以内で閉じるようすを見ます。</p>
+<a href="story02_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 2 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">一日の長さをめぐる戦いと角運動量のつり合い →</p></div></a>
+<p style="margin-top:22px"><a href="story00_ja.html">← 序章へ戻る</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

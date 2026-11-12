@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 23 章：惑星の環——物質の源、13.4 時間の閾値の日、そして土星のつりあった流れ — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 23 章：惑星の環——物質の源、13.4 時間の閾値の日、そして土星のつりあった流れ。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story23_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story23_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story23_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story23_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story23_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story23_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story23_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story23_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story23_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story23_he.html" hreflang="he">עברית</a> · <a href="story23_en.html" hreflang="en">English</a> · <a href="story23_de.html" hreflang="de">Deutsch</a> · <a href="story23_es.html" hreflang="es">Español</a> · <a href="story23_fr.html" hreflang="fr">Français</a> · <a href="story23_ru.html" hreflang="ru">Русский</a> · <a href="story23_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 23 章</p>
+<h1>第 23 章：惑星の環——物質の源、13.4 時間の閾値の日、そして土星のつりあった流れ</h1>
+<p>論文 12——12. 環：環は砕き、すりつぶし、戻す（A–D 部：二つの線、二つの供給経路、13.4 h の閾値の日、土星のつりあい、水の逃げ出し）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：環の物質はどこから来るのか、なぜ土星だけが巨大な環をもつのか、そしてなぜ環は衛星を築かないのか？</h2>
+<p>第 21〜22 章で、太陽系の衛星は共回転線の上で親から直接生まれることを見ました。論文 12 で LEF モデルはこの原理を<strong>惑星の環の系</strong>へと広げ、明確な規則を定めます：<strong>環は衛星の建設現場ではなく、物質を砕き、すりつぶし、親へ戻す仕組みなのです！</strong>カッシーニ、ボイジャー、望遠鏡の観測から、四つの中心的な問いが立ちあがります：</p>
+<ol class="steps">
+<li><strong>太陽系の環のあいだの極端なちがい（A.1–A.3）：</strong>なぜ土星の環は巨大で（1.54 × 10¹⁹ kg）明るく（95%〜99% が純粋な水の氷）、木星の環はかすかな塵でできていて、天王星と海王星の環は細く暗いのか——一方で小さな天体（ハウメア、カリクロー、クワオアー）のまわりでは、密な環が<em>ロッシュ限界のはるか向こう</em>を衛星へ合体せずに回っているのか？</li>
+<li><strong>土星の環の若さのパラドックス（D.3）：</strong>カッシーニは土星へ落ちる「環の雨」を<strong>毎秒 432〜45,000 kg</strong> の速さで測りました——1,100 万〜11 億年のうちに環を完全に空にしてしまう速さです。環はどうやって今日存在しているのでしょう？</li>
+<li><strong>重い環のための普遍的な条件（B.5）：</strong>なぜ太陽系のすべての惑星のなかで、<strong>今日の土星と若い火星</strong>だけが地面から直接重い環を育てたのでしょう？</li>
+<li><strong>天王星と海王星の角運動量はどこへ行ったのか（D.4）？</strong>天王星と海王星の衛星は、これらの惑星が失った角運動量のわずか 1% と 0.002% しかもっていません——残りを運び去ったのは何だったのでしょう？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：網と球、すりつぶしの漏斗、そしてつりあった噴水</h2>
+<p>四つの手にとれるイメージが、太陽系の環の物理とサイクルを説明します：</p>
+<ul>
+<li><strong>網と球——ロッシュ限界の内側の共回転線（B.5）：</strong>惑星のまわりに重い環として物質を捕らえるには、二つのことが同時に必要です：<strong>正しい場所の網</strong>と<strong>そこへ投げこまれる球</strong>です。物質が惑星の深部から共回転線（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>）へもれ出るとき、線がロッシュ限界（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>）の<em>内側</em>にあれば、差分の潮汐力がそれを衛星へ合体させず、環として捕らえます。二つの方程式を割ると惑星の密度は完全に打ち消され、<strong>宇宙のあらゆる天体に共通の普遍的な閾値の日：<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 時間</strong>が得られるのです！</li>
+<li><strong>塊をすりつぶし、塵を家へ戻す粘性の漏斗（C.1–C.4、D.1）：</strong>環の円盤の中では、内側の粒子は外側の粒子より速く動きます。非弾性の衝突は全体の角運動量を保ったまま軌道エネルギーを熱に変えます——だから物質の大部分はエネルギーを失って内へ親へと流れ、少数が外へ押し出されるのです（だから土星の A 環は 135,300 km の氷のロッシュ限界でちょうど終わり、ロッシュ限界の 2.4 倍にあるクワオアーの環も衛星へ合体しないのです！）。</li>
+<li><strong>下からの供給が上からの雨に等しい噴水の池（土星のつりあい、D.3）：</strong>土星の環は最近できた静的な名残ではなく、<strong>動的なつりあいの中の連続した流れ</strong>です。内部のポンプは、環の雨が水を大気へ下ろすのとまさに同じ速さで、水を共回転線（1.92 R）へもらしています（45 億年にわたる累積のコストは最大で土星の質量の 1.1 × 10⁻⁵）。「若い」見かけは、物質の絶え間ない入れかわりから来ているのです！</li>
+<li><strong>浅い井戸から水を汲みあげる機械のポンプ（天王星と海王星からの水の逃げ出し、D.4）：</strong>天王星と海王星は太陽から遠く冷たいのに、<strong>すべての衛星の質量の 270 倍</strong>にのぼる水を失いました（天王星で 2.5 × 10²⁴ kg、海王星で 3.2 × 10²⁴ kg）——熱による蒸発のためではなく、速い自転（7〜8 時間）のなかで、薄いガスのふた（10%〜20%）と浅い重力の井戸（木星の 59.5 km/s に対して <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21.3</mn><mtext>–</mtext><mn>23.5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> km/s）を通した<strong>共回転線への機械的な持ちあげ</strong>のためなのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：環の二つの族、二つの供給経路、そして条件の行列（A–D 部）</h2>
+<p>論文 12 の A–D 部は、環の系の四つの基本法則の定量的な証明を示します：</p>
+<ol class="steps">
+<li><strong>共回転線に対する二つの力学的な族への分類（A.3）：</strong>
+<ul>
+<li><strong>巨大惑星の族（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>）：</strong>木星（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>）、土星（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.60</mn><mtext>–</mtext><mn>1.23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>）、天王星（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.51</mn><mtext>–</mtext><mn>0.62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>）、海王星（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>）の環は共回転線の下にあるかそれを横切り、大部分がロッシュ限界の内側にあります。線の下の部分は内へ親へと落ちます（土星の B 環の「スポーク」が示すように。それは 102,000〜112,000 km、まさに 111,600 km の共回転線まで現れる！）。</li>
+<li><strong>小さな天体の族（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>）：</strong>ハウメア（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>）、カリクロー（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.10</mn><mo separator="true">;</mo><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>）、クワオアー（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mo separator="true">;</mo><mn>2.01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>）の環は共回転線のはるか<em>上</em>にあり、<strong>1:3 のスピン・軌道共鳴</strong>の半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>）のまわりに集まっています。そこでは潮汐が物質を外へ押し、共鳴がそれを捕らえるのです！</li>
+</ul>
+</li>
+<li><strong>惑星間塵を源から除外し、二つの供給経路を定める（B.2–B.4）：</strong>土星の環の化学的なきれいさ（厚さ 10〜30 m の赤道の円盤の 95%〜99% が純粋な水の氷）、等方的な宇宙塵には共有する角運動量がないこと（それは暗い C 環を外から汚すが、築きはしない）、そして大気のふたの厚さとの精密な相関は、環の物質のすべてが二つの経路で親から来ることを証明します：<strong>（a）共回転線の下の地面からの直接の供給</strong>（土星の D、C、B 環と火星の古い環）、そして<strong>（b）活発なもとからの衛星を通した供給</strong>（間欠泉で E 環を養うエンケラドゥス、塵を養う木星の四つの内側の衛星、天王星の <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 環を養うマブ——一方フォエベのような捕獲衛星は除外される）。</li>
+<li><strong>重い環の二つの条件をすべての惑星に当てはめる（B.5）：</strong>今日の土星（P = 10.6 h &lt; 13.4 h、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + もれるふた）と若い火星（P = 7〜9 h &lt; 13.4 h、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.74</mn><mtext>–</mtext><mn>2.05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + ふくらみの上の火山）だけが、二つの条件をいっしょに満たします。木星（9.9 h）は十分速いもののガスのふたが完全に封じられ、誕生時の地球（5.8 h）は速く乾きすぎ、そして今日の天王星と海王星（17.2 と 16.1 h）は遅すぎて（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>）凍っているのです。</li>
+</ol>
+<div class="callout"><span class="tag">ロッシュ限界に対する共回転線の U 字曲線（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>、図 B.3）</span><p style="margin:0">太陽系のまん中、厚いふたをもつ木星と土星では、共回転線は環の地帯の内側にとどまります（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span> と 0.86）。一方、両端では、質量が線を通して逃げて自転を遅くし、線は環の地帯を出ました——天王星と海王星では少し（1.18 と 1.13、細い環が残った）、火星（1.50、環が消えた）と地球（1.47）では大きく、そして水星と金星では 22 倍と 57 倍にまで！</p></div>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="140.0" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="363.2" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.82⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >木星</text><rect x="140.0" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="373.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.86⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >土星</text><rect x="140.0" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="444.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.13⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >海王星</text><rect x="140.0" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="457.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.18⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >天王星</text><rect x="140.0" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="533.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.47⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >地球</text><rect x="140.0" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="541.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.50⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >火星</text></svg><figcaption>今日の共回転線とロッシュ限界の比（x_c/x_R）：1 より下なら線は環の地帯の内側にある；水星（22）と金星（57）は目盛りのはるか外。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：普遍的な閾値の日（13.4 時間）の導出と土星のつりあい</h2>
+<p>論文 12 の B.5 部と D.1–D.4 部は、軌道の幾何と保存則が、惑星の環の存在、年代、組成をどう決めるのかを示します：</p>
+<ol class="steps">
+<li><strong>普遍的な閾値の日 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 時間の導出（§B.5）：</strong>共回転線（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>）は親の質量と自転の速さで決まり、氷の粒子のロッシュ限界（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>）は親の半径と平均密度で決まります。<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> を <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> で割ると、親の質量、半径、密度は<strong>完全に打ち消される</strong>のです！その結果、共回転線がロッシュ限界の内側に入る臨界の自転の日は、宇宙のあらゆる惑星、衛星、小惑星で同じになります：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 時間</strong>（密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³ の氷について）。だから木星の強い重力も若い火星の弱い重力も閾値そのものには影響せず——自転の速さ（P &lt; 13.4 時間）と地面からの物質のもれだけが決めるのです。</li>
+<li><strong>粘性による広がり——なぜ環は物質を家へ戻す漏斗なのか（§D.1）：</strong>環の円盤の中では、内側の粒子は外側より速く動きます（差分のケプラー運動）。非弾性の衝突は全体の角運動量を保ったまま軌道エネルギーを熱に変えます。両方の保存則を同時に満たすために円盤は広がります：<strong>環の質量の大部分はエネルギーを失って内へ親へと流れ</strong>、少数が余分な角運動量を運んで外へ押し出されるのです。</li>
+<li><strong>土星の環の年代のパラドックスの解決（§D.3）：</strong>カッシーニは環から土星へ落ちる物質を二つの並行した経路で測りました——赤道への中性の雨が<strong>毎秒 4,800〜45,000 kg</strong>（Waite ら 2018）、磁力線に沿ったイオン化した雨が<strong>毎秒 432〜2,870 kg</strong>（O'Donoghue ら 2019）です。供給がなければ、環の質量（1.54 × 10¹⁹ kg）は 1,100 万〜11 億年のうちに空になってしまいます。LEF モデルでは、環は<strong>動的なつりあいの中の絶え間ない流れ</strong>です。内側の外層からもれる水が、雨が上から空にするのと同じ速さで下からそれを更新するのです——45 億年にわたる累積のコストは<strong>土星の質量のわずか 10⁻⁷〜1.1 × 10⁻⁵</strong>！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>共回転線 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> と氷のロッシュ限界 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> の比、そして普遍的な閾値の日 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span> は、次のように定式化されます（§A.2、§B.5）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2.46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2.4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13.4</mn><mtext> 時間</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ 時間}</annotation></semantics></math></span></div></div></div>
+<p><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³ のとき、P &lt; 13.4 時間のときにかぎり <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span> が得られます。二つ目の条件（地面や外層からの水と物質の活発なもれ）と組み合わせると、太陽系全体の鋭い分類が導かれます。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> 時間の検証と、氷の巨大惑星の角運動量の収支</h2>
+<p>カッシーニとボイジャーの探査機のデータを保存の方程式と比べると、二つの目立つ定量的な発見が確かめられます（§B.5、§D.4）：</p>
+<ul>
+<li><strong>八つの惑星の状態にわたる重い環の条件の一致（§B.5）：</strong>今日の土星（P = 10.6 h、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + もれるふた）と若い火星（P = 7〜9 h、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.65</mn><mtext>–</mtext><mn>0.76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + ふくらみの上の火山）だけが、地面から直接の重い環の二つの条件を満たします。</li>
+<li><strong>天王星と海王星から逃げた水の質量の 270 倍のへだたり（§D.4）：</strong>天王星を 8.3 から 17.2 時間へ遅くしたことは 1.3 × 10³⁶ kg·m²/s の角運動量を取り除き、そのうち衛星がもつのはわずか 1%（1.4 × 10³⁴）です。共回転線を通して逃げた水（2.5 × 10²⁴ kg、天王星の質量の約 2.8%）は<strong>すべての衛星をあわせた質量の 270 倍</strong>（9 × 10²¹ kg）の重さがあり、海王星（3.2 × 10²⁴ kg、惑星の質量の約 3.1%）では、失われた運動量の 99.998% を運んだのです！</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：重い環の条件の行列（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> h）、土星の環の雨の速さ、角運動量の収支（論文 12、A–D 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>惑星と時期</th><th>1 日 P（h）</th><th>共回転線 / ロッシュ限界（R）</th><th>条件 1（P &lt; 13.4 h）</th><th>条件 2（地面からのもれ）</th><th>力学的な結果</th></tr>
+<tr class="hl"><td><strong>今日の土星</strong></td><td><strong>10.6</strong></td><td>1.92 / 2.24（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>）</td><td><strong>はい</strong></td><td><strong>はい（ふたがもれる）</strong></td><td><strong>地面から直接の重い環</strong></td></tr>
+<tr class="hl"><td><strong>若い火星</strong></td><td><strong>7〜9</strong></td><td>1.74〜2.05 / 2.68</td><td><strong>はい</strong></td><td><strong>はい（ふくらみの上の火山）</strong></td><td><strong>古い環があった</strong></td></tr>
+<tr><td><strong>今日の木星</strong></td><td>9.9</td><td>2.29 / 2.80（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>）</td><td>はい</td><td>ほとんどゼロ（厚いふた）</td><td>衛星からだけの薄い塵の環</td></tr>
+<tr><td><strong>誕生時の地球</strong></td><td>5.8</td><td>2.29 / 4.02</td><td>はい</td><td>いいえ（速く乾いた）</td><td>環なし；月は洋梨の上に築かれた</td></tr>
+<tr><td><strong>今日の天王星 / 海王星</strong></td><td>17.2 / 16.1</td><td>3.26/2.76 ; 3.39/3.00</td><td><strong>いいえ</strong></td><td>いいえ（水が逃げて凍った）</td><td>細い名残と衛星の環</td></tr>
+<tr><td><strong>今日の火星 / 地球</strong></td><td>24.6 / 23.9</td><td>6.03/4.02 ; 6.62/4.49</td><td><strong>いいえ</strong></td><td>いいえ（地殻が封じられた）</td><td>環は消えた / 環なし</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>土星の環の雨の速さ（kg/s）</th><th>供給なしで空になるまでの時間</th><th>45 億年にわたって必要な供給の合計</th><th>土星の全質量に対する割合</th></tr>
+<tr><td>432（イオン化した雨——下限）</td><td>11 億年</td><td>環の質量の 4 倍</td><td>1 × 10⁻⁷</td></tr>
+<tr><td>2,870（イオン化した雨——上限）</td><td>1 億 7,000 万年</td><td>環の質量の 26 倍</td><td>7 × 10⁻⁷</td></tr>
+<tr><td>4,800（中性の雨——下限）</td><td>1 億年</td><td>環の質量の 44 倍</td><td>1.2 × 10⁻⁶</td></tr>
+<tr class="hl"><td><strong>45,000（中性の雨——上限）</strong></td><td><strong>1,100 万年</strong></td><td><strong>環の質量の 415 倍</strong></td><td><strong>1.1 × 10⁻⁵（質量保存の範囲内！）</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>この章では、重い環のための<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 時間の普遍的な閾値の日</strong>を導き、土星の環が絶え間ないつりあった流れとしてどう存在するかを見て、共回転線を通した水の機械的な逃げ出しが、天王星と海王星が失った角運動量の 99%〜99.998% を運んだことを証明しました。</p>
+<p>次の章——<strong>第 24 章：すりつぶしのコンベヤーとしての環、衛星と惑星に残る署名、そしてアタカマの岩塊の検証</strong>（論文 12——E–M 部にもとづく）——では、環が衝突で塊をどう選り分けて「プロペラ」をつくるのか、なぜ氷の環はパンとアトラスに赤道の尾根を築き、ケイ酸塩の環はダイモスをすり減らすのか、2026 年 4 月にキュリオシティでアタカマの岩の仮説がどう退けられたのかを調べ、L 部の 5 つの反証の基準を集めます！</p>
+<a href="story24_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 24 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">すりつぶしのコンベヤーとしての環、衛星と惑星に残る署名、そしてアタカマの岩塊の検証 →</p></div></a><p style="margin-top:22px"><a href="story22_ja.html">← 第 22 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

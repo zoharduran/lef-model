@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 20 章：火星の蒸気の環、マリネリス峡谷を通る排出、そして MMX ミッションの検証 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 20 章：火星の蒸気の環、マリネリス峡谷を通る排出、そして MMX ミッションの検証。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story20_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story20_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story20_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story20_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story20_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story20_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story20_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story20_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story20_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story20_he.html" hreflang="he">עברית</a> · <a href="story20_en.html" hreflang="en">English</a> · <a href="story20_de.html" hreflang="de">Deutsch</a> · <a href="story20_es.html" hreflang="es">Español</a> · <a href="story20_fr.html" hreflang="fr">Français</a> · <a href="story20_ru.html" hreflang="ru">Русский</a> · <a href="story20_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 20 章</p>
+<h1>第 20 章：火星の蒸気の環、マリネリス峡谷を通る排出、そして MMX ミッションの検証</h1>
+<p>論文 10——火星：突出部と環（F–O 部と付録 B：環の力学、マリネリス峡谷、フォボスの溝、2027〜2031 年への予測）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：一つの環がどうやって正反対の二つの衛星を形づくったのか——そして MMX ミッションは 2031 年にどんな証拠を持ち帰るのか？</h2>
+<p>第 19 章で、タルシスのとがったふくらみの頂上（赤道の上 4,450 km）に立つパヴォニス山が、7.3 時間に<strong>ダイモス</strong>を長い楕円軌道（10,170〜23,990 km、e = 0.41、傾斜 ~ 10°）へ、8.3 時間に<strong>フォボス</strong>を共回転線（9,870 km）の上の円軌道（e = 0.002）へ放したことを見ました。いま、締めくくりとなる三つの決定的な謎が残っています：</p>
+<ol class="steps">
+<li><strong>同じ環の中での正反対の運命（F.1–F.6、G）：</strong>なぜダイモスは円になり、赤道とそろい、直径 12.4 km まですり減り、23,463 km へ遠ざかったのに、より重く速いフォボスは潮汐とともに外へ逃げず、溝を保ち、今日 19,100 km から 9,375 km へと落ちているのでしょう？</li>
+<li><strong>マリネリス峡谷の巨大な傷跡と水の収支（H.1–H.6、M）：</strong>ノクティス・ラビリンタスの迷路、マリネリス峡谷、そしてクリュセへの流出路の役割は何なのか——そして若い火星の水はどこに隠れているのか？</li>
+<li><strong>MMX ミッションの実験室での決着（第 III 部と付録 B）：</strong>日本の宇宙機関 JAXA の <strong>MMX</strong> ミッション（2026 年 10 月打ち上げ、2027 年にフォボスに着陸、<strong>2031 年</strong>に試料を地球へ帰還）は、フォボスの同位体、質量中心、溝を測り、LEF モデルと衝突説・捕獲説のあいだに明確な決着をつけるでしょう。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：交差する軌道の紙やすり、向かい風のひも、そしてボールベアリングの玉</h2>
+<p>四つの手にとれるイメージが、蒸気の環の力学、排出の傷跡、そしてフォボスに残る火道のしるしを照らします：</p>
+<ul>
+<li><strong>流れに乗る舟に対して、紙やすりのように円い流れを横切る天体（F.2–F.3）：</strong>放出の前に、火星は<strong>蒸気と塵の円い赤道の環</strong>を築き、それは共回転線の向こうで氷の粒に凝縮しました（そして 13,000 km の氷のロッシュ限界の向こうで塊に合体した）。長い楕円軌道（e = 0.41）へ投げられたダイモスは、毎周ごとに何百 m/s の相対速度で環を横切りました。環はそれを<strong>20.7 から 12.4 km へすり減らし</strong>（体積の 76%〜83% を失う）、傾斜を 10° から 1.8° へ平らにし、遠い端（環より遅く動いていたところ）でそれを加速して、ついには円にして 14,300 km まで運び出しました（そこから、今日より 8〜20 倍強いやわらかい火星の潮汐が、1 億 5,000 万〜3 億 7,000 万年のうちにそれを 23,463 km まで運んだ）。これに対してフォボスは、ただちに環そのものの速さで円軌道に入りました——だから環はそれを加速することもすり減らすこともできなかったのです！</li>
+<li><strong>「ガスのひも」——潮汐の押しとつりあうかすかな向かい風（F.4–F.6）：</strong>環の内縁では、一部を自分の圧力で支えられたガスが軌道速度より少し遅く動き、<strong>~ 100 m/s の向かい風</strong>をつくります。<strong>3〜8 × 10⁻⁸ kg/m³</strong> というごく小さなガスの密度で（高さ 115 km の地球の空気ほどの薄さ）、風の抵抗はごく小さな潮汐の加速（~ 10⁻¹¹ m/s²）とちょうどつりあいます。だから環の内縁は<strong>「ひも」</strong>として働き、フォボスを共回転線の近くに保ち、火星が遅くなるにつれて線といっしょにゆっくり外へ導きました——蒸気が止まり、<strong>35〜39 億年前</strong>に環が外から内へ乾くまで（そのときフォボスは ~ 19,100 km にあり、火星の 1 日は ~ 22 時間に延びていた）！</li>
+<li><strong>ボールベアリングの玉のようにはさまった岩と、火山の火道のこぶ（K.1–K.3）：</strong>フォボスは二つ目の、より硬い栓で、パヴォニスの細い火道（幅 20〜23 km）を通して圧力のもとで強く押し出されました。火道の壁の硬い岩のこぶ（2004〜2006 年にセントヘレンズ山の火道から押し出された固い溶岩尖塔のように）がフォボスに、その運動の向きに沿った<strong>平行な溝</strong>を刻み（熱い天体が宇宙で丸まるにつれて少し曲がった）、栓と壁のあいだの狭いすき間にはさまった岩は<strong>ボールベアリングの玉</strong>のように転がって、やわらかい表面に<strong>穴の連なり</strong>を押しつけました。等間隔で、いつも溝に平行で、決して溝を横切らないのです！</li>
+<li><strong>沈む盆地の排水系（H.2–H.4）：</strong>ふくらみが沈んで西へ横たわったとき、その中の液体と粘性のある中身はふくらみの軸に沿って東へ流れました：<strong>ノクティス・ラビリンタス</strong>の壊れた「首」から、西から東へ 10 km 下る（+4.9 km から −5.2 km へ）<strong>マリネリス峡谷</strong>の溝を通り、−3,560 m の一様な水位で内側の湖を満たし、エオス谷の敷居とシムド谷・ティウ谷の流出路を通って東のクリュセ平原へあふれ出たのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：フォボスの進化、パヴォニスのカルデラ、そして表面の記録（F–M 部）</h2>
+<p>論文 10 の F–M 部は、火星とその二つの衛星のあらゆる観測の細部を、一つの物理的な順序へとつなぎます：</p>
+<ol class="steps">
+<li><strong>フォボスの落下と、1 日あたり 3.2 周という比の起源の復元（G、K.7–K.8）：</strong>39 億年前に環が乾いた瞬間、フォボスが 19,100 km にあったとき（公転周期 22.3 時間、火星の 1 日は ~ 22 時間——つまり<strong>ちょうど 1 日に 1 周</strong>）、共回転線はその向こうへ過ぎ、フォボスは内へ落ちはじめました。潮汐の力は距離の 5.5 乗で弱まるので、最初の 30 億年でそれはわずか 3,800 km（100 年に約 4 cm）しか落ちず、最後の 4 億年で 4,000 km 以上落ちこみました（今日 9,375 km で 100 年に最大 1.8 m、公転周期 7.65 時間——2.9 倍の加速で、火星が 22 から 24.6 h へ 1.1 倍遅くなったことと合わせて、ちょうど 2.9 × 1.1 = 1 日あたり 3.2 周の比を与える！）。</li>
+<li><strong>パヴォニスのカルデラの体積の収支とスティックニーの記録（I.1–I.3、K.4–K.6）：</strong>パヴォニス山の頂上のカルデラは、幅 47 km、深さほぼ 5 km の、丸く急な単一の円筒形の穴で（深さ/幅の比 0.10、タルシスの四つの火山でもっとも深い）、体積は <strong>8,300〜8,700 km³</strong> です——浅いマグマだまりの天井が崩れたあと、そこから放出された二つの栓の合計の体積（今日 ~ 6,740 km³）に一致します。フォボスの鈍い端には<strong>スティックニー</strong>（9 km）のくぼみがあり、先頭の鈍い端が火道の口の物質にぶつかったときにできました。Ernst ら（2023）の 36 m 解像度の形状モデルでの測定は、スティックニーの底の溝が<strong>押しつぶされて広い</strong>こと（鋭さ 0.34、その外では 0.44——フォボスのランダムな 80 地点の 89% より低い）、そしてレゴリスの覆いがないことを証明します。つまり溝は、出るときにスティックニーが押しつけられる<em>前に</em>火道の中で刻まれたのです！</li>
+<li><strong>火星の二重の水の収支と全球の塵の源の解決（H.5–H.6、M）：</strong>共回転線を通して環へ放出された水は太陽の放射で分解され、大気に 6〜7 倍の重水素の濃縮を残しました（少なくとも 137 m の全球の層、Villanueva ら 2015）。そして環のすりつぶされた塵は火星の一様な全球の塵として降りつもりました。一方、若い火星の内部の水の大部分は<strong>一度も出ていかず</strong>、同じ水を通さない地殻の下に閉じこめられたままでした——インサイト着陸機が発見した深さ <strong>11.5〜20 km</strong> の中部地殻の孔の中に（Wright ら 2024、深さ 1〜2 km の全球の層に相当）！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Moon diameters at release and today" style="direction:ltr"><rect x="160.0" y="16" width="366.4" height="26" rx="4" fill="#9aa3af"/><text x="534.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦22.9⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >フォボス · 放出時</text><rect x="160.0" y="56" width="356.8" height="26" rx="4" fill="#1f3a5f"/><text x="524.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦22.3⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >フォボス · 今日</text><rect x="160.0" y="96" width="331.2" height="26" rx="4" fill="#9aa3af"/><text x="499.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦20.7⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >ダイモス · 放出時</text><rect x="160.0" y="136" width="198.4" height="26" rx="4" fill="#b23a2e"/><text x="366.4" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦12.4⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >ダイモス · 今日</text></svg><figcaption>放出時と今日の二つの衛星の直径（km）：環の中心を横切ったダイモスは直径の約 40% を失い、ガスの縁に浮かんでいたフォボスはほとんど変わらなかった。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：環はどうやってフォボスを共回転線の上に保ち、二つの傾斜を逆転させたのか</h2>
+<p>論文 10 の F.1–F.6 部と G 部は、一つの物理的な相互作用——火星から放出された水で養われた蒸気と塵の赤道の環——が、フォボスとダイモスの極端なちがいと、フォボスの落下の精密なタイミングの両方を説明することを示します：</p>
+<ol class="steps">
+<li><strong>内側の「ガスのひも」での力のつりあい（§F.4）：</strong>環の内縁、共回転線の近くでは、ガスの一部が自分の圧力で支えられているので、ケプラーの軌道速度より少し遅く回ります。だからフォボスは<strong>相対速度 v ≈ 100 m/s のかすかな向かい風</strong>に出会います。<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8 \times 10^{-8}</annotation></semantics></math></span></span> kg/m³</strong> のガスの密度で（高さ 115 km の地球の大気ほどの薄さ）、ガスの抵抗はフォボスを外へ押す潮汐の加速（~ 10⁻¹¹ m/s²）とちょうどつりあいます。火星が蒸気を放出して遅くなっているかぎり、共回転線は外へ動き、フォボスを ~ 19,100 km までいっしょに導きました。</li>
+<li><strong>外から内へ乾く環とひもの解放（§F.5–F.6）：</strong>環は共回転線の上の内側の基部からだけ養われていました（一方 13,000 km、氷のロッシュ限界の向こうでは、物質はもう環として働かない塊に合体した）。若い火星の地殻が硬くなり、分化し、冷えると、蒸気の流れは止まり、環は<strong>35〜39 億年前</strong>に外から内へ乾きました（火星の 1 日は ~ 22 時間）。その瞬間、共回転線はフォボス（19,100 km）の向こうへ過ぎ、フォボスは今日の軌道（9,375 km）へと内へ落ちはじめたのです。環がもっと早く、9,900 km にあったときに乾いていたら、フォボスは 1 億年もしないうちに落ちて砕けていたでしょう！</li>
+<li><strong>摩耗とクレーターの深さのちがい（§J.1–J.2、§L）：</strong>ダイモスは何百万周にわたって環の中心と 13,000 km の向こうの塊を横切ったので、体積の 76%〜83% を失い（直径 ~ 20.7 km から 12.4 km へすり減った）、もとの火道の溝を失い、そのクレーターはフォボスより 3 倍浅いのです（深さの中央値は幅の 1.9%、フォボスでは 5.5%）。内側のガスの縁におだやかに浮かんでいたフォボスはわずか約 1%（厚さ ~ 40 m の層）しか失わず、溝と穴の連なりを保ちました。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>環の内縁での向かい風の抵抗と若い火星の潮汐の押しのつりあい、そして軌道長半径の潮汐による変化率 da/dt は、次のように定式化されます（§G、付録 A）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>ρ</mi><mi>g</mi></msub><mi>A</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>≈</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup><mtext> kg/m³</mtext><mo separator="true">,</mo><mtext>  </mtext><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≈</mo><mn>100</mn><mtext> m/s</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F_{\mathrm{drag}} = \dfrac{1}{2}\rho_g A v_{\mathrm{rel}}^2 = F_{\mathrm{tide}} \quad (\rho_g \approx 3\text{–}8\times 10^{-8}\text{ kg/m³}, \; v_{\mathrm{rel}} \approx 100\text{ m/s})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><mi>a</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mo>±</mo><mn>3</mn><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>k</mi><mn>2</mn></msub><mi>Q</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>m</mi><mi>M</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>R</mi><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>5</mn></msup><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\dfrac{da}{dt} = \pm 3\left(\dfrac{k_2}{Q}\right)\left(\dfrac{m}{M}\right)\left(\dfrac{R}{a}\right)^5 n a</annotation></semantics></math></span></div></div></div>
+<p>今日の潮汐散逸係数が <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub><mi mathvariant="normal">/</mi><mi>Q</mi><mo>=</mo><mn>1.816</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k_2/Q = 1.816 \times 10^{-3}</annotation></semantics></math></span></span>（Lainey ら 2021）で、若く熱くやわらかい火星ではそれが 8〜20 倍大きかったので、ダイモスは 1 億 5,000 万〜3 億 7,000 万年のうちに 14,300 km から最後の共回転線（20,428 km）の向こうまでのぼり、一方フォボスは 39 億年前の 19,119 km から今日の 9,375 km まで、100 年に 4 cm から 1.8 m へと加速する速さで落ちこんだのです。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：MMX ミッション（2027〜2031 年）への確かな予測の行列</h2>
+<p>第 III 部と付録 B で、論文 10 はこれからの宇宙ミッションへの<strong>16 の定量的な反証の検証（B1–B16）</strong>を定めています——その筆頭が JAXA の <strong>MMX</strong> ミッションです（2026 年 10 月打ち上げ、2027 年にフォボスに着陸、2031 年に ≥ 10 グラムのレゴリスを地球へ帰還）：</p>
+<ul>
+<li><strong>決定的な同位体と化学の検証（N.1、B1–B4）：</strong>MMX が持ち帰るフォボスの試料では、<strong>酸素（O）、クロム（Cr）、チタン（Ti）</strong>の同位体が<strong>純粋な火星の線の上だけに</strong>見つかり、外来の衝突体や小惑星の成分はまったくないでしょう。揮発性の<strong>亜鉛（Zn）とカリウム（K）</strong>の同位体は蒸発によるずれを示さず（溶けた巨大衝突とちがって）、粒は<strong>閉じた孔と含水鉱物をもつ急冷された火山の泡</strong>の組織を示すでしょう（蒸気から凝縮したガラスの小球ではなく）。</li>
+<li><strong>フォボスとダイモスの構造と重力の検証（N.2–N.6、B5–B8）：</strong>フォボスの重力場は<strong>質量中心が火星の側（鈍い端）へ 300〜500 m ずれていること</strong>を明らかにし、フォボスの形を細長い天体へと復元すると平行な溝の族がまっすぐになり、そして MMX のダイモスへの接近通過はフォボスと同じ火星の組成を確かめるでしょう。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：環の中のダイモスとフォボスの比較、潮汐の年表、MMX ミッションの検証（論文 10、F–O 部と付録 B）</h3>
+<div class="tw"><table class="lab">
+<tr><th>性質</th><th>ダイモス（最初の放出）</th><th>フォボス（二度目の放出）</th></tr>
+<tr class="hl"><td><strong>放出の時期と最初の軌道</strong></td><td>1 日 7.3 h；長い楕円軌道（10,170〜23,990 km、e = 0.41、傾斜 ~ 10°）</td><td>1 日 8.3 h；共回転線の上で直接円へ（9,870 km、e = 0.002）</td></tr>
+<tr><td><strong>環の中での作用の地帯</strong></td><td>何百 m/s で<strong>環の中心全体</strong>と 13,000 km の向こうの塊を横切った</td><td><strong>内側のガスの縁</strong>におだやかに浮かんでいた（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8\times 10^{-8}</annotation></semantics></math></span></span> kg/m³）</td></tr>
+<tr class="hl"><td><strong>摩耗と大きさの変化</strong></td><td>直径 ~ 20.7 km（6.8 × 10¹⁵ kg）から <strong>12.4 km</strong> へすり減った（体積の 76%〜83% を失った）</td><td>わずか ~ 1%（~ 40 m）を失っただけ；大きさは <strong>22.3 km</strong> のまま（1.07 × 10¹⁶ kg）</td></tr>
+<tr><td><strong>密度と表面</strong></td><td><strong>1,471 kg/m³</strong>（スポンジ状の上の栓）；なめらかで丸く、溝なし（くぼみの深さの中央値 1.9%）</td><td><strong>1,853〜1,887 kg/m³</strong>（緻密な二つ目の栓）；平行な溝、穴の連なり、スティックニー（9 km）</td></tr>
+<tr class="hl"><td><strong>今日の軌道と運命</strong></td><td><strong>23,463 km</strong>（e = 0.0003、i ≈ 1.8°、公転 30.3 h）——線の向こう、遠ざかる</td><td><strong>9,375 km</strong>（e = 0.0151、i = 1.09°、公転 7.65 h）——線の内側、落ちている（100 年に 1.8 m）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>検証コード</th><th>測定とミッション</th><th>LEF モデル（ふくらみと環）の予測</th><th>主流の説明（衝突 / 捕獲）の予測</th></tr>
+<tr class="hl"><td><strong>B1–B3</strong></td><td>MMX の試料の O、Cr、Ti、D/H と Zn、K の同位体（2031 年）</td><td><strong>純粋な火星の線だけ</strong>、外来成分ゼロ、Zn、K に蒸発のずれなし</td><td>衝突：火星 + 外来の天体の混合（30%〜65%）と軽い同位体の枯渇；捕獲：小惑星</td></tr>
+<tr class="hl"><td><strong>B4</strong></td><td>フォボスの粒の組織（MMX、2031 年）</td><td>閉じた孔と含水鉱物をもつ<strong>急冷された火山の泡</strong></td><td>溶けて蒸気から凝縮したガラスの小球</td></tr>
+<tr><td><strong>B5</strong></td><td>フォボスの重力場（MMX、2027 年）</td><td><strong>質量中心が火星の側（鈍い端）へ 300〜500 m ずれる</strong></td><td>質量中心のずれの予測なし</td></tr>
+<tr><td><strong>B6–B7</strong></td><td>溝と穴の連なりの撮像（MMX、2027 年）</td><td>西側に集中し、細長い天体でまっすぐになり、<strong>スティックニーの底で押しつぶされる</strong>；溝を横切らない平行な連なり</td><td>潮汐の応力かスティックニーの放出物（スティックニーの中でちがいなし、あるいはでたらめな交差）</td></tr>
+<tr><td><strong>B10 / B14</strong></td><td>パヴォニスの下の重力 / タルシスの下の地震学</td><td>パヴォニスのカルデラの下の<strong>質量の不足</strong>；タルシス全体の下の液体の水で飽和した中部地殻</td><td>ふつうの楯状火山のカルデラ；衛星と深部に閉じこめられた水のあいだのつながりなし</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>第 19〜20 章で、私たちは LEF の原理を地球と月の系の外へ広げ、同じ物理的な仕組みが<strong>火星</strong>でどう働くかを示しました。若く、ふくらんだ速い惑星がその赤道に<strong>タルシスのとがったふくらみ</strong>を育て、パヴォニス山を高さ 4,450 km の正味の重さゼロの条件へと運び、ありふれたブルカノ式の圧力で<strong>ダイモス</strong>（7.3 h）と<strong>フォボス</strong>（8.3 h）を<strong>凝縮した蒸気の環</strong>の中へ放したのです——そして 2031 年にフォボスから試料を持ち帰る MMX ミッションが、決定的な実験室の検証を与えてくれるでしょう！</p>
+<a href="story21_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 21 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">太陽系の衛星の法則——誕生様式の物差し、ポンプの原理、大気のふた →</p></div></a>
+<p style="margin-top:22px"><a href="story19_ja.html">← 第 19 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

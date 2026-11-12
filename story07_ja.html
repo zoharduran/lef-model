@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 7 章：軌道への旅——縮約された正接の法則と 5.145° の傾きの解 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 7 章：北緯 22.5° での解放は 22.5° 傾いた軌道を与えること、月を最初の一周から遠ざからせる解放の余裕、そして傾きを 5.145° まで下げる縮約された正接の法則。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story07_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story07_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story07_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story07_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story07_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story07_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story07_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story07_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story07_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story07_he.html" hreflang="he">עברית</a> · <a href="story07_en.html" hreflang="en">English</a> · <a href="story07_de.html" hreflang="de">Deutsch</a> · <a href="story07_es.html" hreflang="es">Español</a> · <a href="story07_fr.html" hreflang="fr">Français</a> · <a href="story07_ru.html" hreflang="ru">Русский</a> · <a href="story07_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 7 章</p>
+<h1>第 7 章：軌道への旅——縮約された正接の法則と 5.145° の傾きの解</h1>
+<p>論文 04——軌道（A–E 部および付録 A–B）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：30 年来の月の軌道傾斜の問題</h2>
+<p>30 年以上ものあいだ、<strong>月の軌道の傾き——黄道面に対する 5.145° の角度</strong>——は惑星科学でもっとも頑固な謎のひとつとされてきました。なぜこの角度はそんなに説明しにくいのでしょう？すべての巨大衝突説では、月は地球のまわりを渦巻く破片の円盤から集積します。そのような円盤はすぐに地球の<strong>赤道面</strong>に落ち着くので、そこから生まれた月はほぼゼロの傾きで生涯をはじめるはずです——そこで軌道を傾けるために、のちの複雑なシナリオ（巨大な微惑星との接近遭遇、軌道共鳴、70° を超える地軸の極端な傾きなど）が必要になるのです。</p>
+<p>LEF モデルではまったく逆のことが起こります。月は赤道の上の平らな円盤から集積したのではなく、<strong>緯度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span></strong>（地球の中心から 17,496 km、一日 5.77 時間）まで立ち上がった洋梨の先端の上で建造されたのです。ここから、論文 04 が答える三つの決定的な問いが生まれます：</p>
+<ol class="steps">
+<li><strong>北緯 22.5° で解放された天体はどんな軌道を得るのか？</strong>安定して遠ざかる軌道に入るのか、それとも地球の潮汐に内へ引かれるのか？</li>
+<li><strong>外への途中で、その軌道面に何が起こるのか</strong>——17,496 km の距離から今日の月の距離（384,400 km）まで？</li>
+<li><strong>傾きの潮汐による減衰の法則は、はじめの 22.5° をちょうど今日の 5.145° に変えるのか？</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：メリーゴーラウンドの高い座席から放たれた石</h2>
+<p>北緯 22.5° からの解放がなぜただちに 22.5° 傾いた軌道をつくるのか——自由なパラメータも、余分な押しもなしに——を自分の目で見るために、中心が地球の中心にあり、重力がいつもちょうどその中心へ引く大きなメリーゴーラウンドを想像してください。</p>
+<p>メリーゴーラウンドの床より高いところにある座席の輪（「緯度」<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>）に石を置きます。メリーゴーラウンドが回るあいだ、石は床（「赤道面」）に平行に、東へ水平に動きます。さあ、石を放してみましょう！放たれた瞬間、石は前へ水平に動き続けますが、重力はそれを下へ、メリーゴーラウンドの中心のほうへ内側へ引きます。その自由な軌道は、運動の線と引力の中心の両方を含む唯一の平面にのらなければなりません——<strong>石から斜め下へ傾いて地球の中心を通る平面です！</strong></p>
+<p>この傾いた平面と床とのあいだの角度はいくつでしょう？メリーゴーラウンドの中心から見て石が床より上に見える角度そのもの——つまり<strong>緯度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> そのもの（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>）</strong>です！床の上の石（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 0^\circ</annotation></semantics></math></span></span>）は床の平面にとどまり、北緯 22.5° の石は自動的に 22.5° 傾いた軌道に入るのです！</p>
+<figure class="fig"><svg viewBox="0 0 640 342" role="img" aria-label="A body released at latitude 22.5 degrees enters an orbit inclined 22.5 degrees" style="direction:ltr"><circle cx="230" cy="170" r="120" fill="#e9eef5" stroke="#9aa3af"/><line x1="30" y1="170" x2="530" y2="170" stroke="#1f3a5f" stroke-width="2"/><line x1="82.6" y1="231.0" x2="497.9" y2="59.0" stroke="#2f7d57" stroke-width="2.5" stroke-dasharray="7 4"/><line x1="396.3" y1="101.1" x2="396.3" y2="170" stroke="#9aa3af" stroke-dasharray="3 3"/><circle cx="396.3" cy="101.1" r="11" fill="#d9d2bf" stroke="#8a846f"/><path d="M300,170 A70,70 0 0 0 294.7,143.2" fill="none" stroke="#b23a2e" stroke-width="2"/><text x="312.0" y="158.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">⁦λ = i₀ = 22.5°⁩</text><circle cx="230" cy="170" r="4" fill="#1f3a5f"/><text x="525.0" y="190.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">赤道面</text><text x="414.3" y="127.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed">解放の瞬間の月</text><text x="487.9" y="49.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">軌道面</text><text x="230.0" y="330.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">自由な軌道は地球の中心を通らなければならないので、その傾きは緯度に等しい</text></svg><figcaption>運動学的な恒等式：緯度 λ で東向きに解放すると、軌道面が地球の中心を通り、傾き <span class="ltr">i₀ = |λ|</span> の軌道になる。</figcaption></figure></section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：軌道を立たせる三つの原理</h2>
+<p>論文 04 の A 部と B 部は、三行のベクトル代数で、第 2 章と第 5 章の切り離しの条件が自動的に安定して遠ざかる軌道に変わることを示します：</p>
+<ol class="steps">
+<li><strong>運動学的な恒等式（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>）と三つの角度の区別（§A.2–A.3）：</strong>純粋に東向きの接線速度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">v</mi><mo>=</mo><mi>ω</mi><mi>r</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>cos</mi><mo>⁡</mo><mi>λ</mi><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{v} = \omega r (0, \cos\lambda, 0)</annotation></semantics></math></span></span>）で解放された天体では、質量、距離、自転の速さは式から完全に消え、初期の赤道面に対する正確な幾何学的恒等式 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">i_0 = |\lambda| = 22.5^\circ</annotation></semantics></math></span></span></strong> が得られます（切り離し時の外向きの径方向の押しは楕円のつぶれ方を変えますが、軌道面はまったく動かさないからです！）。その瞬間、地球の自転軸と月の軌道の軸のあいだの 22.5° の角度は、全角運動量ベクトル（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">J</mi><mo>=</mo><msub><mi mathvariant="bold">S</mi><mo>⊕</mo></msub><mo>+</mo><msub><mi>μ</mi><mi>r</mi></msub><mi mathvariant="bold">h</mi></mrow><annotation encoding="application/x-tex">\mathbf{J} = \mathbf{S}_\oplus + \mu_r \mathbf{h}</annotation></semantics></math></span></span>）のまわりで、地球側の 3.78° と月側の 18.72° に分けられます。</li>
+<li><strong>なぜ赤道の共回転半径（16,399 km）での解放は不可能なのか（§B.1–B.2）：</strong>緯度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span> では、天体の自転軸からの距離は地球の中心からの距離より因子 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">\cos\lambda</annotation></semantics></math></span></span> だけ小さくなります。そのため月が赤道の共回転距離（16,399 km）で解放されていたら、速度が遅すぎたでしょう。遠地点で細長い楕円軌道（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup><mo>=</mo><mn>0.1464</mn></mrow><annotation encoding="application/x-tex">e_0 = \sin^2 22.5^\circ = 0.1464</annotation></semantics></math></span></span>）に入り、地球の潮汐に内へ引きずられていたのです！</li>
+<li><strong>局所的な共回転線（17,287 km）と解放の余裕（17,496 km）：</strong>北緯 22.5° では、自転速度は <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mi>c</mi></msub><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi>λ</mi><mo>=</mo><mrow><mn mathvariant="bold">17</mn><mo separator="true">,</mo><mn mathvariant="bold">287</mn></mrow></mrow><annotation encoding="application/x-tex">r = r_c \cos^{-2/3}\lambda = \mathbf{17,287}</annotation></semantics></math></span></span> km（x = 1.0542）の距離で円軌道速度に等しくなります。分離は中心がこの線に達したときにはじまり、最終的な切り離しはその約 210 km 外——<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>496</mn></mrow><annotation encoding="application/x-tex">r_0 = 17,496</annotation></semantics></math></span></span> km</strong>（x = 1.0669、速度比 B = 1.0367）——で起こります。この点で月は、ほぼ円形の軌道（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>≃</mo><mn>0.037</mn></mrow><annotation encoding="application/x-tex">e_0 \simeq 0.037</annotation></semantics></math></span></span>、長半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km、遠地点 18,830 km）にちょうど<strong>近地点</strong>で入り、剛体ロッシュ限界（10,314 km）の約 7,200 km 外にあって、地球の潮汐は最初の一周からそれを外へ押すのです！</li>
+</ol>
+<div class="callout"><span class="tag">方法論上のはっきりした区別（二つの基準面）</span><p style="margin:0">初期の角度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">i_0 = 22.5^\circ</annotation></semantics></math></span></span> は地球の<strong>初期の赤道面</strong>に対して測られ、今日測定される角度（5.145°）は<strong>黄道面</strong>（地球の太陽をめぐる軌道の面）に対して測られます。軌道は赤道面から黄道面へどのように移るのか、そして初期の傾きのどれだけが外への旅を生きのびるのか？論文の C 部と D 部がこれに答えます！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：ラプラス面、正接の法則、そして時計の検証</h2>
+<p>月が 17,496 km の距離から今日の距離（384,400 km）へ遠ざかりはじめるとすぐに、その軌道面はその場に凍りついたままではいません。外力がそれをゆっくり回し（歳差）、潮汐がその傾きを弱めます。論文 04 の C 部と D 部は、この旅を三つのはっきりした段階に分けます：</p>
+<ol class="steps">
+<li><strong>赤道面から黄道面への移行——ラプラス面（§C.1–C.3）：</strong>地球の近くでは、回転する地球の赤道のふくらみ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">J_2</annotation></semantics></math></span></span>）のほうが太陽の引きよりずっと強いので、月の軌道面は<strong>赤道面</strong>のまわりで歳差します（一日 5.77 時間でのラプラス遷移半径は地球半径の約 17.07 倍なので、17,496 km の解放点は赤道が支配する領域の奥深く——約 16.1% だけ——にあります）。月が遠ざかるにつれて赤道のふくらみの支配は弱まり、太陽の影響が強まって、「導く面」（ラプラス面）は少しずつ赤道面から<strong>黄道面</strong>へと曲がります——その途中で月は、化石の形の凍結とカッシーニ状態を通過します。</li>
+<li><strong>縮約された正接の法則——なぜ 22.5° が 5.145° になるのか（§D.1）：</strong>月を外へ押すのと同じ潮汐力が、同時に軌道面に働いてその傾きを減らします。縮約された減衰方程式を解くと、減少は <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">\sin i</annotation></semantics></math></span></span>（これは小角度の近似にすぎません）ではなく、<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mi>i</mi><mo>∝</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\tan i \propto a^{-1/2}</annotation></semantics></math></span></span></strong> にしたがうことがわかります。距離が 4 倍になるたびに、傾きの正接は半分になるのです！
+<br>モデルの解放角（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">i_0 = 22.5^\circ</annotation></semantics></math></span></span>）と初期の長半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km）を方程式に入れ、今日の月の距離（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>f</mi></msub><mo>=</mo><mn>384</mn><mo separator="true">,</mo><mn>400</mn></mrow><annotation encoding="application/x-tex">a_f = 384,400</annotation></semantics></math></span></span> km、距離は 21.16 倍に増加）まで進めると、傾きの正接は約 4.6 分の 1 に下がり——最終的な角度はちょうど <strong>5.145°</strong> に収束するのです！</li>
+<li><strong>時計の検証——なぜ潮汐係数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mo>⊕</mo></msub></mrow><annotation encoding="application/x-tex">Q_\oplus</annotation></semantics></math></span></span> は時間とともに変わらなければならないのか（§D.2–D.3）：</strong>正接の法則は傾きを距離と結びつけますが、旅にどれだけ時間がかかるかは決めません。摩擦係数が一定（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mo>⊕</mo></msub><mo>=</mo><mtext>const</mtext></mrow><annotation encoding="application/x-tex">Q_\oplus = \text{const}</annotation></semantics></math></span></span>）の単純な潮汐の法則を当てはめると、今日の二つの事実の両方に合う一定の値はひとつもないことがわかります。今日の遠ざかる速さ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mo>⊕</mo></msub><mo>≃</mo><mn>12</mn><mo>→</mo><mn>3.70</mn></mrow><annotation encoding="application/x-tex">Q_\oplus \simeq 12 \rightarrow 3.70</annotation></semantics></math></span></span> cm/年）を再現する値は、わずか 16.0 億年で月を今日の距離へ運んでしまい、一方、切り離し以来の経過時間（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mo>⊕</mo></msub><mo>≃</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">Q_\oplus \simeq 29</annotation></semantics></math></span></span> で 38.7 億年）に合う値は、今日の遠ざかる速さが遅すぎる（1.5 cm/年）のです。これは、地球の海でのエネルギー散逸が海盆の共鳴と大陸移動を通じて歴史のなかで変化してきたという現代の研究の知見を裏づけています！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 300" role="img" aria-label="Inclination falling with distance by the reduced tangent law" style="direction:ltr"><line x1="70" x2="610" y1="250.0" y2="250.0" stroke="#ece7da"/><text x="62" y="254.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0°</text><line x1="70" x2="610" y1="202.1" y2="202.1" stroke="#ece7da"/><text x="62" y="206.1" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5°</text><line x1="70" x2="610" y1="154.2" y2="154.2" stroke="#ece7da"/><text x="62" y="158.2" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10°</text><line x1="70" x2="610" y1="106.2" y2="106.2" stroke="#ece7da"/><text x="62" y="110.2" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">15°</text><line x1="70" x2="610" y1="58.3" y2="58.3" stroke="#ece7da"/><text x="62" y="62.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">20°</text><text x="115.7" y="268" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">20,000</text><text x="261.2" y="268" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">50,000</text><text x="371.2" y="268" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">100,000</text><text x="481.3" y="268" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">200,000</text><text x="591.3" y="268" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">400,000</text><path d="M100.4,34.4 L104.4,36.8 L108.5,39.3 L112.5,41.7 L116.5,44.1 L120.6,46.4 L124.6,48.8 L128.6,51.1 L132.7,53.4 L136.7,55.7 L140.8,58.0 L144.8,60.2 L148.8,62.4 L152.9,64.6 L156.9,66.8 L161.0,68.9 L165.0,71.1 L169.0,73.2 L173.1,75.2 L177.1,77.3 L181.1,79.4 L185.2,81.4 L189.2,83.4 L193.3,85.4 L197.3,87.3 L201.3,89.3 L205.4,91.2 L209.4,93.1 L213.5,95.0 L217.5,96.8 L221.5,98.7 L225.6,100.5 L229.6,102.3 L233.6,104.1 L237.7,105.8 L241.7,107.6 L245.8,109.3 L249.8,111.0 L253.8,112.7 L257.9,114.3 L261.9,116.0 L266.0,117.6 L270.0,119.2 L274.0,120.8 L278.1,122.4 L282.1,123.9 L286.1,125.5 L290.2,127.0 L294.2,128.5 L298.3,130.0 L302.3,131.5 L306.3,132.9 L310.4,134.3 L314.4,135.8 L318.5,137.2 L322.5,138.6 L326.5,139.9 L330.6,141.3 L334.6,142.6 L338.6,143.9 L342.7,145.3 L346.7,146.5 L350.8,147.8 L354.8,149.1 L358.8,150.3 L362.9,151.6 L366.9,152.8 L370.9,154.0 L375.0,155.2 L379.0,156.3 L383.1,157.5 L387.1,158.7 L391.1,159.8 L395.2,160.9 L399.2,162.0 L403.3,163.1 L407.3,164.2 L411.3,165.3 L415.4,166.3 L419.4,167.4 L423.4,168.4 L427.5,169.4 L431.5,170.4 L435.6,171.4 L439.6,172.4 L443.6,173.3 L447.7,174.3 L451.7,175.2 L455.8,176.2 L459.8,177.1 L463.8,178.0 L467.9,178.9 L471.9,179.8 L475.9,180.7 L480.0,181.5 L484.0,182.4 L488.1,183.2 L492.1,184.1 L496.1,184.9 L500.2,185.7 L504.2,186.5 L508.3,187.3 L512.3,188.1 L516.3,188.9 L520.4,189.6 L524.4,190.4 L528.4,191.2 L532.5,191.9 L536.5,192.6 L540.6,193.3 L544.6,194.1 L548.6,194.8 L552.7,195.4 L556.7,196.1 L560.8,196.8 L564.8,197.5 L568.8,198.1 L572.9,198.8 L576.9,199.4 L580.9,200.1 L585.0,200.7" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="100.4" cy="34.4" r="6" fill="#b23a2e"/><circle cx="585.0" cy="200.7" r="7" fill="#2f7d57"/><text x="112.4" y="39.4" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">解放 · 22.5° · 18,163 km</text><text x="581.0" y="180.7" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">今日 · 5.145° · 384,400 km</text><text x="340.0" y="290.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">月の軌道の長半径（km、対数目盛）</text></svg><figcaption>縮約された正接の法則 <span class="ltr">tan i ∝ a<sup>−1/2</sup></span>：解放距離から今日まで（距離は 21.16 倍）、傾きは 22.5° から 5.145° に下がる。</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>論文 04 の三つの中心的な方程式は、解放の瞬間の運動学的な恒等式、二つの質量の初期の楕円、そして傾きの解析的な減衰の法則を結びつけます：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">h</mi><mo>=</mo><mi mathvariant="bold">r</mi><mo>×</mo><mi mathvariant="bold">v</mi><mo>=</mo><mi>ω</mi><msup><mi>r</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mi>λ</mi><mo separator="true">,</mo><mtext> </mtext><mn>0</mn><mo separator="true">,</mo><mtext> </mtext><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">)</mo><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>cos</mi><mo>⁡</mo><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>h</mi><mi>z</mi></msub><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="bold">h</mi><mi mathvariant="normal">∣</mi></mrow></mfrac></mstyle><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>λ</mi><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">\mathbf{h} = \mathbf{r} \times \mathbf{v} = \omega r^2(-\sin\lambda\cos\lambda,\, 0,\, \cos^2\lambda) \quad \Longrightarrow \quad \cos i_0 = \dfrac{h_z}{|\mathbf{h}|} = \cos\lambda \;\Longrightarrow\; i_0 = |\lambda|</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>3</mn></msubsup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi></mrow><mi>K</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">B = \dfrac{\omega^2 r_0^3 \cos^2\lambda}{K}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>r</mi><mn>0</mn></msub><mrow><mn>2</mn><mo>−</mo><mi>B</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">a_0 = \dfrac{r_0}{2 - B}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mn>1</mn><mo>−</mo><mi>B</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">e_0 = |1 - B|</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi></mrow></msub><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>r</mi><mi>c</mi></msub><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi>λ</mi></mrow><annotation encoding="application/x-tex">r_{\mathrm{co}}(\lambda) = r_c \cos^{-2/3}\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><mi>i</mi></mrow><mrow><mi>d</mi><mi>a</mi></mrow></mfrac></mstyle><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>+</mo><mi>ϵ</mi></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mstyle><mi>sin</mi><mo>⁡</mo><mi>i</mi><mi>cos</mi><mo>⁡</mo><mi>i</mi><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>tan</mi><mo>⁡</mo><mi>i</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mi>tan</mi><mo>⁡</mo><msub><mi>i</mi><mn>0</mn></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><msub><mi>a</mi><mn>0</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mo>−</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{di}{da} = -\dfrac{1+\epsilon}{2a}\sin i\cos i \quad \Longrightarrow \quad \tan i(a) = \tan i_0 \left(\dfrac{a}{a_0}\right)^{-(1+\epsilon)/2}</annotation></semantics></math></span></div></div></div>
+<p>付録 A で論文は、一定の時間遅れでの潮汐の符号の検証も加えています。<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>ω</mi><mi>cos</mi><mo>⁡</mo><mi>i</mi></mrow><mi>n</mi></mfrac><mo>&gt;</mo><mfrac><mrow><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup><msup><mo stretchy="false">)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\omega\cos i}{n} &gt; \frac{f_1(e)}{(1-e^2)^{3/2}f_2(e)}</annotation></semantics></math></span></span> のとき、長半径の変化率への地球の潮汐の寄与（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>a</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot{a}</annotation></semantics></math></span></span>）は最初の瞬間から正です。採用された解放点（x = 1.0669、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>496</mn></mrow><annotation encoding="application/x-tex">r_0 = 17,496</annotation></semantics></math></span></span> km）では <strong>1.0769 &gt; 1.0128</strong> が成り立つ——だから月はただちに、最初の一周から遠ざかりはじめるのです！</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：自由なパラメータなし——22.5° からの解放が 5.145° に命中する</h2>
+<p>第 7 章の科学的な強さは、緯度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span> と解放距離 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>496</mn></mrow><annotation encoding="application/x-tex">r_0 = 17,496</annotation></semantics></math></span></span> km が<strong>今日の月の軌道に合わせて選ばれたのではない</strong>という点にあります——それらは論文 2 と 3 の幾何学的・力学的な建造条件（洋梨の先端の位置、角運動量の収支、共回転線の約 210 km 外でのステファン解放）からあらかじめ決まっていたのです。</p>
+<ul>
+<li><strong>標的への直撃：</strong>これらの初期条件（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup><mo separator="true">,</mo><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">i_0 = 22.5^\circ, a_0 = 18,163</annotation></semantics></math></span></span> km）を縮約された正接の法則（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon = 0</annotation></semantics></math></span></span>）に入れると、384,400 km の距離で得られる結果は <strong>5.145°</strong>——黄道面に対する月の軌道の測定された傾きと、小数点以下 3 桁まで同じです！</li>
+<li><strong>距離への感度は低く、緯度への感度は制御されている：</strong>解放距離を 5% 増やしても（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>19</mn><mo separator="true">,</mo><mn>151</mn></mrow><annotation encoding="application/x-tex">a_0 = 19,151</annotation></semantics></math></span></span> km まで）最終角度は 0.14° しか変わらず（5.282° に）、初期緯度を 25° に上げると 5.788° になります——このことは、洋梨の先端の幾何が軌道の性格を決めていること、そしてラプラスとカッシーニの遷移を通した完全なベクトル積分が研究の自然な次の一歩であることを示しています。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：別の解放点、潮汐の向き、正接の法則（論文 04、B 部と D 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>解放シナリオ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mo>⊕</mo></msub><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo separator="true">,</mo><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">T_\oplus = 5.77\text{ h}, \lambda = 22.5^\circ</annotation></semantics></math></span></span>）</th><th>解放距離（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span>）</th><th>長半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span></span>）</th><th>離心率（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">e_0</annotation></semantics></math></span></span>）</th><th>近地点（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">r_p</annotation></semantics></math></span></span>）</th><th>初期の潮汐の向き</th><th>剛体ロッシュ限界の検証（10,314 km）</th></tr>
+<tr class="bad"><td>赤道の共回転線上（x = 1.000）</td><td>16,399 km</td><td>14,304 km</td><td>0.1464</td><td>12,209 km</td><td>内向きの収縮（0.753 &lt; 1.196）</td><td>通過（遠地点で解放）</td></tr>
+<tr class="mid"><td>22.5° の共回転線のちょうど上（x = 1.054）</td><td>17,287 km</td><td>17,287 km</td><td>0.0000</td><td>17,287 km</td><td>中立（ちょうど等しい）</td><td>通過（円軌道）</td></tr>
+<tr class="hl"><td><strong>採用された解放：線の外 +210 km（x = 1.067）</strong></td><td><strong>17,496 km</strong></td><td><strong>18,163 km</strong></td><td><strong>0.0367</strong></td><td><strong>17,496 km</strong></td><td><strong>ただちに拡大（1.077 &gt; 1.013）</strong></td><td><strong>通過（約 7,200 km 外）</strong></td></tr>
+<tr><td>赤道の線の 8% 外（x = 1.080）</td><td>17,710 km</td><td>19,151 km</td><td>0.0752</td><td>17,710 km</td><td>ただちに拡大（1.166 &gt; 1.053）</td><td>通過（近地点で解放）</td></tr>
+<tr><td>赤道の線の 10% 外（x = 1.100）</td><td>18,038 km</td><td>20,880 km</td><td>0.1361</td><td>18,038 km</td><td>ただちに拡大</td><td>通過（より楕円）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>正接の法則の初期条件（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mi>i</mi><mo>∝</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\tan i \propto a^{-1/2}</annotation></semantics></math></span></span>）</th><th>緯度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>）</th><th>長半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span></span>）</th><th>384,400 km での最終角度</th><th>観測（5.145°）との比較</th></tr>
+<tr class="hl"><td><strong>モデルの解放状態（+210 km）</strong></td><td><strong>22.5°</strong></td><td><strong>18,163 km</strong></td><td><strong>5.145°</strong></td><td><strong>観測と完全に一致！</strong></td></tr>
+<tr><td>解放距離を 5% 増加（x = 1.08）</td><td>22.5°</td><td>19,151 km</td><td>5.282°</td><td>距離への感度は低い（+0.137°）</td></tr>
+<tr><td>より高い緯度での感度検証</td><td>25.0°</td><td>18,163 km</td><td>5.788°</td><td>緯度が支配的なパラメータであることを示す</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>北緯 22.5°、距離 17,496 km で洋梨の先端から解放された天体が、ほぼ円形の軌道に入り、剛体ロッシュ限界の外で安全に生きのび、最初の一周から遠ざかりはじめ、正接の法則によって今日の傾き 5.145° に収束するようすを見ました。</p>
+<p>いよいよ月の顔そのものを見て、その岩石、海、クレーターが語る物語に耳を傾けるときです。<strong>月の暗い「海」とは何なのか——のちに噴き出した溶岩の湖なのか、それとも月が建造され、その顔をつくる物質が放出された古い供給開口なのか？</strong>次の章——<strong>第 8 章：月の海——のちの「溶岩湖」ではなく古い供給開口</strong>（論文 05——<em>海</em>にもとづく）——では、月の表面へ降り立ちます！</p>
+<a href="story08_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 8 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">月の海——のちの「溶岩湖」ではなく古い供給開口 →</p></div></a><p style="margin-top:22px"><a href="story06_ja.html">← 第 6 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 11 章：小惑星なしのクレーター——弾道飛行、衝撃圧力、先行/後行の非対称の物理 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 11 章：小惑星ではなく戻ってきた物質によるクレーター——弾道飛行の物理、数十 GPa の衝撃圧力、そして先行半球と後行半球のあいだの非対称。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story11_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story11_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story11_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story11_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story11_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story11_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story11_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story11_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story11_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story11_he.html" hreflang="he">עברית</a> · <a href="story11_en.html" hreflang="en">English</a> · <a href="story11_de.html" hreflang="de">Deutsch</a> · <a href="story11_es.html" hreflang="es">Español</a> · <a href="story11_fr.html" hreflang="fr">Français</a> · <a href="story11_ru.html" hreflang="ru">Русский</a> · <a href="story11_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 11 章</p>
+<h1>第 11 章：小惑星なしのクレーター——弾道飛行、衝撃圧力、先行/後行の非対称の物理</h1>
+<p>論文 06——クレーター（A–K 部：打ち上げ、衝撃、蒸気の通過、四つの経度での形態の物理）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：地面から撃ち出されて落ち戻った物質が巨大なクレーターを掘れるのか——そしてなぜ後ろのほうが密なのか？</h2>
+<p>受け入れられている文献は、月の顔のほぼすべてのクレーターが、外宇宙から 15〜20 km/s というものすごい速さで飛んできた小惑星や彗星に掘られたことを当然としています。しかしこの仮定は、完全には説明されてこなかった二つの鋭い観測上の問題に直面しています：</p>
+<ol class="steps">
+<li><strong>予想と逆——クレーターの過剰は先行半球（90°W）ではなく後行半球（90°E）にある：</strong>月はいつも同じ面を地球に向けているので、その西半分（90°W のまわり、<strong>先行半球</strong>）はいつも軌道運動の方向に前を向いています——走る車のフロントガラスのように——そして東半分（90°E のまわり、<strong>後行半球</strong>）は後ろを向いています。外来の小惑星が月を爆撃したのなら、フロントガラス（90°W）はリアウィンドウより何十パーセントも多くクレーターを集めるはずです。実際にはまったく逆のことが起こっています。<strong>後行半球（90°E）のほうが大きなクレーターがずっと密なのです（百万 km² あたり 249〜252、先行半球では 139〜175）！</strong></li>
+<li><strong>基本的な物理の問い：</strong>LEF モデルでは、クレーターの約 99% は、母天体（半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km、一日 5.5 時間の初期の地球）の供給開口から撃ち出され、のちに持ち上がって月の顔になった外殻に落ち戻った<strong>戻ってきた物質</strong>によってできました。しかし 2〜8 km/s で上へ投げられた物質が、そもそも数十ギガパスカルの衝撃圧力を生み、複雑なクレーターを刻めるほど強く戻ってくるのでしょうか？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：上へ投げたボール、フィギュアスケーター、雨の中を走る人</h2>
+<p>日常生活の三つの単純なイメージが、弾道飛行の物理と東西の非対称を明らかにします：</p>
+<ul>
+<li><strong>まっすぐ上へ投げたボール（着地の速さは投げた速さに等しい）：</strong>空気の摩擦なしにボールをまっすぐ上へ投げると、上りでは速さを高さに変え、下りではすべての高さを速さに戻して——投げたときとちょうど同じ速さで手に戻ってきます（5 km/s で出て → 5 km/s で戻る！）。</li>
+<li><strong>腕を広げるフィギュアスケーター（西への偏向）：</strong>塊が大きな高さまで上がるあいだ、その角運動量は保存されます——そのため地球の中心のまわりを回る角速度は遅くなります（腕を横に広げるスケーターとまったく同じ）。下の地面は一定の速さで東へ回り続けるので、塊が同じ半径まで降りてきたとき、地面はもう東へ進んでいて、塊は<strong>打ち上げ点の西</strong>に着地します（5 km/s で：高さ 1,932 km まで、28 分以内に、1,032 km 西へ！）。</li>
+<li><strong>雨に向かって走る人と雨から逃げて走る人（先行半球 対 後行半球）：</strong>月の天体が持ち上がったあと、その自身の供給開口も物質を撃ち出しました（比較的低い速さで、脱出速度の約 2.0〜2.3 km/s まで）。後行半球（90°E）では、地面は落ちてくる物質から遠ざかるので、後ろからそっと「受けとめ」ます（そして裏側の 180° から西へ流れてくる物質も集めます）。一方、先行半球（90°W）では、地面は落ちてくる物質へ向かって前へ突き進み、<strong>正面から</strong>それとぶつかるのです——雨粒に正面からぶつかって走る人のように！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：<span class="ltr">45.6 GPa</span> の衝撃圧力、蒸気の通過、そして脱出の限界（10.75 km/s）</h2>
+<p>論文 06 の J 部と K 部は、正確な解析計算によって、2〜8 km/s での内部からの打ち上げが本物の衝撃クレーターをつくるのに十分であることを示します：</p>
+<ol class="steps">
+<li><strong>数十ギガパスカルの衝撃圧力（玄武岩のユゴニオ方程式、§J.2）：</strong>玄武岩と玄武岩の正面衝突（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho_0 = 2,700</annotation></semantics></math></span></span> kg/m³）では、衝撃波面の後ろの粒子速度は衝突速度の半分（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>p</mi></msub><mo>=</mo><msub><mi>v</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_p = v_n / 2</annotation></semantics></math></span></span>）で、衝撃波面そのものの速さは <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mi>s</mi><msub><mi>u</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">U_s = C_0 + s u_p</annotation></semantics></math></span></span>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">C_0 = 3.5</annotation></semantics></math></span></span> km/s、s = 1.3）です。これにより接触圧力は<strong>2 km/s ですでに <span class="ltr">12.96 GPa</span></strong>、<strong>3 km/s で <span class="ltr">22.07 GPa</span></strong>、<strong>5 km/s で <span class="ltr">45.56 GPa</span></strong>——鉱物の衝撃変成のしきい値をはるかに上回ります！（液体の滴でさえ強い圧縮波を生みます。液体は固体とほとんど同じくらい圧縮に抵抗するからです。）</li>
+<li><strong>開口で必要なエネルギーと脱出の限界（§J.1、§J.5）：</strong>1 キログラムを 2、3、5、8 km/s で打ち上げるには 2、4.5、12.5、32 MJ/kg の運動エネルギー <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_{\mathrm{kin}} = u^2/2</annotation></semantics></math></span></span> が必要で、それは地球の内部の圧力（洋梨を通る）が揮発性ガス（水）の膨張に助けられて供給します。一方、物質が永遠に宇宙へ逃げずに殻へ戻ってくるためには、径方向の打ち上げ速度が自転と組み合わさった脱出速度より低くなければなりません：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>&lt;</mo><msub><mi>u</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>≃</mo><mn>10.748</mn></mrow><annotation encoding="application/x-tex">u &lt; u_{\mathrm{esc}} \simeq 10.748</annotation></semantics></math></span></span> km/s</strong>。</li>
+<li><strong>蒸気の大気の通過（§J.3）：</strong>差し渡し 1 キロメートルの塊が、底の圧力 100 bar の蒸気の柱（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mn>8.25</mn></mrow><annotation encoding="application/x-tex">g_{\mathrm{eff}} = 8.25</annotation></semantics></math></span></span> m/s²）を二度（上りと下り）通り抜けても、速さの約 <strong>51%</strong> を保ちます（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>v</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>−</mo><msub><mi mathvariant="normal">Σ</mi><mi>a</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v_{\mathrm{out}}/v_{\mathrm{in}} = \exp(-\Sigma_a / 2B)</annotation></semantics></math></span></span>）——そのため 5 km/s での打ち上げは 2.5 km/s で着地し、<span class="ltr">13 GPa</span> を超える衝撃を生むのです！</li>
+<li><strong>母天体の重力のもとでのスケーリング則（§C.6）：</strong>母天体の表面の重力は今日の月より 5 倍強く（g = 8.25 対 1.62 m/s²）、衝突速度は 3 倍低かった（5 対 15 km/s）ので、同じ直径のクレーターをつくるには <strong>7.45〜23.47</strong> 倍重い戻ってくる天体が必要です（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0.35</mn><mtext>–</mtext><mn>0.55</mn></mrow><annotation encoding="application/x-tex">\mu = 0.35\text{–}0.55</annotation></semantics></math></span></span> について <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>p</mi></msub><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m_p \propto g^{3\mu/2} v^{-3\mu}</annotation></semantics></math></span></span>）。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Shock pressure in basalt against impact speed" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100</text><text x="70.0" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="195.6" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="321.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="446.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="572.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><path d="M70.0,230.0 L75.0,229.2 L80.0,228.4 L85.1,227.5 L90.1,226.6 L95.1,225.7 L100.1,224.8 L105.2,223.9 L110.2,222.9 L115.2,221.9 L120.2,220.9 L125.3,219.8 L130.3,218.8 L135.3,217.7 L140.3,216.6 L145.3,215.4 L150.4,214.3 L155.4,213.1 L160.4,211.9 L165.4,210.7 L170.5,209.4 L175.5,208.1 L180.5,206.8 L185.5,205.5 L190.6,204.2 L195.6,202.8 L200.6,201.4 L205.6,200.0 L210.7,198.5 L215.7,197.1 L220.7,195.6 L225.7,194.1 L230.7,192.5 L235.8,191.0 L240.8,189.4 L245.8,187.8 L250.8,186.1 L255.9,184.5 L260.9,182.8 L265.9,181.1 L270.9,179.4 L276.0,177.6 L281.0,175.9 L286.0,174.1 L291.0,172.2 L296.0,170.4 L301.1,168.5 L306.1,166.6 L311.1,164.7 L316.1,162.8 L321.2,160.8 L326.2,158.8 L331.2,156.8 L336.2,154.8 L341.3,152.7 L346.3,150.7 L351.3,148.6 L356.3,146.4 L361.3,144.3 L366.4,142.1 L371.4,139.9 L376.4,137.7 L381.4,135.4 L386.5,133.2 L391.5,130.9 L396.5,128.6 L401.5,126.2 L406.6,123.9 L411.6,121.5 L416.6,119.1 L421.6,116.6 L426.7,114.2 L431.7,111.7 L436.7,109.2 L441.7,106.7 L446.7,104.1 L451.8,101.6 L456.8,99.0 L461.8,96.3 L466.8,93.7 L471.9,91.0 L476.9,88.3 L481.9,85.6 L486.9,82.9 L492.0,80.1 L497.0,77.3 L502.0,74.5 L507.0,71.7 L512.0,68.8 L517.1,65.9 L522.1,63.0 L527.1,60.1 L532.1,57.1 L537.2,54.2 L542.2,51.2 L547.2,48.2 L552.2,45.1 L557.3,42.0 L562.3,38.9 L567.3,35.8 L572.3,32.7" fill="none" stroke="#b23a2e" stroke-width="3"/><circle cx="195.6" cy="202.8" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.6" y="194.8" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">12.96</text><circle cx="258.4" cy="183.6" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="250.4" y="175.6" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">22.07</text><circle cx="384.0" cy="134.3" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="376.0" y="126.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">45.56</text><circle cx="572.3" cy="32.7" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="564.3" y="24.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">93.96</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >衝突速度（km/s）· 玄武岩中の衝撃圧力（GPa）</text></svg><figcaption>本章のユゴニオ方程式（ρ₀ = 2,700、C₀ = 3.5、s = 1.3）による、玄武岩どうしの衝突での衝撃圧力：2 km/s ですでに約 <span class="ltr">13 GPa</span>。</figcaption></figure><div class="callout"><span class="tag">「深さ」の概念を三つの別々の高さに分ける（§A.2）</span><p style="margin:0">四つの経度のクレーターが何を語っているかを解読するために、論文 06 は「深さ」という語を三つの独立した幾何学的な量に分けます（各クレーターのまわりの 72 の方位で、中央丘を隠したうえで）：
+<br><strong>（1）まわりの地面からの縁の高さ</strong>——<em>衝突の瞬間に働いた力</em>を記録する；
+<br><strong>（2）まわりの地面からの底の深さ</strong>——<em>クレーターの下の層の硬さ</em>を記録する；
+<br><strong>（3）クレーターの縁から底までの全体の深さ</strong>——最初の二つの和。</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：四つの経度——クレーターのどの部分にもそれぞれの記憶がある</h2>
+<p>論文 06 の C.3 部と F–I 部は、赤道上の四つの等しい円形区域（半径 30°、海と SPA 盆地を除いたあと）で差し渡し 20〜100 km の 1,457 のクレーターを走査し、クレーターの各部分が同じ過程の異なる面をどう記録しているかを示します：</p>
+<ol class="steps">
+<li><strong>クレーターの数——後行半球（90°E）は先行半球より 1.44〜1.79 倍密（研究 1、§C.3）：</strong>後行半球では差し渡し 20 km 以上のクレーターが百万 km² あたり <strong>249</strong>（20 の大盆地を除くと 252）数えられ、90°W の先行半球では <strong>139</strong>（175）、0° の表側では <strong>135</strong>（148）でした（比の 95% 信頼区間：1.56〜2.05、セル抽出では 1.48〜2.19）。差は小さなクレーターと中くらいのクレーター（&lt; 70 km、1.2〜2.4 倍）に集中しており、それらは月そのものから撃ち出されて後ろに集まった物質でつくられ、一方、巨大なクレーター（&gt; 70 km）は扁平な段階で早くつくられ、より均等に広がっています。</li>
+<li><strong>クレーターの縁（衝突の瞬間の力、F 部）：</strong>
+<ul>
+<li><strong>裏側（180°）では、縁がもっとも高い（30〜50 km で 18.7 × 10⁻³D）：</strong>裏側は地球と共有する質量中心のまわりの共同の回転で外を向いていたので、遠心力が放出物を外へ引き、高い縁（そして高い中央丘、30 × 10⁻³D）を残しました。</li>
+<li><strong>表側（0°）では、大きなクレーターの縁がもっとも低い（10.3 × 10⁻³D）：</strong>遠心力が物質を地面へ内向きに押しつけました。</li>
+<li><strong>先行半球（90°W）では、20〜30 km で縁がぎざぎざで、細長く、低い：</strong>正面衝突が縁を砕いて切れこみを入れ（縁の不規則さ 1.25 倍、方位間の跳び 1.14 倍、e &gt; 1.2 の細長い縁が <strong>17%</strong>、90°E では 12%）、押し下げました（12.7 対 17.2 × 10⁻³D）。</li>
+</ul>
+</li>
+<li><strong>地表より下のクレーターの底（層の硬さ、G.1 部）：</strong>
+<ul>
+<li><strong>裏側（180°）では、底がもっとも深い（20〜30 km で 54 × 10⁻³D）：</strong>裏側はシアルと戻ってきた物質の柔らかい層が重なってできています。そこに着地した赤熱した物質がそれらを押しつぶして溶かし、底は内へ深く沈みました。</li>
+<li><strong>表側（0°）では、底がもっとも浅い（27 × 10⁻³D、裏側の半分）：</strong>硬い地面は崩れず、下からの海の充填が底をさらに持ち上げました。</li>
+<li><strong>先行半球（90°W）と後行半球（90°E）のあいだで底の高さに違いはない：</strong>正面衝突は縁、中央丘、粗さを形づくりましたが——底の深さは下の基盤だけで決まるのです！</li>
+</ul>
+</li>
+<li><strong>中央丘と底の粗さ（衝突のエネルギー、H–I 部）：</strong>複雑クレーターへの移行（20〜30 km）のあたりで、正面衝突は中央の反跳をつくるエネルギーのしきい値を越えます。<strong>90°W ではクレーターの 60% が中央丘をもち</strong>（180° で 46%、90°E で 49%）、底の粗さは <strong>1.50</strong> 倍高い（4.5° 対 3.0°、縁の切れこみと r = 0.40 で相関）——一方、巨大なクレーター（50〜100 km）では、裏側への月と地球の複合衝突によって <strong>98%</strong> のクレーターが中央丘をもつのです！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Crater density at four longitudes" style="direction:ltr"><rect x="160.0" y="16" width="368.9" height="26" rx="4" fill="#2f7d57"/><text x="536.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦249⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°E · 後行半球</text><rect x="160.0" y="56" width="300.7" height="26" rx="4" fill="#5f9a6e"/><text x="468.7" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦203⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >180° · 裏側</text><rect x="160.0" y="96" width="205.9" height="26" rx="4" fill="#c47f2c"/><text x="373.9" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦139⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°W · 先行半球</text><rect x="160.0" y="136" width="200.0" height="26" rx="4" fill="#9aa3af"/><text x="368.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦135⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0° · 表側</text></svg><figcaption>赤道上の四つの円形区域における差し渡し 20 km 以上のクレーターの百万 km² あたりの密度（研究 1、海と SPA を除外）：後行半球は先行半球より密である。</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>母天体のまわりのケプラー軌道でのエネルギーと角運動量の保存則（論文 06 の方程式 10〜14）は、同じ高さでの衝突速度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{land}} = u</annotation></semantics></math></span></span>）と、より高く回転する標的への相対的な衝突速度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r &gt; r_0</annotation></semantics></math></span></span>）の両方を決めます：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{E} = \dfrac{u^2 + \omega^2 r_0^2}{2} - \dfrac{K}{r_0}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mi>ω</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\ell = \omega r_0^2 \quad \Longrightarrow \quad v_{\mathrm{land}}(r_0) = u</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><mi mathvariant="script">E</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi mathvariant="normal">ℓ</mi><mi>r</mi></mfrac></mstyle><mo>−</mo><mi>ω</mi><mi>r</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v_{\mathrm{rel}}^2(r) = 2\left(\mathcal{E} + \dfrac{K}{r}\right) - \dfrac{\ell^2}{r^2} + \left(\dfrac{\ell}{r} - \omega r\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup></mrow><mrow><mi>d</mi><mi>r</mi></mrow></mfrac></mstyle><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d v_{\mathrm{rel}}^2}{dr} = 2\left(\omega^2 r - \dfrac{K}{r^2}\right)</annotation></semantics></math></span></div></div></div>
+<p>導関数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">dv_{\mathrm{rel}}^2/dr</annotation></semantics></math></span></span>（§K.3）は、共回転半径（初期段階のデータで <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">r_{\mathrm{corot}} \approx 15,883</annotation></semantics></math></span></span> km）より下では重力が支配するので、より高い標的への相対的な衝突速度は高さとともに下がる（半径 6,721、8,000、10,000、12,000 km で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.0</mn><mo>→</mo><mn>6.83</mn><mo>→</mo><mn>5.49</mn><mo>→</mo><mn>4.60</mn></mrow><annotation encoding="application/x-tex">8.0 \rightarrow 6.83 \rightarrow 5.49 \rightarrow 4.60</annotation></semantics></math></span></span> km/s）ことを示していますが、これは与えられた軌道についての幾何学的な関係であって、時間による普遍的な減少を意味するものではありません。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：まわりの玄武岩より高く立つクレーターの底</h2>
+<p>論文 06 の研究 10 と 11（§G.2–G.3）は、表側の玄武岩の上の 86 の大きなクレーター（40 km 以上）を調べ、横からの浸水では説明できない現象を明らかにします：</p>
+<ul>
+<li><strong>溶けたクレーターと塗り広げられたクレーターの 3 分の 1 が、外の玄武岩の表面より高く立っている（研究 10）：</strong>外の溶岩が横からクレーターを満たしたのなら、その底の水準は外の玄武岩の水準より高くなることはありえません（連通管の法則のように）。実際には、溶けたクレーターと塗り広げられたクレーターの <strong>76 のうち 24</strong>（32%）が<strong>まわりの玄武岩より 50 m 以上高く</strong>立っています（たとえば雨の海の玄武岩より +500 m 高く立つ<strong>プラトー</strong>、平原より +518 m 高く立つ嵐の大洋の差し渡し 182 km のクレーター！）。高地では 411 のうちわずか 12（3%）です！</li>
+<li><strong>凍った波の物理と鉄の分離（研究 11）：</strong>流体か柔らかい玄武岩の平原に着地した大きな塊は、その中心で波を上へはね上げました。底は沈み戻りはじめましたが、冷却が勝ったところでは、盛り上がりがその場で凍りついたのです。実際、盛り上がった底（&gt; +50 m）は軽い揮発性物質に富み、そのため<strong>鉄とチタンに乏しい</strong>（13.3 wt% FeO、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>）のに対し、沈んだ底は（14.4 wt% FeO、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>；有意性 p = 0.018 と p = 0.010）！</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：飛行、衝撃、経度、盛り上がった底の表（論文 06、C–K 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>打ち上げ速度 u（km/s）</th><th>打ち上げエネルギー（MJ/kg）</th><th><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> からのピーク高度（km）</th><th>飛行時間（分）</th><th>西への偏向（km）</th><th>着地速度と玄武岩中の衝撃圧力</th></tr>
+<tr><td><strong>2 km/s</strong></td><td>2.0 MJ/kg</td><td>251 km</td><td>8.46 分</td><td>51.7 km</td><td>2 km/s → <strong><span class="ltr">12.96 GPa</span></strong></td></tr>
+<tr><td><strong>3 km/s</strong></td><td>4.5 MJ/kg</td><td>591 km</td><td>13.50 分</td><td>184.1 km</td><td>3 km/s → <strong><span class="ltr">22.07 GPa</span></strong></td></tr>
+<tr class="hl"><td><strong>5 km/s（基準例）</strong></td><td>12.5 MJ/kg</td><td>1,932 km</td><td>28.01 分</td><td>1,031.6 km</td><td>5 km/s → <strong><span class="ltr">45.56 GPa</span></strong></td></tr>
+<tr><td><strong>8 km/s</strong></td><td>32.0 MJ/kg</td><td>8,684 km</td><td>97.28 分</td><td>8,438.7 km</td><td>8 km/s → <strong><span class="ltr">93.96 GPa</span></strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>形態的尺度（研究 1 と 6）</th><th>90°W（先行）</th><th>180°（裏側）</th><th>90°E（後行）</th><th>0°（表側）</th><th>物理的な意味</th></tr>
+<tr class="hl"><td><strong>20 km 以上のクレーターの密度（百万 km² あたり）</strong></td><td>139（175）</td><td>203（221）</td><td><strong>249（252）</strong></td><td>135（148）</td><td>後行半球は月と裏側の放出物を集めた（比 1.79、区間 1.56〜2.05）</td></tr>
+<tr><td><strong>20〜30 km / 50〜100 km での中央丘</strong></td><td><strong>60%</strong> / 94%</td><td>46% / <strong>98%</strong></td><td>49% / 81%</td><td>56% / 68%</td><td>正面衝突は 90°W で反跳のしきい値を越える</td></tr>
+<tr><td><strong>縁の不規則さ / 方位の跳び（20〜30 km）</strong></td><td><strong>9.2 / 3.9</strong></td><td>7.5 / 3.5</td><td>7.4 / 3.5</td><td>7.1 / 3.4</td><td>90°W で 1.25 倍と 1.14 倍；細長い縁 17% 対 12%</td></tr>
+<tr><td><strong>底の粗さ / 平らな面積（20〜30 km）</strong></td><td><strong>4.5° / 4%</strong></td><td>2.7° / 14%</td><td>3.0° / 11%</td><td>3.6° / 9%</td><td>衝突の衝撃が 90°W を粗くする（縁の切れこみと r=0.40）</td></tr>
+<tr><td><strong>地面からの縁の高さ（30〜50 km、× 10⁻³D）</strong></td><td>14.4（20〜30 で 12.7）</td><td><strong>18.7</strong></td><td>13.1（20〜30 で 17.2）</td><td>13.6（大きなもので 10.3）</td><td>裏側は共同の回転で外を向いていた：遠心力が放出物を持ち上げ、縁は高い；表側では同じ力が物質を地面へ押しつけた</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>この章で私たちは、地面から撃ち出されて 2〜8 km/s で戻ってくる地球の物質が数十 GPa の衝撃圧力を生むことを見ました——小惑星なしで巨大なクレーターを掘るのに十分すぎる力です。また、クレーターの各部分がそれぞれの記憶を保っていることも見ました。数は後行半球が先行半球より 1.44〜1.79 倍密であることを示し、縁は着地の瞬間の力を記録し（裏側で高く、先行半球でぎざぎざ）、底は下の地面を記録しています。最後に、まわりの玄武岩より高く立つクレーターの底も見ました——横からの浸水ではつくれないものです。</p>
+<p>しかしクレーターが戻ってきた地球の物質でできたのなら、その中の化学がそれを証言しているはずです。次の章——<strong>第 12 章：クレーター内部の化学、存在しない外来の質量、そして最後の散乱者としての地球</strong>（論文 06——L–Q 部にもとづく）——では、クレーターの内部を調べ、小惑星が月の地殻に残したはずの外来の質量を探し、切り離しのあとも地球が月へ物質を散乱し続けたようすを見ます。</p>
+<a href="story12_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 12 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">クレーター内部の化学、存在しない外来の質量、そして最後の散乱者としての地球 →</p></div></a><p style="margin-top:22px"><a href="story10_ja.html">← 第 10 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

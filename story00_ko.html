@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>서장: 달의 여덟 가지 수수께끼 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 서장: 달의 탄생을 설명하려는 모든 이론이 설명해야 하는 달의 여덟 가지 측정된 성질, 그리고 공회전선에서의 해방이 왜 각운동량 수지를 맞추는가.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story00_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story00_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story00_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story00_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story00_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story00_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story00_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story00_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story00_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story00_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story00_he.html" hreflang="he">עברית</a> · <a href="story00_en.html" hreflang="en">English</a> · <a href="story00_de.html" hreflang="de">Deutsch</a> · <a href="story00_es.html" hreflang="es">Español</a> · <a href="story00_fr.html" hreflang="fr">Français</a> · <a href="story00_ru.html" hreflang="ru">Русский</a> · <a href="story00_zh.html" hreflang="zh">中文</a> · <a href="story00_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in"><svg class="moon" viewBox="0 0 300 300" aria-hidden="true"><defs><radialGradient id="mg" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#f6f1e4"/><stop offset=".6" stop-color="#d9d2bf"/><stop offset="1" stop-color="#9c967f"/></radialGradient><radialGradient id="glow" r=".5"><stop offset=".6" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle cx="150" cy="150" r="148" fill="url(#glow)"/><circle cx="150" cy="150" r="105" fill="url(#mg)"/><g fill="#a9a28b" opacity=".55"><ellipse cx="118" cy="120" rx="30" ry="22"/><ellipse cx="170" cy="105" rx="18" ry="14"/><ellipse cx="135" cy="168" rx="22" ry="15"/><circle cx="190" cy="175" r="9"/><circle cx="96" cy="182" r="6"/><circle cx="205" cy="135" r="5"/></g></svg>
+<p class="kick">LEF MODEL · 서장</p>
+<h1>서장: 달의 여덟 가지 수수께끼</h1>
+<p>지구의 가장 가까운 이웃에 대하여 — 그리고 그 탄생을 설명하려면 무엇이 필요한가</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 이렇게 가까운데도 여전히 풀리지 않은 문제</h2>
+<p class="lead">달은 밤하늘에 너무 가까이 걸려 있어서, 우리는 달에 대해 이미 모든 것을 안다고 생각하기 쉽습니다. 우리는 달에 탐사선을 보냈고, 우주비행사를 착륙시켰으며, 수백 킬로그램의 암석과 먼지를 가져왔고, 그 표면의 모든 크레이터와 계곡과 능선을 몇 미터 단위까지 지도로 만들었습니다. 그런데도 이 모든 데이터를 실험대 위에 펼쳐 놓고 단 하나의 간단한 질문을 던지면 —</p>
+<div class="q">달은 어떻게 태어났으며, 어디에서 왔는가?</div>
+<p>— 달은 태양계에서 가장 수수께끼 같은 천체 중 하나로 드러납니다.</p>
+<p>문제는 정보의 부족이 아니라, 서로 모순되는 기묘한 성질이 너무 많다는 데 있습니다. 한편으로 달은 믿기 어려울 만큼 지구와 닮았습니다. 그 화학적·핵적 지문은 백만분의 몇 단위까지 지구와 똑같습니다. 다른 한편으로 달은 놀랄 만큼 작은 철 핵을 가지고 있고, 지각은 우리를 향한 쪽보다 뒷면이 훨씬 두꺼우며, 궤도는 황도면에 대해 5.145도 기울어져 있고, 질량 중심은 지구 쪽으로 약 2킬로미터 치우쳐 있습니다.</p>
+<p>140년이 넘도록 행성과학은 이 성질들의 조합을 풀려고 애써 왔습니다. 오늘날 받아들여지는 이론 — <strong>거대 충돌 이론</strong> — 은 약 45억 년 전 화성 크기의 천체("테이아"라고 불림)가 젊은 지구에 부딪혔고, 우주로 튀어 나간 파편 구름에서 달이 뭉쳐졌다고 제안합니다. 이 이론은 과학 혁명을 일으켰지만, 달의 여덟 가지 특별한 성질을 설명하기 위해 보조 가정, 특수한 시나리오, 나중의 수정을 거듭해서 덧붙여야 했습니다.</p>
+<p>그런데 전혀 다른 길이 있다면 어떨까요? 달이 파국적인 충돌 뒤 우주에서 뭉친 파편으로 만들어진 것이 아니라, <strong>지구에 아직 붙어 있는 동안 지구 자신의 물질로</strong> 만들어졌고, 지구의 자전이 이미 궤도에 필요한 속도를 준 바로 그 지점에서 자유 궤도로 풀려났다면 어떨까요?</p>
+<div class="box"><span class="tag">LEF</span><p style="margin:0">이것이 <strong>LEF 모델</strong>(<em>Lunar Elevation and Fission</em>)의 핵심 아이디어입니다. 메커니즘을 밝히는 긴 여정을 떠나기 전에, 시험대 역할을 하는 여덟 가지 측정된 사실 — 달의 탄생을 다루는 모든 이론이 설명해야 하는 여덟 가지 수수께끼 — 를 먼저 알아봅시다.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 여덟 개의 자물쇠가 달린 금고</h2>
+<p>여덟 개의 서로 다른 자물쇠로 잠긴 오래된 강철 금고를 상상해 보세요.</p>
+<div class="vault">
+<div class="side a"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#f4ecd8" stroke="#e3dccb"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#b23a2e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#b23a2e"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c47f2c" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c47f2c"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#7a5ea8" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#7a5ea8"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#3a7bbf" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#3a7bbf"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#9a6b4f" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#9a6b4f"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#5b6676" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#5b6676"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c86a5e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c86a5e"/><circle cy="3" r="2.4" fill="#fff"/></g><circle cx="110" cy="100" r="26" fill="#fff" stroke="#c9c0ab" stroke-dasharray="3 3"/><text x="110" y="105" text-anchor="middle" font-size="13" fill="#9a3f33" font-family="Heebo">8가지 도구</text></svg><h4>여덟 가지 다른 도구</h4><p>자물쇠마다 다른 도구로 따로따로 부수려 할 수도 있습니다. 하나는 드릴로 뚫고, 두 번째는 즉석에서 만든 열쇠로 열고, 세 번째는 톱으로 자르고, 네 번째에는 특수한 어댑터를 끼웁니다. 결국 문을 열 수는 있겠지만, 바닥에는 서로 아무 관련도 없는 여덟 가지 도구가 흩어져 있을 것입니다.</p></div>
+<div class="side b"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#e8f2ec" stroke="#cfe3d7"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110,100)"><circle cx="-12" r="11" fill="none" stroke="#2f7d57" stroke-width="5"/><rect x="-2" y="-3" width="30" height="6" fill="#2f7d57"/><rect x="18" y="3" width="4" height="7" fill="#2f7d57"/><rect x="24" y="3" width="4" height="5" fill="#2f7d57"/></g></svg><h4>하나의 마스터키</h4><p>하지만 두 번째 가능성이 있습니다. <strong>하나의 마스터키</strong> — 단 하나의 기하학적·역학적 열쇠 — 를 찾는 것입니다. 그 열쇠를 돌리면 같은 한 동작으로 여덟 개의 자물쇠가 차례차례 모두 열립니다.</p></div>
+</div>
+<p>과학에서는 이 원리를 <strong>과학적 간결성</strong>이라고 부릅니다. 같은 천체에서 여덟 가지 다른 현상이 발견될 때, 우리는 그것들이 여덟 번의 우연과 나중의 덧붙임의 결과인지, 아니면 하나의 연속적이고 일관된 물리 과정의 서로 다른 표현인지를 알아내려 합니다.</p>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 여덟 가지 수수께끼와 충돌 이론의 "땜질"</h2>
+<p>달의 여덟 가지 측정된 성질을 나란히 놓으면, 거대 충돌 모델 계열이 그것들을 다루는 방식과 LEF 모델에서 그것들이 자연스럽게 따라 나오는 방식 사이에 흥미로운 간극이 드러납니다:</p>
+<div class="legend"><span class="m">측정된 것</span><span class="i">충돌 모델이 요구하는 것</span><span class="l">LEF 모델의 방향</span></div>
+<div class="cards">
+<article class="card"><header><span class="n">1</span><h3>완전한 동위원소 동일성</h3></header><div class="row m"><div class="k">측정된 것</div><div>동위원소는 같은 화학 원소가 핵의 질량만 다른 형태로, 기원의 "신분증" 역할을 합니다. 달과 지구에서 산소, 타이타늄, 크로뮴, 텅스텐의 동위원소 비는 거의 정확히 같습니다. 산소의 차이는 겨우 <span class="num">−1 ± 5 ppm(백만분율)</span>입니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>외부의 충돌체는 다른 동위원소 서명을 가져와야 하므로, 모델은 충돌체와 지구 사이의 완전한 열적·동위원소적 혼합을 가정할 수밖에 없습니다(예를 들어 "시네스티아"라고 불리는 극단적인 중간 상태나, 극단적인 에너지의 충돌을 통해).</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>달은 지구 자신의 물질로 만들어졌으므로, 동위원소 동일성은 혼합 메커니즘이 필요한 수수께끼가 아니라 자연스러운 출발점입니다.</div></div></article>
+<article class="card"><header><span class="n">2</span><h3>아주 작은 금속 핵</h3></header><div class="row m"><div class="k">측정된 것</div><div>지진 측정은 달의 철 핵이 놀랄 만큼 작다는 것을 보여 줍니다. 반지름은 약 <span class="num">330 km</span>에 불과하고, 달 질량의 약 <span class="num">1.4%</span>를 차지합니다(지구 질량의 약 <span class="num">32%</span>와 비교하면).</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>충돌체의 철 핵이 지구 속으로 가라앉아 지구 핵과 합쳐졌고, 그중 작은 일부만 파편 원반에 남았다고 가정합니다.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>달을 만든 공급은 지구의 철이 아직 중심을 향해 가라앉고 있던 이른 단계에 시작되었고, 두 천체를 잇던 구조가 선별 기둥 역할을 하여 무거운 철의 대부분을 다시 지구 속으로 돌려보냈습니다.</div></div></article>
+<article class="card"><header><span class="n">3</span><h3>지각 두께의 비대칭</h3></header><div class="row m"><div class="k">측정된 것</div><div>GRAIL 탐사선의 중력 측정은 달 뒷면의 지각이 앞면보다 약 <span class="num">8~10 km</span> 두껍다는 것을 밝혀냈습니다(앞면 중심과 뒷면 사이에서 약 10 km, 반구 평균으로 약 8 km).</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>"동반 위성" 가설이 제안되었습니다. 작은 두 번째 위성이 주 위성의 뒷면에 천천히 부딪혀 그 위에 퍼져 붙었다는 것입니다.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>뒷면은 솟아오르는 천체의 위쪽 돔이었고, 가벼운 지각 물질(시알)이 그곳으로 이동해 층층이 쌓였으며, 거듭 내려앉은 분출 물질도 함께 쌓였습니다. 앞면은 지구와의 연결부의 밑바닥이었습니다.</div></div></article>
+<article class="card"><header><span class="n">4</span><h3>동주기 자전 — 지구를 향한 고정된 얼굴</h3></header><div class="row m"><div class="k">측정된 것</div><div>달은 언제나 한쪽 면만 지구로 향합니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>달의 자전을 공전 주기와 같아질 때까지 늦춘 나중의 조석 고정.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>우리를 향한 면은 단순히 달이 지구에서 떨어져 나오기 전에 지구에 붙어 있던 면입니다.</div></div></article>
+<article class="card"><header><span class="n">5</span><h3>두 반구의 보존 순서</h3></header><div class="row m"><div class="k">측정된 것</div><div>뒷면의 표면은 더 일찍 닫혀 보존되었고, 앞면의 어두운 현무암 바다보다 오래되었습니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>전 지구적 마그마 바다의 고르지 않은 냉각.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>차가운 우주를 향했던 뒷면이 먼저 닫혀 기록을 보존했고, 지구로부터 뜨거운 공급을 계속 받으며 빛나는 지구를 마주했던 앞면은 분리된 뒤에야 잠잠해지고 식었습니다.</div></div></article>
+<article class="card"><header><span class="n">6</span><h3>오래된 내부의 물과 휘발성 물질</h3></header><div class="row m"><div class="k">측정된 것</div><div>"용융 포유물" — 오래된 결정이 자랄 때 그 안에 갇힌 마그마의 작은 방울 — 안에서 <span class="num">615~1,410 ppm</span>의 물이 측정되었습니다. 그 뒤 휘발성 물질은 우주로 빠져나갔고, 오늘날 측정되는 달의 내부는 건조합니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>거대 충돌은 엄청난 열로 물과 휘발성 물질 대부분을 증발시켰어야 하므로, 이차 충돌을 통한 나중의 물 공급이 필요합니다.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>휘발성 물질은 나중에 온 손님이 아니라 엔진 그 자체였습니다. 깊은 마그마는 휘발성 물질이 풍부해 거품이 일었고, 밀도가 낮아져 위로 솟아오를 수 있었습니다.</div></div></article>
+<article class="card"><header><span class="n">7</span><h3>질량 중심의 치우침</h3></header><div class="row m"><div class="k">측정된 것</div><div>달의 질량 중심은 기하학적 형상 중심에 대해 지구 쪽으로 약 <span class="num">2 km</span> 치우쳐 있습니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>동반 위성의 도움으로 만들어진 고르지 않은 지각 분포의 부수적 결과.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>뒷면에 가볍고 두꺼운 지각이 쌓인 바로 그 현상이 균형점(질량 중심)을 앞면 쪽으로 약 <span class="num">1.24~3.11 km</span> 자연스럽게 밀어냅니다.</div></div></article>
+<article class="card"><header><span class="n">8</span><h3>궤도면의 5.145도 기울기</h3></header><div class="row m"><div class="k">측정된 것</div><div>지구 주위를 도는 달의 궤도는 황도면에 대해 <span class="num">5.145도</span> 기울어져 있습니다.</div></div><div class="row i"><div class="k">충돌 모델이 요구하는 것</div><div>파편 원반은 적도면에 자리 잡으므로, 기울기를 일으키려면 나중의 동역학적 메커니즘이 필요합니다. 예를 들어 이벡션 공명, 미행성과의 조우, 또는 70도 이상 기울어진 지구 같은 것입니다.</div></div><div class="row l"><div class="k">LEF 모델의 방향</div><div>위도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>에서 지구와의 공회전에서 풀려난 천체는 곧바로 출발한 위도와 같은 초기 경사를 가진 궤도에 들어갑니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>). 원반도, 나중의 수정도 필요 없습니다.</div></div></article>
+</div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 왜 100년 동안 지구에서 달을 들어 올리는 일은 불가능하다고 여겨졌을까?</h2>
+<p>달이 지구 자체에서 갈라져 나왔다는 생각이 그토록 간결하고 단순하다면, 왜 과학은 한 세기가 넘도록 그것을 버려 두었을까요?</p>
+<p>1879년 천문학자이자 수학자인 <strong>조지 다윈</strong>(찰스 다윈의 아들)은 <strong>고전적 분열 이론</strong>을 제안했습니다. 젊은 지구가 너무 빨리 돌아서 그 일부가 표면에서 떨어져 나가 우주로 날아가 달이 되었다는 것입니다. 이 아이디어는 <strong>속도와 각운동량에 대한 간단한 계산</strong> 때문에 수십 년 만에 기각되었습니다:</p>
+<ol class="steps">
+<li><strong>표면에서의 속도 차이:</strong> 하루가 <span class="num">5.5시간</span>(오늘날보다 네 배 빠름)이었던 고대에도 적도의 접선 속도는 초당 약 <span class="num">2,133미터</span>에 불과했지만, 표면 높이에서 자유 궤도를 돌려면 초당 <span class="num">7,701미터</span>가 필요합니다. 그 차이 — 초속 약 <span class="num">5.6킬로미터</span> — 때문에 표면에서 떨어져 나온 물질은 곧바로 지구로 다시 떨어졌습니다.</li>
+<li><strong>각운동량이라는 대가:</strong> 표면에서 그 차이를 메우려면 하루가 약 <span class="num">2.73시간</span>이어야 하고, 오늘날 지구–달 계 전체 각운동량의 <span class="num">2.74</span>배(원래의 기준점에서는 <span class="num">4.08</span>배)가 필요합니다. 고립된 계의 각운동량은 보존되므로 고전적 분열은 기각되었습니다.</li>
+</ol>
+<div class="box"><span class="tag">LEF의 돌파구</span>
+<p>다윈의 계산은 옳았지만, <strong>잘못된 장소에서 이루어졌습니다</strong> — 바로 표면에서였습니다. LEF 모델은 물질을 지구에 붙인 채 지구와 함께 돌게 하면서(<strong>공회전</strong>) 위로 올립니다. 지구 중심에서의 거리가 커질수록 자전 속도는 커지고 궤도에 필요한 속도는 작아집니다. <strong>공회전 반지름</strong>(하루 5.5시간일 때 <span class="num">15,818 km</span>)에서 두 속도는 만나 정확히 초속 <span class="num">5,020미터</span>로 같아집니다. 그곳까지 옮겨진 천체는 던질 필요가 없습니다 — 이미 완전한 궤도 속도로 움직이고 있으니까요.</p></div>
+<div class="vs">
+<div><b>2,133</b><span>표면에서의 자전 속도(m/s)</span></div>
+<div><b>7,701</b><span>표면에서의 궤도 속도(m/s)</span></div>
+<div class="hit"><b>5,020 = 5,020</b><span>공회전 반지름 15,818 km에서 둘 다</span></div>
+</div>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1,500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3,000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4,500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6,000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7,500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9,000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6,000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10,000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14,000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18,000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22,000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26,000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">표면에서 ⁦5.6 km/s⁩의 차이</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">공회전선</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15,818 km · 5,020 m/s</text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">자전 속도 ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">궤도 속도 ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">지구 중심으로부터의 거리(km) · 하루 5.5시간</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">속도(m/s)</text>
+</svg><figcaption>하루 5.5시간일 때, 지구 중심으로부터의 거리에 따른 두 속도. 표면에서는 궤도 속도가 자전 속도보다 훨씬 높지만, 바깥으로 갈수록 자전은 빨라지고 궤도 속도는 느려져 공회전선에서 만납니다.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>표면에서 고전적 분열이 실패한 것과 공회전선에서 성공한 것의 차이는 고전역학의 깔끔한 방정식 하나로 표현됩니다:</p>
+<div class="eqs">
+<div class="eq"><div class="k">자전이 주는 접선 속도</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Ω</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \Omega\, r</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">자유 원궤도에 필요한 속도</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{orb}} = \sqrt{\dfrac{G M}{r}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>같아지는 점 — 공회전 반지름</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r_c</annotation></semantics></math></span></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mtext> </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>r</mi><mi>c</mi></msub></mfrac></mstyle></msqrt><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\Omega\, r_c = \sqrt{\dfrac{G M}{r_c}} \;\Longrightarrow\; r_c = \left(\dfrac{G M}{\Omega^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>여기서 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span>는 지구의 각속도, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span>는 만유인력 상수, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span>는 지구의 질량입니다. 오늘날의 각운동량을 모두 초기 지구로 되돌리면(태양 조석으로 잃은 약 1%를 더해) 하루 5.5시간이 나옵니다. 그리고 분리 시점(하루 <span class="num">5.77시간</span>, 공회전선 <span class="num">16,399 km</span>)에서 각운동량 수지는 오늘날 각운동량의 <span class="num">1.007배</span>로 맞아떨어집니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE ROAD AHEAD</span>
+<h2>현실에 남은 서명: 앞으로의 여정 지도</h2>
+<p>LEF 모델은 <strong>과정 모델</strong>로 만들어졌습니다. 일련의 물리적 단계를 제시하고, 각 단계마다 결정적인 수치를 계산하며, 모든 수치가 같은 계 안에서 서로 맞는지 확인하고, 각 단계를 검증하는 현장의 측정된 관측을 가리킵니다 — 150기가파스칼의 깊은 근원 압력에서 시작해 바다, 크레이터, 극, 남극–에이트켄 분지를 거쳐 태평양 해저, 화성, 그리고 태양계의 나머지까지.</p>
+<div class="road"><span>깊은 근원 · 150 GPa</span><i>→</i><span>바다</span><i>→</i><span>크레이터</span><i>→</i><span>극</span><i>→</i><span>남극–에이트켄 분지</span><i>→</i><span>태평양 해저</span><i>→</i><span>화성</span><i>→</i><span class="end">태양계</span></div>
+</section>
+
+<section>
+<span class="lab">AT A GLANCE</span>
+<h2>실험 상자: 8가지 수수께끼와 각운동량 수지 한눈에 보기</h2>
+<div class="tw"><table><tr><th>#</th><th>달의 수수께끼</th><th>실제로 측정된 것</th><th>충돌 모델이 요구하는 것</th><th>LEF 모델에서 따라 나오는 것</th></tr><tr><td>1</td><td>동위원소 조성</td><td>산소 차이 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><mi mathvariant="normal">O</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta^{17}\mathrm{O} = -1 \pm 5</annotation></semantics></math></span></span> ppm; Ti, Cr, W 일치</td><td>충돌체와 지구의 완전한 혼합(시네스티아)</td><td>처음부터 지구 자신의 물질</td></tr><tr><td>2</td><td>작은 금속 핵</td><td>지진학적 반지름 ~330 km(달 질량의 ~1.4%)</td><td>충돌체 핵의 대부분이 지구 속으로 가라앉음</td><td>초기 선별 단계의 이동; 무거운 철은 서양배 속에서 다시 가라앉음</td></tr><tr><td>3</td><td>지각 두께의 비대칭</td><td>뒷면이 8~10 km 더 두꺼움(GRAIL)</td><td>두 번째 "동반 위성"과의 늦은 충돌</td><td>뒷면은 시알과 되돌아온 물질의 층을 모은 위쪽 돔이었음</td></tr><tr><td>4</td><td>동주기 자전</td><td>지구를 향한 고정된 얼굴</td><td>나중의 조석 고정</td><td>우리를 향한 면은 서양배에 붙어 있던 달의 밑면</td></tr><tr><td>5</td><td>보존 순서</td><td>뒷면은 오래되었고 앞면 바다보다 먼저 닫힘</td><td>마그마 바다의 고르지 않은 냉각</td><td>뒷면은 우주를 향해 일찍 닫혔고, 앞면은 공급받으며 가열됨</td></tr><tr><td>6</td><td>물과 휘발성 물질</td><td>오래된 용융 포유물 속 615~1,410 ppm의 물</td><td>충격 증발과 "늦은 물 공급"</td><td>휘발성 물질이 마그마에 거품을 일으켜 상승을 위해 밀도를 낮춤</td></tr><tr><td>7</td><td>질량 중심의 치우침</td><td>지구 쪽으로 약 2 km 치우침</td><td>동반 위성의 부수적 결과</td><td>두꺼운 뒷면 지각이 질량 중심을 1.24~3.11 km 밀어냄</td></tr><tr><td>8</td><td>궤도 기울기</td><td>황도면에 대해 5.145°</td><td>이벡션 공명, 조우, 또는 극단적인 자전축 기울기</td><td>위도 22.5°에서의 해방이 곧바로 경사 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>를 주고, 그것이 5.145°로 줄어듦</td></tr></table></div>
+<h3 style="margin-top:28px">각운동량 수지</h3>
+<div class="tw"><table class="am"><tr><th>분리 경로 / 모델</th><th>속도가 맞춰지는 곳</th><th>지구의 하루 길이</th><th>각운동량 비(오늘 = 1.000)</th></tr><tr><td>고전적 분열(원래의 기준점)</td><td>표면</td><td>—</td><td class="no">약 4(4.08) — 기각</td></tr><tr><td>고전적 분열(야코비 분기점)</td><td>표면</td><td>2.73시간</td><td class="no">2.74 — 기각</td></tr><tr class="hl"><td>LEF 모델(보존된 수지)</td><td>공회전선(<span class="ltr">15,818 → 16,399</span> km)</td><td><span class="ltr">5.50 → 5.77</span>시간</td><td><strong>1.007 — 정확히 맞아떨어짐</strong></td></tr></table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>우리는 여덟 개의 자물쇠를 탁자 위에 올려놓고, 열쇠가 어디에서 돌기 시작하는지 보았습니다. 지구 표면 위로의 필사적인 던지기가 아니라, 공회전선까지의 느리고 동기화된 여정에서입니다. 다음 장 — <strong>제1장: 다윈의 문제와 공회전 혁명</strong> — 에서 우리는 역학의 통제실로 들어가 숫자들을 가까이에서 확인할 것입니다.</p>
+<a href="story01_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제1장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">다윈의 문제와 공회전 혁명 →</p></div></a>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

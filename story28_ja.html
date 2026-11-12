@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 28 章：LEF モデルの研究地図（第 B 部）——太平洋、火星、太陽系、そして鍵となる検証（トピック 80–132） — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 28 章：研究地図、第 B 部——太平洋、火星、太陽系、そして鍵となる検証（トピック 80–132）。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story28_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story28_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story28_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story28_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story28_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story28_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story28_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story28_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story28_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story28_he.html" hreflang="he">עברית</a> · <a href="story28_en.html" hreflang="en">English</a> · <a href="story28_de.html" hreflang="de">Deutsch</a> · <a href="story28_es.html" hreflang="es">Español</a> · <a href="story28_fr.html" hreflang="fr">Français</a> · <a href="story28_ru.html" hreflang="ru">Русский</a> · <a href="story28_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 28 章</p>
+<h1>第 28 章：LEF モデルの研究地図（第 B 部）——太平洋、火星、太陽系、そして鍵となる検証（トピック 80–132）</h1>
+<p>論文 14——14. 研究トピック：モデルがほかの研究者に開くもの（区分 H–L と続く分野：トピック 80–132、三つの選択リスト、系列のまとめ）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：研究地図は、太平洋の海底から火星、太陽系、そして二つの鍵となる観測へと、どう続いていくのか？</h2>
+<p>第 27 章で、初期の地球、月の形成、南極エイトケン盆地を扱った論文 14 の最初の 79 のトピック（区分 A–G）を見わたしました。この締めくくりの章では、<strong>残りの 53 のトピック（区分 H–K、トピック 80–132）</strong>を完成させ、132 のトピックすべてを<strong>L 部の三つの選択リスト</strong>で整理し、リストの外で追跡のために印された二つの包括的な分野で締めくくります：</p>
+<ol class="steps">
+<li><strong>区分 H——縞と太平洋（トピック 80–90）：</strong>北太平洋の海底の平行な縞（メンドシノからクリッパートンまで）の 9 つの研究、太平洋の LLVP の下部の異常とアフリカのものとの比較、そして太平洋のリソスフェアの盲目的な復元。</li>
+<li><strong>区分 I と J——火星と太陽系全体（トピック 91–120）：</strong>パヴォニス山からのフォボスとダイモスの打ち出しと MMX ミッションの決着（2027 年の着陸と 2031 年の試料帰還）、そして水星から冥王星とハウメアまでの衛星の誕生の弧。</li>
+<li><strong>区分 K と L 部——鍵となる要件と三つの作業リスト（トピック 121–132）：</strong>モデル全体の二つの決定的な検証——<strong>同心の露出の幾何（トピック 121–122）</strong>と<strong>戻ってくる地球の物質にあるクレーターの起源（トピック 49 と 123）</strong>——をまとめること。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：太平洋の毛布のしわ、火星の蒸気の大砲、そして理論を決める二つのリトマス試験</h2>
+<p>四つの手にとれるイメージが、論文 14 の最後の 53 のトピックと系列の判定の戦略を集めます：</p>
+<ul>
+<li><strong>前へ引き伸ばされ、後ろでくしゃくしゃになった毛布（区分 H、トピック 80–90）：</strong>基部がキリティマティ（1.9°N、157.5°W）の近くに立ち、地球の自転に逆らって西へ傾いた地球の洋梨は、その前側を基部の東の平行な縞へと引き伸ばして折りたたみ、その後ろを太平洋の西の弧（西へ 8,100〜10,300 km）へとくしゃくしゃにし、そして海底に、1.37 倍に拡大された鏡像で、海の刻印を残したのです（トピック 87）！</li>
+<li><strong>長さ 200〜300 km の砲身をもつ、0.25〜<span class="ltr">0.5 GPa</span> の圧力のガスの大砲（区分 I、トピック 91–106）：</strong>若い火星（半径 1.5 倍、1 日 5 時間）は、二つのリソスフェアの栓を次々に打ち出しました——まず小さく湿ったダイモス、それから乾いて硬いフォボス——パヴォニス山（1.48°N）の単一の放出の導管から。そこでは西の壁でのコリオリの摩擦がフォボスの溝を刻み（トピック 94）、蒸気の環がそれらの軌道を円にしたのです！</li>
+<li><strong>モデル全体を決める二つのリトマス試験（L.1 部）：</strong>132 のトピックから、著者は<strong>二つの鍵となる観測</strong>を抽出します：（1）地殻とクレーターが、表側の中心のまわりの三つの同心の帯（0°–31°–70°–180°、トピック 121–122）に並んでいるかどうか；そして（2）嫦娥 6 号のノーライトとクレーターの溶融物の中の金属の元素合成の同位体（Cr、Ti、Mo、Ru、Os）が、小惑星のものではなく純粋に地球のものかどうか（トピック 49 と 123）！</li>
+<li><strong>軸の系の時計と SPA 盆地の磁気の地図（リストの外の続く分野）：</strong>番号のついた 132 のトピックの向こうに、二つの長期の包括的なプロジェクトが立っています——地球と月の系の四つの軸の面の進化を解くこと（初期の傾き 3.8° から 23.44° へ）、そして SPA の中心で消され、その縁で強められた月の古い磁気を読み解くことです。</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：区分 H–K のまとめと L 部の三つの選択リスト（トピック 80–132）</h2>
+<p>区分 H–K は、深部から太陽系の果てまでの地球物理学の円を閉じ、論文 13 の 18 の要件すべてを定められた研究トピックとして据えます：</p>
+<ol class="steps">
+<li><strong>区分 H——縞と太平洋（トピック 80–90）：</strong>11°〜20° 傾いた縞の赤道の当てはめ（トピック 80）と、キリティマティの基部の近さのモンテカルロ検定（1.6°、トピック 81）；基部の東の縞の片側性（トピック 82）；深さと年代の段差（トピック 83）；西の弧の非対称（トピック 84）；海嶺の下での縞の連続と、四つの交差点での海嶺の短縮（トピック 85）；上から引かれた「ヘラの」海嶺（ライン、マーシャル、ハワイ）と下からのプルームの海嶺の区別（トピック 86）；1.37× の縮尺での海の鏡像（トピック 87）；DSDP/IODP のボーリング孔での、1 億 8,000 万年より若い地殻の層の下の褶曲の続き（トピック 88）；太平洋 LLVP とアフリカのものとの比較、そしてプルームの同位体（He、W、Ne、Xe——トピック 89）；そしてリソスフェアの盲目的な古地磁気の復元（トピック 90）。</li>
+<li><strong>区分 I——火星とほかの天体（トピック 91–106）：</strong>若い火星の縮みと、質量の 5%〜20% の逃げ出しによる自転の 92% の喪失（トピック 91）；0.25〜<span class="ltr">0.5 GPa</span> の圧力の、長さ 200〜300 km の導管でのガスの押し（トピック 92）；粘性のあるブルカノ式の栓のサイクル（トピック 93）；コリオリの摩擦（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ω</mi><mi>v</mi><mo>≈</mo><mn>1.8</mn><mtext>–</mtext><mn>2.</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2\omega v \approx 1.8\text{–}2.0^2</annotation></semantics></math></span></span> m/s）とフォボスの 2.4〜2.6 km/s へのブレーキ（トピック 94）；凝縮した蒸気の環（~ 10¹⁶ kg、トピック 95）；8〜20 倍に高められた散逸によるダイモスの 23,463 km への潮汐ののぼり（トピック 96）；~ 22 h の 1 日に ~ 19,000 km で出会ったフォボスと共回転線の競争（トピック 97）；同位体、ガスの泡、含水鉱物を調べる<strong>MMX ミッション（2027 年着陸、2031 年帰還）</strong>の試料の分析（トピック 98）；フォボスの溝と穴の連なり（トピック 99）；フォボス（5.5%）に対するダイモス（1.9%）のくぼみの深さ（トピック 100）；火星への方向のフォボスの質量中心のずれ（トピック 101）；パヴォニス山の深いカルデラ（幅 47 km、深さ ~ 5 km、体積 8,300〜8,700 km³ で二つの衛星の体積 6,740 km³ と一致）とその下の質量の不足（トピック 102）；太陽風のガスに富む 40 億年前の古い塵の成分（トピック 103）；タルシスの下の水（トピック 104）；金星、水星、速いスーパーアース（トピック 105）；そして誕生時の自転の速さの関数としての両極の高さの差（トピック 106）。</li>
+<li><strong>区分 J——太陽系での衛星の誕生（トピック 107–120）：</strong>土星でピーク（2.5 × 10⁻⁴）をもつ太陽からの誕生の弧（トピック 107）；水星と金星でのふくらみの不在（トピック 108）；天王星と海王星から共回転線を通して逃げた水の計算（少なくとも 2%〜3%、トピック 109）；ガスの外層を除いた巨大惑星の内部の天体の密度（トピック 110）；土星の中くらいの衛星（トピック 111）と天王星の衛星（トピック 112）の密度の順序；天王星の 98° の傾き（トピック 113）；フォボスとミランダの、狭い開口を通る強いられた出口のしるしとしての溝（トピック 114）；冥王星とカロンの引き裂きの傷跡（トピック 115）と四つの小さな衛星の放出の時期（トピック 116）；分裂した対での密度の規則——大きいほうの相手がより密（トピック 117）；ネレイドとヒマリアの境界での捕獲の規則（2 点、トピック 118）；ハウメア（3.9 h で分裂の瀬戸際）とケレス（2.54 R、トピック 119）；そして分離のときのヘラの海嶺としてのイアペトゥス、パン、アトラスの赤道の尾根（トピック 120）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：L 部の三つの作業リストと、リストの外の二つの続く分野</h2>
+<p>論文 14 の L 部と今後の研究の節は、132 のトピックすべてを、研究者がもつ作業の道具に応じた実用的な行動計画へと集めます：</p>
+<ol class="steps">
+<li><strong>リスト 1——二つの決定的な鍵となる観測（L.1 部）：</strong>
+<ul>
+<li><strong>（a）同心の露出の幾何（トピック 121 と 122）：</strong>地殻の厚さと古いクレーターの集団が、表側の接触の中心のまわりの三つの同心の帯（0°〜31° 接触ドーム、31°〜70° 縁の帯、70°〜180° 裏側）に並んでいるかを検証すること。トピック 121 と 122 は<em>公開データのリストにも</em>現れるので、モデルを検証するためのもっとも決定的な研究は、すぐに実行するのにもっとも手が届きやすいものでもあるのです。</li>
+<li><strong>（b）戻ってくる地球の物質にあるクレーターの起源（トピック 49 と 123）：</strong>月のクレーターの ~ 99% が、外からの小惑星ではなく戻ってくる地球の物質によってつくられたのかどうかを決めること（小惑星なら地殻の上部 5 km に 4.4〜5.0 × 10¹⁹ kg、約 2%〜6% の異物の質量を残したはずだが、実際に測られるのはわずか 0.9%〜2%）——嫦娥 6 号のノーライトと海の溶融物の中の元素合成の同位体（Cr、Ti、Mo、Ru、Os）を測ることによって。</li>
+</ul>
+</li>
+<li><strong>リスト 2 とリスト 3——準備の段階による 132 のトピックの区分（L.2–L.3 部）：</strong>系列の 132 のトピックのうち、<strong>55 のトピック</strong>は既存の公開データですぐに実行できます（太平洋の縞の 9 つの研究 80–88 すべて、海の 14 の研究のうち 13 の 31–43、そして鍵となるトピック 121–122 を含む）。<strong>57 のトピック</strong>は解析的なモデルや重いシミュレーションの開発が必要です（その筆頭は、つながった天体の三次元 SPH シミュレーション——トピック 12——と、熱と軌道の連成積分——トピック 24）。そして<strong>20 のトピック</strong>は宇宙ミッション、試料、新しい実験室の実験が必要です（その筆頭は、フォボスへの MMX ミッションと 50〜<span class="ltr">150 GPa</span> での高圧実験）。</li>
+<li><strong>リストの外の二つの大きな研究分野（今後の研究）：</strong>（1）<strong>地球と月の軸の系</strong>——四つの力学的な面（地球の赤道、月の軌道、月の赤道、黄道面）の、初期の傾き 3.8° から 23.44° への展開を追い、真の極移動が地球のバーナーに対して SPA 盆地を動かしたかどうかを検証すること；そして（2）<strong>月の磁気</strong>——SPA 盆地の中心で消され、その縁で強められた古い磁場（インゲニイの海の渦模様を含む）を、長い加熱と地球から来た鉄の共通のしるしとして読み解くこと。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>二つの鍵となる観測（同心の帯の分布と上部地殻の異物の収支）を定める定量的な値と、火星の放出の導管でのコリオリの摩擦は、次のように定式化されます（区分 I、K、L）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mtext> </mtext><mn>1</mn></mrow></msub><mo>:</mo><mtext>  </mtext><mn>26.3</mn><mtext> km (cap)</mtext><mo>&lt;</mo><mn>30.3</mn><mtext> km (belt)</mtext><mo>&lt;</mo><mn>36.2</mn><mtext> km (far)</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>h</mi><mo>=</mo><mn>9.9</mn><mtext> km</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h_{\mathrm{Model\,1}}:\; 26.3\text{ km (cap)} &lt; 30.3\text{ km (belt)} &lt; 36.2\text{ km (far)} \quad (\Delta h = 9.9\text{ km})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>≤</mo><mn>0.9</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>2</mn><mi mathvariant="normal">%</mi><mo>≪</mo><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>4.4</mn><mtext>–</mtext><mn>5.0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>19</mn></msup><mtext> kg </mtext><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>6</mn><mi mathvariant="normal">%</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M_{\mathrm{foreign,\,measured}} \le 0.9\%\text{–}2\% \ll M_{\mathrm{foreign,\,asteroidal}} = 4.4\text{–}5.0 \times 10^{19}\text{ kg } (2\%\text{–}6\%)</annotation></semantics></math></span></div></div></div>
+<p>これらのデータは、二つの独立した検証——一方では表面の地殻の厚さとクレーターの幾何、他方ではクレーターの溶融物の中の金属の同位体の指紋——が、モデル全体に鋭く明確な検証と反証の条件をどう定めるかを示しています。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：LEF の系列全体にわたる 132 のトピックの完全なロードマップ</h2>
+<p>論文 14 は、系列の 14 の論文すべて（Zenodo DOI: 10.5281/zenodo.22743615）を、惑星科学の共同体全体に開かれた学際的な研究の体系へと結びます：</p>
+<ul>
+<li><strong>データの研究者のためのすぐにできる仕事（55 のトピック）：</strong>GRAIL と GRGM1200B のグリッド、Robbins のクレーター目録、トリウムとチタンの地図、太平洋の GEBCO の水深、そしてフォボスとダイモスの形状モデルの分析——スーパーコンピュータの資源も新しい試料も必要ありません。</li>
+<li><strong>これからの十年の宇宙ミッションのための目標（20 のトピック）：</strong>嫦娥 6 号の試料のノーライトの分析（トピック 123）、アポロ 14 号の試料の高圧鉱物（トピック 22）、2027〜2031 年の日本のフォボスへの MMX ミッション（トピック 98–104）、そして天王星とカイパーベルトへの将来のミッション（トピック 112、115、117、119）。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 434" role="img" aria-label="Research topics by readiness" style="direction:ltr"><rect x="220.0" y="12" width="243.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="341.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦10⁩</text><rect x="463.7" y="12" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="29.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >A · 洋梨の前の地球</text><rect x="220.0" y="46" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.2" y="46" width="170.6" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="463.7" y="46" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="63.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >B · 先端の天体</text><rect x="220.0" y="80" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="97.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><text x="6.0" y="97.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >C · 軌道</text><rect x="220.0" y="114" width="316.9" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦13⁩</text><rect x="536.8" y="114" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="549.1" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="131.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >D · 海と開口</text><rect x="220.0" y="148" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="148" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="439.4" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="512.4" y="148" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="536.9" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="165.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >E · クレーター</text><rect x="220.0" y="182" width="170.6" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="305.3" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="390.6" y="182" width="48.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="439.4" y="182" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="199.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >F · 極</text><rect x="220.0" y="216" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="216" width="97.5" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="463.7" y="216" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="233.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >G · SPA 盆地</text><rect x="220.0" y="250" width="219.4" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="329.7" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="439.4" y="250" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="463.7" y="250" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="267.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >H · 縞と太平洋</text><rect x="220.0" y="284" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.1" y="284" width="219.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="402.8" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="512.5" y="284" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="561.2" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><text x="6.0" y="301.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >I · 火星</text><rect x="220.0" y="318" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.6" y="318" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="390.6" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="463.7" y="318" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="512.5" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><text x="6.0" y="335.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >J · 衛星の誕生</text><rect x="220.0" y="352" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.5" y="352" width="121.9" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦5⁩</text><rect x="439.4" y="352" width="73.1" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><text x="6.0" y="369.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >K · 要件と鍵となる検証</text><text x="415.0" y="424.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" ><tspan fill="#2f7d57" font-weight="700">■ 公開データ</tspan> · <tspan fill="#2a4d7a" font-weight="700">■ 新しいモデル</tspan> · <tspan fill="#c47f2c" font-weight="700">■ 新しいデータ / ミッション</tspan></text></svg><figcaption>区分と準備の段階ごとの 132 の研究トピックすべて：55 は公開データで、57 は新しいモデルが必要、20 は新しいデータかミッションが必要。</figcaption></figure><h3 style="margin-top:28px">ラボボックス：LEF モデルの 11 の区分（A–K）すべてと 132 の研究トピックの全体のまとめ（論文 14）</h3>
+<div class="tw"><table class="lab">
+<tr><th>区分</th><th>研究分野</th><th>トピック</th><th>公開データ</th><th>新しいモデル</th><th>新しいデータ / ミッション</th></tr>
+<tr><td><strong>A</strong></td><td>洋梨の前とあいだの地球</td><td>1–11（11）</td><td>0</td><td>10</td><td>1</td></tr>
+<tr><td><strong>B</strong></td><td>先端の天体——形、丸まり、解放</td><td>12–23（12）</td><td>3</td><td>7</td><td>2</td></tr>
+<tr><td><strong>C</strong></td><td>軌道と潮汐の進化</td><td>24–29（6）</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td><strong>D</strong></td><td>海と開口</td><td>30–43（14）</td><td><strong>13</strong></td><td>1</td><td>0</td></tr>
+<tr><td><strong>E</strong></td><td>クレーターとその源（鍵となる観測 49）</td><td>44–57（14）</td><td>6</td><td>6</td><td>2</td></tr>
+<tr><td><strong>F</strong></td><td>極と丸まりの圧縮</td><td>58–67（10）</td><td>7</td><td>2</td><td>1</td></tr>
+<tr><td><strong>G</strong></td><td>南極エイトケン盆地（SPA）</td><td>68–79（12）</td><td>6</td><td>4</td><td>2</td></tr>
+<tr class="hl"><td><strong>H</strong></td><td>縞と太平洋の海底</td><td>80–90（11）</td><td><strong>9</strong></td><td>1</td><td>1</td></tr>
+<tr><td><strong>I</strong></td><td>火星とほかの天体（MMX ミッション）</td><td>91–106（16）</td><td>3</td><td><strong>9</strong></td><td><strong>4</strong></td></tr>
+<tr><td><strong>J</strong></td><td>太陽系での衛星の誕生</td><td>107–120（14）</td><td>4</td><td>6</td><td><strong>4</strong></td></tr>
+<tr class="hl"><td><strong>K</strong></td><td>要件と鍵となる検証（121–123）</td><td>121–132（12）</td><td>4</td><td>5</td><td>3</td></tr>
+<tr class="hl"><td><strong>合計</strong></td><td><strong>11 の区分すべて（A–K）</strong></td><td><strong>1–132（132）</strong></td><td><strong>55（41.7%）</strong></td><td><strong>57（43.2%）</strong></td><td><strong>20（15.1%）</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉——系列全体の終わり</h2>
+<p>第 28 章で、私たちは<strong>LEF（Lunar Elevation and Fission）系列の 14 の論文すべて</strong>の完全な調査を、整った 28 の章にわたって完成させました。原理の導入（論文 1）から、共回転線の物理、地球の洋梨、軌道、海、クレーター、極、南極エイトケン盆地（論文 2〜8）を経て、太平洋の縞、火星の衛星、衛星の法則、そして太陽系全体の環（論文 9〜12）へ、さらに定量的な要件と 132 の将来の研究トピックの地図（論文 13〜14）まで。</p>
+<p>28 章の完全な本は、いまあなたの手のなかにあります——構造化された学習の手引きとして、そして地球と月の系と太陽系全体の秘密を、さらに調べ、シミュレーションし、経験的に検証するための開かれた科学のロードマップとして。</p>
+<p style="margin-top:22px"><a href="story27_ja.html">← 第 27 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

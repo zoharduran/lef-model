@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 4 章：外から立ち上がる皮——ドームの 4 段階と月の顔の翻訳規則 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 4 章：地球のシアルの殻がどのように天体とともに持ち上がって月の皮になったのか、ドームの四つの段階、そして月の顔を三つの区域に分ける翻訳規則。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story04_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story04_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story04_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story04_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story04_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story04_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story04_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story04_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story04_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story04_he.html" hreflang="he">עברית</a> · <a href="story04_en.html" hreflang="en">English</a> · <a href="story04_de.html" hreflang="de">Deutsch</a> · <a href="story04_es.html" hreflang="es">Español</a> · <a href="story04_fr.html" hreflang="fr">Français</a> · <a href="story04_ru.html" hreflang="ru">Русский</a> · <a href="story04_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 4 章</p>
+<h1>第 4 章：外から立ち上がる皮——ドームの 4 段階と月の顔の翻訳規則</h1>
+<p>論文 03——LEF 機構の実際（B 部：§B.1–B.7）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：裏側の厚い地殻はどこから来たのか——そしてそこに古いクレーターを刻んだのは誰か？</h2>
+<p>前の章で私たちは、地球の内部エンジンが <span class="ltr">150.26 GPa</span> の圧力で深部の泡立つマグマを押し上げるようすを見ました。しかし完璧な内部供給があっても、望遠鏡や GRAIL 探査機の重力図で見る月の表面には、三つの大きな謎が残ります：</p>
+<ol class="steps">
+<li><strong>なぜ裏側の地殻は表側よりずっと厚いのか？</strong>裏側では地殻の平均の厚さが約 55 km に達するのに、表側ではわずか 30〜35 km ほどで、大きな海の下ではさらに薄いのです。</li>
+<li><strong>なぜ月のもっとも古いクレーターは両方の半球に広がり、とくに極のまわりに密集しているのか？</strong>もし月が宇宙で灼熱の破片の円盤から集積したのなら、最初の表面はなめらかでクレーターのないマグマの海だったはずです。</li>
+<li><strong>なぜ二つの半球はこれほど違って見えるのか</strong>——表側は暗く丸い玄武岩の海に覆われ、裏側は明るく傷だらけの高地なのか？</li>
+</ol>
+<p>LEF モデルの答えは驚くほど単純です。<strong>月は内側からだけ建造されたのではなく——同時に外側からも建造されたのです</strong>。建造区域の上にあった若い地球の軽い外側の地殻（<strong>シアル</strong>層）は、引き裂かれも置き去りにもされず、<strong>発達しつつある天体とともに持ち上がり、その先端へ滑っていって、月の外側の皮になったのです！</strong></p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：地面の布の下でふくらむ風船——そして地図を縮める球</h2>
+<p>地表の平らな覆いが、三つのはっきりした区域をもつ完全な球へ変わるようすを思い描くために、二つの単純な実験を想像してください：</p>
+<ul>
+<li><strong>布の下でふくらむ風船（段階 1 と 2）：</strong>地面に厚くて柔らかい布（地球の外側のシアル層を表す）を広げ、その中心の下に供給管をつなぎます。管が空気と物質を中へ送りこむと、布は地面に平らなままではいられず——ドームとして持ち上がり、真ん中を持ち上げたテーブルクロスのように、縁から中心へ向かって寄り集まります。布が地面に平らに置かれていたときにすでに描かれていた印や刻み（古いクレーター！）は、どれもいっしょにドームの頂上まで持ち上がります。</li>
+<li><strong>つぶれたスポンジボールがふくらんで外へ丸くなる（段階 3——翻訳規則）：</strong>半分しぼんだスポンジボールを、丸い台の丸い頭（「洋梨の先端」）の上に上から押しつけます。ボールの下の部分は広い帽子のように台を包み、上の部分はドームとして持ち上がります。ボールが完全な丸い球になるように少しずつふくらませると、外へ丸くなるにつれて<strong>下の縁が外側から内側へと台からはがれ</strong>、最後には底の中心の小さな円だけが台にくっついて残ります——そしてボールの表面のどの部分も、表面積に占める相対的な割合をちょうど保つのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：外側の建造の四段階——太平洋の平原から泡立つドームまで</h2>
+<p>論文 03 の B 部は、地球の外側の地殻層——より密な<strong>シマ</strong>層（Sima：ケイ素とマグネシウムに富む）の上に乗った<strong>シアル</strong>層（Sial：ケイ素とアルミニウムに富む軽い岩石、密度約 2,800 kg/m³）——を、四つの連続した段階を通して一歩ずつ追います：</p>
+<h3>段階 1——平らな段階と地殻の寄せ集め（約 45 億年前）</h3>
+<p>天体が持ち上がる前、シアル層は活発な供給区域の上の地表に平らに横たわっています。地殻の開口を通って深部の物質が上昇して放出され、放出物の一部はむき出しの地殻へ落ち戻ってそこにクレーターをつくります（クレーターの章で詳しく探ります）。その意味は驚くべきものです。<strong>月のもっとも古い表面は月の上でできたのではなく——月が地球から分かれる前に、すでに地球の表面の上でできていたのです！</strong></p>
+<p>論文で示される地理的な復元では、ドームへと内側に寄せ集められた地殻物質は古代の太平洋盆地の地域から来ました（面積約 1.0〜1.65 × 10¹⁴ m²、次の段階の上部ドームの面積の 1.4〜2.4 倍）。洋梨の基部は東、キリバスのキリティマティ島付近（1.9°N、157.5°W）、マントル底部の低速域の上にありました。そして地球の自転と赤道より北からの斜めの供給のために、洋梨は後ろ（西）へ、そして北へ、北緯 22.5° へ向かって傾いていました。</p>
+<h3>段階 2——洋梨の先端の上のつぶれた天体（泡立った状態）</h3>
+<p>月の全質量（7.35 × 10²² kg）が洋梨の頂上に蓄積したとき、それは自由な球として浮かんでいるのではなく、幅 <strong>6,000 km</strong> の広い洋梨の先端の上に、二つのドームからなるつぶれた天体として座っています：</p>
+<ul>
+<li><strong>下部ドーム（表面積の 33%）：</strong>洋梨の凸状の先端を上から抱きこみます（その曲率半径は約 4,000 km で、天体の基部に約 1,350 km 入りこむ）。</li>
+<li><strong>上部ドーム（表面積の 67%）：</strong>接触の縁から約 <strong>3,650 km</strong> の高さまで持ち上がり、宇宙にさらされています。</li>
+</ul>
+<div class="callout"><span class="tag">形と圧力の完璧なつながり（密度 1,300 kg/m³）</span><p style="margin:0">6,000 km の基部の上でドームの高さが 3,650 km のとき、天体の総体積は 5.65 × 10¹⁹ m³（今日の月の体積の 2.5 倍）です。月の質量をこの体積で割ると、<strong>1,300 kg/m³</strong> の密度が得られます——第 3 章の圧力検証が物質を持ち上げるために要求した、気泡に富む泡立ったマグマの密度そのものです！高いドームは内部エンジンに合うだけでなく、シアルとシマのあいだの「潤滑された」弱いせん断層の上に乗って上へ運ばれ、冷たく硬い外殻（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>）がその上のクレーターを崩壊から守るのです。</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：翻訳規則、海の露出、そして層状の地殻の建造</h2>
+<p>上昇する天体の自己重力が局所的な潮汐の引き伸ばしに打ち勝つと、天体は<strong>段階 3——外向きの丸まり</strong>に入ります。つぶれた天体は体積を一定に保ったままふくらんで球へと丸まります（表面積は 0.68 倍に減ります。球は与えられた体積に対して最小の表面積をもつからです）。洋梨との接触は幅 6,000 km から <strong>3,000 km</strong> の接続円盤へと狭まり、下部ドームの残りの部分はみな、それが乗っていたシアル層といっしょに、外側から内側へと少しずつはがれていきます。</p>
+<p>ここから<strong>幾何学的な翻訳規則</strong>が導かれます。外向きの丸まりでは、<strong>どの部分も表面積に占める相対的な割合を保つ</strong>のです。そのため月の顔は、接触の中心（24.1°N、335.2°E）のまわりに三つの同心の区域に分かれます：</p>
+<ol class="steps">
+<li><strong>表側の帽子（0°〜31°、面積の約 7%——差し渡し約 1,900 km）：</strong>解放の瞬間まで洋梨につながっていた最後の接触円盤（3,000 km）です。中央の内部供給路がここを通っていました——<strong>晴れの海</strong>（最初にはがれた）と<strong>雨の海</strong>（最終的な分離の瞬間までつながっていた！）。</li>
+<li><strong>はがれの帯（31°〜70°、面積の約 26%）：</strong>外向きの丸まりのあいだに少しずつはがれ、それが乗っていたシアル層を運んでいった下部ドームの環です。</li>
+<li><strong>裏側（70°〜180°、面積の約 67%）：</strong>最初の瞬間から宇宙にさらされ、古いクレーターをいっしょに運び上げた上部ドームです。</li>
+</ol>
+<figure class="fig"><div class="zones"><svg viewBox="0 0 300 300" role="img" aria-label="Equal-area map of the three zones around the contact centre" style="direction:ltr"><circle cx="150" cy="150" r="130" fill="#d9d2bf" stroke="#8a846f"/><circle cx="150" cy="150" r="74.6" fill="#c9b48a"/><circle cx="150" cy="150" r="34.7" fill="#4a5568"/><circle cx="150" cy="150" r="34.7" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="150" r="74.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="150.0" y="155.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">7%</text><text x="150.0" y="100.3" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">26%</text><text x="150.0" y="52.7" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">67%</text><text x="188.7" y="160.9" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#fff" style="direction:ltr;unicode-bidi:embed">31°</text><text x="228.6" y="168.6" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">70°</text></svg><div><ul class="pts" style="margin:0">
+<li style="border-color:#4a5568"><strong>表側の帽子 · <span class="ltr">0°–31°</span> · 7%</strong><br>最後の接触円盤；晴れの海と雨の海</li>
+<li style="border-color:#c9b48a"><strong>はがれの帯 · <span class="ltr">31°–70°</span> · 26%</strong><br>シアルとともにはがれた下部ドームの環</li>
+<li style="border-color:#a49d86"><strong>裏側 · <span class="ltr">70°–180°</span> · 67%</strong><br>はじめから宇宙にさらされた上部ドーム</li></ul></div></div><figcaption>等積地図上の接触中心（24.1°N、335.2°E）のまわりの三つの区域：地図上の各環の面積は、月の表面に占めるその割合に等しい。</figcaption></figure><p><strong>段階 4</strong>（自転による扁平化と、天体が圧縮されながらの内向きの丸まり）では、硬い地殻が既存のクレーターの大きさを保ったまま、そのあいだの表面が寄り集まります——これがクレーターを極のまわりに密集させるのです。同時に、旅の全体を通して、活発な開口から物質が撃ち出されて上部ドームへ戻ってくることが続きました。こうして裏側の厚い地殻は、先端へ移ったシアルと、何度も何度もその上に戻ってきた物質から、<strong>層の上に層を重ねて</strong>建造されたのです！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>つぶれたドームから三つの同心の帯をもつ球への移行は、表面積の比の保存（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_i = A_i / A_{\mathrm{tot}}</annotation></semantics></math></span></span>）によって定まります。接触の中心からの中心角が <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> の球冠について、球全体の面積に占めるその相対的な割合（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\pi R^2</annotation></semantics></math></span></span>）は：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi></mrow><mn>2</mn></mfrac></mstyle><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>θ</mi><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\theta) = \dfrac{2\pi R^2(1 - \cos\theta)}{4\pi R^2} = \dfrac{1 - \cos\theta}{2} \quad \Longrightarrow \quad \theta = \arccos(1 - 2f)</annotation></semantics></math></span></div></div></div>
+<p>段階 2 の面積の割合（3,000 km の接触円盤で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>0.07</mn></mrow><annotation encoding="application/x-tex">f_1 = 0.07</annotation></semantics></math></span></span>、6,000 km の下部ドーム全体で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">f_1 + f_2 = 0.33</annotation></semantics></math></span></span>）を代入すると、月の上の正確な角度がただちに得られます：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≃</mo><mn>3</mn><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_1 \simeq 31^\circ</annotation></semantics></math></span></span></strong> と <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>2</mn></msub><mo>≃</mo><mn>7</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_2 \simeq 70^\circ</annotation></semantics></math></span></span></strong>。同時に、地殻の質量の収支も完全に閉じます。裏側の地殻（平均の厚さ 55 km、密度 2,550 kg/m³）の重さは約 2.6 × 10²¹ kg（月の質量の 3.5%）、表側の地殻（30〜35 km）は約 1.5 × 10²¹ kg——合わせて月の質量の約 4〜6% で、残りの 94〜96% は内部から供給された深部マントルの物質です。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：GRAIL の地殻厚図と海の入れ子構造</h2>
+<p>幾何学的な翻訳規則の二つの円（24.1°N、335.2°E を中心とする 31° と 70°）を、<strong>GRAIL</strong> 探査機が測定した月の実際の地殻厚図と <strong>LOLA</strong> の地形図の上に描くと、驚くべき一致が現れます：</p>
+<ul>
+<li><strong>海の正確な地理的な入れ子：</strong>外側の円（建造時に 6,000 km）は表側の玄武岩の海の <strong>99%</strong> を含み、内側の接触円（3,000 km）はその <strong>66%</strong> を含み、雨の海は内側の接触円のちょうど内側にあります。</li>
+<li><strong>両側のあいだの地殻の厚さの逆転：</strong>表側の中心、供給開口として働き接触の熱でシアル層を失った海の下では、地殻はとくに薄く（GRAIL の図で青）、一方 70° の境界の外、裏側には、層状に建造された古く厚い高地がそびえています。</li>
+<li><strong>深さによる組成の予測：</strong>地球の内部での選別は時間とともに進んだので、裏側の地殻の底に最初に置かれた層は選別が進んでおらず鉄に富み、上のあとの層は軽く鉄に乏しいはずです——この予測は、さまざまな深さの岩石を露出させる衝突クレーターの中央丘で直接検証できます！</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：ドームの 4 段階、翻訳規則、地殻の収支（論文 03、B 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>建造時の区域（段階 2）</th><th>表面積</th><th>相対的な割合</th><th>月の上での接触中心からの角度</th><th>今日の月での地理的な正体</th></tr>
+<tr class="hl"><td><strong>接触円盤（3,000 km）</strong></td><td>7.3 × 10¹² m²</td><td><strong>7%</strong></td><td><strong>0° – 31°</strong></td><td>表側の帽子（差し渡し約 1,900 km）；海の 66%（晴れの海と雨の海）を含む</td></tr>
+<tr><td><strong>はがれの環（6,000 km まで）</strong></td><td>2.7 × 10¹³ m²</td><td><strong>26%</strong></td><td><strong>31° – 70°</strong></td><td>移行帯——洋梨からはがれたシアル；帽子と合わせて海の 99% を含む</td></tr>
+<tr><td><strong>上部ドーム（高さ 3,650 km）</strong></td><td>7.0 × 10¹³ m²</td><td><strong>67%</strong></td><td><strong>70° – 180°</strong></td><td>裏側——シアルと戻ってきた物質の層でできた厚い地殻（約 55 km）、クレーターが古い</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>天体の状態（月の質量は一定）</th><th>形と寸法</th><th>総体積</th><th>平均密度</th></tr>
+<tr><td><strong>洋梨の先端の上（段階 2）</strong></td><td>基部 6,000 km、ドームの高さ 3,650 km</td><td>5.65 × 10¹⁹ m³</td><td><strong>1,300 kg/m³</strong>（泡立った状態）</td></tr>
+<tr><td><strong>解放の瞬間の球（段階 4）</strong></td><td>半径 1,890 km</td><td>2.83 × 10¹⁹ m³</td><td><strong>2,600 kg/m³</strong>（硬い殻）</td></tr>
+<tr><td><strong>今日の月</strong></td><td>半径 1,737 km</td><td>2.20 × 10¹⁹ m³</td><td><strong>3,344 kg/m³</strong>（圧縮済み）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>地球の外側の皮が天体とともに持ち上がり、少しずつはがれて月の顔の三つの帯へと組織されたようすを見ました——そして内部供給と外側のドームの組み合わせが、表側と裏側の厚さの違いをどのように生んだのかも。</p>
+<p>しかしいま、もっとも繊細で劇的な工学の問いが残っています。<strong>このドームを地球につないでいたのはどんな橋で、北緯 22.5° のせん断応力で折れなかったのはなぜか？そしてどうやって共回転線からちょうど 210 km 外で分離したのか？</strong>次の章——<strong>第 5 章：洋梨とステファン解放——月を運び、共回転線でちょうど切れる橋</strong>（論文 03、C 部：§C.1–C.6）——では、分離の仕組みそのものを調べます。</p>
+<a href="story05_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 5 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">洋梨とステファン解放——月を運び、共回転線でちょうど切れる橋 →</p></div></a><p style="margin-top:22px"><a href="story03_ja.html">← 第 3 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

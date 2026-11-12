@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 25 章：LEF モデルの基本要件（R1–R8）——同位体、核、地殻、質量中心のずれ、露出の地帯 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 25 章：基本要件 R1–R8——同位体、核、地殻、質量中心のずれ、露出の地帯。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story25_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story25_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story25_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story25_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story25_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story25_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story25_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story25_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story25_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story25_he.html" hreflang="he">עברית</a> · <a href="story25_en.html" hreflang="en">English</a> · <a href="story25_de.html" hreflang="de">Deutsch</a> · <a href="story25_es.html" hreflang="es">Español</a> · <a href="story25_fr.html" hreflang="fr">Français</a> · <a href="story25_ru.html" hreflang="ru">Русский</a> · <a href="story25_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 25 章</p>
+<h1>第 25 章：LEF モデルの基本要件（R1–R8）——同位体、核、地殻、質量中心のずれ、露出の地帯</h1>
+<p>論文 13——13. 要件：仕組みが強いるもの、月がもっているもの、そして未解決のまま残るもの（A–B 部と付録 A：要件 R1–R8、質量の収支、統計的検証 T1–T5）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎と方法論：形成の環境を現代の月から切り離し、「累積の得点」を退ける</h2>
+<p>これまでの章で、地球の洋梨の力学、軌道、衛星と環の法則を築いたあと、<strong>論文 13（要件）</strong>はモデル全体を厳しい方法論の検証にかけます。統計的な偏りや、仮定と測定の混同を防ぐために、モデルは四つの基本ルールを定めます：</p>
+<ol class="steps">
+<li><strong>形成の環境と現代の月のあいだの方法論的な区分：</strong>形成の環境は、やわらかく熱い、速く回る系です（T = 5.5〜5.77 時間、初期質量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = M_E + M_L = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg、赤道半径 6,721 km）。一方、現代の月は、何十億年もの冷却と遅い火山活動を経た凍った進化の産物です。二つをつなぐ物理モデルなしに、遅い測定を初期条件として使ってはなりません。</li>
+<li><strong>各要件の三重の構造と、「累積の得点」の除外：</strong>各要件は、（a）モデルが求める力学的な条件、（b）それを検証する定量的な尺度、（c）不一致とみなされる結果、によって定められます。モデルは<strong>成功を足しあわせて重みつきの得点にすることを禁じています</strong>。地殻の厚さ、質量中心のずれ、海は<em>まったく同じ一つの質量分布</em>の異なる表現であり（それらを足せば一つの事実を二度数えることになる）、また一つの要件の不一致をほかの要件の成功の陰に隠さないためです。</li>
+<li><strong>導かれた結果、後づけの説明、予測の年代的な区別：</strong>論文は、<em>導かれた結果</em>（方程式から直接出てくる）、文献の既存の観測に合う<em>後づけの説明</em>、そしてまだ検証されていない独立した<em>予測</em>を厳密に分けています。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：厚くなるヘルメット、はがれる吸盤、そして溶岩に封じられた瓶</h2>
+<p>四つの手にとれるイメージが、八つの基本要件（R1–R8）と、その背後にある質量の収支を描きます：</p>
+<ul>
+<li><strong>三倍に厚くなるヘルメット（R3——地殻の非対称）：</strong>洋梨の頭にのぼった地球のドームは、底面 6,000 km の半球の上に、厚さ 18 km（密度 2,800 kg/m³）の古いリソスフェアの外皮を運んでいました（総質量 2.85 × 10²¹ kg、月の質量の約 3.9%）。ドームが丸まって面積が三分の一の裏側の半球の上で閉じたとき、質量の保存は直線的に三倍の厚さを強いました——<strong>50〜60 km</strong> へ（55 km で予測される質量 2.6 × 10²¹ kg、調整なしで約 10% の一致！）。</li>
+<li><strong>縁から内へはがれる吸盤（R8——三つの露出の地帯）：</strong>ドームの地域（裏側）ははじめから宇宙にさらされていたのに、基部は地球に押しつけられていました。丸まりのあいだ、基部は持ちあがって、ガラスからはがれる吸盤のように縁から中心へとはがれていきました——だから中心の接触ドームは<em>最後に</em>宇宙にさらされたのです。まさに共回転線（16,399 km）での切り離しの瞬間に。</li>
+<li><strong>手をつないだ二人のダンサー（R4——誕生からの同期固定）：</strong>洋梨の先端に力学的につながった天体は、1 周ごとにちょうど 1 回自転します（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><msub><mi>ω</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\mathrm{rot}} = \omega_{\mathrm{orb}}</annotation></semantics></math></span></span>）。だからそのつながった側は、切り離しの瞬間より前から、いつも親のほうを向いているのです。</li>
+<li><strong>カンラン石の結晶の中に封じられた瓶（R6——揮発性物質の保存）：</strong>表面の下でカンラン石の結晶の中に閉じこめられたマグマのごく小さな滴（メルト包有物）は、もとの水の含有量（615〜1,410 ppm）を、噴火での脱ガスから守って保っていました。岩の中に封じられた瓶のように。</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：最初の八つの要件（R1–R8）と統計的検証（T1–T5）</h2>
+<p>論文 13 の A 部と B 部は、八つの要件（R1–R8）のそれぞれを最新の経験的なデータと突きあわせます：</p>
+<ol class="steps">
+<li><strong>R1——地球の源への近さ（酸素同位体）：</strong>精密な実験室の測定（Young ら 2016）は、月と地球のあいだの酸素同位体のへだたりが <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></strong> であることを示します——測定の分解能の範囲で統計的にゼロであり、地球の貯蔵庫（深いマントルとシアル層）だけから築かれた天体に求められるとおりです。複数の系（O、Ti、Cr、W）をあわせた収支は、開かれた課題として定められています。</li>
+<li><strong>R2——輸送の目標としてのごく小さな金属の核：</strong>アポロの地震計の網（Weber ら 2011）は、半径 240 km の固い内核と半径 330 km の液体の外核を測りました——<strong>月の質量のわずか 1.4%</strong> ほどです。深部の物質の割合 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">f_{\mathrm{int}} = 0.95</annotation></semantics></math></span></span> について、収支の方程式 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{\mathrm{core}} = f_{\mathrm{int}} X_{\mathrm{met}} \epsilon_{\mathrm{core}}</annotation></semantics></math></span></span> は鋭い流体力学の目標を定めます：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}} \epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span></strong>。</li>
+<li><strong>R3 と R7——地殻の非対称と質量中心のずれ：</strong>GRAIL の重力地図（Zuber ら 2013）は、裏側の地殻が表側よりかなり厚いことを確かめています（全球平均 34〜43 km）。表側の地殻は、構造の基部からはがれた地球のシアル（SiAl）層です（質量 1.4〜1.7 × 10²¹ kg）。非対称な地殻のモーメント積分を計算すると（付録 A）、密度の差 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>300</mn><mtext>–</mtext><mn>750</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 300\text{–}750</annotation></semantics></math></span></span> kg/m³ について、表側への質量中心のずれは <strong>1.24〜3.11 km</strong> の範囲になります——月で測られた値（<strong>~ 2 km</strong>）を含み、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>≃</mo><mn>480</mn></mrow><annotation encoding="application/x-tex">\Delta\rho \simeq 480</annotation></semantics></math></span></span> kg/m³ でそれとちょうど一致するのです。</li>
+<li><strong>R5——四つの地質年代学の時計を分ける：</strong>論文は、遅い玄武岩の年代（時計 3——表側の 2.0 Ga の嫦娥 5 号の試料や、裏側の 2.8 Ga の嫦娥 6 号の試料など）を、一次地殻の結晶化の年代（時計 1）と比べることを禁じています。安定化の順序は、両側の同じ成因の型の一次地殻のユニットを比べることでだけ測らなければなりません。</li>
+<li><strong>R8——三つの同心の露出の地帯と、検証 T1–T5 の実行：</strong>表側の中心のまわり（更新された幾何では 24.1°N、335.2°E の接触の中心のまわり——地下点 0°、0° から <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\gamma = 34.0^\circ</annotation></semantics></math></span></span> の角度のずれ）で、月の表面は三つの同心の帯に並んでいます：接触ドーム（0°〜31°、もっとも薄い地殻と、負の環をもたない強いマスコン）、縁の帯（31°〜70°、東の海のような、負の環をもつマスコン盆地）、そして裏側（70°〜180°、厚い地殻とマスコンのない盆地）です。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：ドームの質量の収支、ヘルメットのモデル、そして PKT に対する露出の地帯の判定</h2>
+<p>論文 13 の B.3、B.7–B.8 部と付録 A は、月の丸まりの幾何が、地殻の厚さ、質量中心のずれ、盆地の帯を一つの閉じた方程式の体系にどうまとめるのかを示します：</p>
+<ol class="steps">
+<li><strong>端の値と半球の平均のあいだの決定的な区別（§B.3）：</strong>長波長のヘルメットのモデル <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></span> では、接触軸の上の 30 km（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 0^\circ</annotation></semantics></math></span></span>）と裏側の 60 km（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 180^\circ</annotation></semantics></math></span></span>）という点の端の値が、基準線 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">h_0 = 45</annotation></semantics></math></span></span> km と振幅 A = 15 km を与えます。半球の上での <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\cos\psi</annotation></semantics></math></span></span> の面積で重みづけた平均は 0.5 に等しいので、この例の半球の平均は<strong>37.5 km と 52.5 km</strong> です（30 と 60 km ではない！）。</li>
+<li><strong>裏側と表側の別々の質量の収支（§B.3）：</strong>地球の半球のドーム（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">h_s = 18</annotation></semantics></math></span></span> km、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>s</mi></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\rho_s = 2,800</annotation></semantics></math></span></span> kg/m³、底面の半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>h</mi></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">R_h = 3,000</annotation></semantics></math></span></span> km）は <strong>2.85 × 10²¹ kg</strong> の質量（月の質量の 3.9%）を運びます。面積が三分の一の裏側の半球の上で閉じるとき、それは約 10% 以内で、厚さ 55 km の裏側の地殻の質量（<strong>2.6 × 10²¹ kg</strong>、月の質量の 3.5%）を供給します。一方、表側の地殻（30〜35 km、質量 1.4〜1.7 × 10²¹ kg）は、構造の基部からはがれた地球のシアル層なのです。</li>
+<li><strong>PKT の熱異常の仮説に対する構造的な判定（§B.8）：</strong>代わりのモデルは、月の二面性を片側の熱異常（嵐の大洋 KREEP 地域——熱い表側と冷たい裏側）や、古い「地球照」の放射（Roy ら 2014）で説明します。LEF モデルは<strong>同心の三地帯の構造</strong>を予測し、それには<em>中間の縁の帯</em>（31°〜70°）が含まれ、そこには<strong>負の環をもつマスコン盆地</strong>が選択的に集中しています（西の縁の東の海や東の縁のスミス海のように）。基部のドームの縁があらゆる方向から少しずつ放されたからです。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>同心の地殻の厚さの方程式、有限の厚さ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><msub><mi>R</mi><mi>L</mi></msub><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b = R_L - h_0</annotation></semantics></math></span></span> の層についての質量中心のずれの質量モーメント積分（付録 A）、そして接触の中心の空間的なずれの角 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> の計算は、次のように定式化されます（§B.3、§B.7、付録 A）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>h</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msubsup><mi>R</mi><mi>h</mi><mn>2</mn></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>2.85</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>21</mn></msup><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_{\mathrm{shell}} = \rho_s h_s (2\pi R_h^2) = 2.85 \times 10^{21}\text{ kg}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>x</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msub><mi>M</mi><mi>L</mi></msub></mrow></mfrac></mstyle><mrow><mo fence="true">(</mo><msup><mi>b</mi><mn>3</mn></msup><mi>A</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mi>b</mi><msup><mi>A</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>≃</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><msub><mover accent="true"><mi>ρ</mi><mo stretchy="true">‾</mo></mover><mi>L</mi></msub></mfrac></mstyle><mi>A</mi></mrow><annotation encoding="application/x-tex">\delta x = \dfrac{4\pi\Delta\rho}{3M_L}\left(b^3 A + \dfrac{3}{5}b A^3\right) \simeq \dfrac{\Delta\rho}{\overline{\rho}_L}A</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>γ</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>1</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>8</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\cos\gamma = \cos(24.1^\circ)\cos(24.8^\circ) \implies \gamma = 34.0^\circ</annotation></semantics></math></span></div></div></div>
+<p>モーメント積分 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mi>δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mi>u</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>A</mi><mi>u</mi><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mtext> </mtext><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">M_L \delta x = \frac{\pi\Delta\rho}{2}\int_{-1}^{1} u(b+Au)^4\,du</annotation></semantics></math></span></span> では、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">u = \cos\psi</annotation></semantics></math></span></span> の奇数乗の項はすべて消えるので、非対称な成分（A）だけが質量中心を表側へずらすことに寄与し（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 500</annotation></semantics></math></span></span> kg/m³ で +2.072 km）、一方で対称な球の層（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_0</annotation></semantics></math></span></span>、マントル、核）はすべて完全に打ち消されるのです。</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Centre-of-mass offset against crustal density contrast" style="direction:ltr"><line x1="70" x2="600" y1="204.6" y2="204.6" stroke="#ece7da"/><text x="62" y="208.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#ece7da"/><text x="62" y="131.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="600" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="62" y="54.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">3</text><text x="118.2" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="214.5" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="310.9" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><text x="407.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">600</text><text x="503.6" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">700</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">800</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="530.0" y="119.7" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >月での測定値 · ⁦~2⁩ km</text><path d="M118.2,185.9 L310.9,122.2 L551.8,42.5" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="118.2" cy="185.9" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="127.2" y="201.9" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.243</text><circle cx="291.6" cy="127.7" r="5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="296.0" y="143.7" text-anchor="end" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.000</text><circle cx="310.9" cy="122.2" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="319.9" y="138.2" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.072</text><circle cx="551.8" cy="42.5" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="560.8" y="58.5" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">3.108</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >密度の差 Δρ（kg/m³）· 表側への質量中心のずれ（km）</text></svg><figcaption>有限の厚さの積分による質量中心のずれ（付録 A）：1.24〜3.11 km の範囲は測定値を含み、Δρ ≈ 480 でそれと一致する。</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：検証 T1、T2、T5 の実行結果と、質量中心のずれの較正</h2>
+<p>GRAIL のデータと Robbins のクレーター目録（≥ 20 km）でスクリプトを走らせると、最初の八つの要件の状態について透明で精密な絵が得られます（§B.7–B.9）：</p>
+<ul>
+<li><strong>軸とクレーター密度の検証（T5 と T2）での明確な成功：</strong>地下点の軸のまわりのスピアマン相関 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>（p = 2 × 10⁻⁴）は、ほかのどの対照軸も上回り（東の縁 +0.76、嵐の大洋 +0.74、南極 +0.43、北 −0.43）、裏側の大きなクレーターの密度は接触ドームより 2.21 倍高いのです（更新された幾何では海を含めて 8.42 倍、海なしで 4.15 倍）。</li>
+<li><strong>T1 の閾値の透明な記録と、T3–T4 の検証の継続：</strong>検証 T1 では、単調な順序は GRAIL の四つのモデルすべてで成り立ちますが、モデル 1 の差（9.65 km と 9.9 km）は下の閾値（10 km）より 0.1〜0.35 km 下なので、<em>合格しなかった</em>と記録されます。一方、盆地の検証 T3 と T4 は、再現パッケージで完全に定量的に走らせることになっています。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：八つの基本要件（R1–R8）、露出の地帯の検証（T1–T5）、質量中心のずれの感度のまとめ（論文 13、A–B 部と付録 A）</h3>
+<div class="tw"><table class="lab">
+<tr><th>要件</th><th>主題と物理的な要件</th><th>今日測られている経験的な発見</th><th>状態と開かれた課題</th></tr>
+<tr class="hl"><td><strong>R1</strong></td><td>地球の源への近さ（マントル + シアルの混合）</td><td>酸素同位体の同一性：<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></td><td><strong>一致</strong>（開かれている：複数の系 O、Ti、Cr、W の収支）</td></tr>
+<tr class="hl"><td><strong>R2</strong></td><td>ごく小さな金属の核（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}}\epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span>）</td><td>半径 330 km の地震学的な核（≈ 月の質量の 1.4%）</td><td><strong>一致</strong>（開かれている：鉄の滴を運ぶ流体力学モデル）</td></tr>
+<tr class="hl"><td><strong>R3</strong></td><td>地殻の非対称とドームの質量の収支（18 km）</td><td>厚い裏側の地殻；収支 2.85 対 2.6 × 10²¹ kg（~ 10%）</td><td><strong>一致</strong>（開かれている：完全な空間プロファイルと表側のシアルの源）</td></tr>
+<tr><td><strong>R4</strong></td><td>共回転線での切り離しの瞬間からの同期固定</td><td>表側を地球に向けた 1:1 の同期固定</td><td><strong>一致</strong>（開かれている：軌道での向きのベクトルの連続性）</td></tr>
+<tr><td><strong>R5</strong></td><td>熱的な安定化の順序（裏側が表側より先）</td><td>別々の遅い玄武岩（2.0 Ga と 2.8 Ga、時計 3）</td><td><strong>一致</strong>（開かれている：一次の高地地殻での時計 1 の比較）</td></tr>
+<tr class="hl"><td><strong>R6</strong></td><td>粘性と密度を下げる揮発性物質の存在</td><td>カンラン石のメルト包有物の水：615〜1,410 ppm</td><td><strong>一致</strong>（開かれている：流れと相の熱力学モデル）</td></tr>
+<tr class="hl"><td><strong>R7</strong></td><td>地殻と質量中心のずれのあいだの定量的なつながり</td><td>測られたずれは表側へ ~ 2 km；モデルの範囲 1.24〜3.11 km</td><td><strong>一致</strong>（開かれている：合同のベクトル逆解析）</td></tr>
+<tr><td><strong>R8</strong></td><td>三つの同心の露出の地帯（0°–31°–70°–180°）</td><td><strong>T5 合格</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>）、<strong>T2 合格</strong>、<strong>T1 不合格</strong>（9.65〜9.9 km）</td><td><strong>完成に向けて開かれている</strong>（盆地の検証 T3 と T4、クレーターの年代の選り分け）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>密度の差 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\Delta\rho</annotation></semantics></math></span></span>（kg/m³）</th><th>薄い殻の近似での質量中心のずれ（km）</th><th>有限の厚さの積分での質量中心のずれ（km）</th><th>測地学的な観測（~ 2 km）への一致</th></tr>
+<tr><td>300</td><td>1.345</td><td>1.243</td><td>感度の範囲の下限</td></tr>
+<tr class="hl"><td><strong>500（較正すると ~ 480）</strong></td><td><strong>2.242</strong></td><td><strong>2.072（480 で 2.000）</strong></td><td><strong>測られた桁（2 km）との正確な一致</strong></td></tr>
+<tr><td>750</td><td>3.362</td><td>3.108</td><td>感度の範囲の上限</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>この章では、論文 13 の方法論の枠組みと、八つの基本要件（<strong>R1–R8</strong>）を見わたしました——同位体の同一性（−1 ± 5 ppm）から、ごく小さな核（1.4%）、地殻の収支（2.85 対 2.6 × 10²¹ kg）、質量中心のずれ（2.07 km）を経て、同心の露出の地帯での統計的検証 T1、T2、T5 の実行まで。</p>
+<p>次の章——<strong>第 26 章：さらなる十の要件（R9–R18）、ハフニウム・タングステンの時計、そして将来の LEF の研究の地図</strong>（論文 13——C–D 部と付録 B にもとづく）——では、体系全体を完成させます。洋梨の 7 つの要件（R9–R15：太平洋の LLVP の下部の異常、KREEP の複合体、異物の不在、極でのクレーターの圧縮）、洋梨のあとの 3 つの要件（R16–R18）、6 億年の窓にわたる放射性崩壊の時計 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> の制約、そして研究者のための 7 つの開かれた課題を調べるのです！</p>
+<a href="story26_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 26 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">さらなる十の要件（R9–R18）、ハフニウム・タングステンの時計、そして将来の LEF の研究の地図 →</p></div></a><p style="margin-top:22px"><a href="story24_ja.html">← 第 24 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

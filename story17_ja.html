@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 17 章：太平洋の縞——洋梨の前壁と月の鏡像の刻印 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 17 章：太平洋の海底の縞——洋梨の前壁と月の鏡像の刻印。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story17_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story17_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story17_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story17_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story17_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story17_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story17_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story17_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story17_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story17_he.html" hreflang="he">עברית</a> · <a href="story17_en.html" hreflang="en">English</a> · <a href="story17_de.html" hreflang="de">Deutsch</a> · <a href="story17_es.html" hreflang="es">Español</a> · <a href="story17_fr.html" hreflang="fr">Français</a> · <a href="story17_ru.html" hreflang="ru">Русский</a> · <a href="story17_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 17 章</p>
+<h1>第 17 章：太平洋の縞——洋梨の前壁と月の鏡像の刻印</h1>
+<p>論文 09——縞：太平洋の海底に残る洋梨の先行側（A–C.4 部：平行な緯度線、西の二つの膝、1.37× の鏡像の刻印、洋梨の長さ）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：なぜ何千 km もの長さのまっすぐで平行な六本の縞が太平洋の海底を横切り——西で収束するのか？</h2>
+<p>北太平洋の鉛直重力勾配の地図（VGG——Vertical Gravity Gradient）には、並はずれた幾何学的な系が浮かびあがります：<strong>まっすぐで鋭く、驚くほど平行な六本の縞</strong>——メンドシノ、パイオニア、マレー、モロカイ、クラリオン、クリッパートン——が北アメリカの岸から西へ何千 km も伸び（クリッパートンだけで約 <strong>7,240 km</strong>、地球の半径より長い！）、その多くは二重や三重に見えます。この章では、これらの縞が<strong>洋梨の帰還の傷跡</strong>——月が生まれたあの洋梨の——であることを示す、四つの驚くべき幾何学的な現象を発見します：</p>
+<ol class="steps">
+<li><strong>一つの共通の赤道の平行線（A.1、B.1）：</strong>六本の縞は今日の赤道に平行なのではなく、今日の赤道に対して ≥ 10° 傾いた<strong>一つの古い赤道</strong>の平行な緯度線なのです——33.6°N（メンドシノ）から 1.8°N（クリッパートン）まで広がり、さらに南の二本の縞（6°S と 14°S）があります。</li>
+<li><strong>キリティマティの洋梨の基部は系の赤道のまさに上にある（B.2–B.3）：</strong>キリティマティ島（1.9°N、157.5°W、論文 3 で下部マントルの大規模低速度領域 LLVP の上の洋梨の基部と同定された）は縞の赤道からわずか <strong>1.6°</strong> にあり——縞はそこから<strong>東へだけ</strong>（アメリカへ向かって）走っているのです！</li>
+<li><strong>幅 3,360 km を区切る西の二つの「膝」（C.1–C.2）：</strong>キリティマティの西で、縞は平行な進路を離れます。北の縞は下へ曲がり（23.8°N、164.9°E）、南の縞は上へ曲がります（5.3°S、173.2°E）。二つの膝のあいだの距離は <strong>3,360 km</strong>（範囲 3,040〜3,700 km）——月の接触域（3,000 km）とその上のドーム（3,650 km）の幅とまさに同じ——で、その中心（9.3°N、169.3°E）は<strong>基部の西 3,760 km</strong> にあるのです！</li>
+<li><strong>先端の中にある、1.37 倍に拡大された月の海の鏡像の刻印（C.3）：</strong>西の先端の足跡の中に、月の表側の拡大された鏡像が現れ、そこでは雨の海（13.19°N、179.04°E）、晴れの海（11.5°N、166.3°E）、そして接触の中心（8.2°N、179.3°W）がすべて先端の半径（1,680 km）の内側に入るのです！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 310" role="img" aria-label="Stripe latitudes from the system equator" style="direction:ltr"><rect x="190.0" y="16" width="345.3" height="26" rx="4" fill="#1f3a5f"/><text x="543.3" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦33.6°N⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >メンドシノ</text><rect x="190.0" y="56" width="309.4" height="26" rx="4" fill="#2a4d7a"/><text x="507.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >⁦30.1°N⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >パイオニア</text><rect x="190.0" y="96" width="266.2" height="26" rx="4" fill="#35608f"/><text x="464.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#35608f" style="direction:ltr;unicode-bidi:embed" >⁦25.9°N⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >マレー</text><rect x="190.0" y="136" width="209.7" height="26" rx="4" fill="#4a74a3"/><text x="407.7" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#4a74a3" style="direction:ltr;unicode-bidi:embed" >⁦20.4°N⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >モロカイ</text><rect x="190.0" y="176" width="107.9" height="26" rx="4" fill="#6f93bd"/><text x="305.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >⁦10.5°N⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >クラリオン</text><rect x="190.0" y="216" width="18.5" height="26" rx="4" fill="#c47f2c"/><text x="216.5" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.8°N⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >クリッパートン</text><rect x="190.0" y="256" width="16.4" height="26" rx="4" fill="#b23a2e"/><text x="214.4" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.6°N⁩</text><text x="6.0" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >洋梨の基部 · キリティマティ</text></svg><figcaption>縞の系の赤道に対する各縞の緯度：クリッパートンとキリティマティの洋梨の基部はほとんど同じ線の上にある。</figcaption></figure></section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：本の下のテーブルクロスのしわ、ろうの封印、そして地面に横たわる木</h2>
+<p>四つの日常のイメージが、地球から生え、月を放したあと内へ引き戻された巨大な洋梨が、どうやって太平洋の縞を残したのかを描きます：</p>
+<ul>
+<li><strong>回るメリーゴーラウンドの上を外へ歩く子ども（後行側へ傾き戻る洋梨、A.2）：</strong>洋梨が東へ自転する地球から伸びだしていたあいだ、上へのぼる物質はより大きな軌道速度を必要とし、そのため自転の向きに逆らって<em>遅れた</em>——つまり<strong>西へ</strong>遅れたのです。だから洋梨には二つの壁ができました：自転の向きに伸びた<strong>前壁（先行側、東）</strong>と、傾いた先端の下の<strong>後壁（後行側、西）</strong>です！</li>
+<li><strong>本の下のテーブルクロスのしわ（下と横からの縞の形成、B.5）：</strong>3.873 Ga に月が切り離されたとき、「栓が抜かれ」、洋梨の内部の圧力は解放され、洋梨は引きこまれて地球へ吸収し戻されました。引き伸ばされた前壁は自転の向きに東へなすりつけられ、横から押されたテーブルクロスのしわのように自分の上に折りたたまれました。だから縞は<strong>火山の海嶺を壊さずにその下を通る</strong>のです（上から刻まれた溝なら海嶺を切っていたはず！）。一方、引き伸ばされなかった後壁は山のように崩れ、西太平洋のねじれた島弧（フィリピン、マリアナ、インドネシア、バンダ弧、B.8）へとくしゃくしゃになったのです！</li>
+<li><strong>やわらかいろうに押しつけられたゴム印（月の表側の鏡像の刻印、C.3）：</strong>顔と顔を合わせて、月の表側は洋梨の先端に乗っていました。ゴム印に逆向きに彫られた文字のように、あるいは窓ガラスの内側から押しつけて外から見た手のひらのように、北は北のままですが<strong>東と西が入れかわります</strong>——そして先端の上での月の密度は 1,300 kg/m³ で、今日は 3,344 kg/m³ なので、刻印のあらゆる寸法は <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3344</mn><mi mathvariant="normal">/</mi><mn>1300</mn><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn mathvariant="bold">1.37</mn></mrow><annotation encoding="application/x-tex">(3344/1300)^{1/3} = \mathbf{1.37}</annotation></semantics></math></span></span> 倍大きいのです！</li>
+<li><strong>全長を地面に横たえた切り倒された木（9,360 km の長さと洋梨の長さの一致、C.4）：</strong>洋梨は木のように倒れたのではなく内へ引きこまれたのですが、海底になすりつけられた前壁は、切り離しの瞬間の洋梨の胴体そのものの長さと同じ長さにわたって広がっているのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：縞の系、二つの膝、そして鏡像の刻印（A–C.4 部）</h2>
+<p>論文 09 の A–C.4 部は、縞が洋梨の前壁であり、膝の地域が月の形づくられた場所であることを確かめる、四つの独立した幾何学的な測定を示します：</p>
+<ol class="steps">
+<li><strong>系の赤道と基部に対する縞の順序（A.1、B.1–B.4）：</strong>既知の基準点（ハワイ、ハワイ・天皇海山列の屈曲、トンガ海溝の先端、明治海山、精度 &lt; 5 ピクセル）に較正した三次元の地球儀（Cesium）の上で、六本の縞は一つの共通の赤道から一定の距離を保ちます：メンドシノ（33.6°N）、パイオニア（30.1°N）、マレー（25.9°N）、モロカイ（20.4°N）、クラリオン（10.5°N）、そしてクリッパートン（1.8°N——1.6°N にあるキリティマティの緯度から 0.2°〜0.8°！）。基部の南にはさらに二本の縞が同定され（約 6°S と 14°S、おそらくガラパゴスとマルケサス）、洋梨の基部（幅 9,000〜11,000 km）が前壁の縁ではなく、その幅の<em>内側</em>に立っていたことを証明します。</li>
+<li><strong>海嶺の下での縞の連続と西での収束（B.5–B.6）：</strong>四つの別々の交差点（36°N、178°W 付近、ライン諸島 6°N、159°W、フェニックス諸島 2°S、175°W、そして 13°S、152°W）で、縞は火山の海嶺の下に入り、横へ跳ぶことも海嶺を切ることもなく反対側で続きます。海嶺の西では、北の縞は南へ、南の縞は北へ曲がり、共通の収束の地域へ向かいます。</li>
+<li><strong>× 1.37 の拡大での表側の鏡像の刻印（C.3）：</strong>著者が最初の直接の読み（神酒の海が本来の場所から 2,500 km にずれて着地した）を物理的に正しい鏡像の読み（東西を入れかえて 1.37 倍に拡大し、雨の海と晴れの海の距離が今日の月の 1,023 km から ~ 1,400 km に広がる）に置きかえたあと、<strong>雨の海</strong>を 13.19°N、179.04°E に錨づけると、<strong>晴れの海</strong>（11.5°N、166.3°E）は先端の中心からわずか 410 km のマーシャル列島の上に、<strong>接触の中心</strong>（8.2°N、179.3°W）は 1,260 km のところに置かれます——すべて先端の半径（1,680 km）の深く内側で、神酒の海（1,970 km）は縁のすぐ外に落ちます。月の上でのその南の位置とまさに同じです！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：鏡像の縮尺（1.37×）と、月を除いた洋梨の胴体の長さをどう計算するか</h2>
+<p>論文 09 の C.1–C.4 部は、二つの単純な幾何学的な性質——固結のあいだの月の質量の保存と、共回転線に対する最後の接触の位置——が、自由なパラメータなしに、海底の鏡像の刻印の大きさと縞の系全体の長さの両方を前もって決めることを示します：</p>
+<ol class="steps">
+<li><strong>鏡像の拡大率（× 1.37、§C.3）：</strong>若い月が洋梨の先端に乗っていたあいだ、それはふくらんでいてガスと揮発性物質に富み、平均密度は <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>300</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{tip}} = 1,300</annotation></semantics></math></span></span> kg/m³ でした。それ以来、質量を一定に保ったまま今日の密度（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{today}} = 3,344</annotation></semantics></math></span></span> kg/m³、半径 1,737 km）へと固結しました。球の体積は密度に反比例し、半径は体積の立方根に比例するので、若い月の顔のあらゆる距離は今日の値の <strong>1.37</strong> 倍だったのです（そして系列の二段階の計算——レンズから球への 0.83 倍の移行と、そのあとの 1,890 km から 1,737 km への縮み——では 1.31 が得られ、数パーセント以内で一致する）。だから雨の海と晴れの海の距離（今日 1,023 km）は、洋梨の先端の上では <strong>≈ 1,400 km</strong> だったのです！</li>
+<li><strong>洋梨の胴体の長さを月そのものの長さから分ける（§C.4）：</strong>切り離しの瞬間（地球の 1 日が 5.77 時間）、切り離しの緯度（22.5°）での共回転線は地球の中心から 17,287 km にありました。月の中心（切り離し時の半径 1,890 km）は線を約 210 km 越えて 17,497 km にありました。したがって：
+<ul>
+<li><strong>先端として月をのせた洋梨：</strong>ちょうど共回転線まで届いていた——地球の表面から 17,287 − （6,602〜6,721）= 10,570〜10,690 km の距離。</li>
+<li><strong>洋梨の胴体そのもの（先端の地域を含み、切り離されて去った月を除く）：</strong>月の中心から月の半径一つぶん内側で終わっていた（地球の中心から 17,497 − 1,890 = 15,607 km）、つまり地球の表面から <strong>8,890〜9,000 km</strong> の長さ——先端の中心から東のクリッパートンまで海底に広がる縞の系の長さ（<strong>9,360 km</strong>）とほとんど同じなのです！</li>
+</ul>
+</li>
+<li><strong>系の線の上での膝の並び（§C.1–C.2）：</strong>二つの膝はでたらめではありません。北の膝（23.8°N、164.9°E）はパイオニアの縞の緯度のまさに上（系の赤道から 30.0°N、30.1°N に対して）にあり、南の膝（5.3°S、173.2°E）は系の赤道そのもののまさに上（そこから 0.1°）にあります——キリティマティの洋梨の基部がのっているのと同じ赤道です（そこから 1.6°）！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>先端の段階と現在とのあいだの月の顔の距離の比、地球の上に残った洋梨の胴体の長さ、そして先端の足跡の半径は、次のように定式化されます（§C.1、§C.3–C.4）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3344</mn><mn>1300</mn></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn>1.37</mn></mrow><annotation encoding="application/x-tex">\dfrac{L_{\mathrm{tip}}}{L_{\mathrm{today}}} = \left(\dfrac{\rho_{\mathrm{today}}}{\rho_{\mathrm{tip}}}\right)^{1/3} = \left(\dfrac{3344}{1300}\right)^{1/3} = 1.37</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mtext> </mtext><mi mathvariant="normal">b</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mi>R</mi><mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>−</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi>R</mi><mo>⊕</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>607</mn><mo>−</mo><mo stretchy="false">(</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>602</mn><mtext>–</mtext><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>721</mn><mo stretchy="false">)</mo><mo>=</mo><mn>8</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>890</mn><mtext>–</mtext><mn>9</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>000</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">L_{\mathrm{pear\,body}} = (R_{\mathrm{corot},22.5^\circ} + \Delta r_{\mathrm{release}} - R_{\mathrm{Moon,rel}}) - R_\oplus = 15{,}607 - (6{,}602\text{–}6{,}721) = 8{,}890\text{–}9{,}000\text{ km}</annotation></semantics></math></span></div></div></div>
+<p>ここで <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \approx 210</annotation></semantics></math></span></span> km は共回転線（緯度 22.5° で 17,287 km）を越えた距離、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_{\mathrm{Moon,rel}} = 1,890</annotation></semantics></math></span></span> km は切り離しの瞬間の月の半径です。ここから、洋梨の胴体の長さ（8,890〜9,000 km）が、縞の系の長さ（9,360 km）と後側の弧（8,100〜10,300 km）に 4%〜5% 以内で一致することがわかります。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：緯度線の地図と、太平洋の海底の鏡像の座標</h2>
+<p>緯度 30° にわたって横へのずれなく北太平洋を横切る鋭い重力勾配（VGG）の線のほかに、四つの精密な地理的な錨が地図の上で成り立ちます（§A.1、§B.7、§C.3）：</p>
+<ul>
+<li><strong>下部マントルの深い錨（B.7）：</strong>キリティマティの洋梨の基部（1.9°N、157.5°W）の下では、マントルの最下層は Cottaar &amp; Lekic（2016）の五つの投票モデルのすべてで地震学的に遅く、太平洋の大規模低速度領域（LLVP——その中心は基部の南南西 1,480〜1,660 km）の −1% の等値線の内側にあります。洋梨の重く鉄に富む物質は、内へ引き戻されるにつれてそこへ沈んだのです。</li>
+<li><strong>先端の足跡の中の鏡像の刻印（9.3°N、169.3°E のまわりの半径 ≈ 1,680 km）：</strong>月の表側の四つの鍵となる点のうち三つが鏡像の足跡の深く内側に入ります——晴れの海（中心から 410 km）、雨の海（1,150 km）、そして接触の中心（1,260 km）。一方、神酒の海（1,970 km）は南の縁のすぐ外にあり、月の上での接触域に対するその位置とまさに同じなのです！</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：縞の緯度、鏡像の刻印（× 1.37）、そして洋梨の長さ（論文 09、A–C.4 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>縞 / 地理的な錨</th><th>系の赤道からの距離</th><th>基部の緯度（1.6°N）から北への距離</th><th>洋梨の構造での幾何学的な役割</th></tr>
+<tr class="hl"><td><strong>1. メンドシノ</strong></td><td>33.6°N</td><td>北へ 32.0°</td><td>縞の系の北の境界</td></tr>
+<tr><td><strong>2. パイオニア</strong></td><td>30.1°N</td><td>北へ 28.5°</td><td>北の膝の緯度（30.0°N）と一致</td></tr>
+<tr><td><strong>3. マレー</strong></td><td>25.9°N</td><td>北へ 24.3°</td><td>中央北の縞</td></tr>
+<tr><td><strong>4. モロカイ</strong></td><td>20.4°N</td><td>北へ 18.8°</td><td>中央の縞</td></tr>
+<tr><td><strong>5. クラリオン</strong></td><td>10.5°N</td><td>北へ 8.9°</td><td>中央南の縞</td></tr>
+<tr class="hl"><td><strong>6. クリッパートン</strong></td><td><strong>1.8°N</strong>（西端で 0.8°）</td><td><strong>北へ 0.2°</strong>（長さ ~ 7,240 km）</td><td>洋梨の基部のすぐ脇を通る</td></tr>
+<tr class="hl"><td><strong>洋梨の基部（キリティマティ）</strong></td><td><strong>1.6°N</strong>（1.9°N、157.5°W）</td><td><strong>0.0°（基準点）</strong></td><td>縞の赤道の上、LLVP の上にのる（幅 9,000〜11,000 km）</td></tr>
+<tr><td><strong>南の二本の縞（ガラパゴス / マルケサス）</strong></td><td>~ 6°S と ~ 14°S</td><td>南へ 7.6° と 15.6°</td><td>基部が前壁の幅の内側に立っていたことを証明</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>対象 / 測定（C 部）</th><th>月の上の座標</th><th>地球の上の予測座標（× 1.37、鏡像）</th><th>先端の中心（9.3°N、169.3°E）からの距離</th><th>足跡（R ≈ 1,680 km）への適合</th></tr>
+<tr class="hl"><td><strong>雨の海（位置の錨）</strong></td><td>37.6°N、340.0°E</td><td><strong>13.19°N、179.04°E</strong></td><td>1,150 km（基部から 2,870 km）</td><td><strong>足跡の内側</strong>（主な通路）</td></tr>
+<tr class="hl"><td><strong>晴れの海（鏡像での予測）</strong></td><td>27.3°N、18.4°E</td><td><strong>≈ 11.5°N、166.3°E</strong></td><td><strong>410 km</strong>（基部から 4,140 km）</td><td><strong>足跡の深く内側</strong>（マーシャル列島の上）</td></tr>
+<tr class="hl"><td><strong>接触の中心（鏡像での予測）</strong></td><td>24.1°N、335.2°E</td><td><strong>≈ 8.2°N、179.3°W</strong></td><td>1,260 km（基部から 2,510 km）</td><td><strong>足跡の内側</strong></td></tr>
+<tr><td><strong>神酒の海（鏡像での予測）</strong></td><td>15.2°S、35.0°E</td><td>≈ 3.1°S、156.6°E</td><td>1,970 km（基部から 5,130 km）</td><td>南の縁の外（月の上での南の位置と一致）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>この章では、北太平洋の六本の平行な縞が一つの古い赤道の上に並び、キリティマティの洋梨の基部から東へ走り、3,360 km 離れた二つの膝のあいだで西に収束すること、そしてその内側に月の表側の拡大された（× 1.37）鏡像が刻まれていることを見ました。</p><a href="story18_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 18 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">太平洋全体の収束、ヘラの海嶺、そして海底の若さの謎の解決 →</p></div></a>
+<p style="margin-top:22px"><a href="story16_ja.html">← 第 16 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

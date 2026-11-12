@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 8 章：海とは本当は何なのか？——供給開口、73 の重力ドーム、そして凍った湖のように沈んだ底 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 8 章：海の四つの構成要素、GRAIL の重力図に見つかった 73 の供給ドーム（そのうち 44 が埋もれ、大半は裏側）、そして中心で沈んだ平らな底。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story08_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story08_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story08_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story08_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story08_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story08_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story08_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story08_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story08_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story08_he.html" hreflang="he">עברית</a> · <a href="story08_en.html" hreflang="en">English</a> · <a href="story08_de.html" hreflang="de">Deutsch</a> · <a href="story08_es.html" hreflang="es">Español</a> · <a href="story08_fr.html" hreflang="fr">Français</a> · <a href="story08_ru.html" hreflang="ru">Русский</a> · <a href="story08_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 8 章</p>
+<h1>第 8 章：海とは本当は何なのか？——供給開口、73 の重力ドーム、そして凍った湖のように沈んだ底</h1>
+<p>論文 05——海（A–F 部：研究 1–7 と 16）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：なぜ月には二つの顔があるのか——そして裏側の海はどこに隠れているのか？</h2>
+<p>簡単な双眼鏡ででも月を見れば、誰もがすぐに「月の中の顔」をつくっているはっきりした対比に気づきます。いつも地球に向いている<strong>表側</strong>は暗く丸い広がり（「海」——ラテン語で <em>Maria</em>、昔の人はそれを大洋だと思ったため）に覆われ、<strong>裏側</strong>は明るく、傷だらけで、暗い斑点がほとんどありません。</p>
+<p>受け入れられている文献は、それぞれの海を互いに無関係な二つの別々の出来事として解釈します。まず巨大な小惑星が月に衝突して深い盆地を掘り、それから何億年もあとに暗い玄武岩の溶岩がマントルから噴き出して盆地を満たした、と。この定義では、海とは単に<strong>暗い玄武岩の表面</strong>です。</p>
+<p>ところが GRAIL 探査機の精密な重力図を調べると、この物語を根底から揺るがす謎が現れます。裏側の明るい表面の下に、<strong>何十もの丸く密な、重力が過剰な天体</strong>が隠れているのです——表側の巨大な海の下にあるものと大きさも強さも同じなのに、表面には暗い玄武岩がまったくありません！これらの隠れた天体は何なのか？裏側に海がないように見えるのは、私たちがその色を見ているからにすぎないのでしょうか？</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：畑の覆われた井戸と、溶岩湖の上の凍った殻</h2>
+<p>論文 05 が海の定義について提案する転換を理解するために、二つの単純なイメージを想像してください：</p>
+<ul>
+<li><strong>火山の火口の溶岩湖：</strong>死火山の火口を見下ろすと、暗く凍った岩の表面が見えます。この暗い殻は山そのものではありません——流れが止まったあとに上から凍った最後の層にすぎないのです。その下には溶岩が上がってきた深い火道があります。まったく同じように、<strong>月の顔の暗い玄武岩は海ではなく——海とは月が建造された開口であり</strong>、玄武岩は開口の頂上で凍った最後の殻にすぎないのです！</li>
+<li><strong>両側に活きた井戸のある畑——片側が土で覆われたとき：</strong>何十もの井戸が掘られた大きな畑を想像してください。畑の片側（表側）では、井戸は建造の終わりまで開いていたので、中の暗い水面が見えます。畑の反対側（裏側）では、井戸はもっと早く閉じ、明るい土の厚い層で舗装されました。「暗い水の斑点」だけを数える人は、井戸が片側にしかないと思うでしょう——しかし地下を測る装置は、覆われた側にむしろ<strong>もっと多くの井戸</strong>があることを見つけるのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：概念を分け、73 の供給ドームを数える</h2>
+<p>論文 05 の A–D 部は、「海」という語を下から上へ四つのはっきりした物理的な構成要素に分けます：</p>
+<ol class="steps">
+<li><strong>供給ドーム：</strong>地下の焦点から押し上げられ、中心を持ち上げて縁を広げた、鉄とチタンに富む密な天体。供給が終わると、ドームは GRAIL 探査機をより強く引く密な天体に凍りついた——これが重力で測られる<strong>マスコン</strong>（質量集中）です。</li>
+<li><strong>開口：</strong>殻の中の流動的で粘性の低い区域で、物質がそこを通って表面へ上がった。ほとんどの開口を通っては、物質が外へ撃ち出されて月に落ち戻り、クレーターをつくりました（<strong>出口開口</strong>）。一方、地球との接触円盤の内側にあった<strong>雨の海</strong>と<strong>晴れの海</strong>を通っては、圧力と物質が外へ撃ち出されることなく月の内側へ入りました（<strong>供給口</strong>）。</li>
+<li><strong>海の玄武岩：</strong>開口の頂上で凍った最後の層。これに対して、下に供給ドームのない広い玄武岩の表面——<strong>嵐の大洋</strong>、静かの海、豊かの海など——は構造的な意味での「海」ではなく、近くの地球の熱で<strong>その場で溶けた地殻の平原</strong>なのです！</li>
+<li><strong>盆地：</strong>開口を取り囲む盛り上がった縁——開口そのものがまわりに撃ち出した熱い物質で、層の上に層を重ねて築かれたもの。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of a mare: dome, opening, basalt, basin rim" style="direction:ltr"><rect x="0" y="120" width="640" height="110" fill="#e6dcc6"/><path d="M60,120 Q150,70 230,105 L410,105 Q490,70 580,120 Z" fill="#d6c7a4"/><path d="M220,230 Q320,120 420,230 Z" fill="#7a5a3a"/><path d="M270,152 Q320,118 370,152 L360,108 L280,108 Z" fill="#c4623a" opacity=".85"/><rect x="232" y="100" width="176" height="9" fill="#3a3f4a"/><text x="320.0" y="212.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >供給ドーム（マスコン）</text><text x="320.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >開口</text><text x="320.0" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#3a3f4a" style="direction:ltr;unicode-bidi:embed" >玄武岩——最後に凍った殻</text><text x="120.0" y="62.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#6b5a2a" style="direction:ltr;unicode-bidi:embed" >盆地：撃ち出された物質で築かれた縁</text><line x1="120" y1="68" x2="140" y2="88" stroke="#6b5a2a"/></svg><figcaption>海の四つの構成要素、下から上へ：供給ドーム、開口、玄武岩、盆地。（模式図。）</figcaption></figure><div class="callout"><span class="tag">重力での決定的な発見（研究 1、3、4）</span><p style="margin:0">GRAIL の重力図（ブーゲー異常、次数 6〜660）で、差し渡し 100 km 以上、強さ 50 mGal 以上の丸く密な天体をすべて自動的に走査すると、月の顔に <strong>73 の供給ドーム</strong>が現れます：
+<br>• 重力勾配図で識別された <strong>34 の海のうち 33</strong> が、73 のドームのどれかの上にちょうど乗っています（20,000 回のランダムな試行で、33 に達したものはひとつもない！）。ドームの上にない唯一の海は<strong>夢の海</strong>で、そのドームは南極エイトケン盆地の下の巨大な熱で「煮られて」消されてしまいました。
+<br>• 73 のドームのうち 25 は開いた海の下に、4 は部分的に覆われ、<strong>44 のドームは明るい高地の下に完全に埋もれています</strong>——<strong>そのうち 36 は裏側</strong>です！つまり、裏側には<strong>表側より多くの供給ドームがある（40 対 33）</strong>のです。
+<br>• <strong>地殻の段差（平均 17 km）：</strong>開口の中心の下では、地殻がまわりの環より 8〜29 km（中央値 17 km）薄くなっています（標識された 36 の開口のうち 29 で、普通の衝突クレーターではわずか 2%）——外からの衝突ではなく、ドームが下から押し上げた証拠です。
+<br>• <strong>埋もれたドームの上の覆い：</strong>44 の埋もれたドームの上では、鉄の含有量（−0.19 wt%）とトリウム（+0.05 ppm）がまわりの地面と完全に同じで、地殻は <strong>8〜13 km</strong> 厚い——これは、裏側の古い開口をそのクレーターごと覆った後期の層の厚さなのです！</p></div>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="73 feed domes by side and by cover" style="direction:ltr"><rect x="20.0" y="20" width="205.5" height="34" fill="#4a5568"/><text x="217.5" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >開いた海の下 · 25</text><rect x="225.5" y="20" width="32.9" height="34" fill="#8a94a6"/><rect x="258.4" y="20" width="361.6" height="34" fill="#c9b48a"/><text x="612.0" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed" >高地の下に埋没 · 44</text><text x="241.9" y="74.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed" >部分的 · 4</text><rect x="20.0" y="96" width="271.2" height="34" fill="#1f3a5f"/><text x="283.2" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >表側 · 33</text><rect x="291.2" y="96" width="328.8" height="34" fill="#a49d86"/><text x="612.0" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >裏側 · 40（うち 36 が埋没）</text><text x="320.0" y="158.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >GRAIL の走査による 73 の供給ドーム——覆い別（上）と側別（下）</text></svg><figcaption>裏側には表側より多くの供給ドームがある。その大半は明るい高地の下に埋もれているので、海には見えない。</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：凍った湖の底、中心の沈下、そして撃ち出された物質の襟</h2>
+<p>海を通る供給が止まると、その底に何が起こり、なぜそれは盛り上がった縁に囲まれた沈んだ盆地の形をしているのでしょう？論文 05 の E 部と F 部は、四つの測定可能な幾何学的現象を明らかにします：</p>
+<ol class="steps">
+<li><strong>凍った湖のようなひとつの水準（研究 6）：</strong>重力のもとで静止した流体は傾きを保てません——ひとつの一様な水準に落ち着き、そのまま凍ります。精密な高度測定（SLDEM2015）では、<strong>16 の大きな海の底のうち 16</strong>（そして地図化された 189 の玄武岩単位のうち 188）が<strong>ひとつの高さの水準</strong>を示し、海の縁より深く（中央値 3.4 km、偶然の確率は 65,000 分の 1）、まわりの地面より低く（中央値 1.6 km）横たわっています。</li>
+<li><strong>中心はドームの上で沈んだ——二つの接触の海を除いて（研究 5）：</strong>供給ドームが密で鉄に富む天体に凍ると、その上の中心が沈みます（主に冷却時の熱収縮により、密な天体の重さと吸いこみもともなって）。実際、<strong>12 の開いた海のうち 10</strong> で中心は縁より低く（中央値 −267 m、たとえば東の海で −2.2 km、神酒の海で −1.6 km）、重力のドームが強いほど沈みは深くなります（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn><mo separator="true">,</mo><mi>p</mi><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59, p = 0.04</annotation></semantics></math></span></span>）。
+<br><strong>規則を裏づける唯一の二つの例外：</strong><strong>晴れの海（+60 m）</strong>と<strong>雨の海（+43 m）</strong>では、中心はむしろ縁よりわずかに高いのです！なぜでしょう？接触円盤の内側にあって地球のすぐ近くで凍った二つの海であり、凍るあいだ地球の強い引きが表側を外へ引き伸ばしていたからです！</li>
+<li><strong>引き伸ばされた縁と圧縮された内部（§F.2）：</strong>真ん中の水位が下がった池の氷のように、中心の沈下は海の縁を引き伸ばしてそこに割れ目（<strong>地溝</strong>、半径の 0.76〜1.22 倍の位置）をつくり、内部を圧縮して<strong>リンクルリッジ</strong>（半径の 0.71〜0.77 倍の位置）をつくりました。</li>
+<li><strong>裏側の海のまわりの、撃ち出された物質の襟（研究 16）：</strong>なぜ裏側の海のまわりの縁はこんなに高く盛り上がるのでしょう？溶岩が縁からあふれたからではなく（玄武岩はまわりの環の 0〜7% しか覆っていない）、開口から撃ち出された熱い物質がまわりに着地し、層の上に層を重ねて塗り広げられたからです！その結果、裏側の海のまわり 150〜300 km に盛り上がった<strong>「襟」</strong>が築かれ（埋もれた海のまわりで中央値の高さ +742 m）、一方、内へ供給し外へ撃ち出さなかった接触の海のまわりには、襟はまったくありません（−137 m）。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>開口を通って上がる流束の速さと開口の閉鎖の関係、そして表面に見えるクレーターの収支は、次の方程式で表されます：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}} = N_{\mathrm{bg}} + N_{\mathrm{return}} - N_{\mathrm{erased}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∫</mo><mi>Q</mi><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">M = \int Q\,dt</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>クレーターの方程式（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}}</annotation></semantics></math></span></span>）は、クレーターの数が「単純な時計」ではないことを示します。活発な開口はどれも、その底に着地したクレーターを消して溶かし（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{erased}}</annotation></semantics></math></span></span>）、同時にまわりにクレーターをつくる物質を撃ち出しました（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{return}}</annotation></semantics></math></span></span>）。開口の底が凍った瞬間からはじめて、新しいクレーターを蓄積しはじめたのです——地球から届き続けた最後の物質（「最後の散乱者」、§F.6）から。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：凍った順序を並べるきれいな底</h2>
+<p>海の底が凍った瞬間からはじめてクレーターを保つのなら、その上のクレーターの数は<strong>海が凍った順序</strong>の直接の尺度になります（研究 7 と 12）：</p>
+<ul>
+<li><strong>まわりより 12 倍きれいな底：</strong>測定された 10 の開いた海のすべてで（両側の若い光条の領域を除いたあと）、底がもつ 2〜5 km のクレーターの密度は、まわりの地面の平均わずか <strong>8%（12 分の 1）</strong>です！</li>
+<li><strong>大きなクレーター（10 km 以上）では 83 倍の比：</strong>接触の海（雨の海と晴れの海）は最後に凍ったのでもっともきれいです（2〜5 km のクレーターが百万 km² あたり 256 個、10 km 以上はわずか 3.2 個）。これに対して丘の上の海は 10 km 以上のクレーターを 33 倍多く（百万 km² あたり 106 個）、丘の向こうの海（東の海、モスクワの海、ポアンカレ）は <strong>83 倍</strong>多く（百万 km² あたり 266 個）もっているのです！</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：ドームの計数、重力の検証、底のきれいさ（論文 05、C–F 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>尺度 / 研究</th><th>標本と測定条件</th><th>測定結果</th><th>有意性 / 意味</th></tr>
+<tr class="hl"><td><strong>海と供給ドームの一致（研究 1）</strong></td><td>重力勾配上の 34 の海 対 GRAIL の 73 のドーム</td><td><strong>34 の海のうち 33</strong> がドームの上にある</td><td>20,000 回のランダム試行で 33 に達したものはない</td></tr>
+<tr><td><strong>73 の供給ドームの分布（研究 4）</strong></td><td>自動走査（≥ 100 km、≥ 50 mGal）</td><td><strong>44 が埋没</strong>（36 が裏側）、25 が開いた状態、4 が部分的</td><td>裏側のドーム（40）は表側（33）より多い</td></tr>
+<tr><td><strong>開口の下の地殻の段差（研究 3）</strong></td><td>標識された 36 の開口 対 169 の対照クレーター</td><td><strong>36 のうち 29</strong> で ≥ 8 km の段差（中央値 17 km）</td><td>対照クレーターでは 169 のうちわずか 4（2%、中央値 1 km）</td></tr>
+<tr><td><strong>埋もれたドームの上の覆いの厚さ（研究 4）</strong></td><td>44 の埋もれたドーム 対 25 の開いたドーム</td><td>地殻が <strong>8〜13 km</strong> 厚い；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mtext>FeO</mtext><mo>=</mo><mo>−</mo><mn>0.19</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">\Delta\text{FeO} = -0.19\text{ wt\%}</annotation></semantics></math></span></span></td><td>覆いはまわりの地面と同じで、古い開口を覆った</td></tr>
+<tr class="hl"><td><strong>底の水準と中心の沈下（研究 5–6）</strong></td><td>16 の大きな底；12 の開いた海</td><td>16/16 でひとつの水準（縁より 3.4 km 下）；10/12 で沈下</td><td>相関 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59</annotation></semantics></math></span></span>（p = 0.04）；雨の海と晴れの海は盛り上がる</td></tr>
+<tr><td><strong>底のクレーターのきれいさ（研究 7 と 12）</strong></td><td>10 の開いた海（光条領域なし）</td><td>2〜5 km のクレーターはまわりに対して中央値 8%；接触と遠方のあいだで 83 倍（10 km 以上）</td><td>接触の海は最後に凍った；地球が最後の散乱者だった</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>月の海は、たまたま小惑星のクレーターに流れこんだ溶岩湖ではなく、月が建造された<strong>古い供給開口</strong>であることを発見しました。73 の重力ドーム（そのうち 44 は裏側の高地の下に埋もれている）があり、それぞれが凍った湖のような一様な底を残し、流れが止まったあとにその中心で沈んだのです。</p>
+<p>では、時とともに海の底や平原に着地したクレーターはどんな姿をしていて——なぜその最大のものは溶け、中くらいのものは塗り広げられ、小さなものは鋭いのでしょう？次の章——<strong>第 9 章：底の上の時計——溶けた、塗り広げられた、鋭いクレーター、そして三世代の露出</strong>（論文 05——<em>海</em>、G–I 部にもとづく）——では、月の顔の温度と粘性の時計を読むことを学びます！</p>
+<a href="story09_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 9 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">底の上の時計——溶けた、塗り広げられた、鋭いクレーター、そして三世代の露出 →</p></div></a><p style="margin-top:22px"><a href="story07_ja.html">← 第 7 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

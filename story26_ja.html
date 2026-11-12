@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 26 章：さらなる十の要件（R9–R18）、ハフニウム・タングステンの時計、そして将来の LEF の研究の地図 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 26 章：さらなる十の要件 R9–R18、ハフニウム・タングステンの時計、そして将来の研究の地図。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story26_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story26_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story26_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story26_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story26_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story26_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story26_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story26_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story26_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story26_he.html" hreflang="he">עברית</a> · <a href="story26_en.html" hreflang="en">English</a> · <a href="story26_de.html" hreflang="de">Deutsch</a> · <a href="story26_es.html" hreflang="es">Español</a> · <a href="story26_fr.html" hreflang="fr">Français</a> · <a href="story26_ru.html" hreflang="ru">Русский</a> · <a href="story26_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 26 章</p>
+<h1>第 26 章：さらなる十の要件（R9–R18）、ハフニウム・タングステンの時計、そして将来の LEF の研究の地図</h1>
+<p>論文 13——13. 要件（C–D 部と付録 B：要件 R9–R18、論文のあいだの情報の流れ、Hf–W の時計、7 つの研究課題）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：地球の洋梨だけに固有のどんな署名を、その過程は地球と月に残したのか？</h2>
+<p>第 25 章で、最初の八つの要件（R1–R8）を点検しました。しかし同位体の同一性や小さな核のような特徴は文献で代わりの説明を受けうるのに対し、<strong>論文 13 の C 部と D 部</strong>は、地球の洋梨の幾何、そのマントルへの崩れ戻り、そして出口の導管からだけ導かれる、さらなる十の要件（<strong>R9–R18</strong>）を定めています：</p>
+<ol class="steps">
+<li><strong>地球と月に残る洋梨の痕跡（R9–R15、§C.1–C.6）：</strong>洋梨の胴体の月の質量 7〜12 倍ぶんは、切り離しのあとどこへ沈んだのか？月の表側の KREEP 元素の濃集はどうやってできたのか？そしてなぜ極のクレーターの密度は、クレーターが大きく古いほどまさに上がるのか？</li>
+<li><strong>洋梨のあとに続く要件（R16–R18、§C.7）：</strong>月の 34 の海が、古いクレーターが溶かされた放出の開口であることをどう証明するのか、なぜ南極エイトケン盆地（SPA）の中心は向かいの二つの開口に対して南へずれているのか、そして火星はどうやって独立した対照の検証として役立つのか？</li>
+<li><strong>ハフニウム・タングステンの時計（Hf–W、§D.2）の時間の制約と将来の研究の地図：</strong>6 億年にわたる少しずつの積みあげは、半減期わずか 890 万年の放射性崩壊の時計とどう両立するのか？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：すべる油の上の硬い殻、皮の折り返された縁、そして早く尽きた砂時計</h2>
+<p>四つの手にとれるイメージが、さらなる十の要件とモデルの年代的な制約を照らします：</p>
+<ul>
+<li><strong>やわらかい潤滑の層の上をすべる硬い殻（クレーターの純粋な圧縮、§C.1）：</strong>洋梨がのぼるにつれて地殻のドームの上に運ばれた古い丸いクレーターを保つには、外側の地殻はとても硬いままでなければなりません（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>）。一方、その基部はやわらかい熱力学的な境界面（軽いシアルと密なシマの境目）の上にのっていて、それがクレーターを楕円にゆがめずに、一様な静水圧の圧縮（純粋な圧縮）ですべって縮むことを許すのです！</li>
+<li><strong>はがすあいだに内へ折り返された皮の縁（KREEP の複合体、R12）：</strong>月が地球の洋梨の基部からはがれたとき、地球のシアルの地殻の破れた縁は、表側の基部の円周（嵐の大洋 PKT の地域）へ力学的に内へ折り返され、不適合元素（カリウム K、希土類元素 REE、リン P）をいっしょに運びました——だから月の高地のもっとも古い斜長岩は、カリウムとトリウムに乏しいはずなのです！</li>
+<li><strong>鍋の底へ沈む重い鉄の山（太平洋の LLVP の下部の異常、R10–R11）：</strong>月が共回転線（16,399 km）で放された瞬間、洋梨の残りの胴体（月の質量の ~ 9 倍、地球の質量の約 11%、そのすべてが共回転線の内側にあったので、軌道には何の名残も残らなかった）はマントルへ崩れ戻り、キリティマティ島（1.9°N、157.5°W）近くの基部の真下の核とマントルの境界へ沈みました——鉄に富む太平洋の下部の異常（太平洋 LLVP）をつくり、一方アフリカの異常は乱されなかった反対側のこぶなのです！</li>
+<li><strong>数千万年のうちに空になった砂時計（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> の時計、§D.2）：</strong>放射性同位体 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> は半減期 890 万年で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{W}</annotation></semantics></math></span></span> へ崩壊します。6 億年のあとには 5.1 × 10⁻²¹ という無視できる名残しか残りません——つまり砂時計は積みあげの窓の初めにすでに完全に止まっていたので、今日月で測られるタングステンの署名は初めに固定され、消されずにそのまま運ばれてきたのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：洋梨の七つの要件（R9–R15）と、続く三つの要件（R16–R18）</h2>
+<p>論文 13 の C.6 部と C.7 部は、さらなる十の要件のすべてを詳しく述べ、論文 6〜8 ですでに定量的な支持を受けたものと、最終的な計算を待つものとを分けます：</p>
+<ol class="steps">
+<li><strong>R9 と R10——洋梨のつりあいの形と完全な崩壊：</strong>洋梨の胴体（基部で幅 9,000 km、3,000 km の接触へ収束する）は、静水力学的・力学的なつりあいの形として（岩の引っぱり強度ではなく、自己重力と内部の圧力・遠心力のつりあいとして）完全に共回転線の内側に保たれています。だから切り離しのとき、それは軌道に何の名残も残さずに完全に内へ崩れるのです。</li>
+<li><strong>R11–R14——太平洋の署名、核の物差し、異物の不在：</strong>キリティマティの洋梨の基部は太平洋 LLVP の上にあり（R11）、月のごく小さな核（1.0%〜2.0%）は、供給の流れが沈む鉄にどれだけ近づいたかを示す深さの物差しとして役立ち（R13）、そして月の大部分にも太平洋の玄武岩のプルームにも、外来の地球外成分は見つからないでしょう（R14）。</li>
+<li><strong>R15（論文 7 で定量的に支持）——直径による極でのクレーターの圧縮：</strong>力学的な丸まりは、線の直径を縮めずに、古いクレーターを極へ向かって圧縮しました。極と赤道の密度の比は、差し渡し 20〜30 km のクレーターの <strong>1.09</strong> から、差し渡し 60〜100 km の古いクレーターの <strong>1.53</strong> へと上がるのです！</li>
+<li><strong>R16 と R17（論文 6 と 8 で定量的に支持）——放出の開口としての海と SPA の封印：</strong>34 の活発な海の底では、液体の溶岩の上に着地したクレーターが溶かされたので、そこでの鋭いクレーター（≥ 20 km）の密度は百万 km² あたり<strong>わずか 0.8</strong> で、平原では 18.3、高地では 207 です（R16）。そして南極エイトケン盆地（SPA）では、ドームの中心、熱の中心、クレーターの最小点が、雨の海と晴れの海の向かいの二つの点に対して南へずれています（扁平な段階の 17°〜21° から今日の 24°〜29° へ）（R17）。</li>
+<li><strong>R18（論文 10 での独立した対照の検証）——パヴォニス山からの火星の衛星：</strong>パヴォニス山（1.48°N）の単一の放出の導管から、凝縮した蒸気の環の中へ栓としてフォボスとダイモスが打ち出されたこと。純粋な火星の組成の検証は MMX ミッションの試料を待っています。</li>
+</ol>
+<div class="callout"><span class="tag">階層を切り分ける原理（多層の制約、§C.3 と §D.3）</span><p style="margin:0">論文 13 は、一つの形態の条項での不一致（§C.3 の放出の開口の選り分けや R18 の火星の対照の検証など）はその枝だけに限られ、質量と角運動量の保存則にもとづく論文 2 の共回転線の方程式を退けるものではないことを強調しています。</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：研究の透明性、ハフニウム・タングステンの時計の制約、そして七つの開かれた課題</h2>
+<p>論文 13 の D 部、付録 B、そして将来の研究の節は、完全な科学のロードマップを示し、既存の知識とモデルの貢献を知的な誠実さで分け、七つのはっきりした研究目標を示します：</p>
+<ol class="steps">
+<li><strong>科学的な管理の連鎖と、一点だけの成功の除外（§D.3）：</strong>ある要件が<em>満たされない</em>と確定するには、パラメータと測定誤差の範囲全体で物理的な解がないという数学的な証明が必要です（一点だけの点検ではなく）。同時に、一点の成功が経路全体を確かめることもありません——あらゆる主張は次の連鎖にしたがいます：<strong>予測 → 数学的な詳細 → ノイズへの頑健さ → 検証のための入手しやすさ（Zenodo のコードパッケージ）→ 経験的な検証</strong>。</li>
+<li><strong>既存の物理と LEF モデルの新しさのはっきりした区別（付録 B）：</strong>論文は、重力の法則、質量保存、分化、そして古い「地球照」の理論（Roy ら 2014）や嵐の大洋のリフトの長方形の同定（Andrews-Hanna ら 2014）が、それぞれもとの持ち主に属することをはっきり述べています。LEF の独自の新しさは<strong>同じ天体での二重の力学的な統合</strong>——深いマントルの流れによる下からの内部の充填と、上からの地球のリソスフェアの殻の持ちあげを、閉じた質量の収支と質量中心のずれのもとで合わせたこと——なのです。</li>
+<li><strong>将来の研究のための七つの開かれた課題（今後の研究）：</strong>（1）同心の帯の統計の完成（T3、T4、そしてモデル 2〜4 と GRGM1200B での T1）；（2）複数の系（O、Ti、Cr、W）を統一した同位体の収支の構築；（3）鉄の滴を核（1.4%）へ運ぶ多相流のモデル；（4）本当の接触の幾何での、地殻の厚さと質量中心のずれの合同のベクトル逆解析；（5）両側の一次の高地地殻での時計 1 の管理された年代比較；（6）放出の開口としての 34 の海の定量的な分類；そして（7）太平洋 LLVP の上の太平洋のリソスフェアの独立したテクトニックな復元。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>6 億年の積みあげの窓にわたる短いハフニウム・タングステンの分化の時計（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext><mo>→</mo><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf} \to {}^{182}\text{W}</annotation></semantics></math></span></span>、半減期 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mn>8.9</mn><mtext> Myr</mtext></mrow><annotation encoding="application/x-tex">T_{1/2} = 8.9\text{ Myr}</annotation></semantics></math></span></span>）の放射性崩壊の方程式と、検証の方法論の連鎖は、次のように定式化されます（§D.2–D.3）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8.9</mn><mtext> Myr</mtext><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(t)}{N_0} = 2^{-t / (8.9\text{ Myr})}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(600\text{ Ma})}{N_0} \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>prediction</mtext><mo>⟶</mo><mtext>detailed</mtext><mo>⟶</mo><mtext>robust</mtext><mo>⟶</mo><mtext>assessable</mtext><mo>⟶</mo><mtext>testable</mtext></mrow><annotation encoding="application/x-tex">\text{prediction} \longrightarrow \text{detailed} \longrightarrow \text{robust} \longrightarrow \text{assessable} \longrightarrow \text{testable}</annotation></semantics></math></span></div></div></div>
+<p>比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>0</mn></msub><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N(600\text{ Ma})/N_0 \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></span> は積みあげの終わりに生きた <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> の原子をゼロしか残さないので、タングステンの時計は窓の終わりにリセットすることができません——だからあらゆる年代のモデルは、分化の初めに定まったタングステンの署名を 6 億年にわたって保たなければならないのです。</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Hf-182 remaining against time" style="direction:ltr"><line x1="70" x2="600" y1="220.0" y2="220.0" stroke="#ece7da"/><text x="62" y="224.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0%</text><line x1="70" x2="600" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="62" y="174.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25%</text><line x1="70" x2="600" y1="120.0" y2="120.0" stroke="#ece7da"/><text x="62" y="124.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50%</text><line x1="70" x2="600" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="62" y="74.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75%</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100%</text><text x="70.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="158.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="246.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="335.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">30</text><text x="423.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><text x="511.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">50</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">60</text><path d="M70.0,20.0 L74.4,27.6 L78.8,35.0 L83.2,42.1 L87.7,48.8 L92.1,55.4 L96.5,61.7 L100.9,67.7 L105.3,73.5 L109.8,79.1 L114.2,84.5 L118.6,89.7 L123.0,94.7 L127.4,99.4 L131.8,104.1 L136.2,108.5 L140.7,112.7 L145.1,116.8 L149.5,120.8 L153.9,124.6 L158.3,128.2 L162.8,131.7 L167.2,135.1 L171.6,138.3 L176.0,141.4 L180.4,144.4 L184.8,147.3 L189.2,150.1 L193.7,152.8 L198.1,155.3 L202.5,157.8 L206.9,160.2 L211.3,162.5 L215.8,164.7 L220.2,166.8 L224.6,168.8 L229.0,170.8 L233.4,172.7 L237.8,174.5 L242.2,176.2 L246.7,177.9 L251.1,179.5 L255.5,181.0 L259.9,182.5 L264.3,183.9 L268.8,185.3 L273.2,186.7 L277.6,187.9 L282.0,189.1 L286.4,190.3 L290.8,191.5 L295.2,192.6 L299.7,193.6 L304.1,194.6 L308.5,195.6 L312.9,196.5 L317.3,197.4 L321.8,198.3 L326.2,199.1 L330.6,199.9 L335.0,200.7 L339.4,201.4 L343.8,202.1 L348.2,202.8 L352.7,203.5 L357.1,204.1 L361.5,204.7 L365.9,205.3 L370.3,205.8 L374.8,206.4 L379.2,206.9 L383.6,207.4 L388.0,207.9 L392.4,208.3 L396.8,208.8 L401.2,209.2 L405.7,209.6 L410.1,210.0 L414.5,210.4 L418.9,210.8 L423.3,211.1 L427.8,211.5 L432.2,211.8 L436.6,212.1 L441.0,212.4 L445.4,212.7 L449.8,213.0 L454.2,213.2 L458.7,213.5 L463.1,213.8 L467.5,214.0 L471.9,214.2 L476.3,214.4 L480.8,214.7 L485.2,214.9 L489.6,215.1 L494.0,215.2 L498.4,215.4 L502.8,215.6 L507.2,215.8 L511.7,215.9 L516.1,216.1 L520.5,216.2 L524.9,216.4 L529.3,216.5 L533.8,216.6 L538.2,216.8 L542.6,216.9 L547.0,217.0 L551.4,217.1 L555.8,217.2 L560.2,217.3 L564.7,217.4 L569.1,217.5 L573.5,217.6 L577.9,217.7 L582.3,217.8 L586.8,217.9 L591.2,218.0 L595.6,218.1 L600.0,218.1" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="148.6" cy="120.0" r="4.5" fill="#b23a2e"/><circle cx="227.2" cy="170.0" r="4.5" fill="#b23a2e"/><circle cx="305.9" cy="195.0" r="4.5" fill="#b23a2e"/><circle cx="384.5" cy="207.5" r="4.5" fill="#b23a2e"/><text x="298.6" y="114.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >半減期 · ⁦890⁩ 万年</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >時間（百万年）· ¹⁸²Hf の残り · 6 億年の窓の終わりに：⁦5.1×10⁻²¹⁩</text></svg><figcaption>ハフニウム・タングステンの時計：約 5,000 万年のあとには ¹⁸²Hf はほとんど残らないので、タングステンの署名は積みあげの窓の初めに固定され、終わりまで保たれる。</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：論文の系列を通るデータの流れと、Zenodo の開かれた手順</h2>
+<p>論文 13 の D.1 部とコードの節は、論文の系列全体を、外部のどの研究者も完全に再現できる透明な依存関係の体系へと結びます（§D.1、データとコード）：</p>
+<ul>
+<li><strong>論文 2 から論文 13 への制約の流れ（§D.1）：</strong>論文 2 は切り離し時の共回転線の半径を定め（1 日 5.77 時間について、赤道面で 16,399 km、緯度 22.5° で 17,287 km）、論文 3 は月の質量の 0.46 倍を運ぶ ~ 1,000 km の最小の移行半径と横向きのせん断荷重 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≈</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{shear}} \approx 10^{22}\text{ N}</annotation></semantics></math></span></span>（「細い首」を退ける）、そして殻の粘性 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> を定め、論文 4〜10 は軌道、海、クレーター、極、SPA 盆地、火星を加えます。</li>
+<li><strong>開かれた再現パッケージ（Zenodo DOI: 10.5281/zenodo.22743615）：</strong>Python 3（NumPy と SciPy）のすべての計算スクリプト、入力ファイル、そして検証 T1、T2、T5 の出力が、独立した再現のために Zenodo のリポジトリに恒久的に預けられています。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：さらなる十の要件（R9–R18）と LEF モデルの不一致の基準（論文 13、C–D 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>要件</th><th>モデルで求められる物理的な条件</th><th>検証の尺度 / 不一致の結果</th><th>現在の状態</th></tr>
+<tr><td><strong>R9（つりあいの中の洋梨）</strong></td><td>3,000 km へ収束する幅 9,000 km の天体が、共回転線の内側で自己重力によって保たれる</td><td>不一致：密度と自転の範囲に数学的なつりあいの形がない</td><td>完全なつりあいの計算に向けて開かれている</td></tr>
+<tr><td><strong>R10（洋梨の崩壊）</strong></td><td>洋梨の残り（月の質量の 7〜12 倍、地球の質量の ~ 11%）が、軌道に名残を残さず完全に内へ崩れる</td><td>不一致：軌道に名残が見つかる、あるいは源の下に質量の異常がない</td><td>開かれている（論文 9 の褶曲と整合）</td></tr>
+<tr><td><strong>R11（太平洋 LLVP）</strong></td><td>キリティマティの洋梨の基部（1.9°N、157.5°W）が鉄に富む太平洋 LLVP の上にある</td><td>不一致：基部が LLVP の外にある、あるいは二つのこぶ（太平洋とアフリカ）が同じ</td><td>トモグラフィーの検証に向けて開かれている</td></tr>
+<tr><td><strong>R12（KREEP の複合体）</strong></td><td>内へ折り返された地球のシアルの縁が嵐の大洋に KREEP を固定する；斜長岩は K と Th に乏しい</td><td>不一致：基部の縁との幾何学的なつながりがない、あるいは斜長岩にシアルの署名がある</td><td>地球化学的な地図化に向けて開かれている</td></tr>
+<tr><td><strong>R13–R14（核の物差しと異物ゼロ）</strong></td><td>核（1.4%）が沈む鉄への近さを測る；月と太平洋のプルームに外来の衝突体の成分はゼロ</td><td>不一致：月の大部分やプルームに地球外の化学的/同位体的な成分が見つかる</td><td>複数の系の収支に向けて開かれている</td></tr>
+<tr class="hl"><td><strong>R15（極でのクレーターの圧縮）</strong></td><td>丸まりが、線の直径を縮めずに、直径とともに上がる比でクレーターを極へ圧縮した</td><td>極/赤道の密度の比：<strong>1.09</strong>（20〜30 km）→ <strong>1.53</strong>（60〜100 km）</td><td><strong>合格（論文 7）</strong></td></tr>
+<tr class="hl"><td><strong>R16（放出の開口としての 34 の海）</strong></td><td>活発な海の底が、その上に着地した古いクレーターを溶かした</td><td>≥ 20 km の鋭いクレーターの密度：海で <strong>0.8</strong>、平原で 18.3、高地で 207</td><td><strong>定量的に支持（論文 6）</strong></td></tr>
+<tr class="hl"><td><strong>R17（SPA の二つの開口とドーム）</strong></td><td>SPA のドームの中心、熱、クレーターの最小点が、雨の海と晴れの海の向かいの点に対して南へずれている（24°〜29°）</td><td>不一致：幾何学的なつながりがない、あるいは向かいの点の北にある</td><td><strong>定量的に支持（論文 8）</strong></td></tr>
+<tr><td><strong>R18（パヴォニスからの火星の衛星）</strong></td><td>フォボスとダイモスがパヴォニス山（1.48°N）の単一の放出の導管から蒸気の環の中へ打ち出された</td><td>不一致：MMX の試料に火星でない組成がある、あるいはパヴォニスの下に質量の過剰がある</td><td>開かれている（外部の対照の検証、論文 10）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>第 25〜26 章で、私たちは<strong>論文 13（要件）</strong>の調査を完成させました——LEF の系列の方法論の羅針盤であり、18 の要件すべて（<strong>R1–R18</strong>）、統計的検証（<strong>T1–T5</strong>）の結果、ハフニウム・タングステンの時計の制約、そして将来の研究のための 7 つの開かれた課題を集めたものです。</p>
+<a href="story27_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 27 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF モデルの研究地図（第 A 部）——初期の地球、月の形成、そして SPA 盆地（トピック 1–79）→</p></div></a>
+<p style="margin-top:22px"><a href="story25_ja.html">← 第 25 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

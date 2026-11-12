@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 10 章：化学的な指紋——鉄の環、接触区域のトリウムの謎、そして五つの時計 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 10 章：海のまわり 600 km まで届く鉄とチタンの暈、接触円盤の内側にある月のトリウム過剰の 95%、トリウムに乏しい海の底、存在しない外来の質量、そして各開口の五つの時計。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story10_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story10_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story10_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story10_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <a href="story10_es.html" hreflang="es">Español</a> · <a href="story10_fr.html" hreflang="fr">Français</a> · <a href="story10_ru.html" hreflang="ru">Русский</a> · <a href="story10_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 10 章</p>
+<h1>第 10 章：化学的な指紋——鉄の環、接触区域のトリウムの謎、そして五つの時計</h1>
+<p>論文 05——海（J–O 部および付録 A：研究 9、10、11、13 と 16 の研究のまとめ）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：なぜ月の放射能はひとつの円に集中しているのか——そして海の底はなぜそれに乏しいのか？</h2>
+<p>アポロ計画とルナ・プロスペクター衛星のもっとも驚くべき発見のひとつは、月の顔の極端な化学的不均等です。放射性元素の<strong>トリウム</strong>——カリウム、希土類元素、リンとともに（文献では <strong>KREEP</strong> と呼ばれる物質）——は月全体に均等に広がっているのではなく、表側の西部のひとつの斑にほぼすべて集中しているのです。</p>
+<p>受け入れられている文献は、この斑（「嵐の大洋 KREEP テレーン」）を月で結晶化した全球的な「マグマオーシャン」の最後の残りと解釈し、KREEP の放射性の熱が表側の岩石を溶かして玄武岩の海をつくったとします。しかしデータを高い分解能で調べるやいなや、この説明に<strong>三つの鋭い矛盾</strong>が現れます：</p>
+<ol class="steps">
+<li><strong>正確な幾何学的中心：</strong>なぜトリウムの斑は、点 24.1°N、335.2°E のまわりにぴたりと位置しているのか——論文 3 であらかじめ月と地球のあいだの<strong>最後の接触円盤の中心</strong>として定められた点そのものに？</li>
+<li><strong>接触区域の内部のパラドックス：</strong>海を噴き出させてトリウムを運んだのが KREEP の熱なら、海の底こそがもっともトリウムに富んでいるはずです。実際にはまったく逆のことが起こっています。<strong>接触区域の内側の海の底は、その地域でもっともトリウムに乏しい地面なのです！</strong></li>
+<li><strong>盆地での外来の質量の不在：</strong>もし大きな海の盆地（雨の海や晴れの海など）が外宇宙からの巨大な小惑星に掘られたのなら、その溶融岩にはそれら外来天体の鉄を好む金属（<strong>親鉄元素</strong>）の指紋が含まれているはずです——しかし含まれていないのです！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：凍る海水（トリウムは塩水とともに退く）と、射程を保つ射撃場</h2>
+<p>この三つの化学的な謎が一挙に解けるようすを見るために、日常生活の二つの単純な実験を想像してください：</p>
+<ul>
+<li><strong>排水管につながった水槽で凍る海水（トリウムの謎）：</strong>塩辛い海水が上から凍りはじめると、できる氷の結晶はほとんど真水で——塩はすべて下に残った液体の塩水へ押しやられます。この塩水が排水のない閉じた平原（その場で溶けた<strong>玄武岩の平原</strong>のような）にあれば、すべてが凍ったとき塩は岩の中に閉じこめられます。しかし塩水が<strong>下へ開いた管</strong>の上にあれば（深部への供給路につながった<strong>海</strong>の底のように！）、重くトリウムに富む塩水は沈んで水路を通って深部へ排出され——海の底は、まわりの平原や高地にくらべてトリウムに乏しくなるのです！</li>
+<li><strong>軽いマグマは早く遠くへ、重いマグマはあとで近くへ飛ぶ射撃場（鉄の環）：</strong>供給開口の活動のはじめ、マグマは揮発性のガスに富み鉄に乏しいので、とても軽く流れやすく——何百キロメートルも先（600 km まで）へ撃ち出されます。ガスが逃げるにつれてマグマは重く、粘っこく、鉄（FeO）とチタン（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>）に富むようになり、開口の縁のすぐ近くに着地します——こうしてそれぞれの海のまわりに<strong>段階的な鉄の暈</strong>ができるのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：鉄とチタンの環、接触円盤の 95% のトリウム、そして外来の質量の不在</h2>
+<p>論文 05 の J 部は、かぐや（鉄とチタン、分解能 240 m）とルナ・プロスペクター（トリウム、分解能 60 km）の衛星化学図を調べ、四つの決定的な発見を示します：</p>
+<ol class="steps">
+<li><strong>海のまわりの鉄とチタンの暈は 600 km に届く（研究 9、§J.1–J.2）：</strong>六つの海（スミス海、雨の海、晴れの海、危難の海、モスクワの海、神酒の海）のまわりで、玄武岩のピクセルをすべて取り除くと、地面の鉄の含有量は 0〜25 km の環の <strong>6.9 wt%</strong> から、25〜50 km の 5.1、50〜100 km の 3.9、100〜150 km の <strong>3.1 wt%</strong> へと段階的に下がり、<strong>300〜600 km（3.4 wt%）</strong>でさえ背景の水準（2.3 wt%）より高いままです——のちのクレーターによる横の混合の範囲の 10 倍です！これに対して、供給開口がなく縁からあふれただけの玄武岩の平原である<strong>嵐の大洋</strong>のまわりでは、鉄は 300〜600 km で 10.9 wt% から 2.4 wt%（遠い高地の水準）まで下がります。</li>
+<li><strong>月のトリウム過剰の 95% が接触円盤に閉じこめられている（研究 10、§J.3）：</strong>接触円盤（24.1°N、335.2°E を中心とする半径 1,500 km）は月の表面のわずか <strong>17.5%</strong> を覆うだけですが、<strong>3 ppm を超えるトリウム過剰全体の 95.0%</strong> を保持しています（接触内の中央値 5.39 ppm、外は 1.52 ppm）。同じ大きさの円盤を月全体の <strong>16,200 の可能な中心点</strong>の上で動かすと、論文 3 であらかじめ定められた接触中心は <strong>16,200 のうち 3 位</strong>になります（理論上の最大点からわずか 47 km、そちらは 95.14% 対 94.99% を集める）！</li>
+<li><strong>接触区域の内側——海はトリウムに乏しく、平原と高地は同じ（研究 13、§J.4）：</strong>接触円盤の内側では、玄武岩の平原（5.62 ppm）と高地（5.48 ppm）はほぼ同じトリウム濃度をもっています！これに対して、接触内の四つの海（雨の海、晴れの海、コペルニクス H、熱の入江）は平原より <strong>30%</strong> トリウムに乏しく（わずか 3.99 ppm、四つの海のそれぞれがまわりの環より 0.58〜1.39 ppm 乏しい）、一方チタンの含有量はほとんど変わりません（−5%、比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0.74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>）——チタンはイルメナイトの結晶に閉じこめられて残り、最後のトリウムに富む液体は供給路を下って排出されたからです！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >背景：<tspan x="527.6" dy="14">⁦2.3 wt%⁩</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6.9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5.1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >海のまわりの環（km）· 玄武岩を除く地面の FeO（wt%）</text></svg><figcaption>六つの海のまわりの鉄の暈（研究 9）：鉄は距離とともに下がるが、600 km まで背景より高いままである。</figcaption></figure><figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3.99 ppm⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >接触の海</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.48 ppm⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >接触内の高地</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.62 ppm⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >接触内の平原</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1.52 ppm⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >接触の外</text></svg><figcaption>接触円盤の内外のトリウム（研究 10 と 13）：平原と高地は同じで、海は 30% 乏しい——トリウムに富む液体は水路を下って排出された。</figcaption></figure><div class="callout"><span class="tag">盆地での外来の質量の検証（研究 11、§J.7）</span><p style="margin:0">もし大きな海の盆地が 18 km/s で外宇宙から来た天体に掘られたのなら、約 <strong>1 × 10¹⁹ kg</strong> の衝突質量が必要だったでしょう（雨の海だけでもスケーリングで 3 × 10¹⁸ kg、差し渡し 250 km の天体なら 2 × 10¹⁹ kg で、6 × 10¹⁷〜4 × 10¹⁸ kg の外来物質を残したはず）。実際には、雨の海の溶融岩の親鉄元素の比は<strong>既知のどのコンドライトの群とも一致せず</strong>、その大部分は雨の海や晴れの海より前から地殻の中にすでにありました——盆地は外来天体の衝突ではなく、<strong>地球からの供給開口</strong>だからです！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：各開口の五つの時計——そしてアポロと嫦娥の年代の解読</h2>
+<p>論文 05 の K 部は、月の研究でもっとも大きな誤解のひとつを解きます。<strong>なぜ宇宙ミッションが持ち帰った玄武岩は 31〜39 億年（アポロ）、28 億年（裏側の嫦娥 6 号）、さらには 20 億年（嵐の大洋の嫦娥 5 号）と年代測定されるのでしょう？</strong>これは開口が月が地球を離れてから何十億年もあとにできたことを意味するのでしょうか？</p>
+<p>答えは<strong>いいえ</strong>です——どの供給開口も、混同してはならない<strong>五つの別々の時計</strong>をもっているからです（掘られ、開かれ、水を運び、ふさがれ、最後にその頂上の最後の水たまりが乾く井戸のように）：</p>
+<ol class="steps">
+<li><strong>構造がつくられた時（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>）：</strong>建造段階で開口とその下のドームがつくられた瞬間（38.73 億年前の切り離しまでの 6 億年のあいだ）。</li>
+<li><strong>露出の時（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>）：</strong>接触の縁が開口の上から後退し、それを宇宙にさらした瞬間（第一世代はただちに、第二世代は丸まりのあいだに、第三世代は切り離しに向かって）。</li>
+<li><strong>噴出の時（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>）：</strong>開口が物質を外へ撃ち出し、まわりにクレーターと鉄の環をつくった期間。</li>
+<li><strong>閉鎖の時（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>）：</strong>流束が臨界しきい値より下がり（あるいは切り離しの瞬間に圧力が止まり）、開口が活動をやめた瞬間（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>）。</li>
+<li><strong>表面の年代（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>）：</strong>表面で凍った最後のマグマの滴の<strong>最終的な冷却の年代</strong>。放射性の時計は、岩石がその閉鎖温度より下まで冷えて放射性の娘原子を閉じこめた瞬間からはじめて時を刻みはじめるのです！</li>
+</ol>
+<p>したがって、アポロ、嫦娥 5 号、嫦娥 6 号の玄武岩はすべて <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>——熱い液体が最終的に凍った時</strong>（月の内部の熱や接触区域でのトリウムの集中によって長く熱く保たれた）を測っているのであって、開口が開いた時（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>）ではないのです！</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>接触区域の内側で海の底を玄武岩の平原と区別する化学的な比、そして月の四分の一ごとのトリウムの分布は、次の式にまとめられます：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0.74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0.60</mn><mtext>–</mtext><mn>0.88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mtext>接触域内</mtext></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{接触域内}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5.39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>対</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1.52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{対} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>経度ごとに見ると（§J.5）、トリウム濃度の中央値は、地球に向いた近い四分の一（<strong>5.12 ppm</strong>）から、接触中心がある 90°W まわりの先行半球（3.27 ppm）、裏側（2.20 ppm）、90°E まわりの後行半球（2.01 ppm）へと段階的に下がります——表側全体では裏側より 1.5 倍高いのです（2.56 対 1.76 ppm）。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：15 の研究と 34 の目録化された開口にわたる統一された姿</h2>
+<p>論文 05 の L–O 部は、五つの独立した証拠の線をひとつの完全な供給システムにまとめます：</p>
+<ul>
+<li><strong>研究の収支（15 の研究のうち緑 13、琥珀 2、§M.2）：</strong>主な研究はすべて完全に検証されました——33/34 の海と重力ドームの一致、44 の埋もれたドーム、地殻の段差（17 km）、中心の沈下（10/12）、一様な水準（16/16）、きれいな底（12 倍と 83 倍）、鉄の暈（600 km）、トリウムの中心（3/16,200）、外来の質量の不在、そして接触の平原の縁の摩耗。「琥珀色」の評価（部分的な確認）を受けた二つの研究は、完全な透明性をもって報告されました。研究 13 では、底がチタンに相対的に富むため比 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span> が接触の外でも下がり、研究 16 では、撃ち出しの襟は裏側の海全体（p = 0.009）と埋もれた海のまわり（p = 0.001）では有意ですが、裏側の 10 の開いた海だけでは対照と区別できません。</li>
+<li><strong>モデルを文献から分ける五つの決定的な問い（§N.2）：</strong>文献は説明できません——小惑星がどうやって上に盆地のない 44 の重力ドームをつくったのか、なぜ海の底がひとつの水準で凍り、強いドームの上でだけ沈むのか、なぜ鉄の暈が 600 km まで届くのか、なぜトリウムは接触の平原と高地で同じで、まさに海でだけ低いのか、そして 10¹⁹ kg の外来の金属はどこへ消えたのか。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：化学の表、主な開口の標本、8 つの結論のまとめ（論文 05、J–O 部および付録 A）</h3>
+<div class="tw"><table class="lab">
+<tr><th>研究 / 化学的尺度</th><th>地域 / 比較群</th><th>測定結果</th><th>LEF モデルでの意味</th></tr>
+<tr class="hl"><td><strong>鉄（FeO）とチタン（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>）の環（研究 9）</strong></td><td>6 つの海の合計（0〜25 から 300〜600 km）</td><td>FeO：<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.9</mn><mo>→</mo><mn>3.1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong>（150 km）、600 km で <strong>3.4</strong> を保つ（対照 2.3）</td><td>海は軽い物質を遠くへ、重い物質を近くへ撃ち出した；嵐の大洋では 2.4 まで下がる（局所的なあふれ）</td></tr>
+<tr class="hl"><td><strong>接触円盤のトリウム濃度（研究 10）</strong></td><td>接触円盤（月の表面の 17.5%）対 16,200 の中心</td><td>トリウム過剰（&gt;3 ppm）の <strong>95.0%</strong>；中央値 <strong>5.39</strong> 対 1.52 ppm</td><td>接触中心は <strong>16,200 のうち 3 位</strong>（ピークから 47 km）；最後のつながりのしるし</td></tr>
+<tr><td><strong>接触内のトリウムの分配（研究 13）</strong></td><td>4 つの海 対 接触内の平原と高地</td><td>海：<strong>3.99 ppm</strong>（−30%）；平原：<strong>5.62</strong>；高地：<strong>5.48</strong></td><td>最後のトリウムに富む液体は海の水路を下って排出された</td></tr>
+<tr><td><strong>盆地の外来の質量（研究 11）</strong></td><td>すべての海の盆地（雨の海をはじめ）、18 km/s</td><td>約 10¹⁹ kg が必要；実際には<strong>どのコンドライトとも一致しない</strong></td><td>外来の衝突天体はなかった——盆地は地球からの供給開口</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>目録番号</th><th>開口の名前（付録 A）</th><th>座標と地下点からの距離</th><th>区域と露出の世代</th><th>供給ドーム（GRAIL）と直径</th><th>今日の覆い</th></tr>
+<tr class="hl"><td>#1</td><td><strong>晴れの海</strong></td><td>26°N、18°E（31°）</td><td>接触（第三世代）</td><td>M660_008——<strong>610 km</strong></td><td>開いている（海の下）</td></tr>
+<tr class="hl"><td>#34</td><td><strong>雨の海</strong></td><td>38°N、341°E（42°）</td><td>接触（第三世代）</td><td>M660_015——<strong>671 km</strong></td><td>開いている（海の下）</td></tr>
+<tr><td>#35–36</td><td>コペルニクス H / 熱の入江</td><td>6°N、342°E / 10°N、352°E</td><td>接触（第三世代）</td><td>M660_042（170）/ M660_020（235 km）</td><td>開いている（海の下）</td></tr>
+<tr><td>#3–4、#6、#33</td><td>神酒の海、危難の海、スミス海、湿りの海</td><td>距離 36°〜86°</td><td>丘（第二世代）</td><td>375〜518 km</td><td>開いている（海の下）</td></tr>
+<tr><td>#32</td><td>シラー–ズッキウス</td><td>57°S、316°E（67°）</td><td>丘（第二世代）</td><td>M660_014——<strong>909 km</strong>（最大）</td><td>埋没（高地の下）</td></tr>
+<tr><td>#10、#26</td><td>モスクワの海 / 東の海</td><td>140° / 95°（裏側）</td><td>丘の向こう（第一世代）</td><td>M660_002（313）/ M660_001（435 km）</td><td>開いている（裏側の例外）</td></tr>
+<tr><td>#7、#9、#13、#18–19、#23–24、#37</td><td>ミルン、メンデレーエフ、フロイントリッヒ–シャロノフ、コロリョフ、ヘルツシュプルング、シュレーディンガーなど</td><td>100°〜162°（裏側）</td><td>丘の向こう（第一世代）</td><td>106〜346 km（裏側の 36 の埋もれたドームのうち）</td><td>裏側の層の下に埋没</td></tr>
+<tr><td>#12、#20、#29</td><td>夢の海、アポロ、ベイリー</td><td>82°〜146°（SPA の上）</td><td>丘の向こう（第一世代）</td><td>そのドームは南極エイトケン盆地の熱で煮られて消された</td><td>SPA 盆地の上</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>第 8〜10 章で、私たちは月の海の調査を完了しました。海はのちの衝突の傷ではなく、73 の重力ドームの上で月が建造された<strong>古い供給開口</strong>だったのです——接触の後退の順に閉じ、中心で沈んだ湖の水準として凍り、まわりを 600 km まで鉄の環で彩り、接触円盤に地球への最後のつながりのトリウムのしるしを残した開口でした。</p>
+<p>しかし海が物質を外へ撃ち出す砲身だったのなら、<strong>この物質は宇宙へ撃ち出されたあとどうなったのか——そしてどのように戻ってきて月を打ち、その顔に何十万ものクレーターを掘ったのか？</strong>次の章——<strong>第 11 章：月のクレーター——99% は戻ってきた物質で、外来の小惑星ではない</strong>（論文 06——<em>クレーター</em>にもとづく）——で、クレーターの物語を解読します！</p>
+<a href="story11_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 11 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">月のクレーター——99% は戻ってきた物質で、外来の小惑星ではない →</p></div></a><p style="margin-top:22px"><a href="story09_ja.html">← 第 9 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

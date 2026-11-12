@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 12 章：クレーター内部の化学、存在しない外来の質量、そして最後の散乱者としての地球 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 12 章：一様なクレーターの内部、月の地殻に欠けている外来の質量、地球のルテニウム同位体、そして最後の散乱者としての地球。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story12_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story12_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story12_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story12_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story12_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story12_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story12_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story12_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story12_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story12_he.html" hreflang="he">עברית</a> · <a href="story12_en.html" hreflang="en">English</a> · <a href="story12_de.html" hreflang="de">Deutsch</a> · <a href="story12_es.html" hreflang="es">Español</a> · <a href="story12_fr.html" hreflang="fr">Français</a> · <a href="story12_ru.html" hreflang="ru">Русский</a> · <a href="story12_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 12 章</p>
+<h1>第 12 章：クレーター内部の化学、存在しない外来の質量、そして最後の散乱者としての地球</h1>
+<p>論文 06——クレーター（L–Q 部と再現の付録：研究 2、7、8、9、12、14）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：4.4〜5.0 × 10¹⁹ kg の外来の金属はどこへ消えたのか——そしてなぜクレーターの内部は一様なのか？</h2>
+<p>前の章で私たちは、母天体の供給開口から撃ち出されて殻へ戻ってきた物質が数十ギガパスカルの衝撃圧力を生めること、そしてクレーターの形態が先行半球と後行半球のあいだの非対称にしたがうことを見ました。いま、モデルにもっとも鋭い化学的な検証を課します——原子と同位体の水準で、モデルを小惑星説から区別する検証です：</p>
+<ol class="steps">
+<li><strong>月の地殻に欠けている外来の質量：</strong>核を分離したことのないコンドライト質の小惑星は、<strong>親鉄（「鉄を好む」）元素</strong>——イリジウム、オスミウム、白金、ルテニウム——にとても富んでいますが、月の地殻はそれらにほとんどまったく乏しいのです。もし小惑星が今日月に見える 132 万のクレーターを掘ったのなら、それらが運んできた外来の金属はどこにあるのでしょう？</li>
+<li><strong>クレーターの内部——層を貫いて掘られた穴か、戻ってきた物質で満たされた杯か？</strong>クレーターが層状の地殻に激しく掘られた穴なら、その中央丘は、壁、縁、まわりと組成の異なる深い岩石を持ち上げているはずです——さらに、先行半球（90°W）への激しい正面衝突は、後行半球（90°E）へのやわらかな衝突より深い層を露出させるはずです。何千ものクレーターで測られるのは本当にそうなのでしょうか？</li>
+<li><strong>隠れたドームの上の欠けたクレーターの謎（研究 3）：</strong>第 8 章で私たちは 44 の埋もれた供給ドーム（そのうち 36 は裏側）を発見しました。どのドームも活発なあいだまわりにクレーターを撃ち出していたのなら、なぜ今日それらのまわりに異常なクレーター密度がないのでしょう？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：澄んだ水のグラスに落としたインクの滴、そして熱い封蝋</h2>
+<p>二つの単純なイメージが、クレーターの内部と月の地殻の化学がなぜ戻ってきた地球の源に軍配を上げるのかを明らかにします：</p>
+<ul>
+<li><strong>澄んだ水のグラスに落としたインクの滴（親鉄元素とルテニウムの同位体）：</strong>月の地殻は鉄を好む金属をほとんど含まない澄んだ水のグラスのようで、コンドライト質の小惑星は濃いインクのようなものです。小惑星の物質をわずかに加えただけでも上部地殻はすぐに色づくはずです——さらに、小惑星のルテニウムの原子は地球のものとは違う同位体の「なまり」をもっています。実際には地殻に外来の金属はほとんどなく、クレーターの衝突溶融岩で測られたルテニウムの同位体は<strong>地球そのもののもの</strong>なのです！</li>
+<li><strong>紙に押しつけた熱い封蝋（クレーター内部の一様さ）：</strong>LEF モデルのクレーターは、下から外来の層を掘り上げる発掘ではなく、着地して端から端まで塗り広げられた熱い戻ってきた物質の塊です——だから中心から、底を通って縁まで、<strong>ひとつの一様な化学組成</strong>が支配し、それは同じ海から物質が撃ちこまれた近くのまわりの組成と同じなのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：一様なクレーターの内部（7,227 のクレーター）と「存在しない外来の質量」（132 万のクレーター）</h2>
+<p>論文 06 の D 部と L 部は、化学的・構造的な証明を締めくくる四つの大規模な定量研究を示します：</p>
+<ol class="steps">
+<li><strong>裏側の埋もれたクレーターと海の中の溶けたクレーター（研究 3、4、14）：</strong>
+<ul>
+<li><strong>44 の埋もれたドームのまわり（研究 3）：</strong>埋もれたドームの上のクレーター密度は、半径の 3〜5 倍の距離での密度と同じかそれより低い（2〜10 km で 0.93、10〜50 km で 1.00、50〜100 km で 1.02）——裏側の古い開口が撃ち出したクレーターは、<strong>開口とともに埋められた</strong>からです。裏側の厚い地殻を築いたシアルと戻ってきた物質の層の下に！</li>
+<li><strong>海の中の溶けたクレーターの下の、縁のない質量（研究 4 と 14）：</strong>海の底では、差し渡し 10 km 以上のクレーターの <strong>62%（79 のうち 49）</strong>が溶けて環になり、118 万 km² の底全体に 20 km 以上の鋭いクレーターはひとつしかありません（百万 km² あたり 0.8、高地では 207！）。海の中の 16 の溶けたクレーターの下（研究 14）では、地殻の底が海そのものの底より <strong>+0.8 km</strong> 持ち上がっていますが（16 のうち 13、p = 0.04）、<strong>ブーゲー重力には鋭い縁がまったくありません</strong>（縁の急さ 1.04 対 1.00）——戻ってきた物質は、外から固いクレーターを満たすのではなく、海の流体のマグマの中へ沈んで混ざったからです！</li>
+</ul>
+</li>
+<li><strong>クレーターの内部はひとつの一様な物質（研究 7、§L.4）：</strong>差し渡し 10〜60 km の 7,227 のクレーターを六つの放射状の環（中心 0〜0.3R、底 0.3〜0.7R、内壁 0.7〜0.95R、縁 0.95〜1.1R、放出物 1.2〜2R、まわり 3〜4R）で調べると、中心と内壁のあいだの鉄とチタンの差はわずか <strong>+0.08 wt% FeO</strong> と <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>0.060</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">+0.060\text{ wt\% TiO}_2</annotation></semantics></math></span></span>（地図の較正のばらつき、0.81 と 0.43 wt% より 8〜10 倍小さい！）で、底とまわりの差は <strong>0.00 wt% FeO と <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong> です。さらに、先行半球（90°W）と後行半球（90°E）のあいだの同じクレーターの 1,214〜1,235 組の対比較では、化学的な差は<strong>まったくのゼロ（0.00 wt%）</strong>です——激しい正面衝突は形を変えましたが、外来の層を露出させはしなかったのです！</li>
+<li><strong>存在しない外来の質量と地球のルテニウム同位体（研究 8、§L.5）：</strong>月に見える 1,318,387 のクレーター（1 km 以上、18 km/s で）すべてをつくるのに必要な質量を計算すると、<strong>4.4〜5.0 × 10¹⁹ kg</strong> の衝突体の質量が得られます（SPA 盆地だけで 68%、ほかの 32 の大盆地で 30%、20〜300 km の 6,940 のクレーターで 2%、1〜20 km の 131 万のクレーターで 0.03%）。受け入れられている保持率（20〜60%）で上部地殻（5 km）に残っていたなら、それは層の <strong>2〜6%</strong>（0.9〜3.0 × 10¹⁹ kg）を占めるはずですが——月の地殻全体の親鉄元素をすべて合わせても<strong>わずか 0.9〜2%（0.45〜1.0 × 10¹⁹ kg）</strong>、つまり必要量の 6.7 分の 1 です（総爆撃量 3.7 × 10²⁰ kg の 14〜18 分の 1）！そしてクレーターの衝突溶融岩で<strong>ルテニウムの同位体</strong>が測られた二つの試料では、それらは<strong>地球のケイ酸塩と同じ</strong>なのです！</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 175" role="img" aria-label="Foreign mass: required against found" style="direction:ltr"><g transform="translate(197.1,0)"><line x1="40.0" x2="40.0" y1="12" y2="140" stroke="#ece7da"/><text x="40.0" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><line x1="118.2" x2="118.2" y1="12" y2="140" stroke="#ece7da"/><text x="118.2" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1</text><line x1="196.4" x2="196.4" y1="12" y2="140" stroke="#ece7da"/><text x="196.4" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><line x1="274.5" x2="274.5" y1="12" y2="140" stroke="#ece7da"/><text x="274.5" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">3</text><line x1="352.7" x2="352.7" y1="12" y2="140" stroke="#ece7da"/><text x="352.7" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><line x1="430.9" x2="430.9" y1="12" y2="140" stroke="#ece7da"/><text x="430.9" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">5</text><rect x="40.0" y="18" width="390.9" height="26" rx="4" fill="#b23a2e" opacity=".25"/><rect x="384.0" y="18" width="46.9" height="26" rx="4" fill="#b23a2e"/><rect x="40.0" y="58" width="234.5" height="26" rx="4" fill="#c47f2c" opacity=".25"/><rect x="110.4" y="58" width="164.2" height="26" rx="4" fill="#c47f2c"/><rect x="40.0" y="98" width="78.2" height="26" rx="4" fill="#2f7d57" opacity=".25"/><rect x="75.2" y="98" width="43.0" height="26" rx="4" fill="#2f7d57"/></g><text x="6.0" y="36.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >全クレーターに必要 · ⁦4.4–5.0⁩</text><text x="6.0" y="76.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >上部地殻に残るはずの量 · ⁦0.9–3.0⁩</text><text x="6.0" y="116.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >地殻全体で実際に見つかる量 · ⁦0.45–1.0⁩</text><text x="320.0" y="172.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >質量（×10¹⁹ kg）</text></svg><figcaption>外来の質量の収支（研究 8）：小惑星が残したはずの量と、月の地殻に見つかる親鉄元素すべての比較——6.7 分の 1。</figcaption></figure><div class="callout"><span class="tag">嫦娥 5 号と嫦娥 6 号の単独の隕石粒子という主張への答え（§L.5）</span><p style="margin:0">嫦娥 5 号の試料でのコンドリュール粒子ひとつの発見や、嫦娥 6 号での微小な隕石の残骸の発見は、モデルと矛盾しません。太陽系の大気のない天体はどれも、ごく微量の<strong>微隕石の宇宙塵</strong>を集めます——そしてそれはモデルが許す量（「そばの宇宙塵」）にほかならず、月の盆地を掘るのに必要だったはずの何百億トンもの外来の金属とはまったく違うのです！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：「最後の散乱者」としての地球、捕獲されたクレーター、そして環の検証</h2>
+<p>論文 06 の L.6–M.1 部は、月が地球から切り離された瞬間（38.73 億年前）から表面が最終的に凍るまでのクレーターの年代史を完成させます：</p>
+<ol class="steps">
+<li><strong>地球は切り離しのあとも軽い物質を月へ撃ち続けた（研究 12、§L.6）：</strong>切り離しの瞬間に月の内部の圧力は止まり、その供給開口は閉じました。しかし地球そのものは静まりませんでした——洋梨はゆっくりと内へ引き戻され（数千万〜数億年かけて）、その開口は物質を宇宙へ撃ち出し続けたのです。重い物質は地球へ沈み戻り、軽い物質は浮き上がったので、8.8〜10.75 km/s に達して月へ届いた物質は地球の放出物の<strong>軽く、トリウムに富む（そして鉄に乏しい）部分</strong>でした。実際、表側の玄武岩の上の 3,478 のクレーターすべてで、クレーターのまわりの放出物はまわりの玄武岩より鉄に乏しいのです（海の底で −0.20 wt%、大きなクレーターでは −3.8 wt% まで、平原で −0.36 wt%；コペルニクスの光条に結びつくアポロ 12 号の試料は、地元の玄武岩の 20.5 wt% に対して 14.0〜15.7 wt% の FeO、0.83 ppm に対して 7.6〜9.4 ppm のトリウムをもっています）。</li>
+<li><strong>表側は最後の小さなクレーターをより多く保った——地球は「最後の散乱者」（研究 9、§L.7）：</strong>地球はいつも表側（0°）の空にあったので、地球から撃ち出された最後の物質は両側の高地に着地しましたが、表側をより高い割合で打ちました。高地だけで差し渡し 1〜2 km の新しいクレーターを数えると（すべての海、SPA 盆地、16 の若い光条クレーターの二次クレーター場を除いたあと）、<strong>表側に +19% の過剰</strong>が見られます（百万 km² あたり 14,103 対 11,814；信頼区間 1.12〜1.27、どの海からも 600 km 以上離れたところでは 1.51 倍さえ！）。一方、より大きく古いクレーターでは表側のほうがずっと乏しい（2〜5 km で 0.86、5〜10 km で 0.63、10〜20 km で 0.53）のです。接触と海の熱で消されたからです！</li>
+<li><strong>海の上の捕獲された放出物と、環を一度も通らなかった月（§L.8、§M.1）：</strong>凍った海の底の上の少数の若いクレーターは、脱出の上限（10.748 km/s）近くで地球から撃ち出され、小惑星よりずっと低い速さで月の重力に<strong>捕獲された放出物</strong>です。さらに、火星のダイモス（密な環の中で長い時間を過ごしたので、そのクレーターは平らでなめらか——中央値の深さ 1.9%、フォボスでは 5.5%）とは違い、月は<strong>氷と塵の環を一度も通りませんでした</strong>。洋梨が共回転線までの区域を掃き、熱が氷の凝結を防いだので、月ははじめから鋭いクレーターで飽和した高地を保ったのです。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 250" role="img" aria-label="Near-to-far ratio of craters on the highlands by size" style="direction:ltr"><line x1="70" x2="610" y1="200.0" y2="200.0" stroke="#ece7da" /><text x="62" y="204.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="130.8" y2="130.8" stroke="#ece7da" /><text x="62" y="134.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0.5</text><line x1="70" x2="610" y1="61.5" y2="61.5" stroke="#5b6676" stroke-dasharray="6 4"/><text x="62" y="65.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><rect x="76.0" y="35.2" width="68" height="164.8" rx="3" fill="#2f7d57"/><text x="110.0" y="29.2" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">×1.19</text><text x="110.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦1–2⁩ km</text><rect x="229.3" y="80.9" width="68" height="119.1" rx="3" fill="#9aa3af"/><text x="263.3" y="74.9" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.86</text><text x="263.3" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦2–5⁩ km</text><rect x="382.7" y="112.8" width="68" height="87.2" rx="3" fill="#9aa3af"/><text x="416.7" y="106.8" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.63</text><text x="416.7" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦5–10⁩ km</text><rect x="536.0" y="126.6" width="68" height="73.4" rx="3" fill="#9aa3af"/><text x="570.0" y="120.6" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.53</text><text x="570.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦10–20⁩ km</text><text x="340.0" y="240.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >高地のクレーターの表側/裏側の比、直径別</text></svg><figcaption>最後の散乱者としての地球（研究 9）：小さな新しいクレーターでは表側のほうが多く、大きく古いものでは少ない。</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明とケプラーの再現レシピ（付録 A）</h2>
+<p>論文 06 の付録は、母天体のまわりのケプラー楕円（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">K = GM_0</annotation></semantics></math></span></span>、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km）の比エネルギー <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span></span> と比角運動量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> から、飛行の表（§K.1）のすべての行を計算する完全な解析的再現レシピを示します：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mrow><mn>2</mn><mi mathvariant="script">E</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">a = -\dfrac{K}{2\mathcal{E}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi mathvariant="script">E</mi><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup></mrow><msup><mi>K</mi><mn>2</mn></msup></mfrac></mstyle></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 + \dfrac{2\mathcal{E}\ell^2}{K^2}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>a</mi><mn>3</mn></msup></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">n = \sqrt{\dfrac{K}{a^3}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mn>1</mn></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_0 = \arccos\left(\dfrac{\ell^2/(Kr_0) - 1}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_0 = \arccos\left(\dfrac{1 - r_0/a}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mo stretchy="false">(</mo><mi>π</mi><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo>+</mo><mi>e</mi><mi>sin</mi><mo>⁡</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mi>n</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">t_f = \dfrac{2(\pi - E_0 + e\sin E_0)}{n}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><mrow><mo fence="true">[</mo><mi>ω</mi><msub><mi>t</mi><mi>f</mi></msub><mo>−</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mo>−</mo><mn>2</mn><msub><mi>f</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">s_W = r_0\left[\omega t_f - (2\pi - 2f_0)\right]</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub><mo>=</mo><mi>a</mi><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_{\max} = a(1+e) - r_0</annotation></semantics></math></span></div></div></div>
+<p>これらの式によって、どの研究者も任意の打ち上げ速度 u &lt; 10.748 km/s を入れて、ピーク高度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">h_{\max}</annotation></semantics></math></span></span>、飛行時間 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">t_f</annotation></semantics></math></span></span>、回転する赤道に沿った西への偏向 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub></mrow><annotation encoding="application/x-tex">s_W</annotation></semantics></math></span></span> をただちに得られます。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：フォボスへの MMX ミッションについての予測と 14 の研究のまとめ</h2>
+<p>論文 06 は、この仕組みを月の外へ、母惑星から建造されてその放出物にさらされたどの衛星にも広げます（§O.1）：</p>
+<ul>
+<li><strong>フォボスへの MMX ミッション（Martian Moons eXploration）への直接の予測：</strong>フォボスとダイモスは火星から撃ち出された（論文 10 の主題）ので、モデルは、MMX ミッションが持ち帰るフォボスのクレーターの岩石が<strong>火星そのものの組成と同位体</strong>をもち——微隕石の宇宙塵を超える外来の金属の過剰はない、と予測します！</li>
+<li><strong>論文 06 の 14 の研究の収支（§O.2）：</strong>論文の番号つきの 14 の研究のうち、<strong>11 が完全な緑</strong>、<strong>3 が琥珀色</strong>（分解能の限界や小さな標本による部分的な確認で、赤はゼロ）を受けました。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：外来の質量の収支、クレーター内部の化学、14 の研究のまとめ（論文 06、L–Q 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>クレーター群 / 地殻層（研究 8）</th><th>クレーター数</th><th>18 km/s で必要な質量（kg）</th><th>上部地殻（5 km）での保持 対 測定</th></tr>
+<tr><td><strong>南極エイトケン盆地（SPA）</strong></td><td>1</td><td>3.3 × 10¹⁹ kg（68%）</td><td rowspan="4">見えるクレーターに必要（保持 20〜60%）：<br><strong>0.9〜3.0 × 10¹⁹ kg（層の 2〜6%）</strong><br>文献の総爆撃量に必要：<strong>7.4 × 10¹⁹ kg（15%）</strong></td></tr>
+<tr><td><strong>ほかの大盆地（≥ 300 km）</strong></td><td>32</td><td>1.4 × 10¹⁹ kg（30%）</td></tr>
+<tr><td><strong>中〜大クレーター（20〜300 km）</strong></td><td>6,940</td><td>1.0 × 10¹⁸ kg（2%）</td></tr>
+<tr><td><strong>小クレーター（1〜20 km）</strong></td><td>1,311,414</td><td>1.2 × 10¹⁶ kg（0.03%）</td></tr>
+<tr class="hl"><td><strong>合計 対 月の地殻での実際の発見</strong></td><td><strong>1,318,387</strong></td><td><strong>4.4〜5.0 × 10¹⁹ kg</strong></td><td><strong>地殻全体で実際に見つかる量：0.45〜1.0 × 10¹⁹ kg（0.9〜2%）</strong>——6.7 分の 1、そしてルテニウムの同位体は<strong>地球のもの</strong>！</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>化学的 / 年代的尺度（研究 7、9、12、14）</th><th>標本と測定条件</th><th>測定結果</th><th>LEF モデルでの結論</th></tr>
+<tr class="hl"><td><strong>クレーター内部の一様さ（研究 7）</strong></td><td>7,227 のクレーター（10〜60 km）、6 つの環</td><td>底 − まわり：<strong>0.00 wt% FeO</strong>、<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong>；中心 − 壁：+0.08 wt%</td><td>クレーターの内部はひとつの一様な戻ってきた物質；1,235 の先行/後行の対でも同じ</td></tr>
+<tr class="hl"><td><strong>切り離し後の最後の散乱者（研究 9）</strong></td><td>高地の 1〜2 km の新しいクレーター（海と光条なし）</td><td>表側：<strong>14,103</strong> 対 裏側：<strong>11,814</strong>（百万 km² あたり、比 <strong>× 1.19</strong>、区間 1.12〜1.27）</td><td>地球は切り離しのあとも表側へ軽い物質を撃ち続けた；2 km 以上では比が逆転（0.53〜0.86）</td></tr>
+<tr><td><strong>切り離し後の軽い物質（研究 12）</strong></td><td>表側の玄武岩の上の 3,478 のクレーター</td><td>放出物は玄武岩より −0.20 wt%（海）、−0.36 wt%（平原）鉄に乏しい</td><td>地球から逃れた物質（&gt; 8.8 km/s）は放出物の軽い部分だった</td></tr>
+<tr><td><strong>溶けたクレーターの下の質量（研究 14）</strong></td><td>海の中の 16 の溶けたクレーター 対 50 のランダムな点</td><td>地殻の底が <strong>+0.8 km</strong> 持ち上がる（13/16、p=0.04）、ブーゲー重力に鋭い縁なし（1.04 対 1.00）</td><td>戻ってきた物質は外から固いクレーターを満たすのではなく、海の流体のマグマへ沈んで混ざった</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>第 11〜12 章で、私たちは月のクレーターの調査（<em>小惑星なしのクレーター</em>）を完了しました。クレーターは、供給開口から 2〜8 km/s で撃ち出されて戻ってきた地球の物質によって掘られたのです。それは 13〜<span class="ltr">46 GPa</span> の力で打ち、後行半球にクレーターの過剰を、先行半球に激しい正面衝突をつくり、どのクレーターも一様な組成で満たし、外来の金属なしに、まさに地球のルテニウム同位体を地殻に残したのです。</p>
+<p>しかし月が地球の上でつぶれた球として扁平になり、そのすべてのクレーターを殻の上に集めたあと、<strong>どのようにしてまるごとの球へと丸まり戻ったのか？そしてなぜ月の極（北極と南極）は、その顔のほかのどの地域よりも大きなクレーターで混みあっているのか？</strong>次の章——<strong>第 13 章：月の極——殻の極への収束と内向きの丸まりの幾何</strong>（論文 07——<em>極</em>にもとづく）——で、極の幾何学的な鍵を発見します！</p>
+<a href="story13_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 13 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">月の極——殻の極への収束と内向きの丸まりの幾何 →</p></div></a><p style="margin-top:22px"><a href="story11_ja.html">← 第 11 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

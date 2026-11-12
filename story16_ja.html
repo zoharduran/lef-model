@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 16 章：SPA の深部、嫦娥 6 号の試料、そして連続した天体のポテンシャル障壁 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 16 章：SPA の深部、嫦娥 6 号の試料、そして連続した天体のポテンシャル障壁。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story16_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story16_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story16_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story16_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story16_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story16_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <a href="story16_en.html" hreflang="en">English</a> · <a href="story16_de.html" hreflang="de">Deutsch</a> · <a href="story16_es.html" hreflang="es">Español</a> · <a href="story16_fr.html" hreflang="fr">Français</a> · <a href="story16_ru.html" hreflang="ru">Русский</a> · <a href="story16_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 16 章</p>
+<h1>第 16 章：SPA の深部、嫦娥 6 号の試料、そして連続した天体のポテンシャル障壁</h1>
+<p>論文 08——南極エイトケン：クレーターの乏しい中心（B10–G 部：深部の異常 B10–B18、対蹠点の幾何、ポテンシャル障壁のサイフォン、決定的な同位体の検証）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：嫦娥 6 号の裏側の試料は何を明らかにし、熱はどうやって地球の重力の障壁を越えたのか？</h2>
+<p>2024 年 6 月、中国の<strong>嫦娥 6 号</strong>ミッションは、歴史上はじめて月の裏側から土の試料を持ち帰りました——SPA 北東部のアポロ盆地から（41.625°S、206.022°E、ドームの中心から約 11.6°、クレーターの最小点から 210 km）。実験室での発見は、軌道からの重力と磁気のデータとあわせて、一瞬の小惑星衝突ではまとめるのが難しい発見の連鎖を明らかにします：</p>
+<ol class="steps">
+<li><strong>深部に埋もれた密な質量（2.18 × 10¹⁸ kg、B10）：</strong>中心の海の地域の南半分の下（62°S、200°E、面積 ~ 444,500 km²、等価半径 12.4°）に、差し渡し ~ 95 km の金属の球に相当する拡散した過剰な質量が隠れています——それは月の核へ沈まなかったのです！</li>
+<li><strong>酸素が 13 倍乏しく、カリウムと鉄の重い同位体をもつ「焼かれた」マントル（B11–B13）：</strong>嫦娥 6 号の玄武岩の源は完全に乾いていて、使える酸素が表側より <strong>~ 13</strong> 倍乏しく（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn><mo>±</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> 対 −0.80 ± 0.64）、KREEP 元素に乏しく（年代 2.8 Ga で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span>、同じ地域の古い 4.203 Ga の玄武岩では <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>！）、重いカリウム（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span>〜+0.09‰）とともに<strong>同位体的に重い鉄</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0.13</mn><mtext>–</mtext><mn>0.21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰）をもっています。</li>
+<li><strong>中心で消され後行側でだけ強い磁気、そして 26.2 MJ/kg のポテンシャル障壁（B16–D.3）：</strong>SPA の中心では磁気はほとんどゼロ（5 nT を超える面積は 0.8%）で、強い磁気のすべて（32%〜42%、インゲニイの海と明るい渦模様の近くでピーク ~ 22 nT）は北西（後行側）に集中しています——トリウムの三日月と同じ側ですが、その北へ約 8° ずれています。そしてそのうえ：地球からの熱と物質は、どうやってポテンシャル障壁（26.2 MJ/kg）を越えて裏側までのぼれたのでしょう？</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：弱火で煮つめるソース、何度も浸されるティーバッグ、そして連続したサイフォン</h2>
+<p>四つの日常のイメージが、LEF モデルでの SPA の深部の物理と化学を照らします：</p>
+<ul>
+<li><strong>弱火で煮つめるソース（沈まずにその場で鉄が濃縮する、B10、B12）：</strong>物質が上がったり下がったりして鉄の塊を核へ押し流しうる活動的な海（モスクワの海のように）とちがい、SPA は<em>活動的な海ではなかった</em>のです——循環する上下の流れはありませんでした。地球から SPA の基部に届いた金属鉄に富む物質は、その場で熱せられ焼かれました。金属鉄はまわりの酸素を「飲んで」吸収し（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> を −1.93 まで下げる）、熱がほかの物質を蒸発させると、蒸発しなかった鉄はその場で濃縮し、地域が冷えるにつれて凍ったのです！</li>
+<li><strong>何度も浸されるティーバッグ（4.20 Ga の富んだ源から 2.81 Ga の枯渇した源への移行、B13）：</strong>洋梨を通って地球から届いた物質は KREEP 元素に富んで着地しました（4.203 Ga で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>）。下からの長い加熱はマントルを何度も溶かし、そのたびに最初の溶融物を取り去りました（それはトリウムを三日月へ運んでいった）。そしてついに溶融に抵抗する「洗い流された」残りが残りました（2.807 Ga で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span>）——これは、なぜごくわずかな量の遅い溶岩しか噴き出さなかったのかも説明します！</li>
+<li><strong>コーヒーに注がれ、混ざる前に凍ったミルク（インゲニイの海の明るい渦模様とモスクワの海の対比、B17）：</strong>二つの物質の流れ——下からの鉄と上からのアルミナ・シリカ——が噴き出して月の自転のもとで速く凍ったとき（エクマン数 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>）、細長い粒は供給の導管の中では垂直に立ち（暗く鉄に富む小道）、広がりの中では水平に寝ました（明るく斜長石に富むループ）。これに対して活動的なモスクワの海では鉄は凍る前に沈んだので、そこでは磁場（1.3 nT、5 nT を超えるのは 0%）も渦模様もできなかったのです！</li>
+<li><strong>丘の頂上を越える連続したサイフォン（ポテンシャル障壁を越える、D.3–D.3a）：</strong>1.8〜2.6 km/s（1.6〜3.4 MJ/kg）でひとりで打ち出された物質の塊は、共回転線（26.2 MJ/kg）の手前で落ちて戻ってしまいます。しかしここで扱っているのは、~ <span class="ltr">150 GPa</span> の源の圧力（論文 3）で下から押される<strong>物質で満ちた連続した天体</strong>です。その上の部分が共回転線を越えて自転によって外へ引き出された瞬間、それは基部の圧力を下げ、<strong>サイフォンのように</strong>下からさらに物質を引きこむのです——圧力が負になることは一度もなく！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：八つの深部の異常（B10–B17）と対蹠点の幾何</h2>
+<p>論文 08 の B10–B17 部と C 部は、SPA の 17 の異常の残りと、裏側の中心の地図を閉じます：</p>
+<ol class="steps">
+<li><strong>三つの中心の群の地図に対する硬い鏡の検証（C 部）：</strong>雨の海と晴れの海の環と海をその対蹠点へ硬く写す（「スタンプ」）と、SPA の形（2,402 × 2,056 km、比 1.17）と合わない細い楕円（2,144 × 1,340 km、軸比 1.60）が得られます——そしてこの否定的な結果ははっきりと残されています。クレーターがどこで消されたかを決めたのはバーナーであり、盆地の輪郭はドームの崩壊によって決まったことを明確にするためです。すべての中心を一つの地図に置くと（図 C.1）、<strong>北から南へ三つの群に並ぶ整った列</strong>が現れます：
+<ul>
+<li><strong>（a）北——バーナーの二つの出口：</strong>雨の海の対蹠点（37.6°S、160.0°E、その上 5.7° にインゲニイの薄い地殻のドーム）と晴れの海の対蹠点（27.3°S、198.4°E、その上 10° にアポロのドーム）。</li>
+<li><strong>（b）中央——熱とクレーター消去の焦点：</strong>ドーム/内側の環の中心（51.4°S、196.8°E）、楕円の中心（53°S、191°E）、近くの磁気のピーク（51.0°S、190.0°E）、そしてクレーターの最小点（45.4°S、197.9°E）——すべてドームの中心から 6° 以内！</li>
+<li><strong>（c）南——重い構造の焦点：</strong>もっとも低い底（61°S、199°E）、密な質量（62°S、200°E）、そしてもっとも薄い地殻（61°S、184°E）——すべて互いに ~ 230 km 以内！</li>
+</ul>
+</li>
+<li><strong>なぜドームは二つの出口の南にあるのか？——洋梨の中の水平な押しと天体の丸まり（§C.3–C.4）：</strong>月が乗っていた洋梨の先端は緯度 ~ 22.5°N にあり、その基部は赤道のまわりにありました。回転する天体の中では、遠心力は地球の中心への線に沿ってではなく<strong>自転軸に垂直に（水平に）</strong>働きます——だから流れは接触円盤にその中心の北から入り（雨の海と晴れの海があるところ）、裏側では<strong>向かいの点の南 ~ 22.5° まで</strong>出ていったのです！扁平な段階（1 : 0.637 : 0.601）では、ドームの中心は晴れの海の出口の南 17.0°、雨の海の出口の南東 21.2° にありました。そしてそのあと<strong>球への丸まり</strong>（第 13〜14 章）が、これらの角距離を今日測られるちょうど <strong>24.1° と 29.2°</strong> へと広げたのです！</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：七つの挑戦（E.1–E.7）への答えと、扁平から球への移行の地図</h2>
+<p>論文 08 の C.3 部と E 部は、最近の科学文献（2025〜2026 年の嫦娥 6 号の発見を含む）が提起した七つの問いと挑戦のすべてに、精密な定量的な答えを与えます：</p>
+<ol class="steps">
+<li><strong>嫦娥 6 号のレゴリスのイリジウムと金（E.1）：</strong>Liu ら（2026）が見つけた Ir と Au をもつ金属の粒は、<em>表面のレゴリスの年代未測定の玄武岩と斜長岩の破片</em>の中で見つかりました（何十億年もかけて集まった遅い宇宙塵で、予測ははっきりとこれを許している）。年代測定された 4.25 Ga のノーライトの中ではありません。さらに、Ir と Au の元素比は地球の深部からの金属と小惑星を区別しません——同位体の測定（Cr、Ti、Mo、Ru、Os）だけが決めるのです。</li>
+<li><strong>密な質量、磁気のピーク、薄い地殻はクレーターの最小点の下にはない（E.3–E.5）：</strong>最小点（45.4°S、197.9°E）は、晴れの海の出口の方向で熱が表面のクレーターを消したところを示します。磁気のピーク（51.0°S、190.0°E、230 km 離れている）は、キュリー温度を超えて磁気が消されなかった<strong>熱い核の縁</strong>を示します（中心では場はわずか 0.85〜1.9 nT）。そして密な質量（62°S、200°E）は盆地の深い構造的な南にあります。</li>
+<li><strong>浅いクレーターの原因としての埋もれた玄武岩（E.6）：</strong>LEF モデルでは、埋もれた玄武岩（8.7 × 10⁴ km²）はバーナーの<em>産物</em>であってその対抗馬ではありません——そして決定的な検証は、焼かれた地面の固結のために、クレーターの浅さが埋もれた玄武岩の地域の外でも続くことです。</li>
+<li><strong>扁平から球への丸まりでの幾何学的な移行（表 §C.3）：</strong>細長い天体（1 : 0.637 : 0.601）から今日の球への移行で、地面を滑った点は一つもありませんが、長軸の先端に対する角度は開きました。雨の海の出口は 32.3°S、158.1°E から 37.6°S、160.0°E へ（5.5° の変化）、晴れの海の出口は 27.4°S、185.1°E から 27.3°S、198.4°E へ（11.8°）、ドームの中心は 44.0°S、180.8°E から 51.4°S、196.8°E へ（13.0°）、そしてクレーターの最小点は 39.9°S、182.5°E から 45.4°S、197.9°E へ（12.6°）移ったのです。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>初期の地球の表面（緯度 25°N で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> km、親の質量 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg）と共回転線（5.5 h で <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> km、5.77 h で 16,399 km）のあいだの実効的なポテンシャル障壁 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span>、そして自転が溶岩の流れをどう曲げるかを決めるエクマン数（Ek）は、次のように定式化されます（§B17、§D.3–D.5）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26.2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>つながった段階の速い自転（5.77 時間）での粘性 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> の溶岩について、エクマン数は 100 m の尺度で 0.012、1 km で 0.0001、10 km で 10⁻⁶ です——つまり自転の力はあらゆる溶岩の流れや放出を完全に曲げ、トリウムの三日月とインゲニイの明るい渦模様をつくるのです！さらに、共回転線（16,400 km）の向こうでは、月のヒル球はその中心から ≈ 2,600 km まで広がるので（当時の月の半径 1,890 km の 1.4 倍）、≈ 700 km より低い高さまで放出された物質はすべて戻ってきて、クレーターとして月の表面に着地するのです。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：17 の異常のうち 16 が一致——そして開かれた予測</h2>
+<p>論文 08 の B18 節の系統的な比較のまとめでは：SPA の 17 の異常のうち、主流の科学は 6 つを完全に、9 つを部分的に、1 つ（20 億年にわたる長い火山活動）をかろうじて説明し、盆地の中心のクレーターの記録のパターンについては<strong>0（まったく説明しない）</strong>です。これに対して、<strong>LEF モデルのバーナーの仕組み</strong>は一度に<strong>17 の異常のうち 16</strong> と一致し、<strong>1 つは部分的（B14）</strong>で、同位体の検証を待っています：</p>
+<ul>
+<li><strong>将来の実験室での測定へのもっとも鋭い予測（F 部）：</strong>年代測定された嫦娥 6 号の二つのノーライト（`CE6C0100YJFM002-158` と `CE6C0200YJFM001EGP07-16`）の中の金属の粒で Cr、Ti、Mo、Ru、Os の同位体を測ると、<strong>隕石的なずれのない、純粋な地球の署名</strong>が示されるでしょう。</li>
+<li><strong>軌道から検証できるさらなる予測：</strong>（1）中心の不足地域の中での底が割れたクレーターの集中、（2）埋もれた玄武岩の地域の外でも続くクレーターの浅さ、（3）最小点のまわりでもっとも強く縁へ向かって弱まる、揮発性物質の喪失と酸素の還元（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>）の放射状の勾配、そして（4）~ 1.5 Ga より若い溶岩が SPA にまったくないこと。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="170.0" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="247.6" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩ 説明</text><rect x="325.3" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="441.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩ 部分的</text><rect x="558.2" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="571.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="584.1" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >主流の科学</text><rect x="170.0" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="377.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦16⁩ 一致</text><rect x="584.1" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >LEF モデル</text><text x="390.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >緑：説明/一致 · 橙：部分的 · 薄い橙：かろうじて · 赤：まったくない</text></svg><figcaption>SPA の 17 の異常についての判定（B18）：それぞれの側がそのうちいくつを完全に、部分的に、かろうじて、あるいはまったく説明しないか。</figcaption></figure><h3 style="margin-top:28px">ラボボックス：SPA の 17 の異常（B1–B18）とポテンシャル障壁のまとめ（論文 08、B10–G 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>異常（B1–B17）</th><th>中心となる経験的な発見</th><th>主流の科学の判定</th><th>LEF モデル（バーナー）の判定</th></tr>
+<tr class="hl"><td><strong>B1. クレーターの記録</strong></td><td>中心で 0.51 の不足；最小点 45.4°S、197.9°E（0.45）；20〜40 km が欠ける（0.47）；18% 浅く縁が高い（1.35）</td><td><strong>まったく説明しない</strong></td><td><strong>一致</strong>（下からの熱が緩和させて消した；固められた地面の上の高い縁）</td></tr>
+<tr><td><strong>B2. 形と深さ</strong></td><td>月でもっとも低い地域（6〜9 km）；薄い地殻を超えて中心で −1.1〜−1.8 km の深さの残差</td><td>説明する（重い質量とともに）</td><td><strong>一致</strong>（ドームの崩壊 + 9〜15 km にわたる孔の固結）</td></tr>
+<tr><td><strong>B3. 薄い地殻</strong></td><td>月でもっとも薄い地殻（南で 12〜20 km、61°S、184°E）；アポロとインゲニイの上の小さなドーム</td><td>説明する（南への斜めの衝突）</td><td><strong>一致</strong>（ドームから滑り落ちる地殻 + 下からの溶融）</td></tr>
+<tr><td><strong>B4–B5. 二つの地殻の環</strong></td><td>外側（50°〜55°）：東で厚く（+7.8 km）西で欠ける；内側（36.7°）：北東へ 118 km ずれる</td><td>部分的に説明する（西の説明なし）</td><td><strong>一致</strong>（東では厚い高地の壁への積み重なり、西では近くで）</td></tr>
+<tr><td><strong>B6. 密度と孔隙率</strong></td><td>表面 19.7%、しかし 10 km では中心で 2.9%〜4.4% に閉じ、縁へ向かって上がる（7.1%〜8.8%）</td><td>部分的に説明する（衝突は砕くが、閉じない）</td><td><strong>一致</strong>（中心から外への長い焼成と固結）</td></tr>
+<tr><td><strong>B7–B9. 化学、わずかな溶岩、Th の三日月</strong></td><td>FeO は 9.48% から 4.43% へ下がる；平らな K/Th（451）；見える溶岩 4.1%；15° 内の埋もれた溶岩；北西の Th の三日月</td><td>説明する / 部分的に説明する</td><td><strong>一致</strong>（噴出のない溶融 + 5.77 h での中心の海）</td></tr>
+<tr class="hl"><td><strong>B10–B13. 重い質量、揮発性物質、酸素、KREEP</strong></td><td>南に 2.18 × 10¹⁸ kg の質量；重い <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> と <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span>（酸素が 13 倍少ない）；<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>部分的に説明する / 説明する</td><td><strong>一致</strong>（酸素を吸収してその場で濃縮した地球の鉄 + くり返しの洗い流し）</td></tr>
+<tr class="hl"><td><strong>B14. ノーライトの中の金属</strong></td><td>3.873 Ga にリセットされた 4.247 Ga のノーライトの中の Fe–Ni の粒（Ni/Co = 8.5〜11）</td><td>説明する（衝突体の物質）</td><td><strong>部分的に一致——同位体の検証が決める（Cr、Ti、Mo、Ru、Os）</strong></td></tr>
+<tr><td><strong>B15. 長い火山活動</strong></td><td>20 億年にわたる少量の連続した活動（4.25 → 3.87 → 3.6〜3.2 → 2.8〜2.2 Ga）</td><td>かろうじて説明する（二つの出来事と源が必要）</td><td><strong>一致</strong>（つながった段階のバーナー、3.873 Ga の切り離し、冷却の尾）</td></tr>
+<tr><td><strong>B16–B17. 磁気と渦模様</strong></td><td>空の中心（5 nT を超えるのは 0.8%）；後行側のピーク（北西で 42%）；インゲニイの渦模様（5.9 nT）とモスクワの海（1.3 nT）の対比</td><td>部分的に説明する</td><td><strong>一致</strong>（中心での消去 + 後行側での鉄の輸送；モスクワの海では鉄が沈んだ）</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>力学的パラメータ / ポテンシャル障壁（D 部）</th><th>地球の 1 日が 5.50 時間（最大扁平化）</th><th>地球の 1 日が 5.77 時間（系列での切り離しの状態）</th></tr>
+<tr><td><strong>共回転線の半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>）</strong></td><td>15,883 km（試験粒子で 15,818 km）</td><td><strong>16,399 km</strong>（≈ 地球半径の 2.6 倍）</td></tr>
+<tr class="hl"><td><strong>源の緯度でのポテンシャル障壁（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> km）</strong></td><td>25.2 MJ/kg</td>
+<td>26.2 MJ/kg</td></tr></table></div></section>
+<section>
+<a href="story17_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 17 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">太平洋の縞——洋梨の前壁と月の鏡像の刻印 →</p></div></a>
+<p style="margin-top:22px"><a href="story15_ja.html">← 第 15 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

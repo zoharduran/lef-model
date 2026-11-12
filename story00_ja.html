@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>序章：月の八つの謎 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の序章：月の誕生を説明しようとするあらゆる理論が説明しなければならない月の八つの測定された性質と、共回転線での解放がなぜ角運動量の収支を閉じるのか。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story00_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story00_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story00_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story00_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story00_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story00_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story00_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story00_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story00_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story00_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story00_he.html" hreflang="he">עברית</a> · <a href="story00_en.html" hreflang="en">English</a> · <a href="story00_de.html" hreflang="de">Deutsch</a> · <a href="story00_es.html" hreflang="es">Español</a> · <a href="story00_fr.html" hreflang="fr">Français</a> · <a href="story00_ru.html" hreflang="ru">Русский</a> · <a href="story00_zh.html" hreflang="zh">中文</a> · <b>日本語</b> · <a href="story00_ko.html" hreflang="ko">한국어</a></span></div></nav>
+<header class="hero"><div class="in"><svg class="moon" viewBox="0 0 300 300" aria-hidden="true"><defs><radialGradient id="mg" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#f6f1e4"/><stop offset=".6" stop-color="#d9d2bf"/><stop offset="1" stop-color="#9c967f"/></radialGradient><radialGradient id="glow" r=".5"><stop offset=".6" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle cx="150" cy="150" r="148" fill="url(#glow)"/><circle cx="150" cy="150" r="105" fill="url(#mg)"/><g fill="#a9a28b" opacity=".55"><ellipse cx="118" cy="120" rx="30" ry="22"/><ellipse cx="170" cy="105" rx="18" ry="14"/><ellipse cx="135" cy="168" rx="22" ry="15"/><circle cx="190" cy="175" r="9"/><circle cx="96" cy="182" r="6"/><circle cx="205" cy="135" r="5"/></g></svg>
+<p class="kick">LEF MODEL · 序章</p>
+<h1>序章：月の八つの謎</h1>
+<p>地球にもっとも近い隣人について——そしてその誕生を説明するには何が必要か</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：こんなに近いのに、いまだに謎のまま</h2>
+<p class="lead">月は夜空にとても近くに浮かんでいるので、私たちはもう月のことは何でも知っていると思いがちです。探査機を送り、宇宙飛行士を着陸させ、何百キログラムもの岩石や砂を持ち帰り、表面のクレーター、谷、尾根のひとつひとつを数メートルの精度で地図にしてきました。それでも、これらのデータをすべて実験台の上に並べて、ひとつの単純な問いを投げかけると——</p>
+<div class="q">月はどのようにして生まれ、どこから来たのか？</div>
+<p>——月は太陽系でもっとも謎めいた天体のひとつであることがわかるのです。</p>
+<p>問題は情報が足りないことではなく、互いに矛盾する奇妙な性質が多すぎることにあります。一方で、月は信じられないほど地球に似ています。その化学的・核的な「指紋」は、百万分の数の精度で地球と同一です。他方で、月の鉄の核は驚くほど小さく、裏側の地殻は私たちに向いている側よりずっと厚く、軌道は黄道面に対して 5.145 度傾き、重心は地球の方向へ約 2 キロメートルずれています。</p>
+<p>140 年以上にわたり、惑星科学はこの性質の組み合わせを解き明かそうとしてきました。今日受け入れられている理論——<strong>巨大衝突説</strong>——は、約 45 億年前に火星ほどの大きさの天体（「テイア」と名づけられた）が若い地球に衝突し、宇宙に放り出された破片の雲から月が集積したと提案します。この理論は科学革命をもたらしましたが、月の八つの特別な性質を説明するために、補助的な仮定、特別なシナリオ、後からの修正を何度も追加しなければなりませんでした。</p>
+<p>では、まったく別の道があるとしたら？もし月が、破局的な衝突のあとに宇宙で集積した破片からできたのではなく、<strong>まだ地球につながったまま、地球自身の物質から</strong>建造され、地球の自転がすでに軌道に必要な速度を与えていたちょうどその地点で自由な軌道へと解き放たれたのだとしたら？</p>
+<div class="box"><span class="tag">LEF</span><p style="margin:0">これが <strong>LEF モデル</strong>（<em>Lunar Elevation and Fission、月の持ち上げと分裂</em>）の中心的な考えです。この仕組みを明らかにする旅に出る前に、試金石となる八つの測定事実——月の誕生を説明するあらゆる理論が説明しなければならない八つの謎——を知っておきましょう。</p></div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：八つの錠がついた金庫</h2>
+<p>八つの異なる錠で守られた、古い鋼鉄の金庫を想像してください。</p>
+<div class="vault">
+<div class="side a"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#f4ecd8" stroke="#e3dccb"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#b23a2e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#b23a2e"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c47f2c" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c47f2c"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#7a5ea8" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#7a5ea8"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#3a7bbf" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#3a7bbf"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#9a6b4f" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#9a6b4f"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#5b6676" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#5b6676"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c86a5e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c86a5e"/><circle cy="3" r="2.4" fill="#fff"/></g><circle cx="110" cy="100" r="26" fill="#fff" stroke="#c9c0ab" stroke-dasharray="3 3"/><text x="110" y="105" text-anchor="middle" font-size="13" fill="#9a3f33" font-family="Heebo">8 つの道具</text></svg><h4>八つの別々の道具</h4><p>それぞれの錠を別々の道具で壊すこともできます。ひとつめの錠をドリルで削り、ふたつめを即席の鍵で開け、三つめをのこぎりで切り、四つめには特別なアダプターを取りつける。最後には扉を開けられるかもしれませんが、床には互いに何の関係もない八つの道具が散らばることになります。</p></div>
+<div class="side b"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#e8f2ec" stroke="#cfe3d7"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110,100)"><circle cx="-12" r="11" fill="none" stroke="#2f7d57" stroke-width="5"/><rect x="-2" y="-3" width="30" height="6" fill="#2f7d57"/><rect x="18" y="3" width="4" height="7" fill="#2f7d57"/><rect x="24" y="3" width="4" height="5" fill="#2f7d57"/></g></svg><h4>ひとつのマスターキー</h4><p>しかし、もうひとつの可能性があります。<strong>ひとつのマスターキー</strong>——幾何学的・力学的なひとつの鍵——を探すことです。それを一度回せば、同じひとつの動作で八つの錠が次々と開くのです。</p></div>
+</div>
+<p>科学ではこの原理を<strong>科学的な節約性</strong>と呼びます。同じ天体の上に八つの異なる現象が見つかったとき、それらが八つの偶然とあとからの追加の結果なのか、それともひとつの連続した一貫した物理過程の異なる表れなのかを見極めようとするのです。</p>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：八つの謎と衝突説の「つぎはぎ」</h2>
+<p>月の八つの測定された性質を並べてみると、巨大衝突モデルの一群がそれらを扱うやり方と、LEF モデルでそれらが自然に導かれるやり方とのあいだに、興味深い隔たりが現れます：</p>
+<div class="legend"><span class="m">測定されていること</span><span class="i">衝突モデルが必要とすること</span><span class="l">LEF モデルでの方向</span></div>
+<div class="cards">
+<article class="card"><header><span class="n">1</span><h3>完全な同位体の一致</h3></header><div class="row m"><div class="k">測定されていること</div><div>同位体とは、同じ化学元素のうち原子核の質量だけが異なる形態で、物質の起源を示す「身分証明書」の役割を果たします。月と地球では、酸素、チタン、クロム、タングステンの同位体比がほぼ完全に一致しています。酸素の違いはわずか <span class="num">−1 ± 5 ppm（百万分率）</span>です。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>外来の衝突天体は異なる同位体の特徴を持ち込むはずなので、モデルは衝突天体と地球のあいだで熱的・同位体的な完全混合が起きたと仮定せざるを得ません（たとえば「シネスティア」と呼ばれる極端な中間状態や、極端に高エネルギーの衝突を通じて）。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>月は地球自身の物質でできているので、同位体の一致は混合の仕組みを必要とする謎ではなく、自然な出発点です。</div></div></article>
+<article class="card"><header><span class="n">2</span><h3>ごく小さな金属核</h3></header><div class="row m"><div class="k">測定されていること</div><div>地震計の測定によれば、月の鉄の核は驚くほど小さく、半径は約 <span class="num">330 km</span> しかなく、月の質量の約 <span class="num">1.4%</span> を占めるにすぎません（地球では核が質量の約 <span class="num">32%</span>）。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>衝突天体の鉄の核が地球に沈んで地球の核と合体し、そのごく一部だけが破片の円盤に残ったと仮定します。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>月を建造した物質の供給は、地球の鉄がまだ中心へ沈んでいる早い段階に始まり、二つの天体をつなぐ構造が選別の柱として働いて、重い鉄の大部分を地球へ送り返しました。</div></div></article>
+<article class="card"><header><span class="n">3</span><h3>地殻の厚さの非対称</h3></header><div class="row m"><div class="k">測定されていること</div><div>GRAIL 探査機の重力測定により、月の裏側の地殻は表側より約 <span class="num">8〜10 km</span> 厚いことがわかりました（表側の中心と裏側のあいだで約 10 km、半球平均で約 8 km）。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>「伴衛星」仮説が提案されました。二つめの小さな衛星が主たる月の裏側にゆっくり衝突し、その上に塗り広げられたというものです。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>裏側は上昇する天体の上部ドームで、軽い地殻物質（シアル）がそこへ移動して層状に積み重なり、何度も何度もその上に戻ってきた放出物も加わりました。表側は地球とつながっていた基部です。</div></div></article>
+<article class="card"><header><span class="n">4</span><h3>同期自転——地球に常に同じ面を向ける</h3></header><div class="row m"><div class="k">測定されていること</div><div>月は常にひとつの面だけを地球に向けています。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>あとからの潮汐固定によって月の自転が遅くなり、公転周期と一致するようになった。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>私たちに向いている面は、月が地球から分離する前に地球とつながっていた面にほかなりません。</div></div></article>
+<article class="card"><header><span class="n">5</span><h3>二つの半球が保存された順序</h3></header><div class="row m"><div class="k">測定されていること</div><div>裏側の表面のほうが早く閉じて保存され、表側の暗い玄武岩の海より古い。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>全球的なマグマオーシャンの不均一な冷却。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>冷たい宇宙に面していた裏側が先に閉じて記録を保存しました。表側は地球から熱い供給を受け続け、灼熱の地球に面していたため、分離のあとになってようやく落ち着いて冷えたのです。</div></div></article>
+<article class="card"><header><span class="n">6</span><h3>古い内部の水と揮発性物質</h3></header><div class="row m"><div class="k">測定されていること</div><div>「メルト包有物」——古い結晶が成長するときに内部に閉じこめられた微小なマグマの滴——の中から、<span class="num">615〜1,410 ppm</span> の水が測定されました。その後、揮発性物質は宇宙へ逃げ、今日測定される月の内部は乾いています。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>巨大衝突は猛烈な熱で水と揮発性物質の大部分を蒸発させるはずなので、のちの二次的な衝突による水の補給が必要になります。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>揮発性物質はあとから来た客ではなく、エンジンそのものでした。深部のマグマは揮発性物質に富み、それがマグマを泡立たせ、密度を下げ、上昇を可能にしたのです。</div></div></article>
+<article class="card"><header><span class="n">7</span><h3>重心のずれ</h3></header><div class="row m"><div class="k">測定されていること</div><div>月の重心は、形の幾何学的中心に対して地球の方向へ約 <span class="num">2 km</span> ずれています。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>伴衛星によってつくられた地殻の不均一な分布の副次的な結果。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>裏側に軽くて厚い地殻が積み重なったことで、つり合いの点（重心）は自然に表側の方向へ約 <span class="num">1.24〜3.11 km</span> 押しやられます。</div></div></article>
+<article class="card"><header><span class="n">8</span><h3>軌道面の 5.145 度の傾き</h3></header><div class="row m"><div class="k">測定されていること</div><div>地球をめぐる月の軌道は、黄道面に対して <span class="num">5.145 度</span>傾いています。</div></div><div class="row i"><div class="k">衝突モデルが必要とすること</div><div>破片の円盤は赤道面に落ち着くので、傾きを励起するためにあとからの力学的な仕組みが必要です——出差共鳴、微惑星との接近遭遇、あるいは 70 度以上傾いた地球など。</div></div><div class="row l"><div class="k">LEF モデルでの方向</div><div>緯度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> で地球との共回転から解放された天体は、出発した緯度に等しい初期傾斜をもつ軌道にただちに入ります（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>）。円盤も、あとからの修正も必要ありません。</div></div></article>
+</div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：なぜ百年ものあいだ、月を地球から持ち上げるのは不可能だと考えられてきたのか？</h2>
+<p>月が地球そのものから分かれたという考えがこれほど節約的で単純なら、なぜ科学は一世紀以上もそれを捨ててきたのでしょうか？</p>
+<p>1879 年、天文学者で数学者の<strong>ジョージ・ダーウィン</strong>（チャールズ・ダーウィンの息子）が<strong>古典的分裂説</strong>を提案しました。若い地球はあまりに速く自転していたので、その一部が表面から離れて宇宙へ飛び出し、月になったというのです。この考えは、<strong>速度と角運動量についての単純な計算</strong>のために、数十年のうちに退けられました：</p>
+<ol class="steps">
+<li><strong>表面での速度の隔たり：</strong>古代の一日が <span class="num">5.5 時間</span>（今日の 4 倍の速さ）だったとしても、赤道での接線速度は約 <span class="num">2,133 メートル毎秒</span>にすぎず、表面の高さで自由な軌道をめぐるには <span class="num">7,701 メートル毎秒</span>が必要です。この隔たり——約 <span class="num">5.6 キロメートル毎秒</span>——は、表面から放たれたどんな物質もただちに地球へ落ちることを意味していました。</li>
+<li><strong>角運動量の代償：</strong>表面でこの隔たりを埋めるには、約 <span class="num">2.73 時間</span>の一日と、今日の地球–月系全体の角運動量の <span class="num">2.74</span> 倍（元の基準点では <span class="num">4.08</span> 倍）の角運動量が必要です。孤立系の角運動量は保存されるので、古典的分裂は退けられたのです。</li>
+</ol>
+<div class="box"><span class="tag">LEF の突破口</span>
+<p>ダーウィンの計算は正しかったのですが、<strong>計算した場所がまちがっていた</strong>——表面だったのです。LEF モデルでは、物質は上へ持ち上がりながらも地球につながったまま、地球とともに回り続けます（<strong>共回転</strong>）。地球の中心からの距離が増すにつれて自転による速度は増し、軌道に必要な速度は減ります。<strong>共回転半径</strong>（一日 5.5 時間のとき <span class="num">15,818 km</span>）で、この二つの速度は出会い、ちょうど <span class="num">5,020 メートル毎秒</span>で等しくなります。そこまで運ばれた天体は投げ出す必要がありません——すでに完全な軌道速度で動いているのです。</p></div>
+<div class="vs">
+<div><b>2,133</b><span>表面での自転速度（m/s）</span></div>
+<div><b>7,701</b><span>表面での軌道速度（m/s）</span></div>
+<div class="hit"><b>5,020 = 5,020</b><span>共回転半径 15,818 km で両者が一致</span></div>
+</div>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1,500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3,000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4,500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6,000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7,500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9,000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6,000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10,000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14,000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18,000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22,000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26,000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">表面での差 ⁦5.6 km/s⁩</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">共回転線</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15,818 km · 5,020 m/s</text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">自転速度 ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">軌道速度 ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">地球の中心からの距離（km）· 一日 5.5 時間</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">速度（m/s）</text>
+</svg><figcaption>一日 5.5 時間のときの、地球の中心からの距離に対する二つの速度。表面では軌道速度が自転速度よりはるかに大きく、外へ行くにつれて自転は速まり軌道速度は遅くなり、共回転線で両者が出会います。</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>表面での古典的分裂の失敗と、共回転線での成功との違いは、古典力学のひとつのすっきりした方程式で表されます：</p>
+<div class="eqs">
+<div class="eq"><div class="k">自転が与える接線速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Ω</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \Omega\, r</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">自由な円軌道に必要な速度</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{orb}} = \sqrt{\dfrac{G M}{r}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>等しくなる点——共回転半径</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r_c</annotation></semantics></math></span></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mtext> </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>r</mi><mi>c</mi></msub></mfrac></mstyle></msqrt><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\Omega\, r_c = \sqrt{\dfrac{G M}{r_c}} \;\Longrightarrow\; r_c = \left(\dfrac{G M}{\Omega^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>ここで <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span> は地球の角速度、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span> は万有引力定数、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> は地球の質量です。今日の角運動量のすべてを初期の地球に戻すと（太陽潮汐で失われた約 1% を加えて）、5.5 時間の一日が得られます。そして分離の時点（一日 <span class="num">5.77 時間</span>、共回転線は <span class="num">16,399 km</span>）では、角運動量の収支は今日の角運動量の <span class="num">1.007 倍</span>で閉じます。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE ROAD AHEAD</span>
+<h2>現実に残る署名：この先の旅のロードマップ</h2>
+<p>LEF モデルは<strong>過程のモデル</strong>として組み立てられています。一連の物理的な段階を示し、各段階について決定的な数値を計算し、すべての数値が同じ体系の中で互いに整合することを確かめ、それぞれの段階を検証する野外の測定観測を指し示します——150 ギガパスカルの深部の源圧から、海、クレーター、極、南極エイトケン盆地を経て、太平洋の海底、火星、そして太陽系の残りの部分まで。</p>
+<div class="road"><span>深部の源 · 150 GPa</span><i>→</i><span>海</span><i>→</i><span>クレーター</span><i>→</i><span>極</span><i>→</i><span>南極エイトケン盆地</span><i>→</i><span>太平洋の海底</span><i>→</i><span>火星</span><i>→</i><span class="end">太陽系</span></div>
+</section>
+
+<section>
+<span class="lab">AT A GLANCE</span>
+<h2>ラボボックス：八つの謎と角運動量の収支を一望する</h2>
+<div class="tw"><table><tr><th>#</th><th>月の謎</th><th>現実に測定されていること</th><th>衝突モデルが必要とすること</th><th>LEF モデルから導かれること</th></tr><tr><td>1</td><td>同位体組成</td><td>酸素の差 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><mi mathvariant="normal">O</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta^{17}\mathrm{O} = -1 \pm 5</annotation></semantics></math></span></span> ppm；Ti、Cr、W も一致</td><td>衝突天体と地球の完全混合（シネスティア）</td><td>物質ははじめから地球自身の物質</td></tr><tr><td>2</td><td>小さな金属核</td><td>地震学的半径 約 330 km（月の質量の約 1.4%）</td><td>衝突天体の核の大部分が地球に沈む</td><td>早い選別段階での移送；重い鉄は洋梨の中で沈み戻った</td></tr><tr><td>3</td><td>地殻の厚さの非対称</td><td>裏側が 8〜10 km 厚い（GRAIL）</td><td>二つめの「伴衛星」とののちの衝突</td><td>裏側はシアルと戻ってきた物質の層を集めた上部ドーム</td></tr><tr><td>4</td><td>同期自転</td><td>地球に常に同じ面を向ける</td><td>のちの潮汐固定</td><td>私たちに向く面は、月が洋梨につながっていた基部</td></tr><tr><td>5</td><td>保存の順序</td><td>裏側は古く、表側の海より先に閉じた</td><td>マグマオーシャンの不均一な冷却</td><td>裏側は宇宙に面して早く閉じた；表側は供給を受けて熱せられた</td></tr><tr><td>6</td><td>水と揮発性物質</td><td>古いメルト包有物中に 615〜1,410 ppm の水</td><td>衝撃による蒸発と「のちの水の補給」</td><td>揮発性物質がマグマを泡立たせ、上昇のために密度を下げた</td></tr><tr><td>7</td><td>重心のずれ</td><td>地球の方向へ約 2 km ずれている</td><td>伴衛星の副次的な結果</td><td>厚い裏側の地殻が重心を 1.24〜3.11 km 押しやる</td></tr><tr><td>8</td><td>軌道の傾き</td><td>黄道面に対して 5.145°</td><td>出差共鳴、接近遭遇、または極端な自転軸の傾き</td><td>緯度 22.5° からの解放がただちに傾き <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span> を与え、5.145° まで減衰する</td></tr></table></div>
+<h3 style="margin-top:28px">角運動量の収支</h3>
+<div class="tw"><table class="am"><tr><th>分離の経路 / モデル</th><th>速度がどこで一致するか</th><th>地球の一日の長さ</th><th>角運動量の比（今日 = 1.000）</th></tr><tr><td>古典的分裂（元の基準点）</td><td>表面</td><td>—</td><td class="no">約 4（4.08）——棄却</td></tr><tr><td>古典的分裂（ヤコビ分岐点）</td><td>表面</td><td>2.73 時間</td><td class="no">2.74——棄却</td></tr><tr class="hl"><td>LEF モデル（保存された収支）</td><td>共回転線（<span class="ltr">15,818 → 16,399</span> km）</td><td><span class="ltr">5.50 → 5.77</span> 時間</td><td><strong>1.007——ぴたりと閉じる</strong></td></tr></table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>私たちは八つの錠を机の上に並べ、鍵が回りはじめる場所を見ました。それは地球の表面の上での一か八かの投げ出しではなく、共回転線へのゆっくりとした、同期した旅です。次の章——<strong>第 1 章：ダーウィンの難問と共回転の革命</strong>——では、力学の制御室に入り、数字を間近で確かめます。</p>
+<a href="story01_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 1 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">ダーウィンの難問と共回転の革命 →</p></div></a>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

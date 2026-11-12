@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 24 章：すりつぶしのコンベヤーとしての環、衛星と惑星に残る署名、そしてアタカマの岩塊の検証 — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 24 章：すりつぶしのコンベヤーとしての環、衛星と惑星に残る署名、そしてアタカマの岩塊の検証。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story24_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story24_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story24_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story24_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story24_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <a href="story24_de.html" hreflang="de">Deutsch</a> · <a href="story24_es.html" hreflang="es">Español</a> · <a href="story24_fr.html" hreflang="fr">Français</a> · <a href="story24_ru.html" hreflang="ru">Русский</a> · <a href="story24_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 24 章</p>
+<h1>第 24 章：すりつぶしのコンベヤーとしての環、衛星と惑星に残る署名、そしてアタカマの岩塊の検証</h1>
+<p>論文 12——12. 環：環は砕き、すりつぶし、戻す（E–M 部：すりつぶしのコンベヤー、衛星と親に残る署名、アタカマの岩、5 つの反証の基準）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：環はどうやって衛星と惑星の表面を形づくるのか——そしてなぜ衛星のまわりには環がないのか？</h2>
+<p>第 23 章で、惑星の環は、1 日が 13.4 時間より短いとき、親から養われて物質を親へ戻すつりあった流れとして存在することを見ました。論文 12 の E–M 部で LEF モデルは、環があとに残す形態的・物理的な痕跡を調べます：</p>
+<ol class="steps">
+<li><strong>なぜパン、アトラス、ダフニスには空飛ぶ円盤のような赤道の「スカート」があるのに——ダイモスはなめらかな球へと磨かれたのか（G.1–G.4）？</strong>ダイモスはパンやアトラスより強い自己重力をもつのに、パンとアトラスは目立つ赤道の尾根をため、ダイモスは物質を失って完全にすり減ったのです！</li>
+<li><strong>太陽系のどの環が近い将来に消える運命にあるのか（F.3）？</strong>なぜ天王星と海王星のある種の細い環は、羊飼い衛星も地面からの供給もないのに、いまのところ生き残っているのか？</li>
+<li><strong>火星の表面のどこに古い環の名残が見つかりうるのか——そしてなぜ 2026 年 4 月に掘削された「アタカマ」の岩塊は退けられたのか（H.2–H.3）？</strong></li>
+<li><strong>なぜ太陽系のどの衛星のまわりにも環が見つかっていないのか——そして小さな天体（ハウメア、カリクロー、クワオアー）はどうやって 1:3 の共鳴で環を保っているのか（J.1–J.2）？</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>イメージ：一方通行のすりつぶしのコンベヤー、砥石に対するねばつく雪玉、そして土星の空の縞</h2>
+<p>四つの手にとれるイメージが、環の中の内部の選り分けと、環がまわりに刻む署名を説明します：</p>
+<ul>
+<li><strong>塊が入って塵が出る一方通行のすりつぶしのコンベヤー（E.1–E.3）：</strong>環の中で、同じ半径にある重い粒子と軽い粒子は同じケプラーの速さで動くので、密度で沈みわけられることはありません。選り分けは<strong>衝突での運動量の受けわたしを通して</strong>起こります。差し渡し ~ 100 m の硬い塊は安定した軌道を保ち、土星の A 環に<strong>「プロペラ」</strong>の形をしたきれいな通り道を自分のために掃き出します。一方、ごく小さな粒子はでたらめな速さを受け取り、大きな塊の薄い層（10 m）のまわりに上下に広がります。大きさの分布 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> は古典的なすりつぶしの署名です：大きな塊は環への新しい入りこみを示すのです！</li>
+<li><strong>ケイ酸塩の砥石に対する霜に覆われた雪玉（G.2–G.3）：</strong>環の組成が、そこを通る衛星が<em>質量を得る</em>のか<em>すり減らされる</em>のかを決めます。冷たく霜に覆われた氷の粒はゆっくり触れると互いにくっつき（Bridges ら 1984）、パン、アトラス、ダフニスに赤道の尾根を築きました。一方、火星の古い環は凝縮した蒸気と硬いケイ酸塩の粒でできていて、<strong>砥石</strong>として働き、ダイモスに質量を加えずに磨きあげたのです！</li>
+<li><strong>水への完全な浸かりと、球のまわりの細い糸（D/H の比、G.4）：</strong>衛星の直径が環の厚さより小さいとき（D &lt; H、火星の厚い蒸気の環の中のダイモス 14〜22 km や、メトネのように）、表面全体が浸かってなめらかにされます。D &gt; H のとき（厚さ数十 m の円盤の中のパン、アトラス、ダフニス）、極は環の上に突き出し、広い赤道の帯が築かれます。そして <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span> のとき（イアペトゥス）、環は細い糸として働くのです。</li>
+<li><strong>二つの雨の経路——赤道での中性の物質と、磁力線に沿った暗い縞（H.1）：</strong>2017 年のカッシーニの最後の突入で、環から土星への落下の二つの経路が測られました。中性の分子とナノメートルのケイ酸塩の粒はまっすぐ赤道へ降り、一方イオン化した水の分子は磁力線に沿って中緯度（赤道の両側 25°〜55°）へ流れ、<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span> イオンを中和して、赤外線で暗い縞をつくるのです！</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：環の一生、衛星に残る署名、そしてアタカマの岩塊の検証（E–J 部）</h2>
+<p>論文 12 の E–J 部は、環の名残をふつうの地質現象から見分けるための鋭い観測の検証を示します：</p>
+<ol class="steps">
+<li><strong>環の一生と、消えることが予想される環（F.1–F.3）：</strong>養う衛星も地面からのもれもない環は衰えの段階にあり、消えることが予想されます。だから<strong>天王星の衛星のない九本の細い環</strong>（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>）と<strong>海王星のガレ環とラッセル環</strong>は、水の逃げ出しと凍結のあと共回転線の下に残された死にゆく環と分類されます。衛星に支えられている天王星の <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span> 環や、海王星のアダムス環とルヴェリエ環とは対照的です。</li>
+<li><strong>環を通った衛星を見分けるための形態的な規則（G.1–G.5）：</strong>完全になめらかなケイ酸塩の衛星（エウロパやエンケラドゥスのような表面を新しくする地質活動がないもの）は、環の中心での長い滞在を示します。ダイモスではくぼみの深さの中央値は幅の 1.9%（6% より 84% 浅い）で、フォボスでは 5.5%、そしてその軌道はほとんど完全な円です（e = 0.0003）。横切る速さは衛星の質量で決まります：小さな衛星はゆっくり移動して深い署名をため、大きな衛星は速く押されて短い時間で環を横切るのです。</li>
+<li><strong>衛星のまわりの環の除外と、1:3 の共鳴での小さな天体の環の安定化（J.1–J.2）：</strong>太陽系のどの衛星も環をもっていません（レアのまわりの疑われた環でさえ Tiscareno ら 2010 で完全に除外された）。親惑星の重力が支配して、衛星から放出された物質をすべて親の環へ捕らえてしまうからです。これに対して、小さな天体（ハウメア、カリクロー、クワオアー）のまわりでは、五つの環のうち四つが共回転線の上の <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> の範囲にあります——まさに<strong>1:3 のスピン・軌道共鳴</strong>の半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>）で、そこでは粒子は親が 3 回自転するごとに 1 周するのです。</li>
+<li><strong>火星の「アタカマ」の岩塊の検証（2026 年 4 月 25 日、H.3）：</strong>探査車キュリオシティがゲール・クレーターで離れた岩塊「アタカマ」（~ 45 cm、~ 13 kg）を掘削したとき、それが火星の古い環から落ちた固い名残である可能性が調べられました。検証はこれを完全に退け（乾燥のひびをもつ含水硫酸塩の層状の堆積岩で、その下の層と同じ組成をもち、シャープ山のユニットに属する）、<strong>火星で本物の環の名残を見分けるための四つの厳しい基準</strong>を定めました：水でできた層状構造のない火山性/スポンジ状の岩、加熱を受けた乾いた鉱物、大気突入による溶融皮殻、そして地元の地質の層とは異質な組成（フォボスとダイモスと一致する）です。</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="共回転線を単位とした環の位置" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >木星 · ⁦0.57–1.41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >土星 · ⁦0.60–1.23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >天王星 · ⁦0.51–0.62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >海王星 · ⁦0.50–0.75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >ハウメア · ⁦2.07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >カリクロー · ⁦2.10 ; 2.18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >クワオアー · ⁦1.25 ; 2.01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >共回転線を単位とした環の位置 · 青：共回転線 · 赤：2.08 の 1:3 共鳴</text></svg><figcaption>環の二つの族：共回転線のまわりと下にある巨大惑星の環と、その上にあって 1:3 の共鳴のまわりに集まる小さな天体の環。</figcaption></figure><div class="callout"><span class="tag">環への太陽の放射の効果——「スポーク」、イオン化した雨、ポインティング・ロバートソン抵抗（I 部）</span><p style="margin:0">太陽の放射は三つの仕組みで環に働きます：（1）マイクロメートルの塵の静電的な帯電で、それは<strong>「スポーク」</strong>として B 環の面の上に浮かび、春分・秋分のころにピークを迎える；（2）水分子の紫外線による電離で、それが磁力線に沿った<strong>イオン化した雨</strong>を速める；そして（3）<strong>ポインティング・ロバートソンの放射抵抗</strong>で、それがごく小さな塵の粒子にブレーキをかけ、内へ親の上へと落とし戻すのです！</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：火星での見分けの基準、系統的な調査、そして五つの反証の検証</h2>
+<p>論文 12 の H.2–H.3 部と K–M 部は、惑星の表面に残る地質の痕跡と、LEF モデルの環の理論を検証または反証できる実験の規則を集めます：</p>
+<ol class="steps">
+<li><strong>火星の古い環の名残を探す四つの目標（§H.2）：</strong>火星の蒸気とケイ酸塩の環が 35〜37 億年前に乾いたとき、その物質は表面に降りつもりました。四つの探索目標は：（a）地面からの流れの源をもたない、厚く密度の低い赤道の堆積物（<strong>メドゥーサエ・フォッサエ層</strong>のような）；（b）地元のまわりからずれ、フォボスとダイモスと一致する重水素と水素（D/H）の署名；（c）ゲール・クレーターのシャープ山の、火山性の組成の石と暗く硬い指標層；そして（d）環があったあいだ火星に活発な双極子の磁場があったなら、中緯度の対称な堆積の帯です。</li>
+<li><strong>天体ごとの系統的な調査のまとめ（K 部）：</strong>太陽系の各系は、環のサイクルのなかではっきりした役割をもっています：地球（洋梨が赤道の帯を掃いたので長続きする環はない）；火星（地面からの古い環がダイモスとフォボスを動かし、地殻が閉じたときに消えた）；木星（もっとも厚いガスのふたのために衛星からだけの塵の環）；土星（地面と衛星からのつりあった流れの中の巨大な氷の環）；天王星と海王星（水の逃げ出しのあと共回転線の下に残った細く暗い名残で、衛星のない環は死にゆく）；そしてハウメア、カリクロー、クワオアー（衛星へ合体しない、1:3 の共鳴の中の共回転線の上の密な環）。</li>
+<li><strong>L.3 部の五つの鋭い反証の基準：</strong>モデルは五つのはっきりした反証の条件を定めます：（1）環の円盤から衛星が合体するのを直接観測すること；（2）一度も環の環境にとどまったことのない、完全になめらかなケイ酸塩の衛星を発見すること；（3）同位体の組成が親と矛盾し、系の外の源と一致する惑星の環を測ること；（4）安定させる軌道共鳴のない、大きな惑星の共回転線のはるか上の重い環を発見すること；あるいは（5）養う衛星も地面からの供給もないのに、地質学的な時間にわたって枯渇せずに質量を保つ環を記録すること。</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>すりつぶしの環の塊の大きさの分布と、小さな天体のまわりの環を捕らえる 1:3 のスピン・軌道共鳴の半径は、次のように定式化されます（§E.2、§J.2）：</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>べき乗則 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> は、衝突での絶え間ない破砕とすりつぶしの系を特徴づけます（Zebker ら 1985）。一方、共鳴の半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span> は、ハウメア、カリクロー、クワオアーの五つの環のうち四つが、なぜ共回転線の上の <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> の範囲にちょうどあるのかを説明します。</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：アタカマの岩塊の検証（2026 年 4 月）と、消えることが予想される環</h2>
+<p>二つの中心的な観測の発見が、LEF の環の理論が生きた経験的な検証にどう耐えるかを示します（§F.3、§H.3）：</p>
+<ul>
+<li><strong>キュリオシティでのアタカマの岩のふるい分けの手順（2026 年 4 月 25 日）：</strong>ゲール・クレーターの離れたアタカマの岩塊（~ 45 cm、~ 13 kg）の地球化学的な分析は、それが乾燥のひびをもつ含水硫酸塩の堆積岩で、その下の層と同じであることを示しました——そこで、火星で本物の環の名残を見分けるための四つの閾値の条件（火山性/スポンジ状の組織、乾いた鉱物、溶融皮殻、異質な組成）が定められたのです。</li>
+<li><strong>太陽系の死にゆく環のリスト（§F.3）：</strong>天王星の衛星のない九本の細い環（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>）と海王星のガレ環とラッセル環は、これからの観測で細りつづけて消えることが予想されます。一方、土星の D、C、B 環は、内部のポンプが養うかぎり存在しつづけるでしょう。</li>
+</ul>
+<h3 style="margin-top:28px">ラボボックス：環の組成と D/H の比が衛星に与える効果、系統的な調査、反証の基準（論文 12、E–M 部）</h3>
+<div class="tw"><table class="lab">
+<tr><th>衛星</th><th>直径 / 密度</th><th>自己重力（m/s²）</th><th>環の環境と D/H の比</th><th>形態の署名</th></tr>
+<tr class="hl"><td><strong>ダイモス</strong></td><td>12.4 km / 1,471 kg/m³</td><td>0.0025</td><td><strong>ケイ酸塩と蒸気</strong>（D &lt; H、完全に浸かる）</td><td><strong>なめらかな球へと完全にすり減る</strong>（くぼみの深さの中央値 1.9%）</td></tr>
+<tr><td><strong>フォボス</strong></td><td>22.2 km / 1,860 kg/m³</td><td>0.0058</td><td>薄れていくガスの縁</td><td>部分的な摩耗だけ；溝を保った（5.5%）</td></tr>
+<tr class="hl"><td><strong>パン、アトラス、ダフニス</strong></td><td>7.6〜30 km / 340〜460 kg/m³</td><td>0.0004〜0.0019</td><td><strong>水の氷</strong>（D &gt; H、極が突き出る）</td><td><strong>目立つ赤道の尾根の集積</strong>（「円盤」の形）</td></tr>
+<tr><td><strong>メトネ</strong></td><td>2.9 km / 310 kg/m³</td><td>0.0001</td><td>G 環の近くの弧の中の氷（D &lt; H）</td><td>なめらかで覆われている</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>太陽系の系</th><th>今日の環の状態</th><th>供給源</th><th>共回転線に対する位置と LEF の解釈</th></tr>
+<tr><td><strong>地球 / 火星</strong></td><td>なし / 過去にあった</td><td>火星：ふくらみからの蒸気と岩</td><td>地球：洋梨が線を掃いた；火星：地殻が閉じた 35〜37 億年前に消えた</td></tr>
+<tr><td><strong>木星</strong></td><td>薄い塵</td><td>内側の衛星（メティスからテーベまで）</td><td>線のまわり（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>）；厚いガスのふたが内部のもれを封じる</td></tr>
+<tr class="hl"><td><strong>土星</strong></td><td><strong>重い（95%〜99% が氷）</strong></td><td><strong>地面から（D、C、B、A）と衛星から（E、F、G）</strong></td><td><strong>絶え間ないつりあった流れ</strong>（P = 10.6 h &lt; 13.4 h）；A の縁はロッシュ限界</td></tr>
+<tr><td><strong>天王星 / 海王星</strong></td><td>細く暗い（そして弧）</td><td>一部は衛星から、一部は衛星なし</td><td>線の下（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>）；衛星のない環は消えることが予想される</td></tr>
+<tr class="hl"><td><strong>ハウメア、カリクロー、クワオアー</strong></td><td>密</td><td>ハウメア：長軸の端</td><td>線の上（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>）、<strong>1:3 の共鳴</strong>に捕らえられる；衛星を築かない</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>第 23〜24 章で、私たちは LEF モデルの環の理論を完成させました。重い環のための<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> 時間の普遍的な閾値の日</strong>を導き、土星の環を動的なつりあいの中の絶え間ない流れとして説明し、天王星と海王星の水と角運動量の行方を追い、衛星（ダイモスの摩耗とパンやアトラスの尾根の構築の対比）と火星（アタカマの岩の検証とメドゥーサエ・フォッサエの堆積物）に残る形態の署名を定めたのです。</p>
+<a href="story25_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 25 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF モデルの基本要件（R1–R8）——同位体、核、地殻、質量中心のずれ、露出の地帯 →</p></div></a>
+<p style="margin-top:22px"><a href="story23_ja.html">← 第 23 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 3 章：内なるエンジン——150 GPa の源圧と泡立つマグマ — LEF モデル</title>
+<meta name="description" content="LEF モデルの物語の第 3 章：150 GPa の源圧、泡立つマグマの密度しきい値 3,864 kg/m³、流量、エネルギー源、そしてなぜ通路が細い管ではなく洋梨なのか。">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story03_ja.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans JP','Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story03_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story03_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story03_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story03_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story03_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story03_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story03_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story03_ja.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story03_he.html" hreflang="he">עברית</a> · <a href="story03_en.html" hreflang="en">English</a> · <a href="story03_de.html" hreflang="de">Deutsch</a> · <a href="story03_es.html" hreflang="es">Español</a> · <a href="story03_fr.html" hreflang="fr">Français</a> · <a href="story03_ru.html" hreflang="ru">Русский</a> · <a href="story03_zh.html" hreflang="zh">中文</a> · <b>日本語</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 第 3 章</p>
+<h1>第 3 章：内なるエンジン——<span class="ltr">150 GPa</span> の源圧と泡立つマグマ</h1>
+<p>論文 03——LEF 機構の実際（序論および A 部：§A.1–A.13）にもとづく</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>謎：7,300 京トンを高さ 16,000 キロメートルまで押し上げたのは誰か？</h2>
+<p class="lead">これまでの章で私たちは、共回転線が速度の謎と角運動量の収支の謎を解くことを見ました。月の物質を地球とともに回したまま地球の中心から約 16,000 km まで運べさえすれば、それはもう自由な軌道の速度で動いているのです。しかしいま、私たちは現実のもっとも難しい問いに向き合います：</p>
+<div class="q">世の中のどんな力が、地球の重力に逆らって <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg もの巨大な質量を持ち上げられるのか？</div>
+<p>この課題がどれほど厳しいかを理解するために、まず魅力的だけれどうまくいかない二つの提案を見てみましょう。第一に、<strong>自転だけでは何も持ち上がりません</strong>。5.5 時間ごとに回る地球の表面でさえ、中心から 8,991 km の高さ（地表に接する月の質量の天体）では、重力は <span class="ltr">4.93 m/s²</span> の加速度で内へ引き、外向きの遠心的な押しはわずか <span class="ltr">0.905 m/s²</span> です。どの 1 キログラムも、今日の地表での重さの約 40% の重さで下へ引かれているのです！自転は重さを軽くはしますが、支えはしません。</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">内向きの重力 · ⁦4.93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:ltr;unicode-bidi:embed">外向きの遠心的な押し · ⁦0.905 m/s²⁩</text></svg><figcaption>中心から 8,991 km、一日 5.5 時間のとき：重力は遠心的な押しの 5 倍以上。</figcaption></figure>
+<p>第二に、<strong>浮力は宇宙では働きません</strong>。油が水に浮くのは、まわりのより重い水がそれを押し上げるからですが、地球の表面の上には月を浮かび上がらせる岩の海はありません。</p>
+<div class="box"><span class="tag">結論</span><p style="margin:0">結論ははっきりしています。地球自身の物質から衛星を建造するには、内側から働く<strong>巨大な内部の圧力エンジン</strong>が必要です——地球の深部からマグマの柱を押し上げ、十分な速さで質量を供給し、その頂上で建造されつつある衛星の重さで崩れないエンジンです。</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>イメージ：歯みがき粉、屋上まで上がる水、そして開けられた炭酸飲料のびん</h2>
+<p>このエンジンがどう働くかを手ざわりで感じるために、日常生活の三つの単純なイメージを組み合わせてみましょう：</p>
+<div class="three t">
+<div><b>01 · 源圧</b><h4>歯みがき粉のチューブ</h4><p>若い地球の深部では、上にあるすべての層の重さがものすごい圧力を生みます。ある有利な地域で深部から表面への流れの通り道が開くと、内部の圧力が溶けた岩石を上へ押し出します——チューブを押すと歯みがき粉が口から出てくるのとまったく同じように。</p></div>
+<div><b>02 · 静水圧ヘッド</b><h4>屋上のタンクへ水を上げるポンプ</h4><p>地下室のポンプが高層ビルの屋上のタンクへ水を送るには、その圧力が管の中の水の柱全体の重さより大きくなければなりません。水が重すぎたり建物が高すぎたりすると、水の柱は途中で止まってしまいます。</p></div>
+<div><b>03 · 泡立つマグマ</b><h4>開けられた炭酸飲料のびん</h4><p>大きな深さと圧力のもとでは、水と揮発性のガスが、栓をした炭酸飲料のびんの中のガスのように溶けた岩石に溶けこんでいます。マグマが上昇して圧力が下がるとすぐに、ガスが出てきて何十億もの泡をつくります——<strong>泡立つマグマ</strong>です。この泡は固い岩よりずっと軽いので、まったく同じ圧力でずっと高くまで持ち上げられるのです！</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>科学とモデル：なぜ乾いた岩は失敗し——揮発性物質に富むマグマだけがしきい値を越えるのか</h2>
+<p>LEF モデルでは、圧力が足りると推測するのではなく、まったく同じ重力場の中で<strong>押し上げの値段をつけます</strong>。計算の前に、論文 03 は厳密な帳簿のルールを定めます。どの瞬間にも、母天体の初期質量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> kg）は四つの明確な貯蔵所に分けられ、どの 1 キログラムも二重に数えられることはありません：</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>地球に残る質量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>発達しつつある天体に蓄積した質量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>両者のあいだを移動中、または放出中の質量</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>そして系から失われた質量</span></div></div>
+<p>次に論文は、若い地球の中心（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> km、一日 5.5 時間）から母天体全体の共回転半径（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> km）まで、マグマの柱に沿った一次元の圧力検証を組み立てます：</p>
+<ul class="pts">
+<li><strong>源で利用できる圧力</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>：</strong>若い地球の中心にのしかかる層の重さ（速い自転による遠心的な軽減を差し引いたもの）は、<strong><span class="ltr">150.26 GPa</span></strong>（約 150 万気圧！）の岩圧的な源圧を与えます。</li>
+<li class="a"><strong>マグマの柱の代価</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>：</strong>密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> kg/m³ の深部マグマでできていて、地表の上では密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> kg/m³ まで泡立つマグマの柱を支えるには、<strong><span class="ltr">139.78 GPa</span></strong> の圧力が必要です。</li>
+<li class="c"><strong>月を押し上げる余剰：</strong><span class="ltr">150.26 − 139.78 = <strong><span class="ltr">+10.49 GPa</span></strong></span>！10 ギガパスカルを超える正の圧力の余剰が残り、流れを上へ駆動します。</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">源圧 · ⁦150.26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">マグマの柱の代価 · ⁦139.78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:ltr;unicode-bidi:embed">余剰：⁦+⁦10.49 GPa⁩⁩</text></svg><figcaption>基準密度 3,500 kg/m³ での圧力のつり合い：源圧がマグマの柱の重さをまかない、余剰が残る。</figcaption></figure>
+<div class="callout"><span class="tag">臨界密度しきい値 · 3,864 kg/m³</span>
+<p style="margin:0">どのマグマ密度が検証を通るかを調べると、はっきりした境界が現れます。密度が <strong>3,864 kg/m³</strong> より低い深部マグマ（水と揮発性物質に富むマグマのような）は正の圧力余剰を残して共回転線に達します。これに対して密度 4,000 kg/m³ の乾いた重いマグマは <span class="ltr">154.19 GPa</span> を必要とし、<span class="ltr">−3.92 GPa</span> の不足で失敗します。<strong>水と揮発性物質は付随的な添加物ではなく——月の上昇を可能にする物理的な条件なのです！</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68.12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24.89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10.49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3.92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18.33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="end" style="direction:ltr;unicode-bidi:embed">しきい値：3,864 kg/m³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">マグマが上昇</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">失敗</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">深部マグマの密度（kg/m³）</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:ltr;unicode-bidi:embed">圧力余剰（GPa）</text></svg><figcaption>論文 03 による、深部マグマの密度に対する圧力余剰（荷重と摩擦の前）：線は 3,864 kg/m³ でゼロを横切る。</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>言葉で語る仕組み：流量、エネルギー源、そして細い管の否定</h2>
+<p><span class="ltr">10.49 GPa</span> の圧力余剰が、泡立つマグマの柱を共回転線まで押し上げられることがわかりました。しかし月をまるごと建造するには、内部エンジンは同じ体系の中で<strong>さらに三つの実際的な検証</strong>を通らなければなりません：</p>
+<div class="three">
+<div><b>TEST 1</b><h4>速さの検証</h4><p>マグマは間に合うのか？6 億年の建造期間（感度検証では 1 億年）で月まるごとの質量（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg）を届けるには、平均 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> kg/s の速さが必要です（短い期間では最大 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> kg/s）。粘性流の法則（ポアズイユ）によれば、流量は<strong>通路の半径の 4 乗</strong>で増します（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>）。半径数百キロメートル以上の通路は、内部が高温で動きやすいかぎり、その質量を楽に運べます。</p></div>
+<div><b>TEST 2</b><h4>エネルギーの検証</h4><p>月を持ち上げる仕事はどこから来るのか？月の質量を表面（8,991 km）から解放半径（16,400 km）まで持ち上げるには、約 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span> ジュール</strong>の重力的な仕事が必要です（地球の結合エネルギーの 1% 未満）。このエネルギーはどこから来るのか？内部の進化を駆動するまったく同じ過程からです。<strong>重い鉄が地球の核へ沈むこと</strong>と若い地球の収縮が、約 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span> ジュールの重力エネルギーを解放します——持ち上げをまかなうには十分すぎるほどです！</p></div>
+<div><b>TEST 3</b><h4>断熱する地殻の検証</h4><p>通路は途中で凍りつくのをどうやって避けるのか？通路の内部は下から熱を供給されて液体のままですが、外側の表面は冷たい周囲と接して凍ります。凍結前線の方程式によれば、外殻の最初の 1 メートルはわずか <strong>1.9〜23 日</strong>で固まり、1 キロメートルには数千〜数万年、厚さ 50 km の殻には数百万年かかります——こうして固い断熱の殻ができ、内部の芯を高温で流れるままに保つのです。</p></div>
+</div>
+<div class="box"><span class="tag">総合検証の驚くべき発見</span>
+<h3 style="margin-top:4px">なぜ「細い管」は完全に否定されるのか</h3>
+<p style="margin:0">最後の上昇段階（一日 5.77 時間、緯度 22.5°、月の中心が 15,397 km）で圧力、流れ、月の重さを同時に検証すると、劇的な結果が現れます。通路が半径 500 km の細い管だったなら、管の先端にのしかかる月の重さが <span class="ltr">46.18 GPa</span> の荷重を生み、圧力余剰をまるごと <span class="ltr">−35.03 GPa</span> の不足へと打ち消してしまいます。径方向のつり合いが正になるのは<strong>通路の半径が 1,017 km を超えてから</strong>で——その半径では、通路の外側の部分そのものがすでに<strong>月の質量の 0.46 倍</strong>（半径 1,500 km では——月の質量まるごと！）の重さをもち、数ギガパスカルの横向きのせん断応力を担っています。<strong>結論：</strong>通路は質量のない細い管ではなく、地球そのものの広く、熱く、重い基部——<strong>洋梨</strong>なのです！</p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>学術的な説明と鍵となる方程式</h2>
+<p>供給経路に沿った圧力のつり合いは、中心での岩圧的な源圧（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>）、深部（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>）と外部（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>）のマグマの柱の静水圧ヘッド、柱の頂上にある天体の重さの荷重（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>）、そして粘性摩擦の損失（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>）を結びつけます：</p>
+<div class="eqs">
+<div class="eq"><div class="k">源圧</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">マグマの柱の代価</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>持ち上げの条件と密度しきい値</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>、長さ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> の通路の層流（ポアズイユの法則）、外殻の凍結前線が厚くなる速さ（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>）、そして持ち上げの重力的な仕事（<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>）について：</p>
+<div class="eqs">
+<div class="eq"><div class="k">流量（ポアズイユ）</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">凍結前線</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">持ち上げの仕事</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>現実に残る署名：月の結晶の中のメルト包有物</h2>
+<p>物理的な検証は、水と揮発性物質に富む（3,864 kg/m³ より軽い）マグマだけが <span class="ltr">150.26 GPa</span> の圧力しきい値を越えて共回転線まで上がれることを示しました。もし月が水を蒸発させる乾いた灼熱の巨大衝突から生まれたのなら、その古い岩石は完全に乾いているはずです。</p>
+<p>ところが科学者たちが高度な顕微鏡で<strong>メルト包有物</strong>——月の深部で成長したかんらん石の結晶の中に閉じこめられ、水が宇宙へ逃げるのを防いできた古いマグマの微小な滴——を調べると、驚くべき署名が見つかりました。<strong>615〜1,410 ppm</strong> という高い含水量で、地球の上部マントルの濃度に近いものです。</p>
+<div class="q">月の結晶の中に見つかった水は、月を上へ押し上げたあの古い「泡立ちエンジン」の化石なのです！</div>
+<h3 style="margin-top:28px">ラボボックス：圧力のつり合い、密度しきい値、総合検証（論文 03、A 部）</h3>
+<div class="tw"><table class="d"><tr><th>深部マグマの密度 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>利用できる源圧 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>マグマの柱の代価 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>荷重と摩擦の前の圧力余剰</th><th>持ち上げ検証の結果</th></tr>
+<tr><td>1,500 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">82.14 GPa</span></td><td class="ok2"><span class="ltr">+68.12 GPa</span></td><td class="ok2">楽に通過（強く泡立ったマグマ）</td></tr>
+<tr><td>3,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">125.37 GPa</span></td><td class="ok2"><span class="ltr">+24.89 GPa</span></td><td class="ok2">通過（揮発性物質に富むマグマ）</td></tr>
+<tr class="hl"><td>3,500 kg/m³（基準）</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">139.78 GPa</span></td><td class="ok"><span class="ltr">+10.49 GPa</span></td><td class="ok">通過——余剰が建造を駆動する</td></tr>
+<tr class="hl"><td>3,864 kg/m³（しきい値）</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">150.26 GPa</span></td><td class="eq0"><span class="ltr">0.00 GPa</span></td><td class="eq0">ちょうどのつり合い点</td></tr>
+<tr><td>4,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">154.19 GPa</span></td><td class="bad"><span class="ltr">−3.92 GPa</span></td><td class="bad">失敗（乾きすぎて重すぎるマグマ）</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>通路の半径 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>月の径方向の荷重</th><th>流れの摩擦損失</th><th>径方向の余剰</th><th>横向きのせん断応力（22.5°）</th><th>外側の通路の質量（月の質量単位）</th></tr>
+<tr><td>500 km</td><td><span class="ltr">46.18 GPa</span></td><td><span class="ltr">0.0103 GPa</span></td><td class="bad"><span class="ltr">−35.03 GPa</span>（失敗）</td><td><span class="ltr">46.04 GPa</span></td><td>0.112</td></tr>
+<tr><td>1,000 km</td><td><span class="ltr">11.54 GPa</span></td><td><span class="ltr">0.0006 GPa</span></td><td class="bad2"><span class="ltr">−0.39 GPa</span>（しきい値：1,017 km）</td><td><span class="ltr">11.51 GPa</span></td><td>0.448（ほぼ月の半分！）</td></tr>
+<tr class="hl"><td>1,500 km（接触円盤）</td><td><span class="ltr">5.13 GPa</span></td><td><span class="ltr">0.0001 GPa</span></td><td class="ok"><span class="ltr">+6.02 GPa</span>（通過！）</td><td><span class="ltr">5.12 GPa</span></td><td class="ok">1.008（重い構造——洋梨）</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>この先の扉</h2>
+<p>内なるエンジンがどう働くかがわかりました。<span class="ltr">150.26 GPa</span> の深部の源圧が 3,864 kg/m³ より軽い泡立つマグマを持ち上げ、総合検証はここに細い管などないこと——地球から立ち上がる広く重い通路があることを明らかにしました。</p>
+<p>では、その建造区域のちょうど真上にあった地球の外側の地殻はどうなったのでしょう？次の章——<strong>第 4 章：外から立ち上がる皮——ドームの 4 段階と月の顔の翻訳規則</strong>（論文 03、B 部：§B.1–B.7）——では、地球のシアルの殻が天体とともに持ち上がって月の皮となり、月の顔を三つの正確な地理的区域に分けたことを発見します。</p>
+<a href="story04_ja.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">第 4 章</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">外から立ち上がる皮——ドームの 4 段階と月の顔の翻訳規則 →</p></div></a>
+<p style="margin-top:22px"><a href="story02_ja.html">← 第 2 章</a> · <a href="story00_ja.html">序章</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF モデル · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
