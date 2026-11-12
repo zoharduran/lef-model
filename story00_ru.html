@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пролог: восемь загадок Луны — Модель LEF</title>
+<meta name="description" content="Пролог к истории модели LEF: восемь измеренных свойств Луны, которые должна объяснить любая теория её рождения, и почему высвобождение на линии коротации замыкает баланс углового момента.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story00_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story00_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story00_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story00_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story00_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story00_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story00_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story00_he.html" hreflang="he">עברית</a> · <a href="story00_en.html" hreflang="en">English</a> · <a href="story00_de.html" hreflang="de">Deutsch</a> · <a href="story00_es.html" hreflang="es">Español</a> · <a href="story00_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in"><svg class="moon" viewBox="0 0 300 300" aria-hidden="true"><defs><radialGradient id="mg" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#f6f1e4"/><stop offset=".6" stop-color="#d9d2bf"/><stop offset="1" stop-color="#9c967f"/></radialGradient><radialGradient id="glow" r=".5"><stop offset=".6" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle cx="150" cy="150" r="148" fill="url(#glow)"/><circle cx="150" cy="150" r="105" fill="url(#mg)"/><g fill="#a9a28b" opacity=".55"><ellipse cx="118" cy="120" rx="30" ry="22"/><ellipse cx="170" cy="105" rx="18" ry="14"/><ellipse cx="135" cy="168" rx="22" ry="15"/><circle cx="190" cy="175" r="9"/><circle cx="96" cy="182" r="6"/><circle cx="205" cy="135" r="5"/></g></svg>
+<p class="kick">LEF MODEL · ПРОЛОГ</p>
+<h1>Пролог: восемь загадок Луны</h1>
+<p>О ближайшей соседке Земли — и о том, что нужно, чтобы объяснить её рождение</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: так близко — и всё же тайна</h2>
+<p class="lead">Луна висит в нашем ночном небе так близко, что мы склонны думать, будто уже знаем о ней всё. Мы отправляли к ней зонды, высаживали на неё астронавтов, привезли оттуда сотни килограммов камней и пыли и нанесли на карту каждый кратер, каждую долину и каждый хребет её поверхности с точностью до нескольких метров. И всё же, когда все эти данные выкладывают на лабораторный стол и задают один простой вопрос —</p>
+<div class="q">Как родилась Луна и откуда она взялась?</div>
+<p>— Луна оказывается одним из самых загадочных тел Солнечной системы.</p>
+<p>Проблема не в нехватке информации, а в избытке странных свойств, противоречащих друг другу. С одной стороны, Луна похожа на Землю почти невероятно: её химический и ядерный отпечаток совпадает с земным с точностью до нескольких миллионных долей. С другой стороны, у неё поразительно крошечное железное ядро, её кора гораздо толще на обратной стороне, чем на стороне, обращённой к нам, её орбита наклонена на 5,145 градуса к плоскости эклиптики, а её центр масс смещён примерно на два километра в сторону Земли.</p>
+<p>Уже более ста сорока лет планетология пытается разгадать это сочетание свойств. Общепринятая сегодня теория — <strong>теория гигантского столкновения</strong> — предполагает, что около 4,5 миллиарда лет назад тело размером с Марс (названное «Тейей») врезалось в молодую Землю, и Луна сгустилась из облака обломков, выброшенного в космос. Эта теория совершила научную революцию, но чтобы объяснить восемь особых свойств Луны, ей приходилось снова и снова добавлять вспомогательные гипотезы, особые сценарии и поздние поправки.</p>
+<p>А что, если существует совсем другой путь? Что, если Луна вовсе не была собрана из обломков, сгустившихся в космосе после катастрофического столкновения, — а была построена <strong>из собственного вещества Земли, пока ещё была к ней прикреплена</strong>, и отпущена на свободную орбиту ровно там, где вращение Земли уже придало ей скорость, которую требует орбита?</p>
+<div class="box"><span class="tag">LEF</span><p style="margin:0">Это центральная идея <strong>модели LEF</strong> (<em>Lunar Elevation and Fission</em>). Прежде чем отправиться в полное путешествие, которое раскроет механизм, познакомимся с восемью измеренными фактами, служащими испытанием, — восемью загадками, которые должна объяснить любая теория рождения Луны.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: сейф с восемью замками</h2>
+<p>Представьте старинный стальной сейф, запертый на восемь разных замков.</p>
+<div class="vault">
+<div class="side a"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#f4ecd8" stroke="#e3dccb"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#b23a2e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#b23a2e"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c47f2c" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c47f2c"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#7a5ea8" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#7a5ea8"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#3a7bbf" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#3a7bbf"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#9a6b4f" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#9a6b4f"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#5b6676" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#5b6676"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#c86a5e" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#c86a5e"/><circle cy="3" r="2.4" fill="#fff"/></g><circle cx="110" cy="100" r="26" fill="#fff" stroke="#c9c0ab" stroke-dasharray="3 3"/><text x="110" y="105" text-anchor="middle" font-size="13" fill="#9a3f33" font-family="Heebo">8 инструментов</text></svg><h4>Восемь разных инструментов</h4><p>Можно попытаться вскрыть каждый замок отдельно, своим инструментом: первый просверлить, второй открыть самодельным ключом, третий распилить, а к четвёртому подогнать особый переходник. В конце концов дверь, возможно, откроется, но на полу останутся восемь разных инструментов, не имеющих ничего общего друг с другом.</p></div>
+<div class="side b"><svg viewBox="0 0 220 200" aria-hidden="true"><circle cx="110" cy="100" r="86" fill="#e8f2ec" stroke="#cfe3d7"/><g transform="translate(110.0,30.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(180.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(159.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110.0,170.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,149.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(40.0,100.0)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(60.5,50.5)"><path d="M-7,-4 v-5 a7,7 0 0 1 14,0 v5" fill="none" stroke="#2f7d57" stroke-width="2.6"/><rect x="-10" y="-4" width="20" height="16" rx="3" fill="#2f7d57"/><circle cy="3" r="2.4" fill="#fff"/></g><g transform="translate(110,100)"><circle cx="-12" r="11" fill="none" stroke="#2f7d57" stroke-width="5"/><rect x="-2" y="-3" width="30" height="6" fill="#2f7d57"/><rect x="18" y="3" width="4" height="7" fill="#2f7d57"/><rect x="24" y="3" width="4" height="5" fill="#2f7d57"/></g></svg><h4>Один мастер-ключ</h4><p>Но есть и вторая возможность: искать <strong>один мастер-ключ</strong> — единый геометрический и механический ключ, который при повороте открывает все восемь замков один за другим одним и тем же движением.</p></div>
+</div>
+<p>В науке этот принцип называется <strong>научной экономностью</strong>. Когда восемь разных явлений находятся на одном и том же небесном теле, мы хотим знать, являются ли они результатом восьми совпадений и поздних добавлений — или разными проявлениями одного непрерывного и согласованного физического процесса.</p>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: восемь загадок и «заплатки» теории столкновения</h2>
+<p>Если положить рядом восемь измеренных свойств Луны, проявляется удивительный разрыв между тем, как с ними обращается семейство моделей гигантского столкновения, и тем, как естественно они вытекают из модели LEF:</p>
+<div class="legend"><span class="m">Что измерено</span><span class="i">Чего требует модель столкновения</span><span class="l">Направление в модели LEF</span></div>
+<div class="cards">
+<article class="card"><header><span class="n">1</span><h3>Полное изотопное тождество</h3></header><div class="row m"><div class="k">Что измерено</div><div>Изотопы — это разные формы одного химического элемента, отличающиеся лишь массой ядра; они служат «удостоверением личности» происхождения. У Луны и Земли изотопные отношения кислорода, титана, хрома и вольфрама почти в точности совпадают: для кислорода расхождение составляет всего <span class="num">−1 ± 5 миллионных долей (ppm)</span>.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Поскольку чужое ударное тело должно было принести иную изотопную подпись, модель вынуждена предполагать полное тепловое и изотопное перемешивание ударника с Землёй (например, через экстремальное промежуточное состояние — «синестию» — или удар экстремальной энергии).</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Луна сделана из собственного вещества Земли, поэтому изотопное тождество — не загадка, требующая механизма перемешивания, а естественная отправная точка.</div></div></article>
+<article class="card"><header><span class="n">2</span><h3>Крошечное металлическое ядро</h3></header><div class="row m"><div class="k">Что измерено</div><div>Сейсмические измерения показывают, что железное ядро Луны поразительно мало: его радиус всего около <span class="num">330 км</span>, и оно составляет около <span class="num">1,4%</span> массы Луны (против примерно <span class="num">32%</span> массы Земли).</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Предполагается, что железное ядро ударника утонуло в Земле и слилось с её ядром, а в диске обломков осталась лишь малая часть.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Питание, построившее Луну, началось рано, когда железо Земли ещё опускалось к центру, а структура, соединявшая два тела, работала как сортировочная колонна, возвращавшая большую часть тяжёлого железа в Землю.</div></div></article>
+<article class="card"><header><span class="n">3</span><h3>Асимметрия толщины коры</h3></header><div class="row m"><div class="k">Что измерено</div><div>Гравитационные измерения миссии GRAIL показали, что кора обратной стороны Луны толще, чем видимой, примерно на <span class="num">8–10 км</span> (около 10 км между центром видимой стороны и обратной стороной и около 8 км в среднем по полушариям).</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Была предложена гипотеза «луны-спутницы» — второй маленькой луны, которая медленно столкнулась с обратной стороной главной Луны и растеклась по ней.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Обратная сторона была верхним куполом поднимающегося тела, к которому мигрировал и слоями накапливался лёгкий коровый материал (сиаль) вместе с выброшенным веществом, падавшим на него снова и снова; видимая сторона была основанием связи с Землёй.</div></div></article>
+<article class="card"><header><span class="n">4</span><h3>Синхронное вращение — одна сторона всегда к Земле</h3></header><div class="row m"><div class="k">Что измерено</div><div>Луна постоянно обращена к Земле одной стороной.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Позднего приливного захвата, затормозившего вращение Луны до совпадения с её орбитальным периодом.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Обращённая к нам сторона — это просто та сторона, которой Луна была прикреплена к Земле до отделения.</div></div></article>
+<article class="card"><header><span class="n">5</span><h3>Порядок сохранения двух полушарий</h3></header><div class="row m"><div class="k">Что измерено</div><div>Поверхность обратной стороны замкнулась и сохранилась раньше; она древнее тёмных базальтовых морей видимой стороны.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Неравномерного остывания глобального магматического океана.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Обратная сторона, обращённая к холодному космосу, первой замкнулась и сохранила свою летопись; видимая сторона, продолжавшая получать горячее питание от Земли и смотревшая на раскалённую Землю, успокоилась и остыла лишь после отделения.</div></div></article>
+<article class="card"><header><span class="n">6</span><h3>Вода и летучие вещества в древних недрах</h3></header><div class="row m"><div class="k">Что измерено</div><div>В «расплавных включениях» — крошечных каплях магмы, захваченных в древних кристаллах во время их роста, — измерено <span class="num">615–1 410 миллионных долей (ppm)</span> воды. С тех пор летучие ушли в космос, и недра Луны, измеряемые сегодня, сухие.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Гигантский удар должен был испарить большую часть воды и летучих при огромном жаре; поэтому требуется поздняя доставка воды вторичными ударами.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Летучие были не поздними гостями — они были самим двигателем. Глубинная магма была богата летучими, которые вспенивали её, снижали её плотность и позволяли ей подниматься.</div></div></article>
+<article class="card"><header><span class="n">7</span><h3>Смещение центра масс</h3></header><div class="row m"><div class="k">Что измерено</div><div>Центр масс Луны смещён примерно на <span class="num">2 км</span> к Земле относительно её геометрического центра фигуры.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Вторичного следствия неравномерного распределения коры, созданного с помощью луны-спутницы.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>То же накопление толстой лёгкой коры на обратной стороне естественно сдвигает точку равновесия (центр масс) примерно на <span class="num">1,24–3,11 км</span> к видимой стороне.</div></div></article>
+<article class="card"><header><span class="n">8</span><h3>Наклон орбитальной плоскости на 5,145 градуса</h3></header><div class="row m"><div class="k">Что измерено</div><div>Орбита Луны вокруг Земли наклонена на <span class="num">5,145 градуса</span> к плоскости эклиптики.</div></div><div class="row i"><div class="k">Чего требует модель столкновения</div><div>Диск обломков оседает в экваториальной плоскости; поэтому нужен поздний динамический механизм, возбуждающий наклон, — например, эвекционный резонанс, сближения с планетезималями или Земля, наклонённая более чем на 70 градусов.</div></div><div class="row l"><div class="k">Направление в модели LEF</div><div>Тело, высвобожденное в коротации с Землёй на широте <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>, сразу выходит на орбиту, начальный наклон которой равен широте старта (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>), — без диска и без поздних поправок.</div></div></article>
+</div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: почему сто лет считалось невозможным вырвать Луну из Земли?</h2>
+<p>Если идея о том, что Луна отделилась от самой Земли, так экономна и проста, почему наука отказалась от неё более чем на столетие?</p>
+<p>В 1879 году астроном и математик <strong>Джордж Дарвин</strong> (сын Чарлза Дарвина) предложил <strong>классическую теорию деления</strong>: молодая Земля вращалась так быстро, что часть её оторвалась от поверхности и улетела в космос, став Луной. Идея была отвергнута в течение нескольких десятилетий из-за <strong>простого расчёта скорости и углового момента</strong>:</p>
+<ol class="steps">
+<li><strong>Разрыв скоростей у поверхности:</strong> даже при древних сутках в <span class="num">5,5 часа</span> (в четыре раза быстрее, чем сегодня) касательная скорость на экваторе составляла всего около <span class="num">2 133 метров в секунду</span>, тогда как свободная орбита на высоте поверхности требует <span class="num">7 701 метров в секунду</span>. Разрыв — около <span class="num">5,6 километра в секунду</span> — означал, что любое вещество, высвобожденное с поверхности, немедленно падало обратно на Землю.</li>
+<li><strong>Цена в угловом моменте:</strong> чтобы закрыть разрыв у поверхности, нужны сутки около <span class="num">2,73 часа</span> и угловой момент в <span class="num">2,74</span> раза больше (а в исходной точке отсчёта — в <span class="num">4,08</span> раза больше) всего нынешнего углового момента системы Земля–Луна. Поскольку угловой момент изолированной системы сохраняется, классическое деление было отвергнуто.</li>
+</ol>
+<div class="box"><span class="tag">Прорыв LEF</span>
+<p>Расчёт Дарвина был верен, <strong>но выполнен не в том месте</strong> — у поверхности. Модель LEF держит вещество прикреплённым к Земле и вращающимся вместе с ней (<strong>коротация</strong>), пока оно поднимается. С ростом расстояния от центра Земли скорость вращения растёт, а скорость, нужная для орбиты, падает. На <strong>радиусе коротации</strong> (<span class="num">15 818 км</span> при сутках в 5,5 часа) эти две скорости встречаются и становятся равны ровно <span class="num">5 020 метрам в секунду</span>. Телу, доставленному туда, не нужен никакой бросок — оно уже движется с полной орбитальной скоростью.</p></div>
+<div class="vs">
+<div><b>2 133</b><span>Скорость вращения у поверхности (м/с)</span></div>
+<div><b>7 701</b><span>Орбитальная скорость у поверхности (м/с)</span></div>
+<div class="hit"><b>5 020 = 5 020</b><span>Обе — на радиусе коротации, 15 818 км</span></div>
+</div>
+<figure class="fig"><svg viewBox="0 0 640 340" role="img" aria-label="Rotational speed and orbital speed against distance from Earth's centre">
+<line x1="64" x2="612" y1="300.0" y2="300.0" class="gr"/><text x="56" y="304.0" class="tk" text-anchor="end">0</text><line x1="64" x2="612" y1="254.0" y2="254.0" class="gr"/><text x="56" y="258.0" class="tk" text-anchor="end">1 500</text><line x1="64" x2="612" y1="208.0" y2="208.0" class="gr"/><text x="56" y="212.0" class="tk" text-anchor="end">3 000</text><line x1="64" x2="612" y1="162.0" y2="162.0" class="gr"/><text x="56" y="166.0" class="tk" text-anchor="end">4 500</text><line x1="64" x2="612" y1="116.0" y2="116.0" class="gr"/><text x="56" y="120.0" class="tk" text-anchor="end">6 000</text><line x1="64" x2="612" y1="70.0" y2="70.0" class="gr"/><text x="56" y="74.0" class="tk" text-anchor="end">7 500</text><line x1="64" x2="612" y1="24.0" y2="24.0" class="gr"/><text x="56" y="28.0" class="tk" text-anchor="end">9 000</text><text x="64.0" y="318" class="tk" text-anchor="middle">6 000</text><text x="173.6" y="318" class="tk" text-anchor="middle">10 000</text><text x="283.2" y="318" class="tk" text-anchor="middle">14 000</text><text x="392.8" y="318" class="tk" text-anchor="middle">18 000</text><text x="502.4" y="318" class="tk" text-anchor="middle">22 000</text><text x="612.0" y="318" class="tk" text-anchor="middle">26 000</text>
+<line x1="64" x2="612" y1="300" y2="300" class="ax"/>
+<path d="M83.8,63.9 L86.5,65.6 L89.3,67.3 L92.0,69.0 L94.7,70.6 L97.5,72.2 L100.2,73.7 L103.0,75.3 L105.7,76.8 L108.4,78.2 L111.2,79.7 L113.9,81.1 L116.7,82.5 L119.4,83.8 L122.1,85.2 L124.9,86.5 L127.6,87.8 L130.4,89.0 L133.1,90.3 L135.8,91.5 L138.6,92.7 L141.3,93.9 L144.1,95.0 L146.8,96.2 L149.5,97.3 L152.3,98.4 L155.0,99.5 L157.8,100.5 L160.5,101.6 L163.2,102.6 L166.0,103.6 L168.7,104.6 L171.5,105.6 L174.2,106.6 L176.9,107.6 L179.7,108.5 L182.4,109.4 L185.2,110.3 L187.9,111.3 L190.6,112.1 L193.4,113.0 L196.1,113.9 L198.9,114.7 L201.6,115.6 L204.3,116.4 L207.1,117.2 L209.8,118.0 L212.6,118.8 L215.3,119.6 L218.0,120.4 L220.8,121.2 L223.5,121.9 L226.3,122.7 L229.0,123.4 L231.7,124.1 L234.5,124.9 L237.2,125.6 L240.0,126.3 L242.7,127.0 L245.4,127.7 L248.2,128.3 L250.9,129.0 L253.7,129.7 L256.4,130.3 L259.1,131.0 L261.9,131.6 L264.6,132.3 L267.4,132.9 L270.1,133.5 L272.8,134.1 L275.6,134.7 L278.3,135.3 L281.1,135.9 L283.8,136.5 L286.5,137.1 L289.3,137.6 L292.0,138.2 L294.8,138.8 L297.5,139.3 L300.2,139.9 L303.0,140.4 L305.7,141.0 L308.5,141.5 L311.2,142.0 L313.9,142.6 L316.7,143.1 L319.4,143.6 L322.2,144.1 L324.9,144.6 L327.6,145.1 L330.4,145.6 L333.1,146.1 L335.9,146.6 L338.6,147.0 L341.3,147.5 L344.1,148.0 L346.8,148.5 L349.6,148.9 L352.3,149.4 L355.0,149.8 L357.8,150.3 L360.5,150.7 L363.3,151.2 L366.0,151.6 L368.7,152.0 L371.5,152.5 L374.2,152.9 L377.0,153.3 L379.7,153.7 L382.4,154.1 L385.2,154.6 L387.9,155.0 L390.7,155.4 L393.4,155.8 L396.1,156.2 L398.9,156.6 L401.6,157.0 L404.4,157.4 L407.1,157.7 L409.8,158.1 L412.6,158.5 L415.3,158.9 L418.1,159.2 L420.8,159.6 L423.5,160.0 L426.3,160.4 L429.0,160.7 L431.8,161.1 L434.5,161.4 L437.2,161.8 L440.0,162.1 L442.7,162.5 L445.5,162.8 L448.2,163.2 L450.9,163.5 L453.7,163.8 L456.4,164.2 L459.2,164.5 L461.9,164.8 L464.6,165.2 L467.4,165.5 L470.1,165.8 L472.9,166.1 L475.6,166.5 L478.3,166.8 L481.1,167.1 L483.8,167.4 L486.6,167.7 L489.3,168.0 L492.0,168.3 L494.8,168.6 L497.5,168.9 L500.3,169.2 L503.0,169.5 L505.7,169.8 L508.5,170.1 L511.2,170.4 L514.0,170.7 L516.7,171.0 L519.4,171.3 L522.2,171.6 L524.9,171.8 L527.7,172.1 L530.4,172.4 L533.1,172.7 L535.9,172.9 L538.6,173.2 L541.4,173.5 L544.1,173.8 L546.8,174.0 L549.6,174.3 L552.3,174.6 L555.1,174.8 L557.8,175.1 L560.5,175.3 L563.3,175.6 L566.0,175.9 L568.8,176.1 L571.5,176.4 L574.2,176.6 L577.0,176.9 L579.7,177.1 L582.5,177.4 L585.2,177.6 L587.9,177.8 L590.7,178.1 L593.4,178.3 L596.2,178.6 L598.9,178.8 L601.6,179.0 L604.4,179.3 L607.1,179.5 L609.9,179.7" class="orb"/><path d="M83.8,234.6 L86.5,233.6 L89.3,232.6 L92.0,231.7 L94.7,230.7 L97.5,229.7 L100.2,228.7 L103.0,227.8 L105.7,226.8 L108.4,225.8 L111.2,224.9 L113.9,223.9 L116.7,222.9 L119.4,221.9 L122.1,221.0 L124.9,220.0 L127.6,219.0 L130.4,218.0 L133.1,217.1 L135.8,216.1 L138.6,215.1 L141.3,214.1 L144.1,213.2 L146.8,212.2 L149.5,211.2 L152.3,210.3 L155.0,209.3 L157.8,208.3 L160.5,207.3 L163.2,206.4 L166.0,205.4 L168.7,204.4 L171.5,203.4 L174.2,202.5 L176.9,201.5 L179.7,200.5 L182.4,199.6 L185.2,198.6 L187.9,197.6 L190.6,196.6 L193.4,195.7 L196.1,194.7 L198.9,193.7 L201.6,192.7 L204.3,191.8 L207.1,190.8 L209.8,189.8 L212.6,188.8 L215.3,187.9 L218.0,186.9 L220.8,185.9 L223.5,185.0 L226.3,184.0 L229.0,183.0 L231.7,182.0 L234.5,181.1 L237.2,180.1 L240.0,179.1 L242.7,178.1 L245.4,177.2 L248.2,176.2 L250.9,175.2 L253.7,174.2 L256.4,173.3 L259.1,172.3 L261.9,171.3 L264.6,170.4 L267.4,169.4 L270.1,168.4 L272.8,167.4 L275.6,166.5 L278.3,165.5 L281.1,164.5 L283.8,163.5 L286.5,162.6 L289.3,161.6 L292.0,160.6 L294.8,159.7 L297.5,158.7 L300.2,157.7 L303.0,156.7 L305.7,155.8 L308.5,154.8 L311.2,153.8 L313.9,152.8 L316.7,151.9 L319.4,150.9 L322.2,149.9 L324.9,148.9 L327.6,148.0 L330.4,147.0 L333.1,146.0 L335.9,145.1 L338.6,144.1 L341.3,143.1 L344.1,142.1 L346.8,141.2 L349.6,140.2 L352.3,139.2 L355.0,138.2 L357.8,137.3 L360.5,136.3 L363.3,135.3 L366.0,134.3 L368.7,133.4 L371.5,132.4 L374.2,131.4 L377.0,130.5 L379.7,129.5 L382.4,128.5 L385.2,127.5 L387.9,126.6 L390.7,125.6 L393.4,124.6 L396.1,123.6 L398.9,122.7 L401.6,121.7 L404.4,120.7 L407.1,119.8 L409.8,118.8 L412.6,117.8 L415.3,116.8 L418.1,115.9 L420.8,114.9 L423.5,113.9 L426.3,112.9 L429.0,112.0 L431.8,111.0 L434.5,110.0 L437.2,109.0 L440.0,108.1 L442.7,107.1 L445.5,106.1 L448.2,105.2 L450.9,104.2 L453.7,103.2 L456.4,102.2 L459.2,101.3 L461.9,100.3 L464.6,99.3 L467.4,98.3 L470.1,97.4 L472.9,96.4 L475.6,95.4 L478.3,94.5 L481.1,93.5 L483.8,92.5 L486.6,91.5 L489.3,90.6 L492.0,89.6 L494.8,88.6 L497.5,87.6 L500.3,86.7 L503.0,85.7 L505.7,84.7 L508.5,83.7 L511.2,82.8 L514.0,81.8 L516.7,80.8 L519.4,79.9 L522.2,78.9 L524.9,77.9 L527.7,76.9 L530.4,76.0 L533.1,75.0 L535.9,74.0 L538.6,73.0 L541.4,72.1 L544.1,71.1 L546.8,70.1 L549.6,69.1 L552.3,68.2 L555.1,67.2 L557.8,66.2 L560.5,65.3 L563.3,64.3 L566.0,63.3 L568.8,62.3 L571.5,61.4 L574.2,60.4 L577.0,59.4 L579.7,58.4 L582.5,57.5 L585.2,56.5 L587.9,55.5 L590.7,54.6 L593.4,53.6 L596.2,52.6 L598.9,51.6 L601.6,50.7 L604.4,49.7 L607.1,48.7 L609.9,47.7" class="rot"/>
+<line x1="83.8" x2="83.8" y1="63.9" y2="234.6" class="gap"/>
+<text x="91.8" y="149.2" class="lb gapt" text-anchor="start" style="direction:ltr;unicode-bidi:embed">Разрыв: ⁦5,6 км/с⁩</text>
+<circle cx="333.0" cy="146.1" r="6" class="pt"/>
+<line x1="333.0" x2="333.0" y1="146.1" y2="300" class="dash"/>
+<text x="347.0" y="226.1" class="lb strong" text-anchor="start" style="direction:ltr;unicode-bidi:embed">Линия коротации</text><text x="347.0" y="244.1" class="lb strong" text-anchor="start">15 818 км · 5 020 м/с</text>
+<text x="543.5" y="53.3" class="lb rott" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Вращение ⁦Ωr⁩</text>
+<text x="529.8" y="194.3" class="lb orbt" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Орбитальная скорость ⁦√(GM/r)⁩</text>
+<text x="338" y="336" class="tk" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Расстояние до центра Земли (км) · сутки 5,5 часа</text>
+<text x="16" y="162" class="tk" text-anchor="middle" transform="rotate(-90 16 162)" style="direction:ltr;unicode-bidi:embed">Скорость (м/с)</text>
+</svg><figcaption>Две скорости в зависимости от расстояния до центра Земли при сутках в 5,5 часа. У поверхности орбитальная скорость намного превышает скорость вращения; с удалением вращение ускоряется, орбитальная скорость падает, и они встречаются на линии коротации.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATION</span>
+<h2>Академическое объяснение и ключевое уравнение</h2>
+<p>Различие между провалом классического деления у поверхности и успехом на линии коротации выражается одним прозрачным уравнением классической механики:</p>
+<div class="eqs">
+<div class="eq"><div class="k">Касательная скорость, которую даёт вращение</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Ω</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{rot}} = \Omega\, r</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">Скорость, нужная для свободной круговой орбиты</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">v_{\mathrm{orb}} = \sqrt{\dfrac{G M}{r}}</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>Точка равенства — радиус коротации</strong> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r_c</annotation></semantics></math></span></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mtext> </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msub><mi>r</mi><mi>c</mi></msub></mfrac></mstyle></msqrt><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\Omega\, r_c = \sqrt{\dfrac{G M}{r_c}} \;\Longrightarrow\; r_c = \left(\dfrac{G M}{\Omega^{2}}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+<p>где <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span> — угловая скорость Земли, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span> — гравитационная постоянная, а <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> — масса Земли. Если вернуть весь нынешний угловой момент ранней Земле (плюс около 1%, потерянного из-за солнечного прилива), получаются сутки в 5,5 часа; а в момент отделения (сутки <span class="num">5,77 часа</span>, линия коротации на <span class="num">16 399 км</span>) баланс углового момента замыкается на <span class="num">1,007</span> от нынешнего углового момента.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE ROAD AHEAD</span>
+<h2>Подпись в реальности: карта предстоящего путешествия</h2>
+<p>Модель LEF построена как <strong>модель процесса</strong>: она задаёт последовательность физических этапов, для каждого вычисляет его решающее число, проверяет, что все числа согласуются друг с другом в единой системе, и указывает измеренное в природе наблюдение, проверяющее каждый этап, — от глубинного давления источника в 150 гигапаскалей через моря, кратеры, полюса и бассейн Южный полюс — Эйткен до дна Тихого океана, Марса и остальной Солнечной системы.</p>
+<div class="road"><span>Глубинный источник · 150 ГПа</span><i>→</i><span>Моря</span><i>→</i><span>Кратеры</span><i>→</i><span>Полюса</span><i>→</i><span>Бассейн Южный полюс — Эйткен</span><i>→</i><span>Дно Тихого океана</span><i>→</i><span>Марс</span><i>→</i><span class="end">Солнечная система</span></div>
+</section>
+
+<section>
+<span class="lab">AT A GLANCE</span>
+<h2>Лабораторный бокс: 8 загадок и баланс углового момента с первого взгляда</h2>
+<div class="tw"><table><tr><th>#</th><th>Загадка Луны</th><th>Что измерено в реальности</th><th>Чего требует модель столкновения</th><th>Что следует из модели LEF</th></tr><tr><td>1</td><td>Изотопный состав</td><td>Расхождение по кислороду <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><mi mathvariant="normal">O</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta^{17}\mathrm{O} = -1 \pm 5</annotation></semantics></math></span></span> ppm; совпадение по Ti, Cr, W</td><td>Полное перемешивание ударника и Земли (синестия)</td><td>Вещество — земное с самого начала</td></tr><tr><td>2</td><td>Маленькое металлическое ядро</td><td>Сейсмический радиус ~330 км (~1,4% массы Луны)</td><td>Большая часть ядра ударника тонет в Земле</td><td>Перенос в фазе ранней сортировки; тяжёлое железо упало обратно в грушу</td></tr><tr><td>3</td><td>Асимметрия толщины коры</td><td>На 8–10 км толще на обратной стороне (GRAIL)</td><td>Позднее столкновение со второй «луной-спутницей»</td><td>Обратная сторона была верхним куполом, собравшим слои сиаля и возвращавшегося вещества</td></tr><tr><td>4</td><td>Синхронное вращение</td><td>Одна сторона всегда обращена к Земле</td><td>Поздний приливный захват</td><td>Обращённая к нам сторона — это основание крепления Луны к груше</td></tr><tr><td>5</td><td>Порядок сохранения</td><td>Обратная сторона древняя и замкнулась раньше морей видимой стороны</td><td>Неравномерное остывание магматического океана</td><td>Обратная сторона смотрела в космос и замкнулась рано; видимая питалась и нагревалась</td></tr><tr><td>6</td><td>Вода и летучие</td><td>615–1 410 ppm воды в древних расплавных включениях</td><td>Ударное испарение и «поздняя доставка воды»</td><td>Летучие вспенили магму и снизили её плотность для подъёма</td></tr><tr><td>7</td><td>Смещение центра масс</td><td>Смещён примерно на 2 км к Земле</td><td>Вторичный результат луны-спутницы</td><td>Толстая кора обратной стороны сдвигает центр масс на 1,24–3,11 км</td></tr><tr><td>8</td><td>Наклон орбиты</td><td>5,145° к плоскости эклиптики</td><td>Эвекционный резонанс, сближения или экстремальный наклон оси</td><td>Высвобождение с широты 22,5° сразу даёт наклон <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mn>0</mn></msub><mo>=</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">i_0 = |\lambda|</annotation></semantics></math></span></span>, который убывает до 5,145°</td></tr></table></div>
+<h3 style="margin-top:28px">Баланс углового момента</h3>
+<div class="tw"><table class="am"><tr><th>Путь отделения / модель</th><th>Где выравниваются скорости</th><th>Длина земных суток</th><th>Отношение углового момента (сегодня = 1,000)</th></tr><tr><td>Классическое деление (исходная точка отсчёта)</td><td>Поверхность</td><td>—</td><td class="no">Около 4 (4,08) — отвергнуто</td></tr><tr><td>Классическое деление (точка бифуркации Якоби)</td><td>Поверхность</td><td>2,73 часа</td><td class="no">2,74 — отвергнуто</td></tr><tr class="hl"><td>Модель LEF (сохраняющийся баланс)</td><td>Линия коротации (<span class="ltr">15 818 → 16 399</span> км)</td><td><span class="ltr">5,50 → 5,77</span> часа</td><td><strong>1,007 — замыкается точно</strong></td></tr></table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>Мы положили на стол восемь замков и увидели, где ключ начинает поворачиваться: не в отчаянном броске над поверхностью Земли, а в медленном синхронном путешествии к линии коротации. В следующей главе — <strong>Глава 1: Проблема Дарвина и революция коротации</strong> — мы войдём в пультовую механики и проверим числа вблизи.</p>
+<a href="story01_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 1</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Проблема Дарвина и революция коротации →</p></div></a>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

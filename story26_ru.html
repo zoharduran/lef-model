@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 26: Десять дополнительных требований (R9–R18), часы гафний–вольфрам и карта будущих исследований LEF — Модель LEF</title>
+<meta name="description" content="Глава 26 истории модели LEF: десять дополнительных требований R9–R18, часы гафний–вольфрам и карта будущих исследований.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story26_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story26_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story26_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story26_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story26_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story26_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story26_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story26_he.html" hreflang="he">עברית</a> · <a href="story26_en.html" hreflang="en">English</a> · <a href="story26_de.html" hreflang="de">Deutsch</a> · <a href="story26_es.html" hreflang="es">Español</a> · <a href="story26_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 26</p>
+<h1>Глава 26: Десять дополнительных требований (R9–R18), часы гафний–вольфрам и карта будущих исследований LEF</h1>
+<p>По статье 13 — 13. Требования (части C–D и приложение B: требования R9–R18, поток информации между статьями, часы Hf–W и 7 исследовательских задач)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: какие подписи, присущие только земной груше, оставил процесс на Земле и на Луне?</h2>
+<p>В главе 25 мы проверили первые восемь требований (R1–R8). Но если такие признаки, как изотопное тождество или маленькое ядро, могут получить альтернативные объяснения в литературе, то <strong>части C и D статьи 13</strong> выставляют десять дополнительных требований (<strong>R9–R18</strong>), вытекающих только из геометрии земной груши, её обрушения обратно в мантию и выводящих каналов:</p>
+<ol class="steps">
+<li><strong>Следы груши на Земле и на Луне (R9–R15, §C.1–C.6):</strong> куда погрузились 7–12 лунных масс тела груши после отрыва? Как образовалось сосредоточение элементов KREEP на ближней стороне Луны? И почему плотность кратеров на полюсах растёт именно по мере того, как кратер крупнее и древнее?</li>
+<li><strong>Последующие требования после груши (R16–R18, §C.7):</strong> как доказать, что 34 лунных моря — это отверстия выброса, в которых расплавились древние кратеры, почему центр бассейна Южный полюс–Эйткен (SPA) смещён к югу относительно двух противоположных отверстий и как Марс служит независимым контрольным тестом?</li>
+<li><strong>Временно́е ограничение часов гафний–вольфрам (Hf–W, §D.2) и карта будущих исследований:</strong> как постепенное наращивание на протяжении 600 миллионов лет согласуется с часами радиоактивного распада с периодом полураспада всего 8,9 миллиона лет?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: твёрдая корка на скользком масле, загнутые края кожуры и песочные часы, опустевшие раньше срока</h2>
+<p>Четыре наглядных образа освещают десять дополнительных требований и хронологическое ограничение модели:</p>
+<ul>
+<li><strong>Жёсткая оболочка, скользящая по мягкому смазочному слою (чистое уплотнение кратеров, §C.1):</strong> чтобы сохранить древние круглые кратеры, которые нёс купол коры при подъёме груши, внешняя кора должна оставаться очень жёсткой (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>), а её основание сидит на мягкой термомеханической границе (между лёгким сиалем и плотной симой), позволяющей ей скользить и сжиматься в равномерном гидростатическом уплотнении (Pure Compaction), не искажая кратеры в эллипсы!</li>
+<li><strong>Края кожуры, загнутые внутрь при отслаивании (комплекс KREEP, R12):</strong> когда Луна отслаивалась от основания земной груши, оторванные края земной сиалевой коры механически загнулись внутрь на окружность основания на ближней стороне (область Океана Бурь, PKT) и унесли с собой несовместимые элементы (калий K, редкоземельные REE и фосфор P) — поэтому древнейшие анортозиты лунных материков должны быть обеднены калием и торием!</li>
+<li><strong>Тяжёлая куча железа, опускающаяся на дно кастрюли (нижняя аномалия LLVP в Тихом океане, R10–R11):</strong> в момент освобождения Луны на линии коротации (16 399 км) оставшееся тело груши (~ 9 лунных масс, около 11% массы Земли, целиком лежащее внутри линии коротации, так что на орбите от него ничего не осталось) обрушилось обратно в мантию и погрузилось к границе ядро–мантия прямо под основанием у острова Киритимати (1,9°N, 157,5°W) — создав богатую железом нижнюю аномалию Тихого океана (Pacific LLVP), тогда как Африканская аномалия — противоположная доля, оставшаяся нетронутой!</li>
+<li><strong>Песочные часы, опустевшие за десятки миллионов лет (часы <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span>, §D.2):</strong> радиоактивный изотоп <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> распадается в <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{W}</annotation></semantics></math></span></span> с периодом полураспада 8,9 миллиона лет. Через 600 миллионов лет остаётся лишь ничтожный остаток 5,1 × 10⁻²¹ — то есть песочные часы полностью остановились уже в начале окна наращивания, так что вольфрамовые подписи, измеряемые на Луне сегодня, были заперты в начале и перенесены нетронутыми, не стираясь!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: семь требований груши (R9–R15) и три последующих требования (R16–R18)</h2>
+<p>Части C.6 и C.7 статьи 13 подробно излагают все десять дополнительных требований и отделяют те, что уже получили количественную поддержку в статьях 6–8, от тех, что ждут окончательного расчёта:</p>
+<ol class="steps">
+<li><strong>R9 и R10 — равновесная форма груши и её полное обрушение:</strong> тело груши (9 000 км в ширину у основания, сходящееся к контакту 3 000 км) удерживается как гидростатически-динамическая равновесная форма (собственная гравитация против внутреннего давления и центробежной силы, а не прочность горной породы на разрыв) целиком внутри линии коротации, поэтому при отрыве оно полностью обрушивается внутрь, не оставляя на орбите никакого остатка.</li>
+<li><strong>R11–R14 — тихоокеанская подпись, датчик ядра и отсутствие чужого вещества:</strong> основание груши у Киритимати сидит над тихоокеанской LLVP (R11); крошечное ядро Луны (1,0%–2,0%) служит датчиком глубины, показывающим, насколько близко питающий поток подошёл к тонущему железу (R13); и ни в массе Луны, ни в базальтовых плюмах Тихого океана не будет найдено чужой внеземной компоненты (R14).</li>
+<li><strong>R15 (количественно подтверждено в статье 7) — уплотнение кратеров на полюсах в зависимости от диаметра:</strong> механическое скругление уплотнило древние кратеры к полюсам, не уменьшив их линейного диаметра: отношение плотностей между полюсами и экватором растёт от <strong>1,09</strong> для кратеров 20–30 км до <strong>1,53</strong> для древних кратеров 60–100 км!</li>
+<li><strong>R16 и R17 (количественно подтверждено в статьях 6 и 8) — моря как отверстия выброса и печать SPA:</strong> на дне 34 активных морей кратеры, упавшие на жидкую лаву, расплавились, поэтому плотность чётких кратеров (≥ 20 км) в них составляет <strong>лишь 0,8 на миллион км²</strong> против 18,3 на равнинах и 207 на материках (R16); а в бассейне Южный полюс–Эйткен (SPA) центр купола, центр тепла и минимум кратеров смещены к югу (с 17°–21° на сплющенной стадии до 24°–29° сегодня) относительно двух точек, противоположных Морю Дождей и Морю Ясности (R17).</li>
+<li><strong>R18 (независимый контрольный тест в статье 10) — луны Марса с горы Павлина:</strong> запуск Фобоса и Деймоса как пробок из единого канала выброса на горе Павлина (1,48°N) в конденсированное паровое кольцо; проверка чисто марсианского состава ждёт образцов миссии MMX.</li>
+</ol>
+<div class="callout"><span class="tag">Принцип изоляции уровней (Multi-Level Constraint, §C.3 &amp; §D.3)</span><p style="margin:0">Статья 13 подчёркивает, что несоответствие в одном морфологическом пункте (например, в сортировке отверстий выброса в §C.3 или в контрольном тесте Марса в R18) ограничено только этой ветвью и не опровергает уравнение линии коротации статьи 2, опирающееся на законы сохранения массы и углового момента.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: прозрачность исследования, ограничение часов гафний–вольфрам и семь открытых задач</h2>
+<p>Часть D, приложение B и раздел будущих исследований статьи 13 представляют полную научную дорожную карту, с интеллектуальной честностью отделяя существующее знание от вклада модели и отмечая семь ясных исследовательских целей:</p>
+<ol class="steps">
+<li><strong>Цепь научного контроля и отказ от единичной точки успеха (§D.3):</strong> чтобы установить, что требование <em>не выполнено</em>, нужно математическое доказательство отсутствия физического решения во всём диапазоне параметров и ошибок измерения (а не проверка в одной точке). Вместе с тем одна точка успеха не подтверждает весь путь — каждое утверждение подчинено цепи: <strong>предсказание → математическая детализация → устойчивость к шуму → доступность для проверки (пакет кода на Zenodo) → эмпирический тест</strong>.</li>
+<li><strong>Явное разделение существующей физики и новизны модели LEF (приложение B):</strong> статья прямо указывает, что законы гравитации, сохранения массы, дифференциации, а также теория древнего «земного света» (Roy et al. 2014) или выявление прямоугольника рифтов Океана Бурь (Andrews-Hanna et al. 2014) принадлежат их авторам. Уникальная новизна LEF — <strong>двойная механическая интеграция в одном теле</strong>: внутреннее заполнение снизу глубинным мантийным потоком вместе с подъёмом литосферной оболочки Земли сверху, при замкнутом балансе массы и смещении центра масс.</li>
+<li><strong>Семь открытых задач для будущих исследований (Further Work):</strong> (1) завершение статистики концентрических поясов (T3, T4 и T1 на моделях 2–4 и GRGM1200B); (2) построение единого многосистемного изотопного баланса (O, Ti, Cr, W); (3) многофазная модель потока для переноса капель железа в ядро (1,4%); (4) совместная векторная инверсия толщины коры и смещения центра масс в истинной геометрии контакта; (5) контролируемое хронологическое сравнение часов 1 в первичной материковой коре с обеих сторон; (6) количественная классификация 34 морей как отверстий выброса; и (7) независимая тектоническая реконструкция тихоокеанской литосферы над тихоокеанской LLVP.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Уравнение радиоактивного распада коротких часов дифференциации гафний–вольфрам (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext><mo>→</mo><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf} \to {}^{182}\text{W}</annotation></semantics></math></span></span>, период полураспада <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mn>8,9</mn><mtext> Myr</mtext></mrow><annotation encoding="application/x-tex">T_{1/2} = 8.9\text{ Myr}</annotation></semantics></math></span></span>) на окне наращивания в 600 миллионов лет и методологическая цепь проверки формулируются так (§D.2–D.3):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8,9</mn><mtext> Myr</mtext><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(t)}{N_0} = 2^{-t / (8.9\text{ Myr})}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>≈</mo><mn>5,1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(600\text{ Ma})}{N_0} \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>prediction</mtext><mo>⟶</mo><mtext>detailed</mtext><mo>⟶</mo><mtext>robust</mtext><mo>⟶</mo><mtext>assessable</mtext><mo>⟶</mo><mtext>testable</mtext></mrow><annotation encoding="application/x-tex">\text{prediction} \longrightarrow \text{detailed} \longrightarrow \text{robust} \longrightarrow \text{assessable} \longrightarrow \text{testable}</annotation></semantics></math></span></div></div></div>
+<p>Поскольку отношение <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>0</mn></msub><mo>≈</mo><mn>5,1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N(600\text{ Ma})/N_0 \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></span> не оставляет к концу наращивания ни одного живого атома <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span>, вольфрамовые часы не могут быть сброшены в конце окна — поэтому любая хронологическая модель должна сохранять вольфрамовую подпись, заданную в начале дифференциации, на протяжении 600 миллионов лет.</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Hf-182 remaining against time" style="direction:ltr"><line x1="70" x2="600" y1="220.0" y2="220.0" stroke="#ece7da"/><text x="62" y="224.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0%</text><line x1="70" x2="600" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="62" y="174.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25%</text><line x1="70" x2="600" y1="120.0" y2="120.0" stroke="#ece7da"/><text x="62" y="124.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50%</text><line x1="70" x2="600" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="62" y="74.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75%</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100%</text><text x="70.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="158.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="246.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="335.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">30</text><text x="423.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><text x="511.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">50</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">60</text><path d="M70.0,20.0 L74.4,27.6 L78.8,35.0 L83.2,42.1 L87.7,48.8 L92.1,55.4 L96.5,61.7 L100.9,67.7 L105.3,73.5 L109.8,79.1 L114.2,84.5 L118.6,89.7 L123.0,94.7 L127.4,99.4 L131.8,104.1 L136.2,108.5 L140.7,112.7 L145.1,116.8 L149.5,120.8 L153.9,124.6 L158.3,128.2 L162.8,131.7 L167.2,135.1 L171.6,138.3 L176.0,141.4 L180.4,144.4 L184.8,147.3 L189.2,150.1 L193.7,152.8 L198.1,155.3 L202.5,157.8 L206.9,160.2 L211.3,162.5 L215.8,164.7 L220.2,166.8 L224.6,168.8 L229.0,170.8 L233.4,172.7 L237.8,174.5 L242.2,176.2 L246.7,177.9 L251.1,179.5 L255.5,181.0 L259.9,182.5 L264.3,183.9 L268.8,185.3 L273.2,186.7 L277.6,187.9 L282.0,189.1 L286.4,190.3 L290.8,191.5 L295.2,192.6 L299.7,193.6 L304.1,194.6 L308.5,195.6 L312.9,196.5 L317.3,197.4 L321.8,198.3 L326.2,199.1 L330.6,199.9 L335.0,200.7 L339.4,201.4 L343.8,202.1 L348.2,202.8 L352.7,203.5 L357.1,204.1 L361.5,204.7 L365.9,205.3 L370.3,205.8 L374.8,206.4 L379.2,206.9 L383.6,207.4 L388.0,207.9 L392.4,208.3 L396.8,208.8 L401.2,209.2 L405.7,209.6 L410.1,210.0 L414.5,210.4 L418.9,210.8 L423.3,211.1 L427.8,211.5 L432.2,211.8 L436.6,212.1 L441.0,212.4 L445.4,212.7 L449.8,213.0 L454.2,213.2 L458.7,213.5 L463.1,213.8 L467.5,214.0 L471.9,214.2 L476.3,214.4 L480.8,214.7 L485.2,214.9 L489.6,215.1 L494.0,215.2 L498.4,215.4 L502.8,215.6 L507.2,215.8 L511.7,215.9 L516.1,216.1 L520.5,216.2 L524.9,216.4 L529.3,216.5 L533.8,216.6 L538.2,216.8 L542.6,216.9 L547.0,217.0 L551.4,217.1 L555.8,217.2 L560.2,217.3 L564.7,217.4 L569.1,217.5 L573.5,217.6 L577.9,217.7 L582.3,217.8 L586.8,217.9 L591.2,218.0 L595.6,218.1 L600.0,218.1" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="148.6" cy="120.0" r="4.5" fill="#b23a2e"/><circle cx="227.2" cy="170.0" r="4.5" fill="#b23a2e"/><circle cx="305.9" cy="195.0" r="4.5" fill="#b23a2e"/><circle cx="384.5" cy="207.5" r="4.5" fill="#b23a2e"/><text x="298.6" y="114.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Период полураспада · ⁦8,9⁩ млн лет</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Время (млн лет) · остаток ¹⁸²Hf · в конце окна 600 млн лет: ⁦5,1×10⁻²¹⁩</text></svg><figcaption>Часы гафний–вольфрам: примерно через 50 миллионов лет ¹⁸²Hf почти не остаётся, поэтому вольфрамовая подпись запирается в начале окна наращивания и сохраняется до его конца.</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: поток данных через серию статей и открытый протокол на Zenodo</h2>
+<p>Часть D.1 и раздел кода статьи 13 связывают всю серию статей в прозрачную систему зависимостей, которую любой внешний исследователь может полностью воспроизвести (§D.1, Data &amp; Code):</p>
+<ul>
+<li><strong>Поток ограничений от статьи 2 к статье 13 (§D.1):</strong> статья 2 фиксирует радиус коротации при отрыве (16 399 км в экваториальной плоскости, 17 287 км на широте 22,5° при сутках 5,77 часа); статья 3 задаёт минимальный радиус перехода ~ 1 000 км, несущий 0,46 лунной массы, и боковую сдвиговую нагрузку <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≈</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{shear}} \approx 10^{22}\text{ N}</annotation></semantics></math></span></span> (исключая «узкую шею»), а также вязкость оболочки <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>; а статьи 4–10 добавляют орбиту, моря, кратеры, полюса, бассейн SPA и Марс.</li>
+<li><strong>Открытый пакет воспроизведения (Zenodo DOI: 10.5281/zenodo.22743615):</strong> все расчётные скрипты на Python 3 (NumPy и SciPy), входные файлы и результаты тестов T1, T2 и T5 навсегда депонированы в репозитории Zenodo для независимого воспроизведения.</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: десять дополнительных требований (R9–R18) и критерии несоответствия модели LEF (статья 13, части C–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Требование</th><th>Физическое условие, требуемое моделью</th><th>Мера проверки / исход несоответствия</th><th>Текущий статус</th></tr>
+<tr><td><strong>R9 (груша в равновесии)</strong></td><td>Тело шириной 9 000 км, сходящееся к 3 000 км, удерживается собственной гравитацией внутри линии коротации</td><td>Несоответствие: нет математической равновесной формы в диапазоне плотности и вращения</td><td>Открыто для полного расчёта равновесия</td></tr>
+<tr><td><strong>R10 (обрушение груши)</strong></td><td>Остаток груши (7–12 лунных масс, ~ 11% массы Земли) целиком обрушивается внутрь без остатка на орбите</td><td>Несоответствие: обнаружение остатка на орбите или отсутствие аномалии массы под источником</td><td>Открыто (согласуется со складками статьи 9)</td></tr>
+<tr><td><strong>R11 (тихоокеанская LLVP)</strong></td><td>Основание груши у Киритимати (1,9°N, 157,5°W) сидит над богатой железом тихоокеанской LLVP</td><td>Несоответствие: основание вне LLVP или две доли (Тихоокеанская и Африканская) идентичны</td><td>Открыто для томографической проверки</td></tr>
+<tr><td><strong>R12 (комплекс KREEP)</strong></td><td>Загнутые внутрь края земного сиаля фиксируют KREEP в Океане Бурь; анортозиты обеднены K и Th</td><td>Несоответствие: нет геометрической связи с краями основания или сиалевая подпись в анортозитах</td><td>Открыто для геохимического картирования</td></tr>
+<tr><td><strong>R13–R14 (датчик ядра и ноль чужого вещества)</strong></td><td>Ядро (1,4%) измеряет близость к тонущему железу; нулевая компонента чужого ударника в Луне и в тихоокеанских плюмах</td><td>Несоответствие: обнаружение внеземной химической/изотопной компоненты в массе Луны или в плюмах</td><td>Открыто для многосистемного баланса</td></tr>
+<tr class="hl"><td><strong>R15 (уплотнение кратеров на полюсах)</strong></td><td>Скругление уплотнило кратеры к полюсам в отношении, растущем с диаметром, не уменьшив их линейного диаметра</td><td>Отношение плотностей полюс/экватор: <strong>1,09</strong> (20–30 км) → <strong>1,53</strong> (60–100 км)</td><td><strong>Успешно пройдено (статья 7)</strong></td></tr>
+<tr class="hl"><td><strong>R16 (34 моря как отверстия выброса)</strong></td><td>Дно активных морей расплавило упавшие на него древние кратеры</td><td>Плотность чётких кратеров ≥ 20 км: <strong>0,8</strong> в морях против 18,3 на равнинах и 207 на материках</td><td><strong>Количественно подтверждено (статья 6)</strong></td></tr>
+<tr class="hl"><td><strong>R17 (два отверстия и купол в SPA)</strong></td><td>Центр купола, тепла и минимума кратеров в SPA смещён к югу (24°–29°) относительно точек, противоположных Морю Дождей и Морю Ясности</td><td>Несоответствие: нет геометрической связи или положение к северу от противоположных точек</td><td><strong>Количественно подтверждено (статья 8)</strong></td></tr>
+<tr><td><strong>R18 (луны Марса с горы Павлина)</strong></td><td>Фобос и Деймос были запущены из единого канала выброса на горе Павлина (1,48°N) в паровое кольцо</td><td>Несоответствие: немарсианский состав в образцах MMX или избыток массы под горой Павлина</td><td>Открыто (внешний контрольный тест, статья 10)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В главах 25–26 мы завершили обзор <strong>статьи 13 (Требования)</strong> — методологического компаса серии LEF, собравшего все 18 требований (<strong>R1–R18</strong>), результаты статистических тестов (<strong>T1–T5</strong>), ограничение часов гафний–вольфрам и 7 открытых задач для будущих исследований.</p>
+<a href="story27_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 27</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Исследовательская карта модели LEF (часть A) — ранняя Земля, образование Луны и бассейн SPA (темы 1–79) →</p></div></a>
+<p style="margin-top:22px"><a href="story25_ru.html">← Глава 25</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 23: Планетные кольца — источник материала, пороговые сутки 13,4 часа и равновесный поток Сатурна — Модель LEF</title>
+<meta name="description" content="Глава 23 истории модели LEF: планетные кольца — источник материала, пороговые сутки 13,4 часа и равновесный поток Сатурна.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story23_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story23_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story23_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story23_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story23_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story23_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story23_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story23_he.html" hreflang="he">עברית</a> · <a href="story23_en.html" hreflang="en">English</a> · <a href="story23_de.html" hreflang="de">Deutsch</a> · <a href="story23_es.html" hreflang="es">Español</a> · <a href="story23_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 23</p>
+<h1>Глава 23: Планетные кольца — источник материала, пороговые сутки 13,4 часа и равновесный поток Сатурна</h1>
+<p>По статье 12 — 12. Кольца: кольцо дробит, перемалывает и возвращает (части A–D: две линии, два пути питания, пороговые сутки 13,4 ч, равновесие Сатурна и уход воды)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: откуда берётся вещество колец, почему огромные кольца есть только у Сатурна и почему кольца не строят луны?</h2>
+<p>В главах 21–22 мы видели, что луны Солнечной системы рождаются прямо из своих родителей на линии коротации. В статье 12 модель LEF распространяет этот принцип на <strong>системы планетных колец</strong> и устанавливает однозначное правило: <strong>кольцо — не стройплощадка для лун, а механизм, который дробит, перемалывает и возвращает вещество родителю!</strong> Из наблюдений «Кассини», «Вояджера» и телескопов вытекают четыре центральных вопроса:</p>
+<ol class="steps">
+<li><strong>Резкие различия между кольцами Солнечной системы (A.1–A.3):</strong> почему кольца Сатурна огромны (1,54 × 10¹⁹ кг) и ярки (95%–99% чистого водяного льда), кольца Юпитера состоят из тусклой пыли, кольца Урана и Нептуна узкие и тёмные — а вокруг малых тел (Хаумеа, Харикло и Квавар) плотные кольца обращаются <em>далеко за пределом Роша</em>, не слипаясь в луны?</li>
+<li><strong>Парадокс молодого возраста колец Сатурна (D.3):</strong> «Кассини» измерил «кольцевой дождь», падающий на Сатурн со скоростью <strong>от 432 до 45 000 кг в секунду</strong>, — скорость, которая полностью опустошила бы кольца за 11 миллионов – 1,1 миллиарда лет. Как кольца существуют сегодня?</li>
+<li><strong>Универсальное условие массивного кольца (B.5):</strong> почему из всех планет Солнечной системы лишь <strong>Сатурн сегодня и молодой Марс</strong> развили массивное кольцо прямо из недр?</li>
+<li><strong>Куда делся угловой момент Урана и Нептуна (D.4)?</strong> Луны Урана и Нептуна несут лишь 1% и 0,002% углового момента, потерянного этими планетами, — что унесло остальное?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: сетка и мячи, перемалывающая воронка и фонтан в равновесии</h2>
+<p>Четыре наглядных образа объясняют физику и цикл колец в Солнечной системе:</p>
+<ul>
+<li><strong>Сетка и мячи — линия коротации внутри предела Роша (B.5):</strong> чтобы поймать вещество в массивное кольцо вокруг планеты, нужны одновременно две вещи: <strong>сетка в нужном месте</strong> и <strong>мячи, брошенные в неё</strong>. Когда вещество подтекает из глубин планеты к линии коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>), то если линия лежит <em>внутри</em> предела Роша (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>), дифференциальные приливные силы не дают ему слипнуться в луну и удерживают его как кольцо. Деление двух уравнений полностью сокращает плотность планеты и даёт <strong>универсальные пороговые сутки, одинаковые для любого тела во Вселенной: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> часа!</strong></li>
+<li><strong>Вязкая воронка, перемалывающая комья и возвращающая пыль домой (C.1–C.4, D.1):</strong> внутри кольцевого диска внутренние частицы движутся быстрее внешних. Неупругие столкновения превращают орбитальную энергию в тепло, сохраняя полный угловой момент, — поэтому большая часть вещества теряет энергию и течёт внутрь к родителю, а меньшая часть выталкивается наружу (вот почему кольцо A Сатурна обрывается ровно на пределе Роша для льда на 135 300 км и почему кольцо Квавара на 2,4 пределах Роша тоже не слипается в луну!).</li>
+<li><strong>Бассейн фонтана, где питание снизу равно дождю сверху (равновесие Сатурна, D.3):</strong> кольца Сатурна — не статичный остаток, образовавшийся недавно, а <strong>непрерывный поток в динамическом равновесии</strong>: внутренний насос подтекает водой к линии коротации (1,92 R) ровно с той же скоростью, с какой кольцевой дождь сводит воду вниз в атмосферу (суммарная цена до 1,1 × 10⁻⁵ массы Сатурна за 4,5 миллиарда лет). «Молодой» вид — следствие постоянного обновления вещества!</li>
+<li><strong>Механический насос, поднимающий воду из мелкого колодца (уход воды с Урана и Нептуна, D.4):</strong> Уран и Нептун далеки от Солнца и холодны, и всё же они потеряли воду в количестве <strong>в 270 раз больше массы всех своих лун</strong> (2,5 × 10²⁴ кг у Урана и 3,2 × 10²⁴ кг у Нептуна) — не из-за теплового испарения, а из-за <strong>механического подъёма к линии коротации</strong> при быстром вращении (7–8 часов), сквозь тонкую газовую крышку (10%–20%) и мелкий гравитационный колодец (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21,3</mn><mtext>–</mtext><mn>23,5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> км/с против 59,5 км/с у Юпитера)!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: два семейства колец, два пути питания и матрица условий (части A–D)</h2>
+<p>Части A–D статьи 12 дают количественные доказательства четырёх фундаментальных законов кольцевых систем:</p>
+<ol class="steps">
+<li><strong>Разделение на два динамических семейства относительно линии коротации (A.3):</strong>
+<ul>
+<li><strong>Семейство гигантов (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>):</strong> кольца Юпитера (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,57</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>), Сатурна (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,60</mn><mtext>–</mtext><mn>1,23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>), Урана (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,51</mn><mtext>–</mtext><mn>0,62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>) и Нептуна (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>0,75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>) лежат ниже линии коротации или пересекают её, в основном внутри предела Роша; часть ниже линии падает внутрь к родителю (как показывают и «спицы» в кольце B Сатурна, появляющиеся на 102 000–112 000 км, ровно до линии коротации на 111 600 км!).</li>
+<li><strong>Семейство малых тел (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>):</strong> кольца Хаумеа (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>), Харикло (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,10</mn><mo separator="true">;</mo><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>) и Квавара (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mo separator="true">;</mo><mn>2,01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>) лежат далеко <em>над</em> линией коротации и группируются вокруг радиуса <strong>спин-орбитального резонанса 1:3</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), где прилив выталкивает вещество наружу, а резонанс его удерживает!</li>
+</ul>
+</li>
+<li><strong>Исключение межпланетной пыли как источника и определение двух путей питания (B.2–B.4):</strong> химическая чистота колец Сатурна (95%–99% чистого водяного льда в экваториальном диске толщиной 10–30 м), отсутствие общего углового момента у изотропной космической пыли (которая загрязняет тёмное кольцо C снаружи, а не строит его) и точная корреляция с толщиной атмосферной крышки доказывают, что всё вещество колец приходит от родителя двумя путями: <strong>(a) прямое питание из недр</strong> ниже линии коротации (кольца D, C, B Сатурна и древнее кольцо Марса) и <strong>(b) питание через активные исконные луны</strong> (Энцелад питает гейзерами кольцо E, четыре внутренние луны Юпитера питают пыль, а Маб питает кольцо <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> Урана — тогда как захваченные луны, вроде Фебы, исключены).</li>
+<li><strong>Применение двух условий массивного кольца ко всем планетам (B.5):</strong> Сатурн сегодня (P = 10,6 ч &lt; 13,4 ч, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1,92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2,24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + подтекающая крышка) и молодой Марс (P = 7–9 ч &lt; 13,4 ч, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1,74</mn><mtext>–</mtext><mn>2,05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2,68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + вулкан на выступе) — единственные, кто выполняет оба условия одновременно. Юпитер (9,9 ч) достаточно быстр, но его газовая крышка полностью запечатана; Земля при рождении (5,8 ч) высохла слишком быстро; а Уран и Нептун сегодня (17,2 и 16,1 ч) слишком медленны (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>) и заморожены.</li>
+</ol>
+<div class="callout"><span class="tag">U-кривая линии коротации относительно предела Роша (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>, рисунок B.3)</span><p style="margin:0">В середине Солнечной системы, у Юпитера и Сатурна с их толстыми крышками, линия коротации остаётся внутри зоны колец (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span> и 0,86); а на обоих концах, где масса ушла через линию и замедлила вращение, линия вышла из зоны колец — немного у Урана и Нептуна (1,18 и 1,13, где остались узкие кольца), сильно у Марса (1,50, где кольцо исчезло) и у Земли (1,47), и до 22 и 57 раз у Меркурия и Венеры!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="140.0" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="363.2" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,82⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Юпитер</text><rect x="140.0" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="373.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,86⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Сатурн</text><rect x="140.0" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="444.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,13⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Нептун</text><rect x="140.0" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="457.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,18⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Уран</text><rect x="140.0" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="533.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,47⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Земля</text><rect x="140.0" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="541.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,50⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Марс</text></svg><figcaption>Отношение линии коротации к пределу Роша (x_c/x_R) сегодня: ниже 1 линия внутри зоны колец; Меркурий (22) и Венера (57) далеко за пределами шкалы.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: вывод универсальных пороговых суток (13,4 часа) и равновесие Сатурна</h2>
+<p>Части B.5 и D.1–D.4 статьи 12 показывают, как геометрия орбит и законы сохранения диктуют существование, возраст и состав планетных колец:</p>
+<ol class="steps">
+<li><strong>Вывод универсальных пороговых суток <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> часа (§B.5):</strong> линия коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>) зависит от массы родителя и скорости его вращения, а предел Роша для ледяных частиц (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>) — от радиуса родителя и его средней плотности. При делении <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> масса, радиус и плотность родителя <strong>полностью сокращаются</strong>! В результате критические сутки вращения, ниже которых линия коротации лежит внутри предела Роша, одинаковы для любой планеты, луны или астероида во Вселенной: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> часа</strong> (для льда плотностью <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> кг/м³). Поэтому сильная гравитация Юпитера или слабая гравитация молодого Марса никак не влияют на сам порог — решают лишь скорость вращения (P &lt; 13,4 часа) и подтекание вещества из недр.</li>
+<li><strong>Вязкое растекание — почему кольцо есть воронка, возвращающая вещество домой (§D.1):</strong> внутри кольцевого диска внутренние частицы движутся быстрее внешних (дифференциальное кеплеровское движение). Неупругие столкновения превращают орбитальную энергию в тепло, сохраняя полный угловой момент. Чтобы удовлетворить оба закона сохранения вместе, диск растекается: <strong>большая часть массы кольца теряет энергию и течёт внутрь к родителю</strong>, а меньшая выталкивается наружу, унося избыток углового момента.</li>
+<li><strong>Решение парадокса возраста колец Сатурна (§D.3):</strong> «Кассини» измерил вещество, падающее с колец на Сатурн по двум параллельным каналам, — нейтральный дождь на экватор со скоростью <strong>4 800–45 000 кг/с</strong> (Waite et al. 2018) и ионизированный дождь вдоль линий магнитного поля со скоростью <strong>432–2 870 кг/с</strong> (O'Donoghue et al. 2019). Без питания масса колец (1,54 × 10¹⁹ кг) опустела бы за 11 миллионов – 1,1 миллиарда лет. В модели LEF кольцо — <strong>постоянный поток в динамическом равновесии</strong>: вода, подтекающая из внутренней оболочки, обновляет его снизу с той же скоростью, с какой дождь опустошает его сверху, — при суммарной цене <strong>лишь от 10⁻⁷ до 1,1 × 10⁻⁵ массы Сатурна</strong> за 4,5 миллиарда лет!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Отношение линии коротации <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> к пределу Роша для льда <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> и универсальные пороговые сутки <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span> формулируются так (§A.2, §B.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2,46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2,4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13,4</mn><mtext> часов</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ часов}</annotation></semantics></math></span></div></div></div>
+<p>При <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> кг/м³ получаем <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span> тогда и только тогда, когда P &lt; 13,4 часа. Вместе со вторым условием (активное подтекание воды и вещества из недр или оболочки) отсюда следует чёткое разделение всей Солнечной системы.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: тест <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> часа и бюджет углового момента ледяных гигантов</h2>
+<p>Сравнение данных «Кассини» и «Вояджера» с уравнениями сохранения подтверждает два ярких количественных результата (§B.5, §D.4):</p>
+<ul>
+<li><strong>Совпадение условия массивного кольца в восьми планетных состояниях (§B.5):</strong> лишь Сатурн сегодня (P = 10,6 ч, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + подтекающая крышка) и молодой Марс (P = 7–9 ч, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,65</mn><mtext>–</mtext><mn>0,76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + вулкан на выступе) выполняют оба условия массивного кольца прямо из недр.</li>
+<li><strong>270-кратный разрыв в массе воды, ушедшей с Урана и Нептуна (§D.4):</strong> замедление Урана с 8,3 до 17,2 часа отняло угловой момент 1,3 × 10³⁶ кг·м²/с, из которого луны удерживают лишь 1% (1,4 × 10³⁴). Вода, ушедшая через линию коротации (2,5 × 10²⁴ кг, около 2,8% массы Урана), весила <strong>в 270 раз больше всех его лун вместе</strong> (9 × 10²¹ кг), а у Нептуна (3,2 × 10²⁴ кг, около 3,1% массы планеты) она унесла 99,998% потерянного момента!</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: матрица условий массивного кольца (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> ч), скорость кольцевого дождя у Сатурна и бюджет углового момента (статья 12, части A–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Планета и период</th><th>Сутки P (ч)</th><th>Линия коротации / предел Роша (R)</th><th>Условие 1 (P &lt; 13,4 ч)</th><th>Условие 2 (подтекание из недр)</th><th>Динамический итог</th></tr>
+<tr class="hl"><td><strong>Сатурн сегодня</strong></td><td><strong>10,6</strong></td><td>1,92 / 2,24 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>)</td><td><strong>Да</strong></td><td><strong>Да (крышка подтекает)</strong></td><td><strong>Массивное кольцо прямо из недр</strong></td></tr>
+<tr class="hl"><td><strong>Молодой Марс</strong></td><td><strong>7–9</strong></td><td>1,74–2,05 / 2,68</td><td><strong>Да</strong></td><td><strong>Да (вулкан на выступе)</strong></td><td><strong>Древнее кольцо существовало</strong></td></tr>
+<tr><td><strong>Юпитер сегодня</strong></td><td>9,9</td><td>2,29 / 2,80 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0,82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>)</td><td>Да</td><td>Почти ноль (толстая крышка)</td><td>Тонкое пылевое кольцо только от лун</td></tr>
+<tr><td><strong>Земля при рождении</strong></td><td>5,8</td><td>2,29 / 4,02</td><td>Да</td><td>Нет (быстро высохла)</td><td>Кольца нет; Луна построена на груше</td></tr>
+<tr><td><strong>Уран / Нептун сегодня</strong></td><td>17,2 / 16,1</td><td>3.26/2.76 ; 3.39/3.00</td><td><strong>Нет</strong></td><td>Нет (вода ушла, и он замёрз)</td><td>Узкие остатки и кольца от лун</td></tr>
+<tr><td><strong>Марс / Земля сегодня</strong></td><td>24,6 / 23,9</td><td>6.03/4.02 ; 6.62/4.49</td><td><strong>Нет</strong></td><td>Нет (кора запечатана)</td><td>Кольцо исчезло / кольца нет</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Скорость кольцевого дождя у Сатурна (кг/с)</th><th>Время опустошения без питания</th><th>Требуемое суммарное питание за 4,5 млрд лет</th><th>Доля полной массы Сатурна</th></tr>
+<tr><td>432 (ионизированный дождь — нижняя граница)</td><td>1,1 миллиарда лет</td><td>4 массы колец</td><td>1 × 10⁻⁷</td></tr>
+<tr><td>2 870 (ионизированный дождь — верхняя граница)</td><td>170 миллионов лет</td><td>26 масс колец</td><td>7 × 10⁻⁷</td></tr>
+<tr><td>4 800 (нейтральный дождь — нижняя граница)</td><td>100 миллионов лет</td><td>44 массы колец</td><td>1,2 × 10⁻⁶</td></tr>
+<tr class="hl"><td><strong>45 000 (нейтральный дождь — верхняя граница)</strong></td><td><strong>11 миллионов лет</strong></td><td><strong>415 масс колец</strong></td><td><strong>1,1 × 10⁻⁵ (в рамках сохранения массы!)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В этой главе мы вывели <strong>универсальные пороговые сутки <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> часа</strong> для массивного кольца, увидели, как кольца Сатурна существуют в виде постоянного равновесного потока, и доказали, что механический уход воды через линию коротации унёс 99%–99,998% углового момента, потерянного Ураном и Нептуном.</p>
+<p>В следующей главе — <strong>Глава 24: Кольцо как перемалывающий конвейер, подписи на лунах и планетах и тест блока Атакамы</strong> (по статье 12 — части E–M) — мы рассмотрим, как кольцо сортирует комья в столкновениях и порождает «пропеллеры», почему ледяное кольцо строит экваториальные хребты на Пане и Атласе, а силикатное истирает Деймос, как гипотеза камня Атакамы была отвергнута на «Кьюриосити» в апреле 2026 года, и соберём 5 критериев опровержения части L!</p>
+<a href="story24_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 24</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Кольцо как перемалывающий конвейер, подписи на лунах и планетах и тест блока Атакамы →</p></div></a><p style="margin-top:22px"><a href="story22_ru.html">← Глава 22</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

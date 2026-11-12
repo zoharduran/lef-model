@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 2: Битва за длину суток и баланс углового момента — Модель LEF</title>
+<meta name="description" content="Глава 2 истории модели LEF: битва между тормозящей грушей и ускоряющим ядром, сутки в 5,77 часа в момент высвобождения, баланс углового момента, замыкающийся на 1,007, пределы Роша и приливный водораздел.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story02_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:left}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story02_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story02_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story02_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story02_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story02_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story02_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story02_he.html" hreflang="he">עברית</a> · <a href="story02_en.html" hreflang="en">English</a> · <a href="story02_de.html" hreflang="de">Deutsch</a> · <a href="story02_es.html" hreflang="es">Español</a> · <a href="story02_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 2</p>
+<h1>Глава 2: Битва за длину суток и баланс углового момента</h1>
+<p>По статье 02 — Механизм LEF в принципе (разделы A.4–A.8 и часть B)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: не убегает ли Луна от финишной черты, пока бежит к ней?</h2>
+<p class="lead">В предыдущей главе мы нашли финишную черту, которой должно достичь вещество, чтобы стать Луной: <strong>радиус коротации</strong>, который в отправной точке (сутки в 5,5 часа) находился в 15 818 км от центра Земли. Но как только процесс начинается и груша вытягивается вверх, появляется любопытная физическая ловушка.</p>
+<p>Закон сохранения углового момента гласит, что полное количество вращения изолированной системы нельзя создать из ничего. Когда Земля поднимает большую массу далеко от своей оси и заставляет её продолжать вращаться вместе с собой в том же темпе, поднимающаяся масса «крадёт» угловой момент у вращения Земли. В результате вращение Земли замедляется, сутки удлиняются — <strong>и сама линия коротации отступает и уходит наружу!</strong></p>
+<p>Здесь рождаются три решающих вопроса, от которых зависит судьба всей модели:</p>
+<div class="three">
+<div><b>01</b><p>Во-первых, <strong>не отодвигает ли удлинение суток линию коротации слишком далеко</strong> — или одновременно идёт внутренний процесс, который ускоряет вращение и уравновешивает его?</p></div>
+<div><b>02</b><p>Во-вторых, <strong>хватает ли общего баланса углового момента ранней Земли</strong>, чтобы заплатить «налог» за подъём Луны и всё же оставить нам ровно тот угловой момент, который сегодня измерен в системе Земля–Луна?</p></div>
+<div><b>03</b><p>И в-третьих, <strong>что не даёт молодой Луне быть разорванной на куски</strong> огромными приливными силами Земли в момент отделения?</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: фигуристка, вытягивающая одну руку — и прижимающая другую</h2>
+<p>Все мы знаем классическую картину фигуристки, вращающейся на месте: когда она разводит руки в стороны, её вращение сразу замедляется; а когда прижимает руки к телу, она крутится с головокружительной скоростью. Причина в том, что масса, удалённая от оси вращения, увеличивает момент инерции, а масса, близкая к оси, уменьшает его.</p>
+<p>А теперь представьте особый акробатический номер, в котором фигуристка выполняет <strong>два противоположных действия одновременно</strong>: одной рукой она выдвигает длинный тяжёлый шест («грушу», которая вытягивается к линии коротации и пытается её затормозить), а одновременно подтягивает к центру тела тяжёлую железную гирю, которую раньше держала далеко от оси («ядро», которое опускается к центру Земли и ускоряет её).</p>
+<div class="box"><span class="tag">Две противоположные силы</span><p style="margin:0">Поскольку эти две противоположные силы действуют вместе, фигуристка почти не теряет темпа вращения! Она лишь слегка замедляется и держится ровно на том темпе, который нужен, чтобы завершить номер.</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: почему «однородные недра» — пороговое условие</h2>
+<p>Многие модели эволюции Земли склонны предполагать, что её тяжёлое железное ядро сформировалось и опустилось к центру с максимальной скоростью ещё до образования Луны. Но статья 02 показывает, что такое допущение блокирует баланс углового момента: когда всё железо собрано в центре, момент инерции Земли мал (коэффициент инерции падает с <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> для однородного шара до <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0,33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span> для нынешней дифференцированной Земли), и при тех же сутках в 5,5 часа она не может запасти достаточно углового момента.</p>
+<p>В модели LEF, напротив, организация ядра — не разовое событие, завершившееся заранее, а <strong>единый непрерывный процесс</strong>:</p>
+<ul class="pts">
+<li><strong>В начале переноса массы:</strong> молодая Земля была горячей, раздутой (тепловое расширение 120 км, в допустимом диапазоне 98–520 км) и всё ещё почти однородной по распределению массы (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>). В этом состоянии она хранила начальный баланс углового момента <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>.</li>
+<li class="c"><strong>Во время подъёма груши:</strong> тяжёлое железо постепенно опускалось к центру (в двухслойной модели: отношение радиусов <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span> и отношение плотностей <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>), создавая ровно то ускорение вращения, которое нужно, чтобы уравновесить вытягивание груши!</li>
+</ul>
+<div class="callout"><span class="tag">Ключ к цене в угловом моменте</span>
+<p style="margin:0">На классическом пути деления Якоби (когда Земля пытается раскрутить собственную поверхность до точки разрыва, сутки 2,73 часа) системе нужно <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9,42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> — то есть <strong>в 2,74 раза</strong> больше углового момента нынешней системы Земля–Луна (а в исходной точке отсчёта — в 4,08 раза). В модели LEF, где вещество переносится к линии коротации, начальный баланс родительского тела составляет <strong>1,007</strong> от нынешнего углового момента — крошечный избыток всего в 0,7% (а при векторном сложении на проверенных углах — 1,5%–2,5%), который в точности соответствует последующей потере на солнечный прилив!</p></div>
+<div class="vs"><div><b>4,08</b><span>Классическое деление · исходная точка отсчёта</span></div><div><b>2,74</b><span>Классическое деление · точка бифуркации Якоби</span></div><div class="hit"><b>1,007</b><span>Модель LEF · высвобождение на линии коротации</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: битва за сутки, предел Роша и водораздел</h2>
+<p>Проследим шаг за шагом исход захватывающей битвы, которая разворачивается внутри Земли, пока поднимается груша:</p>
+<ol class="steps">
+<li><strong>Груша пытается затормозить Землю (+0,94 часа):</strong> перенос массы наружу в коротации отдаёт поднимающемуся веществу около 15,6% баланса углового момента в базовом расчёте (и около 16,5% в связанном решении). Этот угловой момент забирается у вращения Земли. Если бы груша действовала одна, без организации ядра (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>), сутки удлинились бы с 5,50 до <strong>6,44 часа</strong>, а линия коротации убежала бы на <strong>17 569 км</strong>.</li>
+<li><strong>Опускающееся ядро ускоряет Землю (−0,67 часа):</strong> одновременно тяжёлое железо опускается к центру Земли (в двухслойном сценарии <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) и укорачивает сутки на <strong>0,67 часа</strong>.</li>
+<li><strong>Точка равновесия в момент высвобождения (5,77 часа и 16 399 км):</strong> когда оба процесса действуют вместе, ускорение от ядра компенсирует бо́льшую часть торможения грушей. Сутки в момент отделения составляют всего <strong>5,77 часа</strong>, а линия коротации устанавливается на расстоянии <strong>16 331 км</strong> (в приближении пробной частицы) или <strong>16 399 км</strong> (≃ 16 400 км), если собственная масса Луны учтена в задаче двух тел.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">Старт · ⁦5,50 ч⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Груша тормозит · ⁦+0,94 ч⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Ядро ускоряет · ⁦−0,67 ч⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed">Высвобождение · ⁦5,77 ч⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Длина суток (часы)</text></svg><figcaption>Битва за длину суток: одна груша удлинила бы их до 6,44 часа; опускающееся ядро возвращает 0,67 часа, и сутки в момент высвобождения — 5,77 часа.</figcaption></figure>
+<div class="q">Как Луна переживает предел Роша и сразу начинает удаляться?</div>
+<p>В момент высвобождения Луна — круглое жёсткое тело (радиус <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mspace width="0.17em"></mspace><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> км при плотности 2 600 кг/м³): её ближняя сторона находится в 14 509 км от центра Земли (около 7 800 км над поверхностью сплюснутой Земли с экваториальным радиусом 6 701 км), а дальняя — в 18 289 км. Это положение лежит внутри <strong>жидкостного предела Роша</strong> (19 971 км) — расстояния, на котором приливные силы Земли разорвали бы мягкую жидкую сферу, — но далеко за <strong>жёстким пределом Роша</strong> (10 314 км). Поскольку Луна уже завершила округление и обрела жёсткую внешнюю оболочку (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>), ещё будучи прикреплённой к груше, отношение её осей остаётся не более 1,04 (почти идеальный шар), и она выживает целой!</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6 000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9 000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12 000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15 000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18 000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21 000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Луна</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:ltr;unicode-bidi:embed">Земля · 6 701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Жёсткий Рош · 10 314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Линия коротации · 16 399</text><text x="636.0" y="58.0" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:ltr;unicode-bidi:embed">Жидкий Рош · 19 971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Ближняя сторона · 14 509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Дальняя сторона · 18 289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Расстояние до центра Земли (км) · Луна при высвобождении, радиус 1 890 км</text></svg><figcaption>Луна в момент высвобождения на оси расстояний: снаружи от жёсткого предела Роша и внутри жидкостного, а линия коротации проходит сквозь неё.</figcaption></figure>
+<p>И наконец, почему она сразу удаляется, а не падает обратно? Потому что линия коротации — это <strong>приливный водораздел</strong>: тело, сидящее точно на линии, находится в безразличном равновесии; тело внутри линии прилив тянет внутрь; а тело, высвобожденное <strong>чуть за линией</strong> — с запасом <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> км за линией коротации, когда около 58% объёма Луны её уже пересекло, — толкается вперёд и наружу приливным горбом Земли, вращающейся быстрее Луны, и начинает удаляться с самой первой орбиты!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Баланс углового момента системы (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>) сохраняется между начальным состоянием и моментом высвобождения и распределяется между вращением Земли и орбитой Луны:</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>Сохранение углового момента</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">Линия коротации в момент высвобождения (<span class="ltr">5,77 h</span>)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mspace width="0.17em"></mspace><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>В момент отделения орбита Луны держит <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5,9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> (17% баланса, с приведённой массой <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span>; или <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span> при расчёте с полной массой вокруг центра Земли), а вращение Земли — <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>. Выведенный для Земли в этот момент коэффициент момента инерции равен <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span> — поразительное совпадение со значением <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> двухслойной структуры (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>):</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Вращение Земли · ⁦2,88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Орбита Луны · 17%</text></svg><figcaption>Распределение баланса углового момента в момент высвобождения.</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">Коэффициент инерции двухслойной модели</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">Жёсткий предел Роша</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1,26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mspace width="0.17em"></mspace><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: Фобос и Деймос вокруг Марса</h2>
+<p>Идея о том, что линия коротации действует как приливный «водораздел», — не теоретическая гипотеза: её можно наблюдать вживую в нашей Солнечной системе, вокруг планеты <strong>Марс</strong>. У Марса две маленькие луны, обращающиеся по разные стороны марсианского радиуса коротации (20 428 км):</p>
+<ul class="pts">
+<li class="c"><strong>Деймос (внешняя луна, 23 463 км):</strong> лежит <em>за</em> линией коротации Марса (обращается медленнее, чем вращается Марс). Поэтому прилив Марса толкает его наружу, и он постепенно удаляется от Марса — точно как наша Луна, высвобожденная примерно в 210 км за линией коротации.</li>
+<li class="a"><strong>Фобос (внутренняя луна, около 9 376 км):</strong> лежит <em>внутри</em> линии коротации (обгоняет вращение Марса). Поэтому прилив Марса тормозит его и тянет внутрь, и через десятки миллионов лет он постепенно рухнет на поверхность Марса.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Фобос · 9 376 км · тянется внутрь</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Линия коротации Марса · 20 428 км</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Деймос · 23 463 км · удаляется</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:ltr;unicode-bidi:embed">Марс</text></svg><figcaption>Приливный водораздел вокруг Марса: Фобос внутри линии и тянется внутрь, Деймос снаружи и удаляется.</figcaption></figure>
+<h3 style="margin-top:28px">Лабораторный бокс: баланс суток, угловой момент и пределы Роша (статья 02, часть B)</h3>
+<div class="tw"><table class="lt2"><tr><th>Этап / параметр</th><th>Длина земных суток</th><th>Радиус линии коротации</th><th>Смысл и распределение баланса</th></tr>
+<tr><td><strong>1. Отправная точка</strong></td><td>5,50 часа</td><td>15 818 км</td><td>Начальный баланс <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)</td></tr>
+<tr class="r1"><td><strong>2. Груша вытягивается одна</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>)</td><td>6,44 часа (<span class="ltr">+0,94 h</span>)</td><td>17 569 км</td><td>Торможение из-за передачи 15,6%–16,5% углового момента поднимающемуся веществу</td></tr>
+<tr class="r2"><td><strong>3. Ядро опускается</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>)</td><td><span class="ltr">−0,67</span> часа</td><td>Подтягивается внутрь</td><td>Ускорение («фигуристка прижимает руки»), компенсирующее бо́льшую часть торможения</td></tr>
+<tr class="hl"><td><strong>4. Совместное состояние высвобождения</strong></td><td>5,77 часа</td><td>16 399 км (16 331 для пробной частицы)</td><td>Баланс замыкается на 1,007 × сегодня (17% в орбите, 83% во вращении Земли)</td></tr>
+<tr><td><strong>5. Запас высвобождения и Рош</strong></td><td>5,77 часа</td><td>Высвобождение на +210 км за линией</td><td>Жёсткая Луна (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>, отношение осей ≤ 1,04) снаружи жёсткого предела Роша (10 314 км)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>Мы показали, что механика природы это допускает: баланс углового момента замыкается на 1,007, битва между грушей и опускающимся ядром удерживает сутки на 5,77 часа, а Луна высвобождается жёсткой и круглой за линией коротации и сразу начинает удаляться.</p>
+<p>Но статья 02 доказала лишь, что путь возможен <em>в принципе</em>. Теперь встаёт вопрос исполнения: <strong>какой гигантский двигатель вытолкнул миллиарды тонн породы на высоту в тысячи километров против гравитации?</strong> В следующей главе — <strong>Глава 3: Двигатель изнутри — давление источника в <span class="ltr">150 GPa</span> и вспененная магма</strong> (по статье 03 — <em>Механизм LEF на практике</em>) — мы спустимся в глубины ранней Земли и встретимся с давлением, которое подняло Луну.</p>
+<a href="story03_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 3</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Двигатель изнутри — давление источника в <span class="ltr">150 GPa</span> и вспененная магма →</p></div></a>
+<p style="margin-top:22px"><a href="story01_ru.html">← Глава 1</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

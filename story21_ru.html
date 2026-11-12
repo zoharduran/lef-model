@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 21: Закон лун Солнечной системы — линейка режимов рождения, принцип насоса и атмосферная крышка — Модель LEF</title>
+<meta name="description" content="Глава 21 истории модели LEF: закон лун Солнечной системы — линейка режимов рождения, принцип насоса и атмосферная крышка.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story21_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story21_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story21_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <a href="story21_de.html" hreflang="de">Deutsch</a> · <a href="story21_es.html" hreflang="es">Español</a> · <a href="story21_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 21</p>
+<h1>Глава 21: Закон лун Солнечной системы — линейка режимов рождения, принцип насоса и атмосферная крышка</h1>
+<p>По статье 11 — 11. Рождение лун: единый механизм рождения лун (части A–B: линейка рождения, принципы насоса и крышки, стадии дифференциации и протокол из 13 проверок)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: объясняет ли один физический закон рождение всех лун Солнечной системы — от Земли до Плутона?</h2>
+<p>В предыдущих главах мы видели, как Земля создала Луну на кончике груши (главы 1–9) и как Марс выбросил Фобос и Деймос из вулкана на вершине заострённого выступа (главы 19–20). В статье 11 модель LEF обобщает эти два случая в <strong>«Закон Луны»</strong> — единый механизм, действующий для каждой планеты и карликовой планеты Солнечной системы:</p>
+<ol class="steps">
+<li><strong>Почему луны так различаются по размеру и составу?</strong> Луна Земли сухая и огромная относительно родителя (1,2% массы Земли); луны гигантов (Юпитера, Сатурна, Урана и Нептуна) крошечные (0,01%–0,02%) и богаты водой и льдом; а Харон составляет 11% массы системы Плутон–Харон!</li>
+<li><strong>Почему плотность лун падает с удалением от Солнца — а затем снова подскакивает у Урана?</strong> Плотность Луны Земли 3 344 кг/м³, галилеевых спутников Юпитера ~ 2 600 кг/м³, лун Сатурна ~ 1 350 кг/м³ — но у более далёкого Урана плотность снова поднимается до 1 505 кг/м³!</li>
+<li><strong>Почему у пяти планет (Марса, Юпитера, Сатурна, Урана и Нептуна) маленькие луны сидят по обе стороны линии коротации?</strong> И почему Меркурий и Венера остались вовсе без лун?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: линейка расстояний линии коротации, фигуристка, прижимающая руки, и две кастрюли супа с крышками из пены</h2>
+<p>Четыре наглядных образа объясняют физику рождения лун во всей Солнечной системе:</p>
+<ul>
+<li><strong>Фигуристка прижимает руки, а её пальто раздувается наружу (сжатие внутри и разбухание снаружи, A.5):</strong> как планетная дифференциация приближает линию коротации к поверхности? Тело, равномерно разбухающее без потери углового момента, замедлилось бы и отодвинуло линию коротации. Но дифференциация — процесс противоположный внутри и снаружи: тяжёлое ядро (несущее большую часть массы) <strong>опускается и сжимается внутрь</strong> и ускоряет вращение, как фигуристка, прижимающая руки, тогда как лёгкая вода и летучие вещества выталкиваются вверх и <strong>раздувают внешнюю оболочку</strong>, почти не замедляя вращения. Поэтому относительное расстояние линии коротации сокращается по закону <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> и встречается с поверхностью!</li>
+<li><strong>«Гидродинамический насос» (принцип насоса, A.4):</strong> погружение тяжёлых материалов в ядро гидростатическим давлением выталкивает воду и лёгкие силикаты вверх к отверстиям выброса (кончику груши или жерлу вулкана на выступе). Пока насос работает и кора не запечатана, <strong>окно рождения</strong> остаётся открытым.</li>
+<li><strong>Две кастрюли супа на огне — толстая крышка из пены против тонкой (принцип атмосферной крышки, A.4 &amp; A.9):</strong> расстояние от Солнца определило, сколько водорода и гелия захватил каждый гигант до рассеяния протопланетного диска. У Сатурна (9,5 а.е.) <strong>толстая газовая оболочка (70%–85% массы)</strong>, работающая как термодинамическая крышка над водой: пары конденсируются и падают обратно внутрь, верхний слой остаётся насыщенным водой и мягким, линия коротации остаётся на месте (1,92 R), а выброшенные луны лёгкие и богаты льдом (1 346 кг/м³). У Урана (19 а.е.) <strong>тонкая газовая крышка (10%–20%)</strong>: пары ушли в космос через линию коротации, унесли угловой момент, отодвинувший линию до 3,24 R, и высушили и уплотнили верхний слой выброса — поэтому луны Урана плотнее (1 505 кг/м³)!</li>
+<li><strong>Три режима рождения в Солнечной системе (A.4, L.4):</strong> на горячем сухом внутреннем краю (Земля) большая сухая луна была построена на кончике груши (<strong>Построена</strong>); во влажной центральной зоне (от Марса до Нептуна) маленькие, богатые водой луны были выброшены из вулканов на выступах (<strong>Выброшены</strong>); а на холодном быстром внешнем краю (Плутон–Харон) единое тело вытянулось в «арахис» и разорвалось по талии (<strong>Расколоты</strong>).</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: закон рождения, линейка состояний и четыре стадии дифференциации (часть A)</h2>
+<p>Часть A статьи 11 формулирует точные количественные условия Закона Луны:</p>
+<ol class="steps">
+<li><strong>Линейка режимов рождения (A.3):</strong> если радиус линии коротации измерять в радиусах родителя (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), радиус родителя полностью сокращается! Положение x зависит <strong>только от отношения скорости вращения к средней плотности</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>), так что одна линейка применима к любому телу во Вселенной:
+<ul>
+<li><strong>Груша (построена на кончике груши):</strong> x ≈ 2,29 (Земля при 5,77 часа и плотности 3 940 кг/м³ — Луна составляет 1,2% массы родителя).</li>
+<li><strong>Выступ и вулкан (выброшена на выступе):</strong> x ≈ 1,74–2,06 (Марс при 7–9 часах и плотности 1 170 кг/м³, а также газовые и ледяные гиганты — крошечные луны 0,01%–0,02%).</li>
+<li><strong>Вулкан без выступа (теоретическая возможность):</strong> x ≈ 1,1–1,5.</li>
+<li><strong>Полный раскол арахиса (раскол по шее):</strong> x ≈ 0,85–1,02 (переход от порога вытягивания x = 1,53 к порогу разрыва x = 1 — Плутон и Харон при 1,9–2,5 часа, Харон 11% массы пары).</li>
+</ul>
+</li>
+<li><strong>Состав луны как хронологический срез стадий дифференциации родителя (A.9):</strong> по мере хода дифференциации линия коротации смещается внутрь (у Юпитера и в начале жизни Сатурна), поэтому <strong>более далёкие луны родились раньше</strong>, а более близкие — позже:
+<ul>
+<li><strong>Стадия 0 (начало дифференциации — центробежное разбрызгивание воды):</strong> разбрызгивание первичной воды из внешнего слоя выше предела Роша <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> воздушные ледяные луны (Япет 1 088 кг/м³, Гиперион 544 кг/м³).</li>
+<li><strong>Стадия 1 (ранняя — смешанный материал):</strong> выброс материала, представляющего состав всего родителя до завершения сортировки <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> крупные луны с плотностью, близкой к внутреннему телу родителя (f ≈ 0,6–0,7: Каллисто 1,834, Ганимед 1,936, Титан 1,880, Титания 1,711, Оберон 1 630 кг/м³).</li>
+<li><strong>Стадия 2 (пик гидродинамического насоса):</strong> выталкивание магмы, насыщенной водой и лёгкими силикатами; уход летучих в космос оставляет высокую пористость («губчатость», 30%–40%) и низкую плотность <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Фобос (1 860), Деймос (1 470), Тефия (984), Миранда (1 200 кг/м³).</li>
+<li><strong>Стадия 3 (конец дифференциации):</strong> выброс сухого плотного силикатного остатка с выраженным металлическим ядром <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Ио (3 528 кг/м³).</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 222" role="img" aria-label="Линия коротации в радиусах родителя" style="direction:ltr"><g transform="translate(227.0,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >Кончик груши · ⁦2,29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >Выброс на выступе · ⁦1,74–2,06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >Вулкан без выступа · ⁦1,1–1,5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Раскол арахиса · ⁦0,85–1,02⁩</text><text x="320.0" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Линия коротации в радиусах родителя · красная линия: порог разрыва</text></svg><figcaption>Линейка режимов рождения: одно и то же число x определяет, была ли луна построена на кончике, выброшена из вулкана или оторвана от арахиса — для любого тела, независимо от радиуса родителя.</figcaption></figure><div class="callout"><span class="tag">Правильное сравнение плотностей — отделение внутреннего тела от газовой оболочки (A.9)</span><p style="margin:0">Луны рождаются из внутреннего тела (камня и льда), а не из водородно-гелиевой оболочки. Если среднюю плотность лун разложить на силикатно-металлическую компоненту (3 500 кг/м³) и ледяную (950 кг/м³), массовая доля силикатов f постепенно падает от Земли (f = 0,98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>) через Юпитер (f = 0,83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>) до Сатурна (f = 0,36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>) — и снова растёт у Урана (f = 0,49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>), потому что тонкая газовая крышка Урана (10%–20%) позволила воде уйти и высушила верхний слой выброса!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: шестнадцать положений Закона Луны (A.10) и протокол из 13 проверок (часть B)</h2>
+<p>Части A.10 и B статьи 11 объединяют все физические условия в одну систему законов и один единый протокол измерений из 13 проверок для каждого тела Солнечной системы:</p>
+<ol class="steps">
+<li><strong>Солнце как термодинамические часы — дуга рождений (A.10.4 &amp; L.4):</strong> рождение лун требует одновременно активной дифференциации, открытого временного окна, незапечатанной коры и подповерхностного слоя низкой вязкости. Расстояние от Солнца определяет, как долго четыре условия выполняются вместе: на внутреннем краю (Меркурий и Венера) быстрое высыхание рано закрывает окно рождения, и лишь Земле удалось построить одну луну на кончике груши; в центральной зоне (от Марса до Сатурна) луны выбрасываются в изобилии вплоть до пика у Сатурна (~ 24 регулярные луны); а на холодном внешнем краю (Уран, Нептун и Плутон) замерзание коры постепенно закупоривает отверстия насоса и переводит систему к механическому расколу.</li>
+<li><strong>Структурная гонка и обратная связь массы луны (A.4, A.10.16):</strong> чтобы луна родилась, скорость радиального роста груши или выступа должна превышать скорость отступания линии коротации. После рождения, если отношение массы луны к родителю велико (как у Луны Земли, 1,2%), луна уносит большую часть углового момента (84%) и замедляет родителя; но у гигантов и у Марса масса лун крошечная (0,01%–0,02%, лишь 0,4%–1,4% момента), так что любое отступание линии коротации происходит <strong>только от ухода воды и газа через линию (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)</strong>!</li>
+<li><strong>Систематический протокол из 13 проверок (часть B):</strong> чтобы избежать предвзятости, каждая планета и карликовая планета проверяется по 13 фиксированным параметрам в хронологической последовательности: (1) глобальные базовые данные; (2) каталог и отделение регулярных лун от захваченных; (3) динамическая реконструкция древнего вращения (проверка 3 — по радиусу и коэффициенту момента инерции k во время рождения!); (4) проверка закона рождения; (5) анализ воды и летучих; (6) степень дифференциации сегодня (k = C/MR²); (7) определение окна рождения; (8) путь приливной миграции (проверка 8 — интегрирование da/dt для выявления потребности во вторичном толчке от кольца); (9) параметры выживания (предел Роша и радиус Хилла); (10) морфологические следы на родителе; (11) структурные следы на лунах (пористость, приливный захват и застывший выступ); (12) анализ систем колец как непрерывного потока; и (13) выделение аномалий.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Положение линии коротации в радиусах родителя (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), сутки рождения (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>) и эффект внутреннего сжатия и внешнего разбухания при дифференциации формулируются так (§A.3, §A.5, §B):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>Поскольку коэффициент момента инерции k входит в формулу дифференциации <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> в квадрате, падение k с 0,40 (однородное тело) до 0,20–0,25 (компактное ядро) приближает линию коротации x с 2,10 R до 1,44–1,68 R даже при разбухании внешней оболочки в 1,3 раза — и это геодинамический двигатель, сводящий поверхность и линию коротации!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: реконструкция линии коротации и уравнение смешения лун</h2>
+<p>Применение проверок 3 и 5 протокола к планетам выявляет впечатляющее количественное совпадение между химическим составом лун и сохранением углового момента (§A.9, §B):</p>
+<ul>
+<li><strong>Двухкомпонентное уравнение смешения плотности лун (§A.9):</strong> по формуле <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span> массовая доля силикатов f крупных лун, родившихся на стадии 1 дифференциации, сходится к узкому единому диапазону <strong>f ≈ 0,6–0,7</strong> во всей внешней Солнечной системе (Каллисто, Ганимед, Титан, Титания, Оберон, а также система Плутон–Харон)!</li>
+<li><strong>Тест реконструкции линии коротации без потери массы (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, часть B):</strong> если вернуть родителю только угловой момент лун, у Юпитера (2,29 R → 2,28 R) и Сатурна (1,92 R → 1,90 R) линия почти не сдвигается (в согласии с принципом толстой крышки); у Земли линия возвращается на 2,29 R (поскольку Луна несёт 84% момента); тогда как у Марса (6,03 R), Урана (3,24 R) и Нептуна (3,39 R) линия остаётся далеко от диапазона рождения (x ≈ 2) — доказательство того, что у всех трёх огромные количества воды и газа ушли через линию коротации!</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: линейка режимов рождения, стадии дифференциации, модель двух кастрюль и протокол из 13 проверок (статья 11, части A–B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Режим рождения</th><th>Механизм подъёма материала</th><th>Положение линии коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th><th>Отношение масс луна/родитель</th><th>Зона Солнечной системы и пример</th></tr>
+<tr class="hl"><td><strong>1. Построена на кончике</strong></td><td>Длительное накопление на кончике планетной груши; отрыв при пересечении линии</td><td><strong>2,29</strong> (5,77 ч, 3 940 кг/м³)</td><td><strong>1,2%</strong> (большая и сухая)</td><td>Сухой внутренний край: <strong>Луна Земли</strong> (единственный случай)</td></tr>
+<tr class="hl"><td><strong>2. Выброшена на выступе</strong></td><td>Экваториальный выступ и вулкан, нагнетающий насыщенную водой магму</td><td><strong>1,74–2,06</strong> (Марс 7–9 ч, 1 170 кг/м³)</td><td><strong>0,01%–0,02%</strong> у гигантов (1,9 × 10⁻⁸ у Марса)</td><td>Влажная центральная зона: <strong>Фобос, Деймос и луны гигантов</strong></td></tr>
+<tr><td><strong>2b. Вулкан без выступа</strong></td><td>Точечный выброс из местного вулкана</td><td>≈ 1,1–1,5</td><td>Крошечное</td><td>Теоретическая возможность (без рассчитанного примера)</td></tr>
+<tr class="hl"><td><strong>3. Полный раскол</strong></td><td>Вращение за порогом деления (x = 1); вытягивание в арахис и разрыв по талии</td><td><strong>0,85–1,02</strong> (1,9–2,5 ч, 1 840 кг/м³)</td><td><strong>11%–12%</strong> (двойной захват)</td><td>Холодный внешний край: <strong>Плутон и Харон</strong> (и Хаумеа до раскола)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Стадия дифференциации родителя (A.9)</th><th>Геодинамический механизм и материал у отверстия</th><th>Свойства образовавшейся луны</th><th>Примеры в Солнечной системе</th></tr>
+<tr><td><strong>Стадия 0: начало дифференциации</strong></td><td>Центробежное разбрызгивание воды из внешнего слоя выше предела Роша</td><td>Воздушная губчатая ледяная луна очень низкой плотности</td><td>Япет (1 088), Гиперион (544 кг/м³)</td></tr>
+<tr class="hl"><td><strong>Стадия 1: ранняя стадия</strong></td><td>Смешанный материал, представляющий состав всего внутреннего тела</td><td>Крупная луна с плотностью, близкой к внутреннему телу (f ≈ 0,6–0,7), частичная дифференциация</td><td>Каллисто (1 834), Ганимед (1 936), Титан (1 880), Титания (1 711), Оберон (1 630)</td></tr>
+<tr class="hl"><td><strong>Стадия 2: пик насоса</strong></td><td>Быстрое погружение ядра, выталкивающее магму, насыщенную водой и лёгкими силикатами</td><td>Уход летучих создаёт «губчатость» (пористость 30%–40%) и низкую плотность</td><td>Фобос (1 860), Деймос (1 470), Тефия (984), Миранда (1 200 кг/м³)</td></tr>
+<tr><td><strong>Стадия 3: конец дифференциации</strong></td><td>Почти полная сортировка; выброс сухого плотного силикатного остатка</td><td>Плотная силикатная луна, полностью сухая и с металлическим ядром</td><td>Ио (3 528 кг/м³)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В этой главе мы сформулировали <strong>Закон Луны</strong> модели LEF: положение линии коротации в радиусах родителя (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), принцип гидродинамического насоса, принцип атмосферной крышки (модель двух кастрюль: Сатурн против Урана) и сжатие ядра, приводящее линию коротации к поверхности.</p>
+<p>В следующей главе — <strong>Глава 22: Полный обзор планет — от Меркурия и Венеры до Плутона, Хаумеа и Цереры</strong> (по статье 11 — части C–N) — мы прогоним протокол из 13 проверок планету за планетой: узнаем, почему у Меркурия и Венеры нет лун, как кольца Сатурна работают как непрерывный поток в равновесии, почему Уран наклонён на 98°, как Тритон был захвачен как доля арахиса из пояса Койпера, и нанесём на карту 12 открытых вопросов Солнечной системы!</p>
+<a href="story22_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 22</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Полный обзор планет — от Меркурия и Венеры до Плутона, Хаумеа и Цереры →</p></div></a><p style="margin-top:22px"><a href="story20_ru.html">← Глава 20</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

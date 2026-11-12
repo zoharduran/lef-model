@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 5: Груша и высвобождение Стефана — мост, несущий Луну и рвущийся ровно на линии коротации — Модель LEF</title>
+<meta name="description" content="Глава 5 истории модели LEF: широкий контактный диск, удерживающий Луну на широте 22,5°, высвобождение Стефана, отпускающее её примерно в 210 км за линией коротации, и два орбитальных теста, сходящихся на этом расстоянии.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story05_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story05_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story05_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story05_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story05_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story05_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story05_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story05_he.html" hreflang="he">עברית</a> · <a href="story05_en.html" hreflang="en">English</a> · <a href="story05_de.html" hreflang="de">Deutsch</a> · <a href="story05_es.html" hreflang="es">Español</a> · <a href="story05_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 5</p>
+<h1>Глава 5: Груша и высвобождение Стефана — мост, несущий Луну и рвущийся ровно на линии коротации</h1>
+<p>По статье 03 — Механизм LEF на практике (часть C: §C.1–C.6)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: как удержать целую луну на широте 22,5° — и оторвать её, не оставив хвоста?</h2>
+<p>В предыдущих главах мы видели, как внутренний двигатель выталкивает вспененную магму вверх (глава 3) и как внешняя сиалевая кора облекает поднимающееся тело куполом (глава 4). Но стоит взглянуть на инженерную картину <strong>связи между Землёй и Луной</strong> в конце подъёма, как появляется двойная и сложная загадка:</p>
+<ol class="steps">
+<li><strong>Огромная боковая сила на широте 22,5°:</strong> Луна сидит не на экваторе, а на широте <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span> (в 17 287 км от центра Земли, при сутках 5,77 часа). Хотя на линии коротации радиальное притяжение уравновешено точно (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span>), центробежный толчок вращения направлен от оси вращения — и поэтому у него есть боковая составляющая (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><mn>0,559</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a_\lambda = 0.559\text{ m/s}^2</annotation></semantics></math></span></span>), с силой тянущая Луну к экватору! Это огромная боковая сдвиговая нагрузка в <strong>4,06 × 10²² ньютонов</strong>. Как горячая расплавленная «шея» может выдержать такую силу, не изогнувшись и не соскользнув к экватору?</li>
+<li><strong>Чистый разрыв без узкой шеи:</strong> в привычной гидродинамике капля, отрываясь от шприца или крана, вытягивается в тонкую нить и рвётся — оставляя часть вещества позади. Если бы Луна отделилась так, она потащила бы за собой искажённый «хвост» или развалилась бы. Как она высвобождается круглым, целым и жёстким телом на точном расстоянии около <strong>210 км</strong> за линией коротации?</li>
+</ol>
+<p>Часть C статьи 03 решает обе загадки разом: связь — не тонкая «шея», а <strong>широкий горячий контактный диск поперечником 3 000 км</strong>, опирающийся на широкую спину гравитационно прочной груши; а отделение — не хрупкий разлом твёрдого тела, а <strong>явление вязкого сцепления (адгезия Стефана)</strong>, при котором тонкий слой магмы постепенно раскрывается в тот момент, когда центр масс пересекает линию коротации!</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: две стеклянные пластинки с каплей мёда между ними</h2>
+<p>Чтобы понять, как отделяется широкий горячий контактный диск, представьте простой кухонный опыт: возьмите две плоские стеклянные пластинки и поместите между ними тонкий слой воды или мёда.
+<br>• Если попытаться <strong>сдвинуть</strong> пластинки вбок одна относительно другой, сопротивление будет очень малым.
+<br>• Но если попытаться <strong>оторвать их прямо друг от друга</strong>, под прямым углом, вы внезапно почувствуете сильную силу сопротивления! Почему? Не потому, что мёд или вода — твёрдый клей, а потому, что для раскрытия зазора новая жидкость должна втечь от краёв к центру — а когда зазор очень узок, втекание медленное и сопротивляется скорости раскрытия.</p>
+<p>А что, если продолжать тянуть? Как только зазор немного раскроется (скажем, до трёх начальных толщин), жидкость легко втекает, <strong>сопротивление разом рушится (падает в 27 раз!)</strong>, и две пластинки полностью расходятся!</p>
+<p>В физике это явление называется <strong>высвобождением Стефана</strong>. Горячий контактный слой между грушей и Луной ведёт себя точно как этот слой мёда между двумя гигантскими пластинами шириной 3 000 км: пока центр масс Луны внутри линии коротации, гравитация прижимает пластины друг к другу; как только центр масс пересекает линию наружу, сила обращается в растяжение, контактный слой раскрывается сначала медленно и разом рушится примерно в <strong>210 км</strong> за линией!</p>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Stefan resistance falling as the cube of the gap" style="direction:ltr"><path d="M70.0,20.0 L74.9,32.1 L79.8,43.3 L84.7,53.7 L89.6,63.3 L94.5,72.2 L99.5,80.5 L104.4,88.3 L109.3,95.5 L114.2,102.2 L119.1,108.5 L124.0,114.4 L128.9,119.9 L133.8,125.0 L138.7,129.9 L143.6,134.4 L148.5,138.7 L153.5,142.7 L158.4,146.5 L163.3,150.1 L168.2,153.5 L173.1,156.7 L178.0,159.7 L182.9,162.5 L187.8,165.2 L192.7,167.8 L197.6,170.2 L202.5,172.5 L207.5,174.7 L212.4,176.8 L217.3,178.7 L222.2,180.6 L227.1,182.4 L232.0,184.1 L236.9,185.7 L241.8,187.3 L246.7,188.7 L251.6,190.1 L256.5,191.5 L261.5,192.8 L266.4,194.0 L271.3,195.2 L276.2,196.3 L281.1,197.4 L286.0,198.4 L290.9,199.4 L295.8,200.3 L300.7,201.2 L305.6,202.1 L310.5,202.9 L315.5,203.8 L320.4,204.5 L325.3,205.3 L330.2,206.0 L335.1,206.7 L340.0,207.3 L344.9,208.0 L349.8,208.6 L354.7,209.2 L359.6,209.7 L364.5,210.3 L369.5,210.8 L374.4,211.3 L379.3,211.8 L384.2,212.3 L389.1,212.7 L394.0,213.2 L398.9,213.6 L403.8,214.0 L408.7,214.4 L413.6,214.8 L418.5,215.2 L423.5,215.5 L428.4,215.9 L433.3,216.2 L438.2,216.6 L443.1,216.9 L448.0,217.2 L452.9,217.5 L457.8,217.8 L462.7,218.1 L467.6,218.3 L472.5,218.6 L477.5,218.8 L482.4,219.1 L487.3,219.3 L492.2,219.6 L497.1,219.8 L502.0,220.0 L506.9,220.2 L511.8,220.4 L516.7,220.6 L521.6,220.8 L526.5,221.0 L531.5,221.2 L536.4,221.4 L541.3,221.6 L546.2,221.7 L551.1,221.9 L556.0,222.1 L560.9,222.2 L565.8,222.4 L570.7,222.5 L575.6,222.7 L580.5,222.8 L585.5,223.0 L590.4,223.1 L595.3,223.2 L600.2,223.3 L605.1,223.5 L610.0,223.6" fill="none" stroke="#c47f2c" stroke-width="3"/><line x1="70.0" x2="70.0" y1="20" y2="230" stroke="#ece7da"/><text x="70.0" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">d₀</text><line x1="315.5" x2="315.5" y1="20" y2="230" stroke="#ece7da"/><text x="315.5" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">2d₀</text><line x1="560.9" x2="560.9" y1="20" y2="230" stroke="#ece7da"/><text x="560.9" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">3d₀</text><line x1="70" x2="610" y1="230" y2="230" stroke="#9aa3af"/><circle cx="70.0" cy="20.0" r="6" fill="#b23a2e"/><circle cx="560.9" cy="222.2" r="6" fill="#2f7d57"/><text x="82.0" y="25.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Полное сопротивление</text><text x="560.9" y="208.2" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">1/27 · Луна освобождается</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Толщина контактного слоя (в долях начальной)</text><text transform="rotate(-90 18 125)" x="18.0" y="125.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Сопротивление</text></svg><figcaption>Высвобождение Стефана: сопротивление раскрытию слоя падает как третья степень его толщины; при тройной толщине оно в 27 раз меньше — смещение около 210 км.</figcaption></figure></section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: разграничение понятий — сила, напряжение и заякоривание</h2>
+<p>Чтобы избежать обычных ошибок в расчёте планетных нагрузок, статья 03 тщательно разделяет три основных понятия: <strong>силу</strong> (полный толчок или тягу, в ньютонах), <strong>напряжение</strong> (силу, делённую на площадь, которая её несёт, в гигапаскалях) и <strong>деформацию</strong>. Вот три главных вывода:</p>
+<ol class="steps">
+<li><strong>Верхний купол не несёт давления источника в <span class="ltr">150 GPa</span>:</strong> при гидростатическом равновесии большая часть глубинного давления тратится на подъём столба породы под ним. Собственное давление в центре Луны (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>b</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_b = 1,890</annotation></semantics></math></span></span> км, плотность 2 600 кг/м³) составляет лишь <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>c</mi></msub><mo>≃</mo><mn>3,37</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">p_c \simeq 3.37\text{ GPa}</annotation></semantics></math></span></span> — в сорок раз меньше давления источника!</li>
+<li><strong>Почему узкая шея проваливается — а широкий контактный диск (3 000 км) побеждает:</strong> боковая нагрузка в 4,06 × 10²² ньютонов на широте 22,5° распределяется по площади связи. Будь связь шеей радиусом 1 000 км, сдвиговое напряжение на ней составило бы <span class="ltr">12,92 GPa</span> (а для шеи в 500 км — <span class="ltr">46,04 GPa</span>) — напряжение, при котором горячее вещество потечёт и размажется к экватору. Напротив, на широком контактном диске стадии 3 (3 000 км поперёк, радиус <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> км) среднее напряжение падает до <strong><span class="ltr">5,74 GPa</span></strong>, и его несёт широкая структура груши внизу, удерживаемая собственной гравитацией Земли!</li>
+<li><strong>Почему Луна не соскользнула к экватору по пути вверх:</strong> две системы заякоривания не давали поднимающемуся телу соскользнуть к экватору под боковой центробежной силой: на стадии широкого купола (6 000 км) тело было заякорено в отверстии жёсткой сиалевой оболочки (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>, та самая оболочка, что держит 100-километровые кратеры без обрушения); а на стадии округления наружу (3 000 км) боковая нагрузка передавалась прямо массивной груше внизу.</li>
+</ol>
+<div class="callout"><span class="tag">Двойное отделение одновременно (отслоение + отрыв)</span><p style="margin:0">Расставание Луны с Землёй шло двумя взаимодополняющими путями: вдоль внешнего кольца нижнего купола (от 6 000 до 3 000 км) сиалевый слой, на котором сидело тело, <strong>постепенно отслаивался</strong> вдоль «смазанной» границы над симой и присоединялся к Луне (создавая пояс 31°–70°); а в центральном контактном диске (3 000 км) крайний жар расплавил и удалил сиаль, и горячий слой был растянут и раскрыт в <strong>высвобождении Стефана</strong> сразу после пересечения линии коротации!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: высвобождение Стефана и запас в 210 км, объясняющий сразу два лунных факта</h2>
+<p>Что именно происходит в момент, когда центр масс Луны пересекает линию коротации (на широте 22,5°, на расстоянии 17 287 км, при сутках 5,77 часа)?</p>
+<ol class="steps">
+<li><strong>Точка перелома в центре масс:</strong> дальняя сторона Луны пересекает линию коротации раньше во время подъёма, но пока центр масс внутри линии, внутренняя часть Луны (гравитационно) тяжелее внешней, и контакт остаётся сжатым. В момент, когда центр масс пересекает линию, сумма сил обращается в растяжение наружу (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi>m</mi><mo>⋅</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">F_{\mathrm{net}} = m \cdot 3\omega^2 \Delta r</annotation></semantics></math></span></span>).</li>
+<li><strong>Обрушение слоя Стефана (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>):</strong> горячий контактный слой (начальная толщина <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">d_0 \approx 105</annotation></semantics></math></span></span> км, вязкость <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\eta_c</annotation></semantics></math></span></span>) сначала сопротивляется скорости раскрытия, но по мере раскрытия зазора сопротивление падает как третья степень зазора (d⁻³). Когда зазор достигает тройной начальной толщины (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>, то есть смещения на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> км за линию коротации, когда около 58% объёма Луны уже пересекло линию), сопротивление падает в 27 раз и Луна освобождается.</li>
+<li><strong>Вращательная связь без преждевременного разрыва:</strong> на всём протяжении подъёма (со скоростью около 1 км в год) тот же контактный диск передаёт Луне крутящий момент, нужный для удержания её в коротации, — при крошечном сдвиговом напряжении всего около <span class="ltr">0,2 kPa</span> (около одной пятисотой атмосферного давления на уровне моря!).</li>
+</ol>
+<p><strong>Двойное доказательство от нынешней лунной орбиты (§C.5a):</strong><br>
+Почему Луна высвободилась примерно в <strong>210 км</strong> за линией коротации, а не точно на самой линии? Оказывается, высвобождение точно на линии (0 км) поставило бы Луну на идеально круговую орбиту (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e_0 = 0</annotation></semantics></math></span></span>), а прилив Земли сохраняет круговую орбиту круговой навсегда — значит, эксцентриситет (эллиптическая сплюснутость) нынешней лунной орбиты (e = 0,0549) никогда бы не возник! Расчётный поиск статьи 03 находит, что два независимых теста сходятся ровно на одном и том же расстоянии высвобождения:</p>
+<ul>
+<li><strong>Тест наклона орбиты:</strong> высвобождение на широте 22,5° примерно в 210 км за линией (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> км, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 = 0.037</annotation></semantics></math></span></span>) даёт за время орбитальной эволюции конечный наклон <strong>5,145°</strong> — измеренный угол лунной орбиты сегодня!</li>
+<li><strong>Тест эксцентриситета:</strong> ровно тот же запас (≈ 210 км) воспроизводит для молодой горячей Луны (A ≈ 3,0) эксцентриситет, измеренный сегодня, — <strong>0,0549</strong>!</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 300" role="img" aria-label="Final orbital inclination against release distance beyond the corotation line" style="direction:ltr"><line x1="70" x2="610" y1="237.9" y2="237.9" stroke="#ece7da"/><text x="62" y="241.9" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,0°</text><line x1="70" x2="610" y1="177.4" y2="177.4" stroke="#ece7da"/><text x="62" y="181.4" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,1°</text><line x1="70" x2="610" y1="116.8" y2="116.8" stroke="#ece7da"/><text x="62" y="120.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,2°</text><line x1="70" x2="610" y1="56.3" y2="56.3" stroke="#ece7da"/><text x="62" y="60.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,3°</text><text x="90.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="190.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">100</text><text x="290.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">200</text><text x="390.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="490.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="590.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><line x1="70" x2="610" y1="150.1" y2="150.1" stroke="#2f7d57" stroke-width="1.5" stroke-dasharray="6 4"/><text x="606.0" y="142.1" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Наклон, измеренный сегодня · ⁦5,145°⁩</text><path d="M90.0,225.8 L190.0,190.1 L300.0,150.1 L390.0,115.6 L590.0,35.7" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="90.0" cy="225.8" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="190.0" cy="190.1" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="300.0" cy="150.1" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><circle cx="390.0" cy="115.6" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="590.0" cy="35.7" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="310.0" y="172.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">210 км</text><text x="340.0" y="290.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Расстояние высвобождения за линией коротации (км)</text></svg><figcaption>Конечный наклон орбиты в зависимости от расстояния высвобождения (статья 03, часть C): лишь высвобождение примерно в 210 км за линией даёт 5,145° — и на том же расстоянии ещё и эксцентриситет 0,0549.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Нагрузки на связь на широте <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> (радиальная <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">a_r</annotation></semantics></math></span></span> и боковая <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub></mrow><annotation encoding="application/x-tex">a_\lambda</annotation></semantics></math></span></span>) и сила сопротивления слоя Стефана толщиной d и радиусом <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> км выражаются следующими уравнениями:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_r = \dfrac{G(M_E+m)}{r^2} - \omega^2 r \cos^2\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mi>sin</mi><mo>⁡</mo><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_\lambda = \omega^2 r \sin\lambda \cos\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msub><mi>m</mi><mi>r</mi></msub><msqrt><mrow><msubsup><mi>a</mi><mi>r</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>a</mi><mi>λ</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = m_r\sqrt{a_r^2 + a_\lambda^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msub><mi>η</mi><mi>c</mi></msub><msubsup><mi>R</mi><mi>c</mi><mn>4</mn></msubsup><mover accent="true"><mi>d</mi><mo>˙</mo></mover></mrow><mrow><mn>2</mn><msup><mi>d</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mi>m</mi><mo stretchy="false">(</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{Stefan}} = \dfrac{3\pi \eta_c R_c^4 \dot{d}}{2d^3} = m(3\omega^2)(d - d_0) \quad \Longrightarrow \quad \Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210\text{ km}</annotation></semantics></math></span></div></div></div>
+<p>В принятой точке высвобождения (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span>, сутки 5,77 часа) радиус линии коротации — <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi></mrow></msub><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi>λ</mi><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>287</mn></mrow><annotation encoding="application/x-tex">r = r_{\mathrm{co}}\cos^{-2/3}\lambda = 17,287</annotation></semantics></math></span></span> км, а центр Луны в момент полного отрыва находится на <strong>17 496 км</strong> (а для экватора: линия на 16 399 км и высвобождение на 16 610 км). Высвобождение оставляет почти круговую орбиту с начальным эксцентриситетом <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>≃</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 \simeq 0.037</annotation></semantics></math></span></span> и большой полуосью <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> км, которые передаются как прямые входные данные в статью 04 (<em>Орбита</em>).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: последняя связь у Моря Дождей и хребты-лопатки</h2>
+<p>Высвобождение Стефана и двухэтапное расставание оставили осязаемые отпечатки на самом лике Луны:</p>
+<ul>
+<li><strong>Порядок отделения больших морей:</strong> вдоль кольца отслоения <strong>Море Ясности</strong> обнажилось и отслоилось первым, а <strong>Море Дождей</strong> (лежащее глубоко внутри контактного диска в 3 000 км) служило последним внутренним питающим каналом и оставалось прикреплённым к груше до момента окончательного отрыва! Как только Море Дождей отрезало, внутреннее давление Земли на Луну прекратилось, и большие моря видимой стороны медленно застыли гладкими поверхностями, как замёрзшее озеро.</li>
+<li><strong>Хребты-лопатки:</strong> когда центр масс Луны пересёк линию коротации и тянущие наружу силы победили сопротивление горячего мягкого контакта, сильная тяга наружу растянула и исполосовала поверхность зоны отрыва, создав характерные <strong>хребты-лопатки</strong>.</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: силы связи, высвобождение Стефана и поиск расстояния высвобождения (статья 03, часть C)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Расстояние за линией коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta r</annotation></semantics></math></span></span>)</th><th>Объём Луны за линией</th><th>Начальная большая полуось (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span></span>)</th><th>Начальный эксцентриситет (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">e_0</annotation></semantics></math></span></span>)</th><th>Конечный наклон орбиты (сегодня)</th><th>Смысл и результат теста</th></tr>
+<tr class="bad"><td>0 км (точно на линии)</td><td>50%</td><td>17 287 км</td><td>0,000</td><td>5,020°</td><td>Круговая орбита навсегда — не воспроизводит e = 0,0549</td></tr>
+<tr class="mid"><td>100 км</td><td>54%</td><td>17 696 км</td><td>0,017</td><td>5,079°</td><td>Наклон слишком мал; эксцентриситет слишком мал (0,013 при A=3)</td></tr>
+<tr class="hl"><td><strong>≈ 210 км (принятое состояние)</strong></td><td><strong>58%</strong></td><td><strong>18 163 км</strong></td><td><strong>0,037</strong></td><td><strong>5,145° (измерено!)</strong></td><td><strong>Воспроизводит сразу наклон 5,145° и e ≈ 0,0549</strong></td></tr>
+<tr class="mid"><td>300 км</td><td>62%</td><td>18 571 км</td><td>0,053</td><td>5,202°</td><td>Наклон и эксцентриситет (0,11) слишком велики</td></tr>
+<tr class="bad"><td>500 км</td><td>69%</td><td>19 531 км</td><td>0,089</td><td>5,334°</td><td>Существенное отклонение от нынешних данных Луны</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Широта высвобождения</th><th>Длина земных суток</th><th>Линия коротации</th><th>Центр Луны при полном высвобождении</th><th>Нагрузка на связь в момент высвобождения</th></tr>
+<tr><td><strong>0° (экватор)</strong></td><td>5,77 часа</td><td>16 399 км</td><td>~ 16 610 км</td><td>Полное радиальное равновесие; лишь пренебрежимое сопротивление Стефана</td></tr>
+<tr class="hl"><td><strong>22,5° (принятый путь)</strong></td><td><strong>5,77 часа</strong></td><td><strong>17 287 км</strong></td><td><strong>17 496 км</strong></td><td><strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span>; боковая нагрузка <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mn>4,06</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = 4.06 \times 10^{22}\text{ N}</annotation></semantics></math></span></span> (<span class="ltr">5,74 GPa</span>)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>Мы увидели, как Луна высвобождается жёсткой цельной сферой ровно в 210 км за линией коротации, без узкой шеи и не оставляя в космосе хвоста обломков. Но что стало с огромным телом, оставшимся под контактным диском, — <strong>с самой грушей</strong>, длиной около 8 700 км и массой от девяти до двенадцати масс Луны?</p>
+<p>В следующей главе — <strong>Глава 6: Судьба груши и шрамы реальности — от Тихоокеанского бассейна до ядра Земли</strong> (статья 03, части C.7–C.11, D и E) — мы узнаем, почему вся груша была втянута обратно в Землю, где лежит её след на дне Тихого океана и в основании мантии и как она даже растянула ядро ранней Земли!</p>
+<a href="story06_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 6</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Судьба груши и шрамы реальности — от Тихоокеанского бассейна до ядра Земли →</p></div></a><p style="margin-top:22px"><a href="story04_ru.html">← Глава 4</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

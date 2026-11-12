@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 14: Внешняя вращательная дифференциация — полярное сжатие, тонкая полярная кора и тесты размера кратеров — Модель LEF</title>
+<meta name="description" content="Глава 14 истории модели LEF: внешняя вращательная дифференциация — сжатие полярной площади, энергетический баланс, тонкая полярная кора и сохранение размера кратеров.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story14_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story14_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story14_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story14_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story14_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story14_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story14_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story14_he.html" hreflang="he">עברית</a> · <a href="story14_en.html" hreflang="en">English</a> · <a href="story14_de.html" hreflang="de">Deutsch</a> · <a href="story14_es.html" hreflang="es">Español</a> · <a href="story14_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 14</p>
+<h1>Глава 14: Внешняя вращательная дифференциация — полярное сжатие, тонкая полярная кора и тесты размера кратеров</h1>
+<p>По статье 07 — Полюса: почему полюса густо усеяны (части C.3–E: геометрия сжатия, энергетический баланс, 4 теста и 5 тестов сохранения диаметра)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: если полюса сжались вдвое — почему кора под полюсами тоньше, и почему сами кратеры не уменьшились?</h2>
+<p>В главе 13 мы видели, что молодая Луна перешла от сплющенного вытянутого тела (a : b : c ≈ 1,8 : 1,4 : 1) к сферической форме при сжатии объёма и что этот процесс сгустил полярные кратеры (1,20 ± 0,05 во всей популяции и 1,53 ± 0,19 в кратерах 60–100 км). Но здесь сразу возникают <strong>три ключевых физических вопроса</strong>, которые, оставшись без ответа, обрушили бы всю модель:</p>
+<ol class="steps">
+<li><strong>Парадокс толщины полярной коры:</strong> если при округлении полярная площадь сократилась примерно до <strong>0,55×</strong> исходной, вещество полярной оболочки было сжато внутрь, и кора под полюсами должна была стать <em>толще</em> коры под экватором! На деле измерения GRAIL показывают ровно обратное: <strong>кора под полюсами тоньше и плотнее коры под экватором!</strong></li>
+<li><strong>Парадокс сохранения размера кратеров:</strong> если поверхность на полюсах сжалась, почему сами кратеры не сжались вместе с ней? Если бы кратеры уменьшились в диаметре, кратеры около порога подсчёта (20 км) опустились бы ниже него и полностью стёрли бы избыток плотности!</li>
+<li><strong>Двигатель энергии и давления:</strong> какой физический двигатель вёл округление внутрь после пересечения линии коротации — и что стало с огромным давлением (2–<span class="ltr">12 GPa</span>), которое это округление оказало на жёсткую внешнюю оболочку?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: чаша мёда, выравнивающаяся заново, жёсткие плитки на сжимающейся простыне и «внешняя вращательная дифференциация»</h2>
+<p>Три простых образа решают три загадки и соединяют их в один геодинамический процесс:</p>
+<ul>
+<li><strong>Чаша мёда, которую наклонили и поставили обратно ровно (гравитационный двигатель, §C.4):</strong> пока Луна была прикреплена к Земле и вращалась быстро (5,5 часа), центробежная сила держала полюса «энергетически поднятыми» на 120 км над экватором (как энергетический холм, с которого лёгкое вещество соскальзывало к экватору). В момент, когда центр масс пересёк линию коротации (15 818–16 399 км), растяжение у основания груши упало до нуля, а плотность выросла с 1 700 до 2 600 кг/м³. Собственная гравитация Луны внезапно победила вращение — как фигуристка, чей вес разом удвоился и которая уже не может держать руки разведёнными, — и полюс мгновенно превратился из «вершины горы» в «дно долины», в которое всё вещество стекает под собственным весом!</li>
+<li><strong>Жёсткие керамические плитки на сжимающейся резиновой простыне (сохранение размера кратеров, §C.7, §D.2):</strong> верхняя оболочка уже застыла и была достаточно жёсткой, чтобы нести кратеры как <strong>жёсткие цельные плитки</strong>, сохраняющие исходный диаметр, тогда как упругие промежутки между кратерами смыкались и поглощались структурой коры!</li>
+<li><strong>«Внешняя вращательная дифференциация» (§C.8, §D.6):</strong> почему кора под полюсами сегодня тоньше вопреки сжатию? Потому что за <strong>десятки миллионов лет сплющенной стадии</strong> (до начала сжатия!) быстрое вращение заставило лёгкое вещество внешней оболочки течь наружу <strong>от полюсов к экватору</strong>, создав <em>особенно тонкую</em> полярную оболочку. Когда наступила стадия округления, эта тонкая оболочка сжалась внутрь и стала <strong>тонкой плотной полярной корой</strong> (всё ещё тоньше толстой экваториальной коры!), а кратеры, равномерно упавшие на растянутую оболочку, сгустились к центрам полюсов!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: расчёт сжатия площади (0,55×) и энергетический баланс (1,5 × 10²⁸ джоулей)</h2>
+<p>Части C.3 и C.4 статьи 07 с математической точностью количественно описывают и изменение площади в каждой точке лика Луны, и высвобождение энергии и внутреннего давления при округлении:</p>
+<ol class="steps">
+<li><strong>Абсолютное сжатие площади в сочетании с падением объёма (§C.3.1):</strong> при переходе от пика сплющивания (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> кг/м³, эквивалентный радиус 2 180 км, размеры 5 585 × 4 628 × 3 191 км) к сферическому телу при отрыве (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>2</mn><mo separator="true">,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">\rho \approx 2,600</annotation></semantics></math></span></span> кг/м³, сферический диаметр 3 778 км, радиус 1 890 км) объём падает в <strong>1,53</strong> раза, эквивалентный радиус сжимается на 13%, а средняя площадь поверхности падает до <strong>0,75×</strong>. Но из-за трёхосного изменения формы (1,75 : 1,45 : 1 в центре семейства) изменение неравномерно:
+<ul>
+<li><strong>Полярная площадь (ось c):</strong> сокращается примерно до <strong>0,55×</strong> исходной (максимальное сжатие!).</li>
+<li><strong>Площадь боков (ведущего и ведомого, ось b):</strong> сокращается до <strong>0,80×</strong>.</li>
+<li><strong>Площадь концов линии Земли (ось a):</strong> сокращается лишь до <strong>0,97×</strong> (минимальное сжатие!).</li>
+<li><strong>Отношение полярных шапок (0,58×) к экваториальному поясу (0,86×):</strong> отношение площадей 0,67×, так что плотность кратеров на полюсах подскакивает в 1/0.67 = 1,49×!</li>
+</ul>
+</li>
+<li><strong>Высвобождение гравитационной энергии и внутренний нагрев (§C.4):</strong> обрушение объёма и округление высвобождают две составляющие гравитационной энергии, которые превращаются в тепло и гидростатическое давление внутри Луны:
+<ul>
+<li><strong>Энергия изменения формы (эксцентриситета):</strong> высвобождает <strong>2 × 10²⁷ джоулей</strong> (2,1% энергии связи, ~ 3 × 10⁴ джоулей/кг), добавляя средний нагрев около <strong>30 кельвинов</strong> и сохраняя ядро вязким и подвижным.</li>
+<li><strong>Энергия сжатия объёма (компрессии):</strong> в семь раз больше — высвобождает <strong>1,5 × 10²⁸ джоулей</strong> (~ 2,1 × 10⁵ джоулей/кг), что эквивалентно среднему нагреву на <strong>206 кельвинов</strong> (при теплоёмкости 1 кДж/кг·K).</li>
+</ul>
+</li>
+<li><strong>Давление на жёсткую оболочку и питание извержений морей (§C.4):</strong> принуждение жёсткой каменной оболочки (модуль жёсткости <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">\mu \ge 10\text{ GPa}</annotation></semantics></math></span></span>) изменить форму на 10%–20% создаёт внутренние сдвиговые напряжения <strong>2–<span class="ltr">12 GPa</span></strong> — в 20–120 раз выше сдвиговой прочности породы (~ <span class="ltr">0,1 GPa</span>). Оболочка не разлетается, а сбрасывает гидростатическое давление через <strong>отверстия питания морей</strong> (статья 5), которые выстреливают магму наружу баллистическими полётами и создают кратеры возвращённого вещества (статья 6)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Area change from peak flattening to sphere" style="direction:ltr"><rect x="200.0" y="16" width="332.6" height="26" rx="4" fill="#9aa3af"/><text x="540.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦0,97×⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Концы линии Земли (ось a)</text><rect x="200.0" y="56" width="274.3" height="26" rx="4" fill="#c47f2c"/><text x="482.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦0,80×⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Бока (ось b)</text><rect x="200.0" y="96" width="257.1" height="26" rx="4" fill="#5f9a6e"/><text x="465.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦0,75×⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Глобальное среднее</text><rect x="200.0" y="136" width="188.6" height="26" rx="4" fill="#2f7d57"/><text x="396.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,55×⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Полюса (ось c)</text></svg><figcaption>Изменение площади при переходе от пика сплющивания к сфере при отрыве: полюса сжимаются сильнее любой другой области, поэтому кратеры на них сгущаются.</figcaption></figure><div class="callout"><span class="tag">Внешняя вращательная дифференциация — ключевое утверждение статьи 07 (§C.8, §D.6)</span><p style="margin:0">Пока молодая Луна была прикреплена к Земле и вращалась вместе с ней, сплющивание заставляло лёгкое вещество внешней оболочки постепенно течь <strong>от полюсов к экватору</strong>, оставляя тонкую полярную оболочку на протяжении окна в десятки миллионов лет, когда кратеры падали равномерно. На заключительной стадии, пока тело округлялось до отрыва на линии коротации, полярная площадь сошлась внутрь, кратеры сгустились, а под полюсами осталась <strong>тонкая плотная кора</strong>, измеряемая сегодня в данных GRAIL!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: четыре статистических теста и пять тестов сохранения размера кратеров</h2>
+<p>Часть D статьи 07 подвергает модель округления и сжатия двойному количественному испытанию: сперва <strong>четырьмя основными статистическими тестами</strong>, затем <strong>пятью дополнительными морфометрическими тестами</strong>, проверяющими, сжались ли сами кратеры физически вместе с грунтом или сохранились целыми:</p>
+<ol class="steps">
+<li><strong>Тест 1 — отношение плотности полюс/экватор в чистом подсчёте:</strong> после удаления морей и бассейна SPA с обеих сторон общее отношение для кратеров от 20 км составляет <strong>1,20 ± 0,05</strong> (95%-й доверительный интервал: 1,10–1,30) и непрерывно растёт от 1,09 для кратеров 20–30 км до 1,53 ± 0,19 для 60–100 км и 1,84 ± 0,38 для 100–300 км — <strong>пройден</strong>.</li>
+<li><strong>Тест 2 — изменение диаметра кратеров (обилие крупных кратеров на полюсах):</strong> медианный диаметр кратеров на полюсах в <strong>1,06</strong> раза больше медианного на экваторе (95%-й доверительный интервал: 1,01–1,12) — <strong>пройден</strong> (подтверждает обилие крупных древних кратеров на полюсах).</li>
+<li><strong>Тест 3 — распределение молодых кратеров (образовавшихся после округления):</strong> в двух независимых выборках молодых кратеров, упавших, когда тело уже округлилось в сферу, измерены отношения полюс/экватор <strong>0,92 и 1,12</strong> (около 1,00, без значимого полярного избытка) — <strong>соответствует предсказанию</strong>.</li>
+<li><strong>Тест 4 — полная симметрия двух полюсов:</strong> после удаления бассейна SPA, покрывавшего часть Южного полюса, в полосе 75°–90° у Северного полюса измерено <strong>300 кратеров</strong> на миллион км² против <strong>305</strong> у Южного (а в шапке 15°: 300 против 305, отношение 1,02, доверительный интервал 0,78–1,32) — <strong>пройден</strong> (полное равенство в пределах ошибки подсчёта).</li>
+<li><strong>Пять морфометрических тестов сохранения диаметра кратеров (§D.2):</strong> проверка (a) крупнейших кратеров на единицу равной площади, (b) формы распределения размеров (кумулятивной кривой), (c) сравнения древних и свежих кратеров, (d) степени эллиптичности краёв кратеров и (e) диаметра перехода от простого кратера к сложному — <strong>четыре теста однозначно установили, что диаметры кратеров сохранились целыми, и ни один тест не показал ни малейшего признака сжатия самих кратеров</strong>! Если бы кратеры сжались вместе с грунтом, кратеры около 20 км опустились бы ниже порога подсчёта и полностью стёрли бы измеренный избыток плотности (1,20).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Дифференциальное изменение площади единицы грунта с нормалью <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">n</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat{\mathbf{n}} = (n_x, n_y, n_z)</annotation></semantics></math></span></span> при переходе от трёхосного эллипсоида (a, b, c) к эквивалентной сфере радиуса <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_s = (abc)^{1/3}</annotation></semantics></math></span></span> и гравитационная энергия связи W сплющенного сфероида с эксцентриситетом e даются следующими уравнениями (§C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">[</mo><msubsup><mi>n</mi><mi>x</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>y</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>b</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>z</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>c</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J^{-1} = \left[n_x^2\left(\dfrac{R_s}{a}\right)^2 + n_y^2\left(\dfrac{R_s}{b}\right)^2 + n_z^2\left(\dfrac{R_s}{c}\right)^2\right]^{-1/2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><mi>c</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\rho_{\mathrm{polar}}}{\rho_{\mathrm{equatorial}}} = \dfrac{a}{c}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msup><mi>M</mi><mn>2</mn></msup></mrow><msub><mi>R</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mi>e</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">W = -\dfrac{3}{5}\dfrac{GM^2}{R_s}\dfrac{\arcsin(e)}{e}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≈</mo><mn>1,5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>28</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{compression}} \approx 1.5 \times 10^{28}\text{ J} \quad (\Delta T \approx 206\text{ K})</annotation></semantics></math></span></div></div></div>
+<p>Из уравнения якобиана <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">[</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><msup><mo stretchy="false">]</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J(\lambda, \phi) = R_s^{-1}[\cos^2\lambda(a^2\cos^2\phi + b^2\sin^2\phi) + c^2\sin^2\lambda]^{1/2}</annotation></semantics></math></span></span> сразу следует, что на полюсе (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_z = 1</annotation></semantics></math></span></span>) плотность умножается на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">R_s/c</annotation></semantics></math></span></span>, на боках (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_y = 1</annotation></semantics></math></span></span>) — на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">R_s/b</annotation></semantics></math></span></span>, а на концах линии Земли (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_x = 1</annotation></semantics></math></span></span>) — на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">R_s/a</annotation></semantics></math></span></span>, — ровно порядок плотностей, измеренный вокруг шести концов осей!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: сплющивание, исчезнувшее до отрыва, и форма, сохранившаяся после удаления</h2>
+<p>В конце стадии округления, в момент, когда центр масс прошёл линию коротации примерно на 210 км (r ≈ 16 610 км), Луна оторвалась от Земли <strong>уже полностью сферической и жёсткой</strong> (максимальное отношение осей ≤ 1,04, §C.1, §C.5):</p>
+<ul>
+<li><strong>Раннее сплющивание исчезло до отрыва (а не после):</strong> после отрыва, когда Луна удалилась до 30 000 км (период 14 часов) и до 60 000 км (41 час), приливные и вращательные силы подняли на жёстком теле лишь крошечный упругий горб (отношение осей 1,03 на 30 000 км и 1,00 на 60 000 км), а нынешнее <strong>«ископаемое сплющивание»</strong> Луны (f ≈ 0,001, застывшее до 16 земных радиусов) в сотни раз меньше трёхосного сплющивания прикреплённой стадии (1,8 : 1,4 : 1).</li>
+<li><strong>Замыкание круга между статьями 05, 06 и 07:</strong> то же давление сжатия 2–<span class="ltr">12 GPa</span>, которое жёсткая оболочка испытывала при округлении, выталкивало магму наружу через отверстия питания морей (статья 05), выстреливало возвращённое вещество, создавшее гигантские кратеры (статья 06), и сгустило их к двум полюсам над тонкой плотной полярной корой (статья 07)!</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: сжатие площади, баланс энергии и давления и итог 4 тестов (статья 07, части C.3–E)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Область лика Луны (пик сплющивания 1,75:1,45:1, 1 700 кг/м³)</th><th>Абсолютное изменение площади (с учётом падения объёма)</th><th>Смещение поверхности при округлении</th><th>Влияние на плотность кратеров и толщину коры</th></tr>
+<tr class="hl"><td><strong>Полярные области (ось c, геометрический якорь)</strong></td><td><strong>0,55×</strong> (0,58× в шапках 30°)</td><td>Устойчивый якорь (~ +290 км полярного радиуса)</td><td><strong>Максимальная плотность (1,49× против экватора)</strong> над тонкой плотной корой</td></tr>
+<tr><td><strong>Ведущий и ведомый бока (ось b)</strong></td><td><strong>0,80×</strong></td><td>Обрушение внутрь на ~ 430 км</td><td>Промежуточная плотность вдоль периферийного кольца</td></tr>
+<tr><td><strong>Концы линии Земли (ось a, подземная точка и анти-Земля)</strong></td><td><strong>0,97×</strong></td><td>Обрушение внутрь на ~ 900 км</td><td>Минимальное сжатие — минимальная плотность в подземной точке (148)</td></tr>
+<tr><td><strong>Глобальное среднее по лику Луны</strong></td><td><strong>0,75×</strong> (объём падает в 1,53 раза)</td><td>Эквивалентный радиус падает с 2 180 до 1 890 км</td><td>Энергия сжатия 1,5 × 10²⁸ Дж (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T \approx 206\text{ K}</annotation></semantics></math></span></span>)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Эмпирический тест (часть D)</th><th>Определение и выборка</th><th>Измеренный результат</th><th>Статус</th></tr>
+<tr class="hl"><td><strong>Тест 1: отношение плотности полюс/экватор</strong></td><td>Чистый подсчёт (без морей и SPA), шапки 30° против <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi|&lt;15^\circ</annotation></semantics></math></span></span></td><td><strong>1,20 ± 0,05</strong> (1,09 при 20–30 км <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>1,53</strong> при 60–100 км)</td><td><strong>Пройден</strong></td></tr>
+<tr class="hl"><td><strong>Тест 2: медианный диаметр кратеров</strong></td><td>Сравнение размеров кратеров на полюсах и на экваторе</td><td>Полярная медиана в <strong>1,06</strong> раза больше (доверительный интервал 1,01–1,12)</td><td><strong>Пройден</strong></td></tr>
+<tr><td><strong>Тест 3: молодые кратеры (после округления)</strong></td><td>Две независимые выборки поздних кратеров</td><td>Отношения <strong>0,92 и 1,12</strong> (без полярного избытка)</td><td><strong>Соответствует предсказанию</strong></td></tr>
+<tr class="hl"><td><strong>Тест 4: симметрия двух полюсов</strong></td><td>Полоса 75°–90° и шапка 15° (без SPA)</td><td><strong>300</strong> на севере против <strong>305</strong> на юге на миллион км² (1,02)</td><td><strong>Пройден</strong></td></tr>
+<tr><td><strong>5 тестов сохранения размера кратеров</strong></td><td>Крупнейшие, распределение размеров, древние/свежие, эллиптичность, переход к сложным</td><td><strong>4 из 5</strong> подтверждают полное сохранение, <strong>0</strong> показывают сжатие кратеров</td><td><strong>Пройден</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В главах 13–14 мы решили загадку полюсов Луны (<em>Почему полюса густо усеяны</em>): мы открыли, как переход от сплющенного трёхосного тела (1,8 : 1,4 : 1) к жёсткой сфере (3 778 км) сжал полюса в 1,20–1,53 раза над тонкой полярной корой, прошедшей «внешнюю вращательную дифференциацию», при полном сохранении исходных диаметров кратеров.</p>
+<p>Но в главе 13 в самом сердце Южного полюса появилось неожиданное открытие: <strong>бассейн Южный полюс — Эйткен (SPA)</strong> — крупнейший и самый загадочный бассейн Луны (2 400 км), в ядре которого (0°–10°) плотность кратеров падает до 132 на миллион км²! Чем на самом деле является бассейн SPA в модели LEF, почему его форма эллиптическая, а не круглая, и как он образовался? В следующей главе — <strong>Глава 15: Бассейн Южный полюс — Эйткен (SPA) — рана отрыва или крупнейший ударный кратер?</strong> (по статье 08 — <em>Южный полюс — Эйткен</em>) — мы нырнём в этот гигантский бассейн!</p>
+<a href="story15_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 15</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Бассейн Южный полюс — Эйткен (SPA) — рана отрыва или крупнейший ударный кратер? →</p></div></a><p style="margin-top:22px"><a href="story13_ru.html">← Глава 13</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

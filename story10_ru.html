@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 10: Химический отпечаток — железные кольца, загадка тория в зоне контакта и пять часов — Модель LEF</title>
+<meta name="description" content="Глава 10 истории модели LEF: ореолы железа и титана до 600 км вокруг морей, 95% избытка тория Луны внутри контактного диска, бедные торием днища морей, отсутствующая чужая масса и пять часов каждого отверстия.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story10_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story10_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <a href="story10_es.html" hreflang="es">Español</a> · <a href="story10_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 10</p>
+<h1>Глава 10: Химический отпечаток — железные кольца, загадка тория в зоне контакта и пять часов</h1>
+<p>По статье 05 — Моря (части J–O и приложение A: исследования 9, 10, 11, 13 и итог 16 исследований)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: почему радиоактивность Луны сосредоточена в одном круге — и почему днища морей ею бедны?</h2>
+<p>Одно из самых удивительных открытий миссий «Аполлон» и спутника Lunar Prospector — крайнее химическое неравенство лика Луны: радиоактивный элемент <strong>торий</strong> — вместе с калием, редкоземельными элементами и фосфором (вещество, называемое в литературе <strong>KREEP</strong>) — распределён по Луне не равномерно, а сосредоточен почти целиком в одном пятне на западе видимой стороны.</p>
+<p>Принятая литература толкует это пятно («Procellarum KREEP Terrane») как последний остаток глобального «магматического океана», кристаллизовавшегося на Луне, и считает, что радиоактивное тепло KREEP расплавило породы видимой стороны и создало базальтовые моря. Но как только данные изучаются в высоком разрешении, проявляются <strong>три острых противоречия</strong> этому объяснению:</p>
+<ol class="steps">
+<li><strong>Точный геометрический центр:</strong> почему ториевое пятно лежит точно вокруг точки 24,1°N, 335,2°E — ровно той точки, которая заранее зафиксирована в статье 3 как <strong>центр последнего контактного диска</strong> между Луной и Землёй?</li>
+<li><strong>Парадокс внутри зоны контакта:</strong> если тепло KREEP прорвало моря и принесло с собой торий, днища морей должны быть богаче всего торием. На деле происходит ровно обратное: <strong>днища морей внутри зоны контакта — самый бедный торием грунт этой области!</strong></li>
+<li><strong>Отсутствие чужой массы в бассейнах:</strong> если большие бассейны морей (как Дождей и Ясности) были выкопаны гигантскими астероидами из космоса, их ударные расплавы должны содержать отпечаток железолюбивых металлов (<strong>сидерофильных элементов</strong>) этих чужих тел — но его нет!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: замерзающая морская вода (торий уходит с рассолом) и стрельбище, соблюдающее дистанции</h2>
+<p>Чтобы увидеть, как три химические загадки решаются одним ударом, представьте два простых опыта из повседневной жизни:</p>
+<ul>
+<li><strong>Морская вода, замерзающая в баке, соединённом со сливной трубой (загадка тория):</strong> когда солёная морская вода начинает замерзать сверху, образующиеся кристаллы льда почти пресные — а вся соль вытесняется в жидкий рассол, остающийся внизу. Если этот рассол стоит на закрытой равнине без стока (как <strong>базальтовые равнины</strong>, расплавившиеся на месте), соль остаётся запертой в породе, когда всё замерзает. Но если рассол стоит над <strong>трубой, открытой вниз</strong> (как дно <strong>моря</strong>, соединённое с каналом питания в глубину!), тяжёлый, богатый торием рассол опускается и стекает обратно по каналу в глубину — оставляя дно моря бедным торием по сравнению с равнинами и нагорьями вокруг!</li>
+<li><strong>Стрельбище, где лёгкая магма летит рано и далеко, а тяжёлая — поздно и близко (железные кольца):</strong> в начале работы отверстия питания магма богата летучими газами и бедна железом, поэтому очень лёгкая и текучая — и выстреливается на сотни километров (до 600 км). По мере ухода газов магма становится тяжелее, вязче и богаче железом (FeO) и титаном (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) и падает совсем близко к краю отверстия — создавая вокруг каждого моря <strong>градуированный железный ореол</strong>!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: кольца железа и титана, 95% тория в контактном диске и отсутствие чужой массы</h2>
+<p>Часть J статьи 05 изучает спутниковые химические карты Kaguya (железо и титан с разрешением 240 м) и Lunar Prospector (торий с разрешением 60 км) и представляет четыре решающих результата:</p>
+<ol class="steps">
+<li><strong>Ореол железа и титана вокруг морей достигает 600 км (исследование 9, §J.1–J.2):</strong> вокруг шести морей (Смита, Дождей, Ясности, Кризисов, Московского и Нектара), после удаления всех базальтовых пикселей, содержание железа в грунте постепенно падает с <strong>6,9 мас.%</strong> в кольце 0–25 км до 5,1 на 25–50 км, 3,9 на 50–100 км и <strong>3,1 мас.%</strong> на 100–150 км и остаётся выше фона (2,3 мас.%) даже на <strong>300–600 км (3,4 мас.%)</strong> — в десять раз дальше, чем дальность бокового перемешивания поздними кратерами! Напротив, вокруг <strong>Океана Бурь</strong> — базальтовой равнины без отверстия питания, лишь перелившейся через края, — железо падает с 10,9 до 2,4 мас.% (уровень дальних нагорий) на 300–600 км.</li>
+<li><strong>95% избытка тория Луны заперто в контактном диске (исследование 10, §J.3):</strong> контактный диск (радиус 1 500 км вокруг 24,1°N, 335,2°E) покрывает лишь <strong>17,5%</strong> поверхности Луны, но содержит <strong>95,0% всего избытка тория выше 3 ppm</strong> (медиана 5,39 ppm внутри контакта против 1,52 ppm снаружи). Когда диск того же размера перемещают по <strong>16 200 возможным центрам</strong> по всей Луне, заранее заданный в статье 3 центр контакта занимает <strong>третье место из 16 200</strong> (всего в 47 км от теоретического максимума, собирающего 95,14% против 94,99%)!</li>
+<li><strong>Внутри зоны контакта — моря бедны торием, а равнины и нагорья одинаковы (исследование 13, §J.4):</strong> внутри контактного диска базальтовые равнины (5,62 ppm) и нагорья (5,48 ppm) несут почти в точности одинаковую концентрацию тория! Напротив, четыре моря внутри контакта (Дождей, Ясности, Коперник H и Залив Зноя) на <strong>30%</strong> беднее торием, чем равнины (лишь 3,99 ppm, и каждое из четырёх морей беднее окружающего кольца на 0,58–1,39 ppm), тогда как содержание титана в них почти не меняется (−5%, отношение <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0,74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>) — ведь титан заперт в кристаллах ильменита и остаётся, а последняя богатая торием жидкость стекла по каналам питания!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Фон:<tspan x="527.6" dy="14">⁦2,3⁩ мас.%</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6,9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5,1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3,4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Кольцо вокруг моря (км) · FeO в грунте без базальта (мас.%)</text></svg><figcaption>Железный ореол вокруг шести морей (исследование 9): железо убывает с расстоянием, но остаётся выше фона до 600 км.</figcaption></figure><figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3,99 ppm⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Контактные моря</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,48 ppm⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Нагорья в контакте</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5,62 ppm⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Равнины в контакте</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1,52 ppm⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Вне контакта</text></svg><figcaption>Торий внутри и снаружи контактного диска (исследования 10 и 13): равнины и нагорья одинаковы, а моря на 30% беднее — богатая торием жидкость стекла по каналам.</figcaption></figure><div class="callout"><span class="tag">Тест чужой массы в бассейнах (исследование 11, §J.7)</span><p style="margin:0">Если бы большие бассейны морей были выкопаны телами из космоса со скоростью 18 км/с, потребовалась бы ударная масса около <strong>1 × 10¹⁹ кг</strong> (а для одного Моря Дождей — 3 × 10¹⁸ кг по масштабированию, или 2 × 10¹⁹ кг для тела 250 км поперёк, оставившего бы 6 × 10¹⁷–4 × 10¹⁸ кг чужого вещества). На деле отношения сидерофильных элементов в ударных расплавах Моря Дождей <strong>не совпадают ни с одной известной группой хондритов</strong>, а большая часть их уже существовала в коре до Морей Дождей и Ясности — потому что бассейны являются <strong>земными отверстиями питания</strong>, а не ударами чужих тел!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: пять часов каждого отверстия — и расшифровка возрастов «Аполлона» и «Чанъэ»</h2>
+<p>Часть K статьи 05 разрешает одно из величайших недоразумений лунных исследований: <strong>почему базальты, привезённые космическими миссиями, датируются 3,1–3,9 миллиарда лет («Аполлон»), 2,8 миллиарда лет («Чанъэ-6» на обратной стороне) и даже 2,0 миллиарда лет («Чанъэ-5» в Океане Бурь)?</strong> Значит ли это, что отверстия образовались через миллиарды лет после ухода Луны от Земли?</p>
+<p>Ответ — <strong>нет</strong>, потому что каждое отверстие питания несёт <strong>пять отдельных часов</strong>, которые нельзя смешивать (как колодец, который выкапывают, открывают, по которому идёт вода, который запечатывают, и лишь в конце высыхает последняя лужа на его вершине):</p>
+<ol class="steps">
+<li><strong>Время создания структуры (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>):</strong> момент, когда отверстие и купол под ним были созданы на стадии строительства (в течение 600 миллионов лет до отрыва в 3,873 млрд лет).</li>
+<li><strong>Время обнажения (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>):</strong> момент, когда край контакта отступил над отверстием и открыл его космосу (поколение I сразу, поколение II при округлении, поколение III к отрыву).</li>
+<li><strong>Время извержения (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>):</strong> период, когда отверстие выстреливало вещество наружу, создавая кратеры и железные кольца вокруг себя.</li>
+<li><strong>Время закрытия (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>):</strong> момент, когда поток упал ниже критического порога (или давление прекратилось в момент отрыва) и отверстие перестало быть активным (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>).</li>
+<li><strong>Возраст поверхности (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>):</strong> <strong>возраст окончательного остывания</strong> последней капли магмы, застывшей на поверхности. Радиометрические часы начинают тикать лишь с момента, когда порода остывает ниже температуры закрытия и запирает радиоактивные дочерние атомы!</li>
+</ol>
+<p>Поэтому все базальты «Аполлона», «Чанъэ-5» и «Чанъэ-6» измеряют <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span> — время окончательного застывания горячей жидкости</strong> (долго остававшейся горячей благодаря внутреннему теплу Луны или концентрации тория в зоне контакта), а не время открытия отверстия (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>)!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевое уравнение</h2>
+<p>Химическое отношение, отличающее днища морей от базальтовых равнин внутри зоны контакта, и распределение тория по четвертям Луны сводятся к следующим выражениям:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0,74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0,60</mn><mtext>–</mtext><mn>0,88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mtext>внутри контакта</mtext></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{внутри контакта}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5,39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>против</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1,52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{против} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>По долготе (§J.5) медианная концентрация тория постепенно падает от ближней четверти, обращённой к Земле (<strong>5,12 ppm</strong>), к ведущему полушарию вокруг 90°W, где лежит центр контакта (3,27 ppm), к обратной стороне (2,20 ppm) и к ведомому полушарию вокруг 90°E (2,01 ppm) — в 1,5 раза выше по всей видимой стороне, чем на обратной (2,56 против 1,76 ppm).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: единая картина по 15 исследованиям и 34 каталогизированным отверстиям</h2>
+<p>Части L–O статьи 05 объединяют пять независимых линий доказательств в одну полную систему питания:</p>
+<ul>
+<li><strong>Баланс исследований (13 зелёных и 2 оранжевых из 15, §M.2):</strong> все главные исследования полностью подтверждены — совпадение 33/34 морей с гравитационными куполами, 44 погребённых купола, коровая ступень (17 км), проседание центра (10/12), единый уровень (16/16), чистые днища (12 раз и 83 раза), железные ореолы (600 км), центр тория (3/16 200), отсутствие чужой массы и износ краёв на контактных равнинах. Два исследования, получившие «оранжевый» свет (частичное подтверждение), изложены с полной прозрачностью: в исследовании 13 отношение <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span> упало и за пределами контакта из-за относительного богатства днищ титаном, а в исследовании 16 воротник выстрела значим вокруг морей обратной стороны в целом (p = 0,009) и вокруг погребённых (p = 0,001), но не отделяется от контроля вокруг одних лишь 10 открытых морей обратной стороны.</li>
+<li><strong>Пять решающих вопросов, отделяющих модель от литературы (§N.2):</strong> литература не может объяснить, как астероиды создали 44 гравитационных купола без бассейнов над ними, почему дно моря застывает на одном уровне и оседает лишь над сильным куполом, почему железный ореол достигает 600 км, почему торий одинаков на равнинах и нагорьях контакта и низок именно в морях, и куда исчезли 10¹⁹ кг внешнего металла.</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: химическая таблица, выборка главных отверстий и итог 8 выводов (статья 05, части J–O и приложение A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Исследование / химическая мера</th><th>Область / группа сравнения</th><th>Измеренный результат</th><th>Смысл в модели LEF</th></tr>
+<tr class="hl"><td><strong>Кольца железа (FeO) и титана (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) (исследование 9)</strong></td><td>6 морей вместе (от 0–25 до 300–600 км)</td><td>FeO: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,9</mn><mo>→</mo><mn>3,1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong> (150 км), остаётся на <strong>3,4</strong> на 600 км (контроль 2,3)</td><td>Моря выстреливали лёгкое вещество далеко, а тяжёлое близко; у Океана Бурь падает до 2,4 (местный перелив)</td></tr>
+<tr class="hl"><td><strong>Концентрация тория в контактном диске (исследование 10)</strong></td><td>Контактный диск (17,5% поверхности Луны) против 16 200 центров</td><td><strong>95,0%</strong> избытка тория (&gt;3 ppm); медиана <strong>5,39</strong> против 1,52 ppm</td><td>Центр контакта на <strong>3-м месте из 16 200</strong> (47 км от пика); метка последнего захвата</td></tr>
+<tr><td><strong>Распределение тория внутри контакта (исследование 13)</strong></td><td>4 моря против равнин и нагорий внутри контакта</td><td>Моря: <strong>3,99 ppm</strong> (−30%); равнины: <strong>5,62</strong>; нагорья: <strong>5,48</strong></td><td>Последняя богатая торием жидкость стекла обратно по каналам морей</td></tr>
+<tr><td><strong>Чужая масса бассейнов (исследование 11)</strong></td><td>Все бассейны морей (прежде всего Дождей) при 18 км/с</td><td>Нужно около 10¹⁹ кг; на деле <strong>нет совпадения ни с одним хондритом</strong></td><td>Чужих ударников не было — бассейны являются земными отверстиями питания</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>№ в каталоге</th><th>Название отверстия (приложение A)</th><th>Координаты и расстояние от подземной точки</th><th>Зона и поколение обнажения</th><th>Купол питания (GRAIL) и диаметр</th><th>Покрытие сегодня</th></tr>
+<tr class="hl"><td>#1</td><td><strong>Ясности</strong></td><td>26°N, 18°E (31°)</td><td>Контакт (поколение III)</td><td>M660_008 — <strong>610 км</strong></td><td>Открыто (под морем)</td></tr>
+<tr class="hl"><td>#34</td><td><strong>Дождей</strong></td><td>38°N, 341°E (42°)</td><td>Контакт (поколение III)</td><td>M660_015 — <strong>671 км</strong></td><td>Открыто (под морем)</td></tr>
+<tr><td>#35–36</td><td>Коперник H / Залив Зноя</td><td>6°N, 342°E / 10°N, 352°E</td><td>Контакт (поколение III)</td><td>M660_042 (170) / M660_020 (235 км)</td><td>Открыто (под морем)</td></tr>
+<tr><td>#3–4, #6, #33</td><td>Нектара, Кризисов, Смита, Влажности</td><td>Расстояние 36°–86°</td><td>Холм (поколение II)</td><td>375–518 км</td><td>Открыто (под морем)</td></tr>
+<tr><td>#32</td><td>Шиллер–Цукки</td><td>57°S, 316°E (67°)</td><td>Холм (поколение II)</td><td>M660_014 — <strong>909 км</strong> (крупнейший)</td><td>Погребено (под нагорьем)</td></tr>
+<tr><td>#10, #26</td><td>Московское / Восточное</td><td>140° / 95° (обратная сторона)</td><td>За холмом (поколение I)</td><td>M660_002 (313) / M660_001 (435 км)</td><td>Открыто (исключения на обратной стороне)</td></tr>
+<tr><td>#7, #9, #13, #18–19, #23–24, #37</td><td>Милн, Менделеев, Фрейндлих–Шаронов, Королёв, Герцшпрунг, Шрёдингер и другие</td><td>100°–162° (обратная сторона)</td><td>За холмом (поколение I)</td><td>106–346 км (из 36 погребённых куполов обратной стороны)</td><td>Погребены под слоями обратной стороны</td></tr>
+<tr><td>#12, #20, #29</td><td>Мечты, Аполлон, Байи</td><td>82°–146° (над SPA)</td><td>За холмом (поколение I)</td><td>Их купол был сварен и стёрт жаром бассейна Южный полюс — Эйткен</td><td>Над бассейном SPA</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В главах 8–10 мы завершили расследование морей Луны: оказывается, это не поздние ударные раны, а <strong>древние отверстия питания</strong>, через которые строилась Луна над 73 гравитационными куполами, — отверстия, закрывавшиеся в порядке отступления контакта, застывавшие уровнями озёр, оседавшими в центре, раскрасившие окрестности железными кольцами до 600 км и оставившие в контактном диске ториевую метку последнего захвата Земли.</p>
+<p>Но если моря были стволами, из которых вещество выстреливалось наружу, <strong>что стало с этим веществом после того, как оно было выстрелено в космос, — и как оно вернулось и ударило в Луну, выкопав сотни тысяч кратеров на её лике?</strong> В следующей главе — <strong>Глава 11: Кратеры Луны — 99% возвращённого вещества, а не чужие астероиды</strong> (по статье 06 — <em>Кратеры</em>) — мы расшифруем историю кратеров!</p>
+<a href="story11_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 11</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Кратеры Луны — 99% возвращённого вещества, а не чужие астероиды →</p></div></a><p style="margin-top:22px"><a href="story09_ru.html">← Глава 9</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

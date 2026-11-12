@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 9: Часы на дне — расплавленные, размазанные и чёткие кратеры, двигатель питания и три поколения обнажения — Модель LEF</title>
+<meta name="description" content="Глава 9 истории модели LEF: почему крупные кратеры на днищах морей расплавлены, средние размазаны, а мелкие чёткие, критический поток двигателя питания и три поколения отверстий.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story09_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story09_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story09_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story09_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story09_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story09_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story09_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story09_he.html" hreflang="he">עברית</a> · <a href="story09_en.html" hreflang="en">English</a> · <a href="story09_de.html" hreflang="de">Deutsch</a> · <a href="story09_es.html" hreflang="es">Español</a> · <a href="story09_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 9</p>
+<h1>Глава 9: Часы на дне — расплавленные, размазанные и чёткие кратеры, двигатель питания и три поколения обнажения</h1>
+<p>По статье 05 — Моря (части G–I: исследования 8 и 15)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: почему крупные кратеры Моря Дождей расплавлены, средние размазаны, а мелкие чёткие?</h2>
+<p>Взгляните на дно <strong>Моря Дождей</strong>, большого моря видимой стороны. На одной и той же ровной базальтовой поверхности бок о бок видны три знаменитых кратера в трёх совершенно разных состояниях:</p>
+<ul>
+<li><strong>Залив Радуги (Sinus Iridum, 246 км поперёк):</strong> гигантский кратер, наполовину расплавленный — уцелел лишь его северный край в виде хребта гор Юра, а южный край стёрт полностью, и дно слилось с поверхностью моря (отношение глубины к диаметру 0,008 — лишь четверть от обычного кратера нагорий того же размера!).</li>
+<li><strong>Платон (101 км поперёк):</strong> средний кратер на северном берегу с целым кольцом стен, но с заполненным, плоским и полностью размазанным дном (отношение глубины к диаметру 0,020 — примерно половина от обычного кратера нагорий).</li>
+<li><strong>Кирх (11 км поперёк):</strong> маленький кратер в сердце дна моря, оставшийся чётким, резким и даже глубже свежего кратера нагорий (0,166 против 0,078)!</li>
+</ul>
+<p>Все три сидели на одном и том же море, на одной широте и на одном грунте. Если бы все они возникли от случайных ударов астероидов за миллиарды лет, почему на дне Моря Дождей нет ни одного чёткого кратера диаметром 20 км и более, и почему состояние сохранности кратеров так точно следует их размеру?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: ложка, вдавленная в остывающую кашу, — и открытый кран морозной ночью</h2>
+<p>Два простых образа раскрывают физический механизм, связывающий размер кратеров, остывание морей и порядок их обнажения:</p>
+<ul>
+<li><strong>Кастрюля обжигающей каши, медленно остывающей (три состояния кратеров):</strong> возьмите кастрюлю густой каши, снятую с огня, и вдавите в неё ложку на трёх этапах. Пока каша ещё обжигающая и текучая (низкая вязкость, около 1 Па·с), вмятина сразу закрывается и исчезает — остаётся лишь слабый след на краю (<strong>расплавленный кратер</strong>, как Залив Радуги). Когда каша остывает до консистенции густой «каши» из кристаллов, вмятина сохраняет кольцо края, но её дно оседает и заполняется (<strong>размазанный кратер</strong>, как Платон). А когда каша застыла и стала совсем твёрдой (ниже солидуса, ~ 1 050°C), нажим ложки навсегда оставляет чёткую ясную ямку (<strong>чёткий кратер</strong>, как Кирх)!</li>
+<li><strong>Кран, из которого течёт вода морозной ночью (критический поток двигателя питания):</strong> почему одни отверстия замёрзли рано, а другие оставались открытыми до конца? Представьте водопроводную трубу на улице морозной ночью. Пока вода течёт по ней сильно, переносимое тепло не даёт трубе замёрзнуть; как только поток ослабевает ниже некоторого порога (<strong>критического потока</strong>), холод побеждает и трубу запечатывает лёд!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: две стрелки одних часов — остывание морей и угасание стрельбы с Земли</h2>
+<p>Часть G статьи 05 представляет совместное со статьёй 06 исследование (<strong>исследование 8</strong>), в котором просканированы все кратеры диаметром от 3 км на базальте видимой стороны (всего 3 478 кратеров: 324 на днищах морей над куполами питания и 3 154 на базальтовых равнинах). Каждый кратер сравнивался с кратерами нагорий ровно того же диаметра и классифицировался как <strong>чёткий</strong>, <strong>размазанный</strong> (мельче 75% кратеров нагорий) или <strong>расплавленный</strong> (мельче 95% из них):</p>
+<ol class="steps">
+<li><strong>Кратеры, исчезнувшие в днищах морей:</strong> на днищах контактных морей (Дождей и Ясности) лишь треть кратеров 2–5 км, найденных на соседних равнинах (263 против 836 на миллион км²), а для кратеров от 20 км число <strong>абсолютно нулевое (0)</strong>! Каждый крупный кратер, упавший на них, пока они были жидкими, просто поглощался и стирался.</li>
+<li><strong>Ясная связь размера кратера с его состоянием:</strong> на днищах морей доля <strong>чётких</strong> кратеров падает с <strong>71%</strong> при 3–5 км до 57% при 5–10 км, 35% при 10–20 км и достигает <strong>0%</strong> при 20–40 км — а доля <strong>расплавленных</strong> взлетает с 17% до <strong>85%</strong> и до <strong>100%</strong> выше 80 км (статистическая значимость лучше одной десятимиллиардной!).</li>
+<li><strong>Почему крупные прилетели первыми, а мелкие последними? (§G.4–G.5):</strong> после отрыва Земля продолжала выстреливать в космос раскалённое вещество. По мере удаления Луны от Земли росла минимальная скорость, нужная, чтобы её достичь (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>R</mi><mo>⊕</mo></msub><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min} = \sqrt{2GM_\oplus(1/R_\oplus - 1/r)}</annotation></semantics></math></span></span> — от 8,8 км/с на расстоянии 17 000 км до 10,6 км/с на 60 000 км). Одновременно магматическая буря на Земле постепенно утихала: сначала выстреливались крупные раскалённые куски (когда Луна была близко, а моря жидкими → расплавленные кратеры), затем средние куски (когда моря были в состоянии «каши» → размазанные кратеры), и наконец мелкие раскалённые капли (когда моря уже застыли → чёткие кратеры; например, 82% кратеров 3–10 км в контактных морях чёткие!).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Share of sharp craters on mare floors by diameter" style="direction:ltr"><rect x="120.0" y="16" width="416.5" height="26" rx="4" fill="#2f7d57"/><text x="544.5" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦71%⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >3–5 км</text><rect x="120.0" y="56" width="334.4" height="26" rx="4" fill="#5f9a6e"/><text x="462.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦57%⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >5–10 км</text><rect x="120.0" y="96" width="205.3" height="26" rx="4" fill="#c47f2c"/><text x="333.3" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦35%⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10–20 км</text><rect x="120.0" y="136" width="3.5" height="26" rx="4" fill="#b23a2e"/><text x="131.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦0%⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20–40 км</text></svg><figcaption>Доля чётких кратеров на днищах морей по диаметру (исследование 8): чем крупнее кратер, тем раньше он ударил в жидкое дно.</figcaption></figure><div class="callout"><span class="tag">Тепло Земли снизу — доказательство по краям кратеров на контактных равнинах (исследование 15, §G.6)</span><p style="margin:0">Принятая литература считает, что крупные кратеры на равнинах (как Океан Бурь) были затоплены лавой сбоку — как песочный замок, вокруг которого поднимается вода и покрывает нижние склоны, но оставляет гребень края целым. В модели LEF контактные равнины нагревались <strong>снизу</strong> излучением близкой Земли (T ≈ 2 000 K, угловой коэффициент <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,205</mn><mo>→</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>345</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">0.205 \rightarrow T_{\mathrm{surface}} \approx 1,345\text{ K}</annotation></semantics></math></span></span>, выше точки плавления базальта!).
+<br>Изучение 36 радиальных профилей вокруг каждого кратера от 40 км поперёк выявляет разницу: на контактных равнинах край <strong>исчезает полностью в +24% большем числе направлений</strong> со стороны равнины, чем со стороны нагорья (против <strong>0%</strong> на равнинах за пределами контакта!), а уцелевший гребень гораздо тупее и изношеннее (кривизна ниже на −35 м/км², ширина больше на +0,14 км, угол шире на +5,3°) — тепловой износ снизу, который боковое затопление создать не может никогда!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: двигатель питания, фронт обнажения и три поколения отверстий</h2>
+<p>Части H и I статьи 05 показывают, как физика двигателя питания (давление, плавучесть, вязкость и летучие) соединяется с геометрией сжимающегося контактного диска (от 6 000 км до 3 000 км) и создаёт на лике Луны <strong>три поколения отверстий</strong>:</p>
+<ol class="steps">
+<li><strong>Почему лишь жидкость может передавать давление (§H.1–H.2):</strong> твёрдое тело в оболочке должно было бы выдерживать напряжение 13–<span class="ltr">16 GPa</span> (в 60–80 раз больше своей прочности, ~ <span class="ltr">0,2 GPa</span>) и сразу бы разрушилось. Поэтому отверстие — это столб жидкой магмы, передающий гидростатическое давление и плавучесть, а содержание воды и летучих задаёт его вязкость: достаточно низкую, чтобы свободно течь под жёсткой оболочкой, но достаточно высокую, чтобы нести с собой тяжёлые зёрна железа, не давая им утонуть по дороге.</li>
+<li><strong>Связь потока питания с закрытием отверстия (§H.3):</strong> пока поднимающийся поток (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></span>) приносит тепло быстрее, чем идёт остывание в космос, отверстие остаётся открытым. Когда поток падает ниже порога <strong>критического потока</strong>, отверстие замерзает и запечатывается (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>). На видимой стороне излучение раскалённой Земли (~ 2 000 K, угловой коэффициент 0,205) держало поверхность при температуре около <strong>1 345 K</strong> — выше точки плавления базальта (~ 1 320 K, или 1 050°C), — поэтому отверстия видимой стороны <strong>не могли замёрзнуть, пока Луна была прикреплена</strong>! На обратной же стороне, по мере вытягивания груши и уменьшения доходившего от Земли тепла, отверстия замерзали одно за другим (кроме <strong>Московского моря</strong>, питавшегося от Моря Ясности по прямому внутреннему каналу).</li>
+<li><strong>Движущийся фронт обнажения и три поколения отверстий (§I.1–I.5):</strong> когда при округлении наружу контактный диск сжимался с 6 000 км до 3 000 км, край контакта отступал внутрь как <strong>фронт обнажения</strong>:
+<ul>
+<li><strong>Поколение I (верхний купол — обратная сторона, дальше 70°):</strong> отверстия, открытые космосу с первого мгновения, выстреливавшие вещество наружу, строившее их края и кратеры обратной стороны, рано замёрзшие при убывании тепла и погребённые под поздними строительными слоями (36 погребённых куполов).</li>
+<li><strong>Поколение II (кольцо отслоения — пояс 31°–70°, холм):</strong> отверстия, начавшие жизнь как <strong>закрытые устья</strong>, проводившие вещество внутрь, а когда над ними прошёл фронт обнажения, ставшие <strong>выходными отверстиями</strong>, долго выбрасывавшими вещество наружу.</li>
+<li><strong>Поколение III (контактный диск — ближняя шапка до 31°):</strong> отверстия, остававшиеся закрытыми и прижатыми к Земле до самого момента отрыва (Дождей, Ясности, Коперник H и Залив Зноя). Они служили устьями питания для давления Земли внутрь Луны; в момент отрыва давление разом прекратилось, извержения остановились, а их глубокие жидкие днища медленно застывали снаружи внутрь сотни миллионов лет!</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Minimum launch speed from Earth to reach the receding Moon" style="direction:ltr"><line x1="70" x2="610" y1="221.3" y2="221.3" stroke="#ece7da"/><text x="62" y="225.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8,5</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9</text><line x1="70" x2="610" y1="133.8" y2="133.8" stroke="#ece7da"/><text x="62" y="137.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9,5</text><line x1="70" x2="610" y1="90.0" y2="90.0" stroke="#ece7da"/><text x="62" y="94.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10</text><line x1="70" x2="610" y1="46.3" y2="46.3" stroke="#ece7da"/><text x="62" y="50.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10,5</text><text x="127.4" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">20 000</text><text x="242.3" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">30 000</text><text x="357.2" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">40 000</text><text x="472.1" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">50 000</text><text x="587.0" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">60 000</text><path d="M93.0,191.1 L97.9,185.4 L102.9,180.0 L107.8,174.9 L112.7,170.0 L117.7,165.4 L122.6,161.1 L127.6,156.9 L132.5,153.0 L137.4,149.2 L142.4,145.6 L147.3,142.1 L152.3,138.8 L157.2,135.6 L162.1,132.6 L167.1,129.7 L172.0,126.9 L177.0,124.2 L181.9,121.6 L186.8,119.1 L191.8,116.7 L196.7,114.4 L201.7,112.2 L206.6,110.0 L211.5,107.9 L216.5,105.9 L221.4,103.9 L226.4,102.0 L231.3,100.2 L236.3,98.4 L241.2,96.7 L246.1,95.1 L251.1,93.5 L256.0,91.9 L261.0,90.4 L265.9,88.9 L270.8,87.4 L275.8,86.0 L280.7,84.7 L285.7,83.4 L290.6,82.1 L295.5,80.8 L300.5,79.6 L305.4,78.4 L310.4,77.2 L315.3,76.1 L320.2,75.0 L325.2,73.9 L330.1,72.9 L335.1,71.9 L340.0,70.9 L344.9,69.9 L349.9,68.9 L354.8,68.0 L359.8,67.1 L364.7,66.2 L369.6,65.3 L374.6,64.5 L379.5,63.6 L384.5,62.8 L389.4,62.0 L394.3,61.2 L399.3,60.4 L404.2,59.7 L409.2,59.0 L414.1,58.2 L419.0,57.5 L424.0,56.8 L428.9,56.1 L433.9,55.5 L438.8,54.8 L443.7,54.2 L448.7,53.5 L453.6,52.9 L458.6,52.3 L463.5,51.7 L468.5,51.1 L473.4,50.5 L478.3,50.0 L483.3,49.4 L488.2,48.9 L493.2,48.3 L498.1,47.8 L503.0,47.3 L508.0,46.8 L512.9,46.3 L517.9,45.8 L522.8,45.3 L527.7,44.8 L532.7,44.4 L537.6,43.9 L542.6,43.4 L547.5,43.0 L552.4,42.5 L557.4,42.1 L562.3,41.7 L567.3,41.3 L572.2,40.8 L577.1,40.4 L582.1,40.0 L587.0,39.6" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="93.0" cy="191.1" r="6" fill="#b23a2e"/><circle cx="587.0" cy="39.6" r="6" fill="#2f7d57"/><text x="103.0" y="197.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦8,8 км/с⁩</text><text x="103.0" y="215.1" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >На 17 000 км</text><text x="583.0" y="63.6" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦10,6 км/с⁩</text><text x="583.0" y="81.6" text-anchor="end" font-family="Heebo" font-size="12" font-weight="400" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >На 60 000 км</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Расстояние Земля–Луна (км) · минимальная скорость (км/с), чтобы её достичь</text></svg><figcaption>По мере удаления Луны требовалась всё большая скорость запуска с Земли, чтобы её достичь, — а стрельба со временем слабела: сначала крупное, в конце мелкое.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Остывание базальтовой крышки, застывающей сверху вниз (закон корня квадратного из времени, §G.3), и минимальная скорость выхода, нужная веществу, выстреленному с Земли, чтобы достичь удаляющейся Луны (§G.4), выражаются так:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>2</mn><mi>λ</mi><msqrt><mrow><mi>κ</mi><mtext> </mtext><mi>t</mi></mrow></msqrt><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>∝</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi>h</mi><mn>2</mn></msup><mi>κ</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\delta(t) \approx 2\lambda\sqrt{\kappa\,t} \quad \Longrightarrow \quad t_{\mathrm{freeze}} \propto \dfrac{h^2}{\kappa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>R</mi><mo>⊕</mo></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min}(r) = \sqrt{2GM_\oplus\left(\dfrac{1}{R_\oplus} - \dfrac{1}{r}\right)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>Поскольку время застывания (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{freeze}}</annotation></semantics></math></span></span>) растёт как <strong>квадрат глубины (h²)</strong> магматического резервуара, глубокие горячие контактные моря (Дождей и Ясности) оставались жидкими в десятки–сотни раз дольше, чем мелкие отверстия окраин, — а условие <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span> устанавливает, что лишь отверстие, ещё активное в момент прохождения над ним фронта обнажения, становилось активным выходным отверстием.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: размер отверстия как память о длительности питания</h2>
+<p>Одно из прямых геометрических предсказаний двигателя питания (§I.6) состоит в том, что длительный поток горячей магмы под давлением постепенно расширяет горловину отверстия — как текущая вода расширяет канал во льду (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mtext>feeding history</mtext><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>η</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = F(\text{feeding history}, P, T, Q, \eta)</annotation></semantics></math></span></span>):</p>
+<ul>
+<li><strong>Ясная иерархия диаметров куполов питания:</strong> в каталоге 34 морей (приложение A статьи 05) <strong>все шесть крупнейших куполов питания Луны (450–909 км) лежат на видимой стороне</strong>, а медианный диаметр купола видимой стороны — <strong>375 км</strong> против лишь <strong>227 км</strong> на обратной (где крупнейший купол — Восточное море, 435 км)!</li>
+<li><strong>Нехватка крупных кратеров на гладких днищах:</strong> на дне Моря Дождей лишь 11 кратеров от 20 км на миллион км² (и на Ясности 16) против <strong>205</strong> на миллион км² на нагорьях обратной стороны — разрыв в 13–18 раз, показывающий, что контактные днища застыли лишь после того, как прошла основная буря ударов.</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: состояния сохранности кратеров, износ краёв и поколения обнажения (статья 05, части G–I)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Исследование / мера</th><th>Сравнение и выборка</th><th>Количественный результат</th><th>Значимость и физический смысл</th></tr>
+<tr class="hl"><td><strong>Состояние кратера по диаметру (исследование 8)</strong></td><td>324 кратера (≥ 3 км) на днищах морей</td><td>Чёткие: <strong>71%</strong> (3–5 км) <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>0%</strong> (20–40 км)<br>Расплавленные: <strong>17%</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>85%</strong> (100% выше 80 км)</td><td>Тест тренда Кохрана–Армитиджа: p &lt; 10⁻¹⁰; крупные кратеры ударили рано в жидкое дно</td></tr>
+<tr><td><strong>Кратеры, исчезнувшие в днищах (исследование 8)</strong></td><td>Днища морей против базальтовых равнин (без лучей)</td><td>В контакте (2–5 км): 263 против 836 на миллион км²<br>В контакте (20+ км): <strong>0</strong> против 23 на миллион км²</td><td>Ранние удары поглощались и стирались в жидкой магме контактных морей</td></tr>
+<tr class="hl"><td><strong>Износ краёв на контактных равнинах (исследование 15)</strong></td><td>137 кратеров (≥ 40 км) в 36 радиальных профилях</td><td>Край отсутствует со стороны равнины: <strong>+24%</strong> в контакте против <strong>0%</strong> за ним; гребень тупее на −35 м/км², угол +5,3°</td><td>Контактные равнины плавились и нагревались <strong>снизу</strong> Землёй (1 345 K), а не просто затоплялись сбоку</td></tr>
+<tr><td><strong>Три поколения обнажения (§I.4)</strong></td><td>Геометрия отступающего контакта (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>000</mn><mo>→</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">6,000 \rightarrow 3,000</annotation></semantics></math></span></span> км)</td><td>Поколение I (&gt;70°): открыто сразу и закрылось рано<br>Поколение II (31°–70°): устье, ставшее выходным отверстием<br>Поколение III (&lt;31°): контактные устья, закрывшиеся при отрыве</td><td>Порядок остывания: обратная сторона <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> пояс <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> зона контакта (Дождей и Ясности)</td></tr>
+<tr><td><strong>Диаметр купола питания как память (§I.6)</strong></td><td>34 моря каталога приложения A</td><td>Медиана видимой стороны: <strong>375 км</strong> (до 909 км)<br>Медиана обратной стороны: <strong>227 км</strong> (до 435 км)</td><td>Длительное питание в сильном жаре видимой стороны расширило отверстия питания</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>Кратеры на днищах морей раскрыли точное расписание остывания: когда Луна была близко, а моря жидкими, на них падали крупные куски, поглощавшиеся или расплавлявшиеся в кольца; когда моря превратились в кристаллическую «кашу», средние кратеры размазывались; и лишь когда они застыли полностью, последние мелкие капли с Земли оставили чёткие кратеры.</p>
+<p>Но чтобы раз и навсегда доказать, что моря действительно были <strong>источником</strong>, выстреливавшим вещество в окрестности, а зона контакта — местом, где Луна держалась за Землю до последнего мгновения, нужно проверить химический отпечаток пород. В следующей главе — <strong>Глава 10: Химический отпечаток — железные кольца, загадка тория в зоне контакта и пять часов</strong> (по статье 05 — <em>Моря</em>, части J–O и приложение A) — мы закроем дело о морях Луны!</p>
+<a href="story10_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 10</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Химический отпечаток — железные кольца, загадка тория в зоне контакта и пять часов →</p></div></a><p style="margin-top:22px"><a href="story08_ru.html">← Глава 8</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

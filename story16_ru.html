@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 16: Глубины SPA, образцы «Чанъэ-6» и потенциальный барьер сплошного тела — Модель LEF</title>
+<meta name="description" content="Глава 16 истории модели LEF: глубины SPA, образцы «Чанъэ-6» и потенциальный барьер сплошного тела.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story16_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story16_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story16_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story16_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <a href="story16_en.html" hreflang="en">English</a> · <a href="story16_de.html" hreflang="de">Deutsch</a> · <a href="story16_es.html" hreflang="es">Español</a> · <a href="story16_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 16</p>
+<h1>Глава 16: Глубины SPA, образцы «Чанъэ-6» и потенциальный барьер сплошного тела</h1>
+<p>По статье 08 — Южный полюс — Эйткен: бедный кратерами центр (части B10–G: глубинные аномалии B10–B18, геометрия антиподов, сифон потенциального барьера и решающий изотопный тест)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: что открыли образцы обратной стороны «Чанъэ-6» и как тепло перевалило через гравитационный барьер Земли?</h2>
+<p>В июне 2024 года китайская миссия <strong>«Чанъэ-6»</strong> впервые в истории доставила образцы грунта с обратной стороны Луны — из бассейна Аполлон на северо-востоке SPA (41,625°S, 206,022°E, около 11,6° от центра купола и в 210 км от минимума кратеров). Лабораторные данные вместе с орбитальными данными о гравитации и магнетизме раскрывают цепь открытий, которую мгновенный удар астероида с трудом объединяет:</p>
+<ol class="steps">
+<li><strong>Плотная масса, погребённая на глубине (2,18 × 10¹⁸ кг, B10):</strong> под южной половиной области центрального моря (62°S, 200°E, на площади ~ 444 500 км², эквивалентный радиус 12,4°) скрывается рассеянный избыток массы, эквивалентный металлической сфере ~ 95 км поперёк, — который не утонул в ядре Луны!</li>
+<li><strong>«Запечённая» мантия, в 13 раз беднее кислородом, с тяжёлыми изотопами калия и железа (B11–B13):</strong> источник базальта «Чанъэ-6» совершенно сух, в <strong>~ 13</strong> раз беднее доступным кислородом, чем видимая сторона (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1,93</mn><mo>±</mo><mn>0,58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> против −0,80 ± 0,64), обеднён элементами KREEP (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> при возрасте 2,8 млрд лет против <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> в древнем базальте 4,203 млрд лет из той же области!) и несёт <strong>изотопически тяжёлое железо</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0,13</mn><mtext>–</mtext><mn>0,21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰) вместе с тяжёлым калием (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> до +0,09‰).</li>
+<li><strong>Магнетизм, стёртый в центре и сильный лишь на ведомой стороне, и потенциальный барьер в 26,2 МДж/кг (B16–D.3):</strong> в центре SPA магнетизм почти нулевой (0,8% площади выше 5 нТл), а весь сильный магнетизм (32%–42%, пик ~ 22 нТл у Моря Мечты и светлых завихрений) сосредоточен на северо-западе (ведомая сторона) — на той же стороне, что и ториевый полумесяц, но примерно на 8° севернее. И вдобавок: как тепло и вещество с Земли сумели перевалить через потенциальный барьер (26,2 МДж/кг) на обратную сторону?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: соус, уваривающийся на медленном огне, чайный пакетик, заваренный снова и снова, и непрерывный сифон</h2>
+<p>Четыре образа из повседневной жизни освещают физику и химию глубин SPA в модели LEF:</p>
+<ul>
+<li><strong>Соус, уваривающийся на медленном огне (концентрация железа на месте без погружения, B10, B12):</strong> в отличие от активного моря, где вещество поднимается и опускается и может смыть куски железа к ядру (как в Московском море), SPA <em>не было активным морем</em> — циклического течения вверх-вниз не было. Богатое металлическим железом вещество, пришедшее с Земли к основанию SPA, нагревалось и запекалось на месте: металлическое железо «пило» и поглощало окружающий кислород (понижая <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> до −1,93), а когда жар испарил другие вещества, неиспаряющееся железо сконцентрировалось на месте и застыло при остывании области!</li>
+<li><strong>Чайный пакетик, заваренный снова и снова (переход от обогащённого источника 4,20 млрд лет к обеднённому 2,81 млрд лет, B13):</strong> вещество, пришедшее с Земли через грушу, отложилось богатым элементами KREEP (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> при 4,203 млрд лет). Длительный нагрев снизу снова и снова плавил мантию и каждый раз уносил первую выплавку (уносившую торий к полумесяцу), пока не остался «вымытый» остаток, стойкий к плавлению (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> при 2,807 млрд лет), — что объясняет и то, почему извергались лишь крохотные количества поздней лавы!</li>
+<li><strong>Молоко, влитое в кофе и замёрзшее, не успев смешаться (светлые завихрения Моря Мечты против Московского, B17):</strong> когда двухкомпонентный поток — железо снизу и алюмосиликаты сверху — вырвался наружу и быстро застыл под вращением Луны (число Экмана <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>), вытянутые зёрна встали вертикально в питающем канале (тёмные богатые железом полосы) и легли горизонтально при растекании (светлые петли, богатые плагиоклазом), тогда как в активном Московском море железо утонуло до застывания, поэтому там не образовались ни магнитное поле (1,3 нТл, 0% выше 5 нТл), ни завихрения!</li>
+<li><strong>Непрерывный сифон через вершину холма (преодоление потенциального барьера, D.3–D.3a):</strong> одиночная порция вещества, запущенная со скоростью 1,8–2,6 км/с (1,6–3,4 МДж/кг), упала бы обратно до линии коротации (26,2 МДж/кг). Но здесь речь идёт о <strong>сплошном теле, полном вещества</strong>, выталкиваемом снизу давлением источника ~ <span class="ltr">150 GPa</span> (статья 3): в момент, когда его верхняя часть проходит линию коротации и вытягивается вращением наружу, она снижает давление у основания и <strong>как сифон</strong> подтягивает снизу ещё вещество — и давление при этом никогда не становится отрицательным!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: восемь глубинных аномалий (B10–B17) и геометрия антиподов</h2>
+<p>Части B10–B17 и C статьи 08 закрывают оставшиеся из 17 аномалий SPA и карту центров на обратной стороне:</p>
+<ol class="steps">
+<li><strong>Тест жёсткого зеркала против карты трёх групп центров (часть C):</strong> жёсткая копия («штамп») колец и морей Дождей и Ясности на их антиподы даёт узкий эллипс (2 144 × 1 340 км, отношение осей 1,60), не совпадающий с формой SPA (2 402 × 2 056 км, отношение 1,17), — и этот отрицательный результат явно сохраняется, чтобы было ясно: горелка определила, где стирались кратеры, а контур бассейна задало обрушение купола. Когда все центры наносят на одну карту (рисунок C.1), возникает <strong>упорядоченный ряд с севера на юг из трёх групп</strong>:
+<ul>
+<li><strong>(a) На севере — два выхода горелки:</strong> антипод Моря Дождей (37,6°S, 160,0°E, с куполом тонкой коры Моря Мечты в 5,7° над ним) и антипод Моря Ясности (27,3°S, 198,4°E, с куполом Аполлона в 10° над ним).</li>
+<li><strong>(b) В центре — фокус тепла и стирания кратеров:</strong> центр купола/внутреннего кольца (51,4°S, 196,8°E), центр эллипса (53°S, 191°E), близкий магнитный пик (51,0°S, 190,0°E) и минимум кратеров (45,4°S, 197,9°E) — все в пределах 6° от центра купола!</li>
+<li><strong>(c) На юге — тяжёлый структурный фокус:</strong> самое низкое дно (61°S, 199°E), плотная масса (62°S, 200°E) и тончайшая кора (61°S, 184°E) — все в пределах ~ 230 км друг от друга!</li>
+</ul>
+</li>
+<li><strong>Почему купол лежит южнее двух выходов? — горизонтальный толчок в груше и округление тела (§C.3–C.4):</strong> кончик груши, на котором сидела Луна, стоял на широте ~ 22,5°N, а её основание — около экватора. Внутри вращающегося тела центробежная сила действует <strong>перпендикулярно оси вращения (горизонтально)</strong>, а не вдоль линии к центру Земли, — поэтому поток входил в контактный диск севернее его центра (где лежат Дождей и Ясности) и выходил на обратной стороне <strong>до ~ 22,5° южнее противоположной точки</strong>! На сплющенной стадии (1 : 0,637 : 0,601) центр купола лежал в 17,0° к югу от выхода Ясности и в 21,2° к юго-востоку от выхода Дождей; а затем <strong>округление в сферу</strong> (главы 13–14) расширило эти угловые расстояния ровно до измеренных сегодня <strong>24,1° и 29,2°</strong>!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: ответ на семь вызовов (E.1–E.7) и карта сдвига от сплющивания к сфере</h2>
+<p>Части C.3 и E статьи 08 дают точные количественные ответы на все семь вопросов и вызовов недавней научной литературы (включая данные «Чанъэ-6» 2025–2026 годов):</p>
+<ol class="steps">
+<li><strong>Иридий и золото в реголите «Чанъэ-6» (E.1):</strong> металлические зёрна с Ir и Au, найденные Liu et al. (2026), были обнаружены в <em>недатированных фрагментах базальта и анортозита поверхностного реголита</em> (поздняя космическая пыль, собранная за миллиарды лет, что предсказание явно допускает), а не внутри датированных норитов 4,25 млрд лет. Более того, элементные отношения Ir и Au не отличают металл из глубин Земли от астероидного — решает лишь изотопное измерение (Cr, Ti, Mo, Ru, Os).</li>
+<li><strong>Плотная масса, магнитные пики и тонкая кора лежат не под минимумом кратеров (E.3–E.5):</strong> минимум (45,4°S, 197,9°E) отмечает, где жар стёр кратеры на поверхности в направлении выхода Ясности; магнитный пик (51,0°S, 190,0°E, в 230 км) отмечает <strong>края горячего ядра</strong>, где магнетизм не был стёрт выше точки Кюри (в центре поле лишь 0,85–1,9 нТл); а плотная масса (62°S, 200°E) лежит в глубинном структурном юге бассейна.</li>
+<li><strong>Погребённый базальт как причина мелких кратеров (E.6):</strong> в модели LEF погребённый базальт (8,7 × 10⁴ км²) — <em>продукт</em> горелки, а не её соперник, — а решающий тест в том, что мелкость кратеров сохраняется и вне областей погребённого базальта, из-за уплотнения запечённого грунта.</li>
+<li><strong>Геометрический сдвиг при округлении от сплющивания к сфере (таблица §C.3):</strong> при переходе от вытянутого тела (1 : 0,637 : 0,601) к нынешней сфере ни одна точка не скользила по грунту, но углы относительно конца длинной оси раскрылись: выход Дождей сместился с 32,3°S, 158,1°E на 37,6°S, 160,0°E (изменение 5,5°), выход Ясности — с 27,4°S, 185,1°E на 27,3°S, 198,4°E (11,8°), центр купола — с 44,0°S, 180,8°E на 51,4°S, 196,8°E (13,0°), а минимум кратеров — с 39,9°S, 182,5°E на 45,4°S, 197,9°E (12,6°).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Эффективный потенциальный барьер <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span> между поверхностью ранней Земли (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> км на широте 25°N, масса родителя <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6,0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> кг) и линией коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> км при 5,5 ч и 16 399 км при 5,77 ч), а также число Экмана (Ek), определяющее, как вращение отклоняет течение лавы, формулируются так (§B17, §D.3–D.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26,2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5,77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>Для лавы вязкостью <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> при быстром вращении прикреплённой стадии (5,77 часа) число Экмана составляет 0,012 на масштабе 100 м, 0,0001 на 1 км и 10⁻⁶ на 10 км — то есть сила вращения полностью отклоняет любое течение или выброс лавы и создаёт ториевый полумесяц и светлые завихрения Моря Мечты! Кроме того, за линией коротации (16 400 км) сфера Хилла Луны простирается до ≈ 2 600 км от её центра (1,4 тогдашнего лунного радиуса, 1 890 км), так что любое вещество, выброшенное на высоту менее ≈ 700 км, возвращается и падает на поверхность Луны кратерами.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: 16 из 17 аномалий совпадают — и открытые предсказания</h2>
+<p>В итоге систематического сравнения в разделе B18 статьи 08: из 17 аномалий SPA основная наука полностью объясняет 6, частично 9, с трудом 1 (длительный вулканизм на протяжении 2 миллиардов лет) и <strong>0 (не объясняет вовсе)</strong> картину летописи кратеров в центре бассейна. Напротив, <strong>механизм горелки модели LEF</strong> сразу совпадает с <strong>16 из 17 аномалий</strong>, а <strong>1 — частично (B14)</strong>, в ожидании изотопного теста:</p>
+<ul>
+<li><strong>Самое острое предсказание для будущего лабораторного измерения (часть F):</strong> измерение изотопов Cr, Ti, Mo, Ru, Os в металлических зёрнах внутри двух датированных норитов «Чанъэ-6» (`CE6C0100YJFM002-158` и `CE6C0200YJFM001EGP07-16`) покажет <strong>чисто земную подпись без метеоритного отклонения</strong>.</li>
+<li><strong>Другие предсказания, проверяемые с орбиты:</strong> (1) концентрация кратеров с трещиноватым дном внутри центральной области дефицита; (2) сохранение мелкости кратеров и вне областей погребённого базальта; (3) радиальный градиент потери летучих и восстановления кислорода (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>), сильнейший вокруг точки минимума и ослабевающий к краю; и (4) полное отсутствие в SPA лавы моложе ~ 1,5 млрд лет.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="170.0" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="247.6" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >6 объясняет</text><rect x="325.3" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="441.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >9 частично</text><rect x="558.2" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="571.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="584.1" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Основная наука</text><rect x="170.0" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="377.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >16 совпадает</text><rect x="584.1" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Модель LEF</text><text x="390.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Зелёный: объясняет/совпадает · оранжевый: частично · светло-оранжевый: с трудом · красный: нет</text></svg><figcaption>Вердикты по 17 аномалиям SPA (B18): сколько из них каждая сторона объясняет полностью, частично, с трудом или не объясняет вовсе.</figcaption></figure><h3 style="margin-top:28px">Лабораторный бокс: итог 17 аномалий SPA (B1–B18) и потенциальный барьер (статья 08, части B10–G)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Аномалия (B1–B17)</th><th>Центральный эмпирический результат</th><th>Вердикт основной науки</th><th>Вердикт модели LEF (горелка)</th></tr>
+<tr class="hl"><td><strong>B1. Летопись кратеров</strong></td><td>Дефицит 0,51 в центре; минимум 45,4°S, 197,9°E (0,45); нет 20–40 км (0,47); на 18% мельче с высокими краями (1,35)</td><td><strong>Не объясняет вовсе</strong></td><td><strong>Совпадает</strong> (жар снизу расслабил и стёр; высокие края на уплотнённом грунте)</td></tr>
+<tr><td><strong>B2. Форма и глубина</strong></td><td>Самая низкая область Луны (6–9 км); остаток глубины −1,1 до −1,8 км в центре сверх тонкой коры</td><td>Объясняет (с тяжёлой массой)</td><td><strong>Совпадает</strong> (обрушение купола + уплотнение пор на 9–15 км)</td></tr>
+<tr><td><strong>B3. Тонкая кора</strong></td><td>Тончайшая кора Луны (12–20 км на юге, 61°S, 184°E); малые купола над Аполлоном и Морем Мечты</td><td>Объясняет (косой удар к югу)</td><td><strong>Совпадает</strong> (кора соскальзывает с купола + плавление снизу)</td></tr>
+<tr><td><strong>B4–B5. Два коровых кольца</strong></td><td>Внешнее (50°–55°): толстое на востоке (+7,8 км) и отсутствует на западе; внутреннее (36,7°): смещено на 118 км к СВ</td><td>Объясняет частично (нет объяснения для запада)</td><td><strong>Совпадает</strong> (нагромождение у толстой стены нагорий на В, а на З — вблизи)</td></tr>
+<tr><td><strong>B6. Плотность и пористость</strong></td><td>Поверхность 19,7%, но на 10 км закрыта до 2,9%–4,4% в центре, растёт к краю (7,1%–8,8%)</td><td>Объясняет частично (удар разрушает, а не закрывает)</td><td><strong>Совпадает</strong> (длительное запекание и уплотнение от центра наружу)</td></tr>
+<tr><td><strong>B7–B9. Химия, мало лавы и полумесяц Th</strong></td><td>FeO падает с 9,48% до 4,43%; плоское K/Th (451); 4,1% видимой лавы; погребённая лава в 15°; полумесяц Th на СЗ</td><td>Объясняет / объясняет частично</td><td><strong>Совпадает</strong> (плавление без извержения + центральное море при 5,77 ч)</td></tr>
+<tr class="hl"><td><strong>B10–B13. Тяжёлая масса, летучие, кислород и KREEP</strong></td><td>Масса 2,18 × 10¹⁸ кг на юге; тяжёлые <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> и <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1,93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span> (в 13 раз меньше кислорода); <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>Объясняет частично / объясняет</td><td><strong>Совпадает</strong> (земное железо, поглотившее кислород и сконцентрировавшееся на месте, + многократное вымывание)</td></tr>
+<tr class="hl"><td><strong>B14. Металл в норитах</strong></td><td>Зёрна Fe–Ni (Ni/Co = 8,5–11) в норитах 4,247 млрд лет, перезапущенных в 3,873 млрд лет</td><td>Объясняет (вещество ударника)</td><td><strong>Совпадает частично — решит изотопный тест (Cr, Ti, Mo, Ru, Os)</strong></td></tr>
+<tr><td><strong>B15. Длительный вулканизм</strong></td><td>Непрерывная активность на протяжении 2 миллиардов лет (4,25 → 3,87 → 3,6–3,2 → 2,8–2,2 млрд лет) в малых количествах</td><td>Объясняет с трудом (нужны два события и источника)</td><td><strong>Совпадает</strong> (горелка на прикреплённой стадии, отрыв в 3,873 млрд лет и хвост остывания)</td></tr>
+<tr><td><strong>B16–B17. Магнетизм и завихрения</strong></td><td>Пустой центр (0,8% &gt; 5 нТл); пик на ведомой стороне (42% на СЗ); завихрения у Моря Мечты (5,9 нТл) против Московского (1,3 нТл)</td><td>Объясняет частично</td><td><strong>Совпадает</strong> (стирание в центре + перенос железа на ведомой стороне; в Московском железо утонуло)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Динамический параметр / потенциальный барьер (часть D)</th><th>Земные сутки 5,50 часа (пик сплющивания)</th><th>Земные сутки 5,77 часа (состояние отрыва в серии)</th></tr>
+<tr><td><strong>Радиус линии коротации (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>)</strong></td><td>15 883 км (15 818 км для пробной частицы)</td><td><strong>16 399 км</strong> (≈ 2,6 земного радиуса)</td></tr>
+<tr class="hl"><td><strong>Потенциальный барьер на широте источника (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> км)</strong></td><td>25,2 МДж/кг</td>
+<td>26,2 МДж/кг</td></tr></table></div></section>
+<section>
+<a href="story17_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 17</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Полосы Тихого океана — передняя стена груши и зеркальный отпечаток Луны →</p></div></a>
+<p style="margin-top:22px"><a href="story15_ru.html">← Глава 15</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

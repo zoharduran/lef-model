@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 28: Исследовательская карта модели LEF (часть B) — Тихий океан, Марс, Солнечная система и ключевые тесты (темы 80–132) — Модель LEF</title>
+<meta name="description" content="Глава 28 истории модели LEF: исследовательская карта, часть B — Тихий океан, Марс, Солнечная система и ключевые тесты (темы 80–132).">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story28_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story28_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story28_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story28_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story28_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story28_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story28_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story28_he.html" hreflang="he">עברית</a> · <a href="story28_en.html" hreflang="en">English</a> · <a href="story28_de.html" hreflang="de">Deutsch</a> · <a href="story28_es.html" hreflang="es">Español</a> · <a href="story28_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 28</p>
+<h1>Глава 28: Исследовательская карта модели LEF (часть B) — Тихий океан, Марс, Солнечная система и ключевые тесты (темы 80–132)</h1>
+<p>По статье 14 — 14. Темы исследований: что модель открывает другим исследователям (разделы H–L и последующие области: темы 80–132, три списка отбора и итог серии)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: как исследовательская карта продолжается от дна Тихого океана к Марсу, Солнечной системе и двум ключевым наблюдениям?</h2>
+<p>В главе 27 мы рассмотрели первые 79 тем статьи 14 (разделы A–G), посвящённые ранней Земле, образованию Луны и бассейну Южный полюс–Эйткен. В этой заключительной главе мы завершим <strong>оставшиеся 53 темы (разделы H–K, темы 80–132)</strong>, упорядочим все 132 темы по <strong>трём спискам отбора части L</strong> и закончим двумя всеохватывающими областями, отмеченными для продолжения вне списка:</p>
+<ol class="steps">
+<li><strong>Раздел H — полосы и Тихий океан (темы 80–90):</strong> 9 исследований параллельных полос на дне северной части Тихого океана (от Мендосино до Клиппертона), сравнение тихоокеанской нижней аномалии LLVP с африканской и слепая реконструкция тихоокеанской литосферы.</li>
+<li><strong>Разделы I и J — Марс и вся Солнечная система (темы 91–120):</strong> запуск Фобоса и Деймоса с горы Павлина и приговор миссии MMX (посадка в 2027 и доставка образцов в 2031), а рядом — дуга рождений лун от Меркурия до Плутона и Хаумеа.</li>
+<li><strong>Раздел K и часть L — ключевые требования и три рабочих списка (темы 121–132):</strong> объединение двух решающих тестов всей модели — <strong>концентрической геометрии обнажения (темы 121–122)</strong> и <strong>происхождения кратеров из возвращающегося земного вещества (темы 49 и 123)</strong>.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: складки одеяла в Тихом океане, паровая пушка на Марсе и две лакмусовые бумажки, решающие судьбу теории</h2>
+<p>Четыре наглядных образа собирают последние 53 темы статьи 14 и стратегию решения серии:</p>
+<ul>
+<li><strong>Одеяло, растянутое спереди и смятое сзади (раздел H, темы 80–90):</strong> земная груша, основание которой стояло у Киритимати (1,9°N, 157,5°W) и которая клонилась на запад против вращения Земли, растянула и сложила свою переднюю сторону в параллельные полосы к востоку от основания, смяла свою заднюю часть в западные дуги Тихого океана (8 100–10 300 км к западу) и оставила на дне, в зеркальном отражении, увеличенном в 1,37 раза, отпечаток морей (тема 87)!</li>
+<li><strong>Газовая пушка при давлении 0,25–<span class="ltr">0,5 ГПа</span> со стволом длиной 200–300 км (раздел I, темы 91–106):</strong> молодой Марс (радиус 1,5×, сутки 5 часов) запустил одну за другой две литосферные пробки — сначала маленький влажный Деймос, затем сухой твёрдый Фобос — из единого канала выброса на горе Павлина (1,48°N), в котором трение Кориолиса о западную стенку прорезало борозды Фобоса (тема 94), а паровое кольцо скруглило их орбиты!</li>
+<li><strong>Две лакмусовые бумажки, решающие судьбу всей модели (часть L.1):</strong> из 132 тем автор выделяет <strong>два ключевых наблюдения</strong>: (1) расположены ли кора и кратеры в трёх концентрических поясах вокруг центра ближней стороны (0°–31°–70°–180°, темы 121–122); и (2) являются ли нуклеосинтетические изотопы металла в норитах Чанъэ-6 и в расплаве кратеров (Cr, Ti, Mo, Ru, Os) чисто земными, а не астероидными (темы 49 и 123)!</li>
+<li><strong>Часы системы осей и магнитная карта бассейна SPA (последующие области вне списка):</strong> за 132 пронумерованными темами стоят два долгосрочных всеохватывающих проекта — решение эволюции четырёх плоскостей осей системы Земля–Луна (от начального наклона 3,8° до 23,44°) и расшифровка древнего магнетизма Луны, стёртого в центре SPA и усиленного на его краях.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: сводка разделов H–K и три списка отбора части L (темы 80–132)</h2>
+<p>Разделы H–K замыкают геофизический круг от глубин до окраин Солнечной системы и ставят все 18 требований статьи 13 как определённые темы исследований:</p>
+<ol class="steps">
+<li><strong>Раздел H — полосы и Тихий океан (темы 80–90):</strong> подгонка экватора полос, наклонённого на 11°–20° (тема 80), и тест Монте-Карло на близость основания у Киритимати (1,6°, тема 81); односторонность полос к востоку от основания (тема 82); ступени глубины и возраста (тема 83); асимметрия западных дуг (тема 84); непрерывность полос под хребтами и укорочение хребтов в четырёх пересечениях (тема 85); различение хребтов-«лопаток», вытянутых сверху (Лайн, Маршалловы и Гавайи), от плюмовых хребтов снизу (тема 86); зеркальный образ морей в масштабе 1,37× (тема 87); продолжение складки под слоями коры моложе 180 млн лет в скважинах DSDP/IODP (тема 88); сравнение тихоокеанской LLVP с африканской и изотопы плюмов (He, W, Ne, Xe — тема 89); и слепая палеомагнитная реконструкция литосферы (тема 90).</li>
+<li><strong>Раздел I — Марс и другие тела (темы 91–106):</strong> сжатие молодого Марса и потеря 92% его вращения через уход 5%–20% массы (тема 91); газовый толчок в канале длиной 200–300 км при давлении 0,25–<span class="ltr">0,5 ГПа</span> (тема 92); цикл вязкой вулканской пробки (тема 93); трение Кориолиса (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ω</mi><mi>v</mi><mo>≈</mo><mn>1,8</mn><mtext>–</mtext><mn>2.</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2\omega v \approx 1.8\text{–}2.0^2</annotation></semantics></math></span></span> м/с) и торможение Фобоса до 2,4–2,6 км/с (тема 94); конденсированное паровое кольцо (~ 10¹⁶ кг, тема 95); приливный подъём Деймоса до 23 463 км при диссипации, усиленной в 8–20 раз (тема 96); гонка Фобоса с линией коротации, встретившихся на ~ 19 000 км при сутках ~ 22 ч (тема 97); анализ образцов <strong>миссии MMX (посадка 2027, возврат 2031)</strong> для проверки изотопов, газовых пузырьков и гидратированных минералов (тема 98); борозды и цепочки ямок на Фобосе (тема 99); глубина впадин на Деймосе (1,9%) против Фобоса (5,5%, тема 100); смещение центра масс Фобоса к Марсу (тема 101); глубокая кальдера горы Павлина (шириной 47 км, глубиной ~ 5 км, объёмом 8 300–8 700 км³, совпадающим с объёмом двух лун, 6 740 км³) и дефицит массы под ней (тема 102); древняя пылевая компонента возрастом 4 млрд лет, богатая газами солнечного ветра (тема 103); вода под Фарсидой (тема 104); Венера, Меркурий и быстрые суперземли (тема 105); и разница высот между полюсами как функция скорости вращения при рождении (тема 106).</li>
+<li><strong>Раздел J — рождение лун в Солнечной системе (темы 107–120):</strong> дуга рождений от Солнца с пиком у Сатурна (2,5 × 10⁻⁴, тема 107); отсутствие выступа у Меркурия и Венеры (тема 108); расчёт воды, ушедшей через линию коротации с Урана и Нептуна (не менее 2%–3%, тема 109); плотность внутренних тел гигантов без газовой оболочки (тема 110); порядок плотностей средних лун Сатурна (тема 111) и лун Урана (тема 112); наклон Урана на 98° (тема 113); борозды как след вынужденного выхода через узкое отверстие на Фобосе и Миранде (тема 114); шрамы разрыва Плутона и Харона (тема 115) и время выброса его четырёх маленьких лун (тема 116); правило плотности в расколотых парах — больший партнёр плотнее (тема 117); пограничное правило захвата для Нереиды и Гималии (2 балла, тема 118); Хаумеа (на грани раскола при 3,9 ч) и Церера (2,54 R, тема 119); и экваториальный хребет Япета, Пана и Атласа как хребты-лопатки в момент разделения (тема 120).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: три рабочих списка части L и две последующие области вне списка</h2>
+<p>Часть L и раздел будущей работы статьи 14 собирают все 132 темы в практический план действий для исследователей в зависимости от имеющихся у них рабочих инструментов:</p>
+<ol class="steps">
+<li><strong>Список 1 — два решающих ключевых наблюдения (часть L.1):</strong>
+<ul>
+<li><strong>(a) Концентрическая геометрия обнажения (темы 121 и 122):</strong> проверка того, расположены ли толщина коры и древняя популяция кратеров в трёх концентрических поясах вокруг центра контакта на ближней стороне (0°–31° купол контакта, 31°–70° краевой пояс, 70°–180° дальняя сторона). Поскольку темы 121 и 122 входят <em>также в список публичных данных</em>, самое решающее исследование для проверки модели — одновременно и самое доступное для немедленного выполнения.</li>
+<li><strong>(b) Происхождение кратеров из возвращающегося земного вещества (темы 49 и 123):</strong> определение того, образованы ли ~ 99% кратеров Луны возвращающимся земным веществом, а не внешними астероидами (которые оставили бы 4,4–5,0 × 10¹⁹ кг, около 2%–6% чужой массы в верхних 5 км коры, против лишь 0,9%–2%, реально измеренных), — путём измерения нуклеосинтетических изотопов (Cr, Ti, Mo, Ru, Os) в норитах Чанъэ-6 и в расплаве морей.</li>
+</ul>
+</li>
+<li><strong>Список 2 против списка 3 — деление 132 тем по готовности (части L.2–L.3):</strong> из 132 тем серии <strong>55 тем</strong> можно выполнить сразу на существующих публичных данных (включая все 9 исследований тихоокеанских полос 80–88, 13 из 14 исследований морей 31–43 и ключевые темы 121–122); <strong>57 тем</strong> требуют разработки аналитических моделей или тяжёлых симуляций (прежде всего трёхмерной SPH-симуляции прикреплённого тела — тема 12 — и связанного термо-орбитального интегрирования — тема 24); а <strong>20 тем</strong> требуют космических миссий, образцов или новых лабораторных экспериментов (прежде всего миссии MMX к Фобосу и экспериментов высокого давления при 50–<span class="ltr">150 ГПа</span>).</li>
+<li><strong>Две большие области исследований вне списка (Further Work):</strong> (1) <strong>система осей Земля–Луна</strong> — прослеживание развития четырёх динамических плоскостей (земного экватора, лунной орбиты, лунного экватора и плоскости эклиптики) от начального наклона 3,8° до 23,44° и проверка того, сдвинуло ли истинное смещение полюсов бассейн SPA относительно земной горелки; и (2) <strong>магнетизм Луны</strong> — расшифровка древнего магнитного поля, стёртого в центре бассейна SPA и усиленного на его краях (включая завихрения Моря Мечты), как общего следа длительного нагрева и железа, пришедшего с Земли.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Количественные значения, определяющие два ключевых наблюдения (распределение концентрических поясов и баланс чужого вещества в верхней коре), и трение Кориолиса в марсианском канале выброса формулируются так (разделы I, K, L):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mtext> </mtext><mn>1</mn></mrow></msub><mo>:</mo><mtext>  </mtext><mn>26,3</mn><mtext> km (cap)</mtext><mo>&lt;</mo><mn>30,3</mn><mtext> km (belt)</mtext><mo>&lt;</mo><mn>36,2</mn><mtext> km (far)</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>h</mi><mo>=</mo><mn>9,9</mn><mtext> km</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h_{\mathrm{Model\,1}}:\; 26.3\text{ km (cap)} &lt; 30.3\text{ km (belt)} &lt; 36.2\text{ km (far)} \quad (\Delta h = 9.9\text{ km})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>≤</mo><mn>0,9</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>2</mn><mi mathvariant="normal">%</mi><mo>≪</mo><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>4,4</mn><mtext>–</mtext><mn>5,0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>19</mn></msup><mtext> кг </mtext><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>6</mn><mi mathvariant="normal">%</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M_{\mathrm{foreign,\,measured}} \le 0.9\%\text{–}2\% \ll M_{\mathrm{foreign,\,asteroidal}} = 4.4\text{–}5.0 \times 10^{19}\text{ кг } (2\%\text{–}6\%)</annotation></semantics></math></span></div></div></div>
+<p>Эти данные показывают, как два независимых теста — геометрия толщины коры и кратеров на поверхности, с одной стороны, и изотопный отпечаток металла в расплаве кратеров, с другой, — задают чёткие, однозначные условия подтверждения и опровержения для всей модели.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: полная дорожная карта 132 тем всей серии LEF</h2>
+<p>Статья 14 связывает все 14 статей серии (Zenodo DOI: 10.5281/zenodo.22743615) в междисциплинарную исследовательскую систему, открытую всему сообществу планетологов:</p>
+<ul>
+<li><strong>Немедленная работа для исследователей данных (55 тем):</strong> анализ сеток GRAIL и GRGM1200B, каталога кратеров Роббинса, карт тория и титана, батиметрии GEBCO Тихого океана и моделей формы Фобоса и Деймоса — без потребности в суперкомпьютерных ресурсах или новых образцах.</li>
+<li><strong>Цели для космических миссий ближайшего десятилетия (20 тем):</strong> анализ норитов из образцов Чанъэ-6 (тема 123), минералов высокого давления в образцах «Аполлона-14» (тема 22), японская миссия MMX к Фобосу в 2027–2031 годах (темы 98–104) и будущие миссии к Урану и поясу Койпера (темы 112, 115, 117, 119).</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 655.0 434" role="img" aria-label="Research topics by readiness" style="direction:ltr"><g transform="translate(15.0,0)"><rect x="220.0" y="12" width="243.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="341.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦10⁩</text><rect x="463.7" y="12" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="220.0" y="46" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.2" y="46" width="170.6" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="463.7" y="46" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="220.0" y="80" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="97.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="220.0" y="114" width="316.9" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦13⁩</text><rect x="536.8" y="114" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="549.1" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="220.0" y="148" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="148" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="439.4" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="512.4" y="148" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="536.9" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="220.0" y="182" width="170.6" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="305.3" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="390.6" y="182" width="48.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="439.4" y="182" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="220.0" y="216" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="216" width="97.5" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="463.7" y="216" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="220.0" y="250" width="219.4" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="329.7" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="439.4" y="250" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="463.7" y="250" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="220.0" y="284" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.1" y="284" width="219.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="402.8" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="512.5" y="284" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="561.2" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="220.0" y="318" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.6" y="318" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="390.6" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="463.7" y="318" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="512.5" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="220.0" y="352" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.5" y="352" width="121.9" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦5⁩</text><rect x="439.4" y="352" width="73.1" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><text x="415.0" y="424.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" ><tspan fill="#2f7d57" font-weight="700">■ Публичные данные</tspan> · <tspan fill="#2a4d7a" font-weight="700">■ Новая модель</tspan> · <tspan fill="#c47f2c" font-weight="700">■ Новые данные / миссия</tspan></text></g><text x="6.0" y="29.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >A · Земля до груши</text><text x="6.0" y="63.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >B · Тело на кончике</text><text x="6.0" y="97.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >C · Орбита</text><text x="6.0" y="131.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >D · Моря и отверстия</text><text x="6.0" y="165.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >E · Кратеры</text><text x="6.0" y="199.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >F · Полюса</text><text x="6.0" y="233.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >G · Бассейн SPA</text><text x="6.0" y="267.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >H · Полосы и Тихий океан</text><text x="6.0" y="301.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >I · Марс</text><text x="6.0" y="335.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >J · Рождение лун</text><text x="6.0" y="369.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >K · Требования и ключевые тесты</text></svg><figcaption>Все 132 темы исследований по разделам и уровню готовности: 55 на публичных данных, 57 требуют новой модели, 20 требуют новых данных или миссии.</figcaption></figure><h3 style="margin-top:28px">Лабораторный бокс: общая сводка всех 11 разделов (A–K) и 132 тем исследований модели LEF (статья 14)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Раздел</th><th>Область исследований</th><th>Темы</th><th>Публичные данные</th><th>Новая модель</th><th>Новые данные / миссия</th></tr>
+<tr><td><strong>A</strong></td><td>Земля до и во время груши</td><td>1–11 (11)</td><td>0</td><td>10</td><td>1</td></tr>
+<tr><td><strong>B</strong></td><td>Тело на кончике — форма, скругление и освобождение</td><td>12–23 (12)</td><td>3</td><td>7</td><td>2</td></tr>
+<tr><td><strong>C</strong></td><td>Орбита и приливная эволюция</td><td>24–29 (6)</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td><strong>D</strong></td><td>Моря и отверстия</td><td>30–43 (14)</td><td><strong>13</strong></td><td>1</td><td>0</td></tr>
+<tr><td><strong>E</strong></td><td>Кратеры и их источник (ключевое наблюдение 49)</td><td>44–57 (14)</td><td>6</td><td>6</td><td>2</td></tr>
+<tr><td><strong>F</strong></td><td>Полюса и уплотнение при скруглении</td><td>58–67 (10)</td><td>7</td><td>2</td><td>1</td></tr>
+<tr><td><strong>G</strong></td><td>Бассейн Южный полюс–Эйткен (SPA)</td><td>68–79 (12)</td><td>6</td><td>4</td><td>2</td></tr>
+<tr class="hl"><td><strong>H</strong></td><td>Полосы и дно Тихого океана</td><td>80–90 (11)</td><td><strong>9</strong></td><td>1</td><td>1</td></tr>
+<tr><td><strong>I</strong></td><td>Марс и другие тела (миссия MMX)</td><td>91–106 (16)</td><td>3</td><td><strong>9</strong></td><td><strong>4</strong></td></tr>
+<tr><td><strong>J</strong></td><td>Рождение лун в Солнечной системе</td><td>107–120 (14)</td><td>4</td><td>6</td><td><strong>4</strong></td></tr>
+<tr class="hl"><td><strong>K</strong></td><td>Требования и ключевые тесты (121–123)</td><td>121–132 (12)</td><td>4</td><td>5</td><td>3</td></tr>
+<tr class="hl"><td><strong>Итого</strong></td><td><strong>Все 11 разделов (A–K)</strong></td><td><strong>1–132 (132)</strong></td><td><strong>55 (41,7%)</strong></td><td><strong>57 (43,2%)</strong></td><td><strong>20 (15,1%)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь — конец всей серии</h2>
+<p>В главе 28 мы завершили полный обзор <strong>всех 14 статей серии LEF (Lunar Elevation and Fission)</strong> в 28 упорядоченных главах: от принципиального введения (статья 1) через физику линии коротации, земную грушу, орбиту, моря, кратеры, полюса и бассейн Южный полюс–Эйткен (статьи 2–8), к полосам в Тихом океане, лунам Марса, закону лун и кольцам по всей Солнечной системе (статьи 9–12), и до количественных требований и карты 132 тем будущих исследований (статьи 13–14).</p>
+<p>Полная книга из 28 глав теперь целиком в вашем распоряжении — и как структурированное учебное пособие, и как открытая научная дорожная карта для дальнейшего исследования, моделирования и эмпирической проверки тайн системы Земля–Луна и всей Солнечной системы.</p>
+<p style="margin-top:22px"><a href="story27_ru.html">← Глава 27</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

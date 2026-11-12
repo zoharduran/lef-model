@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 15: Бассейн Южный полюс — Эйткен (SPA) — подземная горелка, два фокуса и два коровых кольца — Модель LEF</title>
+<meta name="description" content="Глава 15 истории модели LEF: бассейн Южный полюс — Эйткен — подземная горелка, два фокуса и два коровых кольца.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story15_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story15_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story15_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story15_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story15_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story15_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story15_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story15_he.html" hreflang="he">עברית</a> · <a href="story15_en.html" hreflang="en">English</a> · <a href="story15_de.html" hreflang="de">Deutsch</a> · <a href="story15_es.html" hreflang="es">Español</a> · <a href="story15_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 15</p>
+<h1>Глава 15: Бассейн Южный полюс — Эйткен (SPA) — подземная горелка, два фокуса и два коровых кольца</h1>
+<p>По статье 08 — Южный полюс — Эйткен: бедный кратерами центр (части A–B9: 5 исследований и аномалии B1–B9)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: почему у самого древнего и глубокого бассейна Луны центр без кратеров — и высокие края?</h2>
+<p>На обратной стороне Луны, скрытой от наших глаз, лежит <strong>бассейн Южный полюс — Эйткен (SPA)</strong> — крупнейший, глубочайший и древнейший известный бассейн лика Луны: огромный эллипс 2 400 × 2 050 км (примерно расстояние от Парижа до Москвы), дно которого лежит на 6–9 км ниже окружающих нагорий, а возраст датируется 4,25 миллиарда лет. По всем правилам планетной геологии такая древняя поверхность, открытая небу более четырёх миллиардов лет, должна быть густо усеяна кратерами. Но тщательное измерение раскрывает противоречивую загадку:</p>
+<ol class="steps">
+<li><strong>Центр без кратеров, проступающий тем резче, чем чище грунт (B1):</strong> если с обеих сторон удалить лавовые равнины, 34 моря и ореол в 200 км вокруг каждого моря, оказывается, что в центральном кольце (0°–10°) уцелело лишь <strong>125,7 кратера</strong> (20+ км) на миллион км² — лишь <strong>0,51</strong> от плотности кольца за краем (247,5), а в точке минимума (45,4°S, 197,9°E, около 270 км к северо-северо-востоку от центра, <strong>ровно на долготе антипода Моря Ясности!</strong>) плотность падает до 111 (0,45).</li>
+<li><strong>Избирательное исчезновение промежуточных кратеров и мелкие днища под высокими краями:</strong> малые кратеры (10–20 км) почти не исчезли (0,91, отношение малых к крупным 4,62 против 2,13 снаружи), а промежуточные (20–40 км) в большинстве стёрты (0,47). Более того, оставшиеся в центре кратеры (40–80 км) на <strong>18% мельче</strong>, но <strong>их края стоят выше</strong> (1,35 против 0,92 в сопоставимом контроле) — ровно обратное обычной эрозии или релаксации, которые опускают край вместе с дном!</li>
+<li><strong>Два отдельных фокуса в одном бассейне:</strong> северный фокус (стирание кратеров и место посадки «Чанъэ-6») стоит напротив выходов тепла с видимой стороны, а южный фокус (тончайшая кора, самое низкое дно и плотная подземная масса) — примерно в 450 км южнее!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: противень поднимающегося теста над пламенем горелки и пирог, оседающий посередине после выпечки</h2>
+<p>Три простых образа объясняют, как длительный источник тепла под обратной стороной — <strong>«горелка»</strong> — порождает все эти противоречивые явления сразу:</p>
+<ul>
+<li><strong>Противень теста над пламенем горелки (подъём купола и сползание коры к краям):</strong> представьте мягкое тесто над ровным пламенем: жар поднимает центр куполом, а размягчённая корка сползает и сдвигается вниз к краям (создавая вокруг SPA два кольца утолщённой коры). Когда пламя слабеет и тесто остывает, купол обрушивается внутрь — и оседает <em>ниже</em> исходной высоты, потому что жар выгнал летучие и закрыл поры внутри!</li>
+<li><strong>Лист воска на горячей плите и грунт, уплотнённый, как мокрый песок (мелкие кратеры с высокими краями):</strong> жар снизу размягчил и расслабил древние кратеры в центре (их днища поднялись и выровнялись) и одновременно «запёк» и уплотнил пористые слои возвращённого вещества в плотный грунт. Когда на этот запечённый уплотнённый грунт падали поздние кратеры, на сжатие пор уходило меньше энергии, а больше — на постройку <strong>высоких краёв</strong>!</li>
+<li><strong>Пирог, края которого пропекаются первыми, а центр оседает (образование внешнего кольца):</strong> когда горелка ослабла к концу округления, края купола остыли и застыли первыми в поднятом состоянии (оставив гребень и коровый корень на толстой восточной стороне), а центр долго оставался горячим, уплотнялся и в итоге осел в глубокий бассейн, который мы видим сегодня!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: пять исследований SPA и аномалии B1–B6</h2>
+<p>Часть B статьи 08 представляет пять полных количественных исследований (исследования 1–5, все получили полный зелёный свет), изучающих поверхность, глубину, кору, кольца и пористость SPA:</p>
+<ol class="steps">
+<li><strong>Исследование 1 — летопись кратеров SPA (B1):</strong> в чистом подсчёте (без лавовых равнин, без 34 морей и без ореола в 200 км) плотность кратеров (20+ км) постепенно растёт от <strong>125,7 (0,51)</strong> в кольце 0°–10° до 200,4 (0,81) в 10°–20°, 226,7 (0,92) в 20°–30° и до 247,5 (1,00) за краем (39,6°–50°). Аномалия сохраняется и на эллипсе (122–132 в ядре против 230–235 снаружи), а точка минимума (45,4°S, 197,9°E) лежит ровно на меридиане антипода Моря Ясности (198,8°E).</li>
+<li><strong>Исследование 2 — глубина бассейна против тонкой коры (B2):</strong> измерение высоты на <strong>равнинах между кратерами</strong> (после удаления всех кратеров 20+ км с краями, чтобы избежать загрязнения) показывает, что дно SPA на <strong>1,1–1,8 км</strong> глубже, чем дало бы изостатическое равновесие одной тонкой коры (а при богатой железом коре плотностью 2 900 кг/м³ разрыв вырастает до <strong>~ 4,4 км</strong>). Остаток глубины максимален в центре (−1,1 до −1,8 км) и угасает к краю (−0,2 км), а самая низкая точка (61°S, 199°E, −5,5 км) лежит всего в 35 км от центра плотной массы James et al. (62°S, 200°E).</li>
+<li><strong>Исследование 3 — внешнее кольцо утолщённой коры (B4):</strong> после вычитания регионального тренда обратной стороны проявляется кольцо утолщённой коры (3,8–5,7 км на расстоянии 50°–55° от центра, с коровым корнем на глубине 42–56 км), возвышающееся над корой за ним в семи направлениях из восьми (в среднем +3,9 до +4,4 км), но оно <strong>асимметрично восток–запад</strong>: толстое на востоке и северо-востоке (+7,8 и +7,4 км, односторонняя составляющая 7,7–9,1 км в направлении 96°–99°) и <strong>полностью отсутствует на западе</strong> (−2,3 км в коре и −0,50 км по высоте)!</li>
+<li><strong>Исследование 4 — внутреннее кольцо и смещение центра (B5):</strong> ближе к центру (28°–44°, средний радиус 36,7° ≈ 1 114 км) в 22 направлениях из 24 проступает ясное внутреннее кольцо (особенно выраженное на юго-востоке, +24–30 км, и на западе, +6–14 км, где внешнее кольцо отсутствует!). Его центр лежит <strong>в 108–118 км к северо-востоку от центра эллипса</strong> (51,4°S, 196,8°E — центр купола!), а внутренняя стена круче всего на севере и северо-востоке (30,7 м/км по высоте и 10,5 км/100 км в коре, напротив стены толстых нагорий) и полога на юго-западе (11,5 м/км).</li>
+<li><strong>Исследование 5 — закрытие пор на глубине (B6):</strong> на поверхности пористость грунта в SPA такая же, как на нагорьях (19,7% против 20,3%, вновь раскрытая уходом летучих). Но на глубине 10 км <strong>поры SPA в центре почти полностью закрыты (2,9%–4,4%)</strong> и постепенно растут к краю (7,1%–8,8%, против 6,2%–12,8% на остальной обратной стороне). Уплотнение 12% пористости в столбе 9–15 км объясняет ровно проседание дна (1,1–1,8 км), найденное в исследовании 2!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="SPA clean crater density by ring" style="direction:ltr"><rect x="180.0" y="16" width="176.9" height="26" rx="4" fill="#b23a2e"/><text x="364.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦125,7⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0°–10° · ядро</text><rect x="180.0" y="56" width="282.0" height="26" rx="4" fill="#c47f2c"/><text x="470.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦200,4⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10°–20°</text><rect x="180.0" y="96" width="319.1" height="26" rx="4" fill="#5f9a6e"/><text x="507.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦226,7⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20°–30°</text><rect x="180.0" y="136" width="317.5" height="26" rx="4" fill="#5f9a6e"/><text x="505.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦225,6⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >30°–39,6° · до края</text><rect x="180.0" y="176" width="348.3" height="26" rx="4" fill="#2f7d57"/><text x="536.3" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦247,5⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >39,6°–50° · за краем</text></svg><figcaption>Плотность кратеров от 20 км (на миллион км²) в кольцах вокруг центра SPA в чистом подсчёте: ядро содержит лишь около половины плотности, найденной за краем.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: богатое железом дно, мало видимой лавы, погребённая лава и ториевый полумесяц (B7–B9)</h2>
+<p>Части B7–B9 статьи 08 связывают химию и вулканизм дна SPA с механизмом горелки и с двухэтапной историей центрального моря:</p>
+<ol class="steps">
+<li><strong>Градиент железа и плоское отношение калия к торию (B7):</strong> измерения гамма-спектрометра (Lunar Prospector GRS) показывают, что концентрация железа (FeO) постепенно падает с <strong>9,48 мас.%</strong> в центре (0°–10°) до 8,56% (10°–20°), 6,63% (20°–30°) и до 4,43% у края — потому что глубинное, богатое железом вещество поднялось с жаром в центре купола. Напротив, <strong>отношение K/Th плоское и низкое (451–455) по всей ширине внутренности бассейна (0°–30°)</strong> (на 16%–20% ниже окрестностей, 537–567) и подскакивает лишь у края — потому что длительный нагрев снизу выгнал летучий калий равномерно по всей нагретой площади!</li>
+<li><strong>Почему лишь 4,1% площади SPA покрыто видимой лавой, несмотря на тончайшую кору? (B8):</strong> в бассейнах видимой стороны со столь же тонкой корой (15–17 км, как Кризисов и Влажности) лава покрывает 22%–74% площади, а в SPA — лишь <strong>4,1%</strong> (14,6% во внутренних 300 км, 8,4% в центральном куполе размером с бассейн видимой стороны и 0,7% у края). Причина двойная: во-первых, большая часть огромной площади SPA — <strong>зона нагрева и плавления снизу без извержения на поверхность</strong> (что разбавляет процент площади в знаменателе); во-вторых, многократное плавление опустошило мантию от легкоплавких элементов и сделало её стойкой к позднему плавлению (B13).</li>
+<li><strong>Погребённая лава в круге 15° и ториевый полумесяц как «компас вращения» при 5,77 часа (B9):</strong> внутри круга 15° вокруг центра купола изначально лежало <strong>обычное крупное отверстие питания («центральное море»)</strong>, выстреливавшее вещество наружу, пока Луна была прикреплена к Земле и быстро вращалась (5,77 часа). Региональный жар расплавил и покрыл это море — и это <strong>погребённая лава (криптомаре)</strong>, покрывающая <strong>13,6%–24,1%</strong> круга 15° (и почти ничего снаружи!). А что стало с богатым торием веществом, выстреленным центральным морем наружу?
+<ul>
+<li>Измерение 43 кратеров в ториевом полумесяце на северо-западе (12°–32° от центра, с пиками 4,45–4,90 ppm у Биркеланда и Орема V) показывает, что концентрация тория <strong>одинакова внутри кратеров и снаружи</strong> (32/43 против 34/43) и ослабевает с расстоянием (r = −0,53), — то есть это <strong>покров, упавший сверху</strong>, а не глубокий слой, выкопанный снизу!</li>
+<li><strong>Симуляция баллистических траекторий (`sim577.py`):</strong> запуск 72 порций вещества под углом 45° с кончика прикреплённой Луны на линии коротации (16 400 км, земные сутки <strong>5,77 часа</strong>) со скоростью 0,95–1,0 км/с показывает, что за 35–40 минут полёта грунт Луны поворачивается вперёд, и вещество падает <strong>лишь с одной стороны (ведомой, 74%–96%, асимметрия 0,42–0,54) на расстоянии 29°–32°</strong> — ровно там, где лежит ториевый полумесяц!</li>
+</ul>
+</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Физические механизмы выталкивания коры наружу тепловым давлением, продвижения фронта плавления снизу (условие Стефана) и проседания грунта при закрытии пор выражаются так (§B3, §B6):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>=</mo><mi>α</mi><mi>K</mi><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>0,4</mn><mtext>–</mtext><mn>1,2</mn><mtext> GPa</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>300</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta p = \alpha K \Delta T \approx 0.4\text{–}1.2\text{ GPa} \quad (\Delta T = 300\text{ K})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>≈</mo><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><mi>h</mi><mo>≈</mo><mn>5</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma \approx \Delta\rho\,g\,h \approx 5\text{ MPa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>q</mi><mrow><mi>ρ</mi><mtext> </mtext><mo stretchy="false">(</mo><msub><mi>c</mi><mi>p</mi></msub><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>+</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">v_{\mathrm{melt}} = \dfrac{q}{\rho\,(c_p\Delta T + L)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>z</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>ϕ</mi><mo>⋅</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\Delta z_{\mathrm{compaction}} = \Delta\phi \cdot H</annotation></semantics></math></span></div></div></div>
+<p>При скрытой теплоте L = 4 × 10⁵ Дж/кг, нагреве на <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>800</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T = 800\text{ K}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>p</mi></msub><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mtext> J/kg</mtext></mrow><annotation encoding="application/x-tex">c_p\Delta T = 8 \times 10^5\text{ J/kg}</annotation></semantics></math></span></span>) и плотности коры <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho = 2,900</annotation></semantics></math></span></span> кг/м³ для плавления 20 км коры нужно около 7 × 10¹³ Дж/м²: даже умеренный тепловой поток 0,1–0,5 Вт/м² плавит 20 км коры всего за <strong>4,4–22 миллиона лет</strong> — гораздо меньше времени работы горелки!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: группировка двух систем возрастов и объединение семи наблюдений</h2>
+<p>Возрасты, измеренные в бассейне SPA, естественно делятся на два этапа истории горелки (§B9):</p>
+<ul>
+<li><strong>Прикреплённая стадия и работа горелки (4,25–3,87 млрд лет):</strong> кристаллизация глубинных норитов (4,247 млрд лет), богатый KREEP базальт (4,203 млрд лет), работа центрального моря и создание ториевого полумесяца при быстром вращении 5,77 часа.</li>
+<li><strong>После отрыва (3,873 млрд лет) — медленное остывание на месте без боковых извержений:</strong> в момент отрыва давление со стороны Земли прекратилось, центральное море успокоилось, оставалось горячим и медленно застывало на месте около 1,5 миллиарда лет (3,7–2,2 млрд лет, с пиком 3,6–3,2 млрд лет и 2,8 млрд лет на месте «Чанъэ-6») — поэтому у этой молодой лавы нет ториевого полумесяца вовсе!</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: профиль кратеров, глубины, коры, пористости и химии SPA (статья 08, части B1–B9)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Кольцо от центра SPA (53°S, 191°E)</th><th>Кратеры ≥ 20 км (чистое отношение)</th><th>Глубина дна против одной коры (км)</th><th>Толщина коры GRAIL (модель 1 / 4, км)</th><th>Пористость на 10 км (экспоненциальная / линейная)</th><th>FeO (мас.%) / отношение K/Th</th></tr>
+<tr class="hl"><td><strong>0°–10° (центральное ядро)</strong></td><td><strong>125,7 (0,51)</strong></td><td>−7,0 против −5,3 до −5,9 (<strong>остаток −1,1 до −1,8</strong>)</td><td><strong>16,0–16,4 / 22,9–23,4</strong></td><td><strong>2,9% / 4,4%</strong> (поверхность 19,7%)</td><td><strong>9,48% / 451</strong></td></tr>
+<tr><td><strong>10°–20°</strong></td><td>200,4 (0,81)</td><td>−6,4 до −6,5 (остаток −0,5 до −1,2)</td><td>16,2–17,5 / 22,9–24,2</td><td>3,1% / 3,2%</td><td>8,56% / 451 (пик Th 1,96)</td></tr>
+<tr><td><strong>20°–30°</strong></td><td>226,7 (0,92)</td><td>−4,0 до −5,1 (остаток −0,2 до −0,9)</td><td>21,5–26,5 / 28,7–34,2</td><td>3,6% / 5,1%</td><td>6,63% / 455</td></tr>
+<tr><td><strong>30°–39,6° (до края)</strong></td><td>225,6 (0,91)</td><td>−0,8 до −2,7 (остаток −0,2 до −0,8)</td><td>33,4–39,5 / 42,2–49,5</td><td>4,2% / 6,2%</td><td>4,91% / 501</td></tr>
+<tr class="hl"><td><strong>39,6°–50° (за краем)</strong></td><td><strong>247,5 (1,00)</strong></td><td>0,0 (опорная линия)</td><td><strong>40,6–41,9 / 50,5–51,9</strong></td><td><strong>7,1% / 8,8%</strong></td><td><strong>4,43% / 567</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Направление вокруг SPA</th><th>Ступень внешнего кольца (45°–60° против 70°–90°)</th><th>Ступень высоты LOLA (км)</th><th>Расстояние внутреннего кольца и крутизна стены (м/км)</th><th>Толкование в модели LEF</th></tr>
+<tr class="hl"><td><strong>Северо-восток (45°)</strong></td><td><strong>+7,4 км</strong> (54,8 против 47,4)</td><td><strong>+1,93 км</strong></td><td>36° — самая крутая стена (<strong>30,7 м/км</strong>)</td><td>Плавление толстой коры нагорий и плотное нагромождение</td></tr>
+<tr class="hl"><td><strong>Восток (90°)</strong></td><td><strong>+7,8 км</strong> (46,2 против 38,4)</td><td><strong>+1,59 км</strong></td><td>37° — крутая стена (17,8 м/км)</td><td>Максимальная односторонняя составляющая (7,7–9,1 км к 97°)</td></tr>
+<tr><td><strong>Юг (180°)</strong></td><td>+6,5 км (37,1 против 30,6)</td><td>+1,17 км</td><td>42° — пологий склон (14,9 м/км)</td><td>Южный коровый корень (44 против 29 км)</td></tr>
+<tr><td><strong>Юго-запад (225°)</strong></td><td>+3,2 км (33,5 против 30,4)</td><td>+0,41 км</td><td>34° — самый пологий склон (<strong>11,5 м/км</strong>)</td><td>Древняя тонкая кора, допускающая широкое растекание</td></tr>
+<tr class="hl"><td><strong>Запад (270°)</strong></td><td><strong>−2,3 км</strong> (36,7 против 39,0)</td><td><strong>−0,50 км</strong></td><td><strong>31°</strong> — близко к центру (выражено на +4,5 до +13,9 км)</td><td>Нет внешнего кольца — вещество нагромоздилось близко, во внутреннем кольце</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В этой главе мы увидели, как механизм подземной <strong>«горелки»</strong> объясняет все явления поверхности, глубины, двух коровых колец, закрытия пор, малой видимой лавы и ториевого полумесяца бассейна SPA — и делит бассейн на два фокуса: северный (стирание кратеров) и южный (тонкая кора и низкое дно).</p><a href="story16_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 16</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Глубины SPA, образцы «Чанъэ-6» и потенциальный барьер сплошного тела →</p></div></a>
+<p style="margin-top:22px"><a href="story14_ru.html">← Глава 14</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

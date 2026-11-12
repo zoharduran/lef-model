@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Глава 17: Полосы Тихого океана — передняя стена груши и зеркальный отпечаток Луны — Модель LEF</title>
+<meta name="description" content="Глава 17 истории модели LEF: полосы дна Тихого океана — передняя стена груши и зеркальный отпечаток Луны.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story17_ru.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story17_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story17_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story17_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story17_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story17_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story17_ru.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story17_he.html" hreflang="he">עברית</a> · <a href="story17_en.html" hreflang="en">English</a> · <a href="story17_de.html" hreflang="de">Deutsch</a> · <a href="story17_es.html" hreflang="es">Español</a> · <a href="story17_fr.html" hreflang="fr">Français</a> · <b>Русский</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · ГЛАВА 17</p>
+<h1>Глава 17: Полосы Тихого океана — передняя стена груши и зеркальный отпечаток Луны</h1>
+<p>По статье 09 — Полосы: передняя сторона груши на дне Тихого океана (части A–C.4: параллельные линии широты, два колена на западе, зеркальный отпечаток в 1,37× и длина груши)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Загадка: почему шесть прямых параллельных полос длиной в тысячи километров пересекают дно Тихого океана — и сходятся на западе?</h2>
+<p>На картах вертикального градиента гравитации (VGG — Vertical Gravity Gradient) Северной Пацифики выделяется необычайная геометрическая система: <strong>шесть прямых, резких и поразительно параллельных полос</strong> — Мендосино, Пионер, Мюррей, Молокаи, Кларион и Клиппертон, — тянущихся на запад от берегов Северной Америки на тысячи километров (одна лишь Клиппертон простирается примерно на <strong>7 240 км</strong>, больше радиуса Земли!), и многие из них двойные или тройные. В этой главе мы откроем четыре удивительных геометрических явления, указывающих, что эти полосы — <strong>шрам возвращения груши</strong>, из которой родилась Луна:</p>
+<ol class="steps">
+<li><strong>Параллели одного общего экватора (A.1, B.1):</strong> шесть полос параллельны не нынешнему экватору, а являются параллельными линиями широты <strong>одного древнего экватора</strong>, наклонённого на ≥ 10° относительно нынешнего, — разбросанными от 33,6°N (Мендосино) до 1,8°N (Клиппертон), плюс ещё две южные полосы (6°S и 14°S).</li>
+<li><strong>Основание груши на Киритимати лежит ровно на экваторе системы (B.2–B.3):</strong> остров Киритимати (1,9°N, 157,5°W, определённый в статье 3 как основание груши над крупной провинцией низких скоростей нижней мантии, LLVP) лежит всего в <strong>1,6°</strong> от экватора полос — и полосы уходят от него <strong>только на восток</strong> (к Америке)!</li>
+<li><strong>Два «колена» на западе, ограничивающие ширину в 3 360 км (C.1–C.2):</strong> к западу от Киритимати полосы покидают свой параллельный ход: северная полоса изгибается вниз (23,8°N, 164,9°E), а южная — вверх (5,3°S, 173,2°E). Расстояние между двумя коленами — <strong>3 360 км</strong> (диапазон 3 040–3 700 км) — ровно ширина зоны контакта Луны (3 000 км) и купола над ней (3 650 км), а их центр (9,3°N, 169,3°E) лежит <strong>в 3 760 км к западу от основания</strong>!</li>
+<li><strong>Зеркальный отпечаток лунных морей, увеличенный в 1,37 раза, внутри кончика (C.3):</strong> в следе кончика на западе проступает увеличенное зеркальное изображение видимой стороны Луны, в котором Море Дождей (13,19°N, 179,04°E), Море Ясности (11,5°N, 166,3°E) и центр контакта (8,2°N, 179,3°W) все попадают в радиус кончика (1 680 км)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 664.0 310" role="img" aria-label="Stripe latitudes from the system equator" style="direction:ltr"><g transform="translate(24.0,0)"><rect x="190.0" y="16" width="345.3" height="26" rx="4" fill="#1f3a5f"/><text x="543.3" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦33,6°N⁩</text><rect x="190.0" y="56" width="309.4" height="26" rx="4" fill="#2a4d7a"/><text x="507.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >⁦30,1°N⁩</text><rect x="190.0" y="96" width="266.2" height="26" rx="4" fill="#35608f"/><text x="464.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#35608f" style="direction:ltr;unicode-bidi:embed" >⁦25,9°N⁩</text><rect x="190.0" y="136" width="209.7" height="26" rx="4" fill="#4a74a3"/><text x="407.7" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#4a74a3" style="direction:ltr;unicode-bidi:embed" >⁦20,4°N⁩</text><rect x="190.0" y="176" width="107.9" height="26" rx="4" fill="#6f93bd"/><text x="305.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >⁦10,5°N⁩</text><rect x="190.0" y="216" width="18.5" height="26" rx="4" fill="#c47f2c"/><text x="216.5" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,8°N⁩</text><rect x="190.0" y="256" width="16.4" height="26" rx="4" fill="#b23a2e"/><text x="214.4" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,6°N⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Мендосино</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Пионер</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Мюррей</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Молокаи</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Кларион</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Клиппертон</text><text x="6.0" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Основание груши · Киритимати</text></svg><figcaption>Широта каждой полосы относительно экватора системы полос: Клиппертон и основание груши на Киритимати лежат почти на одной линии.</figcaption></figure></section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Образ: складка скатерти под книгой, печать в воске и дерево, лежащее на земле</h2>
+<p>Четыре образа из повседневной жизни показывают, как гигантская груша, выросшая из Земли и втянутая обратно после высвобождения Луны, оставила после себя полосы Тихого океана:</p>
+<ul>
+<li><strong>Ребёнок, идущий наружу по вращающейся карусели (груша, клонящаяся назад, A.2):</strong> пока груша вытягивалась из Земли, вращающейся на восток, поднимающемуся веществу нужна была большая орбитальная скорость, поэтому оно <em>отставало</em> против направления вращения — то есть <strong>на запад</strong>. Так у груши появились две стены: <strong>передняя стена (Leading Side, на востоке)</strong>, растянутая по направлению вращения, и <strong>задняя стена (Trailing Side, на западе)</strong> под наклонённым кончиком!</li>
+<li><strong>Складка скатерти под книгой (образование полос снизу и с боков, B.5):</strong> когда Луна оторвалась в 3,873 млрд лет, «пробку выдернули», внутреннее давление в груше сбросилось, и груша была втянута и поглощена обратно Землёй. Растянутая передняя стена размазалась на восток по направлению вращения и сложилась сама на себя, как складки скатерти, сдвинутой с боков: поэтому полосы <strong>проходят под вулканическими хребтами, не ломая их</strong> (в отличие от борозды, прорезанной сверху, которая перерезала бы хребет!), а нерастянутая задняя стена обрушилась грудой и смялась в извилистые островные дуги западной Пацифики (Филиппины, Марианы, Индонезия и дуга Банда, B.8)!</li>
+<li><strong>Резиновый штамп, вдавленный в мягкий воск (зеркальный отпечаток видимой стороны Луны, C.3):</strong> лицом к лицу видимая сторона Луны сидела на кончике груши. Как буквы, вырезанные зеркально на резиновом штампе, или ладонь, прижатая изнутри к оконному стеклу и видимая снаружи, север остаётся севером, но <strong>восток и запад меняются местами</strong> — а поскольку плотность Луны на кончике была 1 300 кг/м³ против 3 344 кг/м³ сегодня, каждый размер отпечатка в <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3344</mn><mi mathvariant="normal">/</mi><mn>1300</mn><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn mathvariant="bold">1,37</mn></mrow><annotation encoding="application/x-tex">(3344/1300)^{1/3} = \mathbf{1.37}</annotation></semantics></math></span></span> раза больше!</li>
+<li><strong>Срубленное дерево, лежащее на земле во всю длину (совпадение длины 9 360 км с длиной груши, C.4):</strong> груша не упала, как дерево, а была втянута внутрь, и всё же передняя стена, размазанная по дну океана, протянулась на длину, равную длине самого тела груши в момент отрыва!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Наука и модель: система полос, два колена и зеркальный отпечаток (части A–C.4)</h2>
+<p>Части A–C.4 статьи 09 представляют четыре независимых геометрических измерения, подтверждающих, что полосы — передняя стена груши, а область колен — место, где сформировалась Луна:</p>
+<ol class="steps">
+<li><strong>Порядок полос относительно экватора системы и основания (A.1, B.1–B.4):</strong> на трёхмерном глобусе (Cesium), откалиброванном по известным опорным точкам (Гавайи, изгиб Гавайи–Император, конец жёлоба Тонга и подводная гора Мэйдзи, с точностью &lt; 5 пикселей), шесть полос сохраняют постоянное расстояние от одного общего экватора: Мендосино (33,6°N), Пионер (30,1°N), Мюррей (25,9°N), Молокаи (20,4°N), Кларион (10,5°N) и Клиппертон (1,8°N — в 0,2°–0,8° от широты Киритимати, лежащего на 1,6°N!). К югу от основания выделены ещё две полосы (около 6°S и 14°S, вероятно Галапагосская и Маркизская), доказывающие, что основание груши (шириной 9 000–11 000 км) стояло <em>внутри</em> ширины передней стены, а не у её края.</li>
+<li><strong>Непрерывность полос под хребтами и их схождение на западе (B.5–B.6):</strong> в четырёх отдельных пересечениях (около 36°N, 178°W, у островов Лайн 6°N, 159°W, у островов Феникс 2°S, 175°W и у 13°S, 152°W) полоса проходит под вулканическим хребтом и продолжается с другой стороны без бокового скачка и не перерезая хребта. К западу от хребтов северная полоса загибается к югу, а южная к северу — к общей области схождения.</li>
+<li><strong>Зеркальный отпечаток видимой стороны с увеличением × 1,37 (C.3):</strong> после того как автор заменил первоначальное прямое прочтение (в котором Море Нектара оказывалось в 2 500 км от своего места) физически верным зеркальным (замена востока и запада и увеличение в 1,37 раза, так что расстояние Дождей–Ясности вырастает с 1 023 км на нынешней Луне до ~ 1 400 км), привязка <strong>Моря Дождей</strong> на 13,19°N, 179,04°E помещает <strong>Море Ясности</strong> (11,5°N, 166,3°E) на цепь Маршалловых островов всего в 410 км от центра кончика, а <strong>центр контакта</strong> (8,2°N, 179,3°W) — в 1 260 км, все глубоко внутри радиуса кончика (1 680 км), тогда как Море Нектара (1 970 км) падает чуть за край — ровно как его южное положение на Луне!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Механизм словами: как рассчитать масштаб зеркала (1,37×) и длину тела груши без Луны</h2>
+<p>Части C.1–C.4 статьи 09 показывают, как два простых геометрических свойства — сохранение массы Луны при её уплотнении и положение окончательного контакта относительно линии коротации — заранее, без свободных параметров, определяют и размер зеркального отпечатка на дне океана, и длину всей системы полос:</p>
+<ol class="steps">
+<li><strong>Коэффициент зеркального увеличения (× 1,37, §C.3):</strong> пока молодая Луна сидела на кончике груши, она была раздута и богата газами и летучими, со средней плотностью <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>300</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{tip}} = 1,300</annotation></semantics></math></span></span> кг/м³. С тех пор она уплотнилась до нынешней плотности (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{today}} = 3,344</annotation></semantics></math></span></span> кг/м³, радиус 1 737 км), сохраняя массу. Поскольку объём шара обратно пропорционален плотности, а радиус пропорционален кубическому корню объёма, каждое расстояние на лике молодой Луны было в <strong>1,37</strong> раза больше нынешнего (а по двухшаговому расчёту серии — переход от линзы к сфере с коэффициентом 0,83 и затем сжатие с 1 890 до 1 737 км — получается 1,31, совпадение в пределах нескольких процентов). Значит, расстояние между Морями Дождей и Ясности (1 023 км сегодня) было <strong>≈ 1 400 км</strong> на кончике груши!</li>
+<li><strong>Разделение длины тела груши и длины самой Луны (§C.4):</strong> в момент отрыва (земные сутки 5,77 часа) линия коротации на широте отрыва (22,5°) стояла в 17 287 км от центра Земли. Центр Луны (её радиус при отрыве 1 890 км) пересёк линию примерно на 210 км и стоял на 17 497 км. Следовательно:
+<ul>
+<li><strong>Груша вместе с Луной как кончиком:</strong> доходила ровно до линии коротации — расстояние 17 287 − (6 602–6 721) = 10 570–10 690 км от поверхности Земли.</li>
+<li><strong>Само тело груши (включая область кончика, без Луны, которая оторвалась и ушла):</strong> заканчивалось на один лунный радиус внутрь от центра Луны (17 497 − 1 890 = 15 607 км от центра Земли), то есть на длине <strong>8 890–9 000 км</strong> от поверхности Земли — почти равной длине системы полос, раскинутой по дну океана от центра кончика до Клиппертона на востоке (<strong>9 360 км</strong>)!</li>
+</ul>
+</li>
+<li><strong>Выравнивание колен по линиям системы (§C.1–C.2):</strong> два колена не случайны: северное колено (23,8°N, 164,9°E) лежит ровно на широте полосы Пионер (30,0°N от экватора системы против 30,1°N), а южное колено (5,3°S, 173,2°E) лежит ровно на самом экваторе системы (в 0,1° от него) — на том же экваторе, на котором лежит основание груши на Киритимати (в 1,6° от него)!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Академическое объяснение и ключевые уравнения</h2>
+<p>Отношение расстояний на лике Луны между стадией кончика и сегодняшним днём, длина тела груши, оставшегося на Земле, и радиус следа кончика формулируются так (§C.1, §C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3344</mn><mn>1300</mn></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn>1,37</mn></mrow><annotation encoding="application/x-tex">\dfrac{L_{\mathrm{tip}}}{L_{\mathrm{today}}} = \left(\dfrac{\rho_{\mathrm{today}}}{\rho_{\mathrm{tip}}}\right)^{1/3} = \left(\dfrac{3344}{1300}\right)^{1/3} = 1.37</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mtext> </mtext><mi mathvariant="normal">b</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mi>R</mi><mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>−</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi>R</mi><mo>⊕</mo></msub><mo>=</mo><mn>15</mn><mspace width="0.17em"></mspace><mn>607</mn><mo>−</mo><mo stretchy="false">(</mo><mn>6</mn><mspace width="0.17em"></mspace><mn>602</mn><mtext>–</mtext><mn>6</mn><mspace width="0.17em"></mspace><mn>721</mn><mo stretchy="false">)</mo><mo>=</mo><mn>8</mn><mspace width="0.17em"></mspace><mn>890</mn><mtext>–</mtext><mn>9</mn><mspace width="0.17em"></mspace><mn>000</mn><mtext> км</mtext></mrow><annotation encoding="application/x-tex">L_{\mathrm{pear\,body}} = (R_{\mathrm{corot},22.5^\circ} + \Delta r_{\mathrm{release}} - R_{\mathrm{Moon,rel}}) - R_\oplus = 15{,}607 - (6{,}602\text{–}6{,}721) = 8{,}890\text{–}9{,}000\text{ км}</annotation></semantics></math></span></div></div></div>
+<p>Где <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \approx 210</annotation></semantics></math></span></span> км — расстояние за линией коротации (17 287 км на широте 22,5°), а <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_{\mathrm{Moon,rel}} = 1,890</annotation></semantics></math></span></span> км — радиус Луны в момент отрыва, отсюда следует, что длина тела груши (8 890–9 000 км) совпадает с точностью до 4%–5% с длиной системы полос (9 360 км) и дуг задней стороны (8 100–10 300 км).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Подпись в реальности: карта линий широты и зеркальные координаты на дне Тихого океана</h2>
+<p>Помимо резких линий гравитационного градиента (VGG), пересекающих Северную Пацифику без бокового отклонения на 30° широты, на карте держатся четыре точных географических якоря (§A.1, §B.7, §C.3):</p>
+<ul>
+<li><strong>Глубинный якорь в нижней мантии (B.7):</strong> под основанием груши на Киритимати (1,9°N, 157,5°W) нижний слой мантии сейсмически медленный во всех пяти моделях голосования Cottaar &amp; Lekic (2016) и лежит внутри контура −1% Тихоокеанской крупной провинции низких скоростей (LLVP — её центр в 1 480–1 660 км к юго-юго-западу от основания), в которую тяжёлое, богатое железом вещество груши погрузилось при втягивании обратно.</li>
+<li><strong>Зеркальный отпечаток в следе кончика (радиус ≈ 1 680 км вокруг 9,3°N, 169,3°E):</strong> три из четырёх ключевых точек видимой стороны Луны падают глубоко внутрь зеркального следа — Море Ясности (410 км от центра), Море Дождей (1 150 км) и центр контакта (1 260 км), а Море Нектара (1 970 км) лежит чуть за южным краем — ровно как его положение относительно зоны контакта на Луне!</li>
+</ul>
+<h3 style="margin-top:28px">Лабораторный бокс: широты полос, зеркальный отпечаток (× 1,37) и длины груши (статья 09, части A–C.4)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Полоса / географический якорь</th><th>Расстояние от экватора системы</th><th>Расстояние к северу от широты основания (1,6°N)</th><th>Геометрическая роль в строении груши</th></tr>
+<tr class="hl"><td><strong>1. Мендосино</strong></td><td>33,6°N</td><td>32,0° к северу</td><td>Северная граница системы полос</td></tr>
+<tr><td><strong>2. Пионер</strong></td><td>30,1°N</td><td>28,5° к северу</td><td>Совпадает с широтой северного колена (30,0°N)</td></tr>
+<tr><td><strong>3. Мюррей</strong></td><td>25,9°N</td><td>24,3° к северу</td><td>Центральная северная полоса</td></tr>
+<tr><td><strong>4. Молокаи</strong></td><td>20,4°N</td><td>18,8° к северу</td><td>Центральная полоса</td></tr>
+<tr><td><strong>5. Кларион</strong></td><td>10,5°N</td><td>8,9° к северу</td><td>Центрально-южная полоса</td></tr>
+<tr class="hl"><td><strong>6. Клиппертон</strong></td><td><strong>1,8°N</strong> (0,8° на западном конце)</td><td><strong>0,2° к северу</strong> (длина ~ 7 240 км)</td><td>Проходит вплотную к основанию груши</td></tr>
+<tr class="hl"><td><strong>Основание груши (Киритимати)</strong></td><td><strong>1,6°N</strong> (1,9°N, 157,5°W)</td><td><strong>0,0° (опорная точка)</strong></td><td>Лежит на экваторе полос и над LLVP (ширина 9 000–11 000 км)</td></tr>
+<tr><td><strong>Две южные полосы (Галапагосская / Маркизская)</strong></td><td>~ 6°S и ~ 14°S</td><td>7,6° и 15,6° к югу</td><td>Доказывают, что основание стояло внутри ширины передней стены</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Объект / измерение (часть C)</th><th>Координаты на Луне</th><th>Предсказанные координаты на Земле (× 1,37, зеркально)</th><th>Расстояние от центра кончика (9,3°N, 169,3°E)</th><th>Попадание в след (R ≈ 1 680 км)</th></tr>
+<tr class="hl"><td><strong>Море Дождей (якорь положения)</strong></td><td>37,6°N, 340,0°E</td><td><strong>13,19°N, 179,04°E</strong></td><td>1 150 км (2 870 км от основания)</td><td><strong>Внутри следа</strong> (главный проход)</td></tr>
+<tr class="hl"><td><strong>Море Ясности (предсказано в зеркале)</strong></td><td>27,3°N, 18,4°E</td><td><strong>≈ 11,5°N, 166,3°E</strong></td><td><strong>410 км</strong> (4 140 км от основания)</td><td><strong>Глубоко внутри следа</strong> (на цепи Маршалловых островов)</td></tr>
+<tr class="hl"><td><strong>Центр контакта (предсказан в зеркале)</strong></td><td>24,1°N, 335,2°E</td><td><strong>≈ 8,2°N, 179,3°W</strong></td><td>1 260 км (2 510 км от основания)</td><td><strong>Внутри следа</strong></td></tr>
+<tr><td><strong>Море Нектара (предсказано в зеркале)</strong></td><td>15,2°S, 35,0°E</td><td>≈ 3,1°S, 156,6°E</td><td>1 970 км (5 130 км от основания)</td><td>За южным краем (совпадает с его южным положением на Луне)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Следующая дверь</h2>
+<p>В этой главе мы увидели, как шесть параллельных полос Северной Пацифики выстраиваются на одном древнем экваторе, уходят на восток от основания груши на Киритимати и сходятся на западе между двумя коленами в 3 360 км друг от друга, внутри которых отпечатано увеличенное (× 1,37) зеркальное изображение видимой стороны Луны.</p><a href="story18_ru.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Глава 18</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Схождение всей Пацифики, хребты-лопатки и разгадка молодого возраста дна →</p></div></a>
+<p style="margin-top:22px"><a href="story16_ru.html">← Глава 16</a> · <a href="story00_ru.html">Пролог</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Модель LEF · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
