@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 16: SPA की गहराइयाँ, चांग'ए-6 नमूने और सतत पिंड की विभव-बाधा — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 16: SPA की गहराइयाँ, चांग&#x27;ए-6 नमूने और सतत पिंड की विभव-बाधा।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story16_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story16_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story16_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story16_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story16_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story16_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story16_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story16_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <a href="story16_en.html" hreflang="en">English</a> · <a href="story16_de.html" hreflang="de">Deutsch</a> · <a href="story16_es.html" hreflang="es">Español</a> · <a href="story16_fr.html" hreflang="fr">Français</a> · <a href="story16_ru.html" hreflang="ru">Русский</a> · <a href="story16_zh.html" hreflang="zh">中文</a> · <a href="story16_ja.html" hreflang="ja">日本語</a> · <a href="story16_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 16</p>
+<h1>अध्याय 16: SPA की गहराइयाँ, चांग'ए-6 नमूने और सतत पिंड की विभव-बाधा</h1>
+<p>शोधपत्र 08 पर आधारित — दक्षिणी ध्रुव–एटकेन: क्रेटर-निर्धन केंद्र (भाग B10–G: गहरी विसंगतियाँ B10–B18, प्रतिध्रुव-ज्यामिति, विभव-बाधा का साइफ़न और निर्णायक समस्थानिक-परीक्षण)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: चांग'ए-6 के दूर-पक्ष नमूनों ने क्या उजागर किया, और ऊष्मा पृथ्वी की गुरुत्व-बाधा पर कैसे चढ़ी?</h2>
+<p>जून 2024 में चीनी <strong>चांग'ए-6</strong> मिशन इतिहास में पहली बार चंद्रमा के दूर पक्ष से मिट्टी के नमूने लाया — उत्तर-पूर्वी SPA के अपोलो बेसिन से (41.625°S, 206.022°E, गुंबद के केंद्र से लगभग 11.6° और क्रेटर-न्यूनतम से 210 km)। प्रयोगशाला-निष्कर्ष, कक्षा से गुरुत्व और चुंबकीय आँकड़ों के साथ, खोजों की एक शृंखला उजागर करते हैं जिसे एक क्षणिक क्षुद्रग्रह-टकराव एकीकृत करने में संघर्ष करता है:</p>
+<ol class="steps">
+<li><strong>गहराई में दबा एक सघन द्रव्यमान (2.18 × 10¹⁸ kg, B10):</strong> केंद्रीय मेयर-क्षेत्र के दक्षिणी अर्ध के नीचे (62°S, 200°E, ~ 444,500 km² क्षेत्रफल पर, तुल्य त्रिज्या 12.4°) एक विसरित अधिक-द्रव्यमान छिपा है जो ~ 95 km चौड़े धातु के गोले के तुल्य है — जो चंद्रमा के कोर में नहीं डूबा!</li>
+<li><strong>ऑक्सीजन में 13 गुना निर्धन, पोटैशियम और लोहे के भारी समस्थानिकों वाला एक "पका" मैंटल (B11–B13):</strong> चांग'ए-6 बेसाल्ट का स्रोत पूरी तरह सूखा है, निकट पक्ष से उपलब्ध ऑक्सीजन में <strong>~ 13</strong> गुना निर्धन (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn><mo>±</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> बनाम −0.80 ± 0.64), KREEP तत्वों में क्षीण (2.8 Ga की आयु पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> बनाम उसी क्षेत्र में 4.203 Ga के प्राचीन बेसाल्ट में <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>!), और भारी पोटैशियम (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> से +0.09‰) के साथ <strong>समस्थानिक रूप से भारी लोहा</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0.13</mn><mtext>–</mtext><mn>0.21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰) रखता है।</li>
+<li><strong>केंद्र पर मिटा और केवल पिछली ओर शक्तिशाली चुंबकत्व, और 26.2 MJ/kg की विभव-बाधा (B16–D.3):</strong> SPA के केंद्र पर चुंबकत्व लगभग शून्य है (5 nT से ऊपर क्षेत्रफल का 0.8%), और सारा शक्तिशाली चुंबकत्व (32%–42%, इंजेनी सागर और चमकीले भँवरों के पास शिखर ~ 22 nT) उत्तर-पश्चिम (पिछली ओर) में केंद्रित है — थोरियम-अर्धचंद्र वाली ओर ही, पर उससे लगभग 8° उत्तर खिसका हुआ। और इसके अलावा: पृथ्वी से ऊष्मा और पदार्थ विभव-बाधा (26.2 MJ/kg) पर चढ़कर दूर पक्ष तक कैसे पहुँचे?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: धीमी आँच पर गाढ़ी होती चटनी, बार-बार डुबोई चाय की थैली, और एक सतत साइफ़न</h2>
+<p>रोज़मर्रा के चार चित्र LEF मॉडल में SPA की गहराइयों की भौतिकी और रसायन को प्रकाशित करते हैं:</p>
+<ul>
+<li><strong>धीमी आँच पर गाढ़ी होती चटनी (बिना डूबे अपनी जगह लोहे का सांद्रण, B10, B12):</strong> सक्रिय मेयर के विपरीत, जिसमें पदार्थ उठता-गिरता है और लोहे के ढेलों को कोर तक बहा सकता है (जैसे मॉस्कोविएन्से सागर में), SPA <em>सक्रिय मेयर नहीं था</em> — कोई चक्रीय ऊपर-नीचे प्रवाह नहीं था। पृथ्वी से SPA के आधार पर पहुँचा धात्विक लोहे से समृद्ध पदार्थ अपनी जगह गर्म होकर पका: धात्विक लोहे ने अपने चारों ओर की ऑक्सीजन "पी" और सोख ली (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> को −1.93 तक घटाते हुए), और जब ऊष्मा ने अन्य पदार्थ वाष्पित किए, जो लोहा वाष्पित नहीं हुआ वह अपनी जगह सांद्रित हुआ और क्षेत्र ठंडा होने पर जम गया!</li>
+<li><strong>बार-बार डुबोई चाय की थैली (4.20 Ga पर समृद्ध स्रोत से 2.81 Ga पर क्षीण स्रोत तक बदलाव, B13):</strong> नाशपाती से होकर पृथ्वी से आया पदार्थ KREEP तत्वों से समृद्ध उतरा (4.203 Ga पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span>)। नीचे से लंबे तापन ने मैंटल को बार-बार पिघलाया और हर बार पहला पिघल हटाया (जो थोरियम को अर्धचंद्र तक साथ ले गया), जब तक पिघलने के प्रति प्रतिरोधी एक "धुला" अवशेष न बचा (2.807 Ga पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span>) — जो यह भी समझाता है कि देर का लावा केवल नन्ही मात्राओं में क्यों फूटा!</li>
+<li><strong>कॉफ़ी में डाला और मिलने से पहले जमा दूध (इंजेनी सागर के चमकीले भँवर बनाम मॉस्कोविएन्से, B17):</strong> जब दो-पदार्थी धारा — नीचे से लोहा और ऊपर से एल्युमिना-सिलिका — फूटी और चंद्रमा के घूर्णन में जल्दी जमी (एकमन संख्या <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>), लंबे कण आपूर्ति-नलिका में खड़े हुए (गहरी लोहे-समृद्ध गलियाँ) और फैलाव में लेट गए (चमकीले प्लेजियोक्लेज़-समृद्ध फंदे), जबकि सक्रिय मॉस्कोविएन्से में लोहा जमने से पहले डूब गया, इसलिए वहाँ न चुंबकीय क्षेत्र (1.3 nT, 5 nT से ऊपर 0%) बना न भँवर!</li>
+<li><strong>पहाड़ी की चोटी पर सतत साइफ़न (विभव-बाधा पार करना, D.3–D.3a):</strong> 1.8–2.6 km/s (1.6–3.4 MJ/kg) पर अकेले प्रक्षेपित पदार्थ का एकल पार्सल सह-घूर्णन रेखा (26.2 MJ/kg) से पहले वापस गिर जाता। पर यहाँ हम ~ <span class="ltr">150 GPa</span> के स्रोत-दाब (शोधपत्र 3) से नीचे से धकेले जा रहे <strong>पदार्थ से भरे सतत पिंड</strong> की बात कर रहे हैं: जिस क्षण उसका ऊपरी भाग सह-घूर्णन रेखा पार करता है और घूर्णन से बाहर खिंचता है, वह आधार पर दाब घटाता है और नीचे से और पदार्थ <strong>साइफ़न की तरह</strong> खींचता है — दाब कभी ऋणात्मक हुए बिना!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: आठ गहरी विसंगतियाँ (B10–B17) और प्रतिध्रुव-ज्यामिति</h2>
+<p>शोधपत्र 08 के भाग B10–B17 और C SPA की 17 विसंगतियों में से शेष और दूर पक्ष पर केंद्रों के मानचित्र को पूरा करते हैं:</p>
+<ol class="steps">
+<li><strong>केंद्रों के तीन समूहों के मानचित्र के विरुद्ध कठोर-दर्पण परीक्षण (भाग C):</strong> इम्ब्रियम और सेरेनिटैटिस के वलयों और मारिया की उनके प्रतिध्रुवों पर कठोर प्रति ("मुहर") एक संकरा दीर्घवृत्त देती है (2,144 × 1,340 km, अक्ष-अनुपात 1.60) जो SPA के आकार (2,402 × 2,056 km, अनुपात 1.17) से मेल नहीं खाता — और यह ऋणात्मक परिणाम स्पष्ट रूप से रखा गया है, यह साफ़ करने के लिए कि बर्नर ने तय किया कि क्रेटर कहाँ मिटे, जबकि बेसिन की रूपरेखा गुंबद के ढहने से तय हुई। जब सभी केंद्र एक मानचित्र पर रखे जाते हैं (चित्र C.1), <strong>उत्तर से दक्षिण तक तीन समूहों में एक व्यवस्थित पंक्ति</strong> उभरती है:
+<ul>
+<li><strong>(क) उत्तर में — बर्नर के दो निकास:</strong> इम्ब्रियम-प्रतिध्रुव (37.6°S, 160.0°E, उसके ऊपर 5.7° दूर इंजेनी के पतली-पपड़ी गुंबद के साथ) और सेरेनिटैटिस-प्रतिध्रुव (27.3°S, 198.4°E, उसके ऊपर 10° दूर अपोलो गुंबद के साथ)।</li>
+<li><strong>(ख) केंद्र में — ऊष्मा और क्रेटर-लोप का केंद्र:</strong> गुंबद/भीतरी वलय का केंद्र (51.4°S, 196.8°E), दीर्घवृत्त का केंद्र (53°S, 191°E), निकटवर्ती चुंबकीय शिखर (51.0°S, 190.0°E) और क्रेटर-न्यूनतम (45.4°S, 197.9°E) — सभी गुंबद के केंद्र से 6° के भीतर!</li>
+<li><strong>(ग) दक्षिण में — भारी संरचनात्मक केंद्र:</strong> सबसे नीचा तल (61°S, 199°E), सघन द्रव्यमान (62°S, 200°E) और सबसे पतली पपड़ी (61°S, 184°E) — सभी एक-दूसरे से ~ 230 km के भीतर!</li>
+</ul>
+</li>
+<li><strong>गुंबद दोनों निकासों के दक्षिण में क्यों है? — नाशपाती में क्षैतिज धक्का और पिंड की गोलाई (§C.3–C.4):</strong> नाशपाती का सिरा जिस पर चंद्रमा बैठा था, अक्षांश ~ 22.5°N पर था, जबकि उसका आधार विषुवत के आसपास था। घूमते पिंड के भीतर अपकेंद्री बल <strong>घूर्णन-अक्ष के लंबवत (क्षैतिज)</strong> कार्य करता है, पृथ्वी के केंद्र की रेखा के साथ नहीं — इसलिए धारा संपर्क-डिस्क में उसके केंद्र के उत्तर में प्रवेश कर गई (जहाँ इम्ब्रियम और सेरेनिटैटिस हैं) और दूर पक्ष पर <strong>विपरीत बिंदु के ~ 22.5° दक्षिण तक</strong> निकली! चपटे चरण में (1 : 0.637 : 0.601), गुंबद का केंद्र सेरेनिटैटिस-निकास के 17.0° दक्षिण और इम्ब्रियम-निकास के 21.2° दक्षिण-पूर्व में था; और उसके बाद <strong>गोले में गोलाई</strong> (अध्याय 13–14) ने इन कोणीय दूरियों को ठीक आज मापे गए <strong>24.1° और 29.2°</strong> तक चौड़ा कर दिया!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: सात चुनौतियों (E.1–E.7) के उत्तर और चपटेपन से गोले तक बदलाव का मानचित्रण</h2>
+<p>शोधपत्र 08 के भाग C.3 और E हाल के वैज्ञानिक साहित्य द्वारा उठाए गए सभी सात प्रश्नों और चुनौतियों के सटीक मात्रात्मक उत्तर देते हैं (2025–2026 के चांग'ए-6 निष्कर्षों सहित):</p>
+<ol class="steps">
+<li><strong>चांग'ए-6 रेगोलिथ में इरिडियम और सोना (E.1):</strong> लियू और साथियों (2026) द्वारा पाए गए Ir और Au वाले धातु-कण <em>सतही रेगोलिथ में अदिनांकित बेसाल्ट और ऐनॉर्थोसाइट टुकड़ों</em> के भीतर मिले (अरबों वर्षों में समेटी गई देर की अंतरिक्ष-धूल, जिसकी भविष्यवाणी स्पष्ट रूप से अनुमति देती है), न कि दिनांकित 4.25 Ga नोराइटों के भीतर। इसके अलावा, Ir और Au के तत्व-अनुपात पृथ्वी की गहराइयों की धातु और क्षुद्रग्रह के बीच भेद नहीं करते — केवल समस्थानिक-माप (Cr, Ti, Mo, Ru, Os) निर्णय करता है।</li>
+<li><strong>सघन द्रव्यमान, चुंबकीय शिखर और पतली पपड़ी क्रेटर-न्यूनतम के नीचे नहीं हैं (E.3–E.5):</strong> न्यूनतम (45.4°S, 197.9°E) चिह्नित करता है कि ऊष्मा ने सेरेनिटैटिस-निकास की दिशा में सतह पर क्रेटर कहाँ मिटाए; चुंबकीय शिखर (51.0°S, 190.0°E, 230 km दूर) <strong>गर्म कोर के किनारों</strong> को चिह्नित करता है, जहाँ चुंबकत्व क्यूरी तापमान से ऊपर नहीं मिटा (केंद्र पर क्षेत्र केवल 0.85–1.9 nT है); और सघन द्रव्यमान (62°S, 200°E) बेसिन के गहरे संरचनात्मक दक्षिण में है।</li>
+<li><strong>उथले क्रेटरों के कारण के रूप में दबा बेसाल्ट (E.6):</strong> LEF मॉडल में दबा बेसाल्ट (8.7 × 10⁴ km²) बर्नर का <em>उत्पाद</em> है, उसका प्रतिद्वंद्वी नहीं — और निर्णायक परीक्षण यह है कि क्रेटरों का उथलापन दबे-बेसाल्ट क्षेत्रों के बाहर भी जारी रहता है, पकी ज़मीन के कसाव के कारण।</li>
+<li><strong>चपटेपन से गोले तक गोलाई में ज्यामितीय बदलाव (तालिका §C.3):</strong> लंबे पिंड (1 : 0.637 : 0.601) से आज के गोले तक संक्रमण में कोई बिंदु ज़मीन पर नहीं फिसला, पर लंबे अक्ष के सिरे के सापेक्ष कोण खुले: इम्ब्रियम-निकास 32.3°S, 158.1°E से 37.6°S, 160.0°E गया (5.5° का परिवर्तन), सेरेनिटैटिस-निकास 27.4°S, 185.1°E से 27.3°S, 198.4°E गया (11.8°), गुंबद का केंद्र 44.0°S, 180.8°E से 51.4°S, 196.8°E गया (13.0°), और क्रेटर-न्यूनतम 39.9°S, 182.5°E से 45.4°S, 197.9°E (12.6°)।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>प्रारंभिक पृथ्वी की सतह (25°N अक्षांश पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> km, जनक-द्रव्यमान <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg) और सह-घूर्णन रेखा (5.5 h पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> km और 5.77 h पर 16,399 km) के बीच प्रभावी विभव-बाधा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span>, उस एकमन संख्या (Ek) के साथ जो तय करती है कि घूर्णन लावा-प्रवाह को कैसे मोड़ता है, इस प्रकार सूत्रबद्ध हैं (§B17, §D.3–D.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26.2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>जुड़े चरण के तेज़ घूर्णन (5.77 घंटे) में <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> श्यानता वाले लावा के लिए, एकमन संख्या 100 m पैमाने पर 0.012, 1 km पर 0.0001 और 10 km पर 10⁻⁶ है — यानी घूर्णी बल हर लावा-प्रवाह या निष्कासन को पूरी तरह मोड़ता है और थोरियम-अर्धचंद्र तथा इंजेनी के चमकीले भँवर बनाता है! इसके अलावा, सह-घूर्णन रेखा (16,400 km) के पार चंद्रमा का हिल-गोला उसके केंद्र से ≈ 2,600 km तक फैलता है (उस समय की 1.4 चंद्र-त्रिज्याएँ, 1,890 km), इसलिए ≈ 700 km से कम ऊँचाई तक निष्कासित कोई भी पदार्थ लौटकर चंद्रमा की सतह पर क्रेटरों के रूप में गिरता है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: 17 में से 16 विसंगतियाँ मेल खाती हैं — और खुली भविष्यवाणियाँ</h2>
+<p>शोधपत्र 08 के खंड B18 में व्यवस्थित तुलना के सारांश में: SPA की 17 विसंगतियों में से मुख्यधारा विज्ञान 6 को पूरी तरह, 9 को आंशिक रूप से, 1 को मुश्किल से (2 अरब वर्षों का लंबा ज्वालामुखीय) समझाता है, और बेसिन के केंद्र पर क्रेटर-अभिलेख के प्रतिरूप को <strong>0 (बिल्कुल नहीं)</strong>। इसके विपरीत, <strong>LEF मॉडल का बर्नर-तंत्र</strong> एक साथ <strong>17 में से 16 विसंगतियों</strong> से मेल खाता है, और <strong>1 से आंशिक रूप से (B14)</strong>, समस्थानिक-परीक्षण की प्रतीक्षा में:</p>
+<ul>
+<li><strong>भविष्य के प्रयोगशाला-माप के लिए सबसे तीखी भविष्यवाणी (भाग F):</strong> दो दिनांकित चांग'ए-6 नोराइटों (`CE6C0100YJFM002-158` और `CE6C0200YJFM001EGP07-16`) के भीतर धातु-कणों में Cr, Ti, Mo, Ru, Os के समस्थानिक मापने पर <strong>बिना उल्कापिंडीय विचलन के शुद्ध पार्थिव हस्ताक्षर</strong> दिखेगा।</li>
+<li><strong>कक्षा से परखने योग्य और भविष्यवाणियाँ:</strong> (1) केंद्रीय कमी-क्षेत्र के भीतर तल-विदरित क्रेटरों का सांद्रण; (2) दबे-बेसाल्ट क्षेत्रों के बाहर भी क्रेटरों का उथलापन बना रहना; (3) वाष्पशील-हानि और ऑक्सीजन-अपचयन (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>) की अरीय प्रवणता जो न्यूनतम बिंदु के आसपास सबसे प्रबल और किनारे की ओर कमज़ोर हो; और (4) SPA में ~ 1.5 Ga से युवा लावा की पूर्ण अनुपस्थिति।</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="170.0" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="247.6" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩ समझाता</text><rect x="325.3" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="441.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩ आंशिक</text><rect x="558.2" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="571.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="584.1" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मुख्यधारा विज्ञान</text><rect x="170.0" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="377.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦16⁩ मेल</text><rect x="584.1" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >LEF मॉडल</text><text x="390.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >हरा: समझाता/मेल · नारंगी: आंशिक · हल्का नारंगी: मुश्किल से · लाल: बिल्कुल नहीं</text></svg><figcaption>SPA की 17 विसंगतियों पर निर्णय (B18): हर पक्ष उनमें से कितनी को पूरी तरह, आंशिक रूप से, मुश्किल से या बिल्कुल नहीं समझाता है।</figcaption></figure><h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: SPA की 17 विसंगतियों (B1–B18) और विभव-बाधा का सारांश (शोधपत्र 08, भाग B10–G)</h3>
+<div class="tw"><table class="lab">
+<tr><th>विसंगति (B1–B17)</th><th>केंद्रीय अनुभवजन्य खोज</th><th>मुख्यधारा विज्ञान का निर्णय</th><th>LEF मॉडल (बर्नर) का निर्णय</th></tr>
+<tr class="hl"><td><strong>B1. क्रेटर-अभिलेख</strong></td><td>केंद्र पर 0.51 की कमी; न्यूनतम 45.4°S, 197.9°E (0.45); 20–40 km लापता (0.47); ऊँचे किनारों (1.35) के साथ 18% उथले</td><td><strong>बिल्कुल नहीं समझाता</strong></td><td><strong>मेल खाता है</strong> (नीचे से ऊष्मा ने शिथिल किया और मिटाया; कसी ज़मीन पर ऊँचे किनारे)</td></tr>
+<tr><td><strong>B2. आकार और गहराई</strong></td><td>चंद्रमा का सबसे नीचा क्षेत्र (6–9 km); पतली पपड़ी से परे केंद्र पर −1.1 से −1.8 km गहराई-अवशेष</td><td>समझाता है (भारी द्रव्यमान के साथ)</td><td><strong>मेल खाता है</strong> (गुंबद का ढहना + 9–15 km पर छिद्रों का कसाव)</td></tr>
+<tr><td><strong>B3. पतली पपड़ी</strong></td><td>चंद्रमा की सबसे पतली पपड़ी (दक्षिण में 12–20 km, 61°S, 184°E); अपोलो और इंजेनी के ऊपर छोटे गुंबद</td><td>समझाता है (दक्षिण की ओर तिरछा टकराव)</td><td><strong>मेल खाता है</strong> (गुंबद से पपड़ी का फिसलना + नीचे से पिघलना)</td></tr>
+<tr><td><strong>B4–B5. पपड़ी के दो वलय</strong></td><td>बाहरी (50°–55°): पूर्व में मोटा (+7.8 km) और पश्चिम में लापता; भीतरी (36.7°): 118 km NE खिसका</td><td>आंशिक रूप से समझाता है (पश्चिम के लिए कोई व्याख्या नहीं)</td><td><strong>मेल खाता है</strong> (E में मोटी उच्चभूमि-दीवार के विरुद्ध ढेर, और W में पास ही)</td></tr>
+<tr><td><strong>B6. घनत्व और छिद्रता</strong></td><td>सतह 19.7%, पर 10 km पर केंद्र में 2.9%–4.4% तक बंद, किनारे की ओर बढ़ती (7.1%–8.8%)</td><td>आंशिक रूप से समझाता है (टकराव तोड़ता है, बंद नहीं करता)</td><td><strong>मेल खाता है</strong> (केंद्र से बाहर की ओर लंबा पकना और कसाव)</td></tr>
+<tr><td><strong>B7–B9. रसायन, थोड़ा लावा और Th-अर्धचंद्र</strong></td><td>FeO 9.48% से 4.43% तक गिरता है; सपाट K/Th (451); 4.1% दिखता लावा; 15° के भीतर दबा लावा; NW में Th-अर्धचंद्र</td><td>समझाता है / आंशिक रूप से समझाता है</td><td><strong>मेल खाता है</strong> (विस्फोट के बिना पिघलना + 5.77 h पर केंद्रीय मेयर)</td></tr>
+<tr class="hl"><td><strong>B10–B13. भारी द्रव्यमान, वाष्पशील, ऑक्सीजन और KREEP</strong></td><td>दक्षिण में 2.18 × 10¹⁸ kg का द्रव्यमान; भारी <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> और <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span> (13 गुना कम ऑक्सीजन); <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>आंशिक रूप से समझाता है / समझाता है</td><td><strong>मेल खाता है</strong> (पार्थिव लोहा जिसने ऑक्सीजन सोखी और अपनी जगह सांद्रित हुआ + बार-बार धुलना)</td></tr>
+<tr class="hl"><td><strong>B14. नोराइटों में धातु</strong></td><td>4.247 Ga नोराइटों में Fe–Ni कण (Ni/Co = 8.5–11) जो 3.873 Ga पर पुनःस्थापित हुए</td><td>समझाता है (टकरावक-पदार्थ)</td><td><strong>आंशिक रूप से मेल खाता है — समस्थानिक-परीक्षण निर्णय करेगा (Cr, Ti, Mo, Ru, Os)</strong></td></tr>
+<tr><td><strong>B15. लंबी ज्वालामुखीयता</strong></td><td>छोटी मात्राओं में 2 अरब वर्षों की सतत सक्रियता (4.25 → 3.87 → 3.6–3.2 → 2.8–2.2 Ga)</td><td>मुश्किल से समझाता है (दो घटनाएँ और स्रोत चाहिए)</td><td><strong>मेल खाता है</strong> (जुड़े चरण में बर्नर, 3.873 Ga पर अलगाव और ठंडा होने की पूँछ)</td></tr>
+<tr><td><strong>B16–B17. चुंबकत्व और भँवर</strong></td><td>खाली केंद्र (0.8% &gt; 5 nT); पिछली ओर शिखर (NW में 42%); इंजेनी पर भँवर (5.9 nT) बनाम मॉस्कोविएन्से (1.3 nT)</td><td>आंशिक रूप से समझाता है</td><td><strong>मेल खाता है</strong> (केंद्र पर लोप + पिछली ओर लोहे का परिवहन; मॉस्कोविएन्से पर लोहा डूबा)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>गतिकीय प्राचल / विभव-बाधा (भाग D)</th><th>5.50 घंटे का पृथ्वी-दिन (चरम चपटापन)</th><th>5.77 घंटे का पृथ्वी-दिन (शृंखला में अलगाव-अवस्था)</th></tr>
+<tr><td><strong>सह-घूर्णन रेखा की त्रिज्या (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>)</strong></td><td>15,883 km (परीक्षण-कण के लिए 15,818 km)</td><td><strong>16,399 km</strong> (≈ 2.6 पृथ्वी-त्रिज्याएँ)</td></tr>
+<tr class="hl"><td><strong>स्रोत-अक्षांश पर विभव-बाधा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> km)</strong></td><td>25.2 MJ/kg</td>
+<td>26.2 MJ/kg</td></tr></table></div></section>
+<section>
+<a href="story17_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 17</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">प्रशांत की धारियाँ — नाशपाती की अग्र-दीवार और चंद्रमा की दर्पण-छाप →</p></div></a>
+<p style="margin-top:22px"><a href="story15_hi.html">← अध्याय 15</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

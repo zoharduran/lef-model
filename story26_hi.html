@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 26: दस और आवश्यकताएँ (R9–R18), हैफ़नियम–टंगस्टन घड़ी और भविष्य के LEF शोध का मानचित्र — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 26: दस और आवश्यकताएँ R9–R18, हैफ़नियम–टंगस्टन घड़ी और भविष्य के शोध का मानचित्र।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story26_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story26_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story26_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story26_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story26_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story26_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story26_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story26_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story26_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story26_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story26_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story26_he.html" hreflang="he">עברית</a> · <a href="story26_en.html" hreflang="en">English</a> · <a href="story26_de.html" hreflang="de">Deutsch</a> · <a href="story26_es.html" hreflang="es">Español</a> · <a href="story26_fr.html" hreflang="fr">Français</a> · <a href="story26_ru.html" hreflang="ru">Русский</a> · <a href="story26_zh.html" hreflang="zh">中文</a> · <a href="story26_ja.html" hreflang="ja">日本語</a> · <a href="story26_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 26</p>
+<h1>अध्याय 26: दस और आवश्यकताएँ (R9–R18), हैफ़नियम–टंगस्टन घड़ी और भविष्य के LEF शोध का मानचित्र</h1>
+<p>शोधपत्र 13 पर आधारित — 13. आवश्यकताएँ (भाग C–D और परिशिष्ट B: आवश्यकताएँ R9–R18, शोधपत्रों के बीच सूचना का प्रवाह, Hf–W घड़ी और 7 शोध-कार्य)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: केवल पृथ्वी की नाशपाती के अनूठे किन हस्ताक्षरों को प्रक्रिया ने पृथ्वी और चंद्रमा पर छोड़ा?</h2>
+<p>अध्याय 25 में हमने पहली आठ आवश्यकताएँ (R1–R8) जाँचीं। पर जबकि समस्थानिक समानता या छोटे कोर जैसी विशेषताएँ साहित्य में वैकल्पिक व्याख्याएँ पा सकती हैं, <strong>शोधपत्र 13 के भाग C और D</strong> दस और आवश्यकताएँ (<strong>R9–R18</strong>) रखते हैं जो केवल पृथ्वी की नाशपाती की ज्यामिति, मैंटल में उसके वापस ढहने और निकास-नलिकाओं से निकलती हैं:</p>
+<ol class="steps">
+<li><strong>पृथ्वी और चंद्रमा पर नाशपाती के चिह्न (R9–R15, §C.1–C.6):</strong> अलगाव के बाद नाशपाती के पिंड के 7–12 चंद्र-द्रव्यमान कहाँ डूबे? चंद्रमा के निकट पक्ष पर KREEP तत्वों का सांद्रण कैसे बना? और ध्रुवों पर क्रेटरों का घनत्व ठीक उतना क्यों बढ़ता है जितना क्रेटर बड़ा और पुराना हो?</li>
+<li><strong>नाशपाती के बाद की अनुवर्ती आवश्यकताएँ (R16–R18, §C.7):</strong> हम कैसे सिद्ध करें कि चंद्रमा के 34 मारिया निष्कासन-छिद्र हैं जिनमें प्राचीन क्रेटर पिघले, दक्षिणी ध्रुव–एटकेन बेसिन (SPA) का केंद्र दो विपरीत छिद्रों के सापेक्ष दक्षिण में क्यों खिसका है, और मंगल स्वतंत्र नियंत्रण-परीक्षण का काम कैसे करता है?</li>
+<li><strong>हैफ़नियम–टंगस्टन घड़ी (Hf–W, §D.2) का समय-बंधन और भविष्य के शोध का मानचित्र:</strong> 60 करोड़ वर्षों का क्रमिक निर्माण केवल 89 लाख वर्ष की अर्ध-आयु वाली रेडियोधर्मी क्षय-घड़ी से कैसे मेल खाता है?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: फिसलन भरे तेल पर कठोर पपड़ी, छिलके के मुड़े किनारे, और जल्दी खाली हुई रेत-घड़ी</h2>
+<p>चार मूर्त चित्र दस और आवश्यकताओं और मॉडल के कालक्रमिक बंधन को प्रकाशित करते हैं:</p>
+<ul>
+<li><strong>नरम स्नेहक परत पर फिसलता कड़ा कवच (क्रेटरों का शुद्ध कसाव, §C.1):</strong> नाशपाती के उठते समय पपड़ी-गुंबद पर ढोए प्राचीन गोल क्रेटरों को बचाने के लिए बाहरी पपड़ी को बहुत कड़ा रहना चाहिए (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>), जबकि उसका आधार एक नरम ऊष्मा-यांत्रिक अंतरापृष्ठ (हल्के सियाल और सघन सीमा के बीच की सीमा) पर बैठता है जो उसे क्रेटरों को दीर्घवृत्तों में विकृत किए बिना समान द्रवस्थैतिक कसाव (Pure Compaction) में फिसलने और सिकुड़ने देता है!</li>
+<li><strong>उखड़ते समय भीतर मुड़ते छिलके के किनारे (KREEP संकुल, R12):</strong> जब चंद्रमा पृथ्वी की नाशपाती के आधार से उखड़ा, पृथ्वी की सियाल पपड़ी के फटे किनारे निकट पक्ष पर आधार की परिधि (प्रोसेलारम PKT क्षेत्र) पर यांत्रिक रूप से भीतर मुड़े और अपने साथ असंगत तत्व (पोटैशियम K, दुर्लभ मृदाएँ REE और फ़ॉस्फ़ोरस P) ले गए — इसलिए चंद्रमा की उच्चभूमियों के सबसे पुराने ऐनॉर्थोसाइट पोटैशियम और थोरियम में क्षीण होने चाहिए!</li>
+<li><strong>पतीली के तल पर डूबता लोहे का भारी ढेर (प्रशांत में LLVP निचली विसंगति, R10–R11):</strong> जिस क्षण चंद्रमा सह-घूर्णन रेखा (16,399 km) पर मुक्त हुआ, नाशपाती का शेष पिंड (~ 9 चंद्र-द्रव्यमान, पृथ्वी के द्रव्यमान का लगभग 11%, सारा सह-घूर्णन रेखा के भीतर, इसलिए उसका कोई अवशेष कक्षा में नहीं बचा) मैंटल में वापस ढहा और किरिटीमाटी द्वीप (1.9°N, 157.5°W) के पास आधार के ठीक नीचे कोर–मैंटल सीमा तक डूबा — प्रशांत की लोहे-समृद्ध निचली विसंगति (प्रशांत LLVP) बनाते हुए, जबकि अफ़्रीकी विसंगति विपरीत खंड है जो अविचलित रहा!</li>
+<li><strong>दसियों मिलियन वर्षों में खाली हुई रेत-घड़ी (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> घड़ी, §D.2):</strong> रेडियोधर्मी समस्थानिक <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> 89 लाख वर्ष की अर्ध-आयु के साथ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{W}</annotation></semantics></math></span></span> में क्षय होता है। 60 करोड़ वर्षों के बाद केवल 5.1 × 10⁻²¹ का नगण्य अवशेष बचता है — यानी रेत-घड़ी निर्माण-खिड़की की शुरुआत में ही पूरी तरह रुक गई, इसलिए आज चंद्रमा पर मापे गए टंगस्टन-हस्ताक्षर शुरुआत में बंद हुए और बिना मिटे अक्षुण्ण आगे बढ़े!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: नाशपाती की सात आवश्यकताएँ (R9–R15) और तीन अनुवर्ती आवश्यकताएँ (R16–R18)</h2>
+<p>शोधपत्र 13 के भाग C.6 और C.7 सभी दस और आवश्यकताओं का विवरण देते हैं और उन्हें जो शोधपत्र 6–8 में पहले ही मात्रात्मक समर्थन पा चुकी हैं, उनसे अलग करते हैं जो अंतिम गणना की प्रतीक्षा में हैं:</p>
+<ol class="steps">
+<li><strong>R9 और R10 — नाशपाती का संतुलन-आकार और उसका पूर्ण पतन:</strong> नाशपाती का पिंड (आधार पर 9,000 km चौड़ा, 3,000 km के संपर्क तक अभिसरित) पूरी तरह सह-घूर्णन रेखा के भीतर द्रवस्थैतिक-गतिकीय संतुलन-आकार (आंतरिक दाब और अपकेंद्री बल के विरुद्ध स्व-गुरुत्व, चट्टान की तनन-शक्ति नहीं) के रूप में थमा है, इसलिए अलगाव पर वह कक्षा में कोई अवशेष छोड़े बिना पूरी तरह भीतर ढहता है।</li>
+<li><strong>R11–R14 — प्रशांत हस्ताक्षर, कोर-मापक और विदेशी पदार्थ की अनुपस्थिति:</strong> किरिटीमाटी पर नाशपाती का आधार प्रशांत LLVP के ऊपर है (R11); चंद्रमा का नन्हा कोर (1.0%–2.0%) गहराई-मापक का काम करता है जो दिखाता है कि आपूर्ति-धारा डूबते लोहे के कितने पास आई (R13); और चंद्रमा के थोक में या प्रशांत के बेसाल्ट-प्लूमों में कोई विदेशी अलौकिक घटक नहीं मिलेगा (R14)।</li>
+<li><strong>R15 (शोधपत्र 7 में मात्रात्मक रूप से समर्थित) — व्यास के अनुसार ध्रुवों पर क्रेटरों का कसाव:</strong> यांत्रिक गोलाई ने प्राचीन क्रेटरों को उनका रैखिक व्यास घटाए बिना ध्रुवों की ओर कसा: ध्रुवों और विषुवत के बीच घनत्व-अनुपात 20–30 km चौड़े क्रेटरों के लिए <strong>1.09</strong> से 60–100 km चौड़े प्राचीन क्रेटरों के लिए <strong>1.53</strong> तक बढ़ता है!</li>
+<li><strong>R16 और R17 (शोधपत्र 6 और 8 में मात्रात्मक रूप से समर्थित) — निष्कासन-छिद्रों के रूप में मारिया और SPA मुहर:</strong> 34 सक्रिय मारिया के तल पर तरल लावा पर गिरे क्रेटर पिघल गए, इसलिए उनमें तीखे क्रेटरों (≥ 20 km) का घनत्व मैदानों पर 18.3 और उच्चभूमियों में 207 के मुक़ाबले <strong>प्रति मिलियन km² केवल 0.8</strong> है (R16); और दक्षिणी ध्रुव–एटकेन बेसिन (SPA) में गुंबद का केंद्र, ऊष्मा का केंद्र और क्रेटर-न्यूनतम इम्ब्रियम और सेरेनिटैटिस के विपरीत दो बिंदुओं के सापेक्ष दक्षिण में खिसके हैं (चपटे चरण में 17°–21° से आज 24°–29° तक) (R17)।</li>
+<li><strong>R18 (शोधपत्र 10 में स्वतंत्र नियंत्रण-परीक्षण) — पैवोनिस मॉन्स से मंगल के चंद्रमा:</strong> पैवोनिस मॉन्स (1.48°N) पर एकल निष्कासन-नलिका से संघनित भाप-वलय में डाटों के रूप में फ़ोबोस और डीमोस का प्रक्षेपण; शुद्ध मंगल-संरचना का सत्यापन MMX मिशन के नमूनों की प्रतीक्षा में है।</li>
+</ol>
+<div class="callout"><span class="tag">स्तरों के पृथक्करण का सिद्धांत (Multi-Level Constraint, §C.3 और §D.3)</span><p style="margin:0">शोधपत्र 13 बल देता है कि किसी एक आकारिकीय खंड में असंगति (जैसे §C.3 में निष्कासन-छिद्रों की छँटाई या R18 में मंगल नियंत्रण-परीक्षण) केवल उसी शाखा तक सीमित है और शोधपत्र 2 के सह-घूर्णन रेखा समीकरण को ख़ारिज नहीं करती, जो द्रव्यमान और कोणीय संवेग के संरक्षण-नियमों पर टिका है।</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: शोध-पारदर्शिता, हैफ़नियम–टंगस्टन घड़ी का बंधन और सात खुले कार्य</h2>
+<p>शोधपत्र 13 का भाग D, परिशिष्ट B और भविष्य-शोध खंड एक पूर्ण वैज्ञानिक मार्ग-मानचित्र प्रस्तुत करते हैं, बौद्धिक ईमानदारी से मौजूदा ज्ञान को मॉडल के योगदान से अलग करते हुए और सात स्पष्ट शोध-लक्ष्य चिह्नित करते हुए:</p>
+<ol class="steps">
+<li><strong>वैज्ञानिक नियंत्रण की शृंखला और एकल सफलता-बिंदु का खंडन (§D.3):</strong> यह स्थापित करने के लिए कि कोई आवश्यकता <em>पूरी नहीं होती</em>, प्राचलों और माप-त्रुटियों की पूरी सीमा में कोई भौतिक हल न होने का गणितीय प्रमाण चाहिए (एकल-बिंदु जाँच नहीं)। साथ ही, एक सफलता-बिंदु पूरे मार्ग की पुष्टि नहीं करता — हर दावा शृंखला के अधीन है: <strong>भविष्यवाणी → गणितीय विवरण → शोर के प्रति दृढ़ता → परीक्षण के लिए सुलभता (Zenodo पर कोड-पैकेज) → अनुभवजन्य परीक्षण</strong>।</li>
+<li><strong>मौजूदा भौतिकी और LEF मॉडल की नवीनता के बीच स्पष्ट पृथक्करण (परिशिष्ट B):</strong> शोधपत्र स्पष्ट कहता है कि गुरुत्व, द्रव्यमान-संरक्षण, विभेदन के नियम, और प्राचीन "पृथ्वी-प्रकाश" का सिद्धांत (रॉय और साथी 2014) या प्रोसेलारम दरार-आयत की पहचान (एंड्रयूज़-हन्ना और साथी 2014) अपने मूल स्वामियों के हैं। LEF की अनूठी नवीनता <strong>उसी पिंड में दोहरा यांत्रिक एकीकरण</strong> है — गहरी मैंटल-धारा द्वारा नीचे से भीतरी भराव, ऊपर से पृथ्वी के स्थलमंडलीय कवच के उठान के साथ, एक बंद द्रव्यमान-संतुलन और द्रव्यमान-केंद्र खिसकाव के तहत।</li>
+<li><strong>भविष्य के शोध के लिए सात खुले कार्य (Further Work):</strong> (1) संकेंद्रित पट्टियों के आँकड़े पूरे करना (T3, T4, और मॉडल 2–4 तथा GRGM1200B पर T1); (2) एकीकृत बहु-प्रणाली समस्थानिक संतुलन बनाना (O, Ti, Cr, W); (3) लोहे की बूँदों को कोर (1.4%) तक ले जाने का बहुप्रावस्था प्रवाह-मॉडल; (4) वास्तविक संपर्क-ज्यामिति में पपड़ी-मोटाई और द्रव्यमान-केंद्र खिसकाव का संयुक्त सदिश व्युत्क्रमण; (5) दोनों पक्षों की प्राथमिक उच्चभूमि-पपड़ी में घड़ी 1 की नियंत्रित कालक्रमिक तुलना; (6) निष्कासन-छिद्रों के रूप में 34 मारिया का मात्रात्मक वर्गीकरण; और (7) प्रशांत LLVP के ऊपर प्रशांत स्थलमंडल का स्वतंत्र विवर्तनिक पुनर्निर्माण।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>60 करोड़ वर्षों की निर्माण-खिड़की पर लघु हैफ़नियम–टंगस्टन विभेदन-घड़ी (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext><mo>→</mo><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf} \to {}^{182}\text{W}</annotation></semantics></math></span></span>, अर्ध-आयु <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mn>8.9</mn><mtext> Myr</mtext></mrow><annotation encoding="application/x-tex">T_{1/2} = 8.9\text{ Myr}</annotation></semantics></math></span></span>) का रेडियोधर्मी क्षय-समीकरण, और सत्यापन की पद्धतिगत शृंखला इस प्रकार सूत्रबद्ध हैं (§D.2–D.3):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8.9</mn><mtext> Myr</mtext><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(t)}{N_0} = 2^{-t / (8.9\text{ Myr})}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(600\text{ Ma})}{N_0} \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>prediction</mtext><mo>⟶</mo><mtext>detailed</mtext><mo>⟶</mo><mtext>robust</mtext><mo>⟶</mo><mtext>assessable</mtext><mo>⟶</mo><mtext>testable</mtext></mrow><annotation encoding="application/x-tex">\text{prediction} \longrightarrow \text{detailed} \longrightarrow \text{robust} \longrightarrow \text{assessable} \longrightarrow \text{testable}</annotation></semantics></math></span></div></div></div>
+<p>चूँकि अनुपात <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>0</mn></msub><mo>≈</mo><mn>5.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N(600\text{ Ma})/N_0 \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></span> निर्माण के अंत में शून्य जीवित <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> परमाणु छोड़ता है, टंगस्टन-घड़ी खिड़की के अंत में पुनःस्थापित नहीं हो सकती — इसलिए हर कालक्रमिक मॉडल को विभेदन की शुरुआत में तय टंगस्टन-हस्ताक्षर को 60 करोड़ वर्षों तक बनाए रखना होगा।</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Hf-182 remaining against time" style="direction:ltr"><line x1="70" x2="600" y1="220.0" y2="220.0" stroke="#ece7da"/><text x="62" y="224.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0%</text><line x1="70" x2="600" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="62" y="174.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25%</text><line x1="70" x2="600" y1="120.0" y2="120.0" stroke="#ece7da"/><text x="62" y="124.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50%</text><line x1="70" x2="600" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="62" y="74.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75%</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100%</text><text x="70.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="158.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="246.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="335.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">30</text><text x="423.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><text x="511.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">50</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">60</text><path d="M70.0,20.0 L74.4,27.6 L78.8,35.0 L83.2,42.1 L87.7,48.8 L92.1,55.4 L96.5,61.7 L100.9,67.7 L105.3,73.5 L109.8,79.1 L114.2,84.5 L118.6,89.7 L123.0,94.7 L127.4,99.4 L131.8,104.1 L136.2,108.5 L140.7,112.7 L145.1,116.8 L149.5,120.8 L153.9,124.6 L158.3,128.2 L162.8,131.7 L167.2,135.1 L171.6,138.3 L176.0,141.4 L180.4,144.4 L184.8,147.3 L189.2,150.1 L193.7,152.8 L198.1,155.3 L202.5,157.8 L206.9,160.2 L211.3,162.5 L215.8,164.7 L220.2,166.8 L224.6,168.8 L229.0,170.8 L233.4,172.7 L237.8,174.5 L242.2,176.2 L246.7,177.9 L251.1,179.5 L255.5,181.0 L259.9,182.5 L264.3,183.9 L268.8,185.3 L273.2,186.7 L277.6,187.9 L282.0,189.1 L286.4,190.3 L290.8,191.5 L295.2,192.6 L299.7,193.6 L304.1,194.6 L308.5,195.6 L312.9,196.5 L317.3,197.4 L321.8,198.3 L326.2,199.1 L330.6,199.9 L335.0,200.7 L339.4,201.4 L343.8,202.1 L348.2,202.8 L352.7,203.5 L357.1,204.1 L361.5,204.7 L365.9,205.3 L370.3,205.8 L374.8,206.4 L379.2,206.9 L383.6,207.4 L388.0,207.9 L392.4,208.3 L396.8,208.8 L401.2,209.2 L405.7,209.6 L410.1,210.0 L414.5,210.4 L418.9,210.8 L423.3,211.1 L427.8,211.5 L432.2,211.8 L436.6,212.1 L441.0,212.4 L445.4,212.7 L449.8,213.0 L454.2,213.2 L458.7,213.5 L463.1,213.8 L467.5,214.0 L471.9,214.2 L476.3,214.4 L480.8,214.7 L485.2,214.9 L489.6,215.1 L494.0,215.2 L498.4,215.4 L502.8,215.6 L507.2,215.8 L511.7,215.9 L516.1,216.1 L520.5,216.2 L524.9,216.4 L529.3,216.5 L533.8,216.6 L538.2,216.8 L542.6,216.9 L547.0,217.0 L551.4,217.1 L555.8,217.2 L560.2,217.3 L564.7,217.4 L569.1,217.5 L573.5,217.6 L577.9,217.7 L582.3,217.8 L586.8,217.9 L591.2,218.0 L595.6,218.1 L600.0,218.1" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="148.6" cy="120.0" r="4.5" fill="#b23a2e"/><circle cx="227.2" cy="170.0" r="4.5" fill="#b23a2e"/><circle cx="305.9" cy="195.0" r="4.5" fill="#b23a2e"/><circle cx="384.5" cy="207.5" r="4.5" fill="#b23a2e"/><text x="298.6" y="114.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >अर्ध-आयु · ⁦8.9⁩ मिलियन वर्ष</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >समय (मिलियन वर्ष) · शेष ¹⁸²Hf · 600 मिलियन वर्ष की खिड़की के अंत में: ⁦5.1×10⁻²¹⁩</text></svg><figcaption>हैफ़नियम–टंगस्टन घड़ी: लगभग 5 करोड़ वर्षों के बाद ¹⁸²Hf लगभग नहीं बचता, इसलिए टंगस्टन-हस्ताक्षर निर्माण-खिड़की की शुरुआत में बंद होकर उसके अंत तक बना रहता है।</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: शोधपत्र-शृंखला में आँकड़ों का प्रवाह और Zenodo पर खुला प्रोटोकॉल</h2>
+<p>शोधपत्र 13 का भाग D.1 और कोड-खंड पूरी शोधपत्र-शृंखला को निर्भरताओं की एक पारदर्शी प्रणाली में बाँधते हैं जिसे कोई भी बाहरी शोधकर्ता पूरी तरह पुनरुत्पादित कर सकता है (§D.1, Data &amp; Code):</p>
+<ul>
+<li><strong>शोधपत्र 2 से शोधपत्र 13 तक बंधनों का प्रवाह (§D.1):</strong> शोधपत्र 2 अलगाव पर सह-घूर्णन त्रिज्या तय करता है (विषुवतीय तल में 16,399 km, 5.77 घंटे के दिन के लिए 22.5° अक्षांश पर 17,287 km); शोधपत्र 3 0.46 चंद्र-द्रव्यमान ढोती ~ 1,000 km की न्यूनतम संक्रमण-त्रिज्या और पार्श्व अपरूपण-भार <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≈</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{shear}} \approx 10^{22}\text{ N}</annotation></semantics></math></span></span> ("संकरी गर्दन" ख़ारिज करते हुए) और कवच-श्यानता <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> तय करता है; और शोधपत्र 4–10 कक्षा, मारिया, क्रेटर, ध्रुव, SPA बेसिन और मंगल जोड़ते हैं।</li>
+<li><strong>खुला पुनरुत्पादन-पैकेज (Zenodo DOI: 10.5281/zenodo.22743615):</strong> Python 3 (NumPy और SciPy) में सभी गणना-स्क्रिप्टें, इनपुट फ़ाइलें और परीक्षण T1, T2 और T5 के आउटपुट स्वतंत्र पुनरुत्पादन के लिए Zenodo भंडार में स्थायी रूप से जमा हैं।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: दस और आवश्यकताएँ (R9–R18) और LEF मॉडल के असंगति-मानदंड (शोधपत्र 13, भाग C–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>आवश्यकता</th><th>मॉडल में अपेक्षित भौतिक शर्त</th><th>परीक्षण-माप / असंगति-परिणाम</th><th>वर्तमान स्थिति</th></tr>
+<tr><td><strong>R9 (संतुलन में नाशपाती)</strong></td><td>3,000 km तक अभिसरित 9,000 km चौड़ा पिंड सह-घूर्णन रेखा के भीतर स्व-गुरुत्व से थमा है</td><td>असंगति: घनत्व और घूर्णन की सीमा में कोई गणितीय संतुलन-आकार नहीं</td><td>पूर्ण संतुलन-गणना के लिए खुला</td></tr>
+<tr><td><strong>R10 (नाशपाती का पतन)</strong></td><td>नाशपाती का अवशेष (7–12 चंद्र-द्रव्यमान, पृथ्वी के द्रव्यमान का ~ 11%) कक्षा में बिना अवशेष के पूरी तरह भीतर ढहता है</td><td>असंगति: कक्षा में अवशेष की पहचान, या स्रोत के नीचे द्रव्यमान-विसंगति की अनुपस्थिति</td><td>खुला (शोधपत्र 9 की तहों से संगत)</td></tr>
+<tr><td><strong>R11 (प्रशांत LLVP)</strong></td><td>किरिटीमाटी (1.9°N, 157.5°W) पर नाशपाती का आधार लोहे-समृद्ध प्रशांत LLVP के ऊपर है</td><td>असंगति: आधार LLVP के बाहर, या दोनों खंड (प्रशांत और अफ़्रीकी) समान</td><td>टोमोग्राफ़िक परीक्षण के लिए खुला</td></tr>
+<tr><td><strong>R12 (KREEP संकुल)</strong></td><td>भीतर मुड़े पृथ्वी के सियाल के किनारे प्रोसेलारम में KREEP तय करते हैं; ऐनॉर्थोसाइट K और Th में क्षीण</td><td>असंगति: आधार के किनारों से कोई ज्यामितीय कड़ी नहीं, या ऐनॉर्थोसाइटों में सियाल-हस्ताक्षर</td><td>भू-रासायनिक मानचित्रण के लिए खुला</td></tr>
+<tr><td><strong>R13–R14 (कोर-मापक और शून्य विदेशी पदार्थ)</strong></td><td>कोर (1.4%) डूबते लोहे से निकटता मापता है; चंद्रमा और प्रशांत प्लूमों में शून्य विदेशी टकरावक-घटक</td><td>असंगति: चंद्रमा के थोक में या प्लूमों में अलौकिक रासायनिक/समस्थानिक घटक की पहचान</td><td>बहु-प्रणाली संतुलन के लिए खुला</td></tr>
+<tr class="hl"><td><strong>R15 (ध्रुवों पर क्रेटरों का कसाव)</strong></td><td>गोलाई ने क्रेटरों को उनका रैखिक व्यास घटाए बिना व्यास के साथ बढ़ते अनुपात में ध्रुवों की ओर कसा</td><td>ध्रुव/विषुवत घनत्व-अनुपात: <strong>1.09</strong> (20–30 km) → <strong>1.53</strong> (60–100 km)</td><td><strong>सफलतापूर्वक पास (शोधपत्र 7)</strong></td></tr>
+<tr class="hl"><td><strong>R16 (निष्कासन-छिद्रों के रूप में 34 मारिया)</strong></td><td>सक्रिय मारिया के तल ने उस पर गिरे प्राचीन क्रेटर पिघलाए</td><td>≥ 20 km तीखे क्रेटरों का घनत्व: मारिया में <strong>0.8</strong> बनाम मैदानों पर 18.3 और उच्चभूमियों में 207</td><td><strong>मात्रात्मक रूप से समर्थित (शोधपत्र 6)</strong></td></tr>
+<tr class="hl"><td><strong>R17 (SPA पर दो छिद्र और एक गुंबद)</strong></td><td>SPA पर गुंबद का केंद्र, ऊष्मा और क्रेटर-न्यूनतम इम्ब्रियम और सेरेनिटैटिस के विपरीत बिंदुओं के सापेक्ष दक्षिण में (24°–29°) खिसके हैं</td><td>असंगति: कोई ज्यामितीय कड़ी नहीं, या विपरीत बिंदुओं के उत्तर में स्थिति</td><td><strong>मात्रात्मक रूप से समर्थित (शोधपत्र 8)</strong></td></tr>
+<tr><td><strong>R18 (पैवोनिस से मंगल के चंद्रमा)</strong></td><td>फ़ोबोस और डीमोस पैवोनिस मॉन्स (1.48°N) पर एकल निष्कासन-नलिका से भाप-वलय में प्रक्षेपित हुए</td><td>असंगति: MMX नमूनों में गैर-मंगल संरचना, या पैवोनिस के नीचे द्रव्यमान-अधिकता</td><td>खुला (बाहरी नियंत्रण-परीक्षण, शोधपत्र 10)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>अध्याय 25–26 में हमने <strong>शोधपत्र 13 (आवश्यकताएँ)</strong> का सर्वेक्षण पूरा किया — LEF शृंखला का पद्धतिगत दिक्सूचक, जो सभी 18 आवश्यकताएँ (<strong>R1–R18</strong>), सांख्यिकीय परीक्षणों (<strong>T1–T5</strong>) के परिणाम, हैफ़नियम–टंगस्टन घड़ी का बंधन और भविष्य के शोध के 7 खुले कार्य एकत्र करता है।</p>
+<a href="story27_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 27</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF मॉडल का शोध-मानचित्र (भाग A) — प्रारंभिक पृथ्वी, चंद्रमा का निर्माण और SPA बेसिन (विषय 1–79) →</p></div></a>
+<p style="margin-top:22px"><a href="story25_hi.html">← अध्याय 25</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

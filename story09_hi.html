@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 9: तल पर घड़ी — पिघले, फैले और तीखे क्रेटर, आपूर्ति-इंजन और उजागर होने की तीन पीढ़ियाँ — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 9: मेयर-तलों पर बड़े क्रेटर पिघले, मध्यम फैले और छोटे तीखे क्यों हैं, आपूर्ति-इंजन का क्रांतिक प्रवाह, और छिद्रों की तीन पीढ़ियाँ।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story09_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story09_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story09_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story09_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story09_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story09_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story09_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story09_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story09_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story09_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story09_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story09_he.html" hreflang="he">עברית</a> · <a href="story09_en.html" hreflang="en">English</a> · <a href="story09_de.html" hreflang="de">Deutsch</a> · <a href="story09_es.html" hreflang="es">Español</a> · <a href="story09_fr.html" hreflang="fr">Français</a> · <a href="story09_ru.html" hreflang="ru">Русский</a> · <a href="story09_zh.html" hreflang="zh">中文</a> · <a href="story09_ja.html" hreflang="ja">日本語</a> · <a href="story09_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 9</p>
+<h1>अध्याय 9: तल पर घड़ी — पिघले, फैले और तीखे क्रेटर, आपूर्ति-इंजन और उजागर होने की तीन पीढ़ियाँ</h1>
+<p>शोधपत्र 05 पर आधारित — मारिया (भाग G–I: अध्ययन 8 और 15)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: इम्ब्रियम सागर में बड़े क्रेटर पिघले, मध्यम फैले और छोटे तीखे क्यों हैं?</h2>
+<p>निकट पक्ष के महान मेयर, <strong>इम्ब्रियम सागर</strong> के तल को देखिए। ठीक उसी समान बेसाल्ट-सतह पर तीन प्रसिद्ध क्रेटर अगल-बगल तीन पूरी तरह भिन्न अवस्थाओं में दिखते हैं:</p>
+<ul>
+<li><strong>साइनस इरिडम (246 km चौड़ा):</strong> आधा पिघल चुका एक विशाल क्रेटर — केवल उसका उत्तरी किनारा जुरा पर्वतों की कटक के रूप में बचा है, जबकि उसका दक्षिणी किनारा पूरी तरह मिट गया है और उसका तल मेयर की सतह में विलीन हो गया है (गहराई-व्यास अनुपात 0.008, उसके आकार के साधारण उच्चभूमि-क्रेटर का केवल एक-चौथाई!)।</li>
+<li><strong>प्लेटो (101 km चौड़ा):</strong> उत्तरी तट पर एक मध्यम क्रेटर जिसकी दीवारों का वलय पूरा है, पर जिसका तल भरा, सपाट और पूरी तरह फैला है (गहराई-व्यास अनुपात 0.020, साधारण उच्चभूमि-क्रेटर का लगभग आधा)।</li>
+<li><strong>किर्च (11 km चौड़ा):</strong> मेयर-तल के हृदय में एक छोटा क्रेटर जो तीखा, स्पष्ट और ताज़ा उच्चभूमि-क्रेटर से भी गहरा रहा है (0.166 बनाम 0.078)!</li>
+</ul>
+<p>तीनों ठीक उसी मेयर पर, उसी अक्षांश पर और उसी ज़मीन पर थे। अगर वे सब अरबों वर्षों में यादृच्छिक क्षुद्रग्रह-टकरावों से बने होते, तो इम्ब्रियम के तल पर 20 km या अधिक चौड़ा एक भी तीखा क्रेटर क्यों नहीं, और क्रेटरों के संरक्षण की अवस्था उनके आकार का इतनी सटीकता से अनुसरण क्यों करती है?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: ठंडी होती दलिया की पतीली में दबाया चम्मच — और पाले की रात में खुला नल</h2>
+<p>दो सरल चित्र उस भौतिक तंत्र को उजागर करते हैं जो क्रेटरों के आकार, मारिया के ठंडा होने और उनके उजागर होने के क्रम को जोड़ता है:</p>
+<ul>
+<li><strong>धीरे-धीरे ठंडी होती खौलती दलिया की पतीली (क्रेटर की तीन अवस्थाएँ):</strong> आँच से उतारी गई गाढ़ी दलिया की पतीली लीजिए, और उसमें तीन चरणों पर चम्मच दबाइए। जब दलिया अभी खौलती और तरल है (कम श्यानता, लगभग 1 Pa·s), गड्ढा तुरंत बंद होकर गायब हो जाता है — किनारे पर केवल हल्का निशान बचता है (साइनस इरिडम जैसा <strong>पिघला क्रेटर</strong>)। जब दलिया ठंडी होकर क्रिस्टलों से भरे गाढ़े "कीचड़" (मश) जैसी हो जाती है, गड्ढा अपने किनारे का वलय रखता है पर उसका तल धँसकर भर जाता है (प्लेटो जैसा <strong>फैला क्रेटर</strong>)। और जब दलिया जमकर पूरी तरह ठोस हो जाती है (सॉलिडस से नीचे, ~ 1,050°C), चम्मच का दबाव सदा के लिए तीखा, स्पष्ट गड्ढा छोड़ता है (किर्च जैसा <strong>तीखा क्रेटर</strong>)!</li>
+<li><strong>पाले की रात में बहता पानी का नल (आपूर्ति-इंजन का क्रांतिक प्रवाह):</strong> कुछ छिद्र जल्दी क्यों जम गए जबकि दूसरे अंत तक खुले रहे? पाले की रात में बाहर रखे पानी के पाइप की कल्पना कीजिए। जब तक पानी उसमें तेज़ी से बहता है, उसकी ढोई ऊष्मा पाइप को जमने से रोकती है; जैसे ही प्रवाह एक निश्चित दहलीज़ (<strong>क्रांतिक प्रवाह</strong>) से नीचे कमज़ोर होता है, ठंड जीत जाती है और पाइप बर्फ़ से बंद हो जाता है!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: एक घड़ी की दो सुइयाँ — मारिया का ठंडा होना और पृथ्वी से दागने का घटना</h2>
+<p>शोधपत्र 05 का भाग G शोधपत्र 06 के साथ एक संयुक्त अध्ययन (<strong>अध्ययन 8</strong>) प्रस्तुत करता है, जिसने निकट पक्ष के बेसाल्ट पर 3 km या अधिक चौड़े हर क्रेटर को स्कैन किया (कुल 3,478 क्रेटर: आपूर्ति-गुंबदों के ऊपर मेयर-तलों पर 324, और बेसाल्ट-मैदानों पर 3,154)। हर क्रेटर की तुलना ठीक उसी व्यास के उच्चभूमि-क्रेटरों से की गई, और उसे <strong>तीखा</strong>, <strong>फैला</strong> (उच्चभूमि-क्रेटरों के 75% से उथला) या <strong>पिघला</strong> (उनके 95% से उथला) वर्गीकृत किया गया:</p>
+<ol class="steps">
+<li><strong>मेयर-तलों में गायब हुए क्रेटर:</strong> संपर्क-मारिया (इम्ब्रियम और सेरेनिटैटिस) के तलों पर बगल के मैदानों में मिलने वाले 2–5 km क्रेटरों का केवल एक-तिहाई है (प्रति मिलियन km² 263 बनाम 836), जबकि 20 km और अधिक के क्रेटरों के लिए संख्या <strong>बिल्कुल शून्य (0)</strong> है! उनके तरल रहते उन पर गिरा हर बड़ा क्रेटर बस निगला और मिटा दिया गया।</li>
+<li><strong>क्रेटर के आकार और उसकी अवस्था के बीच स्पष्ट कड़ी:</strong> मेयर-तलों पर <strong>तीखे</strong> क्रेटरों का हिस्सा 3–5 km पर <strong>71%</strong> से गिरकर 5–10 km पर 57%, 10–20 km पर 35%, और 20–40 km पर <strong>0%</strong> तक पहुँचता है — जबकि <strong>पिघले</strong> क्रेटरों का हिस्सा 17% से उछलकर <strong>85%</strong> और 80 km से ऊपर <strong>100%</strong> तक जाता है (दस अरब में एक से बेहतर सांख्यिकीय सार्थकता!)।</li>
+<li><strong>बड़े पहले और छोटे अंत में क्यों आए? (§G.4–G.5):</strong> अलगाव के बाद पृथ्वी अंतरिक्ष में दहकता पदार्थ दागती रही। जैसे-जैसे चंद्रमा पृथ्वी से दूर गया, उस तक पहुँचने के लिए आवश्यक न्यूनतम गति बढ़ी (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>R</mi><mo>⊕</mo></msub><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min} = \sqrt{2GM_\oplus(1/R_\oplus - 1/r)}</annotation></semantics></math></span></span> — 17,000 km की दूरी पर 8.8 km/s से 60,000 km पर 10.6 km/s तक)। साथ ही पृथ्वी पर मैग्मा-तूफ़ान धीरे-धीरे शांत हुआ: पहले बड़े दहकते ढेले दागे गए (जब चंद्रमा पास था और मारिया तरल थे → पिघले क्रेटर), फिर मध्यम ढेले (जब मारिया "मश" अवस्था में थे → फैले क्रेटर), और अंत में छोटी दहकती बूँदें (जब मारिया जम चुके थे → तीखे क्रेटर, उदाहरण के लिए संपर्क-मारिया में 3–10 km क्रेटरों का 82% तीखा है!)।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Share of sharp craters on mare floors by diameter" style="direction:ltr"><rect x="120.0" y="16" width="416.5" height="26" rx="4" fill="#2f7d57"/><text x="544.5" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦71%⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >3–5 km</text><rect x="120.0" y="56" width="334.4" height="26" rx="4" fill="#5f9a6e"/><text x="462.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦57%⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >5–10 km</text><rect x="120.0" y="96" width="205.3" height="26" rx="4" fill="#c47f2c"/><text x="333.3" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦35%⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10–20 km</text><rect x="120.0" y="136" width="3.5" height="26" rx="4" fill="#b23a2e"/><text x="131.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦0%⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20–40 km</text></svg><figcaption>व्यास के अनुसार मेयर-तलों पर तीखे क्रेटरों का हिस्सा (अध्ययन 8): क्रेटर जितना बड़ा, उतना पहले वह तरल तल पर गिरा।</figcaption></figure><div class="callout"><span class="tag">नीचे से पृथ्वी की ऊष्मा — संपर्क-मैदानों पर क्रेटर-किनारों से प्रमाण (अध्ययन 15, §G.6)</span><p style="margin:0">स्वीकृत साहित्य मानता है कि मैदानों पर बड़े क्रेटर (जैसे ओशनस प्रोसेलारम) बगल से लावा से भर गए — रेत के किले की तरह जिसके चारों ओर पानी उठकर उसकी निचली ढलानें ढक देता है, पर किनारे का शिखर अक्षुण्ण छोड़ देता है। LEF मॉडल में संपर्क-मैदान निकटवर्ती पृथ्वी के विकिरण से <strong>नीचे से</strong> गर्म हुए (T ≈ 2,000 K, दृश्य-गुणांक <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.205</mn><mo>→</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>345</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">0.205 \rightarrow T_{\mathrm{surface}} \approx 1,345\text{ K}</annotation></semantics></math></span></span>, बेसाल्ट के गलनांक से ऊपर!)।
+<br>40 km या अधिक चौड़े हर क्रेटर के चारों ओर 36 अरीय प्रोफ़ाइलों की जाँच अंतर उजागर करती है: संपर्क-मैदानों पर मैदान की ओर किनारा उच्चभूमि की ओर की तुलना में <strong>+24% अधिक दिशाओं में पूरी तरह गायब</strong> है (संपर्क के पार के मैदानों पर <strong>0%</strong> की तुलना में!), और बचा शिखर कहीं अधिक कुंद और घिसा है (वक्रता −35 m/km² कम, चौड़ाई +0.14 km अधिक और कोण +5.3° चौड़ा) — नीचे से ऊष्मीय घिसाव जो बगल से भराव कभी पैदा नहीं कर सकता!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: आपूर्ति-इंजन, उजागर होने का अग्र और छिद्रों की तीन पीढ़ियाँ</h2>
+<p>शोधपत्र 05 के भाग H और I दिखाते हैं कि आपूर्ति-इंजन की भौतिकी (दाब, उत्प्लावकता, श्यानता और वाष्पशील) सिकुड़ती संपर्क-डिस्क (6,000 km से 3,000 km तक) की ज्यामिति से कैसे जुड़ती है और चंद्रमा के चेहरे पर <strong>छिद्रों की तीन पीढ़ियाँ</strong> बनाती है:</p>
+<ol class="steps">
+<li><strong>केवल तरल ही दाब क्यों पहुँचा सकता है (§H.1–H.2):</strong> कवच में कोई ठोस 13–<span class="ltr">16 GPa</span> का प्रतिबल ढोता (उसकी शक्ति, ~ <span class="ltr">0.2 GPa</span>, का 60–80 गुना) और तुरंत टूट जाता। इसलिए छिद्र तरल मैग्मा का एक स्तंभ है जो द्रवस्थैतिक दाब और उत्प्लावकता पहुँचाता है, और पानी तथा वाष्पशीलों की मात्रा उसकी श्यानता तय करती है: कड़े कवच के नीचे खुलकर बहने के लिए पर्याप्त कम, फिर भी भारी लोहे के कणों को रास्ते में डूबने दिए बिना साथ ले जाने के लिए पर्याप्त अधिक।</li>
+<li><strong>आपूर्ति-प्रवाह और छिद्र के बंद होने के बीच कड़ी (§H.3):</strong> जब तक उठता प्रवाह (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></span>) अंतरिक्ष में ठंडा होने की दर से अधिक दर पर ऊष्मा लाता है, छिद्र खुला रहता है। जब प्रवाह <strong>क्रांतिक प्रवाह</strong> की दहलीज़ से नीचे गिरता है, छिद्र जमकर बंद हो जाता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>)। निकट पक्ष पर दहकती पृथ्वी के विकिरण (~ 2,000 K, दृश्य-गुणांक 0.205) ने सतह को लगभग <strong>1,345 K</strong> तापमान पर रखा — बेसाल्ट के गलनांक (~ 1,320 K या 1,050°C) से ऊपर — इसलिए निकट पक्ष के छिद्र <strong>चंद्रमा के जुड़े रहते जम ही नहीं सकते थे</strong>! इसके विपरीत दूर पक्ष पर, जैसे-जैसे नाशपाती लंबी हुई और उस तक पृथ्वी की कम ऊष्मा पहुँची, छिद्र एक के बाद एक जम गए (<strong>मॉस्कोविएन्से</strong> को छोड़कर, जिसे सेरेनिटैटिस सागर से एक सीधी आंतरिक नलिका द्वारा आपूर्ति मिली)।</li>
+<li><strong>चलता उजागर-अग्र और छिद्रों की तीन पीढ़ियाँ (§I.1–I.5):</strong> जब बाहर की ओर गोलाई के दौरान संपर्क-डिस्क 6,000 km से 3,000 km तक सिकुड़ी, संपर्क का किनारा एक <strong>उजागर-अग्र</strong> के रूप में भीतर हटा:
+<ul>
+<li><strong>पीढ़ी I (ऊपरी गुंबद — दूर पक्ष, 70° से पार):</strong> वे छिद्र जो पहले क्षण से अंतरिक्ष के सामने खुले थे, उन्होंने बाहर पदार्थ दागा जिसने उनके किनारे और दूर पक्ष के क्रेटर बनाए, ऊष्मा घटने पर जल्दी जमे, और बाद की निर्माण-परतों के नीचे दब गए (36 दबे गुंबद)।</li>
+<li><strong>पीढ़ी II (उखड़ने का वलय — 31°–70° पट्टी, पहाड़ी):</strong> वे छिद्र जिन्होंने अपना जीवन <strong>ढके मुखों</strong> के रूप में शुरू किया जो पदार्थ भीतर पहुँचाते थे, और जब उजागर-अग्र उनके ऊपर से गुज़रा तो <strong>निकास-छिद्र</strong> बन गए जिन्होंने लंबे समय तक पदार्थ बाहर प्रक्षेपित किया।</li>
+<li><strong>पीढ़ी III (संपर्क-डिस्क — 31° तक की निकट टोपी):</strong> वे छिद्र जो अलगाव के क्षण तक ढके और पृथ्वी से सटे रहे (इम्ब्रियम, सेरेनिटैटिस, कोपर्निकस H और साइनस एस्टुअम)। उन्होंने चंद्रमा में पृथ्वी के दाब के आपूर्ति-मुख का काम किया; अलगाव के क्षण दाब एकाएक रुका, विस्फोट थमे, और उनके गहरे, तरल तल करोड़ों वर्षों में बाहर से भीतर धीरे-धीरे जमे!</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Minimum launch speed from Earth to reach the receding Moon" style="direction:ltr"><line x1="70" x2="610" y1="221.3" y2="221.3" stroke="#ece7da"/><text x="62" y="225.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8.5</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9</text><line x1="70" x2="610" y1="133.8" y2="133.8" stroke="#ece7da"/><text x="62" y="137.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9.5</text><line x1="70" x2="610" y1="90.0" y2="90.0" stroke="#ece7da"/><text x="62" y="94.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10</text><line x1="70" x2="610" y1="46.3" y2="46.3" stroke="#ece7da"/><text x="62" y="50.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10.5</text><text x="127.4" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">20,000</text><text x="242.3" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">30,000</text><text x="357.2" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">40,000</text><text x="472.1" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">50,000</text><text x="587.0" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">60,000</text><path d="M93.0,191.1 L97.9,185.4 L102.9,180.0 L107.8,174.9 L112.7,170.0 L117.7,165.4 L122.6,161.1 L127.6,156.9 L132.5,153.0 L137.4,149.2 L142.4,145.6 L147.3,142.1 L152.3,138.8 L157.2,135.6 L162.1,132.6 L167.1,129.7 L172.0,126.9 L177.0,124.2 L181.9,121.6 L186.8,119.1 L191.8,116.7 L196.7,114.4 L201.7,112.2 L206.6,110.0 L211.5,107.9 L216.5,105.9 L221.4,103.9 L226.4,102.0 L231.3,100.2 L236.3,98.4 L241.2,96.7 L246.1,95.1 L251.1,93.5 L256.0,91.9 L261.0,90.4 L265.9,88.9 L270.8,87.4 L275.8,86.0 L280.7,84.7 L285.7,83.4 L290.6,82.1 L295.5,80.8 L300.5,79.6 L305.4,78.4 L310.4,77.2 L315.3,76.1 L320.2,75.0 L325.2,73.9 L330.1,72.9 L335.1,71.9 L340.0,70.9 L344.9,69.9 L349.9,68.9 L354.8,68.0 L359.8,67.1 L364.7,66.2 L369.6,65.3 L374.6,64.5 L379.5,63.6 L384.5,62.8 L389.4,62.0 L394.3,61.2 L399.3,60.4 L404.2,59.7 L409.2,59.0 L414.1,58.2 L419.0,57.5 L424.0,56.8 L428.9,56.1 L433.9,55.5 L438.8,54.8 L443.7,54.2 L448.7,53.5 L453.6,52.9 L458.6,52.3 L463.5,51.7 L468.5,51.1 L473.4,50.5 L478.3,50.0 L483.3,49.4 L488.2,48.9 L493.2,48.3 L498.1,47.8 L503.0,47.3 L508.0,46.8 L512.9,46.3 L517.9,45.8 L522.8,45.3 L527.7,44.8 L532.7,44.4 L537.6,43.9 L542.6,43.4 L547.5,43.0 L552.4,42.5 L557.4,42.1 L562.3,41.7 L567.3,41.3 L572.2,40.8 L577.1,40.4 L582.1,40.0 L587.0,39.6" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="93.0" cy="191.1" r="6" fill="#b23a2e"/><circle cx="587.0" cy="39.6" r="6" fill="#2f7d57"/><text x="103.0" y="197.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦8.8 km/s⁩</text><text x="103.0" y="215.1" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >17,000 km पर</text><text x="583.0" y="63.6" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦10.6 km/s⁩</text><text x="583.0" y="81.6" text-anchor="end" font-family="Heebo" font-size="12" font-weight="400" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >60,000 km पर</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >पृथ्वी से चंद्रमा की दूरी (km) · उस तक पहुँचने की न्यूनतम गति (km/s)</text></svg><figcaption>जैसे-जैसे चंद्रमा दूर गया, उस तक पहुँचने के लिए पृथ्वी से अधिक प्रक्षेपण-गति चाहिए थी — और दागना समय के साथ कमज़ोर हुआ: पहले बड़ा, अंत में छोटा।</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>ऊपर से नीचे जमते बेसाल्ट-ढक्कन का ठंडा होना (समय का वर्गमूल नियम, §G.3) और दूर जाते चंद्रमा तक पहुँचने के लिए पृथ्वी से दागे गए पदार्थ को आवश्यक न्यूनतम पलायन-गति (§G.4) इस प्रकार व्यक्त हैं:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>2</mn><mi>λ</mi><msqrt><mrow><mi>κ</mi><mtext> </mtext><mi>t</mi></mrow></msqrt><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>∝</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi>h</mi><mn>2</mn></msup><mi>κ</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\delta(t) \approx 2\lambda\sqrt{\kappa\,t} \quad \Longrightarrow \quad t_{\mathrm{freeze}} \propto \dfrac{h^2}{\kappa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>R</mi><mo>⊕</mo></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min}(r) = \sqrt{2GM_\oplus\left(\dfrac{1}{R_\oplus} - \dfrac{1}{r}\right)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>चूँकि जमने का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{freeze}}</annotation></semantics></math></span></span>) मैग्मा-भंडार की <strong>गहराई के वर्ग (h²)</strong> के साथ बढ़ता है, गहरे, गर्म संपर्क-मारिया (इम्ब्रियम और सेरेनिटैटिस) किनारों के उथले छिद्रों से दसियों से सैकड़ों गुना अधिक समय तक तरल रहे — और शर्त <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span> स्थापित करती है कि केवल वही छिद्र सक्रिय निकास-छिद्र बना जो उजागर-अग्र के उसके ऊपर से गुज़रते समय अभी सक्रिय था।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: आपूर्ति की अवधि की स्मृति के रूप में छिद्र का आकार</h2>
+<p>आपूर्ति-इंजन की प्रत्यक्ष ज्यामितीय भविष्यवाणियों में से एक (§I.6) यह है कि दाब में गर्म मैग्मा का लंबा प्रवाह छिद्र की गर्दन को धीरे-धीरे चौड़ा करता है — जैसे बहता पानी बर्फ़ में नाली चौड़ी करता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mtext>feeding history</mtext><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>η</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = F(\text{feeding history}, P, T, Q, \eta)</annotation></semantics></math></span></span>):</p>
+<ul>
+<li><strong>आपूर्ति-गुंबदों के व्यासों में स्पष्ट पदानुक्रम:</strong> 34 मारिया की सूची में (शोधपत्र 05 का परिशिष्ट A), <strong>चंद्रमा के छहों सबसे बड़े आपूर्ति-गुंबद (450–909 km) निकट पक्ष पर हैं</strong>, और निकट पक्ष के गुंबद का माध्यिका व्यास <strong>375 km</strong> है, जबकि दूर पक्ष पर केवल <strong>227 km</strong> (जहाँ सबसे बड़ा गुंबद ओरिएंटाले है, 435 km)!</li>
+<li><strong>चिकने तलों पर बड़े क्रेटरों की कमी:</strong> इम्ब्रियम सागर के तल पर प्रति मिलियन km² 20 km या अधिक चौड़े केवल 11 क्रेटर हैं (और सेरेनिटैटिस पर 16), जबकि दूर पक्ष की उच्चभूमियों पर प्रति मिलियन km² <strong>205</strong> — 13–18 गुना का अंतर, जो दिखाता है कि संपर्क-तल टकरावों के अधिकांश तूफ़ान के गुज़र जाने के बाद ही जमे।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: क्रेटरों की संरक्षण-अवस्थाएँ, किनारों का घिसाव और उजागर होने की पीढ़ियाँ (शोधपत्र 05, भाग G–I)</h3>
+<div class="tw"><table class="lab">
+<tr><th>अध्ययन / माप</th><th>तुलना और नमूना</th><th>मात्रात्मक खोज</th><th>सार्थकता और भौतिक अर्थ</th></tr>
+<tr class="hl"><td><strong>व्यास के अनुसार क्रेटर-अवस्था (अध्ययन 8)</strong></td><td>मेयर-तलों पर 324 क्रेटर (≥ 3 km)</td><td>तीखे: <strong>71%</strong> (3–5 km) <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>0%</strong> (20–40 km)<br>पिघले: <strong>17%</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>85%</strong> (80 km से ऊपर 100%)</td><td>कोक्रेन–आर्मिटेज प्रवृत्ति-परीक्षण: p &lt; 10⁻¹⁰; बड़े क्रेटर जल्दी तरल तल पर गिरे</td></tr>
+<tr><td><strong>तलों में गायब हुए क्रेटर (अध्ययन 8)</strong></td><td>मेयर-तल बनाम बेसाल्ट-मैदान (किरणों के बिना)</td><td>संपर्क में (2–5 km): प्रति मिलियन km² 263 बनाम 836<br>संपर्क में (20+ km): प्रति मिलियन km² <strong>0</strong> बनाम 23</td><td>प्रारंभिक टकराव संपर्क-मारिया के तरल मैग्मा में निगले और मिटाए गए</td></tr>
+<tr class="hl"><td><strong>संपर्क-मैदानों पर किनारों का घिसाव (अध्ययन 15)</strong></td><td>36 अरीय प्रोफ़ाइलों में 137 क्रेटर (≥ 40 km)</td><td>मैदान की ओर किनारा गायब: संपर्क में <strong>+24%</strong> बनाम उसके पार <strong>0%</strong>; शिखर −35 m/km² अधिक कुंद और कोण +5.3°</td><td>संपर्क-मैदान पृथ्वी द्वारा <strong>नीचे से</strong> पिघले और गर्म हुए (1,345 K), केवल बगल से भरे नहीं</td></tr>
+<tr><td><strong>उजागर होने की तीन पीढ़ियाँ (§I.4)</strong></td><td>पीछे हटते संपर्क की ज्यामिति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>000</mn><mo>→</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">6,000 \rightarrow 3,000</annotation></semantics></math></span></span> km)</td><td>पीढ़ी I (&gt;70°): तुरंत उजागर और जल्दी बंद<br>पीढ़ी II (31°–70°): मुख जो निकास-छिद्र बना<br>पीढ़ी III (&lt;31°): संपर्क-मुख जो अलगाव पर बंद हुए</td><td>ठंडा होने का क्रम: दूर पक्ष <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> पट्टी <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> संपर्क-क्षेत्र (इम्ब्रियम और सेरेनिटैटिस)</td></tr>
+<tr><td><strong>स्मृति के रूप में आपूर्ति-गुंबद का व्यास (§I.6)</strong></td><td>परिशिष्ट A सूची के 34 मारिया</td><td>निकट पक्ष माध्यिका: <strong>375 km</strong> (909 km तक)<br>दूर पक्ष माध्यिका: <strong>227 km</strong> (435 km तक)</td><td>निकट पक्ष की उच्च ऊष्मा में लंबी आपूर्ति ने आपूर्ति-छिद्र चौड़े किए</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>मेयर-तलों पर क्रेटरों ने ठंडा होने की सटीक समय-सारिणी उजागर की है: जब चंद्रमा पास था और मारिया तरल थे, बड़े ढेले उन पर गिरे और निगले गए या पिघलकर वलय बन गए; जब वे क्रिस्टल "मश" में बदले, मध्यम क्रेटर फैल गए; और केवल पूरी तरह जमने के बाद ही पृथ्वी की अंतिम छोटी बूँदों ने तीखे क्रेटर छोड़े।</p>
+<p>पर यह हमेशा के लिए सिद्ध करने के लिए कि मारिया सचमुच वह <strong>स्रोत</strong> हैं जिसने अपने परिवेश में पदार्थ दागा, और संपर्क-क्षेत्र वह जगह है जहाँ चंद्रमा अंतिम क्षण तक पृथ्वी से जुड़ा रहा, हमें चट्टानों की रासायनिक उँगली-छाप जाँचनी होगी। अगले अध्याय — <strong>अध्याय 10: रासायनिक उँगली-छाप — लोहे के वलय, संपर्क-क्षेत्र में थोरियम की पहेली और पाँच घड़ियाँ</strong> (शोधपत्र 05 से — <em>मारिया</em>, भाग J–O और परिशिष्ट A) — में हम चंद्रमा के मारिया की फ़ाइल बंद करेंगे!</p>
+<a href="story10_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 10</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">रासायनिक उँगली-छाप — लोहे के वलय, संपर्क-क्षेत्र में थोरियम की पहेली और पाँच घड़ियाँ →</p></div></a><p style="margin-top:22px"><a href="story08_hi.html">← अध्याय 8</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

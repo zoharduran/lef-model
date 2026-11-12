@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 25: LEF मॉडल की मूलभूत आवश्यकताएँ (R1–R8) — समस्थानिक, कोर, पपड़ी, द्रव्यमान-केंद्र खिसकाव और उजागर-क्षेत्र — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 25: मूलभूत आवश्यकताएँ R1–R8 — समस्थानिक, कोर, पपड़ी, द्रव्यमान-केंद्र खिसकाव और उजागर-क्षेत्र।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story25_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story25_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story25_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story25_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story25_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story25_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story25_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story25_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story25_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story25_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story25_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story25_he.html" hreflang="he">עברית</a> · <a href="story25_en.html" hreflang="en">English</a> · <a href="story25_de.html" hreflang="de">Deutsch</a> · <a href="story25_es.html" hreflang="es">Español</a> · <a href="story25_fr.html" hreflang="fr">Français</a> · <a href="story25_ru.html" hreflang="ru">Русский</a> · <a href="story25_zh.html" hreflang="zh">中文</a> · <a href="story25_ja.html" hreflang="ja">日本語</a> · <a href="story25_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 25</p>
+<h1>अध्याय 25: LEF मॉडल की मूलभूत आवश्यकताएँ (R1–R8) — समस्थानिक, कोर, पपड़ी, द्रव्यमान-केंद्र खिसकाव और उजागर-क्षेत्र</h1>
+<p>शोधपत्र 13 पर आधारित — 13. आवश्यकताएँ: तंत्र क्या बाध्य करता है, चंद्रमा के पास क्या है, और क्या अनसुलझा है (भाग A–B और परिशिष्ट A: आवश्यकताएँ R1–R8, द्रव्यमान-संतुलन और सांख्यिकीय परीक्षण T1–T5)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य और पद्धति: निर्माण-परिवेश को आधुनिक चंद्रमा से अलग करना, और "संचयी अंक" को ख़ारिज करना</h2>
+<p>पिछले अध्यायों में पृथ्वी की नाशपाती की यांत्रिकी, कक्षा और चंद्रमाओं तथा वलयों के नियम बनाने के बाद, <strong>शोधपत्र 13 (आवश्यकताएँ)</strong> पूरे मॉडल को कठोर पद्धतिगत परीक्षण में डालता है। सांख्यिकीय पूर्वाग्रह या मान्यताओं और मापों के मिश्रण को रोकने के लिए मॉडल चार मूल नियम तय करता है:</p>
+<ol class="steps">
+<li><strong>निर्माण-परिवेश और आधुनिक चंद्रमा के बीच पद्धतिगत विभाजन:</strong> निर्माण-परिवेश एक नरम, गर्म, तेज़ घूमता तंत्र है (T = 5.5–5.77 घंटे, प्रारंभिक द्रव्यमान <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = M_E + M_L = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg, विषुवतीय त्रिज्या 6,721 km); जबकि आधुनिक चंद्रमा एक जमा विकासात्मक उत्पाद है जो अरबों वर्षों के ठंडा होने और देर की ज्वालामुखीय सक्रियता से गुज़रा। दोनों को जोड़ने वाले भौतिक मॉडल के बिना देर का माप प्रारंभिक शर्त के रूप में उपयोग नहीं किया जा सकता।</li>
+<li><strong>हर आवश्यकता की त्रिविध संरचना, और "संचयी अंक" का खंडन:</strong> हर आवश्यकता परिभाषित है (क) मॉडल द्वारा अपेक्षित यांत्रिक शर्त, (ख) उसे परखने वाला मात्रात्मक माप, और (ग) वह परिणाम जो असंगति गिना जाएगा। मॉडल <strong>सफलताओं को भारित अंक में जोड़ने को वर्जित करता है</strong>, क्योंकि पपड़ी-मोटाई, द्रव्यमान-केंद्र खिसकाव और मारिया <em>एक ही द्रव्यमान-वितरण</em> की भिन्न अभिव्यक्तियाँ हैं (और उन्हें जोड़ना एक तथ्य को दो बार गिनना होगा), और ताकि एक आवश्यकता में असंगति दूसरों की सफलताओं के पीछे न छिपे।</li>
+<li><strong>व्युत्पन्न परिणाम, पश्च-कथन और भविष्यवाणी के बीच कालक्रमिक भेद:</strong> शोधपत्र कठोरता से अलग करता है एक <em>व्युत्पन्न परिणाम</em> (सीधे समीकरणों से निकला), साहित्य में मौजूदा प्रेक्षणों से मेल खाता <em>पश्च-कथन</em>, और एक स्वतंत्र <em>भविष्यवाणी</em> जो अभी परखी नहीं गई।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: मोटा होता हेलमेट, उखड़ता चूषण-कप, और लावा में बंद बोतल</h2>
+<p>चार मूर्त चित्र आठ मूलभूत आवश्यकताओं (R1–R8) और उनके पीछे के द्रव्यमान-संतुलनों को दर्शाते हैं:</p>
+<ul>
+<li><strong>तिगुना मोटा होता हेलमेट (R3 — पपड़ी की विषमता):</strong> नाशपाती के सिर पर उठे पृथ्वी के गुंबद ने 6,000 km आधार वाले गोलार्ध पर 18 km मोटा प्राचीन स्थलमंडलीय आवरण (घनत्व 2,800 kg/m³) ढोया (कुल द्रव्यमान 2.85 × 10²¹ kg, चंद्रमा के द्रव्यमान का लगभग 3.9%)। जब गुंबद गोल होकर क्षेत्रफल में तीन गुना छोटे दूर गोलार्ध पर बंद हुआ, द्रव्यमान-संरक्षण ने तिगुना रैखिक मोटापन बाध्य किया — <strong>50–60 km</strong> तक (55 km पर पूर्वानुमानित द्रव्यमान 2.6 × 10²¹ kg, बिना समायोजन के लगभग 10% का मेल!)।</li>
+<li><strong>किनारों से भीतर उखड़ता चूषण-कप (R8 — तीन उजागर-क्षेत्र):</strong> जबकि गुंबद का क्षेत्र (दूर पक्ष) शुरू से अंतरिक्ष के सामने खुला था, आधार पृथ्वी से दबा बैठा था। गोलाई के दौरान आधार काँच से उतरते चूषण-कप की तरह अपने किनारों से केंद्र तक उठा और उखड़ा — इसलिए केंद्रीय संपर्क-गुंबद अंतरिक्ष के सामने <em>अंत में</em> उजागर हुआ, ठीक सह-घूर्णन रेखा (16,399 km) पर अलगाव के क्षण।</li>
+<li><strong>हाथ थामे दो नर्तक (R4 — जन्म से समकालिक बंधन):</strong> नाशपाती के सिरे से यांत्रिक रूप से जुड़ा पिंड हर कक्षा के लिए ठीक एक घूर्णन अपने अक्ष पर पूरा करता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><msub><mi>ω</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\mathrm{rot}} = \omega_{\mathrm{orb}}</annotation></semantics></math></span></span>), इसलिए अलगाव के क्षण से पहले भी उसका जुड़ा पक्ष सदा जनक की ओर रहता है।</li>
+<li><strong>ओलिवीन क्रिस्टल के भीतर बंद बोतल (R6 — वाष्पशीलों का संरक्षण):</strong> सतह के नीचे ओलिवीन क्रिस्टलों में फँसी मैग्मा की नन्ही बूँदों (पिघल-समावेशों) ने अपनी मूल जल-मात्रा (615–1,410 ppm) को विस्फोट में गैस-निष्कासन से सुरक्षित रखा, चट्टान के भीतर बंद बोतल की तरह।</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: पहली आठ आवश्यकताएँ (R1–R8) और सांख्यिकीय परीक्षण (T1–T5)</h2>
+<p>शोधपत्र 13 के भाग A और B आठों आवश्यकताओं (R1–R8) में से हर एक को सबसे अद्यतन अनुभवजन्य आँकड़ों के सामने रखते हैं:</p>
+<ol class="steps">
+<li><strong>R1 — पार्थिव स्रोत से निकटता (ऑक्सीजन समस्थानिक):</strong> सटीक प्रयोगशाला-माप (यंग और साथी 2016) दिखाते हैं कि चंद्रमा और पृथ्वी के बीच ऑक्सीजन-समस्थानिक अंतर <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></strong> है — माप-विभेदन के भीतर सांख्यिकीय शून्य, जैसा पूरी तरह पृथ्वी के भंडारों (गहरा मैंटल और सियाल परत) से बने पिंड से अपेक्षित है। संयुक्त बहु-प्रणाली संतुलन (O, Ti, Cr, W) एक खुले कार्य के रूप में परिभाषित है।</li>
+<li><strong>R2 — परिवहन-लक्ष्य के रूप में नन्हा धात्विक कोर:</strong> अपोलो भूकंपमापी नेटवर्क (वेबर और साथी 2011) ने 240 km त्रिज्या का ठोस भीतरी कोर और 330 km त्रिज्या का तरल बाहरी कोर मापा — लगभग <strong>चंद्रमा के द्रव्यमान का केवल 1.4%</strong>। गहरे-पदार्थ अंश <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">f_{\mathrm{int}} = 0.95</annotation></semantics></math></span></span> के लिए, संतुलन-समीकरण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{\mathrm{core}} = f_{\mathrm{int}} X_{\mathrm{met}} \epsilon_{\mathrm{core}}</annotation></semantics></math></span></span> एक तीखा द्रवगतिक लक्ष्य तय करता है: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}} \epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span></strong>।</li>
+<li><strong>R3 और R7 — पपड़ी की विषमता और द्रव्यमान-केंद्र खिसकाव:</strong> GRAIL गुरुत्व-मानचित्र (ज़ुबर और साथी 2013) पुष्टि करते हैं कि दूर पक्ष पर पपड़ी निकट पक्ष से सार्थक रूप से मोटी है (वैश्विक औसत 34–43 km)। निकट पपड़ी पृथ्वी की सियाल (SiAl) परत है जो संरचना के आधार से उखड़ी (द्रव्यमान 1.4–1.7 × 10²¹ kg)। विषम पपड़ी के आघूर्ण-समाकल की गणना (परिशिष्ट A) <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>300</mn><mtext>–</mtext><mn>750</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 300\text{–}750</annotation></semantics></math></span></span> kg/m³ के घनत्व-विरोधाभासों के लिए निकट पक्ष की ओर <strong>1.24–3.11 km</strong> की सीमा में द्रव्यमान-केंद्र खिसकाव देती है — चंद्रमा पर मापा गया मान (<strong>~ 2 km</strong>, और <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>≃</mo><mn>480</mn></mrow><annotation encoding="application/x-tex">\Delta\rho \simeq 480</annotation></semantics></math></span></span> kg/m³ पर उससे ठीक मेल) समाहित करते हुए।</li>
+<li><strong>R5 — चार भू-कालानुक्रमिक घड़ियों का पृथक्करण:</strong> शोधपत्र देर के बेसाल्ट की आयु (घड़ी 3 — जैसे निकट पक्ष पर 2.0 Ga के चांग'ए-5 नमूने और दूर पक्ष पर 2.8 Ga के चांग'ए-6) की प्राथमिक पपड़ी की क्रिस्टलन-आयु (घड़ी 1) से तुलना वर्जित करता है। स्थिरीकरण का क्रम केवल दोनों पक्षों से उसी आनुवंशिक प्रकार की प्राथमिक पपड़ी इकाइयों की तुलना से मापा जाना चाहिए।</li>
+<li><strong>R8 — तीन संकेंद्रित उजागर-क्षेत्र और परीक्षण T1–T5 चलाना:</strong> निकट पक्ष के केंद्र के चारों ओर (अद्यतन ज्यामिति में 24.1°N, 335.2°E पर संपर्क-केंद्र के चारों ओर — उप-पृथ्वी बिंदु 0°, 0° से <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\gamma = 34.0^\circ</annotation></semantics></math></span></span> का कोणीय विचलन), चंद्रमा की सतह तीन संकेंद्रित पट्टियों में व्यवस्थित है: संपर्क-गुंबद (0°–31°, सबसे पतली पपड़ी और बिना ऋणात्मक वलयों के प्रबल मैस्कॉन), किनारा-पट्टी (31°–70°, ऋणात्मक वलय वाले मैस्कॉन बेसिन, जैसे ओरिएंटाले), और दूर पक्ष (70°–180°, मोटी पपड़ी और बिना मैस्कॉन के बेसिन)।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: गुंबद का द्रव्यमान-संतुलन, हेलमेट-मॉडल और PKT के विरुद्ध उजागर-क्षेत्रों का निर्णय</h2>
+<p>शोधपत्र 13 के भाग B.3, B.7–B.8 और परिशिष्ट A दिखाते हैं कि चंद्रमा की गोलाई की ज्यामिति पपड़ी-मोटाई, द्रव्यमान-केंद्र खिसकाव और बेसिनों की पट्टी को समीकरणों की एक बंद प्रणाली में कैसे जोड़ती है:</p>
+<ol class="steps">
+<li><strong>सिरा-मानों और गोलार्धीय औसतों के बीच क्रांतिक भेद (§B.3):</strong> लंबी-तरंगदैर्ध्य हेलमेट-मॉडल <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></span> में, संपर्क-अक्ष पर 30 km (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 0^\circ</annotation></semantics></math></span></span>) और दूर पक्ष पर 60 km (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 180^\circ</annotation></semantics></math></span></span>) के बिंदु सिरा-मान <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">h_0 = 45</annotation></semantics></math></span></span> km की आधार-रेखा और A = 15 km का आयाम देते हैं। चूँकि गोलार्ध पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\cos\psi</annotation></semantics></math></span></span> का क्षेत्रफल-भारित औसत 0.5 के बराबर है, इस उदाहरण के गोलार्धीय औसत <strong>37.5 km और 52.5 km</strong> हैं (30 और 60 km नहीं!)।</li>
+<li><strong>दूर पक्ष और निकट पक्ष का अलग द्रव्यमान-संतुलन (§B.3):</strong> पृथ्वी का गोलार्धीय गुंबद (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">h_s = 18</annotation></semantics></math></span></span> km, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>s</mi></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\rho_s = 2,800</annotation></semantics></math></span></span> kg/m³, आधार-त्रिज्या <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>h</mi></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">R_h = 3,000</annotation></semantics></math></span></span> km) <strong>2.85 × 10²¹ kg</strong> (चंद्रमा के द्रव्यमान का 3.9%) का द्रव्यमान ढोता है। क्षेत्रफल में तीन गुना छोटे दूर गोलार्ध पर बंद होते हुए, वह लगभग 10% के भीतर 55 km मोटाई पर दूर पपड़ी का द्रव्यमान (<strong>2.6 × 10²¹ kg</strong>, चंद्रमा के द्रव्यमान का 3.5%) देता है; जबकि निकट पपड़ी (30–35 km, द्रव्यमान 1.4–1.7 × 10²¹ kg) पृथ्वी की सियाल परत है जो संरचना के आधार से उखड़ी।</li>
+<li><strong>PKT ऊष्मीय-विसंगति परिकल्पना के विरुद्ध संरचनात्मक निर्णय (§B.8):</strong> वैकल्पिक मॉडल चंद्रमा की द्विपक्षता को एकतरफ़ा ऊष्मीय विसंगति (प्रोसेलारम KREEP भूभाग — गर्म निकट पक्ष और ठंडा दूर पक्ष) से, या प्राचीन "पृथ्वी-प्रकाश" के विकिरण (रॉय और साथी 2014) से समझाते हैं। LEF मॉडल <strong>एक संकेंद्रित त्रि-क्षेत्रीय संरचना</strong> की भविष्यवाणी करता है जिसमें <em>एक मध्यवर्ती किनारा-पट्टी</em> (31°–70°) शामिल है, जिसमें <strong>ऋणात्मक वलय वाले मैस्कॉन बेसिन</strong> चयनात्मक रूप से केंद्रित हैं (जैसे पश्चिमी किनारे पर ओरिएंटाले और पूर्वी पर स्मिथी), क्योंकि आधार-गुंबद के किनारे सभी ओर से धीरे-धीरे मुक्त हुए।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>संकेंद्रित पपड़ी-मोटाई का समीकरण, सीमित मोटाई <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><msub><mi>R</mi><mi>L</mi></msub><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b = R_L - h_0</annotation></semantics></math></span></span> की परत के लिए द्रव्यमान-केंद्र खिसकाव का द्रव्यमान-आघूर्ण समाकल (परिशिष्ट A), और संपर्क-केंद्र के स्थानिक विचलन-कोण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> की गणना इस प्रकार सूत्रबद्ध हैं (§B.3, §B.7, परिशिष्ट A):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>h</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msubsup><mi>R</mi><mi>h</mi><mn>2</mn></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>2.85</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>21</mn></msup><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_{\mathrm{shell}} = \rho_s h_s (2\pi R_h^2) = 2.85 \times 10^{21}\text{ kg}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>x</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msub><mi>M</mi><mi>L</mi></msub></mrow></mfrac></mstyle><mrow><mo fence="true">(</mo><msup><mi>b</mi><mn>3</mn></msup><mi>A</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mi>b</mi><msup><mi>A</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>≃</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><msub><mover accent="true"><mi>ρ</mi><mo stretchy="true">‾</mo></mover><mi>L</mi></msub></mfrac></mstyle><mi>A</mi></mrow><annotation encoding="application/x-tex">\delta x = \dfrac{4\pi\Delta\rho}{3M_L}\left(b^3 A + \dfrac{3}{5}b A^3\right) \simeq \dfrac{\Delta\rho}{\overline{\rho}_L}A</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>γ</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>1</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>8</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\cos\gamma = \cos(24.1^\circ)\cos(24.8^\circ) \implies \gamma = 34.0^\circ</annotation></semantics></math></span></div></div></div>
+<p>आघूर्ण-समाकल <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mi>δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mi>u</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>A</mi><mi>u</mi><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mtext> </mtext><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">M_L \delta x = \frac{\pi\Delta\rho}{2}\int_{-1}^{1} u(b+Au)^4\,du</annotation></semantics></math></span></span> में <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">u = \cos\psi</annotation></semantics></math></span></span> की विषम घात वाले सभी पद लुप्त होते हैं, इसलिए केवल विषम घटक (A) द्रव्यमान-केंद्र को निकट पक्ष की ओर खिसकाने में योगदान देता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 500</annotation></semantics></math></span></span> kg/m³ के लिए +2.072 km), जबकि हर सममित गोलीय परत (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_0</annotation></semantics></math></span></span>, मैंटल और कोर) पूरी तरह कट जाती है।</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Centre-of-mass offset against crustal density contrast" style="direction:ltr"><line x1="70" x2="600" y1="204.6" y2="204.6" stroke="#ece7da"/><text x="62" y="208.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#ece7da"/><text x="62" y="131.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="600" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="62" y="54.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">3</text><text x="118.2" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="214.5" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="310.9" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><text x="407.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">600</text><text x="503.6" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">700</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">800</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="530.0" y="119.7" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >चंद्रमा पर मापा · ⁦~2⁩ km</text><path d="M118.2,185.9 L310.9,122.2 L551.8,42.5" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="118.2" cy="185.9" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="127.2" y="201.9" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.243</text><circle cx="291.6" cy="127.7" r="5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="296.0" y="143.7" text-anchor="end" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.000</text><circle cx="310.9" cy="122.2" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="319.9" y="138.2" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.072</text><circle cx="551.8" cy="42.5" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="560.8" y="58.5" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">3.108</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >घनत्व-विरोधाभास Δρ (kg/m³) · निकट पक्ष की ओर द्रव्यमान-केंद्र खिसकाव (km)</text></svg><figcaption>सीमित-मोटाई समाकलन से द्रव्यमान-केंद्र खिसकाव (परिशिष्ट A): 1.24–3.11 km की सीमा मापा गया मान समाहित करती है, और Δρ ≈ 480 पर उससे मेल खाती है।</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: परीक्षण T1, T2 और T5 चलाने के परिणाम, और द्रव्यमान-केंद्र खिसकाव का अंशांकन</h2>
+<p>GRAIL आँकड़ों और रॉबिन्स क्रेटर-सूची (≥ 20 km) पर स्क्रिप्टें चलाना पहली आठ आवश्यकताओं की अवस्था की पारदर्शी और सटीक तस्वीर देता है (§B.7–B.9):</p>
+<ul>
+<li><strong>अक्ष और क्रेटर-घनत्व परीक्षणों में स्पष्ट सफलता (T5 और T2):</strong> उप-पृथ्वी अक्ष के चारों ओर स्पीयरमैन सहसंबंध <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span> (p = 2 × 10⁻⁴) हर अन्य नियंत्रण-अक्ष से अधिक है (पूर्वी किनारा +0.76, प्रोसेलारम +0.74, दक्षिणी ध्रुव +0.43, उत्तर −0.43), और दूर पक्ष पर बड़े क्रेटरों का घनत्व संपर्क-गुंबद से 2.21 गुना अधिक है (और अद्यतन ज्यामिति में मारिया सहित 8.42 गुना, और उनके बिना 4.15 गुना)।</li>
+<li><strong>T1 दहलीज़ का पारदर्शी अभिलेख और T3–T4 का जारी परीक्षण:</strong> परीक्षण T1 में एकदिष्ट क्रम सभी चार GRAIL मॉडलों में बना रहता है, पर मॉडल 1 में अंतर (9.65 km और 9.9 km) निचली दहलीज़ (10 km) से 0.1–0.35 km नीचे है और इसलिए <em>पास नहीं</em> दर्ज है, जबकि बेसिन-परीक्षण T3 और T4 पुनरुत्पादन-पैकेज में पूर्ण मात्रात्मक चलाने के लिए तय हैं।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: आठ मूलभूत आवश्यकताओं (R1–R8), उजागर-क्षेत्र परीक्षणों (T1–T5) और द्रव्यमान-केंद्र खिसकाव की संवेदनशीलता का सारांश (शोधपत्र 13, भाग A–B और परिशिष्ट A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>आवश्यकता</th><th>विषय और भौतिक आवश्यकता</th><th>आज मापी गई अनुभवजन्य खोज</th><th>स्थिति और खुला कार्य</th></tr>
+<tr class="hl"><td><strong>R1</strong></td><td>पार्थिव स्रोत से निकटता (मैंटल + सियाल का मिश्रण)</td><td>ऑक्सीजन समस्थानिकों में समानता: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></td><td><strong>मेल खाता है</strong> (खुला: बहु-प्रणाली संतुलन O, Ti, Cr, W)</td></tr>
+<tr class="hl"><td><strong>R2</strong></td><td>नन्हा धात्विक कोर (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}}\epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span>)</td><td>330 km त्रिज्या का भूकंपीय कोर (≈ चंद्रमा के द्रव्यमान का 1.4%)</td><td><strong>मेल खाता है</strong> (खुला: लोहे की बूँदों के परिवहन का द्रवगतिक मॉडल)</td></tr>
+<tr class="hl"><td><strong>R3</strong></td><td>पपड़ी-विषमता और गुंबद का द्रव्यमान-संतुलन (18 km)</td><td>मोटी दूर पपड़ी; संतुलन 2.85 बनाम 2.6 × 10²¹ kg (~ 10%)</td><td><strong>मेल खाता है</strong> (खुला: पूर्ण स्थानिक प्रोफ़ाइल और निकट सियाल का स्रोत)</td></tr>
+<tr><td><strong>R4</strong></td><td>सह-घूर्णन रेखा पर अलगाव के क्षण से समकालिक बंधन</td><td>पृथ्वी की ओर निकट पक्ष के साथ 1:1 समकालिक बंधन</td><td><strong>मेल खाता है</strong> (खुला: कक्षा में अभिविन्यास-सदिश की निरंतरता)</td></tr>
+<tr><td><strong>R5</strong></td><td>ऊष्मीय स्थिरीकरण का क्रम (निकट पक्ष से पहले दूर पक्ष)</td><td>अलग देर के बेसाल्ट (2.0 Ga और 2.8 Ga, घड़ी 3)</td><td><strong>मेल खाता है</strong> (खुला: प्राथमिक उच्चभूमि-पपड़ी में घड़ी 1 की तुलना)</td></tr>
+<tr class="hl"><td><strong>R6</strong></td><td>श्यानता और घनत्व घटाने के लिए वाष्पशीलों की उपस्थिति</td><td>ओलिवीन में पिघल-समावेशों में पानी: 615–1,410 ppm</td><td><strong>मेल खाता है</strong> (खुला: प्रवाहों और प्रावस्थाओं का ऊष्मागतिक मॉडल)</td></tr>
+<tr class="hl"><td><strong>R7</strong></td><td>पपड़ी और द्रव्यमान-केंद्र खिसकाव के बीच मात्रात्मक कड़ी</td><td>निकट पक्ष की ओर मापा गया खिसकाव ~ 2 km; मॉडल-सीमा 1.24–3.11 km</td><td><strong>मेल खाता है</strong> (खुला: संयुक्त सदिश व्युत्क्रमण)</td></tr>
+<tr><td><strong>R8</strong></td><td>तीन संकेंद्रित उजागर-क्षेत्र (0°–31°–70°–180°)</td><td><strong>T5 पास</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>), <strong>T2 पास</strong>, <strong>T1 पास नहीं</strong> (9.65–9.9 km)</td><td><strong>पूर्णता के लिए खुला</strong> (बेसिन-परीक्षण T3 और T4 और क्रेटर-आयु की छँटाई)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>घनत्व-विरोधाभास <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\Delta\rho</annotation></semantics></math></span></span> (kg/m³)</th><th>पतला-कवच सन्निकटन में द्रव्यमान-केंद्र खिसकाव (km)</th><th>सीमित-मोटाई समाकलन में द्रव्यमान-केंद्र खिसकाव (km)</th><th>भूमितीय प्रेक्षण (~ 2 km) से मेल</th></tr>
+<tr><td>300</td><td>1.345</td><td>1.243</td><td>संवेदनशीलता-सीमा की निचली सीमा</td></tr>
+<tr class="hl"><td><strong>500 (अंशांकित ~ 480)</strong></td><td><strong>2.242</strong></td><td><strong>2.072 (480 पर 2.000)</strong></td><td><strong>मापे गए परिमाण-क्रम (2 km) से सटीक मेल</strong></td></tr>
+<tr><td>750</td><td>3.362</td><td>3.108</td><td>संवेदनशीलता-सीमा की ऊपरी सीमा</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>इस अध्याय में हमने शोधपत्र 13 के पद्धतिगत ढाँचे और आठ मूलभूत आवश्यकताओं (<strong>R1–R8</strong>) का सर्वेक्षण किया — समस्थानिक समानता (−1 ± 5 ppm) से, नन्हे कोर (1.4%), पपड़ी-संतुलन (2.85 बनाम 2.6 × 10²¹ kg) और द्रव्यमान-केंद्र खिसकाव (2.07 km) से होकर, संकेंद्रित उजागर-क्षेत्रों पर सांख्यिकीय परीक्षण T1, T2 और T5 चलाने तक।</p>
+<p>अगले अध्याय — <strong>अध्याय 26: दस और आवश्यकताएँ (R9–R18), हैफ़नियम–टंगस्टन घड़ी और भविष्य के LEF शोध का मानचित्र</strong> (शोधपत्र 13 से — भाग C–D और परिशिष्ट B) — में हम पूरी प्रणाली पूरी करेंगे: नाशपाती की 7 आवश्यकताएँ (R9–R15: प्रशांत में LLVP निचली विसंगति, KREEP संकुल, विदेशी पदार्थ की अनुपस्थिति और ध्रुवों पर क्रेटरों का कसाव), नाशपाती के बाद की 3 आवश्यकताएँ (R16–R18), 60 करोड़ वर्षीय खिड़की पर रेडियोधर्मी क्षय-घड़ी <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> का बंधन, और शोधकर्ताओं के लिए 7 खुले कार्य जाँचेंगे!</p>
+<a href="story26_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 26</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">दस और आवश्यकताएँ (R9–R18), हैफ़नियम–टंगस्टन घड़ी और भविष्य के LEF शोध का मानचित्र →</p></div></a><p style="margin-top:22px"><a href="story24_hi.html">← अध्याय 24</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

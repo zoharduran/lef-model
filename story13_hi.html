@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 13: चंद्रमा के ध्रुव — ध्रुव क्रेटरों से घने क्यों, छह परिकल्पनाएँ ख़ारिज और त्रि-अक्षीय आकार की पुनर्प्राप्ति — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 13: चंद्रमा के ध्रुव क्रेटरों से घने क्यों हैं — स्वच्छ गणना, छह परिकल्पनाओं का खंडन और त्रि-अक्षीय आकार की पुनर्प्राप्ति।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story13_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story13_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story13_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story13_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story13_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story13_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story13_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story13_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story13_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story13_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story13_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story13_he.html" hreflang="he">עברית</a> · <a href="story13_en.html" hreflang="en">English</a> · <a href="story13_de.html" hreflang="de">Deutsch</a> · <a href="story13_es.html" hreflang="es">Español</a> · <a href="story13_fr.html" hreflang="fr">Français</a> · <a href="story13_ru.html" hreflang="ru">Русский</a> · <a href="story13_zh.html" hreflang="zh">中文</a> · <a href="story13_ja.html" hreflang="ja">日本語</a> · <a href="story13_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 13</p>
+<h1>अध्याय 13: चंद्रमा के ध्रुव — ध्रुव क्रेटरों से घने क्यों, छह परिकल्पनाएँ ख़ारिज और त्रि-अक्षीय आकार की पुनर्प्राप्ति</h1>
+<p>शोधपत्र 07 पर आधारित — ध्रुव: ध्रुव घने क्यों हैं (भाग A–C.2: स्वच्छ गणना, 6 ख़ारिज परिकल्पनाएँ और चपटेपन की ज्यामिति)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: चंद्रमा के दोनों ध्रुव बड़े क्रेटरों से घने क्यों हैं — और विशाल क्रेटरों से और भी अधिक?</h2>
+<p>जब रॉबिन्स (2019) की सटीक वैश्विक सूची में सभी बड़े क्रेटर (20 km और अधिक) गिने जाते हैं, तो एक तीखा द्वि-ध्रुवीय प्रतिरूप दिखता है जिसे पहले किसी ने नहीं समझाया था: <strong>दोनों ध्रुवीय टोपियाँ (उत्तरी और दक्षिणी ध्रुव के चारों ओर 30° त्रिज्या) विषुवतीय पट्टी (15°S–15°N) से कहीं अधिक क्रेटरों से घनी हैं</strong>!</p>
+<ul>
+<li><strong>कच्ची गणना में:</strong> ध्रुवीय टोपियाँ प्रति मिलियन km² <strong>219 क्रेटर</strong> रखती हैं (उत्तर में 227 और दक्षिण में 211), विषुवतीय पट्टी में <strong>166</strong> के मुक़ाबले — <strong>1.32</strong> का अनुपात (और 40 km और अधिक के क्रेटरों के लिए अनुपात उछलकर <strong>1.51</strong> होता है)।</li>
+<li><strong>भूवैज्ञानिक पूर्वाग्रह का संदेह — और "स्वच्छ गणना" में समाधान:</strong> संशयवादी तुरंत तर्क देगा कि विषुवत युवा बेसाल्टी मारिया से समृद्ध है (उसके क्षेत्रफल का 22%, ध्रुवों पर 1% के मुक़ाबले) जिन्होंने पुराने क्रेटर मिटा दिए, जबकि दक्षिणी ध्रुव को दक्षिणी ध्रुव–एटकेन बेसिन काटता है (SPA, जो ध्रुवीय टोपियों का 24% ढकता है)। पर जब मारिया और SPA बेसिन दोनों ओर से हटाए जाते हैं (<strong>स्वच्छ गणना</strong>), ध्रुवीय अधिकता गायब नहीं होती — वह <strong>1.20 ± 0.05</strong> पर टिकती है (75°–90° पट्टी में दक्षिण में 305 और उत्तर में 300), और क्रेटर-व्यास बढ़ने के साथ लगातार चढ़ती है: 20–30 km पर <strong>1.09</strong> से 60–100 km पर <strong>1.53 ± 0.19</strong> और 100–300 km पर <strong>1.84 ± 0.38</strong> तक!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: दो हथेलियों के बीच दबाया और फिर छोड़ा गया गोल गुब्बारा</h2>
+<p>बाहरी अंतरिक्ष से क्षुद्रग्रहों की कोई बारिश (और न ही पृथ्वी से लौटते पदार्थ की समान बारिश) चंद्रमा के घूर्णन-अक्ष के चारों ओर सममित द्वि-ध्रुवीय सांद्रण क्यों नहीं बना सकती? एक चित्र पहेली तुरंत सुलझा देता है:</p>
+<ul>
+<li><strong>दो हथेलियों के बीच दबाया बिंदीदार गुब्बारा (चपटेपन का चरण):</strong> समान घनत्व पर बिंदुओं (क्रेटरों) से ढके एक गोल गुब्बारे की कल्पना कीजिए। अब उसे ऊपर और नीचे से ज़ोर से दबाइए (तेज़ 5.5 घंटे के घूर्णन का अपकेंद्री बल) और बगल में पृथ्वी की ओर खींचिए (रोश के ज्वारीय बल)। गुब्बारा एक चपटा, लंबा पिंड बन जाता है जैसे <strong>"एक रोटी जो अंडा भी है"</strong> (अक्ष-अनुपात a : b : c ≈ 1.8 : 1.4 : 1): उसके ध्रुवीय क्षेत्र चौड़े होकर बगल में बड़ी, सपाट सतहों में फैलते हैं जिन पर क्रेटर समान घनत्व पर गिरते हैं!</li>
+<li><strong>हाथ छोड़ना और भीतर की ओर गोलाई (आयतन-संकुचन का चरण):</strong> जिस क्षण चंद्रमा का द्रव्यमान-केंद्र सह-घूर्णन रेखा (15,818–16,399 km) पार करता है और पृथ्वी से जुड़े रहते ही खिंचाव छूटता है, चंद्रमा का स्व-गुरुत्व उसे वापस गोलाकार आकार में खींचता है जबकि उसका आयतन सिकुड़ता है (1,700 से 2,600 kg/m³ घनत्व तक)। गुब्बारा उछलकर गोला बनता है: <strong>ध्रुवों की चौड़ी, सपाट सतहें दो ध्रुव-केंद्रों की ओर भीतर अभिसरित होती हैं</strong> (सभी देशांतर-रेखाएँ ध्रुवों की ओर पीछे हटती हैं!), और कड़ी पपड़ी पर बैठे क्रेटर अपना मूल आकार खोए बिना कहीं छोटे क्षेत्रफल में सिमट जाते हैं!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: ध्रुवीय प्रतिरूप को देशांतर-प्रतिरूप से अलग करना, और 6 वैकल्पिक परिकल्पनाओं का खंडन</h2>
+<p>शोधपत्र 07 के भाग A और B चंद्रमा के चेहरे को 12 अक्षांश-पट्टियों, 12 देशांतर-खंडों, हर ध्रुव के चारों ओर छह नीड़ित टोपियों (10°–60°), और छह अक्ष-सिरों के चारों ओर छह टोपियों में स्कैन करते हैं, और निर्णय पर पहुँचने से पहले <strong>छह वैकल्पिक परिकल्पनाओं</strong> को व्यवस्थित रूप से परखते हैं:</p>
+<ol class="steps">
+<li><strong>अक्षांश-प्रतिरूप और देशांतर-प्रतिरूप के बीच पूर्ण पृथक्करण (§A.1–A.5):</strong> देशांतर-रेखाओं के साथ पिछली ओर (90°E, सबसे घना: 30° टोपी में 252) और पृथ्वी के नीचे के बिंदु (0°, सबसे विरल: 148) के बीच एक पूरी तरह अलग विषमता है। इसके विपरीत, हर अक्षांश-पट्टी 360° में चंद्रमा को घेरती है और इसलिए सभी देशांतरों का समान औसत लेती है — इसलिए ध्रुवीय अधिकता एक पूरी तरह स्वतंत्र ज्यामितीय परिघटना है!</li>
+<li><strong>SPA बेसिन भीतरी कोर (0°–10°) तक सीमित है (वलय-अध्ययन §A.10):</strong> SPA के केंद्र (53°S, 191°E) के चारों ओर वलयों में घनत्व मापना उजागर करता है कि क्रेटरों की कमी पूरे बेसिन में समान नहीं, बल्कि केवल भीतरी कोर 0°–10° में एक "सीढ़ी" के रूप में केंद्रित है (प्रति मिलियन km² <strong>132 क्रेटर</strong>, किनारे के बाहर 222 के मुक़ाबले 0.59 का अनुपात!), जबकि 10°–39.57° वलयों में घनत्व तुरंत 193–202 पर उछलता है। SPA हटाने से दोनों ध्रुव पूर्ण सांख्यिकीय समानता में आते हैं (75°–90° पट्टी में दक्षिण में 305 बनाम उत्तर में 300; 20° टोपी में 280 बनाम 270)।</li>
+<li><strong>सभी छह वैकल्पिक परिकल्पनाएँ क्यों ख़ारिज हुईं (§B.1–B.6)?</strong>
+<ul>
+<li><strong>(B.1) प्राचीन उच्चभूमियों में संरक्षण:</strong> मास्क-परीक्षण और आकार-परीक्षण में विफल — मारिया और SPA हटाने के बाद भी 1.20 ± 0.05 की अधिकता बचती है, ध्रुव (233–246) प्राचीन दूर-पक्ष मुकुट (221) से घने हैं, और स्वच्छ उत्तरी ध्रुव पर भीतर की ओर अभिसरण है (60° पर 189 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 15° पर 300)।</li>
+<li><strong>(B.2) स्वयं चपटापन (तेज़ घूर्णन):</strong> उल्टा चिह्न! ध्रुवों पर दबाव उनके क्षेत्रफल को बाहर फैलाता है और क्रेटरों को विरल करता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>a</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi></mrow></msub><mo>=</mo><mn>0.59</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{polar}} = (c/a)^2 \rho_{\mathrm{eq}} = 0.59\times</annotation></semantics></math></span></span>)।</li>
+<li><strong>(B.3) रोश ज्वारीय खिंचाव:</strong> उल्टा चिह्न! पृथ्वी की ओर के अक्ष को खींचना ध्रुवीय अक्ष को छोटा करता है पर ध्रुवीय क्षेत्रफल को बाहर फैलाता है (0.83×) और वास्तव में पृथ्वी के नीचे के बिंदु को संपीडित करता है (1.38×)।</li>
+<li><strong>(B.4) ध्रुव पर अधिक शक्तिशाली गुरुत्व:</strong> घूर्णन के दौरान उल्टा चिह्न! 5.77 घंटे में घूमते चपटे पिंड पर ध्रुव विषुवत से <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>g</mi><mo>≈</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">\Delta H = \frac{1}{2}\Omega^2 R^2 / g \approx 120</annotation></semantics></math></span></span> km ऊर्जात्मक रूप से ऊँचा है (एक "पर्वत-शिखर"), इसलिए पदार्थ उससे बाहर विषुवत की ओर फिसलता है — और केवल घूर्णन छूटने के <em>बाद</em> ध्रुव ऊर्जा-घाटी बनता है!</li>
+<li><strong>(B.5) ध्रुव पर निकासी / बिंदु-भँवर:</strong> आकार-परीक्षण में विफल — उत्तर में घनत्व बिना किसी स्थलाकृतिक गड्ढे के एक चौड़े पठार पर समतल होता है (15° पर 300 और 10° पर 298), क्योंकि घूर्णी बल पृथ्वी-रेखा से 90° पर <strong>एक सममित वलय</strong> बनाते हैं, कोई एकल बिंदु नहीं।</li>
+<li><strong>(B.6) आयतन का समान (समदैशिक) परिवर्तन:</strong> समान गोलीय संकुचन सभी दूरियों को एक ही अनुपात में बदलता है और इसलिए ध्रुव/विषुवत अनुपात ठीक 1.00 छोड़ता है।</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Clean crater density at the six axis ends" style="direction:ltr"><rect x="170.0" y="16" width="364.0" height="26" rx="4" fill="#2f7d57"/><text x="542.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦252⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >पिछली ओर · 90°E</text><rect x="170.0" y="56" width="355.3" height="26" rx="4" fill="#2f7d57"/><text x="533.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦246⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >दक्षिणी ध्रुव</text><rect x="170.0" y="96" width="336.6" height="26" rx="4" fill="#2f7d57"/><text x="514.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦233⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >उत्तरी ध्रुव</text><rect x="170.0" y="136" width="319.2" height="26" rx="4" fill="#5f9a6e"/><text x="497.2" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦221⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >पृथ्वी-विपरीत · 180°</text><rect x="170.0" y="176" width="251.3" height="26" rx="4" fill="#c47f2c"/><text x="429.3" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦174⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >अग्रणी ओर · 90°W</text><rect x="170.0" y="216" width="213.8" height="26" rx="4" fill="#b23a2e"/><text x="391.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦148⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >उप-पृथ्वी · 0°</text></svg><figcaption>छह अक्ष-सिरों के चारों ओर 30° टोपियों में 20 km और अधिक चौड़े क्रेटरों का स्वच्छ घनत्व (प्रति मिलियन km²): पृथ्वी के नीचे के न्यूनतम से ध्रुवों और पिछली ओर तक।</figcaption></figure><div class="callout"><span class="tag">दो स्वतंत्र परीक्षणों से चरम चपटेपन पर घनत्व (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³) का प्रमाण (§C.1)</span><p style="margin:0">(1) <strong>मैक्लॉरिन गोलाभ:</strong> 5.5 घंटे की घूर्णन-अवधि के लिए मापा गया विषुवतीय-से-ध्रुवीय अक्ष-अनुपात (b/c ≈ 1.41) ठीक <strong>1,700 kg/m³</strong> घनत्व पर मिलता है (1,070 kg/m³ से नीचे कोई संतुलन नहीं और पिंड टूट जाता है)।<br>
+(2) <strong>क्षेत्रफल-समापन सीमा:</strong> अगर चरम घनत्व <strong>1,800 kg/m³</strong> से अधिक होता, तो गोलाई के दौरान आयतन-संकुचन बहुत छोटा होता, और पृथ्वी-अक्ष के सिरों को बंद होने के बजाय फैलने पर मजबूर होना पड़ता!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: "रोटी जो अंडा भी है" की ज्यामिति और बिना समायोजन-प्राचलों के आकार की पुनर्प्राप्ति</h2>
+<p>शोधपत्र 07 के भाग B.7 और C.1–C.2 दिखाते हैं कि तेज़ घूर्णन और पृथ्वी के ज्वारीय खिंचाव के मेल ने एक सुपरिभाषित त्रि-अक्षीय पिंड (a : b : c ≈ 1.8 : 1.4 : 1) कैसे बनाया, और छह अक्ष-सिरों के चारों ओर क्रेटरों को मापना उसका मूल आकार सटीकता से कैसे पुनः प्राप्त करता है:</p>
+<ol class="steps">
+<li><strong>जुड़े पिंड के तीन अक्ष (§A.9, §C.1–C.2):</strong> जब युवा चंद्रमा नाशपाती के सिरे से जुड़ा था और पृथ्वी के चारों ओर समकालिक 5.5 घंटे के घूर्णन में बंद था, उस पर एक साथ दो विकृतियाँ कार्य करती थीं:
+<ul>
+<li><strong>"रोटी" भाग (b/c ≈ 1.41):</strong> ध्रुवीय अक्ष (c) के चारों ओर तेज़ घूर्णन ने ध्रुवों को चपटा और विषुवत को चौड़ा किया (~ 1,700 kg/m³ घनत्व पर मैक्लॉरिन गोलाभ)।</li>
+<li><strong>"अंडा" भाग (a/c ≈ 1.8):</strong> निकट पक्ष पर पृथ्वी के भीतर की ओर गुरुत्वीय खिंचाव और दूर पक्ष पर बाहर की ओर अपकेंद्री बल ने पिंड को पृथ्वी-अक्ष के साथ खींचा (a, चरम चपटेपन पर 5,585 × 4,628 × 3,191 km से अलगाव पर 3,778 km के गोलीय व्यास तक!)।</li>
+</ul>
+</li>
+<li><strong>छह अक्ष-सिरों में क्रम (छह-अक्ष अध्ययन, §A.9):</strong> छह समान 30° टोपियों में क्रेटर-घनत्व (20+ km) मापना (मारिया और 20 बड़े बेसिन हटाकर) एक स्पष्ट त्रि-अक्षीय क्रम उजागर करता है:
+<ul>
+<li><strong>(1) पृथ्वी के नीचे का बिंदु (0°, 0°):</strong> सबसे विरल — <strong>148</strong> (कच्चा 94), क्योंकि यहाँ नाशपाती का संपर्क-आधार था जिससे दाब और ऊष्मा बहे, जिससे गोलाई के दौरान सबसे छोटा संकुचन हुआ।</li>
+<li><strong>(2) अग्रणी ओर (0°, 90°W):</strong> <strong>174</strong> (कच्चा 129; ओरिएंटाले बेसिन छोड़कर 162)।</li>
+<li><strong>(3) पृथ्वी के विपरीत बिंदु (0°, 180°):</strong> <strong>221</strong> (कच्चा 216) — गुंबद के शीर्ष पर "मुक्त सिर" की तरह काम किया और बाहर से दबाया नहीं गया।</li>
+<li><strong>(4–5) उत्तरी ध्रुव (90°N) और दक्षिणी ध्रुव (90°S):</strong> <strong>233</strong> (कच्चा 227) और <strong>246</strong> (कच्चा 211) — गोलाई के दौरान अधिकतम अभिसरण के केंद्र।</li>
+<li><strong>(6) पिछली ओर (0°, 90°E):</strong> <strong>252</strong> (कच्चा 253) — वलय के अभिसरण को घूर्णन में पीछे छूटे निष्कासन के समेटन से जोड़ता है (अध्याय 11)।</li>
+</ul>
+</li>
+<li><strong>बिना समायोजन-प्राचलों के अंध मिलान (Zero-Parameter Fit, §C.3):</strong> जब पूरी आबादी (20+ km) का औसत त्रि-अक्षीय आकार छह अक्षों के अनुपातों से पुनः प्राप्त किया जाता है (ध्रुव/पार्श्व = 1.12, ध्रुव/पृथ्वी-अक्ष के सिरे = 1.30), तो <strong>1.37 : 1.15 : 1</strong> का अक्ष-अनुपात निकलता है। इस आकार की शुद्ध सैद्धांतिक गोलाई ध्रुवीय टोपियों (30°) और विषुवतीय पट्टी (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi| &lt; 15^\circ</annotation></semantics></math></span></span>) के बीच <strong>1.21</strong> के स्वच्छ घनत्व-अनुपात की भविष्यवाणी करती है — सतह पर प्रत्यक्ष माप (<strong>1.19</strong>, और पूर्ण स्वच्छ गणना में <strong>1.20 ± 0.05</strong>) से लगभग पूर्ण मेल, बिना किसी मुक्त प्राचल के!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>मैक्लॉरिन गोलाभ का द्रवस्थैतिक संतुलन-समीकरण (उत्केंद्रता <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><msup><mi>a</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 - c^2/a^2}</annotation></semantics></math></span></span> और घूर्णन-दर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span> के लिए) और रोश का ज्वारीय स्थिरता-मानदंड (k &lt; 0.09) इस प्रकार व्यक्त हैं (§C.1–C.2):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup></mrow></msqrt></mrow><msup><mi>e</mi><mn>3</mn></msup></mfrac></mstyle><mo stretchy="false">(</mo><mn>3</mn><mo>−</mo><mn>2</mn><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>6</mn><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><msup><mi>e</mi><mn>2</mn></msup></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\Omega^2}{\pi G \rho} = \dfrac{2\sqrt{1-e^2}}{e^3}(3 - 2e^2)\arcsin(e) - \dfrac{6(1-e^2)}{e^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mn>0.4493</mn><mtext> </mtext><mi>π</mi><mi>G</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\rho_{\min} = \dfrac{\Omega^2}{0.4493\,\pi G}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>ρ</mi><mtext> </mtext><msup><mi>r</mi><mn>3</mn></msup></mrow><msub><mi>M</mi><mi>E</mi></msub></mfrac></mstyle><mo>&lt;</mo><mn>0.09</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{\rho\,r^3}{M_E} &lt; 0.09</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{\mathrm{Roche,rigid}} = 1.26\,R_\oplus\left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>5.5 घंटे की अवधि के लिए घनत्व पर निचली स्थिरता-सीमा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>070</mn></mrow><annotation encoding="application/x-tex">\rho_{\min} = 1,070</annotation></semantics></math></span></span> kg/m³ है (1,000 kg/m³ पर कोई संतुलन-हल नहीं और पिंड टूट जाता है), और अलगाव-घनत्व (2,600 kg/m³) पर मुक्त तरल के लिए रोश सीमा 19,971–20,100 km पर है — जो दिखाता है कि पहले की अलगाव-दूरी (16,400–16,610 km) पर चंद्रमा <strong>पहले ही जम चुके एक कठोर बाहरी कवच</strong> के कारण एकजुट रहा!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: गोलाई के चरणों की "कालक्रमिक घड़ी" के रूप में क्रेटर-व्यास</h2>
+<p>चूँकि चंद्रमा के चरम चपटेपन (1.8 : 1.4 : 1) से अलगाव पर कठोर गोले (≤ 1.04) तक गोल होते समय उस पर क्रेटर गिरते रहे, सबसे बड़े क्रेटर (चरम चपटेपन के पास बने) ध्रुवों के पूरे संकुचन से गुज़रे, जबकि छोटे, बाद के क्रेटर केवल गोलाई के अंत से गुज़रे (§A.8.5, §C.3):</p>
+<ul>
+<li><strong>100–300 km के क्रेटर (चरम चपटापन):</strong> मापा गया ध्रुव/विषुवत अनुपात <strong>1.84 ± 0.38</strong> (चरम चपटेपन 1.8:1.4:1 के लिए भविष्यवाणी: <strong>1.49</strong>)।</li>
+<li><strong>60–100 km के क्रेटर (सह-घूर्णन रेखा पार करना):</strong> मापा गया अनुपात <strong>1.53 ± 0.19</strong> (1.40 आकार के लिए भविष्यवाणी: <strong>1.34</strong>)।</li>
+<li><strong>40–60 km के क्रेटर (गोलाई का मध्य):</strong> मापा गया अनुपात <strong>1.26 ± 0.12</strong> (1.30 आकार के लिए भविष्यवाणी: <strong>1.26</strong> — सटीक मेल!)।</li>
+<li><strong>30–40 km के क्रेटर (गोलाई का अंत):</strong> मापा गया अनुपात <strong>1.15 ± 0.11</strong> (1.20 आकार के लिए भविष्यवाणी: <strong>1.17</strong>)।</li>
+<li><strong>20–30 km के क्रेटर (अलगाव के पास और बाद):</strong> मापा गया अनुपात <strong>1.09 ± 0.07</strong> (गोलाकार पिंड 1.0 के लिए भविष्यवाणी: <strong>1.00</strong>)।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: क्रेटर-आकार के अनुसार स्वच्छ गणना, छह अक्ष और मैक्लॉरिन आव्यूह (शोधपत्र 07, भाग A–C.2)</h3>
+<div class="tw"><table class="lab">
+<tr><th>क्रेटर-व्यास समूह / माप</th><th>संबद्ध गतिकीय चरण</th><th>सैद्धांतिक आकार (a:b:c)</th><th>पूर्वानुमानित अनुपात (ध्रुव/विषुवत)</th><th>स्वच्छ गणना में मापा गया अनुपात</th></tr>
+<tr class="hl"><td><strong>पूरी आबादी (≥ 20 km)</strong></td><td>संयुक्त औसत (छह-अक्ष पुनर्प्राप्ति)</td><td>1.37 : 1.15 : 1</td><td><strong>1.21</strong> (कोई समायोजन नहीं!)</td><td><strong>1.20 ± 0.05</strong> (प्रत्यक्ष 1.19)</td></tr>
+<tr><td><strong>100–300 km</strong></td><td>चरम चपटापन (T = 5.5 h)</td><td>1.8 : 1.4 : 1</td><td>1.49</td><td><strong>1.84 ± 0.38</strong></td></tr>
+<tr class="hl"><td><strong>60–100 km</strong></td><td>सह-घूर्णन रेखा पार करना</td><td>1.40</td><td>1.34</td><td><strong>1.53 ± 0.19</strong></td></tr>
+<tr><td><strong>40–60 km</strong></td><td>भीतर की ओर गोलाई का मध्य</td><td>1.30</td><td>1.26</td><td><strong>1.26 ± 0.12</strong></td></tr>
+<tr><td><strong>30–40 km</strong></td><td>गोलाई का अंत (2,600 kg/m³)</td><td>1.20</td><td>1.17</td><td><strong>1.15 ± 0.11</strong></td></tr>
+<tr><td><strong>20–30 km</strong></td><td>अलगाव के पास और बाद (गोलाकार पिंड)</td><td>1.00</td><td>1.00</td><td><strong>1.09 ± 0.07</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>अक्ष-सिरा (30° टोपी)</th><th>निर्देशांक</th><th>कच्चा घनत्व (≥ 20)</th><th>स्वच्छ घनत्व (≥ 20)</th><th>स्वच्छ घनत्व (≥ 40)</th><th>त्रि-अक्षीय संरचना में भूमिका</th></tr>
+<tr class="hl"><td><strong>1. उप-पृथ्वी</strong></td><td>0°, 0°</td><td>94</td><td><strong>148</strong></td><td>48</td><td>वैश्विक न्यूनतम — नाशपाती का संपर्क-आधार</td></tr>
+<tr><td><strong>2. अग्रणी ओर</strong></td><td>0°, 90°W</td><td>129</td><td><strong>174</strong> (ओरिएंटाले के बिना 162)</td><td>61</td><td>एक परिधीय पार्श्व (कठोर आमने-सामने की टक्करें)</td></tr>
+<tr><td><strong>3. पृथ्वी-विपरीत</strong></td><td>0°, 180°</td><td>216</td><td><strong>221</strong></td><td>63</td><td>गुंबद के शीर्ष पर "मुक्त सिर" (कोई विभाजन नहीं)</td></tr>
+<tr class="hl"><td><strong>4. उत्तरी ध्रुव</strong></td><td>90°N</td><td>227</td><td><strong>233</strong> (15° कोर में 300)</td><td>89 (10° पर 108)</td><td>ध्रुवीय अभिसरण का केंद्र (SPA के बिना स्वच्छ पपड़ी)</td></tr>
+<tr class="hl"><td><strong>5. दक्षिणी ध्रुव</strong></td><td>90°S</td><td>211</td><td><strong>246</strong> (15° कोर में 305)</td><td>80 (10° पर 135)</td><td>ध्रुवीय अभिसरण का केंद्र (SPA कोर हटाने के बाद)</td></tr>
+<tr><td><strong>6. पिछली ओर</strong></td><td>0°, 90°E</td><td>253</td><td><strong>252</strong></td><td>92</td><td>वलय-शिखर + पीछे से निष्कासन का समेटन</td></tr>
+</table></div>
+<figure class="fig"><svg viewBox="0 0 640 290" role="img" aria-label="Polar to equatorial ratio by crater size: predicted and measured" style="direction:ltr"><line x1="70" x2="610" y1="193.3" y2="193.3" stroke="#ece7da"/><text x="62" y="197.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><line x1="70" x2="610" y1="126.7" y2="126.7" stroke="#ece7da"/><text x="62" y="130.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.5</text><line x1="70" x2="610" y1="60.0" y2="60.0" stroke="#ece7da"/><text x="62" y="64.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2.0</text><path d="M120.0,193.3 L230.0,170.7 L340.0,158.7 L450.0,148.0 L560.0,128.0" fill="none" stroke="#9aa3af" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="120.0" x2="120.0" y1="190.7" y2="172.0" stroke="#1f3a5f" stroke-width="2"/><circle cx="120.0" cy="193.3" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="120.0" cy="181.3" r="6" fill="#1f3a5f"/><text x="130.0" y="185.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.09</text><text x="120.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦20–30⁩ km</text><line x1="230.0" x2="230.0" y1="188.0" y2="158.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="230.0" cy="170.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="230.0" cy="173.3" r="6" fill="#1f3a5f"/><text x="240.0" y="177.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.15</text><text x="230.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦30–40⁩ km</text><line x1="340.0" x2="340.0" y1="174.7" y2="142.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="340.0" cy="158.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="340.0" cy="158.7" r="6" fill="#1f3a5f"/><text x="350.0" y="162.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.26</text><text x="340.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦40–60⁩ km</text><line x1="450.0" x2="450.0" y1="148.0" y2="97.3" stroke="#1f3a5f" stroke-width="2"/><circle cx="450.0" cy="148.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="450.0" cy="122.7" r="6" fill="#1f3a5f"/><text x="460.0" y="126.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.53</text><text x="450.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦60–100⁩ km</text><line x1="560.0" x2="560.0" y1="132.0" y2="30.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="560.0" cy="128.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="560.0" cy="81.3" r="6" fill="#1f3a5f"/><text x="570.0" y="85.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.84</text><text x="560.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–300⁩ km</text><text x="340.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >नीला वृत्त: स्वच्छ गणना में मापा (त्रुटि सहित) · धूसर वृत्त: आकार की भविष्यवाणी</text></svg><figcaption>क्रेटर-व्यास के अनुसार ध्रुव/विषुवत घनत्व-अनुपात: क्रेटर जितना बड़ा और पुराना, वह गोलाई के उतने अधिक भाग से गुज़रा।</figcaption></figure></section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<a href="story14_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 14</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">बाहरी घूर्णी विभेदन — ध्रुवीय संकुचन, पतली ध्रुवीय पपड़ी और क्रेटर-आकार के परीक्षण →</p></div></a>
+<p style="margin-top:22px"><a href="story12_hi.html">← अध्याय 12</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

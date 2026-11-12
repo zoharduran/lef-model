@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 2: दिन की लंबाई पर संघर्ष और कोणीय संवेग का संतुलन — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 2: धीमा करती नाशपाती और तेज़ करते कोर के बीच संघर्ष, मुक्ति के क्षण 5.77 घंटे का दिन, 1.007 पर पूरा होता कोणीय संवेग का हिसाब, रोश सीमाएँ और ज्वारीय जल-विभाजक।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story02_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:left}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story02_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story02_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story02_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story02_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story02_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story02_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story02_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story02_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story02_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story02_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story02_he.html" hreflang="he">עברית</a> · <a href="story02_en.html" hreflang="en">English</a> · <a href="story02_de.html" hreflang="de">Deutsch</a> · <a href="story02_es.html" hreflang="es">Español</a> · <a href="story02_fr.html" hreflang="fr">Français</a> · <a href="story02_ru.html" hreflang="ru">Русский</a> · <a href="story02_zh.html" hreflang="zh">中文</a> · <a href="story02_ja.html" hreflang="ja">日本語</a> · <a href="story02_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 2</p>
+<h1>अध्याय 2: दिन की लंबाई पर संघर्ष और कोणीय संवेग का संतुलन</h1>
+<p>शोधपत्र 02 पर आधारित — सिद्धांत में LEF तंत्र (खंड A.4–A.8 और भाग B)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: क्या चंद्रमा की ओर दौड़ते हुए ही अंतिम रेखा उससे दूर भागती है?</h2>
+<p class="lead">पिछले अध्याय में हमने वह अंतिम रेखा खोजी जहाँ तक पदार्थ को चंद्रमा बनने के लिए पहुँचना है: <strong>सह-घूर्णन त्रिज्या</strong>, जो शुरुआती बिंदु (5.5 घंटे का दिन) पर पृथ्वी के केंद्र से 15,818 km पर थी। पर जैसे ही प्रक्रिया शुरू होती है और नाशपाती ऊपर की ओर लंबी होती है, एक रोचक भौतिक जाल सामने आता है।</p>
+<p>कोणीय संवेग संरक्षण का नियम कहता है कि किसी पृथक तंत्र का कुल घूर्णन शून्य से पैदा नहीं हो सकता। जब पृथ्वी किसी बड़े द्रव्यमान को अपनी धुरी से दूर उठाती है और उसे उसी दर से अपने साथ घूमते रहने पर मजबूर करती है, तो उठता द्रव्यमान पृथ्वी के घूर्णन से कोणीय संवेग "चुरा" लेता है। परिणामस्वरूप पृथ्वी का घूर्णन धीमा होता है, दिन लंबा होता है — <strong>और सह-घूर्णन रेखा स्वयं पीछे हटकर बाहर खिसक जाती है!</strong></p>
+<p>यहीं तीन निर्णायक प्रश्न जन्म लेते हैं जो पूरे मॉडल का भाग्य तय करते हैं:</p>
+<div class="three">
+<div><b>01</b><p>पहला, <strong>क्या दिन का लंबा होना सह-घूर्णन रेखा को बहुत दूर धकेल देता है</strong>, या उसी समय कोई आंतरिक प्रक्रिया घटित होती है जो घूर्णन को तेज़ करके संतुलन बनाती है?</p></div>
+<div><b>02</b><p>दूसरा, <strong>क्या प्रारंभिक पृथ्वी का कुल कोणीय संवेग का बजट</strong> चंद्रमा को उठाने का "कर" चुकाने के लिए पर्याप्त है, और फिर भी हमारे पास ठीक उतना कोणीय संवेग छोड़ता है जितना आज पृथ्वी–चंद्रमा तंत्र में मापा जाता है?</p></div>
+<div><b>03</b><p>और तीसरा, <strong>अलगाव के क्षण युवा चंद्रमा को</strong> पृथ्वी के विशाल ज्वारीय बलों द्वारा टुकड़े-टुकड़े होने से क्या बचाता है?</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: फ़िगर स्केटर जो एक हाथ फैलाती है — और दूसरा समेटती है</h2>
+<p>हम सब जगह पर घूमती फ़िगर स्केटर का क्लासिक दृश्य जानते हैं: जब वह अपनी बाँहें फैलाती है, उसका घूमना तुरंत धीमा हो जाता है; और जब वह बाँहें शरीर से सटा लेती है, वह चक्कर दिला देने वाली गति से घूमती है। कारण यह है कि घूर्णन-अक्ष से दूर का द्रव्यमान जड़त्व-आघूर्ण बढ़ाता है, और अक्ष के पास का द्रव्यमान उसे घटाता है।</p>
+<p>अब एक विशेष कलाबाज़ी की कल्पना कीजिए जिसमें स्केटर <strong>एक ही समय में दो विपरीत क्रियाएँ</strong> करती है: एक हाथ से वह एक लंबा, भारी डंडा बाहर बढ़ाती है (वह "नाशपाती" जो सह-घूर्णन रेखा की ओर लंबी होती है और उसे धीमा करने की कोशिश करती है), और साथ ही वह अपने शरीर के केंद्र की ओर एक भारी लोहे का वज़न भीतर खींचती है जिसे उसने पहले अक्ष से दूर पकड़ा था (वह "कोर" जो पृथ्वी के केंद्र की ओर डूबता है और उसे तेज़ करता है)।</p>
+<div class="box"><span class="tag">दो विरोधी बल</span><p style="margin:0">क्योंकि ये दो विरोधी बल एक साथ काम करते हैं, स्केटर अपनी घूर्णन-दर का लगभग कुछ भी नहीं खोती! वह केवल थोड़ा धीमी होती है, और ठीक उस दर पर स्थिर रहती है जो कलाबाज़ी पूरी करने के लिए चाहिए।</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: "एकसमान आंतरिक भाग" एक दहलीज़-शर्त क्यों है</h2>
+<p>पृथ्वी के विकास के कई मॉडल मानते हैं कि उसका भारी लोहे का कोर चंद्रमा बनने से पहले ही पूरी गति से बनकर केंद्र में डूब गया। पर शोधपत्र 02 दिखाता है कि ऐसी मान्यता कोणीय संवेग का हिसाब रोक देती है: जब सारा लोहा केंद्र में सिमट जाता है, तो पृथ्वी का जड़त्व-आघूर्ण छोटा होता है (जड़त्व-गुणांक एकसमान गोले के <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> से घटकर आज की विभेदित पृथ्वी के <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span> पर आ जाता है), और उसी 5.5 घंटे के दिन के साथ वह पर्याप्त कोणीय संवेग संचित नहीं कर सकती।</p>
+<p>इसके विपरीत, LEF मॉडल में कोर का संगठन कोई एक बार की घटना नहीं जो पहले ही समाप्त हो गई, बल्कि <strong>एक ही सतत प्रक्रिया</strong> है:</p>
+<ul class="pts">
+<li><strong>द्रव्यमान-स्थानांतरण की शुरुआत में:</strong> युवा पृथ्वी गर्म थी, फूली हुई (120 km का ऊष्मीय प्रसार, 98–520 km की अनुमत सीमा के भीतर) और अपने द्रव्यमान-वितरण में अभी लगभग एकसमान (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)। इस अवस्था में उसने <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> का प्रारंभिक कोणीय संवेग बजट संचित किया।</li>
+<li class="c"><strong>नाशपाती के उठने के दौरान:</strong> भारी लोहा धीरे-धीरे भीतर केंद्र की ओर डूबा (दो-परत मॉडल में: त्रिज्या-अनुपात <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span> और घनत्व-अनुपात <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>), और ठीक उतना घूर्णन-त्वरण पैदा किया जितना नाशपाती के लंबे होने को संतुलित करने के लिए चाहिए था!</li>
+</ul>
+<div class="callout"><span class="tag">कोणीय संवेग में मूल्य की चाबी</span>
+<p style="margin:0">जैकोबी के शास्त्रीय विखंडन मार्ग में (जिसमें पृथ्वी अपनी ही सतह को टूटने के बिंदु तक घुमाने की कोशिश करती है, 2.73 घंटे का दिन), तंत्र को <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> चाहिए — यानी आज के पृथ्वी–चंद्रमा तंत्र के कोणीय संवेग का <strong>2.74 गुना</strong> (और मूल संदर्भ-बिंदु पर 4.08 गुना)। LEF मॉडल में, जहाँ पदार्थ सह-घूर्णन रेखा तक ले जाया जाता है, जनक पिंड का प्रारंभिक बजट आज के कोणीय संवेग का <strong>1.007 गुना</strong> है — केवल 0.7% का नन्हा अधिशेष (और परखे गए कोणों पर सदिश योग के साथ: 1.5%–2.5%), जो बाद में सौर ज्वार से हुई हानि से ठीक मेल खाता है!</p></div>
+<div class="vs"><div><b>4.08</b><span>शास्त्रीय विखंडन · मूल संदर्भ-बिंदु</span></div><div><b>2.74</b><span>शास्त्रीय विखंडन · जैकोबी द्विभाजन-बिंदु</span></div><div class="hit"><b>1.007</b><span>LEF मॉडल · सह-घूर्णन रेखा पर मुक्ति</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: दिन पर संघर्ष, रोश सीमा और जल-विभाजक</h2>
+<p>आइए कदम-दर-कदम उस रोमांचक संघर्ष का परिणाम देखें जो नाशपाती के उठते समय पृथ्वी के भीतर होता है:</p>
+<ol class="steps">
+<li><strong>नाशपाती पृथ्वी को धीमा करने की कोशिश करती है (+0.94 घंटे):</strong> सह-घूर्णन में द्रव्यमान बाहर ले जाना उठते पदार्थ को मूल गणना में कोणीय संवेग बजट का लगभग 15.6% देता है (और युग्मित हल में लगभग 16.5%)। यह कोणीय संवेग पृथ्वी के घूर्णन से लिया जाता है। अगर नाशपाती कोर के संगठन के बिना अकेले काम करती (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>), तो दिन 5.50 से बढ़कर <strong>6.44 घंटे</strong> हो जाता और सह-घूर्णन रेखा भागकर <strong>17,569 km</strong> तक चली जाती।</li>
+<li><strong>डूबता कोर पृथ्वी को तेज़ करता है (−0.67 घंटे):</strong> उसी समय भारी लोहा पृथ्वी के केंद्र में डूबता है (दो-परत परिदृश्य में <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) और दिन को <strong>0.67 घंटे</strong> छोटा करता है।</li>
+<li><strong>मुक्ति के क्षण संतुलन-बिंदु (5.77 घंटे और 16,399 km):</strong> जब दोनों प्रक्रियाएँ साथ चलती हैं, कोर से मिला त्वरण नाशपाती द्वारा हुए अधिकांश धीमेपन की भरपाई कर देता है। अलगाव के क्षण दिन केवल <strong>5.77 घंटे</strong> का होता है, और सह-घूर्णन रेखा <strong>16,331 km</strong> (परीक्षण-कण सन्निकटन में) या, दो-पिंड समस्या में चंद्रमा का अपना द्रव्यमान शामिल करने पर, <strong>16,399 km</strong> (≃ 16,400 km) की दूरी पर टिकती है।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">शुरुआती बिंदु · ⁦5.50 h⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">नाशपाती धीमा करती है · ⁦+0.94 h⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">कोर तेज़ करता है · ⁦−0.67 h⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed">मुक्ति का क्षण · ⁦5.77 h⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">दिन की लंबाई (घंटे)</text></svg><figcaption>दिन की लंबाई पर संघर्ष: अकेली नाशपाती उसे 6.44 घंटे तक बढ़ा देती; डूबता कोर 0.67 घंटे लौटाता है, और मुक्ति के क्षण दिन 5.77 घंटे का है।</figcaption></figure>
+<div class="q">चंद्रमा रोश सीमा से कैसे बचता है और तुरंत दूर जाना कैसे शुरू करता है?</div>
+<p>मुक्ति के क्षण चंद्रमा एक गोल, कठोर पिंड है (2,600 kg/m³ घनत्व पर त्रिज्या <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> km): उसका निकट पक्ष पृथ्वी के केंद्र से 14,509 km पर है (चपटी पृथ्वी की सतह से लगभग 7,800 km ऊपर, जिसकी विषुवतीय त्रिज्या 6,701 km है), और उसका दूर पक्ष 18,289 km पर। यह स्थिति <strong>तरल रोश सीमा</strong> (19,971 km) के भीतर है — वह दूरी जिसके भीतर पृथ्वी के ज्वारीय बल किसी नरम तरल गोले को टुकड़े-टुकड़े कर देते — पर <strong>कठोर रोश सीमा</strong> (10,314 km) से बहुत बाहर। क्योंकि चंद्रमा नाशपाती से जुड़े रहते हुए ही अपना गोल होना पूरा कर चुका था और एक कठोर बाहरी कवच (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>) विकसित कर चुका था, उसका अक्ष-अनुपात अधिकतम 1.04 रहता है (लगभग पूर्ण गोला) और वह सुरक्षित बच जाता है!</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9,000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12,000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15,000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18,000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21,000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">चंद्रमा</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:ltr;unicode-bidi:embed">पृथ्वी · 6,701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">कठोर रोश सीमा · 10,314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">सह-घूर्णन रेखा · 16,399</text><text x="636.0" y="58.0" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:ltr;unicode-bidi:embed">तरल रोश सीमा · 19,971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">निकट पक्ष · 14,509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">दूर पक्ष · 18,289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">पृथ्वी के केंद्र से दूरी (km) · मुक्ति के क्षण चंद्रमा, त्रिज्या 1,890 km</text></svg><figcaption>दूरी-अक्ष पर मुक्ति के क्षण चंद्रमा: कठोर रोश सीमा के बाहर और तरल रोश सीमा के भीतर, और सह-घूर्णन रेखा उसके बीच से गुज़रती है।</figcaption></figure>
+<p>और अंत में, वह वापस गिरने के बजाय तुरंत दूर क्यों जाता है? क्योंकि सह-घूर्णन रेखा एक <strong>ज्वारीय जल-विभाजक</strong> है: ठीक रेखा पर बैठा पिंड उदासीन संतुलन में होता है; रेखा के भीतर का पिंड ज्वार द्वारा भीतर खींचा जाता है; जबकि <strong>रेखा से थोड़ा आगे</strong> मुक्त हुआ पिंड — सह-घूर्णन रेखा से <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km आगे के अंतर के साथ, जब चंद्रमा के आयतन का लगभग 58% पहले ही उसे पार कर चुका हो — पृथ्वी के ज्वारीय उभार द्वारा, जो चंद्रमा से तेज़ घूमती है, आगे और बाहर धकेला जाता है, और पहली ही कक्षा से दूर जाना शुरू कर देता है!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>तंत्र का कोणीय संवेग बजट (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>) प्रारंभिक अवस्था और मुक्ति के क्षण के बीच संरक्षित रहता है, और पृथ्वी के घूर्णन और चंद्रमा की कक्षा में बँटता है:</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>कोणीय संवेग का संरक्षण</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">मुक्ति के क्षण सह-घूर्णन रेखा (<span class="ltr">5.77 h</span>)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>अलगाव के क्षण चंद्रमा की कक्षा <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> रखती है (बजट का 17%, समानीत द्रव्यमान <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span> के साथ; या पृथ्वी के केंद्र के चारों ओर पूरे द्रव्यमान से गणना करने पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span>), और पृथ्वी का घूर्णन <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> रखता है। इस क्षण पृथ्वी के लिए निकाला गया जड़त्व-आघूर्ण गुणांक <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span> है — दो-परत संरचना (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) के मान <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> से उल्लेखनीय मेल:</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">पृथ्वी का घूर्णन · ⁦2.88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">चंद्रमा की कक्षा · 17%</text></svg><figcaption>मुक्ति के क्षण कोणीय संवेग बजट का विभाजन।</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">दो-परत जड़त्व-गुणांक</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">कठोर रोश सीमा</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: मंगल के चारों ओर फ़ोबोस और डीमोस</h2>
+<p>यह विचार कि सह-घूर्णन रेखा ज्वारीय "जल-विभाजक" का काम करती है कोई सैद्धांतिक परिकल्पना नहीं — यह हमारे सौरमंडल में, <strong>मंगल</strong> ग्रह के चारों ओर, जीवंत रूप में दिखता है। मंगल के दो छोटे चंद्रमा मंगल की सह-घूर्णन त्रिज्या (20,428 km) के दोनों ओर उसकी परिक्रमा करते हैं:</p>
+<ul class="pts">
+<li class="c"><strong>डीमोस (बाहरी चंद्रमा, 23,463 km):</strong> मंगल की सह-घूर्णन रेखा के <em>बाहर</em> है (वह मंगल के घूर्णन से धीमी परिक्रमा करता है)। इसलिए मंगल का ज्वार उसे बाहर धकेलता है, और वह धीरे-धीरे मंगल से दूर जाता है — ठीक हमारे चंद्रमा की तरह, जो सह-घूर्णन रेखा से लगभग 210 km आगे मुक्त हुआ था।</li>
+<li class="a"><strong>फ़ोबोस (भीतरी चंद्रमा, लगभग 9,376 km):</strong> सह-घूर्णन रेखा के <em>भीतर</em> है (वह मंगल के घूर्णन से आगे दौड़ता है)। इसलिए मंगल का ज्वार उसे धीमा करके भीतर खींचता है, और वह धीरे-धीरे करोड़ों वर्षों में मंगल की सतह से टकराने की ओर गिर रहा है।</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">फ़ोबोस · 9,376 km · भीतर खिंचता</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">मंगल की सह-घूर्णन रेखा · 20,428 km</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">डीमोस · 23,463 km · दूर जाता</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:ltr;unicode-bidi:embed">मंगल</text></svg><figcaption>मंगल के चारों ओर ज्वारीय जल-विभाजक: फ़ोबोस रेखा के भीतर और भीतर खिंचता हुआ, डीमोस उसके बाहर और दूर जाता हुआ।</figcaption></figure>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: दिन का संतुलन, कोणीय संवेग और रोश सीमाएँ (शोधपत्र 02, भाग B)</h3>
+<div class="tw"><table class="lt2"><tr><th>चरण / प्राचल</th><th>पृथ्वी के दिन की लंबाई</th><th>सह-घूर्णन रेखा की त्रिज्या</th><th>अर्थ और बजट का विभाजन</th></tr>
+<tr><td><strong>1. शुरुआती बिंदु</strong></td><td>5.50 घंटे</td><td>15,818 km</td><td>प्रारंभिक बजट <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)</td></tr>
+<tr class="r1"><td><strong>2. नाशपाती अकेले लंबी होती है</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>)</td><td>6.44 घंटे (<span class="ltr">+0.94 h</span>)</td><td>17,569 km</td><td>उठते पदार्थ को 15.6%–16.5% कोणीय संवेग जाने से धीमापन</td></tr>
+<tr class="r2"><td><strong>3. कोर डूबता है</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>)</td><td><span class="ltr">−0.67</span> घंटे</td><td>भीतर खिंचती है</td><td>एक त्वरण ("बाँहें समेटती स्केटर") जो अधिकांश धीमेपन की भरपाई करता है</td></tr>
+<tr class="hl"><td><strong>4. संयुक्त मुक्ति-अवस्था</strong></td><td>5.77 घंटे</td><td>16,399 km (16,331 परीक्षण-कण)</td><td>बजट आज के 1.007 × पर पूरा होता है (17% कक्षा में, 83% पृथ्वी के घूर्णन में)</td></tr>
+<tr><td><strong>5. मुक्ति का अंतर और रोश</strong></td><td>5.77 घंटे</td><td>रेखा से +210 km आगे मुक्ति</td><td>कठोर चंद्रमा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>, अक्ष-अनुपात ≤ 1.04) कठोर रोश सीमा (10,314 km) के बाहर</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>हमने दिखाया कि प्रकृति की यांत्रिकी इसकी अनुमति देती है: कोणीय संवेग का बजट 1.007 के भीतर पूरा होता है, नाशपाती और डूबते कोर के बीच संघर्ष दिन को 5.77 घंटे पर स्थिर करता है, और चंद्रमा कठोर और गोल होकर सह-घूर्णन रेखा के पार मुक्त होता है और तुरंत दूर जाना शुरू करता है।</p>
+<p>पर शोधपत्र 02 ने केवल यह सिद्ध किया कि मार्ग <em>सिद्धांत में</em> संभव है। अब क्रियान्वयन का प्रश्न उठता है: <strong>किस विशाल इंजन ने अरबों टन चट्टान को गुरुत्व के विरुद्ध हज़ारों किलोमीटर की ऊँचाई तक धकेला?</strong> अगले अध्याय — <strong>अध्याय 3: भीतर का इंजन — <span class="ltr">150 GPa</span> का स्रोत-दाब और झागदार मैग्मा</strong> (शोधपत्र 03 से — <em>व्यवहार में LEF तंत्र</em>) — में हम प्रारंभिक पृथ्वी की गहराइयों में उतरेंगे और उस दाब से मिलेंगे जिसने चंद्रमा को उठाया।</p>
+<a href="story03_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 3</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">भीतर का इंजन — <span class="ltr">150 GPa</span> का स्रोत-दाब और झागदार मैग्मा →</p></div></a>
+<p style="margin-top:22px"><a href="story01_hi.html">← अध्याय 1</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

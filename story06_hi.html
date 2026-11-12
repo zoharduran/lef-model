@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 6: नाशपाती का भाग्य और वास्तविकता के निशान — प्रशांत बेसिन से पृथ्वी के कोर तक — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 6: नाशपाती के 9–12 चंद्र-द्रव्यमान कहाँ गए, पृथ्वी के चारों ओर वलय क्यों नहीं बना, और मैंटल के तल पर प्रशांत LLVP में नाशपाती के आधार की छाप।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story06_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story06_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story06_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story06_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story06_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story06_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story06_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story06_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story06_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story06_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story06_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story06_he.html" hreflang="he">עברית</a> · <a href="story06_en.html" hreflang="en">English</a> · <a href="story06_de.html" hreflang="de">Deutsch</a> · <a href="story06_es.html" hreflang="es">Español</a> · <a href="story06_fr.html" hreflang="fr">Français</a> · <a href="story06_ru.html" hreflang="ru">Русский</a> · <a href="story06_zh.html" hreflang="zh">中文</a> · <a href="story06_ja.html" hreflang="ja">日本語</a> · <a href="story06_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 6</p>
+<h1>अध्याय 6: नाशपाती का भाग्य और वास्तविकता के निशान — प्रशांत बेसिन से पृथ्वी के कोर तक</h1>
+<p>शोधपत्र 03 पर आधारित — व्यवहार में LEF तंत्र (भाग C.7–C.11, D और E)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: 10 चंद्र-द्रव्यमान कहाँ गायब हो गए — और पृथ्वी के चेहरे पर निशान कहाँ है?</h2>
+<p>पिछले अध्याय में हमने देखा कि चंद्रमा नाशपाती के सिरे पर, सह-घूर्णन रेखा से 210 km आगे, कैसे मुक्त हुआ और स्वतंत्र कक्षा में उड़ चला। पर जिस क्षण चंद्रमा टूटकर चल पड़ा, उसके पीछे ग्रहीय पैमाने का एक विशाल प्रश्न रह गया: <strong>उस विशाल पुल का क्या हुआ जिसने उसे ढोया था?</strong></p>
+<p>याद करें कि हम किसकी बात कर रहे हैं। प्रारंभिक पृथ्वी की सतह के ऊपर उठी नाशपाती कोई छोटी पहाड़ी नहीं थी: उसका आधार <strong>9,000 से 11,000 km</strong> की चौड़ाई में फैला था, सतह से संपर्क-डिस्क तक उसकी लंबाई लगभग <strong>8,700 km</strong> थी, और उसमें समाया द्रव्यमान <strong>8.8 से 12.1 चंद्र-द्रव्यमान</strong> था (पूरी पृथ्वी के द्रव्यमान का लगभग 11%!)।</p>
+<p>आज पृथ्वी पूरी तरह गोल है और उससे अंतरिक्ष में कोई विशाल नाशपाती नहीं उठती। यह विशाल द्रव्यमान कहाँ गायब हुआ? वह अंतरिक्ष में टूटकर पृथ्वी के चारों ओर वलय या अतिरिक्त चंद्रमा क्यों नहीं बना? और सबसे महत्वपूर्ण — <strong>क्या ऐसे विशाल पिंड ने, जो करोड़ों वर्षों तक पृथ्वी के एक ओर खड़ा रहा और फिर वापस भीतर डूब गया, महासागरों के तल पर, गहरे मैंटल में और पृथ्वी के कोर में भी मापने योग्य उँगलियों के निशान छोड़े?</strong></p>
+<figure class="fig"><svg viewBox="0 0 640 150" role="img" aria-label="Mass of the pear against the mass of the Moon" style="direction:ltr"><rect x="40" y="20" width="407.3" height="34" rx="4" fill="#c4623a"/><rect x="447.3" y="20" width="152.7" height="34" rx="4" fill="#c4623a" opacity=".45"/><text x="437.3" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">नाशपाती · ⁦8.8–12.1⁩ चंद्र-द्रव्यमान · पृथ्वी के द्रव्यमान का ~11%</text><rect x="40" y="76" width="46.3" height="34" rx="4" fill="#a49d86"/><text x="96.3" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5b5640" style="direction:ltr;unicode-bidi:embed">चंद्रमा · एक चंद्र-द्रव्यमान</text><text x="40.0" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="132.6" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="225.1" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="317.7" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="410.2" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><text x="502.8" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="595.4" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12</text></svg><figcaption>जो पीछे छूटा: चंद्रमा के द्रव्यमान की तुलना में नाशपाती का द्रव्यमान। यह सारा द्रव्यमान सह-घूर्णन रेखा के भीतर है और पृथ्वी में वापस खिंच गया।</figcaption></figure></section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: हिलाया गया रेत का मर्तबान — और वापस सोख ली गई आटे की पहाड़ी</h2>
+<p>यह समझने के लिए कि नाशपाती ने चंद्रमा बनाने वाले पदार्थ को कैसे छाँटा और फिर कैसे पृथ्वी में वापस निगल ली गई, दो सरल प्रयोगों की कल्पना कीजिए:</p>
+<ul>
+<li><strong>पानी और रेत का मर्तबान जिसे हिलाकर बैठने दिया जाए (निक्षेपण-स्तंभ):</strong> पानी, रेत के भारी कणों और लकड़ी के हल्के टुकड़ों से भरा एक लंबा काँच का मर्तबान लीजिए, और उसे अच्छी तरह हिलाइए। अब उसे मेज़ पर रखिए: <strong>गुरुत्वीय छँटाई</strong> तुरंत शुरू होती है — रेत के भारी कण मर्तबान के तल पर गिरते हैं, जबकि लकड़ी के हल्के टुकड़े ऊपर तैरते हैं। पूरी नाशपाती सह-घूर्णन रेखा के भीतर है, इसलिए उसके साथ गुरुत्व सदा नीचे, पृथ्वी के केंद्र की ओर खींचता है: भारी लोहा वापस पृथ्वी में डूब गया, और उसका केवल थोड़ा भाग शीर्ष तक पहुँचकर चंद्रमा का नन्हा कोर बना!</li>
+<li><strong>अंतरिक्ष बुहारता चौड़ा वाइपर (वलय क्यों नहीं बना):</strong> घड़ी की एक विशाल सुई की कल्पना कीजिए जो हर 5.5–5.77 घंटे में पृथ्वी के साथ घूमती है और सह-घूर्णन रेखा तक पहुँचती है। निचली कक्षा पर पृथ्वी की परिक्रमा करने की कोशिश करता धूल का हर कण या वाष्प की हर बूँद नाशपाती की घूर्णन-दर से तेज़ चलती — और तुरंत उससे टकरा जाती! नाशपाती ने एक ब्रह्मांडीय वाइपर का काम किया जिसने निकट अंतरिक्ष के हर कण को समेटा और पृथ्वी के चारों ओर वलय बनने से रोका।</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: चंद्रमा गोल और सघन क्यों है — और उसे बनाने वाले पदार्थों का क्या हुआ</h2>
+<p>शोधपत्र 03 निर्माण के सभी घटकों को एक साथ लाता है और दिखाता है कि एक सतत प्रक्रिया चंद्रमा की आंतरिक संरचना, अलगाव के बाद की छोटी बमबारी, और वलयों की अनुपस्थिति को कैसे समझाती है:</p>
+<ol class="steps">
+<li><strong>एक स्रोत से तीन परतें (§C.10):</strong>
+<br>• <strong>पपड़ी:</strong> हल्की, एल्युमिनियम-समृद्ध सियाल परत सीमा के ऊपर की "चिकनी" परत पर नाशपाती के किनारों के साथ फिसली और गुंबद के शीर्ष पर जमा हुई — इस प्रकार एल्युमिनियम से समृद्ध और दूर पक्ष पर मोटी ऐनॉर्थोसाइटी पपड़ी बनी।
+<br>• <strong>मैंटल:</strong> नाशपाती के साथ दाब में धकेला गया पृथ्वी का मैंटल-पदार्थ — इसीलिए वह समस्थानिक रूप से पृथ्वी से अभिन्न है।
+<br>• <strong>नन्हा कोर:</strong> नाशपाती ने <strong>निक्षेपण-स्तंभ</strong> का काम किया। नाशपाती में प्रवेश करने वाला अधिकांश भारी लोहा वापस पृथ्वी की ओर डूब गया, और केवल वह थोड़ा लोहा जो शीर्ष तक पहुँच पाया, चंद्रमा में रहा और लगभग 330 km त्रिज्या का छोटा कोर बना (चंद्रमा के द्रव्यमान का 1%–2%, जबकि पृथ्वी के द्रव्यमान का लगभग एक-तिहाई)।</li>
+<li><strong>प्रारंभिक पृथ्वी का कोई वलय क्यों नहीं था (§C.9a):</strong> चार कारणों ने पृथ्वी के चारों ओर वलय बनने से रोका: पहला, नाशपाती ने स्वयं भीतरी कक्षा पर चलते हर कण को "बुहारकर" समेट लिया; दूसरा, वाष्पशील वलय में निष्कासित होने के बजाय नाशपाती से होकर चंद्रमा में बहे; तीसरा, परिवेश बर्फ़ के संघनन के लिए बहुत गर्म था; और चौथा, मुक्ति के ठीक बाद भारी चंद्रमा ने अपने ज्वारीय बलों और अनुनादों से हर कक्षीय अवशेष साफ़ कर दिया। यह तथ्य कि चंद्र उच्चभूमियों ने यांत्रिक घर्षण के बिना संतृप्त क्रेटर-आबादी सुरक्षित रखी, दिखाता है कि चंद्रमा कभी किसी वलय से नहीं गुज़रा!</li>
+<li><strong>मुक्ति के बाद भी पृथ्वी दागती रहती है (§C.11):</strong> अलगाव ने चंद्रमा के भीतर आंतरिक दाब रोक दिया, पर पृथ्वी की सतह के छिद्र मैग्मा-तूफ़ान शांत होने के साथ लगातार घटते आकार की दहकती बूँदें और ढेले निष्कासित करते रहे। चंद्रमा की सतह पर माप इसकी तीन तरह से पुष्टि करते हैं: चंद्र उच्चभूमियों पर (निष्पक्ष तुलना के लिए सभी मारिया को छोड़कर), पृथ्वी की ओर मुख वाला निकट पक्ष दूर पक्ष की तुलना में 1–2 km चौड़े युवा क्रेटर <strong>1.19 गुना</strong> (सीमा 1.12–1.27) अधिक रखता है; मारिया के तल अपने उजागर होने के क्रम में जमे (संपर्क के भीतर के मारिया अंत में जमे और इसलिए सबसे साफ़ हैं); और मारिया पर क्रेटर दहकते पिंडों का एक अनुक्रम दिखाते हैं — पहले बड़े और पिघले, बाद में मध्यम और फैले, और अंत में छोटे और तीखे।</li>
+</ol>
+<div class="callout"><span class="tag">पॉइनकेयर का विरोधाभास सुलझा</span><p style="margin:0">पॉइनकेयर और डार्विन (1885) के शास्त्रीय सिद्धांत में, नाशपाती-आकार में खिंचने के लिए पूरी पृथ्वी को टूटने की कगार तक घूमना पड़ता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>π</mi><mi>G</mi><mi>ρ</mi><mo>≃</mo><mn>0.374</mn></mrow><annotation encoding="application/x-tex">\Omega^2/\pi G\rho \simeq 0.374</annotation></semantics></math></span></span>)। LEF मॉडल में पृथ्वी कहीं अधिक मध्यम दर से घूमती है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>π</mi><mi>G</mi><mi>ρ</mi><mo>≃</mo><mn>0.092</mn></mrow><annotation encoding="application/x-tex">\Omega^2/\pi G\rho \simeq 0.092</annotation></semantics></math></span></span>, वैश्विक अस्थिरता की दहलीज़ का केवल लगभग एक-चौथाई!), और नाशपाती घूर्णन, घनत्व-छँटाई और आंतरिक दाब के मेल से <strong>एक स्थानीय क्षेत्र में</strong> बढ़ती है। चूँकि पूरी नाशपाती सह-घूर्णन रेखा के भीतर है, उसका कोई भाग कक्षा में नहीं रहता — और मुक्ति के बाद सारी नाशपाती पृथ्वी में वापस खिंच जाती है!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: नाशपाती का भाग्य — 10 चंद्र-द्रव्यमान पृथ्वी में वापस कैसे खिंचे</h2>
+<p>जिस क्षण चंद्रमा टूटकर अपनी कक्षा में गया, विशाल नाशपाती — पृथ्वी-पदार्थ के लगभग 8.8 से 12.1 चंद्र-द्रव्यमान (पृथ्वी के द्रव्यमान का लगभग 11%) — पूरी तरह सह-घूर्णन रेखा के नीचे लटकी रह गई। चूँकि सह-घूर्णन रेखा के भीतर हर बिंदु पर पृथ्वी का गुरुत्वीय खिंचाव अपकेंद्री धक्के से अधिक शक्तिशाली है, <strong>नाशपाती का कोई भाग अंतरिक्ष में नहीं रह सकता था</strong>।</p>
+<p>मुक्ति के बाद दसियों से सैकड़ों मिलियन वर्षों में, गुरुत्व और आंतरिक छँटाई ने पूरी नाशपाती को वापस पृथ्वी में समेटा और उसे तीन स्पष्ट मार्गों में बाँटा (शोधपत्र 03 का भाग E):</p>
+<ol class="steps">
+<li><strong>भारी भाग नाशपाती के आधार के नीचे गहरे भीतर डूबा:</strong> नाशपाती का सघन भाग — सीमा-पदार्थ, जो निक्षेपण-स्तंभ की छँटाई के बाद उसमें बचा अधिकांश भारी लोहा लिए था — ठीक उस क्षेत्र के नीचे जहाँ उसका आधार खड़ा था, पृथ्वी के निचले मैंटल में ऊर्ध्वाधर रूप से गहरा डूबा।</li>
+<li><strong>अग्र-भाग उत्तरी प्रशांत की धारियों में समेटा गया:</strong> नाशपाती का अगला भाग, जो पश्चिम की ओर झुकते समय तनाव में पूर्व की ओर खिंचा था, वापस सतह पर समेटा गया और उत्तरी प्रशांत की भूवैज्ञानिक धारी-प्रणाली बनाई (जिसकी पड़ताल धारियों वाले अध्यायों में होगी)।</li>
+<li><strong>पिछला भाग पश्चिमी प्रशांत के चापों में समेटा गया:</strong> नाशपाती का पिछला भाग, जो पश्चिम की ओर एशिया और जापान की ओर झुका था, भीतर निगला गया और पश्चिमी प्रशांत के द्वीप-चाप और खाइयाँ बनाईं।</li>
+</ol>
+<p><strong>खड़े रहते समय नाशपाती ने प्रारंभिक पृथ्वी के कोर के साथ क्या किया? (§E.5)</strong><br>
+उन करोड़ों वर्षों में जब नाशपाती पृथ्वी के एक ओर खड़ी रही (3.873 अरब वर्ष पहले के अलगाव तक की 60 करोड़ वर्षीय खिड़की का अधिकांश भाग), उसके विशाल द्रव्यमान ने एक स्थिर, एकतरफ़ा गुरुत्व-क्षेत्र लगाया जो पृथ्वी के केंद्र तक पहुँचता था! उस प्रारंभिक चरण में पृथ्वी का कोर अभी स्पष्ट रूप से अलग नहीं था, बल्कि <strong>एक चौड़ा, अर्ध-सघन "आद्य-कोर"</strong> था। पृथ्वी के केंद्र पर नाशपाती का शुद्ध गुरुत्वीय खिंचाव — <strong>0.378 से <span class="ltr">0.517 m/s²</span></strong> की शक्ति के साथ — सघन आद्य-कोर को नाशपाती की ओर खींचकर फैलाता रहा! केवल नाशपाती के वापस निगले जाने और मैंटल के समस्थितिक संतुलन तक पहुँचने के बाद (जैसे पानी में बैठता बेड़ा) आद्य-कोर ढीला होकर केंद्र में लौटा — पर हो सकता है उसने पृथ्वी के क्रिस्टलित होते भीतरी कोर में पूर्व–पश्चिम हस्ताक्षर छोड़ा हो।</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>नाशपाती के खड़े रहते पृथ्वी के केंद्र पर कार्य करने वाला शुद्ध गुरुत्व-क्षेत्र (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}}</annotation></semantics></math></span></span>) नाशपाती के खिंचाव (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{pear}}</annotation></semantics></math></span></span>) और चंद्रमा के खिंचाव (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{Moon}}</annotation></semantics></math></span></span>) के योग से, उस अपकेंद्री त्वरण को घटाकर गिना जाता है जो इसलिए पैदा होता है कि तंत्र का साझा द्रव्यमान-केंद्र पृथ्वी के केंद्र से नाशपाती की ओर खिसका है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{\mathrm{cent}}</annotation></semantics></math></span></span>):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><msub><mi>g</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>+</mo><msub><mi>g</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>a</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.378</mn><mtext> to </mtext><mn>0.517</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}} = g_{\mathrm{pear}} + g_{\mathrm{Moon}} - a_{\mathrm{cent}} = 0.378 \text{ to } 0.517\text{ m/s}^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≃</mo><mn>8.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> to </mtext><mn>1.05</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup><mtext> J</mtext><mo>∼</mo><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext>-</mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">W_{\mathrm{pear}} \simeq 8.1 \times 10^{30} \text{ to } 1.05 \times 10^{31}\text{ J} \sim E_{\mathrm{core\text{-}formation}}</annotation></semantics></math></span></div></div></div>
+<p>पूरी नाशपाती उठाने का कार्य (8.1 × 10³⁰ से 1.05 × 10³¹ जूल, अकेले चंद्रमा उठाने के कार्य का 5.4 गुना) परिमाण-क्रम में उस गुरुत्वीय ऊर्जा से मेल खाता है जो लोहे के डूबकर पृथ्वी का कोर बनाने पर मुक्त होती है (~ 10³¹ जूल)। जब नाशपाती वापस भीतर डूबती है, यह स्थितिज ऊर्जा पृथ्वी के ऊष्मीय इतिहास में ऊष्मा के रूप में वापस मुक्त होती है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: प्रशांत महासागर के नीचे की छाप (LLVP प्रांत)</h2>
+<p>आधुनिक भूकंपीय टोमोग्राफ़ी — जो भूकंप-तरंगों से पृथ्वी के भीतरी भाग का मानचित्र बनाती है, बहुत कुछ चिकित्सीय CT स्कैन की तरह — ने पृथ्वी के मैंटल के तल पर, मैंटल और कोर की सीमा के ठीक ऊपर (लगभग 2,800 km की गहराई पर), दो विशाल "महाद्वीप" खोजे हैं: चौड़े क्षेत्र जिनमें भूकंपीय अपरूपण-तरंगें औसत से धीमी चलती हैं, जिन्हें <strong>बड़े निम्न-वेग प्रांत (LLVPs)</strong> कहते हैं — एक अफ़्रीका के नीचे, और एक प्रशांत महासागर के नीचे।</p>
+<p>जब हम जाँचते हैं कि नाशपाती का पुनर्निर्मित आधार-बिंदु — किरिबाती के <strong>किरिटीमाटी</strong> द्वीप के पास (1.9°N, 157.5°W या 202.5°E) — निचले मैंटल के वैश्विक टोमोग्राफ़िक मानचित्रों पर कहाँ पड़ता है (§E.4), तो एक स्पष्ट परिणाम निकलता है:</p>
+<ul>
+<li><strong>5 में से 5 मॉडलों की पूर्ण सहमति:</strong> 2,550–2,850 km की गहराई पर कोट्टार और लेकिच (2016) के क्लस्टर-विश्लेषण में, सभी पाँच भूकंपीय मॉडल एकमत से संकेत देते हैं कि आधार-बिंदु धीमे प्रशांत प्रांत के गहरे भीतर है।</li>
+<li><strong>समोच्च के गहरे भीतर (−1%):</strong> 2,800 km की गहराई पर वैश्विक औसत मॉडलों SMEAN और SMEAN2 में, इस बिंदु पर अपरूपण-तरंगों का धीमापन क्रमशः <strong>−2.25%</strong> और <strong>−2.36%</strong> है — और यह प्रांत के किनारे से 1,229 से 1,584 km से अधिक दूर है (किसी आकस्मिक सीमा से दूर), प्रांत के केंद्र से लगभग 1,500 km उत्तर-उत्तर-पूर्व, और हवाई के नीचे लोहे से समृद्ध अति-निम्न-वेग क्षेत्र (ULVZ) से लगभग 1,120 km (कोर–मैंटल सीमा पर)।</li>
+<li><strong>प्लूम बेसाल्टों के लिए भू-रासायनिक भविष्यवाणी:</strong> जबकि टकराव-सिद्धांत प्रस्तावित करता है कि विदेशी "थिया" के मैंटल-अवशेष पृथ्वी के तल में डूबकर LLVP बने, LEF मॉडल में पूरी नाशपाती <strong>पृथ्वी के अपने पदार्थ</strong> से बनी है — इसलिए प्रशांत महासागर के नीचे मैंटल-प्लूमों से उठता लावा किसी दूसरे ग्रह के विदेशी घटक के बिना शुद्ध पार्थिव समस्थानिक उँगली-छाप लिए होना चाहिए!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: नाशपाती का संतुलन, निक्षेपण-स्तंभ और मैंटल में आधार की स्थिति (शोधपत्र 03, भाग C–E)</h3>
+<figure class="fig"><svg viewBox="0 0 640 360" role="img" aria-label="Equatorial cross-section with the two LLVPs and the base of the pear above the Pacific one" style="direction:ltr"><circle cx="320" cy="175" r="150" fill="#f1d9b5" stroke="#c9a77a"/><path d="M260.1,119.1 A81.9337623606969,81.9337623606969 0 0 0 240.2,193.4 L229.6,188.4 A91.35143619525977,91.35143619525977 0 0 1 248.4,118.2 Z" fill="#b23a2e" opacity=".85"/><path d="M367.0,242.1 A81.9337623606969,81.9337623606969 0 0 0 399.1,153.8 L409.8,158.5 A91.35143619525977,91.35143619525977 0 0 1 378.2,245.4 Z" fill="#b23a2e" opacity=".85"/><circle cx="320" cy="175" r="81.9" fill="#e8a24a"/><circle cx="320" cy="175" r="28.7" fill="#f2c46d"/><circle cx="458.6" cy="232.4" r="7" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><line x1="458.6" y1="232.4" x2="404.4" y2="210.0" stroke="#1f3a5f" stroke-width="2" stroke-dasharray="5 4"/><text x="470.6" y="256.4" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">आधार · किरिटीमाटी</text><text x="470.6" y="274.4" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">⁦1.9°N, 157.5°W⁩</text><text x="164.0" y="117.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">अफ़्रीकी LLVP</text><text x="413.0" y="40.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">प्रशांत LLVP</text><text x="320.0" y="180.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#7a4a10" style="direction:ltr;unicode-bidi:embed">कोर</text><text x="320.0" y="351.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">पृथ्वी का योजनाबद्ध विषुवतीय काट, उत्तरी ध्रुव से दृश्य</text></svg><figcaption>मैंटल के तल पर दो धीमे प्रांत (LLVPs), और प्रशांत वाले के ऊपर नाशपाती का पुनर्निर्मित आधार — सभी पाँच मॉडलों में उसके भीतर। (योजनाबद्ध चित्र, सटीक भौगोलिक पैमाने पर नहीं।)</figcaption></figure><div class="tw"><table class="lab">
+<tr><th>घटक / माप</th><th>गणित या मापा गया मान</th><th>भौतिक और प्रेक्षणीय अर्थ</th></tr>
+<tr><td><strong>नाशपाती के आयाम और द्रव्यमान</strong></td><td>आधार 9,000–11,000 km, लंबाई ~ 8,700 km, द्रव्यमान <strong>8.8–12.1 चंद्र-द्रव्यमान</strong></td><td>पृथ्वी के द्रव्यमान का लगभग 11%; पूरी तरह सह-घूर्णन रेखा के भीतर और इसलिए वापस भीतर खिंची</td></tr>
+<tr><td><strong>नाशपाती उठाने का कार्य</strong></td><td>8.1 × 10³⁰ से 1.05 × 10³¹ J</td><td>चंद्रमा उठाने का 5.4 गुना; कोर में लोहे के डूबने की ऊर्जा से मेल (~ 10³¹ J)</td></tr>
+<tr><td><strong>जनक का घूर्णन-प्राचल</strong></td><td><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>π</mi><mi>G</mi><mi>ρ</mi><mo stretchy="false">)</mo><mo>≃</mo><mn>0.092</mn></mrow><annotation encoding="application/x-tex">\Omega^2 / (\pi G \rho) \simeq 0.092</annotation></semantics></math></span></span></td><td>जैकोबी की अस्थिरता-दहलीज़ (0.374) का लगभग एक-चौथाई — स्थानीय, दाब-चालित नाशपाती, वैश्विक विदरण नहीं</td></tr>
+<tr><td><strong>अलगाव के बाद युवा क्रेटर</strong></td><td>निकट पक्ष पर <strong>1.19 गुना</strong> (1.12–1.27) अधिक (1–2 km)</td><td>पृथ्वी के अंतिम गर्म निष्कासन मुख्यतः चंद्रमा के उस पक्ष पर गिरे जो उसकी ओर था</td></tr>
+<tr class="hl"><td><strong>आधार की स्थिति (1.9°N, 157.5°W)</strong></td><td><strong>5 में से 5 मॉडल धीमे</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><msub><mi>V</mi><mi>S</mi></msub><mo>=</mo><mo>−</mo><mn>2.25</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\delta V_S = -2.25\%</annotation></semantics></math></span></span> से −2.36%)</td><td>प्रशांत LLVP प्रांत के गहरे भीतर (2,800 km की गहराई पर किनारे से &gt;1,229 km)</td></tr>
+<tr><td><strong>आद्य-कोर पर नाशपाती का खिंचाव</strong></td><td><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mn>0.378</mn><mtext> to </mtext><mn>0.517</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}} = 0.378 \text{ to } 0.517\text{ m/s}^2</annotation></semantics></math></span></span></td><td>निर्माण के दौरान आद्य-कोर को नाशपाती की ओर फैलाया; नाशपाती लौटने पर ढीला हुआ</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>हमने चंद्रमा के जन्म का यांत्रिक कूटवाचन पूरा कर लिया: हमने देखा कि <span class="ltr">150.26 GPa</span> के दाब ने भीतर से झागदार मैग्मा कैसे उठाया (अध्याय 3), सियाल पपड़ी बाहर से कैसे उठी और तीन पट्टियों में बँटी (अध्याय 4), 3,000 km संपर्क-डिस्क सह-घूर्णन रेखा से 210 km आगे स्टेफ़न मुक्ति में कैसे खुली (अध्याय 5), और पूरी नाशपाती कैसे पृथ्वी में वापस खिंची और प्रशांत महासागर के नीचे अपनी छाप छोड़ गई (अध्याय 6)।</p>
+<p>पर चंद्रमा का टूटकर मुक्त होना उसकी लंबी यात्रा की केवल शुरुआत है। <strong>अक्षांश 22.5° पर, पृथ्वी से केवल 17,496 km दूर और 22.5° के प्रारंभिक कक्षीय झुकाव के साथ मुक्त हुआ चंद्रमा, क्रांतिवृत्त के तल से केवल 5.145° के कक्षीय झुकाव के साथ 384,400 km की दूरी तक कैसे पहुँचा?</strong> अगले अध्याय — <strong>अध्याय 7: कक्षा की यात्रा — घटा हुआ स्पर्शज्या नियम और 5.145° झुकाव का समाधान</strong> (शोधपत्र 04 से — <em>कक्षा</em>) — में हम चंद्रमा के पीछे अंतरिक्ष में चलेंगे!</p>
+<a href="story07_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 7</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">कक्षा की यात्रा — घटा हुआ स्पर्शज्या नियम और 5.145° झुकाव का समाधान →</p></div></a><p style="margin-top:22px"><a href="story05_hi.html">← अध्याय 5</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

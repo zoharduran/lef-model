@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 11: क्षुद्रग्रहों के बिना क्रेटर — प्राक्षेपिक उड़ान की भौतिकी, आघात-दाब और अग्रणी/पिछली विषमता — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 11: क्षुद्रग्रहों के बजाय लौटते पदार्थ से क्रेटर — प्राक्षेपिक उड़ान की भौतिकी, दसियों GPa के आघात-दाब, और अग्रणी तथा पिछले गोलार्धों के बीच विषमता।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story11_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story11_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story11_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story11_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story11_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story11_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story11_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story11_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story11_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story11_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story11_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story11_he.html" hreflang="he">עברית</a> · <a href="story11_en.html" hreflang="en">English</a> · <a href="story11_de.html" hreflang="de">Deutsch</a> · <a href="story11_es.html" hreflang="es">Español</a> · <a href="story11_fr.html" hreflang="fr">Français</a> · <a href="story11_ru.html" hreflang="ru">Русский</a> · <a href="story11_zh.html" hreflang="zh">中文</a> · <a href="story11_ja.html" hreflang="ja">日本語</a> · <a href="story11_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 11</p>
+<h1>अध्याय 11: क्षुद्रग्रहों के बिना क्रेटर — प्राक्षेपिक उड़ान की भौतिकी, आघात-दाब और अग्रणी/पिछली विषमता</h1>
+<p>शोधपत्र 06 पर आधारित — क्रेटर (भाग A–K: प्रक्षेपण, आघात, वाष्प से गुज़रने और चार देशांतरों पर आकारिकी की भौतिकी)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: क्या ज़मीन से दागा गया और उसी पर वापस गिरता पदार्थ विशाल क्रेटर खोद सकता है — और वह पीछे अधिक घना क्यों है?</h2>
+<p>स्वीकृत साहित्य मान लेता है कि चंद्रमा के चेहरे का लगभग हर क्रेटर बाहरी अंतरिक्ष से 15–20 km/s की प्रचंड गति से आए किसी क्षुद्रग्रह या धूमकेतु ने खोदा। पर यह मान्यता दो तीखी प्रेक्षणीय समस्याओं का सामना करती है जिन्हें कभी पूरी तरह समझाया नहीं गया:</p>
+<ol class="steps">
+<li><strong>अपेक्षा के ठीक उलट — अग्रणी (90°W) नहीं, पिछले गोलार्ध (90°E) पर क्रेटरों की अधिकता:</strong> चंद्रमा सदा पृथ्वी की ओर एक ही पक्ष रखता है, इसलिए उसका पश्चिमी अर्ध (90°W के आसपास, <strong>अग्रणी गोलार्ध</strong>) सदा अपनी कक्षीय गति की दिशा में आगे रहता है — ठीक चलती कार के सामने के शीशे की तरह — जबकि उसका पूर्वी अर्ध (90°E के आसपास, <strong>पिछला गोलार्ध</strong>) पीछे रहता है। अगर बाहरी क्षुद्रग्रहों ने चंद्रमा पर बमबारी की होती, तो सामने के शीशे (90°W) को पीछे के शीशे से दसियों प्रतिशत अधिक क्रेटर समेटने चाहिए। वास्तव में ठीक उल्टा होता है: <strong>पिछला गोलार्ध (90°E) बड़े क्रेटरों में कहीं अधिक घना है (प्रति मिलियन km² 249–252 बनाम अग्रणी गोलार्ध पर 139–175)!</strong></li>
+<li><strong>मूल भौतिक प्रश्न:</strong> LEF मॉडल में लगभग 99% क्रेटर जनक पिंड (प्रारंभिक पृथ्वी, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km त्रिज्या और 5.5 घंटे के दिन के साथ) के आपूर्ति-छिद्रों से दागे गए <strong>लौटते पदार्थ</strong> से बने, जो बाहरी कवच पर वापस गिरा, जो बाद में उठकर चंद्रमा का चेहरा बना। पर क्या 2–8 km/s से ऊपर फेंका गया पदार्थ इतने ज़ोर से लौट भी सकता है कि दसियों गीगापास्कल के आघात-दाब पैदा करे और जटिल क्रेटर ठोक दे?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: ऊपर फेंकी गेंद, फ़िगर स्केटर और बारिश में धावक</h2>
+<p>रोज़मर्रा के जीवन के तीन सरल चित्र प्राक्षेपिक उड़ान की भौतिकी और पूर्व–पश्चिम विषमता स्पष्ट करते हैं:</p>
+<ul>
+<li><strong>सीधी ऊपर फेंकी गेंद (गिरने की गति फेंकने की गति के बराबर):</strong> जब गेंद बिना वायु-घर्षण के सीधी ऊपर फेंकी जाती है, वह ऊपर जाते हुए गति को ऊँचाई में बदलती है, और नीचे आते हुए सारी ऊँचाई वापस गति में बदलती है — और ठीक उसी गति से हाथ में लौटती है जिससे फेंकी गई थी (5 km/s बाहर → 5 km/s वापस!)।</li>
+<li><strong>बाँहें फैलाती फ़िगर स्केटर (पश्चिम की ओर विचलन):</strong> जब ढेला बड़ी ऊँचाई तक उठता है, उसका कोणीय संवेग संरक्षित रहता है — इसलिए पृथ्वी के केंद्र के चारों ओर उसकी कोणीय घूर्णन-दर धीमी होती है (ठीक बगल में बाँहें फैलाती स्केटर की तरह)। नीचे की ज़मीन स्थिर दर से पूर्व की ओर घूमती रहती है, इसलिए जब ढेला उसी त्रिज्या पर वापस आता है, ज़मीन पहले ही पूर्व की ओर आगे बढ़ चुकी होती है और वह <strong>प्रक्षेपण-बिंदु के पश्चिम में</strong> गिरता है (5 km/s पर: 1,932 km की ऊँचाई तक, 28 मिनट के भीतर, और 1,032 km पश्चिम!)।</li>
+<li><strong>बारिश की ओर दौड़ता व्यक्ति बनाम उससे दूर दौड़ता व्यक्ति (अग्रणी बनाम पिछला गोलार्ध):</strong> चंद्र पिंड के उठने के बाद उसके अपने आपूर्ति-छिद्रों ने भी पदार्थ दागा (अपेक्षाकृत कम गति पर, उसकी ~ 2.0–2.3 km/s पलायन-गति तक)। पिछले गोलार्ध (90°E) पर ज़मीन गिरते पदार्थ से दूर जाती है और इसलिए उसे पीछे से धीरे से "पकड़ती" है (और दूर पक्ष, 180°, से पश्चिम की ओर बहते पदार्थ को भी समेटती है); जबकि अग्रणी गोलार्ध (90°W) पर ज़मीन गिरते पदार्थ की ओर आगे दौड़ती है और उससे <strong>आमने-सामने</strong> मिलती है — जैसे धावक बारिश की बूँदों से आमने-सामने मिलता है!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: <span class="ltr">45.6 GPa</span> का आघात-दाब, वाष्प से गुज़रना और पलायन-सीमा (10.75 km/s)</h2>
+<p>शोधपत्र 06 के भाग J और K सटीक विश्लेषणात्मक गणना से दिखाते हैं कि 2–8 km/s की गति पर आंतरिक प्रक्षेपण वास्तविक आघात-क्रेटर बनाने के लिए पूरी तरह पर्याप्त है:</p>
+<ol class="steps">
+<li><strong>दसियों गीगापास्कल के आघात-दाब (बेसाल्ट के लिए ह्यूगोनियो समीकरण, §J.2):</strong> बेसाल्ट से बेसाल्ट की आमने-सामने टक्कर में (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho_0 = 2,700</annotation></semantics></math></span></span> kg/m³), आघात-अग्र के पीछे कण-वेग टक्कर-गति का आधा है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>p</mi></msub><mo>=</mo><msub><mi>v</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_p = v_n / 2</annotation></semantics></math></span></span>), और स्वयं आघात-अग्र की गति <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mi>s</mi><msub><mi>u</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">U_s = C_0 + s u_p</annotation></semantics></math></span></span> है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">C_0 = 3.5</annotation></semantics></math></span></span> km/s और s = 1.3 के साथ)। इससे <strong>2 km/s पर ही <span class="ltr">12.96 GPa</span></strong>, <strong>3 km/s पर <span class="ltr">22.07 GPa</span></strong>, और <strong>5 km/s पर <span class="ltr">45.56 GPa</span></strong> का संपर्क-दाब मिलता है — खनिजों के आघात-कायांतरण की दहलीज़ों से बहुत ऊपर! (और एक तरल बूँद भी तेज़ संपीडन-तरंग बनाती है, क्योंकि तरल संपीडन का लगभग ठोस जितना ही प्रतिरोध करता है।)</li>
+<li><strong>छिद्र पर आवश्यक ऊर्जा और पलायन-सीमा (§J.1, §J.5):</strong> एक किलोग्राम को 2, 3, 5 या 8 km/s पर प्रक्षेपित करने के लिए 2, 4.5, 12.5 या 32 MJ/kg की गतिज ऊर्जा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_{\mathrm{kin}} = u^2/2</annotation></semantics></math></span></span> चाहिए, जो पृथ्वी का आंतरिक दाब (नाशपाती से गुज़रते हुए) वाष्पशील गैसों (पानी) के प्रसार की सहायता से देता है। दूसरी ओर, ताकि पदार्थ अंतरिक्ष में सदा के लिए न भागे बल्कि कवच पर लौटे, अरीय प्रक्षेपण-गति घूर्णन सहित पलायन-गति से कम होनी चाहिए: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>&lt;</mo><msub><mi>u</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>≃</mo><mn>10.748</mn></mrow><annotation encoding="application/x-tex">u &lt; u_{\mathrm{esc}} \simeq 10.748</annotation></semantics></math></span></span> km/s</strong>।</li>
+<li><strong>वाष्प-वायुमंडल पार करना (§J.3):</strong> 100 bar आधार-दाब वाले वाष्प-स्तंभ (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mn>8.25</mn></mrow><annotation encoding="application/x-tex">g_{\mathrm{eff}} = 8.25</annotation></semantics></math></span></span> m/s²) को दो बार (उठते और गिरते) पार करता एक किलोमीटर चौड़ा ढेला अपनी गति का लगभग <strong>51%</strong> बनाए रखता है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>v</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>−</mo><msub><mi mathvariant="normal">Σ</mi><mi>a</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v_{\mathrm{out}}/v_{\mathrm{in}} = \exp(-\Sigma_a / 2B)</annotation></semantics></math></span></span>) — इसलिए 5 km/s पर प्रक्षेपण अब भी 2.5 km/s पर गिरता है और <span class="ltr">13 GPa</span> से अधिक का आघात पैदा करता है!</li>
+<li><strong>जनक के गुरुत्व में स्केलिंग-नियम (§C.6):</strong> चूँकि जनक की सतह आज के चंद्रमा से पाँच गुना शक्तिशाली गुरुत्व लगाती थी (g = 8.25 बनाम 1.62 m/s²) और टक्कर-गति तीन गुना कम थी (5 बनाम 15 km/s), उसी व्यास का क्रेटर बनाने के लिए लौटता पिंड <strong>7.45 से 23.47</strong> गुना भारी चाहिए (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0.35</mn><mtext>–</mtext><mn>0.55</mn></mrow><annotation encoding="application/x-tex">\mu = 0.35\text{–}0.55</annotation></semantics></math></span></span> के लिए <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>p</mi></msub><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m_p \propto g^{3\mu/2} v^{-3\mu}</annotation></semantics></math></span></span>)।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Shock pressure in basalt against impact speed" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100</text><text x="70.0" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="195.6" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="321.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="446.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="572.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><path d="M70.0,230.0 L75.0,229.2 L80.0,228.4 L85.1,227.5 L90.1,226.6 L95.1,225.7 L100.1,224.8 L105.2,223.9 L110.2,222.9 L115.2,221.9 L120.2,220.9 L125.3,219.8 L130.3,218.8 L135.3,217.7 L140.3,216.6 L145.3,215.4 L150.4,214.3 L155.4,213.1 L160.4,211.9 L165.4,210.7 L170.5,209.4 L175.5,208.1 L180.5,206.8 L185.5,205.5 L190.6,204.2 L195.6,202.8 L200.6,201.4 L205.6,200.0 L210.7,198.5 L215.7,197.1 L220.7,195.6 L225.7,194.1 L230.7,192.5 L235.8,191.0 L240.8,189.4 L245.8,187.8 L250.8,186.1 L255.9,184.5 L260.9,182.8 L265.9,181.1 L270.9,179.4 L276.0,177.6 L281.0,175.9 L286.0,174.1 L291.0,172.2 L296.0,170.4 L301.1,168.5 L306.1,166.6 L311.1,164.7 L316.1,162.8 L321.2,160.8 L326.2,158.8 L331.2,156.8 L336.2,154.8 L341.3,152.7 L346.3,150.7 L351.3,148.6 L356.3,146.4 L361.3,144.3 L366.4,142.1 L371.4,139.9 L376.4,137.7 L381.4,135.4 L386.5,133.2 L391.5,130.9 L396.5,128.6 L401.5,126.2 L406.6,123.9 L411.6,121.5 L416.6,119.1 L421.6,116.6 L426.7,114.2 L431.7,111.7 L436.7,109.2 L441.7,106.7 L446.7,104.1 L451.8,101.6 L456.8,99.0 L461.8,96.3 L466.8,93.7 L471.9,91.0 L476.9,88.3 L481.9,85.6 L486.9,82.9 L492.0,80.1 L497.0,77.3 L502.0,74.5 L507.0,71.7 L512.0,68.8 L517.1,65.9 L522.1,63.0 L527.1,60.1 L532.1,57.1 L537.2,54.2 L542.2,51.2 L547.2,48.2 L552.2,45.1 L557.3,42.0 L562.3,38.9 L567.3,35.8 L572.3,32.7" fill="none" stroke="#b23a2e" stroke-width="3"/><circle cx="195.6" cy="202.8" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.6" y="194.8" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">12.96</text><circle cx="258.4" cy="183.6" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="250.4" y="175.6" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">22.07</text><circle cx="384.0" cy="134.3" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="376.0" y="126.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">45.56</text><circle cx="572.3" cy="32.7" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="564.3" y="24.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">93.96</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >टक्कर-गति (km/s) · बेसाल्ट में आघात-दाब (GPa)</text></svg><figcaption>अध्याय के ह्यूगोनियो समीकरण के अनुसार बेसाल्ट-पर-बेसाल्ट टक्कर में आघात-दाब (ρ₀ = 2,700, C₀ = 3.5, s = 1.3): 2 km/s पर ही लगभग <span class="ltr">13 GPa</span>।</figcaption></figure><div class="callout"><span class="tag">"गहराई" की अवधारणा को तीन अलग ऊँचाइयों में बाँटना (§A.2)</span><p style="margin:0">यह समझने के लिए कि चार देशांतरों पर क्रेटर हमें क्या बता रहे हैं, शोधपत्र 06 "गहराई" शब्द को तीन स्वतंत्र ज्यामितीय राशियों में बाँटता है (हर क्रेटर के चारों ओर 72 दिगंशों पर, केंद्रीय चोटी को ढकने के बाद):
+<br><strong>(1) आसपास की ज़मीन के ऊपर किनारे की ऊँचाई</strong> — <em>टक्कर के क्षण कार्य करते बल</em> दर्ज करती है;
+<br><strong>(2) आसपास की ज़मीन के नीचे तल की गहराई</strong> — <em>क्रेटर के नीचे की परतों की कठोरता</em> दर्ज करती है;
+<br><strong>(3) क्रेटर के किनारे से उसके तल तक कुल गहराई</strong> — पहली दो का योग।</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: चार देशांतर — क्रेटर के हर भाग की अपनी स्मृति है</h2>
+<p>शोधपत्र 06 के भाग C.3 और F–I विषुवत पर चार समान टोपियों में (त्रिज्या 30°, मारिया और SPA बेसिन हटाकर) 20–100 km चौड़े 1,457 क्रेटर स्कैन करते हैं और दिखाते हैं कि क्रेटर का हर भाग उसी प्रक्रिया का एक भिन्न पहलू कैसे दर्ज करता है:</p>
+<ol class="steps">
+<li><strong>क्रेटर-गणना — पिछला गोलार्ध (90°E) अग्रणी से 1.44–1.79 गुना घना (अध्ययन 1, §C.3):</strong> पिछले गोलार्ध पर प्रति मिलियन km² 20 km या अधिक चौड़े <strong>249 क्रेटर</strong> गिने गए (20 बड़े बेसिन हटाकर 252), बनाम 90°W पर अग्रणी गोलार्ध पर <strong>139</strong> (175) और 0° पर निकट पक्ष पर <strong>135</strong> (148) (अनुपात के लिए 95% विश्वास-अंतराल: 1.56–2.05, और कोशिका-नमूनाकरण में 1.48–2.19)। अंतर छोटे और मध्यम क्रेटरों (&lt; 70 km, 1.2–2.4 गुना) में केंद्रित है, जो स्वयं चंद्रमा से दागे गए और पीछे समेटे गए पदार्थ से बने, जबकि विशाल क्रेटर (&gt; 70 km) चपटे चरण में जल्दी बने और अधिक समान रूप से फैले हैं।</li>
+<li><strong>क्रेटर का किनारा (टक्कर के क्षण के बल, भाग F):</strong>
+<ul>
+<li><strong>दूर पक्ष (180°) पर सबसे ऊँचे किनारे (30–50 km पर 18.7 × 10⁻³D):</strong> दूर पक्ष पृथ्वी के साथ साझा द्रव्यमान-केंद्र के चारों ओर साझा घूर्णन में बाहर की ओर था, इसलिए अपकेंद्री बल ने निष्कासित पदार्थ को बाहर खींचा और ऊँचे किनारे छोड़े (और ऊँची केंद्रीय चोटियाँ भी, 30 × 10⁻³D)।</li>
+<li><strong>निकट पक्ष (0°) पर बड़े क्रेटरों में सबसे नीचे किनारे (10.3 × 10⁻³D):</strong> अपकेंद्री बल ने पदार्थ को भीतर ज़मीन से दबाया।</li>
+<li><strong>अग्रणी गोलार्ध (90°W) पर 20–30 km पर किनारे दाँतेदार, लंबे और नीचे:</strong> आमने-सामने की टक्कर ने किनारे को चकनाचूर कर खाँचे बनाए (किनारे की अनियमितता 1.25 गुना, दिगंशों के बीच उछाल 1.14 गुना, और लंबे किनारे e &gt; 1.2, 90°E पर 12% बनाम <strong>17%</strong>) और उसे नीचे दबाया (12.7 बनाम 17.2 × 10⁻³D)।</li>
+</ul>
+</li>
+<li><strong>सतह के नीचे क्रेटर का तल (परतों की कठोरता, भाग G.1):</strong>
+<ul>
+<li><strong>दूर पक्ष (180°) पर तल सबसे गहरा (20–30 km पर 54 × 10⁻³D):</strong> दूर पक्ष एक-दूसरे पर ढेर सियाल और लौटते पदार्थ की नरम परतों से बना है; उन पर गिरे दहकते पदार्थ ने उन्हें कुचला और पिघलाया, और तल भीतर गहरा धँसा।</li>
+<li><strong>निकट पक्ष (0°) पर सबसे उथला तल (27 × 10⁻³D, दूर पक्ष का आधा):</strong> कड़ी ज़मीन नहीं ढही, और नीचे से मारिया के भरने ने तलों को और ऊपर उठाया।</li>
+<li><strong>अग्रणी (90°W) और पिछले (90°E) गोलार्धों के बीच तल-ऊँचाई में कोई अंतर नहीं:</strong> आमने-सामने की टक्कर ने किनारे, चोटी और खुरदरेपन को आकार दिया — पर तल की गहराई केवल नीचे के आधार से तय होती है!</li>
+</ul>
+</li>
+<li><strong>केंद्रीय चोटी और तल का खुरदरापन (टक्कर-ऊर्जा, भाग H–I):</strong> जटिल क्रेटरों में संक्रमण के आसपास (20–30 km), आमने-सामने की टक्कर केंद्रीय प्रतिक्षेप बनाने की ऊर्जा-दहलीज़ पार करती है: <strong>90°W पर 60% क्रेटरों में केंद्रीय चोटी है</strong> (180° पर 46% और 90°E पर 49% बनाम), और तल का खुरदरापन <strong>1.50</strong> गुना अधिक है (4.5° बनाम 3.0°, किनारे के खाँचों से r = 0.40 पर सहसंबद्ध) — जबकि विशाल क्रेटरों में (50–100 km), दूर पक्ष पर चंद्रमा और पृथ्वी की संयुक्त टक्करें <strong>98%</strong> क्रेटरों में चोटी बनाती हैं!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 645.0 190" role="img" aria-label="Crater density at four longitudes" style="direction:ltr"><g transform="translate(5.0,0)"><rect x="160.0" y="16" width="368.9" height="26" rx="4" fill="#2f7d57"/><text x="536.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦249⁩</text><rect x="160.0" y="56" width="300.7" height="26" rx="4" fill="#5f9a6e"/><text x="468.7" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦203⁩</text><rect x="160.0" y="96" width="205.9" height="26" rx="4" fill="#c47f2c"/><text x="373.9" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦139⁩</text><rect x="160.0" y="136" width="200.0" height="26" rx="4" fill="#9aa3af"/><text x="368.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦135⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°E · पिछला गोलार्ध</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >180° · दूर पक्ष</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°W · अग्रणी गोलार्ध</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0° · निकट पक्ष</text></svg><figcaption>विषुवत पर चार टोपियों में प्रति मिलियन km² 20 km और अधिक चौड़े क्रेटरों का घनत्व (अध्ययन 1, मारिया और SPA हटाकर): पिछला गोलार्ध अग्रणी से घना है।</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>जनक के चारों ओर केप्लरीय कक्षा पर ऊर्जा और कोणीय संवेग के संरक्षण-नियम (शोधपत्र 06 के समीकरण 10–14) उसी ऊँचाई पर टक्कर-गति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{land}} = u</annotation></semantics></math></span></span>) और ऊँचे घूमते लक्ष्य पर सापेक्ष टक्कर-गति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r &gt; r_0</annotation></semantics></math></span></span>) दोनों तय करते हैं:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{E} = \dfrac{u^2 + \omega^2 r_0^2}{2} - \dfrac{K}{r_0}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mi>ω</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\ell = \omega r_0^2 \quad \Longrightarrow \quad v_{\mathrm{land}}(r_0) = u</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><mi mathvariant="script">E</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi mathvariant="normal">ℓ</mi><mi>r</mi></mfrac></mstyle><mo>−</mo><mi>ω</mi><mi>r</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v_{\mathrm{rel}}^2(r) = 2\left(\mathcal{E} + \dfrac{K}{r}\right) - \dfrac{\ell^2}{r^2} + \left(\dfrac{\ell}{r} - \omega r\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup></mrow><mrow><mi>d</mi><mi>r</mi></mrow></mfrac></mstyle><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d v_{\mathrm{rel}}^2}{dr} = 2\left(\omega^2 r - \dfrac{K}{r^2}\right)</annotation></semantics></math></span></div></div></div>
+<p>अवकलज <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">dv_{\mathrm{rel}}^2/dr</annotation></semantics></math></span></span> (§K.3) दिखाता है कि सह-घूर्णन त्रिज्या (प्रारंभिक चरण के आँकड़ों के साथ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">r_{\mathrm{corot}} \approx 15,883</annotation></semantics></math></span></span> km) के नीचे गुरुत्व हावी है, इसलिए ऊँचे लक्ष्य पर सापेक्ष टक्कर-गति ऊँचाई के साथ गिरती है (6,721, 8,000, 10,000 और 12,000 km त्रिज्याओं पर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.0</mn><mo>→</mo><mn>6.83</mn><mo>→</mo><mn>5.49</mn><mo>→</mo><mn>4.60</mn></mrow><annotation encoding="application/x-tex">8.0 \rightarrow 6.83 \rightarrow 5.49 \rightarrow 4.60</annotation></semantics></math></span></span> km/s), पर यह किसी दी गई कक्षा के लिए ज्यामितीय संबंध है और समय के साथ सार्वभौमिक गिरावट का संकेत नहीं देता।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: अपने चारों ओर के बेसाल्ट से ऊँचे खड़े क्रेटर-तल</h2>
+<p>शोधपत्र 06 के अध्ययन 10 और 11 (§G.2–G.3) निकट पक्ष के बेसाल्ट पर 86 बड़े क्रेटरों (40+ km) की जाँच करते हैं और एक ऐसी परिघटना उजागर करते हैं जिसे बगल से भराव नहीं समझा सकता:</p>
+<ul>
+<li><strong>पिघले और फैले क्रेटरों का एक-तिहाई अपने बाहर की बेसाल्ट-सतह से ऊपर खड़ा है (अध्ययन 10):</strong> अगर बाहरी लावा ने क्रेटर को बगल से भरा होता, तो उसके तल का स्तर कभी भी बाहर के बेसाल्ट-स्तर से ऊपर नहीं उठ सकता था (संचारी पात्रों के नियम की तरह)। वास्तव में <strong>76 में से 24</strong> पिघले और फैले क्रेटर (32%) <strong>अपने चारों ओर के बेसाल्ट से 50 m से अधिक ऊपर</strong> खड़े हैं (उदाहरण के लिए <strong>प्लेटो</strong>, जो इम्ब्रियम के बेसाल्ट से +500 m ऊपर है, और ओशनस प्रोसेलारम में 182 km चौड़ा एक क्रेटर जो मैदान से +518 m ऊपर है!), जबकि उच्चभूमियों में 411 में से केवल 12 (3%)!</li>
+<li><strong>जमी तरंग की भौतिकी और लोहे का पृथक्करण (अध्ययन 11):</strong> तरल या नरम बेसाल्ट-मैदान पर गिरे बड़े ढेले ने अपने केंद्र पर एक तरंग ऊपर उछाली; तल वापस धँसने लगा, पर जहाँ ठंडा होना जीता, उत्थान अपनी जगह जम गया। सचमुच, उठे तल (&gt; +50 m) हल्के वाष्पशीलों से समृद्ध और इसलिए <strong>लोहे और टाइटेनियम में निर्धन</strong> हैं (13.3 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>) नीचे धँसे तलों की तुलना में (14.4 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>; सार्थकता p = 0.018 और p = 0.010)!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: उड़ान, आघात, देशांतरों और उठे तलों की तालिकाएँ (शोधपत्र 06, भाग C–K)</h3>
+<div class="tw"><table class="lab">
+<tr><th>प्रक्षेपण-गति u (km/s)</th><th>प्रक्षेपण-ऊर्जा (MJ/kg)</th><th><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> के ऊपर शिखर-ऊँचाई (km)</th><th>उड़ान-समय (मिनट)</th><th>पश्चिम की ओर विचलन (km)</th><th>गिरने की गति और बेसाल्ट में आघात-दाब</th></tr>
+<tr><td><strong>2 km/s</strong></td><td>2.0 MJ/kg</td><td>251 km</td><td>8.46 मिनट</td><td>51.7 km</td><td>2 km/s → <strong><span class="ltr">12.96 GPa</span></strong></td></tr>
+<tr><td><strong>3 km/s</strong></td><td>4.5 MJ/kg</td><td>591 km</td><td>13.50 मिनट</td><td>184.1 km</td><td>3 km/s → <strong><span class="ltr">22.07 GPa</span></strong></td></tr>
+<tr class="hl"><td><strong>5 km/s (संदर्भ-उदाहरण)</strong></td><td>12.5 MJ/kg</td><td>1,932 km</td><td>28.01 मिनट</td><td>1,031.6 km</td><td>5 km/s → <strong><span class="ltr">45.56 GPa</span></strong></td></tr>
+<tr><td><strong>8 km/s</strong></td><td>32.0 MJ/kg</td><td>8,684 km</td><td>97.28 मिनट</td><td>8,438.7 km</td><td>8 km/s → <strong><span class="ltr">93.96 GPa</span></strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>आकारिकीय माप (अध्ययन 1 और 6)</th><th>90°W (अग्रणी)</th><th>180° (दूर)</th><th>90°E (पिछला)</th><th>0° (निकट)</th><th>भौतिक अर्थ</th></tr>
+<tr class="hl"><td><strong>20+ km क्रेटरों का घनत्व (प्रति मिलियन km²)</strong></td><td>139 (175)</td><td>203 (221)</td><td><strong>249 (252)</strong></td><td>135 (148)</td><td>पिछले गोलार्ध ने चंद्रमा और दूर पक्ष के निष्कासन समेटे (अनुपात 1.79, अंतराल 1.56–2.05)</td></tr>
+<tr><td><strong>20–30 km / 50–100 km पर केंद्रीय चोटी</strong></td><td><strong>60%</strong> / 94%</td><td>46% / <strong>98%</strong></td><td>49% / 81%</td><td>56% / 68%</td><td>आमने-सामने की टक्कर 90°W पर प्रतिक्षेप-दहलीज़ पार करती है</td></tr>
+<tr><td><strong>किनारे की अनियमितता / दिगंश-उछाल (20–30 km)</strong></td><td><strong>9.2 / 3.9</strong></td><td>7.5 / 3.5</td><td>7.4 / 3.5</td><td>7.1 / 3.4</td><td>90°W पर 1.25 और 1.14 गुना; लंबे किनारे 17% बनाम 12%</td></tr>
+<tr><td><strong>तल का खुरदरापन / सपाट क्षेत्र (20–30 km)</strong></td><td><strong>4.5° / 4%</strong></td><td>2.7° / 14%</td><td>3.0° / 11%</td><td>3.6° / 9%</td><td>टक्कर का आघात 90°W पर खुरदरा करता है (किनारे के खाँचों से r=0.40)</td></tr>
+<tr><td><strong>ज़मीन के ऊपर किनारे की ऊँचाई (30–50 km, × 10⁻³D)</strong></td><td>14.4 (20–30 पर 12.7)</td><td><strong>18.7</strong></td><td>13.1 (20–30 पर 17.2)</td><td>13.6 (बड़ों में 10.3)</td><td>दूर पक्ष साझा घूर्णन में बाहर की ओर था: अपकेंद्री बल ने निष्कासित पदार्थ उठाया और किनारे ऊँचे हैं; निकट पक्ष पर वही बल पदार्थ को ज़मीन से दबाता था</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>इस अध्याय में हमने देखा कि ज़मीन से दागा गया और 2–8 km/s पर उसी पर लौटता पृथ्वी-पदार्थ दसियों GPa के आघात-दाब पैदा करता है — बिना किसी क्षुद्रग्रह के विशाल क्रेटर खोदने के लिए पर्याप्त से अधिक। हमने यह भी देखा कि क्रेटर का हर भाग अपनी स्मृति रखता है: गणना दिखाती है कि पिछला गोलार्ध अग्रणी से 1.44–1.79 गुना घना है, किनारा गिरने के क्षण के बल दर्ज करता है (दूर पक्ष पर ऊँचा, अग्रणी गोलार्ध पर दाँतेदार), और तल नीचे की ज़मीन दर्ज करता है। अंत में हमने अपने चारों ओर के बेसाल्ट से ऊँचे खड़े क्रेटर-तल देखे — कुछ ऐसा जो बगल से भराव नहीं बना सकता।</p>
+<p>पर अगर क्रेटर लौटते पृथ्वी-पदार्थ से बने, तो उनके भीतर का रसायन इसकी गवाही देना चाहिए। अगले अध्याय — <strong>अध्याय 12: क्रेटर के भीतर का रसायन, वह विदेशी द्रव्यमान जो वहाँ नहीं है, और अंतिम बिखेरक के रूप में पृथ्वी</strong> (शोधपत्र 06 से — भाग L–Q) — में हम क्रेटरों के भीतरी भाग की जाँच करेंगे, उस विदेशी द्रव्यमान को खोजेंगे जो क्षुद्रग्रहों को चंद्रमा की पपड़ी में छोड़ना पड़ता, और देखेंगे कि पृथ्वी अलगाव के बाद भी चंद्रमा पर पदार्थ कैसे बिखेरती रही।</p>
+<a href="story12_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 12</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">क्रेटर के भीतर का रसायन, वह विदेशी द्रव्यमान जो वहाँ नहीं है, और अंतिम बिखेरक के रूप में पृथ्वी →</p></div></a><p style="margin-top:22px"><a href="story10_hi.html">← अध्याय 10</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

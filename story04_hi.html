@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 4: बाहर से उठती त्वचा — गुंबद के 4 चरण और चंद्रमा के चेहरे का अनुवाद-नियम — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 4: पृथ्वी का सियाल कवच पिंड के साथ कैसे उठा और चंद्रमा की त्वचा बना, गुंबद के चार चरण, और वह अनुवाद-नियम जो चंद्रमा के चेहरे को तीन क्षेत्रों में बाँटता है।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story04_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story04_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story04_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story04_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story04_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story04_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story04_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story04_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story04_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story04_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story04_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story04_he.html" hreflang="he">עברית</a> · <a href="story04_en.html" hreflang="en">English</a> · <a href="story04_de.html" hreflang="de">Deutsch</a> · <a href="story04_es.html" hreflang="es">Español</a> · <a href="story04_fr.html" hreflang="fr">Français</a> · <a href="story04_ru.html" hreflang="ru">Русский</a> · <a href="story04_zh.html" hreflang="zh">中文</a> · <a href="story04_ja.html" hreflang="ja">日本語</a> · <a href="story04_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 4</p>
+<h1>अध्याय 4: बाहर से उठती त्वचा — गुंबद के 4 चरण और चंद्रमा के चेहरे का अनुवाद-नियम</h1>
+<p>शोधपत्र 03 पर आधारित — व्यवहार में LEF तंत्र (भाग B: §B.1–B.7)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: दूर पक्ष की मोटी पपड़ी कहाँ से आई — और उसमें प्राचीन क्रेटर किसने उकेरे?</h2>
+<p>पिछले अध्याय में हमने खोजा कि पृथ्वी का आंतरिक इंजन गहरे, झागदार मैग्मा को <span class="ltr">150.26 GPa</span> के दाब पर ऊपर कैसे धकेलता है। पर पूर्ण आंतरिक आपूर्ति भी चंद्रमा की सतह पर तीन बड़ी पहेलियाँ छोड़ती है जो हम दूरबीनों में और GRAIL अंतरिक्षयान के गुरुत्व-मानचित्रों में देखते हैं:</p>
+<ol class="steps">
+<li><strong>दूर पक्ष की पपड़ी निकट पक्ष से बहुत मोटी क्यों है?</strong> दूर पक्ष पर पपड़ी की औसत मोटाई लगभग 55 km तक पहुँचती है, जबकि निकट पक्ष पर वह केवल लगभग 30–35 km मोटी है, और बड़े मारिया के नीचे और भी पतली।</li>
+<li><strong>चंद्रमा के सबसे पुराने क्रेटर दोनों गोलार्धों पर क्यों फैले हैं, और ध्रुवों के आसपास विशेष रूप से घने क्यों हैं?</strong> अगर चंद्रमा अंतरिक्ष में किसी झुलसाती मलबा-डिस्क से जुड़कर बना होता, तो उसकी पहली सतह क्रेटर-रहित, चिकना मैग्मा-महासागर होनी चाहिए थी।</li>
+<li><strong>दोनों गोलार्ध एक-दूसरे से इतने भिन्न क्यों दिखते हैं</strong> — निकट पक्ष गहरे, गोल बेसाल्टी मारिया से ढका, जबकि दूर पक्ष एक चमकीला, क्रेटरों से भरा उच्चभूमि क्षेत्र?</li>
+</ol>
+<p>LEF मॉडल का उत्तर अपनी सरलता में आश्चर्यजनक है: <strong>चंद्रमा केवल भीतर से नहीं बना — वह साथ-साथ बाहर से भी बना</strong>। निर्माण-क्षेत्र के ऊपर पड़ी युवा पृथ्वी की हल्की बाहरी पपड़ी (<strong>सियाल</strong> परत) न फटी, न पीछे छूटी; वह <strong>विकसित होते पिंड के साथ उठी, उसके सिरे तक खिसकी और चंद्रमा की बाहरी त्वचा बन गई!</strong></p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: ज़मीन पर चादर के नीचे फूलता गुब्बारा — और नक्शे को सिकोड़ती गेंद</h2>
+<p>पृथ्वी की सतह पर एक सपाट आवरण तीन निश्चित क्षेत्रों वाले पूरे गोले में कैसे बदलता है, यह कल्पना करने के लिए दो सरल प्रयोगों की कल्पना कीजिए:</p>
+<ul>
+<li><strong>कपड़े की चादर के नीचे फूलता गुब्बारा (चरण 1 और 2):</strong> ज़मीन पर एक मोटी, लचीली कपड़े की चादर बिछाइए (पृथ्वी की बाहरी सियाल परत का प्रतीक), और उसके केंद्र के नीचे एक आपूर्ति-नली जोड़िए। जब नली हवा और पदार्थ भीतर भरती है, चादर ज़मीन पर सपाट नहीं रहती — वह गुंबद बनकर उठती है, और किनारों से केंद्र की ओर सिमटती है, जैसे बीच से उठाया गया मेज़पोश। ज़मीन पर सपाट पड़े रहते चादर पर पहले से बना हर निशान या नक्काशी (प्राचीन क्रेटर!) उसके साथ गुंबद के शीर्ष तक उठता है।</li>
+<li><strong>बाहर की ओर फूलती और गोल होती पिचकी स्पंज-गेंद (चरण 3 — अनुवाद-नियम):</strong> एक आधी खाली स्पंज-गेंद लीजिए और उसे ऊपर से एक गोल स्टैंड के गोल सिर ("नाशपाती का सिरा") पर दबाइए। गेंद का निचला भाग स्टैंड को चौड़ी टोपी की तरह लपेटता है, और ऊपरी भाग गुंबद बनकर उठता है। अब गेंद को धीरे-धीरे फुलाइए ताकि वह पूर्ण गोल गोला बन जाए: जैसे-जैसे वह बाहर की ओर गोल होती है, <strong>उसके निचले किनारे बाहर से भीतर की ओर स्टैंड से उखड़ते जाते हैं</strong>, जब तक केवल तले के केंद्र में एक छोटा वृत्त स्टैंड से चिपका रह जाता है — और गेंद की सतह का हर भाग सतह-क्षेत्रफल में अपना सापेक्ष हिस्सा ठीक-ठीक बनाए रखता है!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: बाहरी निर्माण के चार चरण — प्रशांत के मैदान से झागदार गुंबद तक</h2>
+<p>शोधपत्र 03 का भाग B पृथ्वी की बाहरी पपड़ी-परत — <strong>सियाल</strong> परत (Sial: सिलिकॉन और एल्युमिनियम से समृद्ध हल्की चट्टान, लगभग 2,800 kg/m³ घनत्व), जो सघन <strong>सीमा</strong> परत (Sima: सिलिकॉन और मैग्नीशियम से समृद्ध) के ऊपर पड़ी है — को चार सतत चरणों से होकर कदम-दर-कदम देखता है:</p>
+<h3>चरण 1 — सपाट चरण और पपड़ी का सिमटना (लगभग 4.5 अरब वर्ष पहले)</h3>
+<p>पिंड के उठने से पहले, सियाल परत एक सक्रिय आपूर्ति-क्षेत्र के ऊपर पृथ्वी की सतह पर सपाट पड़ी है। पपड़ी के छिद्रों से गहरा पदार्थ उठता और निष्कासित होता है; निष्कासित पदार्थ का एक भाग खुली पपड़ी पर वापस गिरता है और उसमें क्रेटर बनाता है (जिसकी गहन पड़ताल क्रेटर-अध्यायों में होगी)। इसका अर्थ विस्मयकारी है: <strong>चंद्रमा की सबसे पुरानी सतह चंद्रमा पर नहीं बनी — वह पृथ्वी की सतह पर, चंद्रमा के उससे अलग होने से भी पहले बनी!</strong></p>
+<p>शोधपत्र में प्रस्तुत भौगोलिक पुनर्निर्माण में, गुंबद में भीतर सिमटा पपड़ी-पदार्थ प्राचीन प्रशांत बेसिन के क्षेत्र से आया (लगभग 1.0–1.65 × 10¹⁴ m² का क्षेत्रफल, अगले चरण के ऊपरी गुंबद के क्षेत्रफल का 1.4 से 2.4 गुना)। नाशपाती का आधार पूर्व में, किरिबाती के किरिटीमाटी द्वीप के पास (1.9°N, 157.5°W), मैंटल के तल पर धीमे प्रांत के ऊपर था; और पृथ्वी के घूर्णन तथा विषुवत के उत्तर से तिरछी आपूर्ति के कारण नाशपाती पीछे (पश्चिम की ओर) और उत्तर की ओर अक्षांश 22.5°N की ओर झुकी।</p>
+<h3>चरण 2 — नाशपाती के सिरे पर पिचका पिंड (झागदार अवस्था)</h3>
+<p>जब चंद्रमा का पूरा द्रव्यमान (7.35 × 10²² kg) नाशपाती के शीर्ष पर जमा हो जाता है, वह स्वतंत्र गोले की तरह तैरता नहीं, बल्कि <strong>6,000 km</strong> चौड़े नाशपाती-सिरे पर दो गुंबदों से बने पिचके पिंड की तरह बैठता है:</p>
+<ul>
+<li><strong>निचला गुंबद (सतह-क्षेत्रफल का 33%):</strong> नाशपाती के उत्तल सिरे को ऊपर से गले लगाता है (जिसकी वक्रता-त्रिज्या लगभग 4,000 km है और जो पिंड के आधार में लगभग 1,350 km तक पहुँचता है)।</li>
+<li><strong>ऊपरी गुंबद (सतह-क्षेत्रफल का 67%):</strong> संपर्क-किनारे से लगभग <strong>3,650 km</strong> की ऊँचाई तक उठता है और अंतरिक्ष के सामने खुला है।</li>
+</ul>
+<div class="callout"><span class="tag">आकार और दाब के बीच पूर्ण कड़ी (घनत्व 1,300 kg/m³)</span><p style="margin:0">6,000 km के आधार पर 3,650 km की गुंबद-ऊँचाई के साथ, पिंड का कुल आयतन 5.65 × 10¹⁹ m³ है (आज के चंद्रमा के आयतन का 2.5 गुना)। चंद्रमा के द्रव्यमान को इस आयतन से भाग देने पर <strong>1,300 kg/m³</strong> का घनत्व मिलता है — ठीक उस झागदार, गैस-बुलबुलों से भरे मैग्मा का घनत्व जिसकी अध्याय 3 के दाब-परीक्षण ने पदार्थ उठाने के लिए माँग की थी! ऊँचा गुंबद न केवल आंतरिक इंजन से मेल खाता है, बल्कि सियाल और सीमा के बीच एक "चिकनी", कमज़ोर अपरूपण-परत पर ऊपर ले जाया जाता है, जबकि एक ठंडा, कड़ा बाहरी कवच (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>) उस पर के क्रेटरों को ढहने से बचाता है।</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: अनुवाद-नियम, मारिया का उजागर होना और परतों में पपड़ी का निर्माण</h2>
+<p>जब उठते पिंड का स्व-गुरुत्व स्थानीय ज्वारीय खिंचाव पर भारी पड़ता है, पिंड <strong>चरण 3 — बाहर की ओर गोलाई</strong> में प्रवेश करता है: पिचका पिंड स्थिर आयतन पर फूलकर गोले में बदलता है (सतह-क्षेत्रफल 0.68 के गुणक से सिकुड़ता है, ठीक जैसे किसी दिए गए आयतन के लिए गोले का सतह-क्षेत्रफल न्यूनतम होता है)। नाशपाती से संपर्क 6,000 km की चौड़ाई से संकरा होकर <strong>3,000 km</strong> की जोड़-डिस्क रह जाता है, और निचले गुंबद का बाकी सारा भाग, उस सियाल परत सहित जिस पर वह बैठा था, धीरे-धीरे बाहर से भीतर की ओर उखड़ता है।</p>
+<p>इससे <strong>ज्यामितीय अनुवाद-नियम</strong> निकलता है: बाहर की ओर गोलाई में <strong>हर भाग सतह-क्षेत्रफल में अपना सापेक्ष हिस्सा बनाए रखता है</strong>। इसलिए चंद्रमा का चेहरा संपर्क-केंद्र (24.1°N, 335.2°E) के चारों ओर तीन संकेंद्रित क्षेत्रों में बँटता है:</p>
+<ol class="steps">
+<li><strong>निकट पक्ष की टोपी (0°–31°, क्षेत्रफल का लगभग 7% — लगभग 1,900 km चौड़ी):</strong> यह अंतिम संपर्क-डिस्क (3,000 km) है जो मुक्ति के क्षण तक नाशपाती से जुड़ी रही। इसी से केंद्रीय आंतरिक आपूर्ति-नलिकाएँ गुज़रीं — <strong>सेरेनिटैटिस सागर</strong> (जो पहले उखड़ा) और <strong>इम्ब्रियम सागर</strong> (जो अंतिम अलगाव के क्षण तक जुड़ा रहा!)।</li>
+<li><strong>उखड़ने की पट्टी (31°–70°, क्षेत्रफल का लगभग 26%):</strong> यह निचले गुंबद का वह वलय है जो बाहर की ओर गोलाई के दौरान धीरे-धीरे उखड़ा और अपने साथ वह सियाल परत ले गया जिस पर वह बैठा था।</li>
+<li><strong>दूर पक्ष (70°–180°, क्षेत्रफल का लगभग 67%):</strong> यह ऊपरी गुंबद है जो पहले क्षण से अंतरिक्ष के सामने खुला था, और अपने प्राचीन क्रेटरों को अपने साथ ऊपर ले गया।</li>
+</ol>
+<figure class="fig"><div class="zones"><svg viewBox="0 0 300 300" role="img" aria-label="Equal-area map of the three zones around the contact centre" style="direction:ltr"><circle cx="150" cy="150" r="130" fill="#d9d2bf" stroke="#8a846f"/><circle cx="150" cy="150" r="74.6" fill="#c9b48a"/><circle cx="150" cy="150" r="34.7" fill="#4a5568"/><circle cx="150" cy="150" r="34.7" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="150" r="74.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="150.0" y="155.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">7%</text><text x="150.0" y="100.3" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">26%</text><text x="150.0" y="52.7" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">67%</text><text x="188.7" y="160.9" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#fff" style="direction:ltr;unicode-bidi:embed">31°</text><text x="228.6" y="168.6" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">70°</text></svg><div><ul class="pts" style="margin:0">
+<li style="border-color:#4a5568"><strong>निकट पक्ष की टोपी · <span class="ltr">0°–31°</span> · 7%</strong><br>अंतिम संपर्क-डिस्क; सेरेनिटैटिस और इम्ब्रियम</li>
+<li style="border-color:#c9b48a"><strong>उखड़ने की पट्टी · <span class="ltr">31°–70°</span> · 26%</strong><br>निचले गुंबद का वलय जो सियाल के साथ उखड़ा</li>
+<li style="border-color:#a49d86"><strong>दूर पक्ष · <span class="ltr">70°–180°</span> · 67%</strong><br>ऊपरी गुंबद, शुरू से अंतरिक्ष के सामने खुला</li></ul></div></div><figcaption>समान-क्षेत्रफल मानचित्र पर संपर्क-केंद्र (24.1°N, 335.2°E) के चारों ओर तीन क्षेत्र: मानचित्र पर हर वलय का क्षेत्रफल चंद्रमा की सतह में उसके हिस्से के बराबर है।</figcaption></figure><p><strong>चरण 4</strong> में (घूर्णन से चपटा होना और पिंड के सघन होते समय भीतर की ओर गोलाई), कड़ी पपड़ी मौजूदा क्रेटरों का आकार बनाए रखती है जबकि उनके बीच की सतहें पास खिंचती हैं — जिससे ध्रुवों के आसपास क्रेटर घने हो जाते हैं। और साथ ही, पूरी यात्रा भर, सक्रिय छिद्रों से पदार्थ का दागा जाना और ऊपरी गुंबद पर उसका लौटना जारी रहा: इसी तरह दूर पक्ष की मोटी पपड़ी <strong>परत-दर-परत</strong> बनी, सिरे तक प्रवास करते सियाल से और उस पदार्थ से जो बार-बार लौटकर उस पर गिरा!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>पिचके गुंबद से तीन संकेंद्रित पट्टियों वाले गोले तक का संक्रमण सतह-क्षेत्रफल अनुपातों के संरक्षण (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_i = A_i / A_{\mathrm{tot}}</annotation></semantics></math></span></span>) से परिभाषित है। संपर्क-केंद्र से केंद्रीय कोण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> वाली गोलीय टोपी के लिए, पूरे गोले के क्षेत्रफल में उसका सापेक्ष हिस्सा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\pi R^2</annotation></semantics></math></span></span>) है:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi></mrow><mn>2</mn></mfrac></mstyle><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>θ</mi><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\theta) = \dfrac{2\pi R^2(1 - \cos\theta)}{4\pi R^2} = \dfrac{1 - \cos\theta}{2} \quad \Longrightarrow \quad \theta = \arccos(1 - 2f)</annotation></semantics></math></span></div></div></div>
+<p>चरण 2 के क्षेत्रफल-हिस्से रखने पर (3,000 km संपर्क-डिस्क के लिए <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>0.07</mn></mrow><annotation encoding="application/x-tex">f_1 = 0.07</annotation></semantics></math></span></span>, और पूरे 6,000 km निचले गुंबद के लिए <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">f_1 + f_2 = 0.33</annotation></semantics></math></span></span>) चंद्रमा पर सटीक कोण तुरंत मिलते हैं: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≃</mo><mn>3</mn><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_1 \simeq 31^\circ</annotation></semantics></math></span></span></strong> और <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>2</mn></msub><mo>≃</mo><mn>7</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_2 \simeq 70^\circ</annotation></semantics></math></span></span></strong>। साथ ही पपड़ी का द्रव्यमान-संतुलन पूरी तरह बंद होता है: दूर पक्ष की पपड़ी (2,550 kg/m³ घनत्व पर औसत मोटाई 55 km) लगभग 2.6 × 10²¹ kg भारी है (चंद्रमा के द्रव्यमान का 3.5%), और निकट पक्ष की पपड़ी (30–35 km) लगभग 1.5 × 10²¹ kg — मिलाकर चंद्रमा के द्रव्यमान का लगभग 4%–6%, जबकि शेष 94%–96% भीतर से आपूर्ति किया गया गहरा मैंटल-पदार्थ है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: GRAIL पपड़ी-मोटाई मानचित्र और मारिया का नीड़न</h2>
+<p>जब ज्यामितीय अनुवाद-नियम के दो वृत्त (24.1°N, 335.2°E के चारों ओर 31° और 70°) <strong>GRAIL</strong> अंतरिक्षयान द्वारा मापे गए चंद्रमा के वास्तविक पपड़ी-मोटाई मानचित्र और <strong>LOLA</strong> सतह-स्थलाकृति पर खींचे जाते हैं, तो उल्लेखनीय मेल दिखता है:</p>
+<ul>
+<li><strong>मारिया का सटीक भौगोलिक नीड़न:</strong> बाहरी वृत्त (निर्माण के समय 6,000 km) निकट पक्ष के सभी बेसाल्टी मारिया का <strong>99%</strong> समेटता है; भीतरी संपर्क-वृत्त (3,000 km) उनका <strong>66%</strong>; और इम्ब्रियम सागर ठीक भीतरी संपर्क-वृत्त के भीतर है।</li>
+<li><strong>दोनों पक्षों के बीच पपड़ी-मोटाई का उलटाव:</strong> निकट पक्ष के केंद्र में, उन मारिया के नीचे जो आपूर्ति-छिद्रों का काम करते थे और संपर्क की ऊष्मा में अपनी सियाल परत खो बैठे, पपड़ी विशेष रूप से पतली है (GRAIL मानचित्रों में नीली); जबकि 70° सीमा के पार, दूर पक्ष पर, परतों में बनी प्राचीन, मोटी उच्चभूमियाँ उठती हैं।</li>
+<li><strong>गहराई के साथ संरचना की भविष्यवाणी:</strong> चूँकि पृथ्वी में आंतरिक छँटाई समय के साथ आगे बढ़ी, दूर पक्ष की पपड़ी के तल पर बिछी सबसे पहली परतें कम छँटी और लोहे से अधिक समृद्ध थीं, जबकि ऊपरी, बाद की परतें हल्की और लोहे में कम हैं — एक भविष्यवाणी जिसे टकराव-क्रेटरों की केंद्रीय चोटियों में सीधे परखा जा सकता है, जो विभिन्न गहराइयों की चट्टान उजागर करती हैं!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: गुंबद के 4 चरण, अनुवाद-नियम और पपड़ी-संतुलन (शोधपत्र 03, भाग B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>निर्माण के समय क्षेत्र (चरण 2)</th><th>सतह-क्षेत्रफल</th><th>सापेक्ष हिस्सा</th><th>चंद्रमा पर संपर्क-केंद्र से कोण</th><th>आज चंद्रमा पर भौगोलिक पहचान</th></tr>
+<tr class="hl"><td><strong>संपर्क-डिस्क (3,000 km)</strong></td><td>7.3 × 10¹² m²</td><td><strong>7%</strong></td><td><strong>0° – 31°</strong></td><td>निकट पक्ष की टोपी (~1,900 km चौड़ी); मारिया का 66% समेटे (सेरेनिटैटिस और इम्ब्रियम)</td></tr>
+<tr><td><strong>उखड़ने का वलय (6,000 km तक)</strong></td><td>2.7 × 10¹³ m²</td><td><strong>26%</strong></td><td><strong>31° – 70°</strong></td><td>संक्रमण-पट्टी — नाशपाती से उखड़ा सियाल; टोपी के साथ मारिया का 99% समेटे</td></tr>
+<tr><td><strong>ऊपरी गुंबद (ऊँचाई 3,650 km)</strong></td><td>7.0 × 10¹³ m²</td><td><strong>67%</strong></td><td><strong>70° – 180°</strong></td><td>दूर पक्ष — सियाल और लौटते पदार्थ की परतों से बनी मोटी पपड़ी (~55 km), अपने क्रेटरों में प्राचीन</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>पिंड की अवस्था (स्थिर चंद्र-द्रव्यमान)</th><th>ज्यामिति और आयाम</th><th>कुल आयतन</th><th>औसत घनत्व</th></tr>
+<tr><td><strong>नाशपाती के सिरे पर (चरण 2)</strong></td><td>आधार 6,000 km, गुंबद-ऊँचाई 3,650 km</td><td>5.65 × 10¹⁹ m³</td><td><strong>1,300 kg/m³</strong> (झागदार अवस्था)</td></tr>
+<tr><td><strong>मुक्ति के क्षण गोला (चरण 4)</strong></td><td>त्रिज्या 1,890 km</td><td>2.83 × 10¹⁹ m³</td><td><strong>2,600 kg/m³</strong> (कठोर कवच)</td></tr>
+<tr><td><strong>आज का चंद्रमा</strong></td><td>त्रिज्या 1,737 km</td><td>2.20 × 10¹⁹ m³</td><td><strong>3,344 kg/m³</strong> (सघनित)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>हमने देखा कि पृथ्वी की बाहरी त्वचा पिंड के साथ कैसे उठी, धीरे-धीरे उखड़ी और चंद्रमा के चेहरे की तीन पट्टियों में व्यवस्थित हुई — और कैसे आंतरिक आपूर्ति और बाहरी गुंबद के मेल ने निकट पक्ष और दूर पक्ष के बीच मोटाई के अंतर पैदा किए।</p>
+<p>पर अब सबसे नाज़ुक और नाटकीय अभियांत्रिकी प्रश्न बचा है: <strong>किस पुल ने इस गुंबद को पृथ्वी से जोड़ा बिना अक्षांश 22.5° के अपरूपण-प्रतिबलों में टूटे, और वह सह-घूर्णन रेखा से ठीक 210 km आगे कैसे अलग हुआ?</strong> अगले अध्याय — <strong>अध्याय 5: नाशपाती और स्टेफ़न मुक्ति — वह पुल जो चंद्रमा को ढोता है और ठीक सह-घूर्णन रेखा पर टूटता है</strong> (शोधपत्र 03, भाग C: §C.1–C.6) — में हम स्वयं अलगाव-तंत्र की जाँच करेंगे।</p>
+<a href="story05_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 5</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">नाशपाती और स्टेफ़न मुक्ति — वह पुल जो चंद्रमा को ढोता है और ठीक सह-घूर्णन रेखा पर टूटता है →</p></div></a><p style="margin-top:22px"><a href="story03_hi.html">← अध्याय 3</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

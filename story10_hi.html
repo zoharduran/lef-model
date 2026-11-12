@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 10: रासायनिक उँगली-छाप — लोहे के वलय, संपर्क-क्षेत्र में थोरियम की पहेली और पाँच घड़ियाँ — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 10: मारिया के चारों ओर 600 km तक पहुँचते लोहे और टाइटेनियम के प्रभामंडल, संपर्क-डिस्क के भीतर चंद्रमा के थोरियम-अधिशेष का 95%, थोरियम-निर्धन मेयर-तल, लापता विदेशी द्रव्यमान, और हर छिद्र की पाँच घड़ियाँ।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story10_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story10_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story10_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story10_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story10_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story10_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <a href="story10_es.html" hreflang="es">Español</a> · <a href="story10_fr.html" hreflang="fr">Français</a> · <a href="story10_ru.html" hreflang="ru">Русский</a> · <a href="story10_zh.html" hreflang="zh">中文</a> · <a href="story10_ja.html" hreflang="ja">日本語</a> · <a href="story10_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 10</p>
+<h1>अध्याय 10: रासायनिक उँगली-छाप — लोहे के वलय, संपर्क-क्षेत्र में थोरियम की पहेली और पाँच घड़ियाँ</h1>
+<p>शोधपत्र 05 पर आधारित — मारिया (भाग J–O और परिशिष्ट A: अध्ययन 9, 10, 11, 13 और 16 अध्ययनों का सारांश)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: चंद्रमा की रेडियोधर्मिता एक वृत्त में क्यों केंद्रित है — और मेयर-तल उसमें निर्धन क्यों हैं?</h2>
+<p>अपोलो मिशनों और लूनर प्रॉस्पेक्टर उपग्रह की सबसे आश्चर्यजनक खोजों में से एक चंद्रमा के चेहरे की चरम रासायनिक असमानता है: रेडियोधर्मी तत्व <strong>थोरियम</strong> — पोटैशियम, दुर्लभ-मृदा तत्वों और फ़ॉस्फ़ोरस के साथ (साहित्य में <strong>KREEP</strong> कहलाने वाला पदार्थ) — चंद्रमा पर समान रूप से फैला नहीं, बल्कि लगभग पूरी तरह निकट पक्ष के पश्चिम में एक धब्बे में केंद्रित है।</p>
+<p>स्वीकृत साहित्य इस धब्बे ("प्रोसेलारम KREEP भूभाग") को चंद्रमा पर क्रिस्टलित हुए वैश्विक "मैग्मा-महासागर" का अंतिम अवशेष मानता है, और कहता है कि KREEP की रेडियोधर्मी ऊष्मा ने ही निकट पक्ष की चट्टानें पिघलाईं और बेसाल्टी मारिया बनाए। पर जैसे ही आँकड़े उच्च विभेदन पर जाँचे जाते हैं, इस व्याख्या के <strong>तीन तीखे विरोधाभास</strong> सामने आते हैं:</p>
+<ol class="steps">
+<li><strong>सटीक ज्यामितीय केंद्र:</strong> थोरियम का धब्बा ठीक बिंदु 24.1°N, 335.2°E के चारों ओर क्यों बैठा है — ठीक वह बिंदु जो शोधपत्र 3 में पहले ही चंद्रमा और पृथ्वी के बीच <strong>अंतिम संपर्क-डिस्क के केंद्र</strong> के रूप में तय किया गया था?</li>
+<li><strong>संपर्क-क्षेत्र के भीतर का विरोधाभास:</strong> अगर KREEP की ऊष्मा ही मारिया से फूटी और थोरियम साथ लाई, तो मेयर-तल थोरियम में सबसे समृद्ध होने चाहिए। वास्तव में ठीक उल्टा होता है: <strong>संपर्क-क्षेत्र के भीतर मेयर-तल उस क्षेत्र की थोरियम में सबसे निर्धन ज़मीन हैं!</strong></li>
+<li><strong>बेसिनों में विदेशी द्रव्यमान की अनुपस्थिति:</strong> अगर बड़े मेयर-बेसिन (जैसे इम्ब्रियम और सेरेनिटैटिस) बाहरी अंतरिक्ष के विशाल क्षुद्रग्रहों ने खोदे होते, तो उनकी पिघल-चट्टानों में उन विदेशी पिंडों की लोहा-प्रेमी धातुओं (<strong>साइडरोफ़ाइल तत्वों</strong>) की उँगली-छाप होनी चाहिए — पर वह नहीं है!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: जमता समुद्री पानी (थोरियम खारे पानी के साथ हटता है) और दूरियाँ बनाए रखती चाँदमारी</h2>
+<p>यह देखने के लिए कि ये तीन रासायनिक रहस्य एक झटके में कैसे सुलझते हैं, रोज़मर्रा के जीवन के दो सरल प्रयोगों की कल्पना कीजिए:</p>
+<ul>
+<li><strong>नाली-पाइप से जुड़ी टंकी में जमता समुद्री पानी (थोरियम की पहेली):</strong> जब खारा समुद्री पानी ऊपर से जमना शुरू करता है, बनने वाले बर्फ़ के क्रिस्टल लगभग मीठा पानी होते हैं — और सारा नमक नीचे बचे तरल खारे पानी में धकेल दिया जाता है। अगर यह खारा पानी बिना निकासी के बंद मैदान में हो (जैसे अपनी जगह पिघले <strong>बेसाल्ट-मैदान</strong>), तो सब कुछ जमने पर नमक चट्टान में फँसा रहता है। पर अगर खारा पानी <strong>नीचे की ओर खुले पाइप</strong> के ऊपर हो (जैसे किसी <strong>मेयर</strong> का तल, जो गहराइयों में आपूर्ति-नलिका से जुड़ा है!), तो भारी, थोरियम-समृद्ध खारा पानी डूबकर नलिका से वापस गहराइयों में बह जाता है — और मेयर-तल अपने आसपास के मैदानों और उच्चभूमियों की तुलना में थोरियम में निर्धन रह जाता है!</li>
+<li><strong>हल्के मैग्मा की जल्दी और दूर, और भारी मैग्मा की देर से और पास चाँदमारी (लोहे के वलय):</strong> किसी आपूर्ति-छिद्र की गतिविधि की शुरुआत में मैग्मा वाष्पशील गैसों से समृद्ध और लोहे में निर्धन होता है, इसलिए वह बहुत हल्का और तरल होता है — और सैकड़ों किलोमीटर (600 km तक) दूर दागा जाता है। जैसे-जैसे गैसें निकलती हैं, मैग्मा भारी, अधिक श्यान और लोहे (FeO) तथा टाइटेनियम (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) से अधिक समृद्ध होता है, और छिद्र के किनारे के बहुत पास गिरता है — हर मेयर के चारों ओर <strong>क्रमिक लोहे का प्रभामंडल</strong> बनाते हुए!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: लोहे और टाइटेनियम के वलय, संपर्क-डिस्क में 95% थोरियम, और विदेशी द्रव्यमान की अनुपस्थिति</h2>
+<p>शोधपत्र 05 का भाग J कागुया (240 m विभेदन पर लोहा और टाइटेनियम) और लूनर प्रॉस्पेक्टर (60 km विभेदन पर थोरियम) के उपग्रह-रसायन मानचित्रों की जाँच करता है और चार निर्णायक खोजें प्रस्तुत करता है:</p>
+<ol class="steps">
+<li><strong>मारिया के चारों ओर लोहे और टाइटेनियम का प्रभामंडल 600 km तक पहुँचता है (अध्ययन 9, §J.1–J.2):</strong> छह मारिया (स्मिथी, इम्ब्रियम, सेरेनिटैटिस, क्राइसियम, मॉस्कोविएन्से और नेक्टारिस) के चारों ओर, सभी बेसाल्ट-पिक्सेल हटाने के बाद, ज़मीन में लोहे की मात्रा 0–25 km वलय में <strong>6.9 wt%</strong> से धीरे-धीरे गिरकर 25–50 km पर 5.1, 50–100 km पर 3.9, और 100–150 km पर <strong>3.1 wt%</strong> होती है, और <strong>300–600 km (3.4 wt%)</strong> पर भी पृष्ठभूमि-स्तर (2.3 wt%) से ऊपर रहती है — बाद के क्रेटरों द्वारा पार्श्व मिश्रण की सीमा का दस गुना! इसके विपरीत, <strong>ओशनस प्रोसेलारम</strong> के चारों ओर — बिना आपूर्ति-छिद्र का एक बेसाल्ट-मैदान जो केवल अपने किनारों पर छलका — लोहा 300–600 km पर 10.9 wt% से गिरकर 2.4 wt% (दूर की उच्चभूमियों का स्तर) हो जाता है।</li>
+<li><strong>चंद्रमा के थोरियम-अधिशेष का 95% संपर्क-डिस्क में फँसा है (अध्ययन 10, §J.3):</strong> संपर्क-डिस्क (24.1°N, 335.2°E के चारों ओर 1,500 km त्रिज्या) चंद्रमा की सतह का केवल <strong>17.5%</strong> ढकती है, फिर भी उसमें <strong>3 ppm से ऊपर के सारे थोरियम-अधिशेष का 95.0%</strong> है (संपर्क के भीतर माध्यिका 5.39 ppm बनाम उसके बाहर 1.52 ppm)। जब उसी आकार की डिस्क पूरे चंद्रमा पर <strong>16,200 संभावित केंद्र-बिंदुओं</strong> पर खिसकाई जाती है, तो शोधपत्र 3 में पहले ही तय संपर्क-केंद्र <strong>16,200 में तीसरे</strong> स्थान पर आता है (सैद्धांतिक अधिकतम बिंदु से केवल 47 km, जो 94.99% के मुक़ाबले 95.14% समेटता है)!</li>
+<li><strong>संपर्क-क्षेत्र के भीतर — मारिया थोरियम में निर्धन जबकि मैदान और उच्चभूमियाँ समान (अध्ययन 13, §J.4):</strong> संपर्क-डिस्क के भीतर बेसाल्ट-मैदान (5.62 ppm) और उच्चभूमियाँ (5.48 ppm) लगभग ठीक वही थोरियम-सांद्रता रखते हैं! इसके विपरीत, संपर्क के भीतर के चार मारिया (इम्ब्रियम, सेरेनिटैटिस, कोपर्निकस H और साइनस एस्टुअम) मैदानों से <strong>30%</strong> थोरियम-निर्धन हैं (केवल 3.99 ppm, और चारों में हर मेयर अपने चारों ओर के वलय से 0.58–1.39 ppm निर्धन है), जबकि उनकी टाइटेनियम-मात्रा लगभग अपरिवर्तित रहती है (−5%, अनुपात <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0.74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>) — क्योंकि टाइटेनियम इल्मेनाइट क्रिस्टलों में बंद रहकर टिका रहता है, जबकि अंतिम थोरियम-समृद्ध तरल आपूर्ति-नलिकाओं से नीचे बह गया!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >पृष्ठभूमि: <tspan x="527.6" dy="14">⁦2.3 wt%⁩</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6.9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5.1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >मेयर के चारों ओर वलय (km) · बेसाल्ट-रहित ज़मीन में FeO (wt%)</text></svg><figcaption>छह मारिया के चारों ओर लोहे का प्रभामंडल (अध्ययन 9): लोहा दूरी के साथ गिरता है, पर 600 km तक पृष्ठभूमि से ऊपर रहता है।</figcaption></figure><figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3.99 ppm⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >संपर्क-मारिया</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.48 ppm⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >संपर्क में उच्चभूमि</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.62 ppm⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >संपर्क में मैदान</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1.52 ppm⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >संपर्क के बाहर</text></svg><figcaption>संपर्क-डिस्क के भीतर और बाहर थोरियम (अध्ययन 10 और 13): मैदान और उच्चभूमियाँ समान हैं, और मारिया 30% निर्धन — थोरियम-समृद्ध तरल नलिकाओं से नीचे बह गया।</figcaption></figure><div class="callout"><span class="tag">बेसिनों में विदेशी-द्रव्यमान परीक्षण (अध्ययन 11, §J.7)</span><p style="margin:0">अगर बड़े मेयर-बेसिन बाहरी अंतरिक्ष के पिंडों ने 18 km/s की गति से खोदे होते, तो लगभग <strong>1 × 10¹⁹ kg</strong> का टकराता द्रव्यमान चाहिए होता (और अकेले इम्ब्रियम के लिए स्केलिंग से 3 × 10¹⁸ kg, या 250 km चौड़े पिंड के लिए 2 × 10¹⁹ kg, जो 6 × 10¹⁷ से 4 × 10¹⁸ kg विदेशी पदार्थ छोड़ता)। वास्तव में इम्ब्रियम की पिघल-चट्टानों में साइडरोफ़ाइल तत्वों के अनुपात <strong>किसी ज्ञात कॉन्ड्राइट-समूह से मेल नहीं खाते</strong>, और उनमें अधिकांश इम्ब्रियम और सेरेनिटैटिस से पहले ही पपड़ी में मौजूद थे — क्योंकि बेसिन <strong>पार्थिव आपूर्ति-छिद्र</strong> हैं, विदेशी पिंडों के टकराव नहीं!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: हर छिद्र की पाँच घड़ियाँ — और अपोलो तथा चांग'ए की आयु का कूटवाचन</h2>
+<p>शोधपत्र 05 का भाग K चंद्र-शोध की सबसे बड़ी गलतफ़हमियों में से एक को सुलझाता है: <strong>अंतरिक्ष-मिशनों द्वारा लाई गई बेसाल्ट-चट्टानें 3.1–3.9 अरब वर्ष (अपोलो), 2.8 अरब वर्ष (दूर पक्ष पर चांग'ए-6) और यहाँ तक कि 2.0 अरब वर्ष (ओशनस प्रोसेलारम में चांग'ए-5) की क्यों आँकी जाती हैं?</strong> क्या इसका अर्थ है कि छिद्र चंद्रमा के पृथ्वी छोड़ने के अरबों वर्ष बाद बने?</p>
+<p>उत्तर है <strong>नहीं</strong> — क्योंकि हर आपूर्ति-छिद्र <strong>पाँच अलग घड़ियाँ</strong> रखता है जिन्हें मिलाना नहीं चाहिए (एक कुएँ की तरह जो खोदा जाता है, खुलता है, पानी ढोता है, बंद होता है, और केवल अंत में उसके शीर्ष पर अंतिम गड्ढे का पानी सूखता है):</p>
+<ol class="steps">
+<li><strong>संरचना के निर्माण का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>):</strong> वह क्षण जब निर्माण-चरण के दौरान छिद्र और उसके नीचे का गुंबद बने (3.873 Ga पर अलगाव से पहले के 60 करोड़ वर्षों के दौरान)।</li>
+<li><strong>उजागर होने का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>):</strong> वह क्षण जब संपर्क का किनारा छिद्र के ऊपर से हटा और उसे अंतरिक्ष के सामने उजागर किया (पीढ़ी I तुरंत, पीढ़ी II गोलाई के दौरान, पीढ़ी III अलगाव की ओर)।</li>
+<li><strong>विस्फोट का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>):</strong> वह अवधि जिसमें छिद्र ने बाहर पदार्थ दागा, अपने चारों ओर क्रेटर और लोहे के वलय बनाते हुए।</li>
+<li><strong>बंद होने का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>):</strong> वह क्षण जब प्रवाह क्रांतिक दहलीज़ से नीचे गिरा (या अलगाव के क्षण दाब रुका) और छिद्र सक्रिय नहीं रहा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>)।</li>
+<li><strong>सतह की आयु (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>):</strong> सतह पर जमी मैग्मा की अंतिम बूँद के <strong>अंतिम ठंडा होने की आयु</strong>। रेडियोमितीय घड़ी केवल उस क्षण से चलना शुरू करती है जब चट्टान अपने बंद-तापमान से नीचे ठंडी होकर रेडियोधर्मी पुत्री-परमाणुओं को फँसा लेती है!</li>
+</ol>
+<p>इसलिए अपोलो, चांग'ए-5 और चांग'ए-6 की सभी बेसाल्ट-चट्टानें <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span> — गर्म तरल के अंतिम जमने का समय</strong> मापती हैं (जिसे चंद्रमा की आंतरिक ऊष्मा या संपर्क-क्षेत्र में थोरियम के सांद्रण ने लंबे समय तक गर्म रखा), न कि छिद्र के खुलने का समय (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>)!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>संपर्क-क्षेत्र के भीतर मेयर-तलों को बेसाल्ट-मैदानों से अलग करने वाला रासायनिक अनुपात, और चंद्रमा के चतुर्थांशों के अनुसार थोरियम का वितरण, निम्न व्यंजकों में सारांशित हैं:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0.74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0.60</mn><mtext>–</mtext><mn>0.88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mtext>संपर्क के भीतर</mtext></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{संपर्क के भीतर}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5.39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>बनाम</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1.52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{बनाम} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>देशांतर के अनुसार (§J.5), माध्यिका थोरियम-सांद्रता पृथ्वी की ओर के निकट चतुर्थांश (<strong>5.12 ppm</strong>) से धीरे-धीरे गिरकर 90°W के आसपास के अग्रणी अर्ध (जिसमें संपर्क-केंद्र है) (3.27 ppm), दूर पक्ष (2.20 ppm) और 90°E के आसपास के पिछले अर्ध (2.01 ppm) तक जाती है — पूरे निकट पक्ष पर दूर पक्ष से 1.5 गुना अधिक (2.56 बनाम 1.76 ppm)।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: 15 अध्ययनों और 34 सूचीबद्ध छिद्रों में एक एकीकृत तस्वीर</h2>
+<p>शोधपत्र 05 के भाग L–O पाँच स्वतंत्र प्रमाण-रेखाओं को एक पूर्ण आपूर्ति-तंत्र में जोड़ते हैं:</p>
+<ul>
+<li><strong>अध्ययनों का संतुलन (15 अध्ययनों में 13 हरे और 2 एम्बर, §M.2):</strong> सभी मुख्य अध्ययन पूरी तरह सत्यापित हुए — गुरुत्व-गुंबदों से 33/34 मारिया का मेल, 44 दबे गुंबद, पपड़ी-सीढ़ी (17 km), केंद्र का धँसना (10/12), समान स्तर (16/16), स्वच्छ तल (12 गुना और 83 गुना), लोहे के प्रभामंडल (600 km), थोरियम-केंद्र (3/16,200), विदेशी द्रव्यमान की अनुपस्थिति, और संपर्क-मैदानों पर किनारों का घिसाव। जिन दो अध्ययनों को "एम्बर" प्रकाश (आंशिक पुष्टि) मिला, उन्हें पूरी पारदर्शिता से बताया गया: अध्ययन 13 में अनुपात <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span> तलों में टाइटेनियम की सापेक्ष समृद्धि के कारण संपर्क के पार भी गिरा, और अध्ययन 16 में दागने का कॉलर दूर पक्ष के मारिया के चारों ओर समग्र रूप से (p = 0.009) और दबे मारिया के चारों ओर (p = 0.001) सार्थक है, पर अकेले दूर पक्ष के 10 खुले मारिया के चारों ओर नियंत्रण से अलग नहीं होता।</li>
+<li><strong>मॉडल को साहित्य से अलग करने वाले पाँच निर्णायक प्रश्न (§N.2):</strong> साहित्य यह नहीं समझा सकता कि क्षुद्रग्रहों ने बिना ऊपर बेसिन के 44 गुरुत्व-गुंबद कैसे बनाए, मेयर-तल एक ही स्तर पर क्यों जमता है और केवल शक्तिशाली गुंबद के ऊपर क्यों धँसता है, लोहे का प्रभामंडल 600 km तक क्यों पहुँचता है, थोरियम संपर्क के मैदानों और उच्चभूमियों पर समान और ठीक मारिया में कम क्यों है, और 10¹⁹ kg बाहरी धातु कहाँ गायब हुई।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: रासायनिक तालिका, मुख्य छिद्रों का नमूना और 8 निष्कर्षों का सारांश (शोधपत्र 05, भाग J–O और परिशिष्ट A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>अध्ययन / रासायनिक माप</th><th>क्षेत्र / तुलना-समूह</th><th>मापी गई खोज</th><th>LEF मॉडल में अर्थ</th></tr>
+<tr class="hl"><td><strong>लोहे (FeO) और टाइटेनियम (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>) के वलय (अध्ययन 9)</strong></td><td>6 मारिया संयुक्त (0–25 से 300–600 km)</td><td>FeO: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.9</mn><mo>→</mo><mn>3.1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong> (150 km), 600 km पर <strong>3.4</strong> पर रहता है (नियंत्रण 2.3)</td><td>मारिया ने हल्का पदार्थ दूर और भारी पास दागा; प्रोसेलारम पर 2.4 तक गिरता है (स्थानीय छलकाव)</td></tr>
+<tr class="hl"><td><strong>संपर्क-डिस्क में थोरियम-सांद्रता (अध्ययन 10)</strong></td><td>संपर्क-डिस्क (चंद्रमा की सतह का 17.5%) बनाम 16,200 केंद्र</td><td>थोरियम-अधिशेष का <strong>95.0%</strong> (&gt;3 ppm); माध्यिका <strong>5.39</strong> बनाम 1.52 ppm</td><td>संपर्क-केंद्र <strong>16,200 में 3</strong> पर (शिखर से 47 km); अंतिम पकड़ का निशान</td></tr>
+<tr><td><strong>संपर्क के भीतर थोरियम का विभाजन (अध्ययन 13)</strong></td><td>संपर्क के भीतर 4 मारिया बनाम मैदान और उच्चभूमियाँ</td><td>मारिया: <strong>3.99 ppm</strong> (−30%); मैदान: <strong>5.62</strong>; उच्चभूमियाँ: <strong>5.48</strong></td><td>अंतिम थोरियम-समृद्ध तरल मेयर-नलिकाओं से वापस नीचे बह गया</td></tr>
+<tr><td><strong>बेसिनों का विदेशी द्रव्यमान (अध्ययन 11)</strong></td><td>18 km/s पर सभी मेयर-बेसिन (इम्ब्रियम पहले)</td><td>लगभग 10¹⁹ kg आवश्यक; वास्तव में <strong>किसी कॉन्ड्राइट से मेल नहीं</strong></td><td>कोई विदेशी टकरावक नहीं थे — बेसिन पार्थिव आपूर्ति-छिद्र हैं</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>सूची में #</th><th>छिद्र का नाम (परिशिष्ट A)</th><th>निर्देशांक और उप-पृथ्वी बिंदु से दूरी</th><th>उजागर होने का क्षेत्र और पीढ़ी</th><th>आपूर्ति-गुंबद (GRAIL) और व्यास</th><th>आज का आवरण</th></tr>
+<tr class="hl"><td>#1</td><td><strong>सेरेनिटैटिस</strong></td><td>26°N, 18°E (31°)</td><td>संपर्क (पीढ़ी III)</td><td>M660_008 — <strong>610 km</strong></td><td>खुला (मेयर के नीचे)</td></tr>
+<tr class="hl"><td>#34</td><td><strong>इम्ब्रियम</strong></td><td>38°N, 341°E (42°)</td><td>संपर्क (पीढ़ी III)</td><td>M660_015 — <strong>671 km</strong></td><td>खुला (मेयर के नीचे)</td></tr>
+<tr><td>#35–36</td><td>कोपर्निकस H / साइनस एस्टुअम</td><td>6°N, 342°E / 10°N, 352°E</td><td>संपर्क (पीढ़ी III)</td><td>M660_042 (170) / M660_020 (235 km)</td><td>खुला (मेयर के नीचे)</td></tr>
+<tr><td>#3–4, #6, #33</td><td>नेक्टारिस, क्राइसियम, स्मिथी, ह्यूमोरम</td><td>दूरी 36°–86°</td><td>पहाड़ी (पीढ़ी II)</td><td>375–518 km</td><td>खुला (मेयर के नीचे)</td></tr>
+<tr><td>#32</td><td>शिलर–ज़ुक्कियस</td><td>57°S, 316°E (67°)</td><td>पहाड़ी (पीढ़ी II)</td><td>M660_014 — <strong>909 km</strong> (सबसे बड़ा)</td><td>दबा (उच्चभूमि के नीचे)</td></tr>
+<tr><td>#10, #26</td><td>मॉस्कोविएन्से / ओरिएंटाले</td><td>140° / 95° (दूर पक्ष)</td><td>पहाड़ी के पार (पीढ़ी I)</td><td>M660_002 (313) / M660_001 (435 km)</td><td>खुला (दूर पक्ष पर अपवाद)</td></tr>
+<tr><td>#7, #9, #13, #18–19, #23–24, #37</td><td>मिल्न, मेंडेलीव, फ़्रॉयंडलिख–शारोनोव, कोरोल्योव, हर्ट्ज़स्प्रुंग, श्रोडिंगर और अन्य</td><td>100°–162° (दूर पक्ष)</td><td>पहाड़ी के पार (पीढ़ी I)</td><td>106–346 km (दूर पक्ष के 36 दबे गुंबदों में से)</td><td>दूर पक्ष की परतों के नीचे दबे</td></tr>
+<tr><td>#12, #20, #29</td><td>इंजेनी, अपोलो, बेली</td><td>82°–146° (SPA के ऊपर)</td><td>पहाड़ी के पार (पीढ़ी I)</td><td>उनका गुंबद दक्षिणी ध्रुव–एटकेन बेसिन की ऊष्मा से पककर मिट गया</td><td>SPA बेसिन के ऊपर</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>अध्याय 8–10 में हमने चंद्रमा के मारिया की जाँच पूरी की: पता चलता है कि वे देर से लगे टकराव-घाव नहीं, बल्कि <strong>प्राचीन आपूर्ति-छिद्र</strong> हैं जिनसे 73 गुरुत्व-गुंबदों के ऊपर चंद्रमा बना — ऐसे छिद्र जो संपर्क के पीछे हटने के क्रम में बंद हुए, झील-स्तरों के रूप में जमे जो अपने केंद्रों पर धँसे, अपने परिवेश को 600 km तक लोहे के वलयों से रँगा, और संपर्क-डिस्क में पृथ्वी पर अंतिम पकड़ का थोरियम-निशान छोड़ा।</p>
+<p>पर अगर मारिया वे नालें थीं जिनसे पदार्थ बाहर दागा गया, <strong>तो अंतरिक्ष में दागे जाने के बाद इस पदार्थ का क्या हुआ — और वह लौटकर चंद्रमा से कैसे टकराया कि उसके चेहरे पर सैकड़ों हज़ार क्रेटर खुद गए?</strong> अगले अध्याय — <strong>अध्याय 11: चंद्रमा के क्रेटर — 99% लौटता पदार्थ, विदेशी क्षुद्रग्रह नहीं</strong> (शोधपत्र 06 से — <em>क्रेटर</em>) — में हम क्रेटरों की कहानी का कूटवाचन करेंगे!</p>
+<a href="story11_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 11</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">चंद्रमा के क्रेटर — 99% लौटता पदार्थ, विदेशी क्षुद्रग्रह नहीं →</p></div></a><p style="margin-top:22px"><a href="story09_hi.html">← अध्याय 9</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

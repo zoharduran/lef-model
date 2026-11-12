@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 8: मेयर वास्तव में क्या है? — आपूर्ति-छिद्र, 73 गुरुत्व-गुंबद और जमी झील की तरह धँसा तल — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 8: मेयर के चार घटक, GRAIL गुरुत्व-मानचित्र में मिले 73 आपूर्ति-गुंबद (जिनमें 44 दबे हुए, अधिकांश दूर पक्ष पर), और समतल तल जो अपने केंद्रों पर धँसे।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story08_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story08_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story08_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story08_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story08_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story08_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story08_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story08_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story08_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story08_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story08_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story08_he.html" hreflang="he">עברית</a> · <a href="story08_en.html" hreflang="en">English</a> · <a href="story08_de.html" hreflang="de">Deutsch</a> · <a href="story08_es.html" hreflang="es">Español</a> · <a href="story08_fr.html" hreflang="fr">Français</a> · <a href="story08_ru.html" hreflang="ru">Русский</a> · <a href="story08_zh.html" hreflang="zh">中文</a> · <a href="story08_ja.html" hreflang="ja">日本語</a> · <a href="story08_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 8</p>
+<h1>अध्याय 8: मेयर वास्तव में क्या है? — आपूर्ति-छिद्र, 73 गुरुत्व-गुंबद और जमी झील की तरह धँसा तल</h1>
+<p>शोधपत्र 05 पर आधारित — मारिया (भाग A–F: अध्ययन 1–7 और 16)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: चंद्रमा के दो चेहरे क्यों हैं — और दूर पक्ष के मारिया कहाँ छिपे हैं?</h2>
+<p>जो कोई भी चंद्रमा को, साधारण दूरबीन से भी, देखता है, वह तुरंत उस तीखे विरोधाभास को देखता है जिसने "चंद्रमा में आदमी" को आकार दिया: <strong>निकट पक्ष</strong>, जो सदा पृथ्वी की ओर रहता है, गहरे, गोल विस्तारों से ढका है ("मारिया" — लैटिन में <em>Maria</em>, सागर, क्योंकि प्राचीन लोग उन्हें महासागर समझते थे), जबकि <strong>दूर पक्ष</strong> चमकीला, क्षत-विक्षत और गहरे धब्बों से लगभग मुक्त है।</p>
+<p>स्वीकृत साहित्य हर मेयर को दो अलग, असंबद्ध घटनाओं के रूप में समझाता है: पहले एक विशाल क्षुद्रग्रह चंद्रमा से टकराया और उसमें गहरा बेसिन खोदा; और करोड़ों वर्ष बाद गहरा बेसाल्टी लावा मैंटल से फूटा और बेसिन को भर दिया। इस परिभाषा के अनुसार, मेयर बस <strong>गहरे बेसाल्ट की एक सतह</strong> है।</p>
+<p>पर जब GRAIL अंतरिक्षयान के सटीक गुरुत्व-मानचित्र जाँचे जाते हैं, तो एक रहस्य सामने आता है जो इस कहानी की नींव हिला देता है: दूर पक्ष की चमकीली सतह के नीचे <strong>अतिरिक्त गुरुत्व वाले दर्जनों गोल, सघन पिंड</strong> छिपे हैं — निकट पक्ष के विशाल मारिया के नीचे वालों के आकार और शक्ति में समान, पर उनकी सतह पर कोई गहरा बेसाल्ट नहीं! ये छिपे पिंड क्या हैं, और क्या दूर पक्ष केवल इसलिए मारिया-रहित दिखता है क्योंकि हम उसका रंग देख रहे हैं?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: खेत में ढके कुएँ और लावा-झील पर जमी पपड़ी</h2>
+<p>मारिया की परिभाषा में शोधपत्र 05 जो उलटफेर प्रस्तावित करता है उसे समझने के लिए, दो सरल चित्रों की कल्पना कीजिए:</p>
+<ul>
+<li><strong>ज्वालामुखी के क्रेटर में लावा-झील:</strong> किसी बुझे ज्वालामुखी के क्रेटर में नीचे झाँकते हुए आप गहरी, जमी चट्टानी सतह देखते हैं। यह गहरी पपड़ी स्वयं पर्वत नहीं — वह केवल अंतिम परत है जो प्रवाह रुकने के बाद ऊपर से जमी। उसके नीचे वह गहरा मुख है जिससे लावा उठा। ठीक इसी तरह, <strong>चंद्रमा के चेहरे पर गहरा बेसाल्ट मेयर नहीं — मेयर वह छिद्र है जिससे चंद्रमा बना</strong>, और बेसाल्ट केवल छिद्र के शीर्ष पर जमी अंतिम पपड़ी है!</li>
+<li><strong>दोनों ओर सक्रिय कुओं वाला खेत — जब एक ओर मिट्टी से ढक दी गई हो:</strong> एक बड़े खेत की कल्पना कीजिए जिसमें दर्जनों कुएँ खोदे गए। खेत की एक ओर (निकट पक्ष) कुएँ निर्माण के अंत तक खुले रहे, इसलिए उनके भीतर के पानी की गहरी सतहें दिखती हैं। खेत की दूसरी ओर (दूर पक्ष) कुएँ पहले बंद हो गए और चमकीली मिट्टी की मोटी परत से पाट दिए गए। जो केवल "पानी के गहरे धब्बे" गिनता है वह सोचेगा कि कुएँ केवल एक ओर हैं — पर ज़मीन के नीचे मापने वाला उपकरण पाएगा कि ढकी ओर <strong>और भी अधिक कुएँ</strong> हैं!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: अवधारणाओं का पृथक्करण और 73 आपूर्ति-गुंबदों की गिनती</h2>
+<p>शोधपत्र 05 के भाग A–D "मेयर" शब्द को नीचे से ऊपर तक चार स्पष्ट भौतिक घटकों में तोड़ते हैं:</p>
+<ol class="steps">
+<li><strong>आपूर्ति-गुंबद:</strong> लोहे और टाइटेनियम से समृद्ध एक सघन पिंड जो एक भूमिगत केंद्र से ऊपर धकेला गया, उसने अपना केंद्र उठाया और किनारे चौड़े किए। जब आपूर्ति समाप्त हुई, गुंबद एक सघन पिंड में जम गया जो GRAIL अंतरिक्षयान को अधिक ज़ोर से खींचता है — और यही गुरुत्व में मापा गया <strong>मैस्कॉन</strong> (द्रव्यमान-सांद्रण) है।</li>
+<li><strong>छिद्र:</strong> कवच का तरल, कम-श्यानता क्षेत्र जिससे पदार्थ सतह तक उठा। अधिकांश छिद्रों से पदार्थ बाहर दागा गया और क्रेटर बनाने के लिए चंद्रमा पर वापस गिरा (<strong>निकास-छिद्र</strong>); जबकि <strong>इम्ब्रियम सागर</strong> और <strong>सेरेनिटैटिस सागर</strong> से — जो पृथ्वी के साथ संपर्क-डिस्क के भीतर थे — दाब और पदार्थ बाहर दागे बिना भीतर चंद्रमा में गए (<strong>आपूर्ति-मुख</strong>)।</li>
+<li><strong>मेयर बेसाल्ट:</strong> छिद्र के शीर्ष पर जमी अंतिम परत। इसके विपरीत, जिन चौड़ी बेसाल्ट-सतहों के नीचे कोई आपूर्ति-गुंबद नहीं — जैसे <strong>ओशनस प्रोसेलारम</strong>, ट्रैंक्विलिटैटिस सागर और फ़ेकंडिटैटिस सागर — वे संरचनात्मक अर्थ में "मारिया" नहीं, बल्कि निकटवर्ती पृथ्वी की ऊष्मा से <strong>अपनी जगह पिघले पपड़ी-मैदान</strong> हैं!</li>
+<li><strong>बेसिन:</strong> छिद्र को घेरने वाला उठा हुआ किनारा — उस गर्म पदार्थ से परत-दर-परत बना जिसे छिद्र ने स्वयं अपने चारों ओर दागा।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of a mare: dome, opening, basalt, basin rim" style="direction:ltr"><rect x="0" y="120" width="640" height="110" fill="#e6dcc6"/><path d="M60,120 Q150,70 230,105 L410,105 Q490,70 580,120 Z" fill="#d6c7a4"/><path d="M220,230 Q320,120 420,230 Z" fill="#7a5a3a"/><path d="M270,152 Q320,118 370,152 L360,108 L280,108 Z" fill="#c4623a" opacity=".85"/><rect x="232" y="100" width="176" height="9" fill="#3a3f4a"/><text x="320.0" y="212.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >आपूर्ति-गुंबद (मैस्कॉन)</text><text x="320.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >छिद्र</text><text x="320.0" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#3a3f4a" style="direction:ltr;unicode-bidi:embed" >बेसाल्ट — जमी अंतिम पपड़ी</text><text x="120.0" y="62.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#6b5a2a" style="direction:ltr;unicode-bidi:embed" >बेसिन: दागे गए पदार्थ से बने किनारे</text><line x1="120" y1="68" x2="140" y2="88" stroke="#6b5a2a"/></svg><figcaption>मेयर के चार घटक, नीचे से ऊपर: आपूर्ति-गुंबद, छिद्र, बेसाल्ट और बेसिन। (योजनाबद्ध चित्र।)</figcaption></figure><div class="callout"><span class="tag">गुरुत्व में निर्णायक खोज (अध्ययन 1, 3 और 4)</span><p style="margin:0">जब GRAIL गुरुत्व-मानचित्र (बूगे विसंगति, डिग्री 6–660) को 100 km या अधिक चौड़े और 50 mGal या अधिक शक्ति वाले हर गोल सघन पिंड के लिए स्वचालित रूप से स्कैन किया जाता है, तो चंद्रमा के चेहरे पर <strong>73 आपूर्ति-गुंबद</strong> दिखते हैं:
+<br>• गुरुत्व-प्रवणता मानचित्र पर पहचाने गए <strong>34 में से 33 मारिया</strong> ठीक 73 गुंबदों में से किसी एक पर बैठे हैं (20,000 यादृच्छिक चालनों में एक भी 33 तक नहीं पहुँचा!)। गुंबद पर न बैठने वाला एकमात्र <strong>इंजेनी सागर</strong> है, जिसका गुंबद दक्षिणी ध्रुव–एटकेन बेसिन के नीचे की विशाल ऊष्मा में "पक" कर मिट गया।
+<br>• 73 गुंबदों में से 25 खुले मेयर के नीचे हैं, 4 आंशिक रूप से ढके हैं, और <strong>44 गुंबद पूरी तरह चमकीली उच्चभूमियों के नीचे दबे हैं</strong> — <strong>उनमें 36 दूर पक्ष पर</strong>! यानी दूर पक्ष पर <strong>निकट पक्ष से अधिक आपूर्ति-गुंबद हैं (40 बनाम 33)</strong>।
+<br>• <strong>पपड़ी-सीढ़ी (औसत 17 km):</strong> छिद्र के केंद्र के नीचे पपड़ी उसके आसपास के वलय से 8–29 km पतली है (माध्यिका 17 km) (36 चिह्नित छिद्रों में से 29 में, जबकि साधारण टकराव-क्रेटरों में केवल 2%) — प्रमाण कि गुंबद ने नीचे से धकेलकर उठाया, ऊपर से कोई बाहरी टकराव नहीं।
+<br>• <strong>दबे गुंबदों के ऊपर की चादर:</strong> 44 दबे गुंबदों के ऊपर लोहे की मात्रा (−0.19 wt%) और थोरियम (+0.05 ppm) आसपास की ज़मीन से पूरी तरह समान हैं, और पपड़ी <strong>8–13 km</strong> मोटी है — उन बाद की परतों की मोटाई जिन्होंने दूर पक्ष के प्राचीन छिद्रों को उनके क्रेटरों सहित ढक दिया!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="73 feed domes by side and by cover" style="direction:ltr"><rect x="20.0" y="20" width="205.5" height="34" fill="#4a5568"/><text x="217.5" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >खुले मेयर के नीचे · 25</text><rect x="225.5" y="20" width="32.9" height="34" fill="#8a94a6"/><rect x="258.4" y="20" width="361.6" height="34" fill="#c9b48a"/><text x="612.0" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed" >उच्चभूमियों के नीचे दबे · 44</text><text x="241.9" y="74.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed" >आंशिक · 4</text><rect x="20.0" y="96" width="271.2" height="34" fill="#1f3a5f"/><text x="283.2" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >निकट पक्ष · 33</text><rect x="291.2" y="96" width="328.8" height="34" fill="#a49d86"/><text x="612.0" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >दूर पक्ष · 40 (उनमें 36 दबे)</text><text x="320.0" y="158.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >GRAIL स्कैन में 73 आपूर्ति-गुंबद — आवरण के अनुसार (ऊपर) और पक्ष के अनुसार (नीचे)</text></svg><figcaption>दूर पक्ष पर निकट पक्ष से अधिक आपूर्ति-गुंबद हैं; उनमें अधिकांश चमकीली उच्चभूमियों के नीचे दबे हैं और इसलिए मारिया जैसे नहीं दिखते।</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: जमी झील का तल, केंद्र का धँसना और दागे गए पदार्थ का कॉलर</h2>
+<p>जब किसी मेयर से आपूर्ति रुकती है तो उसके तल का क्या होता है, और वह उठे किनारों से घिरे धँसे बेसिन जैसा क्यों दिखता है? शोधपत्र 05 के भाग E और F चार मापने योग्य ज्यामितीय परिघटनाएँ उजागर करते हैं:</p>
+<ol class="steps">
+<li><strong>एक ही स्तर, जमी झील की तरह (अध्ययन 6):</strong> गुरुत्व में स्थिर तरल ढलान नहीं थाम सकता — वह एक ही समान स्तर पर बैठता है और उसी तरह जमता है। सटीक ऊँचाई-मापों (SLDEM2015) में <strong>16 में से 16 बड़े मेयर-तल</strong> (और 189 मानचित्रित बेसाल्ट-इकाइयों में से 188 भी) <strong>एक ही ऊँचाई-स्तर</strong> दिखाते हैं, जो मेयर के किनारे से गहरे नीचे (माध्यिका 3.4 km, संयोग-संभावना 65,000 में 1) और आसपास की ज़मीन से नीचे (माध्यिका 1.6 km) है।</li>
+<li><strong>गुंबद के ऊपर केंद्र धँसा — दो संपर्क-मारिया को छोड़कर (अध्ययन 5):</strong> जब आपूर्ति-गुंबद एक सघन, लोहे-समृद्ध पिंड में जमता है, उसके ऊपर का केंद्र धँसता है (मुख्यतः ठंडा होने पर ऊष्मीय संकुचन से, सघन पिंड के भार और चूषण के साथ)। सचमुच, <strong>12 में से 10 खुले मारिया</strong> में केंद्र किनारों से नीचा है (माध्यिका −267 m, उदाहरण के लिए ओरिएंटाले पर −2.2 km और नेक्टारिस पर −1.6 km), और गुरुत्व-गुंबद जितना शक्तिशाली, धँसाव उतना गहरा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn><mo separator="true">,</mo><mi>p</mi><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59, p = 0.04</annotation></semantics></math></span></span>)।
+<br><strong>केवल दो अपवाद, जो नियम की पुष्टि करते हैं:</strong> <strong>सेरेनिटैटिस सागर (+60 m)</strong> और <strong>इम्ब्रियम सागर (+43 m)</strong> पर केंद्र वास्तव में किनारों से थोड़ा ऊँचा है! क्यों? क्योंकि यही दो मारिया संपर्क-डिस्क के भीतर थे और पृथ्वी के बहुत पास जमे, जिसके तेज़ खिंचाव ने उनके जमते समय निकट पक्ष को बाहर की ओर तना रखा!</li>
+<li><strong>तने किनारे और संपीडित भीतरी भाग (§F.2):</strong> उस तालाब पर बर्फ़ की चादर की तरह जिसका पानी बीच में घटता है, केंद्र के धँसने ने मेयर के किनारों को खींचा और उनमें दरारें बनाईं (0.76–1.22 त्रिज्याओं पर <strong>ग्रैबेन</strong>), और भीतरी भाग को संपीडित करके <strong>झुर्री-कटक</strong> बनाए (0.71–0.77 त्रिज्याओं पर)।</li>
+<li><strong>दूर पक्ष के मारिया के चारों ओर दागे गए पदार्थ का कॉलर (अध्ययन 16):</strong> दूर पक्ष के मारिया के आसपास के किनारे इतने ऊँचे क्यों उठते हैं? इसलिए नहीं कि लावा किनारे पर छलका (बेसाल्ट उनके चारों ओर के वलय का केवल 0%–7% ढकता है), बल्कि इसलिए कि छिद्र से दागा गया गर्म पदार्थ उसके चारों ओर गिरा और परत-दर-परत लिपता गया! परिणामस्वरूप दूर पक्ष के मारिया के चारों ओर 150–300 km पर एक उठा <strong>"कॉलर"</strong> बना (दबे मारिया के चारों ओर माध्यिका ऊँचाई +742 m), जबकि संपर्क-मारिया के चारों ओर — जो भीतर आपूर्ति करते थे और बाहर नहीं दागते थे — कोई कॉलर नहीं है (−137 m)।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>छिद्र से उठते प्रवाह की दर और उसके बंद होने के बीच का संबंध, तथा सतह पर दिखते क्रेटरों का संतुलन, निम्न समीकरणों से वर्णित हैं:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}} = N_{\mathrm{bg}} + N_{\mathrm{return}} - N_{\mathrm{erased}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∫</mo><mi>Q</mi><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">M = \int Q\,dt</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>क्रेटर-समीकरण (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}}</annotation></semantics></math></span></span>) स्थापित करता है कि क्रेटर-गणना कोई "सरल घड़ी" नहीं: हर सक्रिय छिद्र ने अपने तल पर गिरे क्रेटरों को मिटाया और पिघलाया (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{erased}}</annotation></semantics></math></span></span>) जबकि उसने वह पदार्थ दागा जिसने उसके चारों ओर क्रेटर बनाए (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{return}}</annotation></semantics></math></span></span>)। केवल छिद्र का तल जमने के क्षण से उसने नए क्रेटर जमा करना शुरू किया — पृथ्वी से आते रहे अंतिम पदार्थ से ("अंतिम बिखेरक", §F.6)।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: स्वच्छ तल जो जमने का क्रम बताते हैं</h2>
+<p>अगर किसी मेयर-तल ने केवल अपने जमने के क्षण से क्रेटर रखने शुरू किए, तो उस पर क्रेटरों की संख्या <strong>मारिया के जमने के क्रम</strong> का सीधा माप है (अध्ययन 7 और 12):</p>
+<ul>
+<li><strong>अपने परिवेश से 12 गुना स्वच्छ तल:</strong> मापे गए सभी 10 खुले मारिया में (दोनों ओर युवा किरण-क्षेत्रों को हटाने के बाद), तल आसपास की ज़मीन में 2–5 km क्रेटरों के घनत्व का औसतन केवल <strong>8% (1/12)</strong> रखता है!</li>
+<li><strong>बड़े क्रेटरों (10 km और अधिक) में 83 गुना का अनुपात:</strong> संपर्क-मारिया (इम्ब्रियम और सेरेनिटैटिस) अंत में जमे और इसलिए सबसे स्वच्छ हैं (प्रति मिलियन km² 2–5 km के 256 क्रेटर, और 10+ km के केवल 3.2 क्रेटर)। इसके विपरीत, पहाड़ी पर के मारिया 10+ km के 33 गुना अधिक क्रेटर रखते हैं (प्रति मिलियन km² 106), और उसके पार के मारिया (ओरिएंटाले, मॉस्कोविएन्से और पॉइनकेयर) <strong>83 गुना</strong> अधिक (प्रति मिलियन km² 266)!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: गुंबदों की गिनती, गुरुत्व-परीक्षण और तलों की स्वच्छता (शोधपत्र 05, भाग C–F)</h3>
+<div class="tw"><table class="lab">
+<tr><th>माप / अध्ययन</th><th>नमूना और माप की शर्तें</th><th>मापा गया परिणाम</th><th>सार्थकता / अर्थ</th></tr>
+<tr class="hl"><td><strong>मारिया का आपूर्ति-गुंबदों से मिलान (अध्ययन 1)</strong></td><td>गुरुत्व-प्रवणताओं पर 34 मारिया बनाम 73 GRAIL गुंबद</td><td><strong>34 में से 33 मारिया</strong> गुंबद पर बैठे</td><td>20,000 यादृच्छिक चालनों में कोई 33 तक नहीं पहुँचा</td></tr>
+<tr><td><strong>73 आपूर्ति-गुंबदों का वितरण (अध्ययन 4)</strong></td><td>स्वचालित स्कैन (≥ 100 km, ≥ 50 mGal)</td><td><strong>44 दबे</strong> (36 दूर पक्ष पर), 25 खुले, 4 आंशिक</td><td>दूर पक्ष पर निकट पक्ष (33) से अधिक गुंबद (40)</td></tr>
+<tr><td><strong>छिद्रों के नीचे पपड़ी-सीढ़ी (अध्ययन 3)</strong></td><td>36 चिह्नित छिद्र बनाम 169 नियंत्रण-क्रेटर</td><td><strong>36 में से 29</strong> में ≥ 8 km की सीढ़ी (माध्यिका 17 km)</td><td>नियंत्रण-क्रेटरों में: 169 में से केवल 4 (2%, माध्यिका 1 km)</td></tr>
+<tr><td><strong>दबे गुंबदों के ऊपर चादर की मोटाई (अध्ययन 4)</strong></td><td>44 दबे गुंबद बनाम 25 खुले गुंबद</td><td>पपड़ी <strong>8–13 km</strong> मोटी; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mtext>FeO</mtext><mo>=</mo><mo>−</mo><mn>0.19</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">\Delta\text{FeO} = -0.19\text{ wt\%}</annotation></semantics></math></span></span></td><td>चादर आसपास की ज़मीन जैसी है और उसने प्राचीन छिद्रों को ढका</td></tr>
+<tr class="hl"><td><strong>तल-स्तर और केंद्र का धँसना (अध्ययन 5–6)</strong></td><td>16 बड़े तल; 12 खुले मारिया</td><td>16/16 में एक ही स्तर (किनारे से 3.4 km नीचे); 10/12 में धँसाव</td><td>सहसंबंध <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59</annotation></semantics></math></span></span> (p = 0.04); इम्ब्रियम और सेरेनिटैटिस उठे हुए</td></tr>
+<tr><td><strong>क्रेटरों से तलों की स्वच्छता (अध्ययन 7 और 12)</strong></td><td>10 खुले मारिया (किरण-क्षेत्रों के बिना)</td><td>परिवेश के सापेक्ष 2–5 km क्रेटरों का माध्यिका 8%; संपर्क और दूर के बीच 83 गुना (10+ km)</td><td>संपर्क-मारिया अंत में जमे; पृथ्वी अंतिम बिखेरक थी</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>हमने खोजा कि चंद्रमा के मारिया वे लावा-झीलें नहीं जो संयोग से क्षुद्रग्रह-क्रेटरों में फूट पड़ीं, बल्कि <strong>प्राचीन आपूर्ति-छिद्र</strong> हैं जिनसे चंद्रमा बना: 73 गुरुत्व-गुंबद (उनमें 44 दूर पक्ष की उच्चभूमियों के नीचे दबे), जिनमें से हर एक ने जमी झील जैसा समतल तल छोड़ा जो प्रवाह रुकने के बाद अपने केंद्र पर धँसा।</p>
+<p>पर समय के साथ मारिया के तलों और मैदानों पर गिरे क्रेटर कैसे दिखते हैं — और उनमें सबसे बड़े पिघले, मध्यम फैले और छोटे तीखे क्यों हैं? अगले अध्याय — <strong>अध्याय 9: तल पर घड़ी — पिघले, फैले और तीखे क्रेटर, और उजागर होने की तीन पीढ़ियाँ</strong> (शोधपत्र 05 से — <em>मारिया</em>, भाग G–I) — में हम चंद्रमा के चेहरे पर तापमान और श्यानता की घड़ी पढ़ना सीखेंगे!</p>
+<a href="story09_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 9</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">तल पर घड़ी — पिघले, फैले और तीखे क्रेटर, और उजागर होने की तीन पीढ़ियाँ →</p></div></a><p style="margin-top:22px"><a href="story07_hi.html">← अध्याय 7</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

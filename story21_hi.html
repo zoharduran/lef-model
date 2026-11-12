@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 21: सौरमंडल में चंद्रमाओं का नियम — जन्म-विधाओं का पैमाना, पंप-सिद्धांत और वायुमंडलीय ढक्कन — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 21: सौरमंडल में चंद्रमाओं का नियम — जन्म-विधाओं का पैमाना, पंप-सिद्धांत और वायुमंडलीय ढक्कन।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story21_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story21_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story21_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story21_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story21_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story21_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story21_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <a href="story21_de.html" hreflang="de">Deutsch</a> · <a href="story21_es.html" hreflang="es">Español</a> · <a href="story21_fr.html" hreflang="fr">Français</a> · <a href="story21_ru.html" hreflang="ru">Русский</a> · <a href="story21_zh.html" hreflang="zh">中文</a> · <a href="story21_ja.html" hreflang="ja">日本語</a> · <a href="story21_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 21</p>
+<h1>अध्याय 21: सौरमंडल में चंद्रमाओं का नियम — जन्म-विधाओं का पैमाना, पंप-सिद्धांत और वायुमंडलीय ढक्कन</h1>
+<p>शोधपत्र 11 पर आधारित — 11. चंद्रमाओं के जन्म: चंद्रमाओं के जन्म का एक तंत्र (भाग A–B: जन्म-पैमाना, पंप और ढक्कन सिद्धांत, विभेदन के चरण और 13 जाँचों का प्रोटोकॉल)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: क्या एक भौतिक नियम सौरमंडल के सभी चंद्रमाओं का जन्म समझाता है — पृथ्वी से प्लूटो तक?</h2>
+<p>पिछले अध्यायों में हमने देखा कि पृथ्वी ने नाशपाती के सिरे पर चंद्रमा कैसे बनाया (अध्याय 1–9), और मंगल ने नुकीले उभार के शीर्ष पर एक ज्वालामुखी से फ़ोबोस और डीमोस कैसे निष्कासित किए (अध्याय 19–20)। शोधपत्र 11 में LEF मॉडल इन दो उदाहरणों को <strong>"चंद्रमा-नियम"</strong> में सामान्यीकृत करता है — सौरमंडल के हर ग्रह और बौने ग्रह के लिए मान्य एक समान तंत्र:</p>
+<ol class="steps">
+<li><strong>चंद्रमा आकार और संरचना में इतने भिन्न क्यों हैं?</strong> पृथ्वी का चंद्रमा सूखा और अपने जनक के सापेक्ष विशाल है (पृथ्वी के द्रव्यमान का 1.2%); दानवों (बृहस्पति, शनि, अरुण और वरुण) के चंद्रमा नन्हे हैं (0.01%–0.02%) और पानी तथा बर्फ़ से समृद्ध; जबकि कैरन प्लूटो–कैरन तंत्र के द्रव्यमान का 11% है!</li>
+<li><strong>चंद्रमाओं का घनत्व सूर्य से दूरी के साथ क्यों गिरता है — और फिर अरुण पर फिर क्यों उछलता है?</strong> पृथ्वी के चंद्रमा का घनत्व 3,344 kg/m³ है, बृहस्पति के गैलीलियाई चंद्रमा ~ 2,600 kg/m³, शनि के चंद्रमा ~ 1,350 kg/m³ — पर अधिक दूर अरुण पर घनत्व फिर 1,505 kg/m³ तक बढ़ता है!</li>
+<li><strong>पाँच ग्रहों (मंगल, बृहस्पति, शनि, अरुण और वरुण) में छोटे चंद्रमा सह-घूर्णन रेखा के दोनों ओर क्यों हैं?</strong> और बुध और शुक्र पूरी तरह बिना चंद्रमाओं के क्यों रह गए?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: सह-घूर्णन रेखा का दूरी-पैमाना, बाँहें समेटती स्केटर, और झाग के ढक्कन वाली सूप की दो पतीलियाँ</h2>
+<p>चार मूर्त चित्र पूरे सौरमंडल में चंद्रमाओं के जन्म की भौतिकी समझाते हैं:</p>
+<ul>
+<li><strong>बाँहें समेटती बर्फ़ की स्केटर जबकि उसका कोट बाहर फूलता है (भीतर सिकुड़ना और बाहर फूलना, A.5):</strong> ग्रहीय विभेदन सह-घूर्णन रेखा को सतह के पास कैसे लाता है? कोणीय संवेग खोए बिना समान रूप से फूलता पिंड धीमा होता और सह-घूर्णन रेखा को दूर धकेलता। पर विभेदन भीतर और बाहर विपरीत प्रक्रिया है: भारी कोर (जिसमें अधिकांश द्रव्यमान है) <strong>भीतर डूबकर सिकुड़ता है</strong> और बाँहें समेटती स्केटर की तरह घूर्णन को तेज़ करता है, जबकि हल्का पानी और वाष्पशील ऊपर धकेले जाते हैं और घूर्णन को लगभग धीमा किए बिना <strong>बाहरी आवरण को फुलाते हैं</strong>। इसलिए सह-घूर्णन रेखा की सापेक्ष दूरी <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> के अनुसार सिकुड़ती है और सतह से मिलती है!</li>
+<li><strong>"द्रवगतिक पंप" (The Pump Principle, A.4):</strong> भारी पदार्थों का कोर में डूबना, द्रवस्थैतिक दाब से, पानी और हल्के सिलिकेटों को निष्कासन-छिद्रों तक (नाशपाती का सिरा या उभार पर ज्वालामुखी का मुख) ऊपर धकेलता है। जब तक पंप सक्रिय है और पपड़ी बंद नहीं, <strong>जन्म-खिड़की</strong> खुली रहती है।</li>
+<li><strong>आग पर सूप की दो पतीलियाँ — झाग का मोटा ढक्कन बनाम झाग का पतला ढक्कन (वायुमंडलीय ढक्कन सिद्धांत, A.4 और A.9):</strong> सूर्य से दूरी ने तय किया कि प्रोटोग्रहीय डिस्क बिखरने से पहले हर दानव ने कितना हाइड्रोजन और हीलियम पकड़ा। शनि (9.5 AU) के पास <strong>मोटा गैस-आवरण (द्रव्यमान का 70%–85%)</strong> है जो पानी के ऊपर ऊष्मागतिक ढक्कन का काम करता है: वाष्प संघनित होकर भीतर वापस गिरते हैं, ऊपरी परत पानी से संतृप्त और नरम रहती है, सह-घूर्णन रेखा अपनी जगह रहती है (1.92 R), और निष्कासित चंद्रमा हल्के और बर्फ़ से समृद्ध हैं (1,346 kg/m³)। अरुण (19 AU) के पास <strong>पतला गैस-ढक्कन (10%–20%)</strong> है: वाष्प सह-घूर्णन रेखा से अंतरिक्ष में भागे, कोणीय संवेग ले गए जिसने रेखा को 3.24 R तक धकेला, और ऊपरी निष्कासन-परत को सुखाकर कसा — इसीलिए अरुण के चंद्रमा अधिक सघन हैं (1,505 kg/m³)!</li>
+<li><strong>सौरमंडल में तीन जन्म-विधाएँ (A.4, L.4):</strong> गर्म, सूखे भीतरी किनारे पर (पृथ्वी) नाशपाती के सिरे पर एक बड़ा, सूखा चंद्रमा बना (<strong>Built</strong>); गीले मध्य क्षेत्र में (मंगल से वरुण तक) उभारों पर ज्वालामुखियों से छोटे, पानी-समृद्ध चंद्रमा निष्कासित हुए (<strong>Ejected</strong>); और ठंडे, तेज़ बाहरी किनारे पर (प्लूटो–कैरन) एक एकीकृत पिंड "मूँगफली" में खिंचकर अपनी कमर पर फटा (<strong>Split</strong>)।</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: जन्म-नियम, अवस्थाओं का पैमाना और विभेदन के चार चरण (भाग A)</h2>
+<p>शोधपत्र 11 का भाग A चंद्रमा-नियम की सटीक मात्रात्मक शर्तें सूत्रबद्ध करता है:</p>
+<ol class="steps">
+<li><strong>जन्म-विधाओं का पैमाना (A.3):</strong> अगर सह-घूर्णन रेखा की त्रिज्या जनक की त्रिज्या की इकाइयों में मापी जाए (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), तो जनक की त्रिज्या पूरी तरह कट जाती है! स्थिति x <strong>केवल घूर्णन-दर और औसत घनत्व के अनुपात</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>) पर निर्भर करती है, इसलिए ब्रह्मांड के हर पिंड पर एक ही पैमाना लागू होता है:
+<ul>
+<li><strong>नाशपाती (Built on Pear Tip):</strong> x ≈ 2.29 (5.77 घंटे और 3,940 kg/m³ घनत्व पर पृथ्वी — चंद्रमा जनक के द्रव्यमान का 1.2%)।</li>
+<li><strong>उभार और ज्वालामुखी (Ejected on Bulge):</strong> x ≈ 1.74–2.06 (7–9 घंटे और 1,170 kg/m³ घनत्व पर मंगल, और इसी तरह गैस और बर्फ़ दानव — 0.01%–0.02% के नन्हे चंद्रमा)।</li>
+<li><strong>बिना उभार का ज्वालामुखी (एक सैद्धांतिक संभावना):</strong> x ≈ 1.1–1.5।</li>
+<li><strong>पूर्ण मूँगफली-विखंडन (Split at Neck):</strong> x ≈ 0.85–1.02 (लंबाई-दहलीज़ x = 1.53 से विदरण-दहलीज़ x = 1 तक जाना — 1.9–2.5 घंटे पर प्लूटो और कैरन, कैरन युग्म के द्रव्यमान का 11%)।</li>
+</ul>
+</li>
+<li><strong>जनक के विभेदन-चरणों के कालक्रमिक अनुप्रस्थ-काट के रूप में चंद्रमा की संरचना (A.9):</strong> जैसे-जैसे विभेदन आगे बढ़ता है, सह-घूर्णन रेखा भीतर खिसकती है (बृहस्पति पर और शनि के जीवन की शुरुआत में), इसलिए <strong>अधिक दूर के चंद्रमा पहले जन्मे</strong> और पास के चंद्रमा बाद में:
+<ul>
+<li><strong>चरण 0 (विभेदन की शुरुआत — पानी का अपकेंद्री छिड़काव):</strong> रोश सीमा के ऊपर बाहरी परत से आदिम पानी का छिड़काव <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> हवादार बर्फ़ीले चंद्रमा (आइपेटस 1,088 kg/m³, हाइपेरियन 544 kg/m³)।</li>
+<li><strong>चरण 1 (प्रारंभिक — मिश्रित पदार्थ):</strong> छँटाई पूरी होने से पहले पूरे जनक की संरचना का प्रतिनिधित्व करते पदार्थ का निष्कासन <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> जनक के भीतरी पिंड जैसे घनत्व वाले बड़े चंद्रमा (f ≈ 0.6–0.7: कैलिस्टो 1,834, गैनिमीड 1,936, टाइटन 1,880, टाइटेनिया 1,711, ओबेरॉन 1,630 kg/m³)।</li>
+<li><strong>चरण 2 (द्रवगतिक पंप का शिखर):</strong> पानी और हल्के सिलिकेटों से संतृप्त मैग्मा का धकेलना; वाष्पशीलों का अंतरिक्ष में भागना उच्च छिद्रता ("स्पंजीपन", 30%–40%) और कम घनत्व छोड़ता है <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> फ़ोबोस (1,860), डीमोस (1,470), टेथिस (984), मिरांडा (1,200 kg/m³)।</li>
+<li><strong>चरण 3 (विभेदन का अंत):</strong> परिभाषित धात्विक कोर वाले सूखे, सघन सिलिकेट अवशेष का निष्कासन <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> आयो (3,528 kg/m³)।</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 222" role="img" aria-label="जनक-त्रिज्याओं में सह-घूर्णन रेखा की स्थिति" style="direction:ltr"><g transform="translate(227.0,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >नाशपाती-सिरे पर निर्मित · ⁦2.29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >उभार पर निष्कासित · ⁦1.74–2.06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >बिना उभार का ज्वालामुखी · ⁦1.1–1.5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >मूँगफली-विखंडन · ⁦0.85–1.02⁩</text><text x="320.0" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >जनक-त्रिज्याओं में सह-घूर्णन रेखा की स्थिति · लाल रेखा: विदरण-दहलीज़</text></svg><figcaption>जन्म-विधाओं का पैमाना: वही संख्या x तय करती है कि चंद्रमा सिरे पर बना, ज्वालामुखी से निष्कासित हुआ या मूँगफली से फटा — हर पिंड के लिए, जनक की त्रिज्या से निरपेक्ष।</figcaption></figure><div class="callout"><span class="tag">सही घनत्व-तुलना — भीतरी पिंड को गैस-आवरण से अलग करना (A.9)</span><p style="margin:0">चंद्रमा भीतरी पिंड (चट्टान और बर्फ़) से जन्मते हैं, हाइड्रोजन और हीलियम आवरण से नहीं। जब चंद्रमाओं का औसत घनत्व एक सिलिकेट-धातु घटक (3,500 kg/m³) और एक बर्फ़-घटक (950 kg/m³) में बाँटा जाता है, तो सिलिकेट द्रव्यमान-अंश f पृथ्वी (f = 0.98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>) से, बृहस्पति (f = 0.83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>) से होकर शनि (f = 0.36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>) तक धीरे-धीरे गिरता है — और अरुण पर फिर बढ़ता है (f = 0.49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>), क्योंकि अरुण के पतले गैस-ढक्कन (10%–20%) ने पानी को भागने दिया और ऊपरी निष्कासन-परत को सुखाया!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: चंद्रमा-नियम के सोलह खंड (A.10) और 13 जाँचों का प्रोटोकॉल (भाग B)</h2>
+<p>शोधपत्र 11 के भाग A.10 और B सभी भौतिक शर्तों को नियमों की एक प्रणाली और सौरमंडल के हर पिंड के लिए 13 जाँचों के एक समान माप-प्रोटोकॉल में जोड़ते हैं:</p>
+<ol class="steps">
+<li><strong>ऊष्मागतिक घड़ी के रूप में सूर्य — जन्मों का चाप (A.10.4 और L.4):</strong> चंद्रमाओं के जन्म के लिए एक साथ सक्रिय विभेदन, खुली समय-खिड़की, बंद न हुई पपड़ी और कम श्यानता वाली उपसतही परत चाहिए। सूर्य से दूरी तय करती है कि चारों शर्तें कितने समय तक साथ रहती हैं: भीतरी किनारे पर (बुध और शुक्र) तेज़ सूखना जन्म-खिड़की को जल्दी बंद करता है, और केवल पृथ्वी नाशपाती के सिरे पर एक चंद्रमा बना पाई; मध्य क्षेत्र में (मंगल से शनि तक) चंद्रमा बहुतायत में निष्कासित होते हैं शनि पर शिखर तक (~ 24 नियमित चंद्रमा); और ठंडे बाहरी किनारे पर (अरुण, वरुण और प्लूटो) पपड़ी का जमना धीरे-धीरे पंप के छिद्र बंद करता है और तंत्र को यांत्रिक विखंडन की ओर ले जाता है।</li>
+<li><strong>संरचनात्मक दौड़ और चंद्रमा के द्रव्यमान की प्रतिपुष्टि (A.4, A.10.16):</strong> चंद्रमा जन्मे, इसके लिए नाशपाती या उभार की अरीय वृद्धि-दर सह-घूर्णन रेखा के पीछे हटने की दर से अधिक होनी चाहिए। जन्म के बाद, अगर चंद्रमा का जनक से द्रव्यमान-अनुपात बड़ा है (जैसे पृथ्वी का चंद्रमा, 1.2%), चंद्रमा अधिकांश कोणीय संवेग (84%) ले जाता है और जनक को धीमा करता है; पर दानवों और मंगल में चंद्रमाओं का द्रव्यमान नन्हा है (0.01%–0.02%, संवेग का केवल 0.4%–1.4%), इसलिए सह-घूर्णन रेखा का कोई भी पीछे हटना <strong>केवल रेखा से पानी और गैस के भागने (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)</strong> से आता है!</li>
+<li><strong>13 जाँचों का व्यवस्थित प्रोटोकॉल (भाग B):</strong> पूर्वाग्रह से बचने के लिए हर ग्रह और बौना ग्रह कालक्रमिक अनुक्रम में 13 स्थिर प्राचलों से जाँचा जाता है: (1) वैश्विक मूल आँकड़े; (2) सूची और पकड़े गए चंद्रमाओं से नियमित चंद्रमाओं का पृथक्करण; (3) प्राचीन घूर्णन का गतिकीय पुनर्निर्माण (जाँच 3 — जन्म के समय त्रिज्या और जड़त्व-आघूर्ण गुणांक k का उपयोग!); (4) जन्म-नियम का सत्यापन; (5) पानी और वाष्पशीलों का विश्लेषण; (6) आज विभेदन की मात्रा (k = C/MR²); (7) जन्म-खिड़की की परिभाषा; (8) ज्वारीय प्रवास का मार्ग (जाँच 8 — वलय से द्वितीयक धक्के की आवश्यकता पहचानने के लिए da/dt का समाकलन); (9) उत्तरजीविता-प्राचल (रोश सीमा और हिल त्रिज्या); (10) जनक पर आकारिकीय चिह्न; (11) चंद्रमाओं पर संरचनात्मक चिह्न (छिद्रता, ज्वारीय बंधन और जमा उभार); (12) सतत प्रवाह के रूप में वलय-प्रणालियों का विश्लेषण; और (13) विसंगतियों का पृथक्करण।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>जनक की त्रिज्या की इकाइयों में सह-घूर्णन रेखा की स्थिति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), जन्म-दिन (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>), और विभेदन के दौरान भीतरी सिकुड़न और बाहरी फुलाव का प्रभाव इस प्रकार सूत्रबद्ध हैं (§A.3, §A.5, §B):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>चूँकि जड़त्व-आघूर्ण गुणांक k विभेदन-सूत्र <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> में वर्ग के रूप में आता है, k का 0.40 (समांगी पिंड) से 0.20–0.25 (सघन कोर) तक गिरना सह-घूर्णन रेखा x को 2.10 R से 1.44–1.68 R तक ले आता है, तब भी जब बाहरी आवरण 1.3 गुना फूलता है — और यही वह भू-गतिकीय इंजन है जो सतह और सह-घूर्णन रेखा को साथ लाता है!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: सह-घूर्णन रेखा का पुनर्निर्माण और चंद्रमाओं का मिश्रण-समीकरण</h2>
+<p>प्रोटोकॉल की जाँच 3 और 5 को ग्रहों पर लागू करना चंद्रमाओं की रासायनिक संरचना और कोणीय संवेग के संरक्षण के बीच प्रभावशाली मात्रात्मक मेल उजागर करता है (§A.9, §B):</p>
+<ul>
+<li><strong>चंद्रमाओं के घनत्व का दो-घटक मिश्रण-समीकरण (§A.9):</strong> सूत्र <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span> के अनुसार, विभेदन के चरण 1 में जन्मे बड़े चंद्रमाओं का सिलिकेट द्रव्यमान-अंश f पूरे बाहरी सौरमंडल में <strong>f ≈ 0.6–0.7</strong> की संकरी, समान सीमा पर अभिसरित होता है (कैलिस्टो, गैनिमीड, टाइटन, टाइटेनिया, ओबेरॉन, और प्लूटो–कैरन तंत्र भी)!</li>
+<li><strong>बिना द्रव्यमान-हानि के सह-घूर्णन रेखा के पुनर्निर्माण का परीक्षण (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, भाग B):</strong> जब केवल चंद्रमाओं का कोणीय संवेग जनक को लौटाया जाता है, बृहस्पति (2.29 R → 2.28 R) और शनि (1.92 R → 1.90 R) पर रेखा मुश्किल से हिलती है (मोटे-ढक्कन सिद्धांत से संगत); पृथ्वी पर रेखा 2.29 R पर लौटती है (क्योंकि चंद्रमा संवेग का 84% ले जाता है); जबकि मंगल (6.03 R), अरुण (3.24 R) और वरुण (3.39 R) पर रेखा जन्म-सीमा (x ≈ 2) से दूर रहती है — प्रमाण कि तीनों में सह-घूर्णन रेखा से पानी और गैस की विशाल मात्राएँ भागीं!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: जन्म-विधाओं का पैमाना, विभेदन के चरण, दो-पतीली मॉडल और 13 जाँचों का प्रोटोकॉल (शोधपत्र 11, भाग A–B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>जन्म-विधा</th><th>पदार्थ उठाने वाला तंत्र</th><th>सह-घूर्णन रेखा की स्थिति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th><th>चंद्रमा/जनक द्रव्यमान-अनुपात</th><th>सौरमंडल में क्षेत्र और उदाहरण</th></tr>
+<tr class="hl"><td><strong>1. सिरे पर निर्मित</strong></td><td>ग्रहीय नाशपाती के सिरे पर लंबा संचय; रेखा पार करने पर अलगाव</td><td><strong>2.29</strong> (5.77 h, 3,940 kg/m³)</td><td><strong>1.2%</strong> (बड़ा और सूखा)</td><td>सूखा भीतरी किनारा: <strong>पृथ्वी का चंद्रमा</strong> (एकमात्र उदाहरण)</td></tr>
+<tr class="hl"><td><strong>2. उभार पर निष्कासित</strong></td><td>विषुवतीय उभार और पानी-संतृप्त मैग्मा अंतःक्षेपित करता ज्वालामुखी</td><td><strong>1.74–2.06</strong> (मंगल 7–9 h, 1,170 kg/m³)</td><td>दानवों में <strong>0.01%–0.02%</strong> (मंगल पर 1.9 × 10⁻⁸)</td><td>गीला मध्य क्षेत्र: <strong>फ़ोबोस, डीमोस और दानवों के चंद्रमा</strong></td></tr>
+<tr><td><strong>2b. बिना उभार का ज्वालामुखी</strong></td><td>स्थानीय ज्वालामुखी से बिंदु-निष्कासन</td><td>≈ 1.1–1.5</td><td>नन्हा</td><td>एक सैद्धांतिक संभावना (कोई गणित उदाहरण नहीं)</td></tr>
+<tr class="hl"><td><strong>3. पूर्ण विखंडन</strong></td><td>विखंडन-दहलीज़ (x = 1) से परे घूर्णन; मूँगफली में लंबा होना और कमर पर फटना</td><td><strong>0.85–1.02</strong> (1.9–2.5 h, 1,840 kg/m³)</td><td><strong>11%–12%</strong> (दोहरा बंधन)</td><td>ठंडा बाहरी किनारा: <strong>प्लूटो और कैरन</strong> (और विखंडन से पहले हौमिया)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>जनक में विभेदन का चरण (A.9)</th><th>भू-गतिकीय तंत्र और छिद्र पर पदार्थ</th><th>बने चंद्रमा के गुण</th><th>सौरमंडल में उदाहरण</th></tr>
+<tr><td><strong>चरण 0: विभेदन की शुरुआत</strong></td><td>रोश सीमा के ऊपर बाहरी परत से पानी का अपकेंद्री छिड़काव</td><td>बहुत कम घनत्व का हवादार, स्पंजी बर्फ़ीला चंद्रमा</td><td>आइपेटस (1,088), हाइपेरियन (544 kg/m³)</td></tr>
+<tr class="hl"><td><strong>चरण 1: प्रारंभिक चरण</strong></td><td>पूरे भीतरी पिंड की संरचना का प्रतिनिधित्व करता मिश्रित पदार्थ</td><td>बड़ा चंद्रमा, भीतरी पिंड जैसा घनत्व (f ≈ 0.6–0.7), आंशिक विभेदन</td><td>कैलिस्टो (1,834), गैनिमीड (1,936), टाइटन (1,880), टाइटेनिया (1,711), ओबेरॉन (1,630)</td></tr>
+<tr class="hl"><td><strong>चरण 2: पंप का शिखर</strong></td><td>तेज़ कोर-डुबाव पानी और हल्के सिलिकेटों से संतृप्त मैग्मा धकेलता है</td><td>वाष्पशीलों का भागना "स्पंजीपन" (30%–40% छिद्रता) और कम घनत्व बनाता है</td><td>फ़ोबोस (1,860), डीमोस (1,470), टेथिस (984), मिरांडा (1,200 kg/m³)</td></tr>
+<tr><td><strong>चरण 3: विभेदन का अंत</strong></td><td>लगभग पूर्ण छँटाई; सूखे, सघन सिलिकेट अवशेष का निष्कासन</td><td>सघन सिलिकेट चंद्रमा, पूरी तरह सूखा और धात्विक कोर के साथ</td><td>आयो (3,528 kg/m³)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>इस अध्याय में हमने LEF मॉडल का <strong>चंद्रमा-नियम</strong> सूत्रबद्ध किया: जनक की त्रिज्या की इकाइयों में सह-घूर्णन रेखा की स्थिति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), द्रवगतिक पंप का सिद्धांत, वायुमंडलीय ढक्कन का सिद्धांत (शनि बनाम अरुण का दो-पतीली मॉडल), और कोर का सिकुड़ना जो सह-घूर्णन रेखा को सतह तक लाता है।</p>
+<p>अगले अध्याय — <strong>अध्याय 22: एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक</strong> (शोधपत्र 11 से — भाग C–N) — में हम ग्रह-दर-ग्रह 13 जाँचों का प्रोटोकॉल चलाएँगे: हम खोजेंगे कि बुध और शुक्र के चंद्रमा क्यों नहीं, शनि के वलय संतुलन में सतत प्रवाह के रूप में कैसे काम करते हैं, अरुण 98° क्यों झुका है, ट्राइटन कुइपर पट्टी से मूँगफली के एक खंड के रूप में कैसे पकड़ा गया, और सौरमंडल के 12 खुले प्रश्नों का मानचित्र बनाएँगे!</p>
+<a href="story22_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 22</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक →</p></div></a><p style="margin-top:22px"><a href="story20_hi.html">← अध्याय 20</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 3: भीतर का इंजन — 150 GPa का स्रोत-दाब और झागदार मैग्मा — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 3: 150 GPa का स्रोत-दाब, झागदार मैग्मा के लिए 3,864 kg/m³ की घनत्व-दहलीज़, प्रवाह-दर, ऊर्जा का स्रोत, और यह कि मार्ग पतली नली नहीं बल्कि नाशपाती क्यों है।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story03_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story03_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story03_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story03_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story03_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story03_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story03_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story03_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story03_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story03_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story03_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story03_he.html" hreflang="he">עברית</a> · <a href="story03_en.html" hreflang="en">English</a> · <a href="story03_de.html" hreflang="de">Deutsch</a> · <a href="story03_es.html" hreflang="es">Español</a> · <a href="story03_fr.html" hreflang="fr">Français</a> · <a href="story03_ru.html" hreflang="ru">Русский</a> · <a href="story03_zh.html" hreflang="zh">中文</a> · <a href="story03_ja.html" hreflang="ja">日本語</a> · <a href="story03_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 3</p>
+<h1>अध्याय 3: भीतर का इंजन — <span class="ltr">150 GPa</span> का स्रोत-दाब और झागदार मैग्मा</h1>
+<p>शोधपत्र 03 पर आधारित — व्यवहार में LEF तंत्र (भूमिका और भाग A: §A.1–A.13)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: 73 अरब अरब टन को 16,000 किलोमीटर की ऊँचाई तक किसने धकेला?</h2>
+<p class="lead">पिछले अध्यायों में हमने देखा कि सह-घूर्णन रेखा गति और कोणीय संवेग बजट की पहेली सुलझाती है: अगर हम चंद्रमा के पदार्थ को पृथ्वी के साथ घुमाते हुए उसके केंद्र से लगभग 16,000 km की दूरी तक ला सकें, तो वह पहले से ही स्वतंत्र कक्षा की गति से चल रहा होगा। पर अब हमारे सामने वास्तविकता का सबसे कठिन प्रश्न है:</p>
+<div class="q">संसार में कौन-सा बल <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg के विशाल द्रव्यमान को पृथ्वी के गुरुत्व के विरुद्ध उठा सकता है?</div>
+<p>यह कार्य कितना कठिन है यह समझने के लिए, पहले दो लुभावने पर विफल प्रस्तावों को परखें। पहला, <strong>अकेला घूर्णन कुछ नहीं उठाता</strong>: हर 5.5 घंटे में घूमती पृथ्वी की सतह पर भी, केंद्र से 8,991 km की ऊँचाई पर (चंद्रमा-द्रव्यमान का पिंड सतह को छूता हुआ), गुरुत्व <span class="ltr">4.93 m/s²</span> के त्वरण से भीतर खींचता है, जबकि बाहर का अपकेंद्री धक्का केवल <span class="ltr">0.905 m/s²</span> है। हर किलोग्राम अब भी नीचे की ओर आज पृथ्वी की सतह पर अपने भार का लगभग चालीस प्रतिशत भारी है! घूर्णन भार को हल्का तो करता है, पर उसे उठाता नहीं।</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">गुरुत्व भीतर · ⁦4.93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:ltr;unicode-bidi:embed">अपकेंद्री धक्का बाहर · ⁦0.905 m/s²⁩</text></svg><figcaption>केंद्र से 8,991 km पर, 5.5 घंटे के दिन के साथ: गुरुत्व अपकेंद्री धक्के से पाँच गुना से अधिक है।</figcaption></figure>
+<p>दूसरा, <strong>उत्प्लावकता अंतरिक्ष में काम नहीं करती</strong>: तेल पानी पर इसलिए तैरता है क्योंकि उसके चारों ओर का भारी पानी उसे ऊपर धकेलता है, पर पृथ्वी की सतह के ऊपर चट्टान का कोई महासागर नहीं जो चंद्रमा को ऊपर तैरा सके।</p>
+<div class="box"><span class="tag">निष्कर्ष</span><p style="margin:0">निष्कर्ष स्पष्ट है: पृथ्वी के अपने पदार्थ से चंद्रमा बनाने के लिए <strong>एक विशाल आंतरिक दाब-इंजन</strong> चाहिए, जो भीतर से काम करे — ऐसा इंजन जो पृथ्वी की गहराइयों से मैग्मा का स्तंभ ऊपर धकेले, पर्याप्त दर से द्रव्यमान पहुँचाए, और अपने शीर्ष पर बनते चंद्रमा के भार से ढह न जाए।</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>एक चित्र: टूथपेस्ट, छत तक चढ़ता पानी, और खुलती सोडा की बोतल</h2>
+<p>यह इंजन कैसे काम करता है इसका सीधा अनुभव पाने के लिए, रोज़मर्रा के जीवन के तीन सरल चित्र जोड़िए:</p>
+<div class="three t">
+<div><b>01 · स्रोत-दाब</b><h4>टूथपेस्ट की ट्यूब</h4><p>युवा पृथ्वी के गहरे भीतर, ऊपर की सारी परतों का भार प्रचंड दाब पैदा करता है। जब किसी एक अनुकूल क्षेत्र में गहराई से सतह तक प्रवाह-मार्ग खुलता है, तो आंतरिक दाब पिघली चट्टान को ऊपर निचोड़ता है — ठीक जैसे ट्यूब दबाने पर टूथपेस्ट नोज़ल से निकलता है।</p></div>
+<div><b>02 · द्रवस्थैतिक शीर्ष</b><h4>छत की टंकी तक पानी चढ़ाता पंप</h4><p>तहखाने में रखा पंप गगनचुंबी इमारत की छत की टंकी तक पानी भेज सके, इसके लिए उसका दाब पाइप के भीतर पानी के पूरे स्तंभ के भार से अधिक होना चाहिए। अगर पानी बहुत भारी हो और इमारत बहुत ऊँची, तो स्तंभ आधे रास्ते रुक जाता है।</p></div>
+<div><b>03 · झागदार मैग्मा</b><h4>खुलती सोडा की बोतल</h4><p>बड़ी गहराई पर, विशाल दाब में, पानी और वाष्पशील गैसें पिघली चट्टान में वैसे ही घुली रहती हैं जैसे बंद सोडा की बोतल में गैस। जैसे ही मैग्मा ऊपर उठता है और उस पर दाब घटता है, गैसें बाहर निकलकर अरबों बुलबुले बनाती हैं — <strong>झागदार मैग्मा</strong>। यह झाग ठोस चट्टान से बहुत हल्का है, इसलिए ठीक वही दाब उसे कहीं ऊँचा उठा सकता है!</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: सूखी चट्टान क्यों विफल होती है — और केवल वाष्पशील-समृद्ध मैग्मा दहलीज़ पार करता है</h2>
+<p>LEF मॉडल में हम अनुमान नहीं लगाते कि दाब पर्याप्त है — हम उसी गुरुत्व-क्षेत्र से <strong>धक्के का मूल्य आँकते हैं</strong>। गणना से पहले, शोधपत्र 03 हिसाब का एक कठोर नियम तय करता है: हर क्षण जनक पिंड का प्रारंभिक द्रव्यमान (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> kg) चार स्पष्ट भंडारों में बँटा है, ताकि कोई किलोग्राम दो बार न गिना जाए:</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>पृथ्वी में बचा द्रव्यमान</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>विकसित होते पिंड में जमा द्रव्यमान</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>उनके बीच रास्ते में या निष्कासन में गतिशील द्रव्यमान</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>और तंत्र से खोया द्रव्यमान</span></div></div>
+<p>अब शोधपत्र मैग्मा-स्तंभ के साथ एक-आयामी दाब-परीक्षण स्थापित करता है, युवा पृथ्वी के केंद्र (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> km, 5.5 घंटे का दिन) से पूरे जनक पिंड की सह-घूर्णन त्रिज्या (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> km) तक:</p>
+<ul class="pts">
+<li><strong>स्रोत पर उपलब्ध दाब</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>:</strong> युवा पृथ्वी के केंद्र पर दबती परतों का भार (तेज़ घूर्णन की अपकेंद्री राहत घटाकर) <strong><span class="ltr">150.26 GPa</span></strong> का शिलास्थैतिक स्रोत-दाब देता है (लगभग पंद्रह लाख वायुमंडल!)।</li>
+<li class="a"><strong>मैग्मा-स्तंभ की लागत</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>:</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> kg/m³ घनत्व के गहरे मैग्मा से बने स्तंभ को थामने के लिए, जो सतह के ऊपर <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> kg/m³ घनत्व तक झागदार हो जाता है, <strong><span class="ltr">139.78 GPa</span></strong> का दाब चाहिए।</li>
+<li class="c"><strong>चंद्रमा को धकेलने वाला अधिशेष:</strong> <span class="ltr">150.26 − 139.78 = <strong><span class="ltr">+10.49 GPa</span></strong></span>! दस गीगापास्कल से अधिक का धनात्मक दाब-अधिशेष बचता है, जो प्रवाह को ऊपर चलाता है।</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">स्रोत-दाब · ⁦150.26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">मैग्मा-स्तंभ की लागत · ⁦139.78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:ltr;unicode-bidi:embed">अधिशेष: ⁦+⁦10.49 GPa⁩⁩</text></svg><figcaption>3,500 kg/m³ के संदर्भ-घनत्व पर दाब-संतुलन: स्रोत-दाब मैग्मा-स्तंभ के भार को ढकता है और अधिशेष छोड़ता है।</figcaption></figure>
+<div class="callout"><span class="tag">क्रांतिक घनत्व-दहलीज़ · 3,864 kg/m³</span>
+<p style="margin:0">जब हम जाँचते हैं कि कौन-से मैग्मा-घनत्व परीक्षण पास करते हैं, तो एक तीखी सीमा उभरती है: <strong>3,864 kg/m³</strong> से कम घनत्व का कोई भी गहरा मैग्मा (जैसे पानी और वाष्पशीलों से समृद्ध मैग्मा) धनात्मक दाब-अधिशेष छोड़ता है और सह-घूर्णन रेखा तक पहुँचता है; इसके विपरीत, 4,000 kg/m³ घनत्व के सूखे, भारी मैग्मा को <span class="ltr">154.19 GPa</span> चाहिए और वह <span class="ltr">−3.92 GPa</span> की कमी से विफल होता है। <strong>पानी और वाष्पशील कोई आकस्मिक जोड़ नहीं — वे वह भौतिक शर्त हैं जो चंद्रमा को उठने देती है!</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68.12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24.89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10.49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3.92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18.33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="end" style="direction:ltr;unicode-bidi:embed">दहलीज़: 3,864 kg/m³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">मैग्मा उठता है</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">विफल</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">गहरे मैग्मा का घनत्व (kg/m³)</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:ltr;unicode-bidi:embed">दाब-अधिशेष (GPa)</text></svg><figcaption>शोधपत्र 03 के अनुसार गहरे मैग्मा के घनत्व के फलन के रूप में दाब-अधिशेष (भार और घर्षण से पहले): रेखा 3,864 kg/m³ पर शून्य को पार करती है।</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: प्रवाह-दर, ऊर्जा-स्रोत और पतली नली का खंडन</h2>
+<p>हमने पाया कि <span class="ltr">10.49 GPa</span> का दाब-अधिशेष झागदार मैग्मा के स्तंभ को सह-घूर्णन रेखा तक धकेल सकता है। पर पूरा चंद्रमा बनाने के लिए आंतरिक इंजन को उसी तंत्र के भीतर <strong>तीन और व्यावहारिक परीक्षण</strong> भी पास करने होंगे:</p>
+<div class="three">
+<div><b>TEST 1</b><h4>दर का परीक्षण</h4><p>क्या मैग्मा समय पर पहुँचता है? पूरे चंद्रमा का द्रव्यमान (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg) 60 करोड़ वर्षों की निर्माण-खिड़की में (या संवेदनशीलता-परीक्षण में 10 करोड़ वर्षों में) पहुँचाने के लिए <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> kg/s की औसत दर चाहिए (और छोटी खिड़की में <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> kg/s तक)। श्यान प्रवाह के नियम (प्वाज़ॉय) के अनुसार प्रवाह-दर <strong>मार्ग की त्रिज्या की चौथी घात</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>) के साथ बढ़ती है: कई सौ किलोमीटर या अधिक त्रिज्या का मार्ग द्रव्यमान आसानी से ले जाता है, जब तक उसका भीतरी भाग गर्म और गतिशील रहे।</p></div>
+<div><b>TEST 2</b><h4>ऊर्जा का परीक्षण</h4><p>चंद्रमा उठाने का कार्य कहाँ से आता है? चंद्रमा के द्रव्यमान को सतह (8,991 km) से मुक्ति-त्रिज्या (16,400 km) तक उठाने के लिए लगभग <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span> जूल</strong> का गुरुत्वीय कार्य चाहिए (पृथ्वी की बंधन-ऊर्जा के एक प्रतिशत से कम)। यह ऊर्जा कहाँ से आती है? उसी प्रक्रिया से जो आंतरिक विकास को चलाती है: <strong>भारी लोहे का पृथ्वी के कोर में डूबना</strong> और युवा पृथ्वी का संकुचन लगभग <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span> जूल की गुरुत्वीय ऊर्जा मुक्त करते हैं — उठाने का ख़र्च चुकाने के लिए पर्याप्त से अधिक!</p></div>
+<div><b>TEST 3</b><h4>रोधी पपड़ी का परीक्षण</h4><p>मार्ग रास्ते में जमने से कैसे बचता है? जब मार्ग का भीतरी भाग नीचे से ऊष्मा पाकर तरल रहता है, उसकी बाहरी सतह ठंडे परिवेश के संपर्क में जम जाती है। जमाव-अग्र का समीकरण दिखाता है कि बाहरी पपड़ी का पहला मीटर केवल <strong>1.9 से 23 दिनों</strong> में ठोस होता है, एक किलोमीटर हज़ारों से दसियों हज़ार वर्षों में, जबकि 50 km की मोटी पपड़ी में लाखों वर्ष लगते हैं — इसलिए एक ठोस, रोधी कवच बनता है जो भीतरी कोर को गर्म और बहता रखता है।</p></div>
+</div>
+<div class="box"><span class="tag">संयुक्त परीक्षण की आश्चर्यजनक खोज</span>
+<h3 style="margin-top:4px">"पतली नली" पूरी तरह क्यों ख़ारिज है</h3>
+<p style="margin:0">जब चढ़ाई के अंतिम चरण में (5.77 घंटे का दिन, अक्षांश 22.5°, चंद्रमा का केंद्र 15,397 km पर) दाब, प्रवाह और चंद्रमा का भार साथ-साथ जाँचे जाते हैं, तो एक नाटकीय परिणाम सामने आता है: अगर मार्ग 500 km त्रिज्या की संकरी नली होता, तो नली के सिरे पर दबता चंद्रमा का भार <span class="ltr">46.18 GPa</span> का बोझ बनाता और पूरे दाब-अधिशेष को <span class="ltr">−35.03 GPa</span> की कमी में बदल देता। अरीय संतुलन केवल <strong>1,017 km की मार्ग-त्रिज्या</strong> के ऊपर धनात्मक होता है — और ऐसी त्रिज्या पर मार्ग का बाहरी भाग स्वयं <strong>चंद्रमा के द्रव्यमान का 0.46</strong> भारी होता है (और 1,500 km त्रिज्या पर — पूरे चंद्रमा का द्रव्यमान!) और गीगापास्कल का पार्श्व अपरूपण-प्रतिबल वहन करता है। <strong>निष्कर्ष:</strong> मार्ग कोई द्रव्यमानहीन पतली नली नहीं, बल्कि स्वयं पृथ्वी का चौड़ा, गर्म और भारी आधार है — <strong>नाशपाती</strong>!</p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>आपूर्ति-मार्ग के साथ दाब-संतुलन केंद्र पर शिलास्थैतिक स्रोत-दाब (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>), गहरे (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>) और बाहरी (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>) मैग्मा-स्तंभ के द्रवस्थैतिक शीर्ष, स्तंभ के शीर्ष पर पिंड के भार-बोझ (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>), और श्यान घर्षण-हानियों (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>) को जोड़ता है:</p>
+<div class="eqs">
+<div class="eq"><div class="k">स्रोत-दाब</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">मैग्मा-स्तंभ की लागत</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>उठाने की शर्त और घनत्व-दहलीज़</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>त्रिज्या <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> और लंबाई <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> के मार्ग में स्तरीय प्रवाह के लिए (प्वाज़ॉय का नियम), और बाहरी पपड़ी के जमाव-अग्र की मोटाई-वृद्धि दर (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>) तथा उठाने के गुरुत्वीय कार्य (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>) के लिए:</p>
+<div class="eqs">
+<div class="eq"><div class="k">प्रवाह-दर (प्वाज़ॉय)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">जमाव-अग्र</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">उठाने का कार्य</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: चंद्र क्रिस्टलों के भीतर पिघल-समावेश</h2>
+<p>भौतिक परीक्षण ने स्थापित किया कि केवल पानी और वाष्पशीलों से समृद्ध मैग्मा (3,864 kg/m³ से हल्का) <span class="ltr">150.26 GPa</span> की दाब-दहलीज़ पार करके सह-घूर्णन रेखा तक उठ सकता है। अगर चंद्रमा किसी सूखे, झुलसाते विशाल टकराव से बना होता जिसने पानी को वाष्प बना दिया, तो उसकी प्राचीन चट्टानें पूरी तरह सूखी होनी चाहिए थीं।</p>
+<p>पर जब वैज्ञानिकों ने उन्नत सूक्ष्मदर्शिकी से <strong>पिघल-समावेशों</strong> की जाँच की — प्राचीन मैग्मा की नन्ही बूँदें जो चंद्रमा की गहराई में उगे ओलिवीन क्रिस्टलों के भीतर फँसी रहीं और पानी को अंतरिक्ष में भागने से बचाया — तो एक आश्चर्यजनक हस्ताक्षर मिला: <strong>615 से 1,410 ppm</strong> की उच्च जल-मात्रा, पृथ्वी के ऊपरी मैंटल की सांद्रताओं के समान।</p>
+<div class="q">चंद्र क्रिस्टलों के भीतर मिला पानी उस प्राचीन "झाग-इंजन" का जीवाश्म अवशेष है जिसने चंद्रमा को ऊपर धकेला!</div>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: दाब-संतुलन, घनत्व-दहलीज़ और संयुक्त परीक्षण (शोधपत्र 03, भाग A)</h3>
+<div class="tw"><table class="d"><tr><th>गहरे मैग्मा का घनत्व <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>उपलब्ध स्रोत-दाब <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>मैग्मा-स्तंभ की लागत <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>भार और घर्षण से पहले दाब-अधिशेष</th><th>उठाने के परीक्षण का परिणाम</th></tr>
+<tr><td>1,500 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">82.14 GPa</span></td><td class="ok2"><span class="ltr">+68.12 GPa</span></td><td class="ok2">आसानी से पास (अत्यधिक झागदार मैग्मा)</td></tr>
+<tr><td>3,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">125.37 GPa</span></td><td class="ok2"><span class="ltr">+24.89 GPa</span></td><td class="ok2">पास (वाष्पशील-समृद्ध मैग्मा)</td></tr>
+<tr class="hl"><td>3,500 kg/m³ (संदर्भ)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">139.78 GPa</span></td><td class="ok"><span class="ltr">+10.49 GPa</span></td><td class="ok">पास — अधिशेष निर्माण को चलाता है</td></tr>
+<tr class="hl"><td>3,864 kg/m³ (दहलीज़)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">150.26 GPa</span></td><td class="eq0"><span class="ltr">0.00 GPa</span></td><td class="eq0">संतुलन का सटीक बिंदु</td></tr>
+<tr><td>4,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">154.19 GPa</span></td><td class="bad"><span class="ltr">−3.92 GPa</span></td><td class="bad">विफल (मैग्मा बहुत सूखा और भारी)</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>मार्ग-त्रिज्या <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>चंद्रमा का अरीय बोझ</th><th>प्रवाह-घर्षण हानि</th><th>अरीय अधिशेष</th><th>पार्श्व अपरूपण-प्रतिबल (22.5°)</th><th>बाहरी मार्ग का द्रव्यमान (चंद्र-द्रव्यमानों में)</th></tr>
+<tr><td>500 km</td><td><span class="ltr">46.18 GPa</span></td><td><span class="ltr">0.0103 GPa</span></td><td class="bad"><span class="ltr">−35.03 GPa</span> (विफल)</td><td><span class="ltr">46.04 GPa</span></td><td>0.112</td></tr>
+<tr><td>1,000 km</td><td><span class="ltr">11.54 GPa</span></td><td><span class="ltr">0.0006 GPa</span></td><td class="bad2"><span class="ltr">−0.39 GPa</span> (दहलीज़: 1,017 km)</td><td><span class="ltr">11.51 GPa</span></td><td>0.448 (लगभग आधा चंद्रमा!)</td></tr>
+<tr class="hl"><td>1,500 km (संपर्क-डिस्क)</td><td><span class="ltr">5.13 GPa</span></td><td><span class="ltr">0.0001 GPa</span></td><td class="ok"><span class="ltr">+6.02 GPa</span> (पास!)</td><td><span class="ltr">5.12 GPa</span></td><td class="ok">1.008 (एक भारी संरचना — नाशपाती)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>हमने खोजा कि भीतर का इंजन कैसे काम करता है: <span class="ltr">150.26 GPa</span> का गहरा स्रोत-दाब 3,864 kg/m³ से हल्के झागदार मैग्मा को उठाता है, और संयुक्त परीक्षण ने दिखाया कि यहाँ कोई पतली नली नहीं — बल्कि पृथ्वी से उठता एक चौड़ा, भारी मार्ग है।</p>
+<p>पर पृथ्वी की उस बाहरी पपड़ी का क्या हुआ जो ठीक उस निर्माण-क्षेत्र के ऊपर थी? अगले अध्याय — <strong>अध्याय 4: बाहर से उठती त्वचा — गुंबद के 4 चरण और चंद्रमा के चेहरे का अनुवाद-नियम</strong> (शोधपत्र 03, भाग B: §B.1–B.7) — में हम खोजेंगे कि पृथ्वी का सियाल कवच पिंड के साथ कैसे उठा, चंद्रमा की त्वचा बना, और चंद्रमा के चेहरे को तीन सटीक भौगोलिक क्षेत्रों में बाँटा।</p>
+<a href="story04_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 4</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">बाहर से उठती त्वचा — गुंबद के 4 चरण और चंद्रमा के चेहरे का अनुवाद-नियम →</p></div></a>
+<p style="margin-top:22px"><a href="story02_hi.html">← अध्याय 2</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

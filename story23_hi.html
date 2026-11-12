@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 23: ग्रहीय वलय — पदार्थ का स्रोत, 13.4 घंटे का दहलीज़-दिन और शनि का संतुलन-प्रवाह — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 23: ग्रहीय वलय — पदार्थ का स्रोत, 13.4 घंटे का दहलीज़-दिन और शनि का संतुलन-प्रवाह।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story23_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story23_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story23_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story23_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story23_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story23_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story23_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story23_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story23_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story23_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story23_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story23_he.html" hreflang="he">עברית</a> · <a href="story23_en.html" hreflang="en">English</a> · <a href="story23_de.html" hreflang="de">Deutsch</a> · <a href="story23_es.html" hreflang="es">Español</a> · <a href="story23_fr.html" hreflang="fr">Français</a> · <a href="story23_ru.html" hreflang="ru">Русский</a> · <a href="story23_zh.html" hreflang="zh">中文</a> · <a href="story23_ja.html" hreflang="ja">日本語</a> · <a href="story23_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 23</p>
+<h1>अध्याय 23: ग्रहीय वलय — पदार्थ का स्रोत, 13.4 घंटे का दहलीज़-दिन और शनि का संतुलन-प्रवाह</h1>
+<p>शोधपत्र 12 पर आधारित — 12. वलय: वलय तोड़ता है, पीसता है और लौटाता है (भाग A–D: दो रेखाएँ, दो आपूर्ति-मार्ग, 13.4 h का दहलीज़-दिन, शनि का संतुलन और पानी का पलायन)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: वलय का पदार्थ कहाँ से आता है, केवल शनि के ही विशाल वलय क्यों हैं, और वलय चंद्रमा क्यों नहीं बनाते?</h2>
+<p>अध्याय 21–22 में हमने देखा कि सौरमंडल में चंद्रमा सह-घूर्णन रेखा पर सीधे अपने जनकों से जन्मते हैं। शोधपत्र 12 में LEF मॉडल इस सिद्धांत को <strong>ग्रहीय वलय-प्रणालियों</strong> तक बढ़ाता है और एक असंदिग्ध नियम तय करता है: <strong>वलय चंद्रमाओं का निर्माण-स्थल नहीं बल्कि एक तंत्र है जो पदार्थ को तोड़ता, पीसता और जनक को लौटाता है!</strong> कैसिनी, वॉयेजर और दूरबीनों के प्रेक्षणों से चार केंद्रीय प्रश्न उठते हैं:</p>
+<ol class="steps">
+<li><strong>सौरमंडल के वलयों के बीच चरम अंतर (A.1–A.3):</strong> शनि के वलय विशाल (1.54 × 10¹⁹ kg) और चमकीले (95%–99% शुद्ध जल-बर्फ़) क्यों हैं, बृहस्पति के वलय फीकी धूल से बने, अरुण और वरुण के वलय संकरे और गहरे — जबकि छोटे पिंडों (हौमिया, कैरिक्लो और क्वाओआर) के चारों ओर घने वलय <em>रोश सीमा से बहुत दूर</em> बिना चंद्रमाओं में जुड़े परिक्रमा करते हैं?</li>
+<li><strong>शनि के वलयों की युवा आयु का विरोधाभास (D.3):</strong> कैसिनी ने शनि पर <strong>432 से 45,000 kg प्रति सेकंड</strong> की दर से गिरती "वलय-वर्षा" मापी — ऐसी दर जो वलयों को 1.1 करोड़ से 1.1 अरब वर्षों में पूरी तरह खाली कर देती। आज वलय कैसे मौजूद हैं?</li>
+<li><strong>विशाल वलय की सार्वभौमिक शर्त (B.5):</strong> सौरमंडल के सभी ग्रहों में से केवल <strong>आज के शनि और युवा मंगल</strong> ने ही सीधे ज़मीन से विशाल वलय क्यों विकसित किया?</li>
+<li><strong>अरुण और वरुण का कोणीय संवेग कहाँ गया (D.4)?</strong> अरुण और वरुण के चंद्रमा इन ग्रहों द्वारा खोए कोणीय संवेग का केवल 1% और 0.002% रखते हैं — बाकी कौन ले गया?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: जाल और गेंदें, पीसने वाली कीप, और संतुलन में पानी का फव्वारा</h2>
+<p>चार मूर्त चित्र सौरमंडल में वलयों की भौतिकी और चक्र समझाते हैं:</p>
+<ul>
+<li><strong>जाल और गेंदें — रोश सीमा के भीतर सह-घूर्णन रेखा (B.5):</strong> किसी ग्रह के चारों ओर पदार्थ को विशाल वलय के रूप में पकड़ने के लिए एक साथ दो चीज़ें चाहिए: <strong>सही जगह पर जाल</strong> और <strong>उसमें फेंकी गेंदें</strong>। जब पदार्थ ग्रह की गहराइयों से सह-घूर्णन रेखा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>) तक रिसता है, अगर रेखा रोश सीमा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>) के <em>भीतर</em> है, तो अवकलीय ज्वारीय बल उसे चंद्रमा में जुड़ने से रोकते हैं और वलय के रूप में फँसाते हैं। दोनों समीकरणों को भाग देने से ग्रह का घनत्व पूरी तरह कट जाता है और <strong>एक सार्वभौमिक दहलीज़-दिन मिलता है, ब्रह्मांड के हर पिंड के लिए समान: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> घंटे!</strong></li>
+<li><strong>ढेलों को पीसकर धूल घर लौटाती श्यान कीप (C.1–C.4, D.1):</strong> वलय-डिस्क के भीतर भीतरी कण बाहरी कणों से तेज़ चलते हैं। अप्रत्यास्थ टक्करें कुल कोणीय संवेग संरक्षित रखते हुए कक्षीय ऊर्जा को ऊष्मा में बदलती हैं — इसलिए अधिकांश पदार्थ ऊर्जा खोकर भीतर जनक की ओर बहता है, जबकि अल्पांश बाहर धकेला जाता है (इसीलिए शनि का वलय A ठीक 135,300 km पर बर्फ़ की रोश सीमा पर समाप्त होता है, और क्वाओआर का वलय 2.4 रोश सीमाओं पर भी चंद्रमा में नहीं जुड़ता!)।</li>
+<li><strong>फव्वारे का कुंड जिसमें नीचे से आपूर्ति ऊपर से वर्षा के बराबर (शनि का संतुलन, D.3):</strong> शनि के वलय हाल में बना कोई स्थिर अवशेष नहीं, बल्कि <strong>गतिशील संतुलन में एक सतत प्रवाह</strong> हैं: भीतरी पंप सह-घूर्णन रेखा (1.92 R) तक ठीक उसी दर पर पानी रिसाता है जिस दर पर वलय-वर्षा पानी को वायुमंडल में नीचे लाती है (4.5 अरब वर्षों में शनि के द्रव्यमान के 1.1 × 10⁻⁵ तक की संचयी लागत)। "युवा" रूप पदार्थ के निरंतर आवर्तन से आता है!</li>
+<li><strong>उथले कुएँ से पानी उठाता यांत्रिक पंप (अरुण और वरुण से पानी का पलायन, D.4):</strong> अरुण और वरुण सूर्य से दूर और ठंडे हैं, फिर भी उन्होंने <strong>अपने सभी चंद्रमाओं के द्रव्यमान का 270 गुना</strong> पानी खोया (अरुण पर 2.5 × 10²⁴ kg और वरुण पर 3.2 × 10²⁴ kg) — ऊष्मीय वाष्पन के कारण नहीं, बल्कि तेज़ घूर्णन (7–8 घंटे) में पतले गैस-ढक्कन (10%–20%) और उथले गुरुत्व-कुएँ (बृहस्पति पर 59.5 km/s के मुक़ाबले <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21.3</mn><mtext>–</mtext><mn>23.5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> km/s) से होकर <strong>सह-घूर्णन रेखा तक यांत्रिक उठान</strong> के कारण!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: वलयों के दो परिवार, दो आपूर्ति-मार्ग और शर्तों का आव्यूह (भाग A–D)</h2>
+<p>शोधपत्र 12 के भाग A–D वलय-प्रणालियों के चार मूलभूत नियमों के मात्रात्मक प्रमाण प्रस्तुत करते हैं:</p>
+<ol class="steps">
+<li><strong>सह-घूर्णन रेखा के सापेक्ष दो गतिकीय परिवारों में विभाजन (A.3):</strong>
+<ul>
+<li><strong>दानवों का परिवार (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>):</strong> बृहस्पति (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>), शनि (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.60</mn><mtext>–</mtext><mn>1.23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>), अरुण (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.51</mn><mtext>–</mtext><mn>0.62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>) और वरुण (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>) के वलय सह-घूर्णन रेखा के नीचे हैं या उसे पार करते हैं, अधिकतर रोश सीमा के भीतर; रेखा के नीचे का भाग भीतर जनक की ओर गिरता है (जैसा शनि के वलय B में "तीलियाँ" भी दिखाती हैं, जो 102,000–112,000 km पर, ठीक 111,600 km पर सह-घूर्णन रेखा तक, दिखती हैं!)।</li>
+<li><strong>छोटे पिंडों का परिवार (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>):</strong> हौमिया (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>), कैरिक्लो (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.10</mn><mo separator="true">;</mo><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>) और क्वाओआर (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mo separator="true">;</mo><mn>2.01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>) के वलय सह-घूर्णन रेखा से बहुत <em>ऊपर</em> हैं और <strong>1:3 घूर्णन–कक्षा अनुनाद</strong> की त्रिज्या (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>) के आसपास समूहित हैं, जहाँ ज्वार पदार्थ को बाहर धकेलता है और अनुनाद उसे फँसाता है!</li>
+</ul>
+</li>
+<li><strong>स्रोत के रूप में अंतरग्रहीय धूल को ख़ारिज करना और दो आपूर्ति-मार्गों को परिभाषित करना (B.2–B.4):</strong> शनि के वलयों की रासायनिक स्वच्छता (10–30 m मोटी विषुवतीय डिस्क में 95%–99% शुद्ध जल-बर्फ़), समदैशिक अंतरिक्ष-धूल के लिए साझा कोणीय संवेग की अनुपस्थिति (जो गहरे वलय C को बाहर से दूषित करती है और उसे बनाती नहीं), और वायुमंडलीय ढक्कन की मोटाई के साथ सटीक सहसंबंध सिद्ध करते हैं कि सारा वलय-पदार्थ दो मार्गों से जनक से आता है: <strong>(क) ज़मीन से सीधी आपूर्ति</strong> सह-घूर्णन रेखा के नीचे (शनि के वलय D, C, B और मंगल का प्राचीन वलय), और <strong>(ख) सक्रिय मूल चंद्रमाओं के माध्यम से आपूर्ति</strong> (गीज़रों से वलय E को पोषित करता एन्सेलाडस, धूल पोषित करते बृहस्पति के चार भीतरी चंद्रमा, और अरुण के <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> वलय को पोषित करता मैब — जबकि फ़ीबी जैसे पकड़े गए चंद्रमा बाहर रखे गए हैं)।</li>
+<li><strong>सभी ग्रहों पर विशाल वलय की दो शर्तें लागू करना (B.5):</strong> आज का शनि (P = 10.6 h &lt; 13.4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + रिसता ढक्कन) और युवा मंगल (P = 7–9 h &lt; 13.4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.74</mn><mtext>–</mtext><mn>2.05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + उभार पर ज्वालामुखी) ही एकमात्र हैं जो दोनों शर्तें एक साथ पूरी करते हैं। बृहस्पति (9.9 h) पर्याप्त तेज़ है पर उसका गैस-ढक्कन पूरी तरह बंद है; जन्म पर पृथ्वी (5.8 h) बहुत तेज़ी से सूखी; और आज अरुण और वरुण (17.2 और 16.1 h) बहुत धीमे (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>) और जमे हैं।</li>
+</ol>
+<div class="callout"><span class="tag">रोश सीमा के सापेक्ष सह-घूर्णन रेखा का U-वक्र (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>, चित्र B.3)</span><p style="margin:0">सौरमंडल के मध्य में, अपने मोटे ढक्कनों वाले बृहस्पति और शनि पर, सह-घूर्णन रेखा वलय-क्षेत्र के भीतर रहती है (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span> और 0.86); जबकि दोनों सिरों पर, जहाँ द्रव्यमान रेखा से भागा और घूर्णन को धीमा किया, रेखा वलय-क्षेत्र से बाहर निकल गई — अरुण और वरुण पर थोड़ा (1.18 और 1.13, जहाँ संकरे वलय बचे), मंगल पर बहुत (1.50, जहाँ वलय गायब हुआ) और पृथ्वी पर (1.47), और बुध और शुक्र पर 22 और 57 गुना तक!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="140.0" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="363.2" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.82⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >बृहस्पति</text><rect x="140.0" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="373.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.86⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >शनि</text><rect x="140.0" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="444.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.13⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >वरुण</text><rect x="140.0" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="457.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.18⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >अरुण</text><rect x="140.0" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="533.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.47⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >पृथ्वी</text><rect x="140.0" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="541.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.50⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मंगल</text></svg><figcaption>आज सह-घूर्णन रेखा और रोश सीमा का अनुपात (x_c/x_R): 1 से नीचे रेखा वलय-क्षेत्र के भीतर है; बुध (22) और शुक्र (57) पैमाने से बहुत बाहर हैं।</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: सार्वभौमिक दहलीज़-दिन (13.4 घंटे) और शनि के संतुलन की व्युत्पत्ति</h2>
+<p>शोधपत्र 12 के भाग B.5 और D.1–D.4 दिखाते हैं कि कक्षाओं की ज्यामिति और संरक्षण-नियम ग्रहीय वलयों के अस्तित्व, आयु और संरचना को कैसे निर्धारित करते हैं:</p>
+<ol class="steps">
+<li><strong>सार्वभौमिक दहलीज़-दिन <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> घंटे की व्युत्पत्ति (§B.5):</strong> सह-घूर्णन रेखा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>) जनक के द्रव्यमान और उसकी घूर्णन-दर पर निर्भर है, जबकि बर्फ़-कणों की रोश सीमा (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>) जनक की त्रिज्या और उसके औसत घनत्व पर। जब <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> को <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> से भाग दिया जाता है, जनक का द्रव्यमान, त्रिज्या और घनत्व <strong>पूरी तरह कट जाते हैं</strong>! परिणाम यह है कि क्रांतिक घूर्णन-दिन जिसके नीचे सह-घूर्णन रेखा रोश सीमा के भीतर होती है, ब्रह्मांड के हर ग्रह, चंद्रमा या क्षुद्रग्रह के लिए समान है: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> घंटे</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³ घनत्व पर बर्फ़ के लिए)। इसलिए बृहस्पति के प्रबल गुरुत्व या युवा मंगल के दुर्बल गुरुत्व का दहलीज़ पर कोई प्रभाव नहीं — केवल घूर्णन-दर (P &lt; 13.4 घंटे) और ज़मीन से पदार्थ का रिसाव निर्णय करते हैं।</li>
+<li><strong>श्यान फैलाव — वलय एक कीप क्यों है जो पदार्थ घर लौटाती है (§D.1):</strong> वलय-डिस्क के भीतर भीतरी कण बाहरी से तेज़ चलते हैं (अवकलीय केप्लरीय गति)। अप्रत्यास्थ टक्करें कुल कोणीय संवेग संरक्षित रखते हुए कक्षीय ऊर्जा को ऊष्मा में बदलती हैं। दोनों संरक्षण-नियम एक साथ पूरे करने के लिए डिस्क फैलती है: <strong>वलय के द्रव्यमान का अधिकांश ऊर्जा खोकर भीतर जनक की ओर बहता है</strong>, जबकि अल्पांश अतिरिक्त कोणीय संवेग साथ लेकर बाहर धकेला जाता है।</li>
+<li><strong>शनि के वलयों की आयु के विरोधाभास का समाधान (§D.3):</strong> कैसिनी ने वलयों से शनि पर दो समानांतर चैनलों में गिरता पदार्थ मापा — विषुवत पर <strong>4,800–45,000 kg/s</strong> की दर से तटस्थ वर्षा (वेट और साथी 2018) और चुंबकीय क्षेत्र-रेखाओं के साथ <strong>432–2,870 kg/s</strong> की दर से आयनित वर्षा (ओ'डोनोह्यू और साथी 2019)। बिना आपूर्ति के वलयों का द्रव्यमान (1.54 × 10¹⁹ kg) 1.1 करोड़ से 1.1 अरब वर्षों में खाली हो जाता। LEF मॉडल में वलय <strong>गतिशील संतुलन में एक स्थिर प्रवाह</strong> है: भीतरी आवरण से रिसता पानी उसे नीचे से उसी दर पर नवीनीकृत करता है जिस दर पर वर्षा उसे ऊपर से खाली करती है — 4.5 अरब वर्षों में <strong>शनि के द्रव्यमान के केवल 10⁻⁷ से 1.1 × 10⁻⁵</strong> की संचयी लागत पर!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>सह-घूर्णन रेखा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span> और बर्फ़ की रोश सीमा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span> के बीच अनुपात, और सार्वभौमिक दहलीज़-दिन <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span> इस प्रकार सूत्रबद्ध हैं (§A.2, §B.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2.46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2.4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13.4</mn><mtext> घंटे</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ घंटे}</annotation></semantics></math></span></div></div></div>
+<p>जहाँ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³, वहाँ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span> मिलता है यदि और केवल यदि P &lt; 13.4 घंटे। दूसरी शर्त (ज़मीन या आवरण से पानी और पदार्थ का सक्रिय रिसाव) के साथ मिलकर पूरे सौरमंडल का एक तीखा विभाजन निकलता है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> घंटे का परीक्षण और बर्फ़ दानवों का कोणीय संवेग बजट</h2>
+<p>कैसिनी और वॉयेजर अंतरिक्षयानों के आँकड़ों की संरक्षण-समीकरणों से तुलना दो प्रमुख मात्रात्मक निष्कर्षों की पुष्टि करती है (§B.5, §D.4):</p>
+<ul>
+<li><strong>आठ ग्रहीय अवस्थाओं में विशाल-वलय शर्त का मेल (§B.5):</strong> केवल आज का शनि (P = 10.6 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + रिसता ढक्कन) और युवा मंगल (P = 7–9 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.65</mn><mtext>–</mtext><mn>0.76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + उभार पर ज्वालामुखी) ज़मीन से सीधे विशाल वलय की दोनों शर्तें पूरी करते हैं।</li>
+<li><strong>अरुण और वरुण से भागे पानी के द्रव्यमान में 270 गुना अंतर (§D.4):</strong> अरुण को 8.3 से 17.2 घंटे तक धीमा करने ने 1.3 × 10³⁶ kg·m²/s कोणीय संवेग हटाया, जिसका चंद्रमा केवल 1% (1.4 × 10³⁴) रखते हैं। सह-घूर्णन रेखा से भागा पानी (2.5 × 10²⁴ kg, अरुण के द्रव्यमान का लगभग 2.8%) <strong>उसके सभी चंद्रमाओं के कुल द्रव्यमान का 270 गुना</strong> (9 × 10²¹ kg) भारी था, और वरुण पर (3.2 × 10²⁴ kg, ग्रह के द्रव्यमान का लगभग 3.1%) उसने खोए संवेग का 99.998% ले गया!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: विशाल-वलय शर्तों का आव्यूह (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> h), शनि पर वलय-वर्षा की दर और कोणीय संवेग बजट (शोधपत्र 12, भाग A–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>ग्रह और काल</th><th>दिन P (h)</th><th>सह-घूर्णन रेखा / रोश सीमा (R)</th><th>शर्त 1 (P &lt; 13.4 h)</th><th>शर्त 2 (ज़मीन से रिसाव)</th><th>गतिकीय परिणाम</th></tr>
+<tr class="hl"><td><strong>आज का शनि</strong></td><td><strong>10.6</strong></td><td>1.92 / 2.24 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>)</td><td><strong>हाँ</strong></td><td><strong>हाँ (ढक्कन रिसता है)</strong></td><td><strong>ज़मीन से सीधे विशाल वलय</strong></td></tr>
+<tr class="hl"><td><strong>युवा मंगल</strong></td><td><strong>7–9</strong></td><td>1.74–2.05 / 2.68</td><td><strong>हाँ</strong></td><td><strong>हाँ (उभार पर ज्वालामुखी)</strong></td><td><strong>एक प्राचीन वलय था</strong></td></tr>
+<tr><td><strong>आज का बृहस्पति</strong></td><td>9.9</td><td>2.29 / 2.80 (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>)</td><td>हाँ</td><td>लगभग शून्य (मोटा ढक्कन)</td><td>केवल चंद्रमाओं से पतला धूल-वलय</td></tr>
+<tr><td><strong>जन्म पर पृथ्वी</strong></td><td>5.8</td><td>2.29 / 4.02</td><td>हाँ</td><td>नहीं (तेज़ी से सूखी)</td><td>कोई वलय नहीं; चंद्रमा नाशपाती पर बना</td></tr>
+<tr><td><strong>आज अरुण / वरुण</strong></td><td>17.2 / 16.1</td><td>3.26/2.76 ; 3.39/3.00</td><td><strong>नहीं</strong></td><td>नहीं (पानी भागा और वह जमा)</td><td>संकरे अवशेष और चंद्रमा-वलय</td></tr>
+<tr><td><strong>आज मंगल / पृथ्वी</strong></td><td>24.6 / 23.9</td><td>6.03/4.02 ; 6.62/4.49</td><td><strong>नहीं</strong></td><td>नहीं (पपड़ी बंद हुई)</td><td>वलय गायब / कोई वलय नहीं</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>शनि पर वलय-वर्षा की दर (kg/s)</th><th>बिना आपूर्ति के खाली होने का समय</th><th>4.5 Ga में आवश्यक कुल आपूर्ति</th><th>शनि के कुल द्रव्यमान का अंश</th></tr>
+<tr><td>432 (आयनित वर्षा — निचली सीमा)</td><td>1.1 अरब वर्ष</td><td>4 वलय-द्रव्यमान</td><td>1 × 10⁻⁷</td></tr>
+<tr><td>2,870 (आयनित वर्षा — ऊपरी सीमा)</td><td>17 करोड़ वर्ष</td><td>26 वलय-द्रव्यमान</td><td>7 × 10⁻⁷</td></tr>
+<tr><td>4,800 (तटस्थ वर्षा — निचली सीमा)</td><td>10 करोड़ वर्ष</td><td>44 वलय-द्रव्यमान</td><td>1.2 × 10⁻⁶</td></tr>
+<tr class="hl"><td><strong>45,000 (तटस्थ वर्षा — ऊपरी सीमा)</strong></td><td><strong>1.1 करोड़ वर्ष</strong></td><td><strong>415 वलय-द्रव्यमान</strong></td><td><strong>1.1 × 10⁻⁵ (द्रव्यमान-संरक्षण के भीतर!)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>इस अध्याय में हमने विशाल वलय के लिए <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> घंटे का सार्वभौमिक दहलीज़-दिन</strong> व्युत्पन्न किया, देखा कि शनि के वलय एक स्थिर संतुलन-प्रवाह के रूप में कैसे मौजूद हैं, और सिद्ध किया कि सह-घूर्णन रेखा से पानी के यांत्रिक पलायन ने अरुण और वरुण द्वारा खोए कोणीय संवेग का 99%–99.998% ढोया।</p>
+<p>अगले अध्याय — <strong>अध्याय 24: पीसने वाले वाहक के रूप में वलय, चंद्रमाओं और ग्रहों पर हस्ताक्षर, और अटाकामा खंड-परीक्षण</strong> (शोधपत्र 12 से — भाग E–M) — में हम जाँचेंगे कि वलय टक्करों में ढेलों को कैसे छाँटता है और "प्रोपेलर" बनाता है, बर्फ़-वलय पैन और एटलस पर विषुवतीय कटकें क्यों बनाता है जबकि सिलिकेट-वलय डीमोस को घिसता है, अप्रैल 2026 में क्यूरियोसिटी पर अटाकामा चट्टान-परिकल्पना कैसे ख़ारिज हुई, और भाग L के 5 मिथ्याकरण-मानदंड एकत्र करेंगे!</p>
+<a href="story24_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 24</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">पीसने वाले वाहक के रूप में वलय, चंद्रमाओं और ग्रहों पर हस्ताक्षर, और अटाकामा खंड-परीक्षण →</p></div></a><p style="margin-top:22px"><a href="story22_hi.html">← अध्याय 22</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

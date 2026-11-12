@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 22: एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 22: एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story22_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story22_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story22_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story22_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story22_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story22_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story22_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story22_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story22_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story22_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story22_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story22_he.html" hreflang="he">עברית</a> · <a href="story22_en.html" hreflang="en">English</a> · <a href="story22_de.html" hreflang="de">Deutsch</a> · <a href="story22_es.html" hreflang="es">Español</a> · <a href="story22_fr.html" hreflang="fr">Français</a> · <a href="story22_ru.html" hreflang="ru">Русский</a> · <a href="story22_zh.html" hreflang="zh">中文</a> · <a href="story22_ja.html" hreflang="ja">日本語</a> · <a href="story22_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 22</p>
+<h1>अध्याय 22: एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक</h1>
+<p>शोधपत्र 11 पर आधारित — 11. चंद्रमाओं के जन्म (भाग C–N: सभी ग्रहों और पाँच बौने ग्रहों पर 13 जाँचों का प्रोटोकॉल लागू करना, पकड़-नियम और 12 खुले प्रश्न)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: सौरमंडल के 13 पिंड चंद्रमा-नियम की परीक्षा में कैसे खड़े होते हैं?</h2>
+<p>अध्याय 21 में हमने <strong>चंद्रमा-नियम</strong>, द्रवगतिक पंप का सिद्धांत और वायुमंडलीय ढक्कन का सिद्धांत सूत्रबद्ध किया। शोधपत्र 11 के भाग C–N में 13 जाँचों का कठोर प्रोटोकॉल <strong>सभी आठ ग्रहों और पाँच बौने ग्रहों</strong> पर चलाया जाता है, यह परखने के लिए कि क्या कोई एक भी पिंड तंत्र का खंडन करता है:</p>
+<ol class="steps">
+<li><strong>गर्म भीतरी किनारा (बुध, शुक्र, पृथ्वी, मंगल — भाग C–F):</strong> बुध और शुक्र बिना चंद्रमाओं के क्यों रह गए, और उनकी सह-घूर्णन रेखा <em>हिल-गोले के बाहर</em> कैसे धकेली गई?</li>
+<li><strong>गैस और बर्फ़ दानव (बृहस्पति, शनि, अरुण और वरुण — भाग G–J):</strong> बृहस्पति पर घनत्व दूरी के साथ क्यों गिरता है (आयो से कैलिस्टो तक) जबकि अरुण पर बढ़ता है (मिरांडा से ओबेरॉन तक)? शनि के वलय युवा क्यों दिखते हैं जबकि वे एक प्राचीन प्रक्रिया से पोषित हैं? और वास्तव में अरुण को 98° किसने झुकाया?</li>
+<li><strong>ठंडा बाहरी किनारा (प्लूटो–कैरन, हौमिया, एरिस, माकेमाके और सीरीज़ — भाग K):</strong> भीतरी विभेदन ने प्लूटो–कैरन मूँगफली को कैसे फाड़ा, हौमिया विखंडन से ठीक पहले क्यों खड़ा है, और सीरीज़ के चंद्रमा क्यों नहीं?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: संतुलन में फव्वारे के रूप में शनि के वलय, पकड़ा गया मूँगफली-खंड, और लट्टू जिसका अक्ष पलटता है</h2>
+<p>चार मूर्त चित्र ग्रहों और बौने ग्रहों की जाँच के परिणाम समझाते हैं:</p>
+<ul>
+<li><strong>फव्वारे का कुंड जिसमें भरने की दर निकलने की दर के बराबर (सतत प्रवाह के रूप में शनि के वलय, भाग H):</strong> कैसिनी ने वलयों से शनि पर गिरती "वलय-वर्षा" की विशाल दर मापी (सैकड़ों से हज़ारों kg प्रति सेकंड) — ऐसी दर जो वलयों के स्थिर होने पर उन्हें कुछ करोड़ वर्षों में नष्ट कर देती। LEF मॉडल में शनि का गैस-ढक्कन (70%–85%) पूरी तरह बंद नहीं: सक्रिय भीतरी पंप गिरती वर्षा की दर के बराबर दर पर सह-घूर्णन रेखा (1.92 R, जो ठीक वलय B के भीतर से गुज़रती है!) तक पानी रिसाता है — इसलिए वलय युवा और साफ़ दिखता है जबकि उसका इंजन प्राचीन है!</li>
+<li><strong>दो फटे मूँगफली-खंड — एक वरुण ने पकड़ा और एक अंतरिक्ष में फेंका गया (ट्राइटन, भाग J):</strong> ट्राइटन वरुण की वक्री कक्षा (157°) में परिक्रमा करता है और उसका घनत्व अधिक है (2,061 kg/m³, प्लूटो से भारी और सघन)। LEF मॉडल में ट्राइटन <strong>कुइपर पट्टी में विभेदित होकर फटी एक मूँगफली-प्रणाली का बड़ा खंड</strong> है (इसीलिए उसने अपने भीतर सघन सिलिकेट-धातु कोर रखा), जिसे वरुण के गुरुत्व ने पकड़ा और जिसने उसकी नियमित चंद्रमाओं की मूल प्रणाली नष्ट कर दी!</li>
+<li><strong>अपनी स्कर्ट का किनारा चौड़ा करता और सूर्य के साथ अनुनाद में आता लट्टू (अरुण का 98° झुकाव, §I.1):</strong> सदिश गणना सिद्ध करती है कि विषुवत से पानी का भागना कोणीय संवेग <em>केवल घूर्णन-अक्ष के समानांतर</em> ले जाता है (वह तीर को 8.3 h से 17.2 h तक छोटा करता है, पर घुमाता नहीं)। इसके विपरीत, 20 R की दूरी पर विषुवतीय तल में तैरते पानी और चंद्रमाओं के रूप में अरुण के द्रव्यमान का 2% प्रभावी चपटापन-आघूर्ण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mrow><mn>2</mn><mo separator="true">,</mo><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">J_{2,\mathrm{effective}}</annotation></semantics></math></span></span> को <strong>1,200 गुना</strong> बढ़ाता है, पुरस्सरण-दर को कक्षीय तल के साथ दीर्घकालिक अनुनाद में लाता है, और अरुण के अक्ष को धीरे-धीरे 98° तक झुकाता है!</li>
+<li><strong>नरम कोर के ऊपर एकाएक चटकता जमा बर्फ़-कवच (कैरन की विवर्तनिक घाटी, §K.1):</strong> प्लूटो–कैरन तंत्र में एकीकृत पिंड 2.51 घंटे में घूमता था (2.44 घंटे की विखंडन-दहलीज़ के पास)। कोर के डूबने ने जड़त्व-आघूर्ण गुणांक k को 0.40 से 0.31 तक घटाया और घूर्णन को 1.94 घंटे (x = 0.86) तक तेज़ किया: जमा बर्फ़-कवच कमर के साथ एकाएक टूटा, वल्कन प्लैनिशिया के चिकने मैदान को उजागर करते हुए, जो सदा प्लूटो की ओर रहता है!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: ग्रह-दर-ग्रह 13 जाँचों के प्रोटोकॉल के निष्कर्ष (भाग C–K)</h2>
+<p>नीचे सौरमंडल की सभी प्रणालियों की व्यवस्थित जाँच का सार है:</p>
+<ol class="steps">
+<li><strong>बुध और शुक्र (भाग C–D):</strong> सूर्य की निकटता ने हिल-गोले को सिकोड़ा (बुध पर 220,600 km, शुक्र पर 1,010,600 km), और सौर ज्वारीय ब्रेकिंग ने घूर्णन को धीमा किया (बुध पर 58.6 दिन, शुक्र पर 243 दिन वक्री) जब तक सह-घूर्णन रेखा <strong>हिल-गोले</strong> से बाहर नहीं निकल गई (बुध पर 242,900 km, शुक्र पर 1,536,500 km)। इसके अलावा, तेज़ ऊष्मीय सूखने (शुक्र पर D/H &gt; 100×) ने जन्म-खिड़की को जल्दी बंद कर दिया।</li>
+<li><strong>बृहस्पति (भाग G):</strong> सह-घूर्णन रेखा आज 160,000 km (2.29 R, जन्म पर पृथ्वी के समान!) पर है, और उसका तनु कोर (जूनो) अब भी विभेदित हो रहा है; पर विशाल गैस-ढक्कन (90%–97%) 5–7 bar पर पानी संघनित करता है और नए जन्म रोकता है। चार गैलीलियाई चंद्रमा सह-घूर्णन रेखा की भीतरी गति दर्ज करते हैं: कैलिस्टो पहले जन्मा (1,834 kg/m³, अविभेदित, k = 0.355) और आयो अंत में (3,528 kg/m³, सूखा और धात्विक), जबकि आठ भीतरी चंद्रमा रेखा के दोनों ओर परिक्रमा करते हैं (1.83 R–3.17 R)।</li>
+<li><strong>शनि (भाग H):</strong> सह-घूर्णन रेखा (1.92 R) वलय B को पार करती है; स्पंजी वलय-चंद्रमा (400–640 kg/m³) रेखा के ठीक पार हैं (2.29 R–2.60 R); और आइपेटस (1,088 kg/m³) 16 घंटे के घूर्णन से मेल खाता जमा उभार रखता है — यानी वह ठीक <strong>2.53 R</strong> की दूरी पर, प्राचीन सह-घूर्णन रेखा के ऊपर, 61 R तक धकेले जाने से पहले, जुड़ा और जमा!</li>
+<li><strong>अरुण और वरुण (भाग I–J):</strong> पतले गैस-ढक्कन (10%–20%) ने ग्रह के द्रव्यमान के कम से कम 2%–3% (और ~ 11% तक) पानी को भागने दिया, जिसने अरुण को 8.3 से 17.2 घंटे और वरुण को 7.3 से 16.1 घंटे तक धीमा किया और सह-घूर्णन रेखा को ~ 2 R से 3.24 R और 3.39 R तक धकेला। ऐसा करते हुए रेखा ने भीतरी चंद्रमाओं की कक्षाएँ पार कीं (अरुण पर 1.95 R–2.99 R, वरुण पर 1.96 R–2.99 R), जो आज वापस भीतर गिर रहे हैं! वरुण पर चंद्रमा प्रोटियस (420 km, गोलाई की दहलीज़ पर ही) उच्च स्पंजीपन के कारण अनियमित रहा (भविष्यवाणी: विशेष रूप से कम घनत्व)।</li>
+<li><strong>बौने ग्रह (भाग K):</strong> प्लूटो और कैरन 1.94 घंटे (x = 0.86) पर फटी एक मूँगफली हैं, और चार छोटे चंद्रमा (स्टिक्स, निक्स, कर्बेरोस और हाइड्रा) फटने से पहले मूँगफली की विषुवत से फेंके गए और पहले मूँगफली के चतुर्ध्रुव-आघूर्ण और बाद में ज्वार से बाहर धकेले गए; हौमिया (3.9 घंटे, 2,300 × 1,100 km, सह-घूर्णन रेखा 1,104 km पर, 1,161 km पर लंबे अक्ष के सिरों के भीतर) विखंडन से ठीक पहले खड़ा है; और एरिस–डिस्नोमिया प्लूटो–कैरन की छोटे पैमाने की प्रतिकृति है।</li>
+</ol>
+<div class="callout"><span class="tag">पकड़े गए चंद्रमा की पहचान के लिए वस्तुनिष्ठ अंक-नियम (L.3)</span><p style="margin:0">हर विसंगत चंद्रमा को मनमाने ढंग से पकड़ा गया न मानने के लिए <strong>≥ 3 अंक</strong> की दहलीज़ तय की गई है: वक्री कक्षा (लाप्लास तल से &gt;90°) = 2 अंक, उच्च झुकाव = 1, उच्च उत्केंद्रता = 1, चरम दूरी = 1, और भिन्न रासायनिक संरचना = 1। ट्राइटन (3 अंक), फ़ीबी (4 अंक) और साइकोरैक्स (5 अंक) पकड़े गए वर्गीकृत होते हैं; जबकि आइपेटस (0 अंक) और पृथ्वी का चंद्रमा (लाप्लास तल के सापेक्ष 0 अंक!) अपने जनकों से जन्मे मूल चंद्रमा हैं।</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: सौरमंडल में जन्मों का चाप (L.4) और 12 खुले प्रश्न (भाग M)</h2>
+<p>शोधपत्र 11 के भाग L.4, M और N सौरमंडल की वैश्विक तस्वीर का सारांश देते हैं और भविष्य के शोध की खुली दिशाएँ चिह्नित करते हैं:</p>
+<ol class="steps">
+<li><strong>सूर्य से दूरी के फलन के रूप में जन्मों का चाप (L.4):</strong> जब जनक के सापेक्ष नियमित चंद्रमाओं का द्रव्यमान सूर्य से दूरी के फलन के रूप में मानचित्रित किया जाता है, तीन स्टेशनों वाला <strong>एक सतत चाप</strong> उभरता है:
+<ul>
+<li><strong>भीतरी ऊष्मीय किनारा (0.39–1.00 AU):</strong> बुध (0) और शुक्र (0) सूखकर जल्दी बंद हो गए, और पृथ्वी (1.2 × 10⁻²) मुश्किल से सफल हुई और नाशपाती के सिरे पर एक सूखा चंद्रमा बनाया।</li>
+<li><strong>शिखर-पंपन का क्षेत्र (1.52–9.50 AU):</strong> मंगल (2 चंद्रमा, 1.9 × 10⁻⁸) से, बृहस्पति (8 चंद्रमा, 2.1 × 10⁻⁴) से होकर, शनि पर शिखर तक (~ 24 नियमित चंद्रमा, 2.5 × 10⁻⁴)।</li>
+<li><strong>जमा बाहरी किनारा (19.2–39.5 AU):</strong> अरुण (19 चंद्रमा, 1.0 × 10⁻⁴) और वरुण (7 चंद्रमा, ~ 5 × 10⁻⁷, 200 गुना गिरावट) पर पपड़ी का जमना धीरे-धीरे पंप रोकता है, और प्लूटो (39.5 AU) पर तंत्र पूर्ण मूँगफली-विखंडन में बदलता है (5 चंद्रमा, द्रव्यमान-अनुपात 0.12)।</li>
+</ul>
+</li>
+<li><strong>सह-घूर्णन रेखा के हिल-गोले से बाहर जाने और ग्रह के अपने घूर्णन के खोने के बीच कड़ी (L.1):</strong> बुध और शुक्र एकमात्र ग्रह हैं जिनकी सह-घूर्णन रेखा हिल-गोले के बाहर गई (बुध पर 90 R के मुक़ाबले 100 R; शुक्र पर 167 R के मुक़ाबले 254 R — ठीक तब जब <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>&lt;</mo><msqrt><mn>3</mn></msqrt><mtext> </mtext><mi>n</mi></mrow><annotation encoding="application/x-tex">\Omega &lt; \sqrt{3}\,n</annotation></semantics></math></span></span>, यानी दिन वर्ष के 58% से लंबा हो!), और ठीक उन्हीं में सूर्य ने घूर्णन अपने हाथ लिया (बुध पर 3:2 बंधन और शुक्र पर वक्री घूर्णन)।</li>
+<li><strong>भाग M के बारह खुले प्रश्न:</strong> शोधपत्र गणना और माप के लिए 12 खुली समस्याएँ एकत्र करता है, उनमें: अरुण पर घनत्व-क्रम का उलटाव (मिरांडा से ओबेरॉन); अरुण के 98° झुकाव के लिए अनुनाद-खिड़कियों की गणना; प्लूटो के विदरण-निशान का स्थान (क्या स्पुतनिक प्लैनिशिया बेसिन विदरण-स्थल है?); पृथ्वी के चंद्रमा के आकार में एकतरफ़ा मोटाई-घटक को सममित लंबाई-घटक से अलग करना; अरुण और वरुण से भागे द्रव्यमान में गैस-पानी अनुपात (1.6%–10.8%); शनि पर स्पंदित पंप-सक्रियता; सीरीज़ पर जन्म का अवरोध (x = 2.54); आज हौमिया के सिरों से सक्रिय निष्कासन; करछुल-कटकों के रूप में आइपेटस, पैन और एटलस की विषुवतीय कटकों का बनना; और पृथ्वी से शुक्र का लगभग-सटीक बंधन (243.02 बनाम 243.16 दिन)।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 285" role="img" aria-label="Moon-to-parent mass ratio against distance from the Sun" style="direction:ltr"><line x1="70" x2="600" y1="206.7" y2="206.7" stroke="#ece7da"/><text x="62" y="210.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10⁻⁸</text><line x1="70" x2="600" y1="160.0" y2="160.0" stroke="#ece7da"/><text x="62" y="164.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10⁻⁶</text><line x1="70" x2="600" y1="113.3" y2="113.3" stroke="#ece7da"/><text x="62" y="117.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10⁻⁴</text><line x1="70" x2="600" y1="66.7" y2="66.7" stroke="#ece7da"/><text x="62" y="70.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10⁻²</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10⁰</text><text x="116.9" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.5</text><text x="187.8" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1</text><text x="258.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="352.4" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5</text><text x="423.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="494.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="565.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><circle cx="187.8" cy="64.8" r="7" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.8" y="52.8" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >पृथ्वी</text><circle cx="230.6" cy="200.2" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="230.6" y="188.2" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >मंगल</text><circle cx="356.4" cy="105.8" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="356.4" y="93.8" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >बृहस्पति</text><circle cx="418.1" cy="104.0" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="418.1" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >शनि</text><circle cx="490.1" cy="113.3" r="7" fill="#5f9a6e" stroke="#fff" stroke-width="2"/><text x="490.1" y="101.3" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >अरुण</text><circle cx="536.1" cy="167.0" r="7" fill="#5f9a6e" stroke="#fff" stroke-width="2"/><text x="536.1" y="155.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >वरुण</text><circle cx="563.9" cy="41.5" r="7" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="563.9" y="29.5" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >प्लूटो</text><text x="91.5" y="224" font-size="15" font-family="Heebo" fill="#9aa3af" text-anchor="middle">×</text><text x="91.5" y="210.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >बुध</text><text x="154.2" y="224" font-size="15" font-family="Heebo" fill="#9aa3af" text-anchor="middle">×</text><text x="154.2" y="210.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >शुक्र</text><text x="335.0" y="272.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >सूर्य से दूरी (AU, लघुगणकीय) · जनक से चंद्रमा-द्रव्यमान अनुपात · ×: चंद्रमा नहीं</text></svg><figcaption>सौरमंडल में जन्मों का चाप (L.4): पृथ्वी पर एक बड़ा चंद्रमा, मंगल से वरुण तक निष्कासन-क्षेत्र, और प्लूटो पर मूँगफली-विखंडन।</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>घूर्णन-अक्ष की पुरस्सरण-दर को नियंत्रित करने वाला प्रभावी चपटापन-आघूर्ण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mrow><mn>2</mn><mo separator="true">,</mo><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">J_{2,\mathrm{effective}}</annotation></semantics></math></span></span> (जैसे अरुण और शनि पर) और सह-घूर्णन रेखा के हिल-गोले के बाहर भागने की शर्त इस प्रकार सूत्रबद्ध हैं (§I.1, §L.1):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mrow><mn>2</mn><mo separator="true">,</mo><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi></mrow></mrow></msub><mo>=</mo><msub><mi>J</mi><mn>2</mn></msub><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mo>∑</mo><mi>i</mi></msub><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>m</mi><mi>i</mi></msub><mi>M</mi></mfrac></mstyle><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>a</mi><mi>i</mi></msub><mi>R</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">J_{2,\mathrm{effective}} = J_2 + \dfrac{1}{2}\sum_i \dfrac{m_i}{M}\left(\dfrac{a_i}{R}\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>r</mi><mi>H</mi></msub><mtext>  </mtext><mo>⟺</mo><mtext>  </mtext><mi mathvariant="normal">Ω</mi><mo>&lt;</mo><msqrt><mn>3</mn></msqrt><mtext> </mtext><mi>n</mi></mrow><annotation encoding="application/x-tex">a_c &gt; r_H \iff \Omega &lt; \sqrt{3}\,n</annotation></semantics></math></span></div></div></div>
+<p>जब पानी या चंद्रमा <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>≈</mo><mn>20</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_i \approx 20 R</annotation></semantics></math></span></span> की दूरी पर विषुवतीय कक्षा में अस्थायी रूप से रहते हैं, पद <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">(</mo><msub><mi>m</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mi>M</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac{1}{2}(m_i/M)(a_i/R)^2</annotation></semantics></math></span></span> अरुण के प्रभावी चपटापन-आघूर्ण को 1,200 गुना बढ़ाता है (0.0033 से लगभग 4.0 तक) और पुरस्सरण-दर को दीर्घकालिक अनुनाद में लाता है जो अक्ष को 98° तक झुकाता है; जबकि जब द्रव्यमान-पलायन किसी भीतरी ग्रह को <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>&lt;</mo><msqrt><mn>3</mn></msqrt><mtext> </mtext><mi>n</mi></mrow><annotation encoding="application/x-tex">\Omega &lt; \sqrt{3}\,n</annotation></semantics></math></span></span> तक धीमा करता है, सह-घूर्णन रेखा हिल-गोले से बाहर निकलती है और सूर्य उसका घूर्णन अपने हाथ लेता है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: सह-घूर्णन रेखा का पुनर्निर्माण और हर ग्रह से भागा द्रव्यमान (तालिका L.1)</h2>
+<p>कोणीय संवेग संरक्षण की पूर्ण गणना (डार्विन–राडो विधि से घूर्णी चपटापन और दानवों की सिकुड़न सहित, स्क्रिप्ट `p12_line_then.py`) सौरमंडल को तीन स्पष्ट समूहों में बाँटती है (§L.1):</p>
+<ul>
+<li><strong>मोटे ढक्कन वाले गैस दानव (बृहस्पति और शनि):</strong> केवल कोणीय संवेग संरक्षण जन्म के समय सह-घूर्णन रेखा को बृहस्पति पर 2.35–2.57 R और शनि पर 1.96–2.42 R पर रखता है — आज (2.29 R और 1.92 R) की तुलना में लगभग कोई खिसकाव नहीं, और केवल 0%–1.0% का द्रव्यमान-पलायन।</li>
+<li><strong>बर्फ़ दानव और मंगल (पतला ढक्कन या खुली ज़मीन):</strong> बिना द्रव्यमान-हानि के संवेग-संरक्षण रेखा को जन्म-सीमा से दूर छोड़ता है (मंगल पर 7.33 R, अरुण पर 3.24–4.33 R, वरुण पर 3.39–4.40 R) — इसलिए सह-घूर्णन रेखा से पानी और गैस का पलायन आवश्यक है, जो <strong>मंगल के द्रव्यमान का 6.8%–16.1%</strong>, <strong>अरुण के द्रव्यमान का 1.6%–10.7%</strong>, और <strong>वरुण के द्रव्यमान का 1.8%–10.8%</strong> है!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: तब और अब की सह-घूर्णन रेखा, भागा द्रव्यमान और जन्मों का चाप (शोधपत्र 11, तालिकाएँ L.1 और L.4)</h3>
+<div class="tw"><table class="lab">
+<tr><th>ग्रह</th><th>आज सह-घूर्णन रेखा (R)</th><th>बिना द्रव्यमान-हानि के तब सह-घूर्णन रेखा</th><th>जन्मों के समय सह-घूर्णन रेखा (R)</th><th>जन्मों के समय दिन (h)</th><th>रेखा से निकला द्रव्यमान (ग्रह के द्रव्यमान का %)</th></tr>
+<tr><td><strong>बुध / शुक्र</strong></td><td>100 / 254 (हिल के बाहर!)</td><td>पुनर्निर्मित नहीं की जा सकती</td><td>कोई जन्म-खिड़की नहीं खुली</td><td>—</td><td>1.5%–9.6% (गैस + सौर ब्रेकिंग)</td></tr>
+<tr class="hl"><td><strong>पृथ्वी</strong></td><td>6.62</td><td>2.54–2.59</td><td><strong>2.33</strong> (2.29)</td><td><strong>5.77</strong></td><td>1.0%–1.8% (प्राचीन गैस-आवरण)</td></tr>
+<tr class="hl"><td><strong>मंगल</strong></td><td>6.03</td><td>7.33</td><td><strong>1.89–2.16</strong></td><td><strong>7–9</strong></td><td><strong>6.8%–16.1%</strong> (पानी और भाप)</td></tr>
+<tr><td><strong>बृहस्पति</strong></td><td>2.29</td><td>2.35–2.57</td><td><strong>2.35–2.57</strong></td><td>11.8–19.5</td><td><strong>0%–1.0%</strong> (मोटा गैस-ढक्कन)</td></tr>
+<tr><td><strong>शनि</strong></td><td>1.92</td><td>1.96–2.42</td><td><strong>1.96–2.42</strong></td><td>12.6–24.7</td><td><strong>0%–0.5%</strong> (मोटा गैस-ढक्कन)</td></tr>
+<tr class="hl"><td><strong>अरुण</strong></td><td>3.26</td><td>3.24–4.33</td><td><strong>1.75–2.30</strong></td><td>6.3–14.9</td><td><strong>1.6%–10.7%</strong> (पतला ढक्कन, पानी का पलायन)</td></tr>
+<tr class="hl"><td><strong>वरुण</strong></td><td>3.39</td><td>3.39–4.40</td><td><strong>1.75–2.30</strong></td><td>5.5–13.1</td><td><strong>1.8%–10.8%</strong> (पतला ढक्कन, पानी का पलायन)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>जनक</th><th>सूर्य से दूरी (AU)</th><th>जन्म-विधा</th><th>नियमित चंद्रमाओं की संख्या</th><th>जनक से चंद्रमा-द्रव्यमान का अनुपात (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>M</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m_{\mathrm{moons}}/M_{\mathrm{parent}}</annotation></semantics></math></span></span>)</th></tr>
+<tr><td><strong>बुध / शुक्र</strong></td><td>0.39 / 0.72</td><td>कोई जन्म नहीं (तेज़ ऊष्मीय सूखना)</td><td>0</td><td>0</td></tr>
+<tr class="hl"><td><strong>पृथ्वी</strong></td><td>1.00</td><td><strong>नाशपाती-सिरे पर निर्मित</strong></td><td>1</td><td><strong>1.2 × 10⁻²</strong> (ग्रहों में शिखर)</td></tr>
+<tr><td><strong>मंगल</strong></td><td>1.52</td><td><strong>उभार पर निष्कासित</strong></td><td>2</td><td>1.9 × 10⁻⁸</td></tr>
+<tr><td><strong>बृहस्पति</strong></td><td>5.20</td><td><strong>निष्कासित</strong></td><td>8</td><td>2.1 × 10⁻⁴</td></tr>
+<tr class="hl"><td><strong>शनि</strong></td><td>9.50</td><td><strong>निष्कासित — पंप का शिखर</strong></td><td><strong>~ 24</strong></td><td><strong>2.5 × 10⁻⁴</strong> (निष्कासन का शिखर)</td></tr>
+<tr><td><strong>अरुण / वरुण</strong></td><td>19.20 / 30.10</td><td><strong>निष्कासित — पपड़ी का जमना</strong></td><td>19 / 7</td><td>1.0 × 10⁻⁴ / ~ 5 × 10⁻⁷</td></tr>
+<tr class="hl"><td><strong>प्लूटो</strong></td><td>39.50</td><td><strong>पूर्ण मूँगफली-विखंडन</strong></td><td>5</td><td><strong>0.12</strong> (सौरमंडल का शिखर)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>अध्याय 21–22 में हमने <strong>चंद्रमा-नियम</strong> और 13 जाँचों के प्रोटोकॉल को पूरे सौरमंडल पर लागू किया — चंद्रमा-रहित बुध और शुक्र से, पृथ्वी और मंगल से होकर, गैस और बर्फ़ दानवों (बृहस्पति, शनि, अरुण और वरुण) तक, प्लूटो, हौमिया और सीरीज़ तक — और दिखाया कि पंप-सिद्धांत और वायुमंडलीय-ढक्कन सिद्धांत उन सबको एक नियम में कैसे जोड़ते हैं।</p>
+<a href="story23_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 23</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">ग्रहीय वलय — पदार्थ का स्रोत, 13.4 घंटे का दहलीज़-दिन और शनि का संतुलन-प्रवाह →</p></div></a>
+<p style="margin-top:22px"><a href="story21_hi.html">← अध्याय 21</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

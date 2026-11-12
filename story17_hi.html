@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 17: प्रशांत की धारियाँ — नाशपाती की अग्र-दीवार और चंद्रमा की दर्पण-छाप — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 17: प्रशांत तल की धारियाँ — नाशपाती की अग्र-दीवार और चंद्रमा की दर्पण-छाप।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story17_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story17_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story17_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story17_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story17_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story17_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story17_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story17_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story17_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story17_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story17_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story17_he.html" hreflang="he">עברית</a> · <a href="story17_en.html" hreflang="en">English</a> · <a href="story17_de.html" hreflang="de">Deutsch</a> · <a href="story17_es.html" hreflang="es">Español</a> · <a href="story17_fr.html" hreflang="fr">Français</a> · <a href="story17_ru.html" hreflang="ru">Русский</a> · <a href="story17_zh.html" hreflang="zh">中文</a> · <a href="story17_ja.html" hreflang="ja">日本語</a> · <a href="story17_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 17</p>
+<h1>अध्याय 17: प्रशांत की धारियाँ — नाशपाती की अग्र-दीवार और चंद्रमा की दर्पण-छाप</h1>
+<p>शोधपत्र 09 पर आधारित — धारियाँ: प्रशांत के तल पर नाशपाती का अग्रणी पक्ष (भाग A–C.4: समानांतर अक्षांश-रेखाएँ, पश्चिम में दो घुटने, 1.37× पर दर्पण-छाप और नाशपाती की लंबाई)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: हज़ारों किलोमीटर लंबी छह सीधी, समानांतर धारियाँ प्रशांत के तल को क्यों पार करती हैं — और पश्चिम में अभिसरित क्यों होती हैं?</h2>
+<p>उत्तरी प्रशांत के ऊर्ध्वाधर गुरुत्व-प्रवणता मानचित्रों (VGG — Vertical Gravity Gradient) में एक असाधारण ज्यामितीय प्रणाली उभरती है: <strong>छह सीधी, तीखी और उल्लेखनीय रूप से समानांतर धारियाँ</strong> — मेंडोसिनो, पायोनियर, मरे, मोलोकाई, क्लेरियन और क्लिपर्टन — जो उत्तरी अमेरिका के तटों से पश्चिम की ओर हज़ारों किलोमीटर फैली हैं (अकेली क्लिपर्टन लगभग <strong>7,240 km</strong> में फैली है, पृथ्वी की त्रिज्या से अधिक!), और उनमें कई दोहरी या तिहरी दिखती हैं। इस अध्याय में हम चार आश्चर्यजनक ज्यामितीय परिघटनाएँ खोजेंगे जो संकेत देती हैं कि ये धारियाँ <strong>नाशपाती की वापसी का निशान</strong> हैं, वह नाशपाती जिससे चंद्रमा जन्मा:</p>
+<ol class="steps">
+<li><strong>एक साझा विषुवत की समानांतर रेखाएँ (A.1, B.1):</strong> छह धारियाँ आज की विषुवत के समानांतर नहीं, बल्कि आज की विषुवत के सापेक्ष ≥ 10° झुकी <strong>एक प्राचीन विषुवत</strong> की समानांतर अक्षांश-रेखाएँ हैं — 33.6°N (मेंडोसिनो) से 1.8°N (क्लिपर्टन) तक फैली, और दो और दक्षिणी धारियाँ (6°S और 14°S)।</li>
+<li><strong>किरिटीमाटी पर नाशपाती का आधार ठीक प्रणाली की विषुवत पर है (B.2–B.3):</strong> किरिटीमाटी द्वीप (1.9°N, 157.5°W, शोधपत्र 3 में निचले मैंटल के बड़े निम्न-वेग प्रांत, LLVP, के ऊपर नाशपाती के आधार के रूप में पहचाना गया) धारियों की विषुवत से केवल <strong>1.6°</strong> पर है — और धारियाँ उससे <strong>केवल पूर्व की ओर</strong> (अमेरिका की ओर) चलती हैं!</li>
+<li><strong>पश्चिम में दो "घुटने" जो 3,360 km की चौड़ाई सीमित करते हैं (C.1–C.2):</strong> किरिटीमाटी के पश्चिम में धारियाँ अपना समानांतर मार्ग छोड़ती हैं: उत्तरी धारी नीचे मुड़ती है (23.8°N, 164.9°E) और दक्षिणी धारी ऊपर (5.3°S, 173.2°E)। दोनों घुटनों के बीच की दूरी <strong>3,360 km</strong> है (सीमा 3,040–3,700 km) — ठीक चंद्रमा के संपर्क-क्षेत्र (3,000 km) और उसके ऊपर के गुंबद (3,650 km) की चौड़ाई — और उनका केंद्र (9.3°N, 169.3°E) <strong>आधार के 3,760 km पश्चिम</strong> में है!</li>
+<li><strong>सिरे के भीतर चंद्र मारिया की 1.37 गुना बढ़ी दर्पण-छाप (C.3):</strong> पश्चिम में सिरे के पदचिह्न के भीतर चंद्रमा के निकट पक्ष की एक बढ़ी हुई दर्पण-छवि दिखती है, जिसमें इम्ब्रियम (13.19°N, 179.04°E), सेरेनिटैटिस (11.5°N, 166.3°E) और संपर्क-केंद्र (8.2°N, 179.3°W) सभी सिरे की त्रिज्या (1,680 km) के भीतर आते हैं!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 310" role="img" aria-label="Stripe latitudes from the system equator" style="direction:ltr"><rect x="190.0" y="16" width="345.3" height="26" rx="4" fill="#1f3a5f"/><text x="543.3" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦33.6°N⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मेंडोसिनो</text><rect x="190.0" y="56" width="309.4" height="26" rx="4" fill="#2a4d7a"/><text x="507.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >⁦30.1°N⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >पायोनियर</text><rect x="190.0" y="96" width="266.2" height="26" rx="4" fill="#35608f"/><text x="464.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#35608f" style="direction:ltr;unicode-bidi:embed" >⁦25.9°N⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मरे</text><rect x="190.0" y="136" width="209.7" height="26" rx="4" fill="#4a74a3"/><text x="407.7" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#4a74a3" style="direction:ltr;unicode-bidi:embed" >⁦20.4°N⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मोलोकाई</text><rect x="190.0" y="176" width="107.9" height="26" rx="4" fill="#6f93bd"/><text x="305.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >⁦10.5°N⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >क्लेरियन</text><rect x="190.0" y="216" width="18.5" height="26" rx="4" fill="#c47f2c"/><text x="216.5" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.8°N⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >क्लिपर्टन</text><rect x="190.0" y="256" width="16.4" height="26" rx="4" fill="#b23a2e"/><text x="214.4" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.6°N⁩</text><text x="6.0" y="274.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >आधार · किरिटीमाटी</text></svg><figcaption>धारी-प्रणाली की विषुवत के सापेक्ष हर धारी का अक्षांश: क्लिपर्टन और किरिटीमाटी पर नाशपाती का आधार लगभग एक ही रेखा पर हैं।</figcaption></figure></section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: किताब के नीचे मेज़पोश की तह, मोम में मुहर, और ज़मीन पर पड़ा पेड़</h2>
+<p>रोज़मर्रा के चार चित्र दिखाते हैं कि पृथ्वी से उगी और चंद्रमा की मुक्ति के बाद भीतर खिंची एक विशाल नाशपाती ने प्रशांत की धारियाँ कैसे छोड़ीं:</p>
+<ul>
+<li><strong>घूमते झूले पर बाहर चलता बच्चा (नाशपाती का पिछली ओर झुकना, A.2):</strong> जब नाशपाती पूर्व की ओर घूमती पृथ्वी से बाहर फैली, ऊपर चढ़ते पदार्थ को अधिक कक्षीय गति चाहिए थी और इसलिए वह घूर्णन की दिशा के विरुद्ध <em>पीछे छूट गया</em> — यानी <strong>पश्चिम की ओर</strong>। इसलिए नाशपाती की दो दीवारें बनीं: <strong>अग्र-दीवार (Leading Side, पूर्व में)</strong>, जो घूर्णन की दिशा में फैली, और <strong>पिछली दीवार (Trailing Side, पश्चिम में)</strong>, झुके सिरे के नीचे!</li>
+<li><strong>किताब के नीचे मेज़पोश की तह (नीचे से और बगल से धारियों का बनना, B.5):</strong> जब 3.873 Ga पर चंद्रमा अलग हुआ, "डाट खींच ली गई", नाशपाती में आंतरिक दाब मुक्त हुआ, और नाशपाती भीतर खिंचकर वापस पृथ्वी में समा गई। फैली अग्र-दीवार घूर्णन की दिशा में पूर्व की ओर लिप गई और बगल से धकेले मेज़पोश की तहों की तरह अपने ऊपर मुड़ गई: इसीलिए धारियाँ <strong>ज्वालामुखीय कटकों के नीचे से उन्हें तोड़े बिना गुज़रती हैं</strong> (ऊपर से खोदी नाली के विपरीत, जो कटक को काट देती!), जबकि बिना फैली पिछली दीवार ढेर में ढहकर पश्चिमी प्रशांत के घुमावदार द्वीप-चापों में सिकुड़ गई (फ़िलीपींस, मारियाना, इंडोनेशिया और बांडा चाप, B.8)!</li>
+<li><strong>नरम मोम में दबाई रबर की मुहर (चंद्रमा के निकट पक्ष की दर्पण-छाप, C.3):</strong> आमने-सामने, चंद्रमा का निकट पक्ष नाशपाती के सिरे पर बैठा था। रबर की मुहर पर उल्टे खुदे अक्षरों, या भीतर से खिड़की के शीशे पर दबी और बाहर से देखी हथेली की तरह, उत्तर उत्तर रहता है, पर <strong>पूर्व और पश्चिम अदल-बदल जाते हैं</strong> — और चूँकि सिरे पर चंद्रमा का घनत्व आज के 3,344 kg/m³ के मुक़ाबले 1,300 kg/m³ था, छाप में हर आयाम <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3344</mn><mi mathvariant="normal">/</mi><mn>1300</mn><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn mathvariant="bold">1.37</mn></mrow><annotation encoding="application/x-tex">(3344/1300)^{1/3} = \mathbf{1.37}</annotation></semantics></math></span></span> गुना बड़ा है!</li>
+<li><strong>पूरी लंबाई में ज़मीन पर पड़ा कटा पेड़ (नाशपाती की लंबाई से 9,360 km लंबाई का मेल, C.4):</strong> नाशपाती पेड़ की तरह गिरी नहीं बल्कि भीतर खिंची, फिर भी महासागर-तल पर लिपी अग्र-दीवार अलगाव के क्षण स्वयं नाशपाती के पिंड की लंबाई के समान लंबाई में फैली!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: धारी-प्रणाली, दो घुटने और दर्पण-छाप (भाग A–C.4)</h2>
+<p>शोधपत्र 09 के भाग A–C.4 चार स्वतंत्र ज्यामितीय माप प्रस्तुत करते हैं जो धारियों की पहचान नाशपाती की अग्र-दीवार के रूप में और घुटना-क्षेत्र की पहचान उस जगह के रूप में पुष्ट करते हैं जहाँ चंद्रमा बना:</p>
+<ol class="steps">
+<li><strong>प्रणाली की विषुवत और आधार के सापेक्ष धारियों का क्रम (A.1, B.1–B.4):</strong> ज्ञात संदर्भ-बिंदुओं (हवाई, हवाई–एम्परर मोड़, टोंगा खाई का सिरा और मेजी समुद्री पर्वत, &lt; 5 पिक्सेल की सटीकता तक) पर अंशांकित त्रि-आयामी ग्लोब (Cesium) पर, छह धारियाँ एक साझा विषुवत से स्थिर दूरी रखती हैं: मेंडोसिनो (33.6°N), पायोनियर (30.1°N), मरे (25.9°N), मोलोकाई (20.4°N), क्लेरियन (10.5°N) और क्लिपर्टन (1.8°N — किरिटीमाटी के अक्षांश से 0.2°–0.8°, जो 1.6°N पर है!)। आधार के दक्षिण में दो और धारियाँ पहचानी गईं (लगभग 6°S और 14°S, संभवतः गैलापागोस और मार्केसस), जो सिद्ध करती हैं कि नाशपाती का आधार (9,000–11,000 km चौड़ा) अग्र-दीवार की चौड़ाई के <em>भीतर</em> खड़ा था, उसके किनारे पर नहीं।</li>
+<li><strong>कटकों के नीचे धारियों की निरंतरता और पश्चिम में उनका अभिसरण (B.5–B.6):</strong> चार अलग प्रतिच्छेदनों पर (36°N, 178°W के पास, लाइन द्वीपों 6°N, 159°W पर, फ़ीनिक्स द्वीपों 2°S, 175°W पर और 13°S, 152°W पर) धारी ज्वालामुखीय कटक के नीचे जाती है और बिना पार्श्व उछाल के और कटक को काटे बिना दूसरी ओर जारी रहती है। कटकों के पश्चिम में उत्तरी धारी दक्षिण की ओर और दक्षिणी धारी उत्तर की ओर एक साझा अभिसरण-क्षेत्र की ओर मुड़ती है।</li>
+<li><strong>× 1.37 आवर्धन पर निकट पक्ष की दर्पण-छाप (C.3):</strong> जब लेखक ने एक प्रारंभिक प्रत्यक्ष पठन (जिसमें नेक्टारिस अपनी जगह से 2,500 km दूर गिरा) को भौतिक रूप से सही दर्पण-पठन से बदला (पूर्व–पश्चिम की अदला-बदली और 1.37 गुना आवर्धन, ताकि इम्ब्रियम–सेरेनिटैटिस दूरी आज चंद्रमा पर 1,023 km से बढ़कर ~ 1,400 km हो), तो <strong>इम्ब्रियम</strong> को 13.19°N, 179.04°E पर लंगर करना <strong>सेरेनिटैटिस</strong> (11.5°N, 166.3°E) को मार्शल शृंखला पर सिरे के केंद्र से केवल 410 km पर, और <strong>संपर्क-केंद्र</strong> (8.2°N, 179.3°W) को 1,260 km दूर रखता है — सभी सिरे की त्रिज्या (1,680 km) के गहरे भीतर, जबकि नेक्टारिस (1,970 km) किनारे के ठीक बाहर गिरता है, ठीक चंद्रमा पर उसकी दक्षिणी स्थिति की तरह!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: चंद्रमा के बिना दर्पण-पैमाना (1.37×) और नाशपाती के पिंड की लंबाई की गणना कैसे करें</h2>
+<p>शोधपत्र 09 के भाग C.1–C.4 दिखाते हैं कि दो सरल ज्यामितीय गुण — कसाव के दौरान चंद्रमा के द्रव्यमान का संरक्षण, और सह-घूर्णन रेखा के सापेक्ष अंतिम संपर्क की स्थिति — बिना मुक्त प्राचलों के, महासागर-तल पर दर्पण-छाप का आकार और पूरी धारी-प्रणाली की लंबाई दोनों पहले ही तय करते हैं:</p>
+<ol class="steps">
+<li><strong>दर्पण-आवर्धन गुणक (× 1.37, §C.3):</strong> जब युवा चंद्रमा नाशपाती के सिरे पर बैठा था, वह फूला और गैसों तथा वाष्पशीलों से समृद्ध था, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>300</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{tip}} = 1,300</annotation></semantics></math></span></span> kg/m³ के औसत घनत्व के साथ। तब से वह अपना द्रव्यमान स्थिर रखते हुए आज के घनत्व (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{today}} = 3,344</annotation></semantics></math></span></span> kg/m³, त्रिज्या 1,737 km) तक कसा है। चूँकि गोले का आयतन उसके घनत्व के व्युत्क्रमानुपाती है और त्रिज्या आयतन के घनमूल के समानुपाती, युवा चंद्रमा के चेहरे पर हर दूरी आज के मान से <strong>1.37</strong> गुना बड़ी थी (और शृंखला की दो-चरणीय गणना से — 0.83 के गुणक से लेंस से गोले तक संक्रमण और फिर 1,890 से 1,737 km तक सिकुड़न — 1.31 मिलता है, कुछ प्रतिशत के भीतर मेल)। इसलिए इम्ब्रियम और सेरेनिटैटिस के बीच की दूरी (आज 1,023 km) नाशपाती के सिरे पर <strong>≈ 1,400 km</strong> थी!</li>
+<li><strong>नाशपाती के पिंड की लंबाई को स्वयं चंद्रमा की लंबाई से अलग करना (§C.4):</strong> अलगाव के क्षण (5.77 घंटे का पृथ्वी-दिन), अलगाव-अक्षांश (22.5°) पर सह-घूर्णन रेखा पृथ्वी के केंद्र से 17,287 km पर थी। चंद्रमा का केंद्र (अलगाव पर उसकी त्रिज्या 1,890 km) रेखा से लगभग 210 km आगे निकलकर 17,497 km पर था। इसलिए:
+<ul>
+<li><strong>सिरे के रूप में चंद्रमा सहित नाशपाती:</strong> ठीक सह-घूर्णन रेखा तक पहुँची — पृथ्वी की सतह से 17,287 − (6,602 से 6,721) = 10,570–10,690 km की दूरी।</li>
+<li><strong>स्वयं नाशपाती का पिंड (सिरे के क्षेत्र सहित, चंद्रमा के बिना, जो अलग होकर चला गया):</strong> चंद्रमा के केंद्र से एक चंद्र-त्रिज्या भीतर समाप्त हुआ (पृथ्वी के केंद्र से 17,497 − 1,890 = 15,607 km), यानी पृथ्वी की सतह से <strong>8,890–9,000 km</strong> की लंबाई पर — सिरे के केंद्र से पूर्व में क्लिपर्टन तक महासागर-तल पर फैली धारी-प्रणाली की लंबाई (<strong>9,360 km</strong>) के लगभग समान!</li>
+</ul>
+</li>
+<li><strong>प्रणाली की रेखाओं पर घुटनों का संरेखण (§C.1–C.2):</strong> दोनों घुटने यादृच्छिक नहीं: उत्तरी घुटना (23.8°N, 164.9°E) ठीक पायोनियर धारी के अक्षांश पर है (प्रणाली की विषुवत से 30.0°N, 30.1°N के मुक़ाबले), और दक्षिणी घुटना (5.3°S, 173.2°E) ठीक प्रणाली की विषुवत पर ही है (उससे 0.1°) — वही विषुवत जिस पर किरिटीमाटी पर नाशपाती का आधार है (उससे 1.6°)!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>सिरे के चरण और वर्तमान के बीच चंद्रमा के चेहरे पर दूरियों का अनुपात, पृथ्वी पर बचे नाशपाती के पिंड की लंबाई, और सिरे के पदचिह्न की त्रिज्या इस प्रकार सूत्रबद्ध हैं (§C.1, §C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub><msub><mi>L</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">y</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3344</mn><mn>1300</mn></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>=</mo><mn>1.37</mn></mrow><annotation encoding="application/x-tex">\dfrac{L_{\mathrm{tip}}}{L_{\mathrm{today}}} = \left(\dfrac{\rho_{\mathrm{today}}}{\rho_{\mathrm{tip}}}\right)^{1/3} = \left(\dfrac{3344}{1300}\right)^{1/3} = 1.37</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mtext> </mtext><mi mathvariant="normal">b</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">y</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mi>R</mi><mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>−</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi>R</mi><mo>⊕</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>607</mn><mo>−</mo><mo stretchy="false">(</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>602</mn><mtext>–</mtext><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>721</mn><mo stretchy="false">)</mo><mo>=</mo><mn>8</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>890</mn><mtext>–</mtext><mn>9</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>000</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">L_{\mathrm{pear\,body}} = (R_{\mathrm{corot},22.5^\circ} + \Delta r_{\mathrm{release}} - R_{\mathrm{Moon,rel}}) - R_\oplus = 15{,}607 - (6{,}602\text{–}6{,}721) = 8{,}890\text{–}9{,}000\text{ km}</annotation></semantics></math></span></div></div></div>
+<p>जहाँ <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \approx 210</annotation></semantics></math></span></span> km सह-घूर्णन रेखा (अक्षांश 22.5° पर 17,287 km) से आगे की दूरी है और <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_{\mathrm{Moon,rel}} = 1,890</annotation></semantics></math></span></span> km अलगाव के क्षण चंद्रमा की त्रिज्या है, इससे निकलता है कि नाशपाती के पिंड की लंबाई (8,890–9,000 km) धारी-प्रणाली की लंबाई (9,360 km) और पिछले पक्ष के चापों (8,100–10,300 km) से 4%–5% के भीतर मेल खाती है।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: प्रशांत तल पर अक्षांश-रेखाओं का मानचित्र और दर्पण-निर्देशांक</h2>
+<p>उत्तरी प्रशांत को अक्षांश के 30° में बिना पार्श्व विचलन के पार करती तीखी गुरुत्व-प्रवणता (VGG) रेखाओं के अलावा, मानचित्र पर चार सटीक भौगोलिक लंगर टिकते हैं (§A.1, §B.7, §C.3):</p>
+<ul>
+<li><strong>निचले मैंटल में गहरा लंगर (B.7):</strong> किरिटीमाटी पर नाशपाती के आधार के नीचे (1.9°N, 157.5°W), मैंटल की सबसे निचली परत कोट्टार और लेकिच (2016) के सभी पाँच मत-मॉडलों में भूकंपीय रूप से धीमी है और प्रशांत बड़े निम्न-वेग प्रांत (LLVP — उसका केंद्र आधार के 1,480–1,660 km दक्षिण-दक्षिण-पश्चिम) के −1% समोच्च के भीतर है, जिसमें नाशपाती का भारी, लोहे-समृद्ध पदार्थ भीतर खिंचते समय डूबा।</li>
+<li><strong>सिरे के पदचिह्न के भीतर दर्पण-छाप (9.3°N, 169.3°E के चारों ओर त्रिज्या ≈ 1,680 km):</strong> चंद्रमा के निकट पक्ष के चार मुख्य बिंदुओं में से तीन दर्पण-पदचिह्न के गहरे भीतर आते हैं — सेरेनिटैटिस (केंद्र से 410 km), इम्ब्रियम (1,150 km) और संपर्क-केंद्र (1,260 km), जबकि नेक्टारिस (1,970 km) दक्षिणी किनारे के ठीक बाहर है, ठीक चंद्रमा पर संपर्क-क्षेत्र के सापेक्ष उसकी स्थिति की तरह!</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: धारियों के अक्षांश, दर्पण-छाप (× 1.37) और नाशपाती की लंबाइयाँ (शोधपत्र 09, भाग A–C.4)</h3>
+<div class="tw"><table class="lab">
+<tr><th>धारी / भौगोलिक लंगर</th><th>प्रणाली की विषुवत से दूरी</th><th>आधार-अक्षांश (1.6°N) के उत्तर में दूरी</th><th>नाशपाती की संरचना में ज्यामितीय भूमिका</th></tr>
+<tr class="hl"><td><strong>1. मेंडोसिनो</strong></td><td>33.6°N</td><td>32.0° उत्तर</td><td>धारी-प्रणाली की उत्तरी सीमा</td></tr>
+<tr><td><strong>2. पायोनियर</strong></td><td>30.1°N</td><td>28.5° उत्तर</td><td>उत्तरी घुटने के अक्षांश (30.0°N) से मेल</td></tr>
+<tr><td><strong>3. मरे</strong></td><td>25.9°N</td><td>24.3° उत्तर</td><td>एक केंद्रीय उत्तरी धारी</td></tr>
+<tr><td><strong>4. मोलोकाई</strong></td><td>20.4°N</td><td>18.8° उत्तर</td><td>एक केंद्रीय धारी</td></tr>
+<tr><td><strong>5. क्लेरियन</strong></td><td>10.5°N</td><td>8.9° उत्तर</td><td>एक दक्षिण-केंद्रीय धारी</td></tr>
+<tr class="hl"><td><strong>6. क्लिपर्टन</strong></td><td><strong>1.8°N</strong> (पश्चिमी सिरे पर 0.8°)</td><td><strong>0.2° उत्तर</strong> (लंबाई ~ 7,240 km)</td><td>नाशपाती के आधार के ठीक बगल से गुज़रती है</td></tr>
+<tr class="hl"><td><strong>नाशपाती का आधार (किरिटीमाटी)</strong></td><td><strong>1.6°N</strong> (1.9°N, 157.5°W)</td><td><strong>0.0° (संदर्भ-बिंदु)</strong></td><td>धारियों की विषुवत पर और LLVP के ऊपर (चौड़ाई 9,000–11,000 km)</td></tr>
+<tr><td><strong>दो दक्षिणी धारियाँ (गैलापागोस / मार्केसस)</strong></td><td>~ 6°S और ~ 14°S</td><td>7.6° और 15.6° दक्षिण</td><td>सिद्ध करती हैं कि आधार अग्र-दीवार की चौड़ाई के भीतर खड़ा था</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>वस्तु / माप (भाग C)</th><th>चंद्रमा पर निर्देशांक</th><th>पृथ्वी पर पूर्वानुमानित निर्देशांक (× 1.37, दर्पण)</th><th>सिरे के केंद्र (9.3°N, 169.3°E) से दूरी</th><th>पदचिह्न में मेल (R ≈ 1,680 km)</th></tr>
+<tr class="hl"><td><strong>इम्ब्रियम (स्थिति-लंगर)</strong></td><td>37.6°N, 340.0°E</td><td><strong>13.19°N, 179.04°E</strong></td><td>1,150 km (आधार से 2,870 km)</td><td><strong>पदचिह्न के भीतर</strong> (मुख्य मार्ग)</td></tr>
+<tr class="hl"><td><strong>सेरेनिटैटिस (दर्पण में पूर्वानुमानित)</strong></td><td>27.3°N, 18.4°E</td><td><strong>≈ 11.5°N, 166.3°E</strong></td><td><strong>410 km</strong> (आधार से 4,140 km)</td><td><strong>पदचिह्न के गहरे भीतर</strong> (मार्शल शृंखला पर)</td></tr>
+<tr class="hl"><td><strong>संपर्क-केंद्र (दर्पण में पूर्वानुमानित)</strong></td><td>24.1°N, 335.2°E</td><td><strong>≈ 8.2°N, 179.3°W</strong></td><td>1,260 km (आधार से 2,510 km)</td><td><strong>पदचिह्न के भीतर</strong></td></tr>
+<tr><td><strong>नेक्टारिस (दर्पण में पूर्वानुमानित)</strong></td><td>15.2°S, 35.0°E</td><td>≈ 3.1°S, 156.6°E</td><td>1,970 km (आधार से 5,130 km)</td><td>दक्षिणी किनारे के बाहर (चंद्रमा पर उसकी दक्षिणी स्थिति से मेल)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<p>इस अध्याय में हमने देखा कि उत्तरी प्रशांत की छह समानांतर धारियाँ एक प्राचीन विषुवत पर कैसे संरेखित होती हैं, किरिटीमाटी पर नाशपाती के आधार से पूर्व की ओर चलती हैं, और पश्चिम में 3,360 km दूर दो घुटनों के बीच अभिसरित होती हैं, जिनके भीतर चंद्रमा के निकट पक्ष की बढ़ी हुई (× 1.37) दर्पण-छवि अंकित है।</p><a href="story18_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 18</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">पूरे प्रशांत का अभिसरण, करछुल-कटक और तल की युवा आयु की पहेली का समाधान →</p></div></a>
+<p style="margin-top:22px"><a href="story16_hi.html">← अध्याय 16</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अध्याय 18: पूरे प्रशांत का अभिसरण, करछुल-कटक और तल की युवा आयु की पहेली का समाधान — LEF मॉडल</title>
+<meta name="description" content="LEF मॉडल की कहानी का अध्याय 18: पूरे प्रशांत का अभिसरण, करछुल-कटक और महासागर-तल की युवा आयु की पहेली का समाधान।">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story18_hi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans Devanagari','Nirmala UI','Mangal','FreeSans',sans-serif,Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story18_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story18_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story18_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story18_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story18_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story18_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story18_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story18_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story18_ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/story18_hi.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story18_he.html" hreflang="he">עברית</a> · <a href="story18_en.html" hreflang="en">English</a> · <a href="story18_de.html" hreflang="de">Deutsch</a> · <a href="story18_es.html" hreflang="es">Español</a> · <a href="story18_fr.html" hreflang="fr">Français</a> · <a href="story18_ru.html" hreflang="ru">Русский</a> · <a href="story18_zh.html" hreflang="zh">中文</a> · <a href="story18_ja.html" hreflang="ja">日本語</a> · <a href="story18_ko.html" hreflang="ko">한국어</a> · <b>हिन्दी</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · अध्याय 18</p>
+<h1>अध्याय 18: पूरे प्रशांत का अभिसरण, करछुल-कटक और तल की युवा आयु की पहेली का समाधान</h1>
+<p>शोधपत्र 09 पर आधारित — धारियाँ: प्रशांत के तल पर नाशपाती का अग्रणी पक्ष (भाग C.5–H: GEBCO 2026 अनुरेखण, करछुल-कटक, प्राचीन विषुवत, 3 चुनौतियाँ और 10 अध्ययन)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>रहस्य: क्या प्रशांत की सभी रेखाएँ नाशपाती के सिरे तक ले जाती हैं — और अरबों वर्ष पुरानी धारियाँ 18 करोड़ वर्ष से कम पुराने तल में कैसे बचती हैं?</h2>
+<p>अध्याय 17 में हमने देखा कि उत्तरी प्रशांत की छह समानांतर धारियाँ दो घुटनों के बीच पश्चिम में चंद्रमा के दर्पण-पदचिह्न को कैसे सीमित करती हैं। पर एक दृश्य अंतर्दृष्टि को मापने योग्य विज्ञान में बदलने के लिए शोधपत्र 09 (भाग C.5–F) तीन मूलभूत प्रश्न उठाता है, जो अनसुलझे रहें तो पूरी व्याख्या एक परिकल्पना रह जाएगी:</p>
+<ol class="steps">
+<li><strong>क्या मध्य और दक्षिणी प्रशांत की धारियाँ भी उसी सिरे पर अभिसरित होती हैं (C.5)?</strong> विषुवत के दक्षिण में और विशाल प्रणालियाँ फैली हैं — केंद्र में साला इ गोमेज़–ईस्टर द्वीप–तुआमोटू शृंखला, और सुदूर दक्षिण में एल्टानिन–लुइसविल–तुवालु प्रणाली। वैश्विक GEBCO 2026 गहराई-जाल पर अंध मात्रात्मक माप में, क्या ये सभी दस मार्ग चंद्रमा के अंतिम संपर्क-क्षेत्र (8.7°N, 167.7°E) पर अभिसरित होते हैं?</li>
+<li><strong>मार्शल और लाइन द्वीपों की विशाल द्वीप-शृंखलाओं में मैंटल-प्लूम आयु-प्रगति क्यों नहीं है (D.1–D.3)?</strong> मुख्यधारा विवर्तनिक मॉडल में प्रशांत में द्वीप-शृंखलाएँ तब बनती हैं जब महासागरीय प्लेट मैंटल के किसी स्थिर "हॉटस्पॉट" के ऊपर से गुज़रती है — इसलिए आयु एक सिरे से दूसरे तक लगातार बढ़नी चाहिए (जैसे हवाई–एम्परर में, 0 से 81 Ma)। पर लाइन द्वीपों और मार्शल द्वीपों में आयु बिना क्रम के उछलती है, हज़ारों किलोमीटर में एक साथ फूटती है!</li>
+<li><strong>भू-कालानुक्रमिक आयु-विरोधाभास (F.1):</strong> धारियों के बीच का प्रशांत तल (चुंबकीय विसंगतियों और बेसाल्टों से) अधिकतम 18 करोड़ वर्ष आँका जाता है — चंद्रमा के अलगाव के क्षण (3.873 Ga) से अरबों वर्ष युवा। नाशपाती के वापस खिंचते समय बनी धारियाँ अरबों वर्ष बाद बने तल में कैसे अंकित हो सकती हैं?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>एक चित्र: जुते खेत पर ताज़ी बर्फ़, करछुल के नीचे खिंचता प्लास्टर, और घूमती गेंद में धकेला प्लास्टिसीन का ढेला</h2>
+<p>तीन सरल, मूर्त चित्र इन तीन प्रश्नों को सुलझाते हैं और उन्हें एक भौतिक तस्वीर में जोड़ते हैं:</p>
+<ul>
+<li><strong>जुते खेत पर गिरती ताज़ी बर्फ़ (महासागर-तल की युवा आयु की पहेली का समाधान, F.1):</strong> महीनों पहले गहरी कूँड़ों में जोते गए खेत की कल्पना कीजिए, और कल रात उस पर हल्की बर्फ़ गिरी। ताज़ी बर्फ़ कूँड़ों को लपेटती है और सफ़ेद चादर से जुताई की रेखाएँ दिखाती रहती है। अगर आप बर्फ़ की आयु आँकें, तो कल रात के बर्फ़ीले तूफ़ान की तारीख़ मिलती है — जुताई की नहीं! इसी तरह महासागर-तल ऊपर से नई परतें जमा करता है जबकि नीचे की परतें नीचे से नवीनीकृत होती हैं: रेडियोमितीय आयु केवल <strong>अंतिम ऊपरी परत (&lt; 180 Ma)</strong> मापती है, जबकि धारियाँ निचली परत में <strong>गहरी घनत्व-तहें</strong> हैं जिन्हें युवा परतों ने लपेटा है — इसीलिए धारियाँ बाहरी स्थलाकृति में धुँधली पर गुरुत्व-प्रवणता मानचित्र (VGG) पर, जो गहराई में देखता है, उल्लेखनीय रूप से तीखी हैं!</li>
+<li><strong>नरम प्लास्टर से सपाट करछुल खींचता पलस्तरकार ("करछुल-कटक", D.1):</strong> नरम प्लास्टर से पुती दीवार पर सपाट करछुल दबाइए और उसे ज़ोर से खींचिए: प्लास्टर करछुल और दीवार दोनों से चिपकता है, उनके बीच खिंचता है, और अंत में <strong>करछुल के किनारों के साथ दो उठी कटकों</strong> में फटता है। जब चंद्रमा सह-घूर्णन रेखा से आगे ज़ोर से उखड़कर स्वयं को बाहर खींच रहा था (जैसे संपर्क-क्षेत्र 6,000 से 3,000 km तक सिकुड़ा), संपर्क-क्षेत्र का नरम पदार्थ ऊपर खिंचकर कटकों की दो शृंखलाएँ बना — <strong>पश्चिम में मार्शल–गिल्बर्ट–तुवालु शृंखला और पूर्व में लाइन द्वीप शृंखला</strong> (2,800–3,500 km दूर!) — जो नाशपाती के वापस खिंचने पर सिरे के साथ महासागर-तल पर उतर आईं!</li>
+<li><strong>घूमती गेंद की विषुवत से उसकी गहराई में धकेला प्लास्टिसीन का भारी ढेला (धारियों की विषुवत का झुकाव, E.3):</strong> घूमती गेंद की विषुवत पर प्लास्टिसीन का भारी ढेला (7–12 चंद्र-द्रव्यमान) चिपकाइए; गेंद स्थिर घूमेगी। अब ढेले को गेंद की गहराई में भीतर धकेलिए: जड़त्व-आघूर्ण बदलता है, संतुलन बिगड़ता है, और गेंद अपने घूर्णन-अक्ष के सापेक्ष धीरे-धीरे लुढ़कती है जब तक नया संतुलन न पाए — इसीलिए धारियों में दर्ज प्राचीन विषुवत आज की विषुवत के सापेक्ष <strong>≥ 10°</strong> झुकी है!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>विज्ञान और मॉडल: पूरे प्रशांत में GEBCO 2026 अनुरेखण और करछुल-कटकों के आयु-प्रतिरूप (भाग C.5–E)</h2>
+<p>शोधपत्र 09 के भाग C.5–E प्रशांत की सभी रेखा-प्रणालियों का अभूतपूर्व मात्रात्मक परीक्षण प्रस्तुत करते हैं:</p>
+<ol class="steps">
+<li><strong>GEBCO 2026 जाल पर पूरे प्रशांत में अभिसरण-अध्ययन (C.5):</strong> लेखक ने पहले ही लिखित रूप में एक एल्गोरिथ्मिक प्रोटोकॉल परिभाषित किया (प्रति डिग्री 30 बिंदुओं के विभेदन पर GEBCO 2026 छायांकित-उभार मानचित्र पर 0.5° के कदमों में दिशात्मक फ़िल्टर) और दो स्थिर लक्ष्य: <strong>अंतिम संपर्क</strong> (8.7°N, 167.7°E, त्रिज्या 1,500 km) और <strong>चौड़ा सिरा-क्षेत्र</strong> (6°N, 179.5°W, त्रिज्या 3,000 km)। परिणाम:
+<ul>
+<li><strong>सभी 10 अनुरेखित मार्ग</strong> (उत्तर, केंद्र और दक्षिण से) सिरा-क्षेत्र (3,000 km) के भीतर पहुँचते हैं।</li>
+<li><strong>10 में से 6 मार्ग</strong> (उनमें पाँच केवल 450 km के भीतर!) अंतिम संपर्क के वृत्त (1,500 km) के गहरे भीतर से गुज़रते हैं: ऊपरी दक्षिणी मार्ग (उत्तरी एल्टानिन + लुइसविल) <strong>166 km</strong> पर, सीधे संपर्क में प्रवेश करती तुवालु–गिल्बर्ट–राटाक शृंखला <strong>190 km</strong> पर, क्लेरियन <strong>288 km</strong> पर, निचला दक्षिणी मार्ग (दक्षिणी एल्टानिन) <strong>300 km</strong> पर, मोलोकाई <strong>434 km</strong> पर, और मरे 1,274 km पर (और क्लिपर्टन केवल 14 km से चूकता है — 1,514 km)।</li>
+<li><strong>3 में से 0 नियंत्रण-रेखाएँ</strong> (पायोनियर, गैलापागोस और मार्केसस, जिन्हें सिरे तक मार्ग के रूप में चिह्नित नहीं किया गया था) अंतिम संपर्क के वृत्त में प्रवेश करती हैं (1,656–2,590 km)!</li>
+</ul>
+</li>
+<li><strong>करछुल-कटकों की दूरी और मैंटल-प्लूम आयु-प्रगति की अनुपस्थिति (D.1–D.3):</strong> पश्चिम में मार्शल–गिल्बर्ट–तुवालु शृंखला और पूर्व में लाइन द्वीप शृंखला के बीच की दूरी <strong>2,800–3,500 km</strong> है (माजुरो से किरिटीमाटी 3,490 km, तरावा से पाल्मायरा 2,810 km, मध्य से मध्य 3,290 km) — संपर्क-क्षेत्र की चौड़ाई (3,000 km) और दोनों घुटनों के बीच की दूरी (3,360 km) के समान। इसके अलावा, शृंखलाओं का युग्म आधार की ओर लगभग आधी चौड़ाई पूर्व में खिसका है (किरिटीमाटी लाइन द्वीपों पर है, और मार्शल में क्वाजलीन सिरे के केंद्र से 180 km से गुज़रता है), क्योंकि करछुल-कटक 6,000 और 3,000 km के बीच <strong>उखड़ने की पट्टी</strong> के भीतर ऊपर खिंचे! और आयु-परीक्षण में: लाइन द्वीपों में 1,200 से &gt;4,000 km में दो समकालिक विस्फोट मापे गए (81–86 Ma और 68–73 Ma) बिल्कुल बिना आयु-प्रगति के (और साहित्य में इन्हें स्थलमंडलीय खिंचाव से जोड़ा जाता है!), और मार्शल द्वीपों में बिना प्लूम-क्रम के 66–140 Ma की आयु मापी गई।</li>
+<li><strong>धारियों की विषुवत का झुकाव (≥ 10°, भाग E):</strong> आज की अक्षांश-रेखाओं के सापेक्ष हर धारी की ढाल मापना उजागर करता है कि सभी धारियाँ पूर्व की ओर जाते हुए उत्तर की ओर चढ़ती हैं: मरे (+12.7°), क्लेरियन (+9.0°), क्लिपर्टन (+11.0°), दक्षिणी धारी (+11.7°) और मेंडोसिनो (+2.4°)। संयुक्त मिलान के लिए <strong>कम से कम 10°</strong> झुकी विषुवत चाहिए (और ~ 20° तक; 11° मिलान में वह 159°W पर आज की विषुवत को पार करती है, किरिटीमाटी से केवल 1.6°)।</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 348" role="img" aria-label="Distance of each traced path from the final contact" style="direction:ltr"><rect x="200.0" y="16" width="22.1" height="24" rx="4" fill="#2f7d57"/><text x="230.1" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦166⁩</text><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >उ. एल्टानिन + लुइसविल</text><rect x="200.0" y="52" width="25.3" height="24" rx="4" fill="#2f7d57"/><text x="233.3" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦190⁩</text><text x="6.0" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >तुवालु–गिल्बर्ट–राटाक</text><rect x="200.0" y="88" width="38.4" height="24" rx="4" fill="#2f7d57"/><text x="246.4" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦288⁩</text><text x="6.0" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >क्लेरियन</text><rect x="200.0" y="124" width="40.0" height="24" rx="4" fill="#2f7d57"/><text x="248.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦300⁩</text><text x="6.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >द. एल्टानिन</text><rect x="200.0" y="160" width="57.9" height="24" rx="4" fill="#2f7d57"/><text x="265.9" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦434⁩</text><text x="6.0" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मोलोकाई</text><rect x="200.0" y="196" width="169.9" height="24" rx="4" fill="#2f7d57"/><text x="377.9" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦1,274⁩</text><text x="6.0" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >मरे</text><rect x="200.0" y="232" width="201.9" height="24" rx="4" fill="#c47f2c"/><text x="409.9" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,514⁩</text><text x="6.0" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >क्लिपर्टन</text><rect x="420.8" y="268" width="124.5" height="24" rx="4" fill="#b23a2e" opacity=".35"/><rect x="200.0" y="268" width="220.8" height="24" rx="4" fill="#b23a2e"/><text x="553.3" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,656–2,590⁩</text><text x="6.0" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >नियंत्रण: पायोनियर आदि</text><line x1="400.0" x2="400.0" y1="8" y2="322" stroke="#1f3a5f" stroke-dasharray="5 4"/><text x="400.0" y="338.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >अंतिम संपर्क-वृत्त · ⁦1,500⁩ km</text></svg><figcaption>GEBCO 2026 अनुरेखण में अंतिम संपर्क के केंद्र से हर (विस्तारित) मार्ग के अंतिम बिंदु की दूरी: छह मार्ग 1,500 km वृत्त में प्रवेश करते हैं, कोई नियंत्रण-रेखा नहीं।</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>शब्दों में तंत्र: तीन भूवैज्ञानिक चुनौतियों के उत्तर (भाग F)</h2>
+<p>शोधपत्र 09 का भाग F उन तीन मुख्य चुनौतियों का सीधा सामना करता है जो भूवैज्ञानिक धारियों और करछुल-कटकों की व्याख्या के विरुद्ध उठाते हैं, और हर एक के लिए निर्णायक भौतिक परीक्षण परिभाषित करता है:</p>
+<ol class="steps">
+<li><strong>चुनौती 1 — महासागर-तल की युवा आयु (&lt; 180 Ma, §F.1):</strong> धारियों के बीच का प्रशांत तल चुंबकीय विसंगतियों और बेसाल्टों से अधिकतम 18 करोड़ वर्ष आँका जाता है। LEF मॉडल में महासागर-तल एक क्षण में बना "एक खंड" नहीं, बल्कि <strong>परतों में नवीनीकृत होती पपड़ी</strong> है: नई परतें ऊपर से जमा होती हैं जबकि नीचे की परतें नीचे से ली और नवीनीकृत की जाती हैं। रेडियोमितीय आयु केवल <strong>अंतिम ऊपरी चादर</strong> मापती है (जुते खेत पर कल रात गिरी बर्फ़ की आयु आँकने की तरह), जबकि धारियाँ नीचे की परतों में छूटी <strong>गहरी घनत्व-तहें</strong> हैं! इसीलिए धारियाँ बाहरी स्थलाकृति में धुँधली पर गुरुत्व-प्रवणता मानचित्र (VGG) पर उल्लेखनीय रूप से तीखी हैं, जो गहराई में घनत्व-विरोधाभास उजागर करता है (और जिसे सैंडवेल और साथियों 2014 में वैसे भी "दबी विवर्तनिक संरचना" उजागर करने वाला बताया गया)। <strong>परीक्षण (अध्ययन 9):</strong> धारियों को पार करती भूकंपीय प्रोफ़ाइलों और बोरहोलों में तह युवा परतों के नीचे जारी रहेगी, और उसके ऊपर की परतें तह के शिखरों पर पतली और उसके गर्तों में मोटी होंगी।</li>
+<li><strong>चुनौती 2 — धारियों और कटकों के बनने का क्रम (§F.2):</strong> यह तथ्य कि धारियाँ ज्वालामुखीय कटकों के नीचे से उन्हें काटे बिना गुज़रती हैं (B.5) सिद्ध करता है कि धारियाँ नीचे से और बगल से तह बनकर बनीं, पर अपने-आप यह तय नहीं करता कि पहले कौन आया — हो सकता है तह उनके नीचे बनते समय कटक पहले से तल पर खड़े हों (मेज़पोश पर खड़ी मेज़ की तरह जो उसके नीचे सिकुड़ता है)। <strong>परीक्षण (अध्ययन 6):</strong> ऊर्ध्वाधर अतिशयोक्ति के बिना सपाट मानचित्र पर सटीक निर्देशांक-माप जाँचेगा कि क्या ठीक उन बिंदुओं पर जहाँ धारियाँ नीचे से गुज़रती हैं, स्वयं कटकों में <strong>छोटा होना, कसाव या मुड़ना</strong> हुआ।</li>
+<li><strong>चुनौती 3 — हवाई–एम्परर शृंखला की व्यवस्थित आयु-प्रगति (§F.3):</strong> लाइन द्वीपों (81–86 और 68–73 Ma एक साथ) और मार्शल द्वीपों (बिना क्रम के 66–140 Ma) के विपरीत, हवाई–एम्परर शृंखला हवाई में 0 Ma से एम्परर-सिरे पर ~ 81 Ma तक स्वच्छ आयु-प्रगति दिखाती है, जो शास्त्रीय मैंटल-प्लूम से संगत है। लेखक स्पष्ट करता है कि <strong>सिद्धांत हवाई–एम्परर पर टिका नहीं</strong> (केवल द्वितीयक परिकल्पना के रूप में प्रस्तुत), बल्कि लाइन द्वीपों और मार्शलों पर खड़ा है — और पाँच मापों पर प्रशांत के बाहर के प्लूम-कटकों (नाइंटीईस्ट, वॉल्विस और चागोस–लक्षद्वीप) के विरुद्ध नियंत्रित तुलना का उम्मीदवार है: आयु, आकारिकीय आकार, आनमनी खाई, पपड़ी-जड़ और दिशा (अध्ययन 7)।</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>अकादमिक व्याख्या और मुख्य समीकरण</h2>
+<p>गोले पर आज की अक्षांश-रेखाओं के सापेक्ष हर धारी के झुकाव-कोण <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> का माप, और नाशपाती के द्रव्यमान (7–12 चंद्र-द्रव्यमान) के सतह से निचले मैंटल की गहराइयों में खिंचने पर पृथ्वी के जड़त्व-आघूर्ण I का संरक्षण, इस प्रकार सूत्रबद्ध हैं (§E.1, §E.3):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mi>θ</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mover accent="true"><mi>ϕ</mi><mo>ˉ</mo></mover></mrow></mfrac></mstyle><mo>≥</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan\theta = \dfrac{\Delta\phi}{\Delta\lambda \cos\bar{\phi}} \ge \tan(10^\circ)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mo>∫</mo><msubsup><mi>r</mi><mo>⊥</mo><mn>2</mn></msubsup><mtext> </mtext><mi>d</mi><mi>m</mi><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi mathvariant="normal">Δ</mi><msub><mi>I</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>→</mo><mtext>Axial Roll </mtext><mo stretchy="false">(</mo><mo>≥</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I = \int r_\perp^2\,dm \implies \Delta I_{\mathrm{pear}} \rightarrow \text{Axial Roll } (\ge 10^\circ)</annotation></semantics></math></span></div></div></div>
+<p>चूँकि <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mtext>–</mtext><mn>12</mn><mtext> </mtext><msub><mi>M</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">7\text{–}12\,M_{\mathrm{Moon}}</annotation></semantics></math></span></span> के द्रव्यमान को विषुवत के ऊपर हज़ारों किलोमीटर की दूरी से मैंटल के आधार (प्रशांत LLVP) तक ले जाना पृथ्वी के जड़त्व-प्रदिश को बदलता है, पृथ्वी धीरे-धीरे लुढ़की जब तक उसे नया घूर्णी संतुलन न मिला — धारी-प्रणाली की विषुवत को आधुनिक विषुवत के सापेक्ष ≥ 10° झुका छोड़ते हुए।</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>वास्तविकता में हस्ताक्षर: भाग G के दस अध्ययन और भाग H का यातायात-बत्ती सारांश</h2>
+<p>शोधपत्र 09 के सारांश (भाग G–H) में <strong>6 सत्यापित निष्कर्ष ("हरी बत्ती")</strong> और <strong>10 मात्रात्मक अध्ययनों के प्रोटोकॉल की प्रतीक्षा करते 4 प्रेक्षण ("नारंगी बत्ती")</strong> प्रस्तुत हैं:</p>
+<ul>
+<li><strong>छह सत्यापित लंगर ("हरी बत्ती"):</strong> (1) किरिटीमाटी पर नाशपाती का आधार धारियों की विषुवत से 1.6° पर, क्लिपर्टन (1.8°) के बगल में है; (2) घुटनों के बीच सिरे की चौड़ाई (3,360 km) संपर्क (3,000 km) और गुंबद (3,650 km) से मेल खाती है; (3) धारी-प्रणाली की लंबाई (9,360 km) नाशपाती के पिंड की लंबाई (8,890–9,000 km) से मेल खाती है; (4) × 1.37 पर दर्पण-छाप इम्ब्रियम, सेरेनिटैटिस और संपर्क-केंद्र को पदचिह्न के भीतर रखती है; (5) धारियाँ चार प्रतिच्छेदनों पर कटकों के नीचे से लगातार गुज़रती हैं; और (6) GEBCO 2026 अनुरेखण में उत्तर, केंद्र और दक्षिण के सभी 10 मार्ग सिरा-क्षेत्र तक पहुँचते हैं, और उनमें 6 अंतिम संपर्क (1,500 km) में प्रवेश करते हैं, नियंत्रण-रेखाओं के 0 के मुक़ाबले।</li>
+<li><strong>आगे के शोध की चार दिशाएँ ("नारंगी बत्ती"):</strong> पिछले पक्ष पर सिकुड़े चापों (8,100–10,300 km) का परिमाणन, ऊर्ध्वाधर अतिशयोक्ति के बिना सपाट मानचित्र पर अभिसरण-कोणों का माप (अध्ययन 6), दुनिया भर के प्लूम-कटकों के विरुद्ध पाँच मापों पर करछुल-कटकों की तुलना (अध्ययन 7), और युवा तल-परत के नीचे भूकंपीय प्रोफ़ाइलों और बोरहोलों की जाँच (अध्ययन 9)।</li>
+</ul>
+<h3 style="margin-top:28px">प्रयोगशाला-बॉक्स: GEBCO 2026 अनुरेखण (C.5), करछुल-कटकों (D) और 10 अध्ययनों के परिणाम (शोधपत्र 09, भाग C.5–H)</h3>
+<div class="tw"><table class="lab">
+<tr><th>GEBCO 2026 में प्रणाली / मार्ग</th><th>अंतिम विश्वसनीय बिंदु और दिशा</th><th>अंतिम संपर्क के केंद्र (8.7°N, 167.7°E) से दूरी</th><th>चौड़े सिरे के केंद्र (6°N, 179.5°W) से दूरी</th><th>पूर्व-परिभाषित निर्णय</th></tr>
+<tr class="hl"><td><strong>ऊपरी दक्षिण: एल्टानिन (उत्तरी शाखा) + लुइसविल</strong></td><td>174.6°W, 26.8°S (NNW 335°)</td><td><strong>166 km</strong> (विस्तार 4,380 km)</td><td>1,025 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>फ़िजी के पार ऊपरी दक्षिण: तुवालु–गिल्बर्ट–राटाक</strong></td><td>167.9°E, 10.7°N (NW 319°)</td><td><strong>190 km</strong> (<strong>0 km विस्तार — सीधे प्रवेश!</strong>)</td><td>851 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>उत्तर: क्लेरियन</strong></td><td>154.3°W, 13.8°N (W 270°)</td><td><strong>288 km</strong> (विस्तार 4,170 km)</td><td>760 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>निचला दक्षिण: एल्टानिन (दक्षिणी शाखा)</strong></td><td>154.2°W, 52.5°S (NW 325°)</td><td><strong>300 km</strong> (विस्तार 7,690 km)</td><td>928 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>उत्तर: मोलोकाई</strong></td><td>169.7°W, 18.9°N (WSW 257°)</td><td><strong>434 km</strong> (विस्तार 2,660 km)</td><td>1,147 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>उत्तर: मरे</strong></td><td>168.6°W, 27.0°N (W 260°)</td><td><strong>1,274 km</strong> (विस्तार 2,980 km)</td><td>2,004 km</td><td><strong>अंतिम संपर्क के भीतर (&lt; 1,500 km)</strong></td></tr>
+<tr><td><strong>उत्तर: क्लिपर्टन / मेंडोसिनो</strong></td><td>165.7°W, 0.1°S / 169.1°W, 36.8°N</td><td>1,514 km / 1,826 km</td><td>944 km / 2,770 km</td><td>सिरा-क्षेत्र के भीतर (&lt; 3,000 km)</td></tr>
+<tr><td><strong>केंद्र: साला इ गोमेज़–ईस्टर–तुआमोटू–लाइन (+ पश्चिमी शाखा)</strong></td><td>169.7°W, 16.4°N / 171.6°W, 11.2°N</td><td>2,441 km / 2,094 km</td><td>1,601 km / 1,340 km</td><td>सिरा-क्षेत्र के भीतर (&lt; 3,000 km)</td></tr>
+<tr><td><strong>3 नियंत्रण-रेखाएँ (पायोनियर, गैलापागोस, मार्केसस)</strong></td><td>सिरे तक मार्ग के रूप में चिह्नित नहीं</td><td><strong>1,656–2,590 km</strong></td><td>1,769–2,563 km</td><td><strong>3 में से 0 अंतिम संपर्क में प्रवेश करती हैं</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>कटक-शृंखला (भाग D)</th><th>मापा गया आयु-प्रतिरूप</th><th>LEF मॉडल में व्याख्या</th></tr>
+<tr class="hl"><td><strong>लाइन द्वीप (पूर्वी करछुल-कटक)</strong></td><td>1,200–4,000+ km में दो समकालिक प्रकरण (81–86 और 68–73 Ma), <strong>बिना आयु-प्रगति के</strong></td><td>पूर्वी उखड़न-पट्टी में ऊपर खिंचा (मार्शलों से 2,800–3,500 km); किरिटीमाटी से गुज़रता है</td></tr>
+<tr class="hl"><td><strong>मार्शल–गिल्बर्ट–तुवालु (पश्चिमी करछुल-कटक)</strong></td><td>66–140 Ma, <strong>बिना सरल आयु-प्रगति के</strong>, खंडित विस्फोट</td><td>पश्चिमी उखड़न-पट्टी में ऊपर खिंचा; सिरे के केंद्र से गुज़रता है (क्वाजलीन केंद्र से 180 km)</td></tr>
+<tr><td><strong>हवाई–एम्परर</strong></td><td>0 Ma से ~ 81 Ma तक स्वच्छ प्रगति</td><td>केवल द्वितीयक परिकल्पना के रूप में प्रस्तुत (आवश्यक नहीं); अध्ययन 7 में नाइंटीईस्ट, वॉल्विस और चागोस–लक्षद्वीप के विरुद्ध परखा जाएगा</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>आगे का द्वार</h2>
+<a href="story19_hi.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">अध्याय 19</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">युवा मंगल — थारसिस का नुकीला उभार और पैवोनिस मॉन्स से डीमोस और फ़ोबोस का निष्कासन →</p></div></a>
+<p style="margin-top:22px"><a href="story17_hi.html">← अध्याय 17</a> · <a href="story00_hi.html">प्रस्तावना</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF मॉडल · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
