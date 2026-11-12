@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 25: הדרישות היסודיות של מודל LEF (R1–R8) — איזוטופים, הליבה, הקרום, היסט מרכז המסה ואזורי החשיפה — מודל LEF</title>
+<meta name="description" content="פרק 25 בסיפור מודל LEF: שמונה הדרישות היסודיות R1–R8 — איזוטופים, ליבה, קרום, היסט מרכז המסה ואזורי החשיפה.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story25_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 25</p>
+<h1>פרק 25: הדרישות היסודיות של מודל LEF (R1–R8) — איזוטופים, הליבה, הקרום, היסט מרכז המסה ואזורי החשיפה</h1>
+<p>מבוסס על מאמר 13 — 13. The Requirements: What the mechanism forces, what the Moon has, and what remains unresolved (חלקים A–B ונספח A: דרישות R1–R8, מאזני המסה והמבחנים הסטטיסטיים T1–T5)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה והמתודולוגיה: הפרדת סביבת היצירה מהירח המודרני ופסילת "ציון מצטבר"</h2>
+
+    <p>לאחר שבפרקים הקודמים בנינו את המכניקה של האגס הארצי, את המסלול ואת חוק הירחים והטבעות, <strong>מאמר 13 (The Requirements)</strong> מציב את המודל כולו למבחן מתודולוגי קשיח. כדי למנוע הטיה סטטיסטית או ערבוב בין הנחות למדידות, המודל קובע ארבעה כללי יסוד:</p>
+    <ol class="steps">
+      <li><strong>מחיצה מתודולוגית בין סביבת היצירה לירח המודרני:</strong> סביבת היצירה היא מערכת רכה, חמה ומהירת-סיבוב (T = 5.5–5.77 שעות, מסה התחלתית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = M_E + M_L = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> ק"ג, רדיוס משווני 6,721 ק"מ); ואילו הירח המודרני הוא תוצר אבולוציוני קפוא שעבר מיליארדי שנות התקררות ופעילות געשית מאוחרת. אסור להשתמש במדידה מאוחרת כתנאי התחלה ללא מודל פיזיקלי המקשר ביניהם.</li>
+      <li><strong>מבנה משולש לכל דרישה ופסילת "ציון מצטבר":</strong> כל דרישה מוגדרת באמצעות (א) התנאי המכני שהמודל מחייב, (ב) המדד הכמותי הבוחן אותו, ו-(ג) התוצאה שתהווה אי-התאמה. המודל <strong>אוסר לסכם הצלחות לציון משוקלל</strong>, הן משום שעובי הקרום, היסט מרכז המסה והימות הם ביטויים שונים של <em>אותה התפלגות מסה אחת</em> (וסכימתם תספור עובדה אחת פעמיים), והן כדי שלא להסתיר אי-התאמה בדרישה אחת מאחורי הצלחות אחרות.</li>
+      <li><strong>הבחנה כרונולוגית בין תוצאה נגזרת, התאמה לאחר מעשה ותחזית:</strong> המאמר מפריד בקפדנות בין <em>תוצאה נגזרת</em> (הנובעת ישירות מהמשוואות), <em>התאמה לאחר מעשה (Postdiction)</em> לתצפיות קיימות בספרות, לבין <em>תחזית (Prediction)</em> עצמאית שטרם נבדקה.</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: הקסדה המתעבה, כוסית היניקה המתקלפת, והבקבוק החתום בלבה</h2>
+
+    <p>ארבעה דימויים מוחשיים ממחישים את שמונה הדרישות היסודיות (R1–R8) ואת מאזני המסה שמאחוריהן:</p>
+    <ul>
+      <li><strong>הקסדה המתעבה פי שלושה (R3 — א-סימטריית הקרום):</strong> הכיפה הארצית שהתרוממה על ראש האגס נשאה מעטפת ליתוספירית קדומה בעובי 18 ק"מ (צפיפות 2,800 ק"ג/מ"ק) על פני חצי כדור שבסיסו 6,000 ק"מ (מסה כוללת 2.85 × 10²¹ ק"ג, כ-3.9% ממסת הירח). כאשר הכיפה התעגלה ונסגרה על פני חצי הכדור הרחוק הקטן פי שלושה בשטחו, שימור המסה כפה עיבוי ליניארי פי שלושה — אל <strong>50–60 ק"מ</strong> (מסה חזויה 2.6 × 10²¹ ק"ג ב-55 ק"מ, התאמה של כ-10% ללא כוונון!).</li>
+      <li><strong>כוסית היניקה המתקלפת מהשוליים פנימה (R8 — שלושת אזורי החשיפה):</strong> בעוד שטח הכיפה (הצד הרחוק) היה חשוף לחלל מההתחלה, הבסיס ישב צמוד לכדור הארץ. בזמן ההתעגלות, הבסיס התרומם והתקלף משוליו אל מרכזו כמו כוסית יניקה המתנתקת מזכוכית — כך שכיפת המגע המרכזית נחשפה לחלל <em>אחרונה</em>, ממש ברגע הניתוק בקו הסיבוב המשותף (16,399 ק"מ).</li>
+      <li><strong>שני רקדנים האוחזים ידיים (R4 — נעילה סינכרונית מלידה):</strong> גוף המחובר מכנית לקצה האגס משלים סיבוב עצמי אחד בדיוק בכל הקפה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ω</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><msub><mi>ω</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\mathrm{rot}} = \omega_{\mathrm{orb}}</annotation></semantics></math></span></span>), כך שצדו המחובר פונה תמיד אל ההורה עוד לפני רגע הניתוק.</li>
+      <li><strong>הבקבוק החתום בתוך גביש אוליבין (R6 — שימור הנדיפים):</strong> טיפות מאגמה זעירות (Melt Inclusions) שנלכדו בתוך גבישי אוליבין מתחת לפני השטח שמרו על תכולת המים המקורית (615–1,410 ppm) מפני בריחת גזים בהתפרצות, כמו בקבוק חתום בתוך סלע.</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: שמונה הדרישות הראשונות (R1–R8) והמבחנים הסטטיסטיים (T1–T5)</h2>
+
+    <p>חלקים A ו-B של מאמר 13 מציבים כל אחת משמונה הדרישות (R1–R8) מול הנתונים האמפיריים העדכניים ביותר:</p>
+    <ol class="steps">
+      <li><strong>R1 — קרבה למקור ארצי (איזוטופי חמצן):</strong> מדידות מעבדה מדויקות (Young et al. 2016) מראות שהפער באיזוטופי החמצן בין הירח לכדור הארץ הוא <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></strong> — אפס סטטיסטי בתוך רזולוציית המדידה, כמתחייב מגוף שנבנה כולו ממאגרי כדור הארץ (מעטפת עמוקה ושכבת הסיאל). האיזון הרב-מערכתי המשולב (O, Ti, Cr, W) מוגדר כמשימה פתוחה.</li>
+      <li><strong>R2 — ליבה מתכתית זעירה כיעד הובלה:</strong> רשת הסיסמוגרפים של אפולו (Weber et al. 2011) מדדה ליבה פנימית מוצקה ברדיוס 240 ק"מ וליבה חיצונית נוזלית ברדיוס 330 ק"מ — כ-<strong>1.4% בלבד ממסת הירח</strong>. עבור חלק חומר עמוק <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">f_{\mathrm{int}} = 0.95</annotation></semantics></math></span></span>, משוואת המאזן <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><msub><mi>f</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{\mathrm{core}} = f_{\mathrm{int}} X_{\mathrm{met}} \epsilon_{\mathrm{core}}</annotation></semantics></math></span></span> קובעת יעד הידרודינמי חד: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}} \epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span></strong>.</li>
+      <li><strong>R3 ו-R7 — א-סימטריית הקרום והיסט מרכז המסה:</strong> מפות הכבידה של GRAIL (Zuber et al. 2013) מאשרות שהקרום בצד הרחוק עבה משמעותית מבצד הקרוב (ממוצע גלובלי 34–43 ק"מ). הקרום הקרוב הוא שכבת הסיאל (SiAl) הארצית שהתקלפה מבסיס המבנה (מסה 1.4–1.7 × 10²¹ ק"ג). חישוב אינטגרל המומנט של קרום א-סימטרי (נספח A) מניב היסט של מרכז המסה לעבר הצד הקרוב בטווח <strong>1.24–3.11 ק"מ</strong> עבור ניגודי צפיפות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>300</mn><mtext>–</mtext><mn>750</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 300\text{–}750</annotation></semantics></math></span></span> ק"ג/מ"ק — המכיל את הערך הנמדד בירח (<strong>~ 2 ק"מ</strong>, ומתלכד עמו בדיוק ב-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>≃</mo><mn>480</mn></mrow><annotation encoding="application/x-tex">\Delta\rho \simeq 480</annotation></semantics></math></span></span> ק"ג/מ"ק).</li>
+      <li><strong>R5 — הפרדת ארבעת השעונים הגיאוכרונולוגיים:</strong> המאמר אוסר להשוות גיל בזלת מאוחרת (שעון 3 — כגון דגימות צ'אנג-אה 5 ב-2.0 Ga בצד הקרוב וצ'אנג-אה 6 ב-2.8 Ga בצד הרחוק) לגיל התגבשות הקרום הראשוני (שעון 1). סדר ההתייצבות חייב להימדד אך ורק בהשוואת יחידות קרום ראשוני מאותו סוג גנטי משני הצדדים.</li>
+      <li><strong>R8 — שלושת אזורי החשיפה הקונצנטריים והרצת מבחנים T1–T5:</strong> סביב מרכז הצד הקרוב (בגיאומטריה המעודכנת סביב מרכז המגע ב-24.1°N, 335.2°E — סטייה זוויתית של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\gamma = 34.0^\circ</annotation></semantics></math></span></span> מנקודת תת-הארץ 0°, 0°) מסתדרים פני הירח בשלוש חגורות קונצנטריות: כיפת המגע (0°–31°, קרום דק ביותר ומסקונים חזקים ללא טבעות שליליות), חגורת השוליים (31°–70°, אגני מסקון בעלי טבעת שלילית כגון אורינטלה), והצד הרחוק (70°–180°, קרום עבה ואגנים ללא מסקון).</li>
+    </ol>
+
+        </section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: מאזן המסה של הכיפה, מודל הקסדה והכרעת אזורי החשיפה מול PKT</h2>
+
+    <p>חלקים B.3, B.7–B.8 ונספח A של מאמר 13 מראים כיצד גיאומטריית ההתעגלות של הירח מחברת את עובי הקרום, היסט מרכז המסה וחגורת האגנים למערכת משוואות סגורה אחת:</p>
+    <ol class="steps">
+      <li><strong>הבחנה קריטית בין ערכי קצה לממוצעים המיספריים (§B.3):</strong> במודל הקסדה ארוך-הגל <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></span>, ערכי קצה נקודתיים של 30 ק"מ בציר המגע (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 0^\circ</annotation></semantics></math></span></span>) ו-60 ק"מ בצד הרחוק (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>=</mo><mn>18</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\psi = 180^\circ</annotation></semantics></math></span></span>) נותנים קו בסיס <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub><mo>=</mo><mn>45</mn></mrow><annotation encoding="application/x-tex">h_0 = 45</annotation></semantics></math></span></span> ק"מ ואמפליטודה A = 15 ק"מ. מכיוון שהממוצע המשוקלל-שטח של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\cos\psi</annotation></semantics></math></span></span> על פני חצי כדור שווה ל-0.5, הממוצעים ההמיספריים של דוגמה זו הם <strong>37.5 ק"מ ו-52.5 ק"מ</strong> (ולא 30 ו-60 ק"מ!).</li>
+      <li><strong>מאזן המסה הנפרד של הצד הרחוק והצד הקרוב (§B.3):</strong> הכיפה ההמיספרית הארצית (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>=</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">h_s = 18</annotation></semantics></math></span></span> ק"מ, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>s</mi></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\rho_s = 2,800</annotation></semantics></math></span></span> ק"ג/מ"ק, רדיוס בסיס <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>h</mi></msub><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">R_h = 3,000</annotation></semantics></math></span></span> ק"מ) נושאת מסה של <strong>2.85 × 10²¹ ק"ג</strong> (3.9% ממסת הירח). בסגירתה על פני חצי הכדור הרחוק הקטן פי שלושה בשטחו, היא מספקת בדיוק של כ-10% את מסת הקרום הרחוק בעובי 55 ק"מ (<strong>2.6 × 10²¹ ק"ג</strong>, 3.5% ממסת הירח); ואילו הקרום הקרוב (30–35 ק"מ, מסה 1.4–1.7 × 10²¹ ק"ג) הוא שכבת הסיאל הארצית שהתקלפה מבסיס המבנה.</li>
+      <li><strong>הכרעה מבנית מול השערת האנומליה התרמית PKT (§B.8):</strong> מודלים חלופיים מסבירים את הדו-צדדיות של הירח באמצעות אנומליה תרמית חד-צדדית (Procellarum KREEP Terrane — צד קרוב חם וצד רחוק קר), או באמצעות קרינת "אור ארץ" קדום (Earthshine, Roy et al. 2014). מודל LEF מנבא <strong>מבנה קונצנטרי תלת-אזורי</strong> הכולל <em>חגורת שוליים בינונית</em> (31°–70°) שבה מתרכזים באופן סלקטיבי <strong>אגני מסקון בעלי טבעת שלילית</strong> (כגון אורינטלה בשוליים המערביים וסמית'יי במזרחיים) משום ששוליה של כיפת הבסיס השתחררו בהדרגה מכל העברים.</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>משוואת עובי הקרום הקונצנטרי, אינטגרל מומנט המסה להיסט מרכז המסה עבור שכבה בעלת עובי סופי <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><msub><mi>R</mi><mi>L</mi></msub><mo>−</mo><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b = R_L - h_0</annotation></semantics></math></span></span> (נספח A), וחישוב זווית הסטייה המרחבית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> של מרכז המגע מנוסחים כך (§B.3, §B.7, Appendix A):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>ψ</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>h</mi><mn>0</mn></msub><mo>−</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">h(\psi) = h_0 - A\cos\psi</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>h</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msubsup><mi>R</mi><mi>h</mi><mn>2</mn></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>2.85</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>21</mn></msup><mtext> ק&quot;ג</mtext></mrow><annotation encoding="application/x-tex">M_{\mathrm{shell}} = \rho_s h_s (2\pi R_h^2) = 2.85 \times 10^{21}\text{ ק&quot;ג}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>x</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msub><mi>M</mi><mi>L</mi></msub></mrow></mfrac></mstyle><mrow><mo fence="true">(</mo><msup><mi>b</mi><mn>3</mn></msup><mi>A</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mi>b</mi><msup><mi>A</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>≃</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><msub><mover accent="true"><mi>ρ</mi><mo stretchy="true">‾</mo></mover><mi>L</mi></msub></mfrac></mstyle><mi>A</mi></mrow><annotation encoding="application/x-tex">\delta x = \dfrac{4\pi\Delta\rho}{3M_L}\left(b^3 A + \dfrac{3}{5}b A^3\right) \simeq \dfrac{\Delta\rho}{\overline{\rho}_L}A</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mi>γ</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>1</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>24.</mn><msup><mn>8</mn><mo>∘</mo></msup><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>γ</mi><mo>=</mo><mn>34.</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\cos\gamma = \cos(24.1^\circ)\cos(24.8^\circ) \implies \gamma = 34.0^\circ</annotation></semantics></math></span></div></div></div>
+    <p>באינטגרל המומנט <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mi>δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mi>u</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>A</mi><mi>u</mi><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mtext> </mtext><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">M_L \delta x = \frac{\pi\Delta\rho}{2}\int_{-1}^{1} u(b+Au)^4\,du</annotation></semantics></math></span></span> מתאפסים כל האיברים בעלי חזקה אי-זוגית של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">u = \cos\psi</annotation></semantics></math></span></span>, כך שרק הרכיב הא-סימטרי (A) תורם להזזת מרכז המסה לעבר הצד הקרוב (+2.072 ק"מ עבור <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\Delta\rho = 500</annotation></semantics></math></span></span> ק"ג/מ"ק), ואילו כל שכבה כדורית סימטרית (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_0</annotation></semantics></math></span></span>, המעטפת והליבה) מתבטלת לחלוטין.</p>
+
+    <figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Centre-of-mass offset against crustal density contrast" style="direction:ltr"><line x1="70" x2="600" y1="204.6" y2="204.6" stroke="#ece7da"/><text x="62" y="208.6" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#ece7da"/><text x="62" y="131.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="600" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="62" y="54.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">3</text><text x="118.2" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="214.5" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="310.9" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><text x="407.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">600</text><text x="503.6" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">700</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">800</text><line x1="70" x2="600" y1="127.7" y2="127.7" stroke="#b23a2e" stroke-width="2" stroke-dasharray="6 4"/><text x="530.0" y="119.7" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >נמדד בירח · ⁦~2⁩ ק"מ</text><path d="M118.2,185.9 L310.9,122.2 L551.8,42.5" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="118.2" cy="185.9" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="127.2" y="201.9" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.243</text><circle cx="291.6" cy="127.7" r="5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="300.6" y="143.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.000</text><circle cx="310.9" cy="122.2" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="319.9" y="138.2" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">2.072</text><circle cx="551.8" cy="42.5" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="560.8" y="58.5" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">3.108</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >ניגוד הצפיפות Δρ (ק"ג/מ"ק) · היסט מרכז המסה לצד הקרוב (ק"מ)</text></svg><figcaption>היסט מרכז המסה מאינטגרציית העובי הסופי (נספח A): הטווח 1.24–3.11 ק"מ מכיל את הערך הנמדד, ומתלכד איתו ב-Δρ ≈ 480.</figcaption></figure></section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: תוצאות ריצת המבחנים T1, T2 ו-T5 וכיול היסט מרכז המסה</h2>
+
+    <p>הרצת הסקריפטים על נתוני GRAIL וקטלוג המכתשים של Robbins (≥ 20 ק"מ) מניבה תמונת מצב שקופה ומדויקת של שמונה הדרישות הראשונות (§B.7–B.9):</p>
+    <ul>
+      <li><strong>הצלחה מובהקת במבחני הציר וצפיפות המכתשים (T5 ו-T2):</strong> מתאם ספירמן <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span> (p = 2 × 10⁻⁴) סביב ציר תת-הארץ עולה על כל ציר בקרה אחר (השוליים המזרחיים +0.76, פרוסלארום +0.74, הקוטב הדרומי +0.43, הצפוני −0.43), וצפיפות המכתשים הגדולים בצד הרחוק גבוהה פי 2.21 מבכיפת המגע (ובגיאומטריה המעודכנת פי 8.42 כולל הימות, ופי 4.15 בלעדיהן).</li>
+      <li><strong>רישום שקוף של סף T1 והמשך בדיקת T3–T4:</strong> במבחן T1, הסדר המונוטוני מתקיים בכל ארבעת מודלי GRAIL, אך ההפרש במודל 1 (9.65 ק"מ ו-9.9 ק"מ) נמצא 0.1–0.35 ק"מ מתחת לסף התחתון (10 ק"מ) ולכן נרשם כ<em>לא עבר</em>, בעוד מבחני האגנים T3 ו-T4 מוגדרים להרצה כמותית מלאה בחבילת השחזור.</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: סיכום שמונה הדרישות היסודיות (R1–R8), מבחני אזורי החשיפה (T1–T5) ורגישות היסט מרכז המסה (מאמר 13, חלקים A–B ונספח A)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>דרישה</th>
+            <th>נושא והדרישה הפיזיקלית</th>
+            <th>הממצא האמפירי הנמדד כיום</th>
+            <th>סטטוס והמשימה הפתוחה</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>R1</strong></td>
+            <td>קרבה למקור ארצי (תערובת מעטפת + סיאל)</td>
+            <td>זהות באיזוטופי חמצן: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Δ</mi><mn>17</mn></msup><msub><mtext>O</mtext><mrow><mi mathvariant="normal">L</mi><mo>−</mo><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>±</mo><mn>5</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\Delta^{17}\text{O}_{\mathrm{L-E}} = -1 \pm 5\text{ ppm}</annotation></semantics></math></span></span></td>
+            <td><strong>מתאים</strong> (פתוח: איזון רב-מערכתי O, Ti, Cr, W)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>R2</strong></td>
+            <td>ליבה מתכתית זעירה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><msub><mi>ϵ</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>1.47</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">X_{\mathrm{met}}\epsilon_{\mathrm{core}} \simeq 1.47\%</annotation></semantics></math></span></span>)</td>
+            <td>ליבה סיסמית ברדיוס 330 ק"מ (≈ 1.4% ממסת הירח)</td>
+            <td><strong>מתאים</strong> (פתוח: מודל הידרודינמי להובלת טיפות ברזל)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>R3</strong></td>
+            <td>א-סימטריית קרום ומאזן מסת הכיפה (18 ק"מ)</td>
+            <td>קרום רחוק עבה; מאזן 2.85 מול 2.6× 10²¹ ק"ג (~ 10%)</td>
+            <td><strong>מתאים</strong> (פתוח: פרופיל מרחבי מלא ומקור הסיאל הקרוב)</td>
+          </tr>
+          <tr>
+            <td><strong>R4</strong></td>
+            <td>נעילה סינכרונית מרגע הניתוק בקו הסיבוב</td>
+            <td>נעילה סינכרונית 1:1 כשהצד הקרוב פונה לארץ</td>
+            <td><strong>מתאים</strong> (פתוח: רציפות וקטור האוריינטציה במסלול)</td>
+          </tr>
+          <tr>
+            <td><strong>R5</strong></td>
+            <td>סדר התייצבות תרמי (צד רחוק לפני צד קרוב)</td>
+            <td>בזלות מאוחרות נפרדות (2.0 Ga ו-2.8 Ga, שעון 3)</td>
+            <td><strong>מתאים</strong> (פתוח: השוואת שעון 1 בקרום הררי ראשוני)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>R6</strong></td>
+            <td>נוכחות נדיפים להורדת צמיגות וצפיפות</td>
+            <td>מים בתכלילי התכה באוליבין: 615–1,410 ppm</td>
+            <td><strong>מתאים</strong> (פתוח: מודל שטפים ומופעים תרמודינמי)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>R7</strong></td>
+            <td>קשר כמותי בין הקרום להיסט מרכז המסה</td>
+            <td>היסט נמדד ~ 2 ק"מ לקרוב; טווח מודל 1.24–3.11 ק"מ</td>
+            <td><strong>מתאים</strong> (פתוח: אינוורסיה וקטורית משותפת)</td>
+          </tr>
+          <tr>
+            <td><strong>R8</strong></td>
+            <td>שלושה אזורי חשיפה קונצנטריים (0°–31°–70°–180°)</td>
+            <td><strong>T5 עבר</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><mo>+</mo><mn>0.87</mn></mrow><annotation encoding="application/x-tex">r_s = +0.87</annotation></semantics></math></span></span>), <strong>T2 עבר</strong>, <strong>T1 לא עבר</strong> (9.65–9.9 ק"מ)</td>
+            <td><strong>פתוח להשלמה</strong> (מבחני אגנים T3 ו-T4 ומיון גילאי מכתשים)</td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>ניגוד צפיפות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\Delta\rho</annotation></semantics></math></span></span> (ק"ג/מ"ק)</th>
+            <th>היסט מרכז מסה בקירוב קליפה דקה (ק"מ)</th>
+            <th>היסט מרכז מסה באינטגרציית עובי סופי (ק"מ)</th>
+            <th>התאמה לתצפית הגיאודטית (~ 2 ק"מ)</th>
+          </tr>
+        
+        
+          <tr>
+            <td>300</td>
+            <td>1.345</td>
+            <td>1.243</td>
+            <td>גבול תחתון של טווח הרגישות</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>500 (~ 480 בכיול)</strong></td>
+            <td><strong>2.242</strong></td>
+            <td><strong>2.072 (2.000 ב-480)</strong></td>
+            <td><strong>התאמה מדויקת לסדר הגודל הנמדד (2 ק"מ)</strong></td>
+          </tr>
+          <tr>
+            <td>750</td>
+            <td>3.362</td>
+            <td>3.108</td>
+            <td>גבול עליון של טווח הרגישות</td>
+          </tr>
+        
+      </table></div>
+    
+
+    </section>
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+
+    <p>בפרק זה סקרנו את המסגרת המתודולוגית של מאמר 13 ואת שמונה הדרישות היסודיות (<strong>R1–R8</strong>) — החל בזהות האיזוטופית (−1 ± 5 ppm), דרך הליבה הזעירה (1.4%), מאזן הקרום (2.85 מול 2.6 × 10²¹ ק"ג) והיסט מרכז המסה (2.07 ק"מ), ועד הרצת המבחנים הסטטיסטיים T1, T2 ו-T5 על אזורי החשיפה הקונצנטריים.</p>
+    <p>בפרק הבא — <strong>פרק 26: עשר הדרישות הנוספות (R9–R18), שעון הפניום–טונגסטן ומפת המחקר העתידי של LEF</strong> (מתוך מאמר 13 — חלקים C–D ונספח B) — נשלים את המערכת כולה: נבחן את 7 דרישות האגס (R9–R15: האנומליה התחתית LLVP באוקיינוס השקט, תסביך KREEP, היעדר חומר זר ודחיסת המכתשים בקטבים), את 3 הדרישות שאחרי האגס (R16–R18), את מגבלת שעון ההתפרקות הרדיואקטיבית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span> על פני חלון של 600 מיליון שנה, ואת 7 המשימות הפתוחות לחוקרים!</p>
+  <a href="story26_he.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">פרק 26</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">עשר הדרישות הנוספות (R9–R18), שעון הפניום–טונגסטן ומפת המחקר העתידי של LEF ←</p></div></a><p style="margin-top:22px"><a href="story24_he.html">→ פרק 24</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
