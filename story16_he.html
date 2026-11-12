@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 16: מעמקי SPA, דגימות Chang'e-6 ומחסום הפוטנציאל של הגוף הרציף — מודל LEF</title>
+<meta name="description" content="פרק 16 בסיפור מודל LEF: מעמקי SPA, דגימות Chang&#x27;e-6, מחסום הפוטנציאל של הגוף הרציף והמבחן האיזוטופי המכריע.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story16_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 16</p>
+<h1>פרק 16: מעמקי SPA, דגימות Chang'e-6 ומחסום הפוטנציאל של הגוף הרציף</h1>
+<p>מבוסס על מאמר 08 — South Pole–Aitken: The Crater-Poor Centre (חלקים B10–G: האנומליות העמוקות B10–B18, גיאומטריית האנטיפודים, סיפון מחסום הפוטנציאל והמבחן האיזוטופי המכריע)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: מה גילו דגימות הצד הרחוק של Chang'e-6, וכיצד טיפס החום מעל מחסום הכבידה של כדור הארץ?</h2>
+
+    <p>ביוני 2024 החזירה משימת <strong>Chang'e-6</strong> הסינית את דגימות הקרקע הראשונות בהיסטוריה מן הצד הרחוק של הירח — מאגן אפולו שבצפון-מזרח SPA (41.625°S, 206.022°E, כ-11.6° ממרכז הכיפה ו-210 ק"מ מנקודת מינימום המכתשים). הממצאים במעבדה, יחד עם נתוני הכבידה והמגנטיות ממסלול, חושפים שרשרת תגליות שפגיעת אסטרואיד רגעית מתקשה לאחד:</p>
+    <ol class="steps">
+      <li><strong>מסה צפופה קבורה בעומק (2.18 × 10¹⁸ ק"ג, B10):</strong> מתחת לחצי הדרומי של אזור הימה המרכזית (62°S, 200°E, על פני שטח של ~ 444,500 קמ"ר, רדיוס שקול 12.4°) מסתתרת מסה עודפת מפוזרת השקולה לכדור מתכת בקוטר ~ 95 ק"מ — שלא שקעה אל ליבת הירח!</li>
+      <li><strong>מעטפת "אפויה" פי 13 ענייה בחמצן ובעלת איזוטופים כבדים של אשלגן וברזל (B11–B13):</strong> מקור הבזלת של Chang'e-6 יבש לחלוטין, עני בחמצן זמין פי <strong>~ 13</strong> מהצד הקרוב (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn><mo>±</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> לעומת −0.80 ± 0.64), מדולדל ביסודות קריפ (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> בגיל 2.8 Ga לעומת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> בבזלת עתיקה בת 4.203 Ga באותו אזור!), ונושא <strong>ברזל כבד איזוטופית</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0.13</mn><mtext>–</mtext><mn>0.21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰) יחד עם אשלגן כבד (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> עד +0.09‰).</li>
+      <li><strong>מגנטיות מחוקה במרכז וחזקה בצד הנגרר בלבד, ומחסום הפוטנציאל של 26.2 MJ/ק"ג (B16–D.3):</strong> במרכז SPA המגנטיות כמעט אפסית (0.8% מהשטח מעל 5 nT), וכל המגנטיות החזקה (32%–42%, שיא ~ 22 nT ליד Mare Ingenii והמערבולות הבהירות) מרוכזת בצפון-מערב (הצד הנגרר) — באותו צד של סהר התוריום, אך מוסטת כ-8° צפונה ממנו. ובנוסף: כיצד הצליח החום והחומר מכדור הארץ לטפס מעל מחסום הפוטנציאל (26.2 MJ/ק"ג) אל הצד הרחוק?</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: רוטב המצטמצם על אש קטנה, שקית תה שנחלטה שוב ושוב, וסיפון רציף</h2>
+
+    <p>ארבעה דימויים יומיומיים מאירים את הפיזיקה והכימיה של מעמקי SPA במודל LEF:</p>
+    <ul>
+      <li><strong>רוטב המצטמצם על להבה נמוכה (ריכוז הברזל במקום ללא שקיעה, B10, B12):</strong> בניגוד לימה פעילה שבה חומר עולה ויורד ויכול לסחוף גושי ברזל מטה אל הליבה (כמו במארה מוסקוביינסה), SPA <em>לא הייתה ימה פעילה</em> — לא הייתה זרימה מחזורית של מעלה-מטה. חומר עשיר בברזל מתכתי שהגיע מכדור הארץ אל בסיס SPA חומם ונאפה במקום: הברזל המתכתי "שתה" וספח את החמצן שסביבו (והוריד את <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> ל-−1.93), וכשהחום אידה את החומרים האחרים, הברזל שלא התאדה התרכז במקום וקפא כשהאזור התקרר!</li>
+      <li><strong>שקית תה שנחלטת שוב ושוב (המעבר ממקור עשיר ב-4.20 Ga למקור מדולדל ב-2.81 Ga, B13):</strong> החומר שהגיע מכדור הארץ דרך האגס נחת כשהוא עשיר ביסודות קריפ (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> ב-4.203 Ga). חימום ממושך מלמטה התיך את המעטפת שוב ושוב וסילק בכל פעם את הנתך הראשון (שנשא עמו את התוריום אל הסהר), עד שנותרה שארית "שטופה" ועמידה להתכה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> ב-2.807 Ga), שמסבירה גם מדוע התפרצו רק כמויות זעירות של לבה מאוחרת!</li>
+      <li><strong>חלב הנמזג לקפה ונקפא לפני שהתערבב (המערבולות הבהירות של Mare Ingenii מול מוסקוביינסה, B17):</strong> כאשר זרם הדו-חומר של ברזל מלמטה ואלומיניום-סיליקה מלמעלה פרץ וקפא במהירות תחת סיבוב הירח (מספר אקמן <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>), הגרגירים המוארכים נעמדו אנכית בצינור ההזנה (נתיבים כהים עשירי ברזל) ושכבו אופקית בהתפשטות (לולאות בהירות עשירות בפלגיוקלז), ואילו במוסקוביינסה הפעילה הברזל שקע לפני הקפיאה ולכן לא נוצרו בה לא שדה מגנטי (1.3 nT, 0% מעל 5 nT) ולא מערבולות!</li>
+      <li><strong>סיפון רציף מעל פסגת גבעה (חציית מחסום הפוטנציאל, D.3–D.3a):</strong> מנת חומר בודדת הנורית לבדה במהירות 1.8–2.6 ק"מ/שנייה (1.6–3.4 MJ/ק"ג) הייתה נופלת חזרה לפני קו הסיבוב המשותף (26.2 MJ/ק"ג). אך כאן מדובר ב-<strong>גוף רציף ומלא חומר</strong> הנדחף מלמטה בלחץ מקור של ~ <span class="ltr">150 GPa</span> (מאמר 3): ברגע שחלקו העליון עובר את קו הסיבוב המשותף ונמשך החוצה על ידי הסיבוב, הוא מוריד את הלחץ בבסיס ומושך חומר נוסף מלמטה <strong>כמו סיפון</strong> — בלי שהלחץ יהפוך אי-פעם לשלילי!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: שמונה האנומליות העמוקות (B10–B17) וגיאומטריית האנטיפודים</h2>
+
+    <p>חלקים B10–B17 ו-C של מאמר 08 סוגרים את שאר 17 האנומליות של SPA ואת מפת המרכזים של הצד הרחוק:</p>
+    <ol class="steps">
+      <li><strong>מבחן המראה הקשיחה מול מפת שלוש קבוצות המרכזים (חלק C):</strong> העתקה קשיחה ("חותמת") של טבעות וימות אימבריום וסרניטאטיס אל האנטיפודים שלהן נותנת אליפסה צרה (2,144 × 1,340 ק"מ, יחס צירים 1.60) שאינה תואמת את צורת SPA (2,402 × 2,056 ק"מ, יחס 1.17) — ותוצאה שלילית זו נשמרת במפורש כדי להבהיר שהמבער קבע היכן נמחקו המכתשים, ואילו מתאר האגן נקבע מקריסת הכיפה. כאשר מציבים את כל המרכזים על מפה אחת (איור C.1), מתקבלת <strong>שורה מסודרת מצפון לדרום בשלוש קבוצות</strong>:
+        <ul>
+          <li><strong>(א) בצפון — שתי יציאות המבער:</strong> אנטיפוד אימבריום (37.6°S, 160.0°E, ומעליו כיפת הקרום הדק של Ingenii במרחק 5.7°) ואנטיפוד סרניטאטיס (27.3°S, 198.4°E, ומעליו כיפת אפולו במרחק 10°).</li>
+          <li><strong>(ב) במרכז — מוקד החום ומחיקת המכתשים:</strong> מרכז הכיפה/הטבעת הפנימית (51.4°S, 196.8°E), מרכז האליפסה (53°S, 191°E), השיא המגנטי הקרוב (51.0°S, 190.0°E) ומינימום המכתשים (45.4°S, 197.9°E) — כולם בתוך 6° ממרכז הכיפה!</li>
+          <li><strong>(ג) בדרום — המוקד המבני הכבד:</strong> הקרקעית הנמוכה ביותר (61°S, 199°E), המסה הצפופה (62°S, 200°E) והקרום הדק ביותר (61°S, 184°E) — כולם בתוך ~ 230 ק"מ זה מזה!</li>
+        </ul>
+      </li>
+      <li><strong>מדוע הכיפה יושבת דרומית לשתי היציאות? — הדחיפה האופקית באגס והתעגלות הגוף (§C.3–C.4):</strong> קצה האגס שעליו ישב הירח עמד בקו רוחב ~ 22.5°N, בעוד בסיסו ישב סביב קו המשווה. בתוך גוף מסתובב, הכוח הצנטריפוגלי פועל <strong>במאונך לציר הסיבוב (אופקית)</strong> ולא לאורך הקו אל מרכז כדור הארץ — ולכן הזרם נכנס לדיסקת המגע צפונית למרכזה (היכן ששוכנים אימבריום וסרניטאטיס) ויצא בצד הרחוק <strong>עד ~ 22.5° דרומית לנקודה הנגדית</strong>! בשלב הפחוס (1 : 0.637 : 0.601), מרכז הכיפה ישב 17.0° דרומית ליציאת סרניטאטיס ו-21.2° דרום-מזרחית ליציאת אימבריום; ולאחר מכן <strong>ההתעגלות לכדור</strong> (פרקים 13–14) הרחיבה את המרחקים הזוויתיים האלה בדיוק ל-<strong>24.1° ו-29.2°</strong> הנמדדים כיום!</li>
+
+</ol>
+    </section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: מענה לשבעת האתגרים (E.1–E.7) ומיפוי המעבר מפחיסות לכדור</h2>
+
+    <p>חלקים C.3 ו-E של מאמר 08 מספקים מענה כמותי מדויק לכל שבע השאלות והאתגרים העולים מן הספרות המדעית העדכנית (כולל ממצאי Chang'e-6 מ-2025–2026):</p>
+    <ol class="steps">
+      <li><strong>אירידיום וזהב ברגולית של Chang'e-6 (E.1):</strong> גרגירי מתכת בעלי Ir ו-Au שמצאו Liu et al. (2026) נמצאו בתוך שברי בזלת ואנורתוזיט <em>לא-מתוארכים ברגולית הפני-שטחית</em> (אבק חלל מאוחר שנאסף על פני מיליארדי שנים, שהתחזית מתירה במפורש), ולא בתוך הנוריטים המתוארכים בני 4.25 Ga. יתרה מזו, יחסים יסודיים של Ir ו-Au אינם מבדילים בין מתכת מעומק כדור הארץ לבין אסטרואיד — רק מדידת איזוטופים (Cr, Ti, Mo, Ru, Os) מכריעה.</li>
+      <li><strong>המסה הצפופה, השיאים המגנטיים והקרום הדק אינם מתחת למינימום המכתשים (E.3–E.5):</strong> המינימום (45.4°S, 197.9°E) מסמן היכן החום מחק מכתשים על פני השטח בכיוון יציאת סרניטאטיס; השיא המגנטי (51.0°S, 190.0°E, במרחק 230 ק"מ) מסמן את <strong>שולי הליבה החמה</strong> שבהם המגנטיות לא נמחקה מעל טמפרטורת קירי (במרכז השדה הוא 0.85–1.9 nT בלבד); והמסה הצפופה (62°S, 200°E) יושבת בדרום המבני העמוק של האגן.</li>
+      <li><strong>בזלת קבורה כגורם למכתשים הרדודים (E.6):</strong> במודל LEF הבזלת הקבורה (8.7 × 10⁴ קמ"ר) היא <em>תוצר</em> של המבער ולא יריב שלו — והמבחן המכריע הוא שהרדידות של המכתשים ממשיכה גם מחוץ לאזורי הבזלת הקבורה בשל דחיסת הקרקע האפויה.</li>
+      <li><strong>ההזזה הגיאומטרית בהתעגלות מפחיסות לכדור (טבלת §C.3):</strong> במעבר מן הגוף המאורך (1 : 0.637 : 0.601) אל הכדור של היום, שום נקודה לא החליקה על הקרקע, אך הזוויות ביחס לקצה הציר הארוך נפתחו: יציאת אימבריום זזה מ-32.3°S, 158.1°E ל-37.6°S, 160.0°E (שינוי 5.5°), יציאת סרניטאטיס זזה מ-27.4°S, 185.1°E ל-27.3°S, 198.4°E (11.8°), מרכז הכיפה זז מ-44.0°S, 180.8°E ל-51.4°S, 196.8°E (13.0°), ומינימום המכתשים מ-39.9°S, 182.5°E ל-45.4°S, 197.9°E (12.6°).</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>מחסום הפוטנציאל האפקטיבי <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span> בין פני כדור הארץ המוקדם (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> ק"מ בקו רוחב 25°N, מסת אב <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> ק"ג) לבין קו הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> ק"מ ב-5.5 שע' ו-16,399 ק"מ ב-5.77 שע'), יחד עם מספר אקמן (Ek) הקובע את הטיית זרימת הלבה על ידי הסיבוב, מנוסחים כך (§B17, §D.3–D.5):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26.2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5.77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+    <p>עבור לבה בצמיגות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> בסיבוב המהיר של שלב החיבור (5.77 שעות), מספר אקמן הוא 0.012 בקנה מידה של 100 מ', 0.0001 ב-1 ק"מ ו-10⁻⁶ ב-10 ק"מ — כלומר כוח הסיבוב מטה לחלוטין כל זרימת לבה או פליטה ויוצר את סהר התוריום ואת המערבולות הבהירות של Ingenii! בנוסף, מעבר לקו הסיבוב המשותף (16,400 ק"מ), ספרת היל של הירח משתרעת עד ≈ 2,600 ק"מ ממרכזו (1.4 רדיוסי ירח של אז, 1,890 ק"מ), כך שכל חומר הנפלט לגובה של פחות מ-≈ 700 ק"מ חוזר ונוחת על פני הירח כמכתשים.</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: 16 מתוך 17 אנומליות מותאמות — והתחזיות הפתוחות</h2>
+
+    <p>בסיכום ההשוואה השיטתית בפרק B18 של מאמר 08: מתוך 17 האנומליות של SPA, המדע המקובל מסביר במלואן 6, חלקית 9, בקושי 1 (הפולקניזם הממושך לאורך 2 מיליארד שנה), ו-<strong>0 (אינו מסביר כלל)</strong> את דפוס רשומת המכתשים שבמרכז האגן. לעומת זאת, מנגנון <strong>המבער של מודל LEF</strong> מתאים בבת אחת ל-<strong>16 מתוך 17 האנומליות</strong>, ול-<strong>1 חלקית (B14)</strong> הממתינה למבחן האיזוטופים:</p>
+    <ul>
+      <li><strong>התחזית החדה ביותר למדידת מעבדה עתידית (חלק F):</strong> מדידת האיזוטופים של Cr, Ti, Mo, Ru, Os בגרגירי המתכת שבתוך שני הנוריטים המתוארכים של Chang'e-6 (`CE6C0100YJFM002-158` ו-`CE6C0200YJFM001EGP07-16`) תציג <strong>חתימה ארצית טהורה ללא סטייה מטאוריטית</strong>.</li>
+      <li><strong>תחזיות נוספות הניתנות לבדיקה ממסלול:</strong> (1) ריכוז מכתשים שבורי-קרקעית (Floor-Fractured Craters) בתוך אזור הגירעון המרכזי; (2) הישארות רדידות המכתשים גם מחוץ לאזורי הבזלת הקבורה; (3) גרדיאנט רדיאלי של אובדן נדיפים וחיזור חמצן (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>) החזק ביותר סביב נקודת המינימום ונחלש אל השפה; ו-(4) היעדר מוחלט של לבה ב-SPA הצעירה מ-~ 1.5 Ga.</li>
+    </ul>
+
+    <figure class="fig"><svg viewBox="0 0 640 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><rect x="314.7" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="392.4" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦6⁩ מסביר</text><rect x="81.8" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="198.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦9⁩ חלקית</text><rect x="55.9" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="68.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦1⁩</text><rect x="30.0" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="42.9" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦1⁩</text><text x="634.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >המדע המקובל</text><rect x="55.9" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="262.9" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦16⁩ מתאים</text><rect x="30.0" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="42.9" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed" >⁦1⁩</text><text x="634.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >מודל LEF</text><text x="250.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >ירוק: מסביר/מתאים · כתום: חלקית · כתום בהיר: בקושי · אדום: כלל לא</text></svg><figcaption>פסקי הדין על 17 האנומליות של SPA (B18): כמה מהן מסביר כל צד במלואן, חלקית, בקושי או כלל לא.</figcaption></figure><h3 style="margin-top:28px">ריבוע המעבדה: סיכום 17 האנומליות של SPA (B1–B18) ומחסום הפוטנציאל (מאמר 08, חלקים B10–G)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>אנומליה (B1–B17)</th>
+            <th>הממצא האמפירי המרכזי</th>
+            <th>פסק דין המדע המקובל</th>
+            <th>פסק דין מודל LEF (המבער)</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>B1. רשומת המכתשים</strong></td>
+            <td>גירעון 0.51 במרכז; מינימום 45.4°S, 197.9°E (0.45); חסרים 20–40 ק"מ (0.47); רדודים ב-18% עם שפות גבוהות (1.35)</td>
+            <td><strong>אינו מסביר כלל</strong></td>
+            <td><strong>מתאים</strong> (חום מלמטה הרפה ומחק; שפות גבוהות על קרקע דחוסה)</td>
+          </tr>
+          <tr>
+            <td><strong>B2. צורה ועומק</strong></td>
+            <td>האזור הנמוך בירח (6–9 ק"מ); שארית עומק −1.1 עד−1.8 ק"מ במרכז מעבר לקרום הדק</td>
+            <td>מסביר (עם המסה הכבדה)</td>
+            <td><strong>מתאים</strong> (קריסת כיפה + דחיסת נקבוביות של 9–15 ק"מ)</td>
+          </tr>
+          <tr>
+            <td><strong>B3. קרום דק</strong></td>
+            <td>הקרום הדק בירח (12–20 ק"מ בדרום, 61°S, 184°E); כיפות קטנות מעל אפולו ואינג'ניי</td>
+            <td>מסביר (פגיעה אלכסונית דרומה)</td>
+            <td><strong>מתאים</strong> (החלקת קרום מהכיפה + התכה מלמטה)</td>
+          </tr>
+          <tr>
+            <td><strong>B4–B5. שתי טבעות הקרום</strong></td>
+            <td>חיצונית (50°–55°): עבה במזרח (+7.8 ק"מ) וחסרה במערב; פנימית (36.7°): מוסטת 118 ק"מ צפ'-מז'</td>
+            <td>מסביר חלקית (אין הסבר למערב)</td>
+            <td><strong>מתאים</strong> (ערימה מול קיר הרמות העבה במז' וקרוב במע')</td>
+          </tr>
+          <tr>
+            <td><strong>B6. צפיפות ונקבוביות</strong></td>
+            <td>פני שטח 19.7%, אך ב-10 ק"מ סגורים ל-2.9%–4.4% במרכז ועולים לשפה (7.1%–8.8%)</td>
+            <td>מסביר חלקית (פגיעה שוברת, לא סוגרת)</td>
+            <td><strong>מתאים</strong> (אפייה ודחיסה ממושכת מהמרכז החוצה)</td>
+          </tr>
+          <tr>
+            <td><strong>B7–B9. כימיה, מעט לבה וסהר Th</strong></td>
+            <td>FeO יורד מ-9.48% ל-4.43%; K/Th שטוח (451); 4.1% לבה נראית; לבה קבורה ב-15°; סהר Th בצפ'-מע'</td>
+            <td>מסביר / מסביר חלקית</td>
+            <td><strong>מתאים</strong> (התכה ללא התפרצות + ימה מרכזית ב-5.77 שע')</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>B10–B13. מסה כבדה, נדיפים, חמצן וקריפ</strong></td>
+            <td>מסה 2.18× 10¹⁸ ק"ג בדרום; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> ו-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span> כבדים; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1.93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span> (פי 13 פחות חמצן); <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td>
+            <td>מסביר חלקית / מסביר</td>
+            <td><strong>מתאים</strong> (ברזל ארצי שספח חמצן והתרכז במקום + שטיפה חוזרת)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>B14. מתכת בנוריטים</strong></td>
+            <td>גרגירי Fe–Ni (Ni/Co=8.5–11) בנוריטים בני 4.247 Ga שאופסו ב-3.873 Ga</td>
+            <td>מסביר (חומר פוגע)</td>
+            <td><strong>מתאים חלקית — המבחן האיזוטופי יכריע (Cr, Ti, Mo, Ru, Os)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>B15. פולקניזם ממושך</strong></td>
+            <td>פעילות רציפה לאורך 2 מיליארד שנה (4.25 → 3.87 → 3.6–3.2 → 2.8–2.2 Ga) בכמויות קטנות</td>
+            <td>מסביר בקושי (דורש שני אירועים ומקורות)</td>
+            <td><strong>מתאים</strong> (מבער בשלב החיבור, ניתוק ב-3.873 Ga וזנב קירור)</td>
+          </tr>
+          <tr>
+            <td><strong>B16–B17. מגנטיות ומערבולות</strong></td>
+            <td>מרכז ריק (0.8% > 5 nT); שיא בצד הנגרר (42% בצפ'-מע'); מערבולות ב-Ingenii (5.9 nT) מול Moscoviense (1.3 nT)</td>
+            <td>מסביר חלקית</td>
+            <td><strong>מתאים</strong> (מחיקה במרכז + הסעת ברזל בצד הנגרר; במוסקוביינסה הברזל שקע)</td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>פרמטר דינמי / מחסום פוטנציאל (חלק D)</th>
+            <th>יום ארצי 5.50 שעות (שיא הפחיסות)</th>
+            <th>יום ארצי 5.77 שעות (מצב הניתוק בסדרה)</th>
+          </tr>
+        
+        
+          <tr>
+            <td><strong>רדיוס קו הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>)</strong></td>
+            <td>15,883 ק"מ (15,818 ק"מ לחלקיק בוחן)</td>
+            <td><strong>16,399 ק"מ</strong> (≈ 2.6 רדיוסי כדור הארץ)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>מחסום הפוטנציאל בקו רוחב המקור (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> ק"מ)</strong></td>
+            <td>25.2 MJ/kg</td>
+<td>26.2 MJ/kg</td></tr></table></div></section>
+<section>
+<p style="margin-top:22px"><a href="story15_he.html">→ פרק 15</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

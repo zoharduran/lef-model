@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 13: הקטבים של הירח — מדוע הקטבים צפופים במכתשים, דחיית שש השערות ושחזור הצורה התלת-צירית — מודל LEF</title>
+<meta name="description" content="פרק 13 בסיפור מודל LEF: מדוע הקטבים של הירח צפופים במכתשים — הספירה הנקייה, דחיית שש השערות ושחזור הצורה התלת-צירית.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story13_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 13</p>
+<h1>פרק 13: הקטבים של הירח — מדוע הקטבים צפופים במכתשים, דחיית שש השערות ושחזור הצורה התלת-צירית</h1>
+<p>מבוסס על מאמר 07 — The Poles: Why the Poles Are Crowded (חלקים A–C.2: הספירה הנקייה, 6 ההשערות שנדחו וגיאומטריית הפחיסות)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: מדוע שני הקטבים של הירח צפופים במכתשים גדולים — ודווקא יותר במכתשים הענקיים?</h2>
+
+    <p>כאשר סופרים את כל המכתשים הגדולים (20 ק"מ ומעלה) בקטלוג הגלובלי המדויק של רובינס (Robbins, 2019), מתגלה תבנית דו-קוטבית חדה שאיש לא הסביר קודם לכן: <strong>שתי כיפות הקטבים (רדיוס 30° סביב הקוטב הצפוני והקוטב הדרומי) צפופות במכתשים הרבה יותר מאשר חגורת קו המשווה (15°S–15°N)</strong>!</p>
+    <ul>
+      <li><strong>בספירה הגולמית:</strong> כיפות הקטבים נושאות <strong>219 מכתשים</strong> למיליון קמ"ר (227 בצפון ו-211 בדרום) לעומת <strong>166</strong> בחגורת קו המשווה — יחס של <strong>1.32</strong> (ובמכתשי 40 ק"מ ומעלה היחס מזנק ל-<strong>1.51</strong>).</li>
+      <li><strong>החשד להטיה גיאולוגית — והפתרון ב"ספירה הנקייה":</strong> הספקן יטען מיד שקו המשווה עשיר בימות בזלת צעירות (22% משטחו לעומת 1% בקטבים) שמחקו מכתשים עתיקים, ואילו הקוטב הדרומי חתוך על ידי אגן הקוטב הדרומי-אייטקן (SPA, המכסה 24% מכיפות הקטבים). אך כאשר מסירים משני הצדדים גם את הימות וגם את אגן SPA (<strong>הספירה הנקייה</strong>), העודף הקוטבי לא נעלם — הוא מתייצב על <strong>1.20 ± 0.05</strong> (305 בדרום ו-300 בצפון ברצועת 75°–90°), ומטפס בעקביות ככל שקוטר המכתש גדל: מ-<strong>1.09</strong> ב-20–30 ק"מ עד <strong>1.53 ± 0.19</strong> ב-60–100 ק"מ ו-<strong>1.84 ± 0.38</strong> ב-100–300 ק"מ!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: בלון עגול שנמחץ בין שתי כפות ידיים ואז משתחרר</h2>
+
+    <p>מדוע שום גשם של אסטרואידים מן החלל החיצון (וגם לא גשם אחיד של חומר חוזר מכדור הארץ) אינו יכול ליצור ריכוז דו-קוטבי סימטרי סביב ציר הסיבוב של הירח? דימוי אחד פותר את החידה מיד:</p>
+    <ul>
+      <li><strong>בלון מנוקד שנמחץ בין שתי כפות ידיים (שלב הפחיסות):</strong> דמיינו בלון עגול שמכוסה בנקודות (מכתשים) בצפיפות אחידה. כעת לחצו עליו בחוזקה מלמעלה ומלמטה (הכוח הצנטריפוגלי של הסיבוב המהיר ב-5.5 שעות) ומשכו אותו הצידה לכיוון כדור הארץ (כוחות הגאות של רושה). הבלון הופך לגוף פחוס ומאורך כמו <strong>"פיתה שהיא גם ביצה"</strong> (יחס צירים a : b : c ≈ 1.8 : 1.4 : 1): אזורי הקטבים שלו מתרחבים ונמתחים לצדדים כשטחים גדולים ושטוחים, שעליהם נוחתים המכתשים בצפיפות אחידה!</li>
+      <li><strong>שחרור הידיים והתעגלות פנימה (שלב קריסת הנפח):</strong> ברגע שמרכז המסה של הירח חוצה את קו הסיבוב המשותף (15,818–16,399 ק"מ) והמתיחה משתחררת בעודו מחובר לכדור הארץ, הכבידה העצמית של הירח מושכת אותו בחזרה לצורת כדור תוך התכווצות נפחית (מצפיפות 1,700 ל-2,600 ק"ג/מ"ק). הבלון קופץ חזרה לצורת כדור: <strong>המשטחים הרחבים והשטוחים של הקטבים מתכנסים פנימה אל שני מרכזי הקטבים</strong> (כל קווי האורך נסוגים אל הקטבים!), והמכתשים שיושבים על הקרום הקשיח נדחסים לשטח קטן בהרבה בלי לאבד מגודלם המקורי!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: הפרדת תבנית הקטבים מתבנית האורך, ודחיית 6 ההשערות החלופיות</h2>
+
+    <p>חלקים A ו-B של מאמר 07 סורקים את פני הירח ב-12 רצועות רוחב, 12 פלחי אורך, שש כיפות מקוננות סביב כל קוטב (10°–60°), ושש כיפות סביב ששת קצות הצירים, ובוחנים באופן שיטתי <strong>שש השערות חלופיות</strong> לפני ההכרעה:</p>
+    <ol class="steps">
+      <li><strong>הפרדה מלאה בין תבנית הרוחב לתבנית האורך (§A.1–A.5):</strong> לאורך קווי האורך קיימת אסימטריה נפרדת לגמרי בין הצד הנגרר (90°E, צפוף ביותר: 252 בכיפת 30°) לנקודה שתחת כדור הארץ (0°, דלילה ביותר: 148). לעומת זאת, כל רצועת רוחב מקיפה את הירח ב-360° ולכן ממצעת באופן שווה את כל קווי האורך — כך שעודף הקטבים הוא תופעה גיאומטרית עצמאית לחלוטין!</li>
+      <li><strong>אגן SPA מוגבל לליבה הפנימית (0°–10°) (מחקר טבעות §A.10):</strong> מדידת הצפיפות בטבעות סביב מרכז SPA (53°S, 191°E) מגלה שהמחסור במכתשים אינו אחיד על פני כל האגן, אלא מרוכז כ"מדרגה" בליבה הפנימית 0°–10° בלבד (<strong>132 מכתשים</strong> למיליון קמ"ר, יחס 0.59 לעומת 222 מחוץ לשפה!), בעוד שבטבעות 10°–39.57° הצפיפות קופצת מיד ל-193–202. הסרת SPA מאחדת את שני הקטבים לשוויון סטטיסטי מלא (305 בדרום מול 300 בצפון ברצועת 75°–90°; 280 מול 270 בכיפת 20°).</li>
+      <li><strong>מדוע נדחו כל שש ההשערות החלופיות (§B.1–B.6)?</strong>
+        <ul>
+          <li><strong>(B.1) שימור ברמות העתיקות:</strong> נכשלת במבחן המסכה ובמבחן הצורה — גם לאחר הסרת הימות ו-SPA נותר עודף של 1.20 ± 0.05, והקטבים (233–246) צפופים יותר מכתר הצד הרחוק העתיק (221), ובקוטב הצפוני הנקי קיימת התכנסות פנימה (189 ב-60° <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 300 ב-15°).</li>
+          <li><strong>(B.2) הפחיסות עצמה (סיבוב מהיר):</strong> סימן הפוך! לחיצה על הקטבים מותחת את שטחם החוצה ומדללת את המכתשים (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>a</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi></mrow></msub><mo>=</mo><mn>0.59</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{polar}} = (c/a)^2 \rho_{\mathrm{eq}} = 0.59\times</annotation></semantics></math></span></span>).</li>
+          <li><strong>(B.3) מתיחת הגאות של רושה:</strong> סימן הפוך! מתיחת הציר הפונה לכדור הארץ מקצרת את ציר הקטבים אך מותחת את שטח הקטבים החוצה (0.83×) ודוחסת דווקא את הנקודה שמתחת לכדור הארץ (1.38×).</li>
+          <li><strong>(B.4) כבידה חזקה יותר בקוטב:</strong> סימן הפוך בזמן הסיבוב! על גוף פחוס המסתובב ב-5.77 שעות, הקוטב גבוה אנרגטית ב-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>g</mi><mo>≈</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">\Delta H = \frac{1}{2}\Omega^2 R^2 / g \approx 120</annotation></semantics></math></span></span> ק"מ מעל קו המשווה ("פסגת הר"), ולכן חומר מחליק ממנו החוצה אל קו המשווה — ורק <em>לאחר</em> שחרור הסיבוב הקוטב הופך לעמק אנרגטי!</li>
+          <li><strong>(B.5) ניקוז/מערבולת נקודתית בקוטב:</strong> נכשלת במבחן הצורה — בצפון הצפיפות מתייצבת על רמה רחבה (300 ב-15° ו-298 ב-10°) ללא שום בור טופוגרפי, משום שכוחות סיבוביים יוצרים <strong>טבעת סימטרית</strong> ב-90° מקו כדור הארץ ולא נקודה סינגולרית.</li>
+          <li><strong>(B.6) שינוי נפח אחיד (איזוטרופי):</strong> התכווצות כדורית אחידה משנה את כל המרחקים באותו יחס ולכן מותירה את היחס קוטב/משווה שווה בדיוק ל-1.00.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Clean crater density at the six axis ends" style="direction:ltr"><rect x="106.0" y="16" width="364.0" height="26" rx="4" fill="#2f7d57"/><text x="98.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦252⁩</text><text x="634.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >צד נגרר · 90°E</text><rect x="114.7" y="56" width="355.3" height="26" rx="4" fill="#2f7d57"/><text x="106.7" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦246⁩</text><text x="634.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >קוטב דרומי</text><rect x="133.4" y="96" width="336.6" height="26" rx="4" fill="#2f7d57"/><text x="125.4" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦233⁩</text><text x="634.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >קוטב צפוני</text><rect x="150.8" y="136" width="319.2" height="26" rx="4" fill="#5f9a6e"/><text x="142.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:rtl;unicode-bidi:embed" >⁦221⁩</text><text x="634.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >נגדי לארץ · 180°</text><rect x="218.7" y="176" width="251.3" height="26" rx="4" fill="#c47f2c"/><text x="210.7" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:rtl;unicode-bidi:embed" >⁦174⁩</text><text x="634.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >צד מוביל · 90°W</text><rect x="256.2" y="216" width="213.8" height="26" rx="4" fill="#b23a2e"/><text x="248.2" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed" >⁦148⁩</text><text x="634.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >תת-ארץ · 0°</text></svg><figcaption>צפיפות נקייה של מכתשי 20 ק"מ ומעלה (למיליון קמ"ר) בכיפות 30° סביב ששת קצות הצירים: מן המינימום שמתחת לכדור הארץ אל הקטבים והצד הנגרר.</figcaption></figure><div class="callout"><span class="tag">הוכחת הצפיפות בשיא הפחיסות (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> ק"ג/מ"ק) משני מבחנים בלתי-תלויים (§C.1)</span><p style="margin:0">(1) <strong>ספרואיד מקלורן:</strong> עבור זמן מחזור סיבוב של 5.5 שעות, יחס הצירים המשווני-קוטבי הנמדד (b/c ≈ 1.41) מתקבל בדיוק בצפיפות <strong>1,700 ק"ג/מ"ק</strong> (מתחת ל-1,070 ק"ג/מ"ק אין שיווי משקל והגוף מתפרק).<br>
+      (2) <strong>גבול סגירת השטח:</strong> אילו צפיפות השיא הייתה גבוהה מ-<strong>1,800 ק"ג/מ"ק</strong>, התכווצות הנפח בהתעגלות הייתה קטנה מדי וקצות ציר כדור הארץ היו נאלצים להתרחב במקום להיסגר!</p></div>
+    </section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: גיאומטריית ה"פיתה שהיא גם ביצה" ושחזור הצורה ללא כוונון פרמטרים</h2>
+
+    <p>חלקים B.7 ו-C.1–C.2 של מאמר 07 מראים כיצד שילוב כוחות הסיבוב המהיר עם מתיחת הגאות של כדור הארץ יצר גוף תלת-צירי מוגדר היטב (a : b : c ≈ 1.8 : 1.4 : 1), וכיצד מדידת המכתשים סביב ששת קצות הצירים משחזרת את צורתו המקורית בדייקנות:</p>
+    <ol class="steps">
+      <li><strong>שלושת הצירים של הגוף המחובר (§A.9, §C.1–C.2):</strong> בזמן שהירח הצעיר היה מחובר אל קצה האגס ונעול בסיבוב סינכרוני של 5.5 שעות סביב כדור הארץ, פעלו עליו שני עיוותים במקביל:
+        <ul>
+          <li><strong>חלק "הפיתה" (b/c ≈ 1.41):</strong> הסיבוב המהיר סביב ציר הקטבים (c) שיטח את הקטבים והרחיב את קו המשווה (ספרואיד מקלורן בצפיפות ~ 1,700 ק"ג/מ"ק).</li>
+          <li><strong>חלק "הביצה" (a/c ≈ 1.8):</strong> משיכת הכבידה של כדור הארץ פנימה בצד הקרוב מול הכוח הצנטריפוגלי החוצה בצד הרחוק מתחו את הגוף לאורך ציר כדור הארץ (a, מ-5,585 × 4,628 × 3,191 ק"מ בשיא הפחיסות לקוטר כדורי של 3,778 ק"מ בניתוק!).</li>
+        </ul>
+      </li>
+      <li><strong>הדירוג על פני ששת קצות הצירים (מחקר 6 הצירים, §A.9):</strong> מדידת צפיפות המכתשים (20+ ק"מ) בשש כיפות שוות של 30° (לאחר הסרת הימות ו-20 האגנים הגדולים) חושפת סדר מדרג תלת-צירי מובהק:
+        <ul>
+          <li><strong>(1) הנקודה שמתחת לכדור הארץ (0°, 0°):</strong> הדלילה ביותר — <strong>148</strong> (94 גולמי), משום שכאן שכן בסיס המגע של האגס שדרכו זרם הלחץ והחום והותיר את הכיווץ הקטן ביותר בהתעגלות.</li>
+          <li><strong>(2) הצד המוביל (0°, 90°W):</strong> <strong>174</strong> (129 גולמי; 162 בניכוי אגן אוריינטלה).</li>
+          <li><strong>(3) הנקודה הנגדית לכדור הארץ (0°, 180°):</strong> <strong>221</strong> (216 גולמי) — פעלה כ"ראש חופשי" בראש הכיפה ולא נמחצה מבחוץ.</li>
+          <li><strong>(4–5) הקוטב הצפוני (90°N) והקוטב הדרומי (90°S):</strong> <strong>233</strong> (227 גולמי) ו-<strong>246</strong> (211 גולמי) — מוקדי ההתכנסות המרבית של ההתעגלות.</li>
+          <li><strong>(6) הצד הנגרר (0°, 90°E):</strong> <strong>252</strong> (253 גולמי) — משלב את התכנסות הטבעת עם איסוף הפליטה שפיגרה מאחור בסיבוב (פרק 11).</li>
+        </ul>
+      </li>
+      <li><strong>התאמה עיוורת ללא כוונון פרמטרים (Zero-Parameter Fit, §C.3):</strong> כאשר משחזרים מתוך יחסי ששת הצירים (קטבים/צדדים = 1.12, קטבים/קצות ציר כדור הארץ = 1.30) את הצורה התלת-צירית הממוצעת של כלל האוכלוסייה (20+ ק"מ), מתקבל יחס צירים של <strong>1.37 : 1.15 : 1</strong>. עיגול תיאורטי טהור של צורה זו לכדור חוזה יחס צפיפות נקי של <strong>1.21</strong> בין כיפות הקטבים (30°) לחגורת קו המשווה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi| &lt; 15^\circ</annotation></semantics></math></span></span>) — התאמה כמעט מושלמת למדידה הישירה על פני השטח (<strong>1.19</strong>, ובספירה הנקייה המלאה <strong>1.20 ± 0.05</strong>) בלי שום פרמטר חופשי!</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>משוואת שיווי המשקל ההידרוסטטי של ספרואיד מקלורן (עבור אקסצנטריות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>c</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><msup><mi>a</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 - c^2/a^2}</annotation></semantics></math></span></span> וקצב סיבוב <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Omega = 2\pi/T</annotation></semantics></math></span></span>) וקריטריון היציבות הגאותית של רושה (k < 0.09) מנוסחים כך (§C.1–C.2):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup></mrow></msqrt></mrow><msup><mi>e</mi><mn>3</mn></msup></mfrac></mstyle><mo stretchy="false">(</mo><mn>3</mn><mo>−</mo><mn>2</mn><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>6</mn><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><msup><mi>e</mi><mn>2</mn></msup></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\Omega^2}{\pi G \rho} = \dfrac{2\sqrt{1-e^2}}{e^3}(3 - 2e^2)\arcsin(e) - \dfrac{6(1-e^2)}{e^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mn>0.4493</mn><mtext> </mtext><mi>π</mi><mi>G</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\rho_{\min} = \dfrac{\Omega^2}{0.4493\,\pi G}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>ρ</mi><mtext> </mtext><msup><mi>r</mi><mn>3</mn></msup></mrow><msub><mi>M</mi><mi>E</mi></msub></mfrac></mstyle><mo>&lt;</mo><mn>0.09</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{\rho\,r^3}{M_E} &lt; 0.09</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mo separator="true">,</mo><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{\mathrm{Roche,rigid}} = 1.26\,R_\oplus\left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+    <p>עבור זמן מחזור של 5.5 שעות, גבול היציבות התחתון לצפיפות הוא <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>070</mn></mrow><annotation encoding="application/x-tex">\rho_{\min} = 1,070</annotation></semantics></math></span></span> ק"ג/מ"ק (ב-1,000 ק"ג/מ"ק אין פתרון שיווי משקל והגוף מתפרק), ובצפיפות הניתוק (2,600 ק"ג/מ"ק) גבול רושה לנוזל חופשי עומד על 19,971–20,100 ק"מ — מה שמוכיח שבמרחק הניתוק המוקדם יותר (16,400–16,610 ק"מ) הירח החזיק מעמד בזכות <strong>קליפה חיצונית קשיחה שכבר קפאה</strong>!</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: קוטר המכתש כ"שעון כרונולוגי" של שלבי ההתעגלות</h2>
+
+    <p>מכיוון שהמכתשים המשיכו לנחות על הירח בזמן שהוא התעגל מפחיסות השיא (1.8 : 1.4 : 1) אל הכדור הקשיח בניתוק (≤ 1.04), המכתשים הגדולים ביותר (שנוצרו סמוך לשיא הפחיסות) עברו את מלוא התכווצות הקטבים, ואילו המכתשים הקטנים והמאוחרים יותר עברו רק את סוף ההתעגלות (§A.8.5, §C.3):</p>
+    <ul>
+      <li><strong>מכתשי 100–300 ק"מ (שיא הפחיסות):</strong> יחס קוטב/משווה מדוד של <strong>1.84 ± 0.38</strong> (תחזית לשיא הפחיסות 1.8:1.4:1: <strong>1.49</strong>).</li>
+      <li><strong>מכתשי 60–100 ק"מ (חציית קו הסיבוב המשותף):</strong> יחס מדוד של <strong>1.53 ± 0.19</strong> (תחזית לצורה 1.40: <strong>1.34</strong>).</li>
+      <li><strong>מכתשי 40–60 ק"מ (אמצע ההתעגלות):</strong> יחס מדוד של <strong>1.26 ± 0.12</strong> (תחזית לצורה 1.30: <strong>1.26</strong> — התאמה מדויקת!).</li>
+      <li><strong>מכתשי 30–40 ק"מ (סוף ההתעגלות):</strong> יחס מדוד של <strong>1.15 ± 0.11</strong> (תחזית לצורה 1.20: <strong>1.17</strong>).</li>
+      <li><strong>מכתשי 20–30 ק"מ (סמוך לניתוק ולאחריו):</strong> יחס מדוד של <strong>1.09 ± 0.07</strong> (תחזית לגוף כדורי 1.0: <strong>1.00</strong>).</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: הספירה הנקייה לפי גודל המכתש, ששת הצירים ומטריצת מקלורן (מאמר 07, חלקים A–C.2)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>קבוצת קוטר מכתש / מדד</th>
+            <th>שלב דינמי משויך</th>
+            <th>צורה תיאורטית (a:b:c)</th>
+            <th>יחס חזוי (קוטב/משווה)</th>
+            <th>יחס מדוד בספירה הנקייה</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>כלל האוכלוסייה (≥ 20 ק"מ)</strong></td>
+            <td>ממוצע משולב (שחזור 6 צירים)</td>
+            <td>1.37 : 1.15 : 1</td>
+            <td><strong>1.21</strong> (ללא כוונון!)</td>
+            <td><strong>1.20 ± 0.05</strong> (1.19 ישיר)</td>
+          </tr>
+          <tr>
+            <td><strong>100–300 ק"מ</strong></td>
+            <td>שיא הפחיסות (T = 5.5 שע')</td>
+            <td>1.8 : 1.4 : 1</td>
+            <td>1.49</td>
+            <td><strong>1.84 ± 0.38</strong></td>
+          </tr>
+          <tr class="hl">
+            <td><strong>60–100 ק"מ</strong></td>
+            <td>חציית קו הסיבוב המשותף</td>
+            <td>1.40</td>
+            <td>1.34</td>
+            <td><strong>1.53 ± 0.19</strong></td>
+          </tr>
+          <tr>
+            <td><strong>40–60 ק"מ</strong></td>
+            <td>אמצע ההתעגלות פנימה</td>
+            <td>1.30</td>
+            <td>1.26</td>
+            <td><strong>1.26 ± 0.12</strong></td>
+          </tr>
+          <tr>
+            <td><strong>30–40 ק"מ</strong></td>
+            <td>סוף ההתעגלות (2,600 ק"ג/מ"ק)</td>
+            <td>1.20</td>
+            <td>1.17</td>
+            <td><strong>1.15 ± 0.11</strong></td>
+          </tr>
+          <tr>
+            <td><strong>20–30 ק"מ</strong></td>
+            <td>קרוב לניתוק ולאחריו (גוף כדורי)</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td><strong>1.09 ± 0.07</strong></td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>קצה ציר (כיפת 30°)</th>
+            <th>קואורדינטות</th>
+            <th>צפיפות גולמית (≥ 20)</th>
+            <th>צפיפות נקייה (≥ 20)</th>
+            <th>צפיפות נקייה (≥ 40)</th>
+            <th>תפקיד במבנה התלת-צירי</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>1. תת-ארץ (Sub-Earth)</strong></td>
+            <td>0°, 0°</td>
+            <td>94</td>
+            <td><strong>148</strong></td>
+            <td>48</td>
+            <td>המינימום הגלובלי — בסיס המגע של האגס</td>
+          </tr>
+          <tr>
+            <td><strong>2. צד מוביל (Leading)</strong></td>
+            <td>0°, 90°W</td>
+            <td>129</td>
+            <td><strong>174</strong> (162 ללא אוריינטלה)</td>
+            <td>61</td>
+            <td>צלע היקפית (פגיעות חזיתיות קשות)</td>
+          </tr>
+          <tr>
+            <td><strong>3. נגדי לארץ (Anti-Earth)</strong></td>
+            <td>0°, 180°</td>
+            <td>216</td>
+            <td><strong>221</strong></td>
+            <td>63</td>
+            <td>"ראש חופשי" בראש הכיפה (ללא מחיצה)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>4. קוטב צפוני (North Pole)</strong></td>
+            <td>90°N</td>
+            <td>227</td>
+            <td><strong>233</strong> (300 בליבת 15°)</td>
+            <td>89 (108 ב-10°)</td>
+            <td>מוקד ההתכנסות הקוטבית (קרום נקי ללא SPA)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>5. קוטב דרומי (South Pole)</strong></td>
+            <td>90°S</td>
+            <td>211</td>
+            <td><strong>246</strong> (305 בליבת 15°)</td>
+            <td>80 (135 ב-10°)</td>
+            <td>מוקד ההתכנסות הקוטבית (לאחר הסרת ליבת SPA)</td>
+          </tr>
+          <tr>
+            <td><strong>6. צד נגרר (Trailing)</strong></td>
+            <td>0°, 90°E</td>
+            <td>253</td>
+            <td><strong>252</strong></td>
+            <td>92</td>
+            <td>שיא טבעתי + איסוף פליטה מאחור</td>
+          </tr>
+        
+      </table></div>
+    
+
+    <figure class="fig"><svg viewBox="0 0 640 290" role="img" aria-label="Polar to equatorial ratio by crater size: predicted and measured" style="direction:ltr"><line x1="70" x2="610" y1="193.3" y2="193.3" stroke="#ece7da"/><text x="62" y="197.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><line x1="70" x2="610" y1="126.7" y2="126.7" stroke="#ece7da"/><text x="62" y="130.7" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.5</text><line x1="70" x2="610" y1="60.0" y2="60.0" stroke="#ece7da"/><text x="62" y="64.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2.0</text><path d="M120.0,193.3 L230.0,170.7 L340.0,158.7 L450.0,148.0 L560.0,128.0" fill="none" stroke="#9aa3af" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="120.0" x2="120.0" y1="190.7" y2="172.0" stroke="#1f3a5f" stroke-width="2"/><circle cx="120.0" cy="193.3" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="120.0" cy="181.3" r="6" fill="#1f3a5f"/><text x="130.0" y="185.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.09</text><text x="120.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >⁦20–30⁩ ק"מ</text><line x1="230.0" x2="230.0" y1="188.0" y2="158.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="230.0" cy="170.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="230.0" cy="173.3" r="6" fill="#1f3a5f"/><text x="240.0" y="177.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.15</text><text x="230.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >⁦30–40⁩ ק"מ</text><line x1="340.0" x2="340.0" y1="174.7" y2="142.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="340.0" cy="158.7" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="340.0" cy="158.7" r="6" fill="#1f3a5f"/><text x="350.0" y="162.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.26</text><text x="340.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >⁦40–60⁩ ק"מ</text><line x1="450.0" x2="450.0" y1="148.0" y2="97.3" stroke="#1f3a5f" stroke-width="2"/><circle cx="450.0" cy="148.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="450.0" cy="122.7" r="6" fill="#1f3a5f"/><text x="460.0" y="126.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.53</text><text x="450.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >⁦60–100⁩ ק"מ</text><line x1="560.0" x2="560.0" y1="132.0" y2="30.7" stroke="#1f3a5f" stroke-width="2"/><circle cx="560.0" cy="128.0" r="5" fill="#fff" stroke="#9aa3af" stroke-width="2.5"/><circle cx="560.0" cy="81.3" r="6" fill="#1f3a5f"/><text x="570.0" y="85.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f">1.84</text><text x="560.0" y="238.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >⁦100–300⁩ ק"מ</text><text x="340.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >עיגול כחול: מדוד בספירה הנקייה (עם שגיאה) · עיגול אפור: תחזית הצורה</text></svg><figcaption>יחס הצפיפות קוטב/משווה לפי קוטר המכתש: ככל שהמכתש גדול וקדום יותר, הוא עבר יותר מן ההתעגלות.</figcaption></figure></section>
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+<a href="story14_he.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">פרק 14</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">הפרדה סיבובית חיצונית — כיווץ הקטבים, דקיקות קרום הקטבים ומבחני שימור גודל המכתשים ←</p></div></a>
+<p style="margin-top:22px"><a href="story12_he.html">→ פרק 12</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
