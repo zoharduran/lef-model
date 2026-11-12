@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 11: מכתשים בלי אסטרואידים — פיזיקת הטיסה הבליסטית, לחץ ההלם והאסימטריה שבין החצי המוביל לחצי הנגרר — מודל LEF</title>
+<meta name="description" content="פרק 11 בסיפור מודל LEF: מכתשים מחומר חוזר ולא מאסטרואידים — פיזיקת הטיסה הבליסטית, לחצי הלם של עשרות GPa, והאסימטריה שבין החצי המוביל לנגרר.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story11_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 11</p>
+<h1>פרק 11: מכתשים בלי אסטרואידים — פיזיקת הטיסה הבליסטית, לחץ ההלם והאסימטריה שבין החצי המוביל לחצי הנגרר</h1>
+<p>מבוסס על מאמר 06 — The Craters (חלקים A–K: פיזיקת ההטלה, ההלם, מעבר האדים והמורפולוגיה בארבעת קווי האורך)</p>
+</div></header>
+<main>
+
+
+    <section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: האם חומר שנורה מן הקרקע וחוזר אליה יכול לחפור מכתשי ענק — ומדוע צפוף יותר מאחור?</h2>
+
+    <p>הספרות המקובלת מניחה כמובן מאליו שכמעט כל מכתש על פני הירח נחפר על ידי אסטרואיד או שביט שהגיעו מן החלל החיצון במהירות אדירה של 15–20 ק"מ/שנייה. אולם להנחה הזו יש שתי בעיות תצפיתיות חריפות שמעולם לא הוסברו במלואן:</p>
+    <ol class="steps">
+      <li><strong>הפוכים מהצפוי — עודף מכתשים בחצי הנגרר (90°E) ולא בחצי המוביל (90°W):</strong> הירח מפנה תמיד אותו צד אל כדור הארץ, ולכן חציו המערבי (סביב 90°W, <strong>החצי המוביל</strong>) פונה תמיד קדימה אל כיוון תנועתו במסלול — ממש כמו השמשה הקדמית של מכונית נוסעת — ואילו חציו המזרחי (סביב 90°E, <strong>החצי הנגרר</strong>) פונה אחורה. אם אסטרואידים חיצוניים הפגיזו את הירח, השמשה הקדמית (90°W) חייבת לצבור עשרות אחוזים יותר מכתשים מן השמשה האחורית. בפועל מתרחש ההפך הגמור: <strong>החצי הנגרר (90°E) צפוף בהרבה במכתשים גדולים (249–252 למיליון קמ"ר לעומת 139–175 בחצי המוביל)!</strong></li>
+      <li><strong>השאלה הפיזיקלית הבסיסית:</strong> במודל LEF, כ-99% מן המכתשים נוצרו מ<strong>חומר חוזר</strong> שנורה מתוך פתחי ההזנה של הגוף ההורי (כדור הארץ הקדום, ברדיוס <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> ק"מ וביממה של 5.5 שעות) ונחת בחזרה על הקליפה החיצונית שעלתה מאוחר יותר והפכה לפני הירח. אך האם חומר שנזרק כלפי מעלה במהירות של 2–8 ק"מ/שנייה יכול בכלל לחזור חזק מספיק כדי לייצר לחצי הלם של עשרות גיגה-פסקל ולהטביע מכתשים מורכבים?</li>
+    </ol>
+
+    </section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: הכדור שנזרק כלפי מעלה, המחליק על הקרח והרץ בגשם</h2>
+
+    <p>שלושה דימויים פשוטים מחיי היום-יום מבהירים את הפיזיקה של הטיסה הבליסטית ואת האסימטריה שבין מזרח למערב:</p>
+    <ul>
+      <li><strong>כדור שנזרק ישר למעלה (מהירות הנחיתה שווה למהירות הזריקה):</strong> כשזורקים כדור ישר למעלה בלי חיכוך אוויר, הוא ממיר מהירות לגובה בדרך למעלה, וממיר בחזרה את כל הגובה למהירות בדרך למטה — וחוזר אל היד בדיוק באותה מהירות שבה נזרק (5 ק"מ/שנייה החוצה ≤ftarrow 5 ק"מ/שנייה בחזרה!).</li>
+      <li><strong>מחליק על הקרח הפורש ידיים (ההסטה מערבה):</strong> בזמן שהגוש עולה לגובה רב, התנע הזוויתי שלו נשמר — ולכן קצב הסיבוב הזוויתי שלו סביב מרכז כדור הארץ מאט (בדיוק כמו מחליק על הקרח הפורש את זרועותיו לצדדים). הקרקע שמתחתיו ממשיכה להסתובב מזרחה בקצב קבוע, ולכן כשהגוש יורד בחזרה לאותו רדיוס, הקרקע כבר התקדמה מזרחה והוא נוחת <strong>מערבית לנקודת השיגור</strong> (במהירות 5 ק"מ/שנייה: לגובה 1,932 ק"מ, תוך 28 דקות, ובמרחק 1,032 ק"מ מערבה!).</li>
+      <li><strong>אדם הרץ לתוך הגשם לעומת אדם הבורח ממנו (החצי המוביל מול החצי הנגרר):</strong> לאחר שהגוף הירחי התרומם, גם פתחי ההזנה שלו ירו חומר (במהירות נמוכה יחסית, עד מהירות המילוט שלו ~ 2.0–2.3 ק"מ/שנייה). בחצי הנגרר (90°E), הקרקע נעה הרחק מן החומר הנופל ולכן "תופסת" אותו ברכות מאחור (וצוברת גם את החומר שנסחף מערבה מן הצד הרחוק 180°); ואילו בחצי המוביל (90°W), הקרקע דוהרת קדימה לתוך החומר הנופל ופוגשת אותו <strong>חזיתית</strong> — כמו רץ שנפגש חזיתית בטיפות גשם!</li>
+    </ul>
+
+    </section>
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: לחץ הלם של <span class="ltr">45.6 GPa</span>, מעבר באדים ומגבלת המילוט (10.75 ק"מ/שנייה)</h2>
+
+    <p>חלקים J ו-K של מאמר 06 מוכיחים בחישוב אנליטי מדויק שזריקה פנימית במהירויות של 2–8 ק"מ/שנייה מספיקה לחלוטין ליצירת מכתשי הלם אמיתיים:</p>
+    <ol class="steps">
+      <li><strong>לחץ הלם של עשרות גיגה-פסקל (משוואת הוגוניו לבזלת, §J.2):</strong> בהתנגשות חזיתית של בזלת בבזלת (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho_0 = 2,700</annotation></semantics></math></span></span> ק"ג/מ"ק), מהירות החלקיקים מאחורי חזית ההלם היא מחצית ממהירות הפגיעה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>p</mi></msub><mo>=</mo><msub><mi>v</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_p = v_n / 2</annotation></semantics></math></span></span>), ומהירות חזית ההלם עצמה היא <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mi>s</mi><msub><mi>u</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">U_s = C_0 + s u_p</annotation></semantics></math></span></span> (עם <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">C_0 = 3.5</annotation></semantics></math></span></span> ק"מ/שנייה ו-s = 1.3). מכאן מתקבל לחץ מגע של <strong><span class="ltr">12.96 GPa</span> כבר במהירות 2 ק"מ/שנייה</strong>, <strong><span class="ltr">22.07 GPa</span> ב-3 ק"מ/שנייה</strong>, ו-<strong><span class="ltr">45.56 GPa</span> במהירות 5 ק"מ/שנייה</strong> — גבוה בהרבה מספי ההתמרה ההלמית (Shock Metamorphism) של מינרלים! (וגם טיפה נוזלית יוצרת גל דחיסה חזק משום שנוזל מתנגד לדחיסה כמעט כמו מוצק).</li>
+      <li><strong>האנרגיה הנדרשת בפתח ומגבלת המילוט (§J.1, §J.5):</strong> כדי לשגר קילוגרם אחד במהירות 2, 3, 5 או 8 ק"מ/שנייה, נדרשת אנרגיה קינטית <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_{\mathrm{kin}} = u^2/2</annotation></semantics></math></span></span> של 2, 4.5, 12.5 או 32 MJ/ק"ג, המסופקת על ידי הלחץ הפנימי של כדור הארץ (שעובר דרך האגס) בסיוע התפשטות הגזים הנדיפים (מים). מצד שני, כדי שהחומר לא יימלט לחלל לנצח אלא יחזור אל הקליפה, מהירות ההטלה הרדיאלית חייבת להיות נמוכה ממהירות המילוט המשולבת בסיבוב: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>&lt;</mo><msub><mi>u</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>≃</mo><mn>10.748</mn></mrow><annotation encoding="application/x-tex">u &lt; u_{\mathrm{esc}} \simeq 10.748</annotation></semantics></math></span></span> ק"מ/שנייה</strong>.</li>
+      <li><strong>חציית אטמוספירת האדים (§J.3):</strong> גוש בקוטר קילומטר החוצה פעמיים (בעלייה ובירידה) עמודת אדים בלחץ בסיס של 100 bar (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mn>8.25</mn></mrow><annotation encoding="application/x-tex">g_{\mathrm{eff}} = 8.25</annotation></semantics></math></span></span> מ'/ש"ר) שומר על כ-<strong>51% ממהירותו</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>v</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>−</mo><msub><mi mathvariant="normal">Σ</mi><mi>a</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v_{\mathrm{out}}/v_{\mathrm{in}} = \exp(-\Sigma_a / 2B)</annotation></semantics></math></span></span>) — כך ששיגור ב-5 ק"מ/שנייה עדיין נוחת ב-2.5 ק"מ/שנייה ומייצר הלם של מעל <span class="ltr">13 GPa</span>!</li>
+      <li><strong>חוק הסקיילינג תחת כבידת ההורה (§C.6):</strong> מכיוון שפני ההורה הפעילו כבידה חזקה פי חמישה משל הירח כיום (g = 8.25 לעומת 1.62 מ'/ש"ר) ומהירות הפגיעה הייתה נמוכה פי שלושה (5 לעומת 15 ק"מ/שנייה), יצירת מכתש באותו קוטר דורשת גוף חוזר כבד פי <strong>7.45 עד 23.47</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>p</mi></msub><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m_p \propto g^{3\mu/2} v^{-3\mu}</annotation></semantics></math></span></span> עבור <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0.35</mn><mtext>–</mtext><mn>0.55</mn></mrow><annotation encoding="application/x-tex">\mu = 0.35\text{–}0.55</annotation></semantics></math></span></span>).</li>
+    </ol>
+
+    <figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Shock pressure in basalt against impact speed" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100</text><text x="70.0" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="195.6" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="321.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="446.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="572.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><path d="M70.0,230.0 L75.0,229.2 L80.0,228.4 L85.1,227.5 L90.1,226.6 L95.1,225.7 L100.1,224.8 L105.2,223.9 L110.2,222.9 L115.2,221.9 L120.2,220.9 L125.3,219.8 L130.3,218.8 L135.3,217.7 L140.3,216.6 L145.3,215.4 L150.4,214.3 L155.4,213.1 L160.4,211.9 L165.4,210.7 L170.5,209.4 L175.5,208.1 L180.5,206.8 L185.5,205.5 L190.6,204.2 L195.6,202.8 L200.6,201.4 L205.6,200.0 L210.7,198.5 L215.7,197.1 L220.7,195.6 L225.7,194.1 L230.7,192.5 L235.8,191.0 L240.8,189.4 L245.8,187.8 L250.8,186.1 L255.9,184.5 L260.9,182.8 L265.9,181.1 L270.9,179.4 L276.0,177.6 L281.0,175.9 L286.0,174.1 L291.0,172.2 L296.0,170.4 L301.1,168.5 L306.1,166.6 L311.1,164.7 L316.1,162.8 L321.2,160.8 L326.2,158.8 L331.2,156.8 L336.2,154.8 L341.3,152.7 L346.3,150.7 L351.3,148.6 L356.3,146.4 L361.3,144.3 L366.4,142.1 L371.4,139.9 L376.4,137.7 L381.4,135.4 L386.5,133.2 L391.5,130.9 L396.5,128.6 L401.5,126.2 L406.6,123.9 L411.6,121.5 L416.6,119.1 L421.6,116.6 L426.7,114.2 L431.7,111.7 L436.7,109.2 L441.7,106.7 L446.7,104.1 L451.8,101.6 L456.8,99.0 L461.8,96.3 L466.8,93.7 L471.9,91.0 L476.9,88.3 L481.9,85.6 L486.9,82.9 L492.0,80.1 L497.0,77.3 L502.0,74.5 L507.0,71.7 L512.0,68.8 L517.1,65.9 L522.1,63.0 L527.1,60.1 L532.1,57.1 L537.2,54.2 L542.2,51.2 L547.2,48.2 L552.2,45.1 L557.3,42.0 L562.3,38.9 L567.3,35.8 L572.3,32.7" fill="none" stroke="#b23a2e" stroke-width="3"/><circle cx="195.6" cy="202.8" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.6" y="194.8" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">12.96</text><circle cx="258.4" cy="183.6" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="250.4" y="175.6" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">22.07</text><circle cx="384.0" cy="134.3" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="376.0" y="126.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">45.56</text><circle cx="572.3" cy="32.7" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="564.3" y="24.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">93.96</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed" >מהירות הפגיעה (ק"מ/שנייה) · לחץ ההלם בבזלת (GPa)</text></svg><figcaption>לחץ ההלם בפגיעת בזלת בבזלת לפי משוואת הוגוניו של הפרק (ρ₀ = 2,700, C₀ = 3.5, s = 1.3): כבר ב-2 ק"מ/שנייה כ-<span class="ltr">13 GPa</span>.</figcaption></figure><div class="callout"><span class="tag">פיצול מושג "העומק" לשלושה גבהים נפרדים (§A.2)</span><p style="margin:0">כדי לפענח מה מספרים המכתשים בארבעת קווי האורך, מאמר 06 מפצל את המילה "עומק" לשלושה גדלים גיאומטריים בלתי-תלויים (ב-72 אזימוטים סביב כל מכתש, ולאחר מיסוך הפסגה המרכזית):
+      <br><strong>(1) גובה השפה מעל הקרקע שמסביב</strong> — מתעד את <em>הכוחות הפועלים ברגע הפגיעה</em>;
+      <br><strong>(2) עומק הקרקעית מתחת לקרקע שמסביב</strong> — מתעד את <em>קשיחות השכבות שמתחת למכתש</em>;
+      <br><strong>(3) העומק הכולל משפת המכתש לקרקעית</strong> — סכום השניים הראשונים.</p></div>
+    </section>
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: ארבעת קווי האורך — לכל חלק במכתש יש זיכרון משלו</h2>
+
+    <p>חלקים C.3 ו-F–I של מאמר 06 סורקים 1,457 מכתשים בקוטר 20–100 ק"מ בארבע כיפות שוות על קו המשווה (רדיוס 30°, לאחר הסרת הימות ואגן SPA) ומראים כיצד כל חלק במכתש מתעד פן אחר של אותו תהליך:</p>
+    <ol class="steps">
+      <li><strong>ספירת המכתשים — החצי הנגרר (90°E) צפוף פי 1.44–1.79 מן המוביל (מחקר 1, §C.3):</strong> בחצי הנגרר נספרו <strong>249 מכתשים</strong> בקוטר 20 ק"מ ומעלה למיליון קמ"ר (252 לאחר הסרת 20 האגנים הגדולים), לעומת <strong>139</strong> (175) בחצי המוביל 90°W ו-<strong>135</strong> (148) בצד הקרוב 0° (רווח סמך 95% ליחס: 1.56–2.05, ובדגימת תאים 1.48–2.19). הפער מתרכז במכתשים הקטנים והבינוניים (< 70 ק"מ, פי 1.2–2.4), שנוצרו מן החומר שנורה מן הירח עצמו ונאסף מאחור, בעוד שהמכתשים הענקיים (> 70 ק"מ) נוצרו מוקדם בשלב הפחיסות ומפוזרים באופן אחיד יותר.</li>
+      <li><strong>שפת המכתש (הכוחות ברגע הפגיעה, חלק F):</strong>
+        <ul>
+          <li><strong>בצד הרחוק (180°) השפות הגבוהות ביותר (18.7 × 10⁻³D ב-30–50 ק"מ):</strong> הצד הרחוק פנה החוצה בסיבוב המשותף סביב מרכז המסה המשותף עם כדור הארץ, ולכן הכוח הצנטריפוגלי משך את החומר שהותז כלפי חוץ והותיר שפות גבוהות (וגם פסגות מרכזיות גבוהות, 30 × 10⁻³D).</li>
+          <li><strong>בצד הקרוב (0°) השפות הנמוכות ביותר במכתשים הגדולים (10.3 × 10⁻³D):</strong> הכוח הצנטריפוגלי לחץ את החומר פנימה אל הקרקע.</li>
+          <li><strong>בחצי המוביל (90°W) השפות משוננות, מאורכות ונמוכות ב-20–30 ק"מ:</strong> הפגיעה החזיתית ריסקה ושיננה את השפה (אי-סדירות שפה פי 1.25, קפיצות בין אזימוטים פי 1.14, ושפות מאורכות e > 1.2 ב-<strong>17%</strong> לעומת 12% ב-90°E) ודחסה אותה מטה (12.7 לעומת 17.2 × 10⁻³D).</li>
+        </ul>
+      </li>
+      <li><strong>קרקעית המכתש מתחת לפני השטח (קשיחות השכבות, חלק G.1):</strong>
+        <ul>
+          <li><strong>בצד הרחוק (180°) הקרקעית שקועה לעומק הרב ביותר (54 × 10⁻³D ב-20–30 ק"מ):</strong> הצד הרחוק בנוי משכבות רכות של סיאל וחומר חוזר שנערמו זו על זו; החומר הלוהט שנחת עליהן מעך והתיך אותן, והקרקעית שקעה עמוק פנימה.</li>
+          <li><strong>בצד הקרוב (0°) הקרקעית הרדודה ביותר (27 × 10⁻³D, מחצית מן הצד הרחוק):</strong> הקרקע הקשיחה לא קרסה, והמילוי מלמטה של הימות הגביה את הקרקעיות עוד יותר.</li>
+          <li><strong>בין החצי המוביל (90°W) לנגרר (90°E) אין הבדל בגובה הקרקעית:</strong> הפגיעה החזיתית עיצבה את השפה, הפסגה והחספוס — אך עומק הקרקעית נקבע רק על ידי המצע שמתחת!</li>
+        </ul>
+      </li>
+      <li><strong>הפסגה המרכזית וחספוס הקרקעית (אנרגיית הפגיעה, חלקים H–I):</strong> סביב גבול המעבר למכתשים מורכבים (20–30 ק"מ), פגיעה חזיתית חוצה את סף האנרגיה ליצירת ריבאונד מרכזי: ב-<strong>90°W יש פסגה מרכזית ב-60% מן המכתשים</strong> (לעומת 46% ב-180° ו-49% ב-90°E), וחספוס הקרקעית גבוה פי <strong>1.50</strong> (4.5° לעומת 3.0°, במתאם r = 0.40 עם שינון השפה) — ואילו במכתשי הענק (50–100 ק"מ) הפגיעות המשולבות של הירח וכדור הארץ בצד הרחוק מייצרות פסגה ב-<strong>98%</strong> מן המכתשים!</li>
+    </ol>
+
+    <figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Crater density at four longitudes" style="direction:ltr"><rect x="111.1" y="16" width="368.9" height="26" rx="4" fill="#2f7d57"/><text x="103.1" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed" >⁦249⁩</text><text x="634.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >90°E · החצי הנגרר</text><rect x="179.3" y="56" width="300.7" height="26" rx="4" fill="#5f9a6e"/><text x="171.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:rtl;unicode-bidi:embed" >⁦203⁩</text><text x="634.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >180° · הצד הרחוק</text><rect x="274.1" y="96" width="205.9" height="26" rx="4" fill="#c47f2c"/><text x="266.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:rtl;unicode-bidi:embed" >⁦139⁩</text><text x="634.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >90°W · החצי המוביל</text><rect x="280.0" y="136" width="200.0" height="26" rx="4" fill="#9aa3af"/><text x="272.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:rtl;unicode-bidi:embed" >⁦135⁩</text><text x="634.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:rtl;unicode-bidi:embed" >0° · הצד הקרוב</text></svg><figcaption>צפיפות מכתשים של 20 ק"מ ומעלה למיליון קמ"ר בארבע כיפות על קו המשווה (מחקר 1, ימות ו-SPA מוסרים): החצי הנגרר צפוף מן המוביל.</figcaption></figure></section>
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+
+    <p>חוקי שימור האנרגיה והתנע הזוויתי במסלול קפלרי סביב ההורה (משוואות 10–14 במאמר 06) קובעים הן את מהירות הפגיעה באותו גובה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{land}} = u</annotation></semantics></math></span></span>) והן את מהירות הפגיעה היחסית ביעד מסתובב גבוה יותר (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r &gt; r_0</annotation></semantics></math></span></span>):</p>
+    <div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{E} = \dfrac{u^2 + \omega^2 r_0^2}{2} - \dfrac{K}{r_0}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mi>ω</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\ell = \omega r_0^2 \quad \Longrightarrow \quad v_{\mathrm{land}}(r_0) = u</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><mi mathvariant="script">E</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi mathvariant="normal">ℓ</mi><mi>r</mi></mfrac></mstyle><mo>−</mo><mi>ω</mi><mi>r</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v_{\mathrm{rel}}^2(r) = 2\left(\mathcal{E} + \dfrac{K}{r}\right) - \dfrac{\ell^2}{r^2} + \left(\dfrac{\ell}{r} - \omega r\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup></mrow><mrow><mi>d</mi><mi>r</mi></mrow></mfrac></mstyle><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d v_{\mathrm{rel}}^2}{dr} = 2\left(\omega^2 r - \dfrac{K}{r^2}\right)</annotation></semantics></math></span></div></div></div>
+    <p>הנגזרת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">dv_{\mathrm{rel}}^2/dr</annotation></semantics></math></span></span> (§K.3) מראה כי מתחת לרדיוס הסיבוב המשותף (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">r_{\mathrm{corot}} \approx 15,883</annotation></semantics></math></span></span> ק"מ בנתוני השלב המוקדם) כוח הכבידה גובר ולכן מהירות הפגיעה היחסית ביעד גבוה יותר יורדת עם הגובה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.0</mn><mo>→</mo><mn>6.83</mn><mo>→</mo><mn>5.49</mn><mo>→</mo><mn>4.60</mn></mrow><annotation encoding="application/x-tex">8.0 \rightarrow 6.83 \rightarrow 5.49 \rightarrow 4.60</annotation></semantics></math></span></span> ק"מ/שנייה ברדיוסים 6,721, 8,000, 10,000 ו-12,000 ק"מ), אך זהו יחס גיאומטרי למסלול נתון ואינו מחייב מגמת ירידה אוניברסלית בזמן.</p>
+
+    </section>
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: קרקעיות מכתשים העומדות גבוה מעל הבזלת שמסביבן</h2>
+
+    <p>מחקרים 10 ו-11 של מאמר 06 (§G.2–G.3) בודקים את 86 המכתשים הגדולים (40+ ק"מ) שעל הבזלת של הצד הקרוב וחושפים תופעה שאי-אפשר להסביר בהצפה צדדית:</p>
+    <ul>
+      <li><strong>שליש מן המכתשים המותכים והמרוחים עומדים מעל פני הבזלת שמחוץ להם (מחקר 10):</strong> לו לבה חיצונית הציפה מכתש מן הצד, מפלס קרקעיתו לעולם לא היה יכול לעלות מעל מפלס הבזלת שמחוץ לו (כמו חוק כלים שלובים). בפועל, <strong>24 מתוך 76</strong> מכתשים מותכים ומרוחים (32%) ניצבים <strong>יותר מ-50 מ' מעל הבזלת שמסביבם</strong> (כגון <strong>אפלטון</strong> העומד +500 מ' מעל בזלת אימבריום, ומכתש בקוטר 182 ק"מ באוקיינוס הסערות העומד +518 מ' מעל המישור!), לעומת 12 מתוך 411 (3%) בלבד ברמות!</li>
+      <li><strong>פיזיקת הגל הקופא והפרדת הברזל (מחקר 11):</strong> גוש גדול שנחת על מישור בזלת נוזלי או רך הקפיץ כלפי מעלה גל במרכזו; הקרקעית החלה לשקוע בחזרה, אך היכן שההתקררות ניצחה, ההתרוממות קפאה במקומה. ואכן, הקרקעיות המורמות (> +50 מ') עשירות בחומרים נדיפים קלים ולכן <strong>עניות בברזל ובטיטניום</strong> (13.3 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>) לעומת הקרקעיות ששקעו למטה (14.4 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>; מובהקות p = 0.018 ו-p = 0.010)!</li>
+    </ul>
+
+    <h3 style="margin-top:28px">ריבוע המעבדה: טבלאות הטיסה, ההלם, קווי האורך והקרקעיות המורמות (מאמר 06, חלקים C–K)</h3>
+      
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>מהירות שיגור u (ק"מ/ש')</th>
+            <th>אנרגיית שיגור (MJ/ק"ג)</th>
+            <th>שיא גובה מעל <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> (ק"מ)</th>
+            <th>זמן טיסה (דקות)</th>
+            <th>הסטה מערבה (ק"מ)</th>
+            <th>מהירות נחיתה ולחץ הלם בבזלת</th>
+          </tr>
+        
+        
+          <tr>
+            <td><strong>2 ק"מ/ש'</strong></td>
+            <td>2.0 MJ/ק"ג</td>
+            <td>251 ק"מ</td>
+            <td>8.46 דק'</td>
+            <td>51.7 ק"מ</td>
+            <td>2 ק"מ/ש' ≤ftarrow <strong><span class="ltr">12.96 GPa</span></strong></td>
+          </tr>
+          <tr>
+            <td><strong>3 ק"מ/ש'</strong></td>
+            <td>4.5 MJ/ק"ג</td>
+            <td>591 ק"מ</td>
+            <td>13.50 דק'</td>
+            <td>184.1 ק"מ</td>
+            <td>3 ק"מ/ש' ≤ftarrow <strong><span class="ltr">22.07 GPa</span></strong></td>
+          </tr>
+          <tr class="hl">
+            <td><strong>5 ק"מ/ש' (דוגמת הייחוס)</strong></td>
+            <td>12.5 MJ/ק"ג</td>
+            <td>1,932 ק"מ</td>
+            <td>28.01 דק'</td>
+            <td>1,031.6 ק"מ</td>
+            <td>5 ק"מ/ש' ≤ftarrow <strong><span class="ltr">45.56 GPa</span></strong></td>
+          </tr>
+          <tr>
+            <td><strong>8 ק"מ/ש'</strong></td>
+            <td>32.0 MJ/ק"ג</td>
+            <td>8,684 ק"מ</td>
+            <td>97.28 דק'</td>
+            <td>8,438.7 ק"מ</td>
+            <td>8 ק"מ/ש' ≤ftarrow <strong><span class="ltr">93.96 GPa</span></strong></td>
+          </tr>
+        
+      </table></div>
+
+      <div class="tw"><table class="lab">
+        
+          <tr>
+            <th>מדד מורפולוגי (מחקרים 1 ו-6)</th>
+            <th>90°W (מוביל)</th>
+            <th>180° (רחוק)</th>
+            <th>90°E (נגרר)</th>
+            <th>0° (קרוב)</th>
+            <th>משמעות פיזיקלית</th>
+          </tr>
+        
+        
+          <tr class="hl">
+            <td><strong>צפיפות מכתשי 20+ ק"מ (למיליון קמ"ר)</strong></td>
+            <td>139 (175)</td>
+            <td>203 (221)</td>
+            <td><strong>249 (252)</strong></td>
+            <td>135 (148)</td>
+            <td>החצי הנגרר אסף את פליטת הירח והצד הרחוק (יחס 1.79, רווח 1.56–2.05)</td>
+          </tr>
+          <tr>
+            <td><strong>פסגה מרכזית ב-20–30 ק"מ / 50–100 ק"מ</strong></td>
+            <td><strong>60%</strong> / 94%</td>
+            <td>46% / <strong>98%</strong></td>
+            <td>49% / 81%</td>
+            <td>56% / 68%</td>
+            <td>פגיעה חזיתית חוצה את סף הריבאונד ב-90°W</td>
+          </tr>
+          <tr>
+            <td><strong>אי-סדירות שפה / קפיצת אזימוט (20–30 ק"מ)</strong></td>
+            <td><strong>9.2 / 3.9</strong></td>
+            <td>7.5 / 3.5</td>
+            <td>7.4 / 3.5</td>
+            <td>7.1 / 3.4</td>
+            <td>פי 1.25 ו-1.14 ב-90°W; שפות מאורכות 17% מול 12%</td>
+          </tr>
+          <tr>
+            <td><strong>חספוס קרקעית / שטח שטוח (20–30 ק"מ)</strong></td>
+            <td><strong>4.5° / 4%</strong></td>
+            <td>2.7° / 14%</td>
+            <td>3.0° / 11%</td>
+            <td>3.6° / 9%</td>
+            <td>הלם הפגיעה מחספס ב-90°W (r=0.40 עם שינון השפה)</td>
+          </tr>
+          <tr>
+            <td><strong>גובה שפה מעל הקרקע (30–50 ק"מ, × 10⁻³D)</strong></td>
+            <td>14.4 (12.7 ב-20–30)</td>
+            <td><strong>18.7</strong></td>
+            <td>13.1 (17.2 ב-20–30)</td>
+            <td>13.6 (10.3 בגדולים)</td>
+
+<td></td></tr></table></div></section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
