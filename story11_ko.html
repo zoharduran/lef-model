@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제11장: 소행성 없는 크레이터 — 탄도 비행의 물리, 충격 압력, 그리고 선행/후행 비대칭 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제11장: 소행성이 아니라 되돌아온 물질로 만들어진 크레이터 — 탄도 비행의 물리, 수십 GPa의 충격 압력, 그리고 선행 반구와 후행 반구의 비대칭.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story11_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story11_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story11_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story11_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story11_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story11_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story11_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story11_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story11_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story11_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story11_he.html" hreflang="he">עברית</a> · <a href="story11_en.html" hreflang="en">English</a> · <a href="story11_de.html" hreflang="de">Deutsch</a> · <a href="story11_es.html" hreflang="es">Español</a> · <a href="story11_fr.html" hreflang="fr">Français</a> · <a href="story11_ru.html" hreflang="ru">Русский</a> · <a href="story11_zh.html" hreflang="zh">中文</a> · <a href="story11_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제11장</p>
+<h1>제11장: 소행성 없는 크레이터 — 탄도 비행의 물리, 충격 압력, 그리고 선행/후행 비대칭</h1>
+<p>논문 06 — 크레이터(A~K부: 발사의 물리, 충격, 증기 통과, 네 경도에서의 형태)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 땅에서 발사되어 다시 그 위로 떨어진 물질이 거대한 크레이터를 팔 수 있을까 — 그리고 왜 뒤쪽이 더 빽빽할까?</h2>
+<p>통용되는 문헌은 달 얼굴의 거의 모든 크레이터가 우주에서 초속 15~20 km의 엄청난 속도로 날아온 소행성이나 혜성에 파였다는 것을 당연하게 여깁니다. 그러나 이 가정은 한 번도 완전히 설명된 적 없는 두 가지 날카로운 관측 문제에 부딪힙니다:</p>
+<ol class="steps">
+<li><strong>예상과 정반대 — 선행 반구(90°W)가 아니라 후행 반구(90°E)에 크레이터가 더 많음:</strong> 달은 언제나 같은 면을 지구로 향하므로, 서쪽 절반(90°W 주위, <strong>선행 반구</strong>)은 언제나 공전 방향 앞쪽을 향하고 — 달리는 자동차의 앞유리처럼요 — 동쪽 절반(90°E 주위, <strong>후행 반구</strong>)은 뒤쪽을 향합니다. 외부 소행성이 달을 폭격했다면, 앞유리(90°W)가 뒷유리보다 수십 퍼센트 더 많은 크레이터를 모아야 합니다. 실제로는 정반대입니다: <strong>후행 반구(90°E)가 큰 크레이터로 훨씬 빽빽합니다(백만 km²당 249~252개, 선행 반구는 139~175개)!</strong></li>
+<li><strong>기본적인 물리 질문:</strong> LEF 모델에서 크레이터의 약 99%는 모천체(반지름 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km, 하루 5.5시간인 초기 지구)의 공급 구멍에서 발사되어, 나중에 솟아올라 달의 얼굴이 된 바깥 껍질 위로 다시 내려앉은 <strong>되돌아온 물질</strong>로 만들어졌습니다. 하지만 초속 2~8 km로 위로 던져진 물질이 과연 수십 기가파스칼의 충격 압력을 내고 복합 크레이터를 찍을 만큼 세게 돌아올 수 있을까요?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 위로 던진 공, 피겨 스케이터, 그리고 빗속의 달리는 사람</h2>
+<p>일상의 세 가지 간단한 그림이 탄도 비행의 물리와 동서 비대칭을 분명히 해 줍니다:</p>
+<ul>
+<li><strong>똑바로 위로 던진 공(내려앉는 속도는 던진 속도와 같다):</strong> 공기 마찰 없이 공을 똑바로 위로 던지면, 올라가며 속도를 높이로 바꾸고 내려오며 높이를 모두 다시 속도로 바꾸어 — 던진 바로 그 속도로 손에 돌아옵니다(초속 5 km로 나가면 → 초속 5 km로 돌아옴!).</li>
+<li><strong>팔을 벌리는 피겨 스케이터(서쪽으로의 편향):</strong> 덩어리가 높이 올라가는 동안 그 각운동량은 보존되므로 지구 중심 둘레의 각속도는 느려집니다(팔을 옆으로 벌리는 스케이터와 똑같이). 아래의 땅은 일정한 속도로 계속 동쪽으로 돌기 때문에, 덩어리가 같은 반지름으로 다시 내려올 때면 땅은 이미 동쪽으로 앞서 가 있어 덩어리는 <strong>발사 지점의 서쪽에</strong> 내려앉습니다(초속 5 km일 때: 높이 1,932 km까지, 28분 만에, 서쪽으로 1,032 km!).</li>
+<li><strong>비를 향해 달리는 사람과 비에서 멀어지는 사람(선행 반구 대 후행 반구):</strong> 달 천체가 솟아오른 뒤에는 그 자신의 공급 구멍도 물질을 발사했습니다(비교적 낮은 속도로, 탈출 속도 ~ 2.0~2.3 km/s까지). 후행 반구(90°E)에서는 땅이 떨어지는 물질에서 멀어지므로 그것을 뒤에서 부드럽게 "받아 내고"(뒷면 180°에서 서쪽으로 흘러온 물질도 모음), 선행 반구(90°W)에서는 땅이 떨어지는 물질 속으로 앞으로 돌진해 그것을 <strong>정면으로</strong> 만납니다 — 빗방울을 정면으로 맞는 달리는 사람처럼요!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: <span class="ltr">45.6 GPa</span>의 충격 압력, 증기 통과, 그리고 탈출 한계(10.75 km/s)</h2>
+<p>논문 06의 J부와 K부는 정확한 해석적 계산으로, 초속 2~8 km의 내부 발사가 진짜 충격 크레이터를 만들기에 충분하다는 것을 보여 줍니다:</p>
+<ol class="steps">
+<li><strong>수십 기가파스칼의 충격 압력(현무암의 위고니오 방정식, §J.2):</strong> 현무암과 현무암의 정면 충돌(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mn>0</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho_0 = 2,700</annotation></semantics></math></span></span> kg/m³)에서 충격 전선 뒤의 입자 속도는 충돌 속도의 절반이고(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>p</mi></msub><mo>=</mo><msub><mi>v</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u_p = v_n / 2</annotation></semantics></math></span></span>), 충격 전선 자체의 속도는 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>s</mi></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><mi>s</mi><msub><mi>u</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">U_s = C_0 + s u_p</annotation></semantics></math></span></span>입니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">C_0 = 3.5</annotation></semantics></math></span></span> km/s, s = 1.3일 때). 이로써 <strong>2 km/s에서 이미 <span class="ltr">12.96 GPa</span></strong>, <strong>3 km/s에서 <span class="ltr">22.07 GPa</span></strong>, <strong>5 km/s에서 <span class="ltr">45.56 GPa</span></strong>의 접촉 압력이 나옵니다 — 광물의 충격 변성 문턱을 훨씬 넘습니다! (그리고 액체 방울조차 강한 압축파를 만듭니다. 액체는 고체만큼이나 압축에 저항하니까요.)</li>
+<li><strong>구멍에서 필요한 에너지와 탈출 한계(§J.1, §J.5):</strong> 1킬로그램을 2, 3, 5, 8 km/s로 발사하려면 2, 4.5, 12.5, 32 MJ/kg의 운동 에너지 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q_{\mathrm{kin}} = u^2/2</annotation></semantics></math></span></span>가 필요하며, 이것은 휘발성 기체(물)의 팽창에 힘입은 지구의 내부 압력(서양배를 통과하는)이 공급합니다. 한편 물질이 우주로 영원히 빠져나가지 않고 껍질로 돌아오려면, 반지름 방향 발사 속도가 자전을 합한 탈출 속도보다 낮아야 합니다: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>&lt;</mo><msub><mi>u</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>≃</mo><mn>10.748</mn></mrow><annotation encoding="application/x-tex">u &lt; u_{\mathrm{esc}} \simeq 10.748</annotation></semantics></math></span></span> km/s</strong>.</li>
+<li><strong>증기 대기를 지나기(§J.3):</strong> 지름 1킬로미터의 덩어리가 바닥 압력 100 bar(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo>=</mo><mn>8.25</mn></mrow><annotation encoding="application/x-tex">g_{\mathrm{eff}} = 8.25</annotation></semantics></math></span></span> m/s²)의 증기 기둥을 두 번(올라가며 내려오며) 지나면 <strong>속도의 약 51%</strong>를 유지합니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>v</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo>−</mo><msub><mi mathvariant="normal">Σ</mi><mi>a</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v_{\mathrm{out}}/v_{\mathrm{in}} = \exp(-\Sigma_a / 2B)</annotation></semantics></math></span></span>) — 그래서 초속 5 km의 발사는 여전히 초속 2.5 km로 내려앉아 <span class="ltr">13 GPa</span>가 넘는 충격을 냅니다!</li>
+<li><strong>모천체 중력 아래의 스케일링 법칙(§C.6):</strong> 모천체 표면의 중력은 오늘날 달의 다섯 배(g = 8.25 대 1.62 m/s²)였고 충돌 속도는 세 배 낮았으므로(15 대 5 km/s), 같은 지름의 크레이터를 만들려면 되돌아오는 천체가 <strong>7.45~23.47배</strong> 더 무거워야 합니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0.35</mn><mtext>–</mtext><mn>0.55</mn></mrow><annotation encoding="application/x-tex">\mu = 0.35\text{–}0.55</annotation></semantics></math></span></span>에 대해 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>p</mi></msub><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m_p \propto g^{3\mu/2} v^{-3\mu}</annotation></semantics></math></span></span>).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Shock pressure in basalt against impact speed" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100</text><text x="70.0" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="195.6" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="321.2" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="446.7" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="572.3" y="248" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><path d="M70.0,230.0 L75.0,229.2 L80.0,228.4 L85.1,227.5 L90.1,226.6 L95.1,225.7 L100.1,224.8 L105.2,223.9 L110.2,222.9 L115.2,221.9 L120.2,220.9 L125.3,219.8 L130.3,218.8 L135.3,217.7 L140.3,216.6 L145.3,215.4 L150.4,214.3 L155.4,213.1 L160.4,211.9 L165.4,210.7 L170.5,209.4 L175.5,208.1 L180.5,206.8 L185.5,205.5 L190.6,204.2 L195.6,202.8 L200.6,201.4 L205.6,200.0 L210.7,198.5 L215.7,197.1 L220.7,195.6 L225.7,194.1 L230.7,192.5 L235.8,191.0 L240.8,189.4 L245.8,187.8 L250.8,186.1 L255.9,184.5 L260.9,182.8 L265.9,181.1 L270.9,179.4 L276.0,177.6 L281.0,175.9 L286.0,174.1 L291.0,172.2 L296.0,170.4 L301.1,168.5 L306.1,166.6 L311.1,164.7 L316.1,162.8 L321.2,160.8 L326.2,158.8 L331.2,156.8 L336.2,154.8 L341.3,152.7 L346.3,150.7 L351.3,148.6 L356.3,146.4 L361.3,144.3 L366.4,142.1 L371.4,139.9 L376.4,137.7 L381.4,135.4 L386.5,133.2 L391.5,130.9 L396.5,128.6 L401.5,126.2 L406.6,123.9 L411.6,121.5 L416.6,119.1 L421.6,116.6 L426.7,114.2 L431.7,111.7 L436.7,109.2 L441.7,106.7 L446.7,104.1 L451.8,101.6 L456.8,99.0 L461.8,96.3 L466.8,93.7 L471.9,91.0 L476.9,88.3 L481.9,85.6 L486.9,82.9 L492.0,80.1 L497.0,77.3 L502.0,74.5 L507.0,71.7 L512.0,68.8 L517.1,65.9 L522.1,63.0 L527.1,60.1 L532.1,57.1 L537.2,54.2 L542.2,51.2 L547.2,48.2 L552.2,45.1 L557.3,42.0 L562.3,38.9 L567.3,35.8 L572.3,32.7" fill="none" stroke="#b23a2e" stroke-width="3"/><circle cx="195.6" cy="202.8" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="187.6" y="194.8" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">12.96</text><circle cx="258.4" cy="183.6" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="250.4" y="175.6" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">22.07</text><circle cx="384.0" cy="134.3" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="376.0" y="126.3" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">45.56</text><circle cx="572.3" cy="32.7" r="5.5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="564.3" y="24.7" font-size="12" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="end">93.96</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >충돌 속도(km/s) · 현무암 속 충격 압력(GPa)</text></svg><figcaption>이 장의 위고니오 방정식(ρ₀ = 2,700, C₀ = 3.5, s = 1.3)에 따른 현무암 대 현무암 충돌의 충격 압력: 2 km/s에서 이미 약 <span class="ltr">13 GPa</span>.</figcaption></figure><div class="callout"><span class="tag">"깊이"라는 개념을 세 개의 별개 높이로 나누기(§A.2)</span><p style="margin:0">네 경도의 크레이터가 말해 주는 것을 해독하려고, 논문 06은 "깊이"라는 단어를 세 개의 독립된 기하학적 양으로 나눕니다(각 크레이터 주위 72개 방위에서, 중앙 봉우리를 가린 뒤):
+<br><strong>(1) 주위 땅 위 가장자리의 높이</strong> — <em>충돌 순간에 작용한 힘</em>을 기록합니다;
+<br><strong>(2) 주위 땅 아래 바닥의 깊이</strong> — <em>크레이터 아래 층의 단단함</em>을 기록합니다;
+<br><strong>(3) 크레이터 가장자리에서 바닥까지의 전체 깊이</strong> — 앞의 둘의 합입니다.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 네 경도 — 크레이터의 모든 부분은 저마다의 기억을 지닌다</h2>
+<p>논문 06의 C.3부와 F~I부는 적도 위 같은 크기의 네 모자(반지름 30°, 바다와 SPA 분지 제외)에서 지름 20~100 km의 크레이터 1,457개를 훑어, 크레이터의 각 부분이 같은 과정의 서로 다른 면을 기록한다는 것을 보여 줍니다:</p>
+<ol class="steps">
+<li><strong>크레이터 수 — 후행 반구(90°E)가 선행 반구보다 1.44~1.79배 빽빽함(연구 1, §C.3):</strong> 후행 반구에서는 지름 20 km 이상 크레이터가 백만 km²당 <strong>249개</strong>(큰 분지 20개를 빼면 252개) 세어졌고, 90°W의 선행 반구는 <strong>139개</strong>(175개), 0°의 앞면은 <strong>135개</strong>(148개)였습니다(비의 95% 신뢰 구간: 1.56~2.05, 셀 표본 추출로는 1.48~2.19). 차이는 작고 중간 크기의 크레이터(&lt; 70 km, 1.2~2.4배)에 몰려 있는데, 이것들은 달 자신에서 발사되어 뒤쪽에 모인 물질로 만들어졌습니다. 반면 거대한 크레이터(&gt; 70 km)는 납작해진 단계에서 일찍 만들어져 더 고르게 퍼져 있습니다.</li>
+<li><strong>크레이터의 가장자리(충돌 순간의 힘, F부):</strong>
+<ul>
+<li><strong>뒷면(180°)에서 가장 높은 가장자리(30~50 km에서 18.7 × 10⁻³D):</strong> 뒷면은 지구와 함께 도는 공통 질량 중심 둘레의 회전에서 바깥을 향했으므로, 원심력이 분출된 물질을 바깥으로 끌어당겨 높은 가장자리(그리고 높은 중앙 봉우리, 30 × 10⁻³D)를 남겼습니다.</li>
+<li><strong>앞면(0°)에서 큰 크레이터 중 가장 낮은 가장자리(10.3 × 10⁻³D):</strong> 원심력이 물질을 땅 쪽 안으로 눌렀습니다.</li>
+<li><strong>선행 반구(90°W)에서 20~30 km의 가장자리는 들쭉날쭉하고 길쭉하며 낮음:</strong> 정면 충돌이 가장자리를 부수고 깎았으며(가장자리 불규칙도 1.25배, 방위 간 도약 1.14배, 길쭉한 가장자리 e &gt; 1.2가 90°E의 12%에 비해 <strong>17%</strong>), 그것을 아래로 눌렀습니다(17.2에 비해 12.7 × 10⁻³D).</li>
+</ul>
+</li>
+<li><strong>표면 아래 크레이터 바닥(층의 단단함, G.1부):</strong>
+<ul>
+<li><strong>뒷면(180°)에서 바닥이 가장 깊음(20~30 km에서 54 × 10⁻³D):</strong> 뒷면은 시알과 되돌아온 물질의 부드러운 층이 겹겹이 쌓여 만들어졌고, 그 위에 내려앉은 빛나는 물질이 그것을 부수고 녹여 바닥이 안으로 깊이 가라앉았습니다.</li>
+<li><strong>앞면(0°)에서 가장 얕은 바닥(27 × 10⁻³D, 뒷면의 절반):</strong> 단단한 땅은 무너지지 않았고, 아래에서 바다가 채워지며 바닥을 더 끌어올렸습니다.</li>
+<li><strong>선행(90°W)과 후행(90°E) 반구 사이에는 바닥 높이의 차이가 없음:</strong> 정면 충돌은 가장자리, 봉우리, 거칠기를 빚었지만 — 바닥의 깊이는 오직 아래의 기반이 정합니다!</li>
+</ul>
+</li>
+<li><strong>중앙 봉우리와 바닥의 거칠기(충돌 에너지, H~I부):</strong> 복합 크레이터로의 전이(20~30 km) 무렵, 정면 충돌은 중앙 반동을 만드는 에너지 문턱을 넘습니다. <strong>90°W에서는 크레이터의 60%에 중앙 봉우리가 있고</strong>(180°에서 46%, 90°E에서 49%), 바닥 거칠기는 <strong>1.50배</strong> 높습니다(3.0°에 비해 4.5°, 가장자리 깎임과 r = 0.40으로 상관) — 한편 거대한 크레이터(50~100 km)에서는 뒷면에 달과 지구의 충돌이 합쳐져 크레이터의 <strong>98%</strong>에 봉우리가 생깁니다!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Crater density at four longitudes" style="direction:ltr"><rect x="160.0" y="16" width="368.9" height="26" rx="4" fill="#2f7d57"/><text x="536.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦249⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°E · 후행 반구</text><rect x="160.0" y="56" width="300.7" height="26" rx="4" fill="#5f9a6e"/><text x="468.7" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦203⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >180° · 뒷면</text><rect x="160.0" y="96" width="205.9" height="26" rx="4" fill="#c47f2c"/><text x="373.9" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦139⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >90°W · 선행 반구</text><rect x="160.0" y="136" width="200.0" height="26" rx="4" fill="#9aa3af"/><text x="368.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦135⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0° · 앞면</text></svg><figcaption>적도 위 네 모자에서 백만 km²당 지름 20 km 이상 크레이터의 밀도(연구 1, 바다와 SPA 제외): 후행 반구가 선행 반구보다 빽빽합니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>모천체 둘레의 케플러 궤도에서 에너지와 각운동량 보존 법칙(논문 06의 방정식 10~14)은 같은 높이에서의 충돌 속도(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v_{\mathrm{land}} = u</annotation></semantics></math></span></span>)와 더 높이 있는 회전 표적에 대한 상대 충돌 속도(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r &gt; r_0</annotation></semantics></math></span></span>)를 함께 정합니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{E} = \dfrac{u^2 + \omega^2 r_0^2}{2} - \dfrac{K}{r_0}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mi>ω</mi><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>v</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\ell = \omega r_0^2 \quad \Longrightarrow \quad v_{\mathrm{land}}(r_0) = u</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><mi mathvariant="script">E</mi><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>+</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi mathvariant="normal">ℓ</mi><mi>r</mi></mfrac></mstyle><mo>−</mo><mi>ω</mi><mi>r</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v_{\mathrm{rel}}^2(r) = 2\left(\mathcal{E} + \dfrac{K}{r}\right) - \dfrac{\ell^2}{r^2} + \left(\dfrac{\ell}{r} - \omega r\right)^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup></mrow><mrow><mi>d</mi><mi>r</mi></mrow></mfrac></mstyle><mo>=</mo><mn>2</mn><mrow><mo fence="true">(</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d v_{\mathrm{rel}}^2}{dr} = 2\left(\omega^2 r - \dfrac{K}{r^2}\right)</annotation></semantics></math></span></div></div></div>
+<p>도함수 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">dv_{\mathrm{rel}}^2/dr</annotation></semantics></math></span></span>(§K.3)는 공회전 반지름(초기 단계 자료로 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>≈</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">r_{\mathrm{corot}} \approx 15,883</annotation></semantics></math></span></span> km) 아래에서는 중력이 지배하므로 더 높은 표적에 대한 상대 충돌 속도가 높이에 따라 떨어진다는 것을 보여 줍니다(반지름 6,721, 8,000, 10,000, 12,000 km에서 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.0</mn><mo>→</mo><mn>6.83</mn><mo>→</mo><mn>5.49</mn><mo>→</mo><mn>4.60</mn></mrow><annotation encoding="application/x-tex">8.0 \rightarrow 6.83 \rightarrow 5.49 \rightarrow 4.60</annotation></semantics></math></span></span> km/s). 하지만 이것은 주어진 궤도에 대한 기하학적 관계일 뿐, 시간에 따른 보편적 감소를 뜻하지는 않습니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 주위 현무암보다 높이 선 크레이터 바닥</h2>
+<p>논문 06의 연구 10과 11(§G.2–G.3)은 앞면 현무암 위의 큰 크레이터(40 km 이상) 86개를 조사해, 옆에서의 범람으로는 설명할 수 없는 현상을 드러냅니다:</p>
+<ul>
+<li><strong>녹고 번진 크레이터의 3분의 1이 바깥 현무암 표면보다 높이 서 있음(연구 10):</strong> 바깥의 용암이 옆에서 크레이터를 잠기게 했다면, 바닥의 수위는 결코 바깥 현무암의 수위보다 높아질 수 없었을 것입니다(연통관의 법칙처럼). 실제로는 녹고 번진 크레이터 76개 중 <strong>24개</strong>(32%)가 <strong>주위 현무암보다 50 m 이상 높이</strong> 서 있습니다(예를 들어 비의 바다 현무암보다 +500 m 높은 <strong>플라톤</strong>, 그리고 평원보다 +518 m 높은 폭풍의 대양의 지름 182 km 크레이터!). 고지에서는 411개 중 12개(3%)뿐입니다!</li>
+<li><strong>얼어붙은 파동의 물리와 철의 분리(연구 11):</strong> 유체이거나 부드러운 현무암 평원에 내려앉은 큰 덩어리는 중심에서 파동을 위로 튕겨 올렸습니다. 바닥은 다시 가라앉기 시작했지만, 냉각이 이긴 곳에서는 솟은 부분이 그대로 얼었습니다. 실제로 솟은 바닥(&gt; +50 m)은 가벼운 휘발성 물질이 풍부하여 아래로 가라앉은 바닥(14.4 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>)에 비해 <strong>철과 타이타늄이 부족합니다</strong>(13.3 wt% FeO, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1.5\text{ wt\% TiO}_2</annotation></semantics></math></span></span>; 유의성 p = 0.018과 p = 0.010)!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 비행, 충격, 경도, 그리고 솟은 바닥의 표(논문 06, C~K부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>발사 속도 u(km/s)</th><th>발사 에너지(MJ/kg)</th><th><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> 위 최고 높이(km)</th><th>비행 시간(분)</th><th>서쪽으로의 편향(km)</th><th>내려앉는 속도와 현무암 속 충격 압력</th></tr>
+<tr><td><strong>2 km/s</strong></td><td>2.0 MJ/kg</td><td>251 km</td><td>8.46분</td><td>51.7 km</td><td>2 km/s → <strong><span class="ltr">12.96 GPa</span></strong></td></tr>
+<tr><td><strong>3 km/s</strong></td><td>4.5 MJ/kg</td><td>591 km</td><td>13.50분</td><td>184.1 km</td><td>3 km/s → <strong><span class="ltr">22.07 GPa</span></strong></td></tr>
+<tr class="hl"><td><strong>5 km/s(기준 예)</strong></td><td>12.5 MJ/kg</td><td>1,932 km</td><td>28.01분</td><td>1,031.6 km</td><td>5 km/s → <strong><span class="ltr">45.56 GPa</span></strong></td></tr>
+<tr><td><strong>8 km/s</strong></td><td>32.0 MJ/kg</td><td>8,684 km</td><td>97.28분</td><td>8,438.7 km</td><td>8 km/s → <strong><span class="ltr">93.96 GPa</span></strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>형태 척도(연구 1과 6)</th><th>90°W(선행)</th><th>180°(뒷면)</th><th>90°E(후행)</th><th>0°(앞면)</th><th>물리적 의미</th></tr>
+<tr class="hl"><td><strong>20 km 이상 크레이터 밀도(백만 km²당)</strong></td><td>139(175)</td><td>203(221)</td><td><strong>249(252)</strong></td><td>135(148)</td><td>후행 반구가 달과 뒷면의 분출물을 모음(비 1.79, 구간 1.56~2.05)</td></tr>
+<tr><td><strong>중앙 봉우리 20~30 km / 50~100 km</strong></td><td><strong>60%</strong> / 94%</td><td>46% / <strong>98%</strong></td><td>49% / 81%</td><td>56% / 68%</td><td>정면 충돌이 90°W에서 반동 문턱을 넘음</td></tr>
+<tr><td><strong>가장자리 불규칙도 / 방위 도약(20~30 km)</strong></td><td><strong>9.2 / 3.9</strong></td><td>7.5 / 3.5</td><td>7.4 / 3.5</td><td>7.1 / 3.4</td><td>90°W에서 1.25배와 1.14배; 길쭉한 가장자리 17% 대 12%</td></tr>
+<tr><td><strong>바닥 거칠기 / 평평한 면적(20~30 km)</strong></td><td><strong>4.5° / 4%</strong></td><td>2.7° / 14%</td><td>3.0° / 11%</td><td>3.6° / 9%</td><td>충돌 충격이 90°W를 거칠게 함(가장자리 깎임과 r=0.40)</td></tr>
+<tr><td><strong>땅 위 가장자리 높이(30~50 km, × 10⁻³D)</strong></td><td>14.4(20~30에서 12.7)</td><td><strong>18.7</strong></td><td>13.1(20~30에서 17.2)</td><td>13.6(큰 것에서 10.3)</td><td>뒷면은 공통 회전에서 바깥을 향함: 원심력이 분출된 물질을 들어 올려 가장자리가 높음; 앞면에서는 같은 힘이 물질을 땅에 누름</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>이 장에서 우리는 땅에서 발사되어 초속 2~8 km로 다시 돌아온 지구 물질이 수십 GPa의 충격 압력을 낸다는 것을 보았습니다 — 소행성 없이도 거대한 크레이터를 파기에 충분하고도 남습니다. 또한 크레이터의 모든 부분이 저마다의 기억을 지닌다는 것도 보았습니다. 크레이터 수는 후행 반구가 선행 반구보다 1.44~1.79배 빽빽함을 보여 주고, 가장자리는 내려앉는 순간의 힘을 기록하며(뒷면에서는 높고, 선행 반구에서는 들쭉날쭉), 바닥은 그 아래의 땅을 기록합니다. 마지막으로 우리는 주위 현무암보다 높이 선 크레이터 바닥을 보았습니다 — 옆에서의 범람으로는 만들 수 없는 것입니다.</p>
+<p>그런데 크레이터가 되돌아온 지구 물질로 만들어졌다면, 그 안의 화학이 그것을 증언해야 합니다. 다음 장 — <strong>제12장: 크레이터 내부의 화학, 존재하지 않는 외부 질량, 그리고 마지막 흩뿌리는 자로서의 지구</strong>(논문 06 — L~Q부에서) — 에서 우리는 크레이터 내부를 살피고, 소행성이 달 지각에 남겼어야 할 외부 질량을 찾아보며, 지구가 분리 뒤에도 달에 물질을 어떻게 계속 흩뿌렸는지 볼 것입니다.</p>
+<a href="story12_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제12장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">크레이터 내부의 화학, 존재하지 않는 외부 질량, 그리고 마지막 흩뿌리는 자로서의 지구 →</p></div></a><p style="margin-top:22px"><a href="story10_ko.html">← 제10장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

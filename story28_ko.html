@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제28장: LEF 모델의 연구 지도(제B부) — 태평양, 화성, 태양계, 그리고 핵심 검증(주제 80–132) — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제28장: 연구 지도 제B부 — 태평양, 화성, 태양계, 그리고 핵심 검증(주제 80–132).">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story28_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story28_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story28_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story28_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story28_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story28_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story28_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story28_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story28_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story28_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story28_he.html" hreflang="he">עברית</a> · <a href="story28_en.html" hreflang="en">English</a> · <a href="story28_de.html" hreflang="de">Deutsch</a> · <a href="story28_es.html" hreflang="es">Español</a> · <a href="story28_fr.html" hreflang="fr">Français</a> · <a href="story28_ru.html" hreflang="ru">Русский</a> · <a href="story28_zh.html" hreflang="zh">中文</a> · <a href="story28_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제28장</p>
+<h1>제28장: LEF 모델의 연구 지도(제B부) — 태평양, 화성, 태양계, 그리고 핵심 검증(주제 80–132)</h1>
+<p>논문 14 — 14. 연구 주제: 모델이 다른 연구자에게 여는 것(구분 H~L과 이어지는 분야: 주제 80~132, 세 가지 선별 목록, 계열의 요약)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 연구 지도는 태평양 바닥에서 화성, 태양계, 그리고 두 핵심 관측으로 어떻게 이어질까?</h2>
+<p>27장에서 우리는 초기 지구, 달의 형성, 남극–에이트켄 분지를 다룬 논문 14의 첫 79개 주제(구분 A~G)를 살펴보았습니다. 이 마무리 장에서는 <strong>나머지 53개 주제(구분 H~K, 주제 80~132)</strong>를 완성하고, 132개 주제 전체를 <strong>L부의 세 가지 선별 목록</strong>으로 정리하며, 목록 밖에서 후속 연구로 표시된 두 포괄적 분야로 마무리합니다:</p>
+<ol class="steps">
+<li><strong>구분 H — 줄무늬와 태평양(주제 80~90):</strong> 북태평양 바닥의 평행한 줄무늬(멘도시노에서 클리퍼턴까지)에 대한 9가지 연구, 태평양 LLVP 하부 이상과 아프리카의 것의 비교, 그리고 태평양 암석권의 맹목적 복원.</li>
+<li><strong>구분 I와 J — 화성과 태양계 전체(주제 91~120):</strong> 파보니스산에서의 포보스와 데이모스 발사와 MMX 탐사의 판정(2027년 착륙과 2031년 표본 귀환), 그리고 수성에서 명왕성과 하우메아까지 위성 탄생의 호.</li>
+<li><strong>구분 K와 L부 — 핵심 요건과 세 작업 목록(주제 121~132):</strong> 모델 전체의 두 결정적 검증 — <strong>동심 노출의 기하(주제 121~122)</strong>와 <strong>되돌아온 지구 물질에 있는 크레이터의 기원(주제 49와 123)</strong> — 을 묶기.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 태평양 담요의 주름, 화성의 증기 대포, 그리고 이론을 판가름하는 두 리트머스 시험</h2>
+<p>네 가지 손에 잡히는 그림이 논문 14의 마지막 53개 주제와 계열의 판정 전략을 모읍니다:</p>
+<ul>
+<li><strong>앞으로 늘어나고 뒤에서 구겨진 담요(구분 H, 주제 80~90):</strong> 밑동이 키리티마티(1.9°N, 157.5°W) 근처에 서 있었고 지구의 자전을 거슬러 서쪽으로 기울었던 지구의 서양배는, 앞면을 밑동 동쪽의 평행한 줄무늬로 늘여 접고, 뒤를 태평양의 서쪽 호(서쪽으로 8,100~10,300 km)로 구겼으며, 해저에 1.37배 확대된 거울상으로 바다의 각인을 남겼습니다(주제 87)!</li>
+<li><strong>길이 200~300 km 포신을 가진 0.25~<span class="ltr">0.5 GPa</span> 압력의 기체 대포(구분 I, 주제 91~106):</strong> 젊은 화성(반지름 1.5배, 하루 5시간)은 두 개의 암석권 마개를 차례로 쏘아 올렸습니다 — 먼저 작고 젖은 데이모스, 그다음 마르고 단단한 포보스 — 파보니스산(1.48°N)의 단일 분출 도관에서요. 거기서 서쪽 벽의 코리올리 마찰이 포보스의 홈을 새겼고(주제 94), 증기 고리가 그것들의 궤도를 원으로 만들었습니다!</li>
+<li><strong>모델 전체를 판가름하는 두 리트머스 시험(L.1부):</strong> 132개 주제에서 저자는 <strong>두 가지 핵심 관측</strong>을 뽑아냅니다. (1) 지각과 크레이터가 앞면 중심 둘레의 세 동심 띠(0°–31°–70°–180°, 주제 121~122)로 정렬되어 있는가; 그리고 (2) 창어 6호 노라이트와 크레이터 용융물 속 금속의 원소 합성 동위원소(Cr, Ti, Mo, Ru, Os)가 소행성의 것이 아니라 순수하게 지구의 것인가(주제 49와 123)!</li>
+<li><strong>축 체계의 시계와 SPA 분지의 자기 지도(목록 밖의 후속 분야):</strong> 번호 붙은 132개 주제 너머에 두 개의 장기 포괄 과제가 서 있습니다 — 지구–달 계의 네 축 평면의 진화를 푸는 것(초기 기울기 3.8°에서 23.44°로), 그리고 SPA 중심에서 지워지고 가장자리에서 강해진 달의 오래된 자기를 해독하는 것입니다.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 구분 H~K의 요약과 L부의 세 선별 목록(주제 80~132)</h2>
+<p>구분 H~K는 깊은 곳에서 태양계 끝까지의 지구물리적 원을 닫고, 논문 13의 18가지 요건 모두를 정해진 연구 주제로 놓습니다:</p>
+<ol class="steps">
+<li><strong>구분 H — 줄무늬와 태평양(주제 80~90):</strong> 11°~20° 기울어진 줄무늬 적도의 적합(주제 80)과 키리티마티 밑동의 가까움에 대한 몬테카를로 검정(1.6°, 주제 81); 밑동 동쪽 줄무늬의 한쪽성(주제 82); 깊이와 연대의 계단(주제 83); 서쪽 호의 비대칭(주제 84); 능선 아래 줄무늬의 연속과 네 교차점에서 능선의 짧아짐(주제 85); 위에서 끌린 "주걱" 능선(라인, 마셜, 하와이)과 아래에서 온 플룸 능선의 구분(주제 86); 1.37× 축척의 바다 거울상(주제 87); DSDP/IODP 시추공에서 1억 8천만 년보다 젊은 지각층 아래 습곡의 이어짐(주제 88); 태평양 LLVP와 아프리카 것의 비교, 그리고 플룸의 동위원소(He, W, Ne, Xe — 주제 89); 그리고 암석권의 맹목적 고지자기 복원(주제 90).</li>
+<li><strong>구분 I — 화성과 다른 천체(주제 91~106):</strong> 젊은 화성의 줄어듦과 질량 5%~20%의 탈출에 의한 자전 92%의 상실(주제 91); 0.25~<span class="ltr">0.5 GPa</span> 압력의 길이 200~300 km 도관 속 기체 밀림(주제 92); 끈적한 불카노식 마개의 주기(주제 93); 코리올리 마찰(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ω</mi><mi>v</mi><mo>≈</mo><mn>1.8</mn><mtext>–</mtext><mn>2.</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2\omega v \approx 1.8\text{–}2.0^2</annotation></semantics></math></span></span> m/s)과 포보스의 2.4~2.6 km/s로의 제동(주제 94); 응결된 증기 고리(~ 10¹⁶ kg, 주제 95); 8~20배 높아진 소산에 의한 데이모스의 23,463 km까지의 조석 상승(주제 96); 하루 ~ 22 h에 ~ 19,000 km에서 만난 포보스와 공회전선의 경주(주제 97); 동위원소, 기체 거품, 함수 광물을 살피는 <strong>MMX 탐사(2027년 착륙, 2031년 귀환)</strong> 표본의 분석(주제 98); 포보스의 홈과 구덩이 사슬(주제 99); 포보스(5.5%)에 대한 데이모스(1.9%)의 움푹함 깊이(주제 100); 화성 쪽으로의 포보스 질량 중심 치우침(주제 101); 파보니스산의 깊은 칼데라(폭 47 km, 깊이 ~ 5 km, 부피 8,300~8,700 km³로 두 위성의 부피 6,740 km³와 맞음)와 그 아래의 질량 부족(주제 102); 태양풍 기체가 풍부한 40억 년 전 오래된 먼지 성분(주제 103); 타르시스 아래의 물(주제 104); 금성, 수성, 빠른 슈퍼지구(주제 105); 그리고 탄생 때 자전 속도의 함수로서 두 극의 높이 차(주제 106).</li>
+<li><strong>구분 J — 태양계의 위성 탄생(주제 107~120):</strong> 토성에서 정점(2.5 × 10⁻⁴)을 이루는 태양으로부터의 탄생의 호(주제 107); 수성과 금성에서 부풂의 부재(주제 108); 천왕성과 해왕성에서 공회전선을 통해 빠져나간 물의 계산(적어도 2%~3%, 주제 109); 기체 외피를 뺀 거대 행성 내부 천체의 밀도(주제 110); 토성의 중간 위성(주제 111)과 천왕성 위성(주제 112)의 밀도 순서; 천왕성의 98° 기울기(주제 113); 포보스와 미란다에서 좁은 구멍을 통한 강제된 출구의 표시로서의 홈(주제 114); 명왕성과 카론의 찢어짐 흉터(주제 115)와 작은 위성 넷의 분출 시기(주제 116); 분열한 짝에서의 밀도 규칙 — 큰 쪽이 더 밀도 높음(주제 117); 네레이드와 히말리아의 경계에서의 포획 규칙(2점, 주제 118); 하우메아(3.9 h에서 분열 직전)와 케레스(2.54 R, 주제 119); 그리고 분리 때의 주걱 능선으로서 이아페투스, 판, 아틀라스의 적도 능선(주제 120).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: L부의 세 작업 목록과 목록 밖의 두 후속 분야</h2>
+<p>논문 14의 L부와 향후 연구 절은 132개 주제 전체를 연구자가 가진 작업 도구에 따른 실용적 행동 계획으로 모읍니다:</p>
+<ol class="steps">
+<li><strong>목록 1 — 결정적인 핵심 관측 두 가지(L.1부):</strong>
+<ul>
+<li><strong>(a) 동심 노출의 기하(주제 121과 122):</strong> 지각 두께와 오래된 크레이터 집단이 앞면 접촉 중심 둘레의 세 동심 띠(0°~31° 접촉 돔, 31°~70° 가장자리 띠, 70°~180° 뒷면)로 정렬되어 있는지 검증하기. 주제 121과 122는 <em>공개 자료 목록에도</em> 나오므로, 모델을 검증하는 가장 결정적인 연구가 곧바로 수행하기에도 가장 손이 닿기 쉬운 것입니다.</li>
+<li><strong>(b) 되돌아온 지구 물질에 있는 크레이터의 기원(주제 49와 123):</strong> 달 크레이터의 ~ 99%가 바깥 소행성이 아니라 되돌아온 지구 물질로 만들어졌는지 정하기(소행성이라면 지각 위쪽 5 km에 4.4~5.0 × 10¹⁹ kg, 약 2%~6%의 외부 질량을 남겼을 것인데, 실제로 측정되는 것은 겨우 0.9%~2%) — 창어 6호 노라이트와 바다 용융물 속의 원소 합성 동위원소(Cr, Ti, Mo, Ru, Os)를 재서.</li>
+</ul>
+</li>
+<li><strong>목록 2와 목록 3 — 준비 단계에 따른 132개 주제의 구분(L.2~L.3부):</strong> 계열의 132개 주제 가운데 <strong>55개 주제</strong>는 기존 공개 자료로 곧바로 수행할 수 있습니다(태평양 줄무늬의 연구 9개 80~88 모두, 바다의 연구 14개 중 13개 31~43, 그리고 핵심 주제 121~122 포함). <strong>57개 주제</strong>는 해석 모델이나 무거운 모의실험의 개발이 필요하고(그 첫머리는 붙어 있는 천체의 3차원 SPH 모의실험 — 주제 12 — 와 열–궤도 연성 적분 — 주제 24), <strong>20개 주제</strong>는 우주 탐사, 표본, 새 실험실 실험이 필요합니다(그 첫머리는 포보스로의 MMX 탐사와 50~<span class="ltr">150 GPa</span>에서의 고압 실험).</li>
+<li><strong>목록 밖의 두 큰 연구 분야(향후 연구):</strong> (1) <strong>지구–달의 축 체계</strong> — 네 동역학적 평면(지구의 적도, 달의 궤도, 달의 적도, 황도면)이 초기 기울기 3.8°에서 23.44°로 전개된 것을 좇고, 진극 이동이 지구의 버너에 대해 SPA 분지를 움직였는지 검증하기; 그리고 (2) <strong>달의 자기</strong> — SPA 분지 중심에서 지워지고 가장자리에서 강해진 오래된 자기장(지혜의 바다의 소용돌이 포함)을, 오랜 가열과 지구에서 온 철의 공통된 표시로서 해독하기.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>두 핵심 관측(동심 띠의 분포와 위쪽 지각의 외부 물질 수지)을 정하는 정량적 값과, 화성 분출 도관 속의 코리올리 마찰은 다음과 같이 정식화됩니다(구분 I, K, L):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mtext> </mtext><mn>1</mn></mrow></msub><mo>:</mo><mtext>  </mtext><mn>26.3</mn><mtext> km (cap)</mtext><mo>&lt;</mo><mn>30.3</mn><mtext> km (belt)</mtext><mo>&lt;</mo><mn>36.2</mn><mtext> km (far)</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>h</mi><mo>=</mo><mn>9.9</mn><mtext> km</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h_{\mathrm{Model\,1}}:\; 26.3\text{ km (cap)} &lt; 30.3\text{ km (belt)} &lt; 36.2\text{ km (far)} \quad (\Delta h = 9.9\text{ km})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>≤</mo><mn>0.9</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>2</mn><mi mathvariant="normal">%</mi><mo>≪</mo><msub><mi>M</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">n</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><mn>4.4</mn><mtext>–</mtext><mn>5.0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>19</mn></msup><mtext> kg </mtext><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">%</mi><mtext>–</mtext><mn>6</mn><mi mathvariant="normal">%</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M_{\mathrm{foreign,\,measured}} \le 0.9\%\text{–}2\% \ll M_{\mathrm{foreign,\,asteroidal}} = 4.4\text{–}5.0 \times 10^{19}\text{ kg } (2\%\text{–}6\%)</annotation></semantics></math></span></div></div></div>
+<p>이 자료들은 두 독립 검증 — 한편으로는 표면의 지각 두께와 크레이터의 기하, 다른 한편으로는 크레이터 용융물 속 금속의 동위원소 지문 — 이 모델 전체에 날카롭고 분명한 검증과 반증의 조건을 어떻게 정하는지 보여 줍니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: LEF 계열 전체에 걸친 132개 주제의 완전한 로드맵</h2>
+<p>논문 14는 계열의 논문 14편 전체(Zenodo DOI: 10.5281/zenodo.22743615)를 행성과학 공동체 전체에 열린 학제 간 연구 체계로 묶습니다:</p>
+<ul>
+<li><strong>자료 연구자를 위한 곧바로 할 수 있는 일(55개 주제):</strong> GRAIL과 GRGM1200B 격자, Robbins 크레이터 목록, 토륨과 타이타늄 지도, 태평양의 GEBCO 수심, 그리고 포보스와 데이모스의 형상 모델의 분석 — 슈퍼컴퓨터 자원도 새 표본도 필요 없습니다.</li>
+<li><strong>다가오는 십 년의 우주 탐사를 위한 목표(20개 주제):</strong> 창어 6호 표본의 노라이트 분석(주제 123), 아폴로 14호 표본의 고압 광물(주제 22), 2027~2031년 일본의 포보스 MMX 탐사(주제 98~104), 그리고 천왕성과 카이퍼 벨트로의 미래 탐사(주제 112, 115, 117, 119).</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 434" role="img" aria-label="Research topics by readiness" style="direction:ltr"><rect x="220.0" y="12" width="243.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="341.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦10⁩</text><rect x="463.7" y="12" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="29.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="29.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >A · 서양배 이전의 지구</text><rect x="220.0" y="46" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.2" y="46" width="170.6" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="463.7" y="46" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="63.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="63.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >B · 끝의 천체</text><rect x="220.0" y="80" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="97.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><text x="6.0" y="97.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >C · 궤도</text><rect x="220.0" y="114" width="316.9" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦13⁩</text><rect x="536.8" y="114" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="549.1" y="131.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="131.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >D · 바다와 구멍</text><rect x="220.0" y="148" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="148" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="439.4" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="512.4" y="148" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="536.9" y="165.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="165.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >E · 크레이터</text><rect x="220.0" y="182" width="170.6" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="305.3" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦7⁩</text><rect x="390.6" y="182" width="48.8" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><rect x="439.4" y="182" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="199.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="199.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >F · 극</text><rect x="220.0" y="216" width="146.2" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="293.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="366.3" y="216" width="97.5" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="415.0" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="463.7" y="216" width="48.8" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="488.1" y="233.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦2⁩</text><text x="6.0" y="233.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >G · SPA 분지</text><rect x="220.0" y="250" width="219.4" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="329.7" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="439.4" y="250" width="24.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="451.6" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="463.7" y="250" width="24.4" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="267.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="6.0" y="267.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >H · 줄무늬와 태평양</text><rect x="220.0" y="284" width="73.1" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="256.6" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><rect x="293.1" y="284" width="219.4" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="402.8" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦9⁩</text><rect x="512.5" y="284" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="561.2" y="301.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><text x="6.0" y="301.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >I · 화성</text><rect x="220.0" y="318" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.6" y="318" width="146.2" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="390.6" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦6⁩</text><rect x="463.7" y="318" width="97.5" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="512.5" y="335.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><text x="6.0" y="335.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >J · 위성 탄생</text><rect x="220.0" y="352" width="97.5" height="24" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="268.8" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦4⁩</text><rect x="317.5" y="352" width="121.9" height="24" fill="#2a4d7a" stroke="#fff" stroke-width="1.5"/><text x="378.4" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦5⁩</text><rect x="439.4" y="352" width="73.1" height="24" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="475.9" y="369.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦3⁩</text><text x="6.0" y="369.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="600" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >K · 요건과 핵심 검증</text><text x="415.0" y="424.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" ><tspan fill="#2f7d57" font-weight="700">■ 공개 자료</tspan> · <tspan fill="#2a4d7a" font-weight="700">■ 새 모델</tspan> · <tspan fill="#c47f2c" font-weight="700">■ 새 자료 / 탐사</tspan></text></svg><figcaption>구분과 준비 단계별 132개 연구 주제 전체: 55개는 공개 자료로, 57개는 새 모델이 필요하고, 20개는 새 자료나 탐사가 필요합니다.</figcaption></figure><h3 style="margin-top:28px">실험 상자: LEF 모델의 11개 구분(A~K) 전체와 132개 연구 주제의 종합 요약(논문 14)</h3>
+<div class="tw"><table class="lab">
+<tr><th>구분</th><th>연구 분야</th><th>주제</th><th>공개 자료</th><th>새 모델</th><th>새 자료 / 탐사</th></tr>
+<tr><td><strong>A</strong></td><td>서양배 이전과 그동안의 지구</td><td>1–11(11)</td><td>0</td><td>10</td><td>1</td></tr>
+<tr><td><strong>B</strong></td><td>끝의 천체 — 모양, 둥글어짐, 해방</td><td>12–23(12)</td><td>3</td><td>7</td><td>2</td></tr>
+<tr><td><strong>C</strong></td><td>궤도와 조석 진화</td><td>24–29(6)</td><td>0</td><td>6</td><td>0</td></tr>
+<tr><td><strong>D</strong></td><td>바다와 구멍</td><td>30–43(14)</td><td><strong>13</strong></td><td>1</td><td>0</td></tr>
+<tr><td><strong>E</strong></td><td>크레이터와 그 근원(핵심 관측 49)</td><td>44–57(14)</td><td>6</td><td>6</td><td>2</td></tr>
+<tr><td><strong>F</strong></td><td>극과 둥글어짐의 압축</td><td>58–67(10)</td><td>7</td><td>2</td><td>1</td></tr>
+<tr><td><strong>G</strong></td><td>남극–에이트켄 분지(SPA)</td><td>68–79(12)</td><td>6</td><td>4</td><td>2</td></tr>
+<tr class="hl"><td><strong>H</strong></td><td>줄무늬와 태평양 바닥</td><td>80–90(11)</td><td><strong>9</strong></td><td>1</td><td>1</td></tr>
+<tr><td><strong>I</strong></td><td>화성과 다른 천체(MMX 탐사)</td><td>91–106(16)</td><td>3</td><td><strong>9</strong></td><td><strong>4</strong></td></tr>
+<tr><td><strong>J</strong></td><td>태양계의 위성 탄생</td><td>107–120(14)</td><td>4</td><td>6</td><td><strong>4</strong></td></tr>
+<tr class="hl"><td><strong>K</strong></td><td>요건과 핵심 검증(121–123)</td><td>121–132(12)</td><td>4</td><td>5</td><td>3</td></tr>
+<tr class="hl"><td><strong>합계</strong></td><td><strong>11개 구분 전체(A~K)</strong></td><td><strong>1–132(132)</strong></td><td><strong>55(41.7%)</strong></td><td><strong>57(43.2%)</strong></td><td><strong>20(15.1%)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문 — 계열 전체의 끝</h2>
+<p>28장에서 우리는 <strong>LEF(Lunar Elevation and Fission) 계열의 논문 14편 전체</strong>에 대한 완전한 조사를 질서 있는 28개 장에 걸쳐 마쳤습니다. 원리의 도입(논문 1)에서, 공회전선의 물리, 지구의 서양배, 궤도, 바다, 크레이터, 극, 남극–에이트켄 분지(논문 2~8)를 거쳐, 태평양의 줄무늬, 화성의 위성, 위성의 법칙, 그리고 태양계 전체의 고리(논문 9~12)로, 다시 정량적 요건과 미래 연구 주제 132개의 지도(논문 13~14)까지.</p>
+<p>28장으로 된 완전한 책은 이제 온전히 여러분의 손에 있습니다 — 구조화된 학습 안내서로서, 그리고 지구–달 계와 태양계 전체의 비밀을 더 탐구하고, 모의실험하고, 경험적으로 검증하기 위한 열린 과학 로드맵으로서.</p>
+<p style="margin-top:22px"><a href="story27_ko.html">← 제27장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

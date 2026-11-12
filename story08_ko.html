@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제8장: 바다란 정말 무엇인가? — 공급 구멍, 73개의 중력 돔, 그리고 얼어붙은 호수처럼 가라앉은 바닥 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제8장: 바다의 네 가지 구성 요소, GRAIL 중력 지도에서 발견된 73개의 공급 돔(44개는 묻혀 있고 대부분 뒷면에 있음), 그리고 중심이 가라앉은 평평한 바닥.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story08_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story08_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story08_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story08_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story08_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story08_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story08_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story08_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story08_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story08_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story08_he.html" hreflang="he">עברית</a> · <a href="story08_en.html" hreflang="en">English</a> · <a href="story08_de.html" hreflang="de">Deutsch</a> · <a href="story08_es.html" hreflang="es">Español</a> · <a href="story08_fr.html" hreflang="fr">Français</a> · <a href="story08_ru.html" hreflang="ru">Русский</a> · <a href="story08_zh.html" hreflang="zh">中文</a> · <a href="story08_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제8장</p>
+<h1>제8장: 바다란 정말 무엇인가? — 공급 구멍, 73개의 중력 돔, 그리고 얼어붙은 호수처럼 가라앉은 바닥</h1>
+<p>논문 05 — 바다(A~F부: 연구 1~7과 16)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 왜 달에는 두 얼굴이 있을까 — 그리고 뒷면의 바다는 어디에 숨어 있을까?</h2>
+<p>간단한 쌍안경으로라도 달을 보면 누구나 "달 속의 얼굴"을 만든 날카로운 대비를 곧바로 알아챕니다. 언제나 지구를 향한 <strong>앞면</strong>은 어둡고 둥근 지대("바다" — 라틴어로 <em>Maria</em>. 옛사람들은 그것을 대양이라고 생각했습니다)로 덮여 있고, <strong>뒷면</strong>은 밝고 상처투성이이며 어두운 얼룩이 거의 없습니다.</p>
+<p>통용되는 문헌은 각 바다를 서로 관련 없는 두 사건으로 해석합니다. 먼저 거대한 소행성이 달에 부딪혀 깊은 분지를 팠고, 수억 년 뒤 맨틀에서 어두운 현무암 용암이 터져 나와 분지를 채웠다는 것입니다. 이 정의에 따르면 바다란 그저 <strong>어두운 현무암의 표면</strong>입니다.</p>
+<p>하지만 GRAIL 탐사선의 정밀한 중력 지도를 살펴보면, 이 이야기를 뿌리부터 흔드는 수수께끼가 나타납니다. 뒷면의 밝은 표면 아래에는 <strong>수십 개의 둥글고 밀도 높은 과잉 중력체</strong>가 숨어 있습니다 — 앞면의 거대한 바다 아래에 있는 것들과 크기와 세기가 같지만, 표면에는 어두운 현무암이 전혀 없습니다! 이 숨은 천체들은 무엇이며, 뒷면이 바다가 없어 보이는 것은 우리가 그 색깔만 보고 있기 때문일까요?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 들판의 덮인 우물과 용암 호수 위의 얼어붙은 껍질</h2>
+<p>논문 05가 바다의 정의에서 제안하는 반전을 이해하려면, 두 가지 간단한 그림을 상상해 보세요:</p>
+<ul>
+<li><strong>화산 분화구 속의 용암 호수:</strong> 사화산의 분화구를 내려다보면 어둡게 얼어붙은 암석 표면이 보입니다. 이 어두운 껍질은 산 자체가 아니라 흐름이 멈춘 뒤 위에서부터 얼어붙은 마지막 층일 뿐입니다. 그 아래에는 용암이 솟아오른 깊은 화도가 있습니다. 정확히 같은 방식으로, <strong>달 얼굴의 어두운 현무암은 바다가 아닙니다 — 바다는 달이 만들어진 구멍이고</strong>, 현무암은 그 구멍 꼭대기에서 얼어붙은 마지막 껍질일 뿐입니다!</li>
+<li><strong>양쪽에 활동하는 우물이 있는 들판 — 한쪽이 흙으로 덮였을 때:</strong> 수십 개의 우물을 판 커다란 들판을 상상해 보세요. 들판의 한쪽(앞면)에서는 우물이 형성이 끝날 때까지 열려 있어서 그 안의 어두운 수면이 보입니다. 다른 쪽(뒷면)에서는 우물이 더 일찍 닫혀 밝은 흙의 두꺼운 층으로 덮였습니다. "어두운 물 얼룩"만 세는 사람은 우물이 한쪽에만 있다고 생각하겠지만 — 땅속을 재는 기구는 덮인 쪽에 <strong>오히려 더 많은 우물</strong>이 있다는 것을 찾아낼 것입니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 개념을 구분하고 73개의 공급 돔을 세기</h2>
+<p>논문 05의 A~D부는 "바다"라는 단어를 아래에서 위로 네 개의 분명한 물리적 구성 요소로 나눕니다:</p>
+<ol class="steps">
+<li><strong>공급 돔:</strong> 지하의 초점에서 위로 밀려 올라와 중심을 들어 올리고 가장자리를 넓힌, 철과 타이타늄이 풍부한 밀도 높은 천체입니다. 공급이 끝나자 돔은 GRAIL 탐사선을 더 강하게 끌어당기는 밀도 높은 천체로 얼어붙었습니다 — 이것이 중력으로 측정되는 <strong>마스콘</strong>(질량 집중)입니다.</li>
+<li><strong>구멍:</strong> 물질이 표면으로 솟아오른, 껍질 속의 유동적이고 점성이 낮은 지대입니다. 대부분의 구멍을 통해서는 물질이 바깥으로 발사되었다가 달로 다시 떨어져 크레이터를 만들었습니다(<strong>배출 구멍</strong>). 반면 지구와의 접촉 원반 안에 있던 <strong>비의 바다</strong>와 <strong>맑음의 바다</strong>를 통해서는 압력과 물질이 바깥으로 발사되지 않고 달 안쪽으로 지나갔습니다(<strong>공급 입</strong>).</li>
+<li><strong>바다 현무암:</strong> 구멍 꼭대기에서 얼어붙은 마지막 층입니다. 반면 아래에 공급 돔이 없는 넓은 현무암 표면 — <strong>폭풍의 대양</strong>, 고요의 바다, 풍요의 바다 같은 — 은 구조적 의미의 "바다"가 아니라 가까운 지구의 열로 <strong>제자리에서 녹은 지각 평원</strong>입니다!</li>
+<li><strong>분지:</strong> 구멍을 둘러싼 솟은 가장자리 — 구멍 자신이 주위로 발사한 뜨거운 물질로 층층이 쌓아 올린 것입니다.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Cross-section of a mare: dome, opening, basalt, basin rim" style="direction:ltr"><rect x="0" y="120" width="640" height="110" fill="#e6dcc6"/><path d="M60,120 Q150,70 230,105 L410,105 Q490,70 580,120 Z" fill="#d6c7a4"/><path d="M220,230 Q320,120 420,230 Z" fill="#7a5a3a"/><path d="M270,152 Q320,118 370,152 L360,108 L280,108 Z" fill="#c4623a" opacity=".85"/><rect x="232" y="100" width="176" height="9" fill="#3a3f4a"/><text x="320.0" y="212.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >공급 돔(마스콘)</text><text x="320.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >구멍</text><text x="320.0" y="92.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#3a3f4a" style="direction:ltr;unicode-bidi:embed" >현무암 — 마지막으로 얼어붙은 껍질</text><text x="120.0" y="62.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#6b5a2a" style="direction:ltr;unicode-bidi:embed" >분지: 발사된 물질로 쌓은 가장자리</text><line x1="120" y1="68" x2="140" y2="88" stroke="#6b5a2a"/></svg><figcaption>아래에서 위로 본 바다의 네 가지 구성 요소: 공급 돔, 구멍, 현무암, 분지. (모식도.)</figcaption></figure><div class="callout"><span class="tag">중력에서의 결정적 발견(연구 1, 3, 4)</span><p style="margin:0">GRAIL 중력 지도(부게 이상, 차수 6~660)를 지름 100 km 이상, 세기 50 mGal 이상의 모든 둥글고 밀도 높은 천체에 대해 자동으로 훑으면, 달 얼굴에 <strong>73개의 공급 돔</strong>이 나타납니다:
+<br>• 중력 기울기 지도에서 식별된 <strong>34개 바다 중 33개</strong>가 73개 돔 중 하나 위에 정확히 놓여 있습니다(20,000번의 무작위 시행에서 33에 이른 경우는 한 번도 없었습니다!). 돔 위에 놓이지 않은 유일한 바다는 <strong>지혜의 바다</strong>로, 그 돔은 남극–에이트켄 분지 아래의 엄청난 열에 "익어" 지워졌습니다.
+<br>• 73개 돔 중 25개는 열린 바다 아래에, 4개는 부분적으로 덮여 있고, <strong>44개는 밝은 고지 아래 완전히 묻혀 있으며</strong> — <strong>그중 36개가 뒷면에 있습니다</strong>! 즉 뒷면에는 <strong>앞면보다 더 많은 공급 돔(40 대 33)</strong>이 있습니다.
+<br>• <strong>지각의 계단(평균 17 km):</strong> 구멍 중심 아래의 지각은 주위 고리보다 8~29 km(중앙값 17 km) 얇습니다(표시된 36개 구멍 중 29개. 보통의 충돌 크레이터에서는 겨우 2%) — 바깥에서의 충돌이 아니라 돔이 아래에서 밀어 올렸다는 증거입니다.
+<br>• <strong>묻힌 돔 위의 담요:</strong> 묻힌 44개 돔 위의 철 함량(−0.19 wt%)과 토륨(+0.05 ppm)은 주위 땅과 완전히 같고, 지각은 <strong>8~13 km</strong> 더 두껍습니다 — 뒷면의 오래된 구멍들을 그 크레이터와 함께 덮은 나중 층의 두께입니다!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="73 feed domes by side and by cover" style="direction:ltr"><rect x="20.0" y="20" width="205.5" height="34" fill="#4a5568"/><text x="217.5" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >열린 바다 아래 · 25</text><rect x="225.5" y="20" width="32.9" height="34" fill="#8a94a6"/><rect x="258.4" y="20" width="361.6" height="34" fill="#c9b48a"/><text x="612.0" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed" >고지 아래 묻힘 · 44</text><text x="241.9" y="74.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#5b6676" style="direction:ltr;unicode-bidi:embed" >부분 · 4</text><rect x="20.0" y="96" width="271.2" height="34" fill="#1f3a5f"/><text x="283.2" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >앞면 · 33</text><rect x="291.2" y="96" width="328.8" height="34" fill="#a49d86"/><text x="612.0" y="118.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >뒷면 · 40(그중 36 묻힘)</text><text x="320.0" y="158.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >GRAIL 탐색의 공급 돔 73개 — 덮임별(위)과 면별(아래)</text></svg><figcaption>뒷면에는 앞면보다 더 많은 공급 돔이 있습니다. 그 대부분은 밝은 고지 아래 묻혀 있어 바다처럼 보이지 않습니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 얼어붙은 호수의 바닥, 중심의 가라앉음, 그리고 발사된 물질의 깃</h2>
+<p>공급이 멈춘 뒤 바다의 바닥에는 무슨 일이 일어나며, 왜 그것은 솟은 가장자리에 둘러싸인 가라앉은 분지 모양일까요? 논문 05의 E부와 F부는 측정 가능한 네 가지 기하학적 현상을 드러냅니다:</p>
+<ol class="steps">
+<li><strong>얼어붙은 호수처럼 하나의 수위(연구 6):</strong> 중력 아래 가만히 있는 유체는 경사를 유지할 수 없습니다 — 하나의 균일한 수위로 자리 잡고 그대로 얼어붙습니다. 정밀한 높이 측정(SLDEM2015)에서 <strong>큰 바다 바닥 16개 중 16개</strong>(그리고 지도화된 현무암 단위 189개 중 188개)가 바다의 가장자리보다 깊이(중앙값 3.4 km, 우연 확률 65,000분의 1) 그리고 주위 땅보다 낮게(중앙값 1.6 km) 놓인 <strong>하나의 높이 수준</strong>을 보여 줍니다.</li>
+<li><strong>돔 위에서 가라앉은 중심 — 두 접촉 바다만 예외(연구 5):</strong> 공급 돔이 철이 풍부한 밀도 높은 천체로 얼어붙으면, 그 위의 중심은 가라앉습니다(주로 냉각에 따른 열수축, 그리고 밀도 높은 천체의 무게와 흡입). 실제로 <strong>열린 바다 12개 중 10개</strong>에서 중심이 가장자리보다 낮고(중앙값 −267 m, 예를 들어 동쪽의 바다에서 −2.2 km, 넥타르의 바다에서 −1.6 km), 중력 돔이 강할수록 가라앉음도 깊습니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn><mo separator="true">,</mo><mi>p</mi><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59, p = 0.04</annotation></semantics></math></span></span>).
+<br><strong>규칙을 확인해 주는 유일한 두 예외:</strong> <strong>맑음의 바다(+60 m)</strong>와 <strong>비의 바다(+43 m)</strong>에서는 중심이 가장자리보다 오히려 조금 높습니다! 왜일까요? 이 둘은 접촉 원반 안에 있었고 지구에 아주 가까이서 얼어붙은 두 바다로, 지구의 강한 당김이 얼어붙는 동안 앞면을 바깥으로 늘인 채 붙들고 있었기 때문입니다!</li>
+<li><strong>늘어난 가장자리와 압축된 내부(§F.2):</strong> 가운데 물이 빠지는 연못 위의 얼음판처럼, 중심의 가라앉음은 바다의 가장자리를 늘여 그 안에 열곡(<strong>지구대</strong>, 반지름의 0.76~1.22배)을 만들었고, 내부를 압축해 <strong>주름 능선</strong>(반지름의 0.71~0.77배)을 만들었습니다.</li>
+<li><strong>뒷면 바다 주위의 발사된 물질의 깃(연구 16):</strong> 왜 뒷면 바다 주위의 가장자리는 그렇게 높이 솟아 있을까요? 용암이 가장자리를 넘쳐흘렀기 때문이 아니라(현무암은 그 주위 고리의 0%~7%만 덮음), 구멍에서 발사된 뜨거운 물질이 그 주위에 내려앉아 층층이 발렸기 때문입니다! 그 결과 뒷면 바다 주위 150~300 km에 솟은 <strong>"깃"</strong>이 만들어졌고(묻힌 바다 주위에서 높이 중앙값 +742 m), 반면 바깥으로 발사하지 않고 안쪽으로 공급한 접촉 바다 주위에는 깃이 전혀 없습니다(−137 m).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>구멍을 통해 솟아오르는 흐름의 속도와 그 닫힘의 관계, 그리고 표면에서 보이는 크레이터의 수지는 다음 방정식으로 설명됩니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}} = N_{\mathrm{bg}} + N_{\mathrm{return}} - N_{\mathrm{erased}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>∫</mo><mi>Q</mi><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">M = \int Q\,dt</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>크레이터 방정식(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{obs}}</annotation></semantics></math></span></span>)은 크레이터 세기가 "단순한 시계"가 아님을 보여 줍니다. 활동하는 모든 구멍은 바닥에 내려앉은 크레이터를 지우고 녹였으며(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{erased}}</annotation></semantics></math></span></span>), 동시에 주위에 크레이터를 만드는 물질을 발사했습니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{return}}</annotation></semantics></math></span></span>). 구멍의 바닥이 얼어붙은 순간부터 비로소 새 크레이터가 쌓이기 시작했습니다 — 지구에서 계속 날아온 마지막 물질로부터("마지막 흩뿌리는 자", §F.6).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 얼어붙은 순서를 매기는 깨끗한 바닥</h2>
+<p>바다의 바닥이 얼어붙은 순간부터만 크레이터를 간직하기 시작한다면, 그 위의 크레이터 수는 <strong>바다들이 얼어붙은 순서</strong>를 재는 직접적인 척도가 됩니다(연구 7과 12):</p>
+<ul>
+<li><strong>주위보다 12배 깨끗한 바닥:</strong> 측정된 열린 바다 10개 모두에서(양쪽의 젊은 광조 지대를 뺀 뒤), 바닥은 주위 땅이 지닌 2~5 km 크레이터 밀도의 평균 <strong>8%(1/12)</strong>만 지니고 있습니다!</li>
+<li><strong>큰 크레이터(10 km 이상)에서는 83배의 비:</strong> 접촉 바다(비의 바다와 맑음의 바다)는 마지막으로 얼어붙어 가장 깨끗합니다(2~5 km 크레이터가 백만 km²당 256개, 10 km 이상 크레이터는 백만 km²당 겨우 3.2개). 반면 언덕 위의 바다들은 10 km 이상 크레이터를 33배 더(백만 km²당 106개), 그 너머의 바다들(동쪽의 바다, 모스크바의 바다, 푸앵카레)은 <strong>83배</strong> 더(백만 km²당 266개) 지니고 있습니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 돔 세기, 중력 검증, 그리고 바닥의 깨끗함(논문 05, C~F부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>척도 / 연구</th><th>표본과 측정 조건</th><th>측정 결과</th><th>유의성 / 의미</th></tr>
+<tr class="hl"><td><strong>바다와 공급 돔의 대응(연구 1)</strong></td><td>중력 기울기의 34개 바다 대 GRAIL의 73개 돔</td><td><strong>34개 바다 중 33개</strong>가 돔 위에 놓임</td><td>20,000번의 무작위 시행 중 33에 이른 경우 없음</td></tr>
+<tr><td><strong>73개 공급 돔의 분포(연구 4)</strong></td><td>자동 탐색(≥ 100 km, ≥ 50 mGal)</td><td><strong>44개 묻힘</strong>(뒷면 36), 25개 열림, 4개 부분</td><td>뒷면(40)이 앞면(33)보다 돔이 많음</td></tr>
+<tr><td><strong>구멍 아래 지각의 계단(연구 3)</strong></td><td>표시된 구멍 36개 대 대조 크레이터 169개</td><td><strong>36개 중 29개</strong>에서 ≥ 8 km의 계단(중앙값 17 km)</td><td>대조 크레이터에서는 169개 중 4개뿐(2%, 중앙값 1 km)</td></tr>
+<tr><td><strong>묻힌 돔 위 담요의 두께(연구 4)</strong></td><td>묻힌 돔 44개 대 열린 돔 25개</td><td>지각이 <strong>8~13 km</strong> 더 두꺼움; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mtext>FeO</mtext><mo>=</mo><mo>−</mo><mn>0.19</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">\Delta\text{FeO} = -0.19\text{ wt\%}</annotation></semantics></math></span></span></td><td>담요는 주위 땅과 같으며 오래된 구멍들을 덮었음</td></tr>
+<tr class="hl"><td><strong>바닥의 수위와 중심의 가라앉음(연구 5~6)</strong></td><td>큰 바닥 16개; 열린 바다 12개</td><td>16/16에서 하나의 수위(가장자리 아래 3.4 km); 10/12에서 가라앉음</td><td>상관 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo>−</mo><mn>0.59</mn></mrow><annotation encoding="application/x-tex">\rho = -0.59</annotation></semantics></math></span></span>(p = 0.04); 비의 바다와 맑음의 바다는 솟아 있음</td></tr>
+<tr><td><strong>바닥의 크레이터 깨끗함(연구 7과 12)</strong></td><td>열린 바다 10개(광조 지대 제외)</td><td>2~5 km 크레이터가 주위 대비 중앙값 8%; 접촉과 먼 쪽 사이 83배(10 km 이상)</td><td>접촉 바다가 마지막으로 얼어붙음; 지구가 마지막 흩뿌리는 자</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>우리는 달의 바다가 소행성 크레이터 속으로 우연히 터져 들어간 용암 호수가 아니라, 달이 만들어진 <strong>오래된 공급 구멍</strong>이라는 것을 발견했습니다. 73개의 중력 돔(그중 44개는 뒷면 고지 아래 묻혀 있음)이 각각 흐름이 멈춘 뒤 중심이 가라앉은, 얼어붙은 호수 같은 균일한 바닥을 남겼습니다.</p>
+<p>그렇다면 시간이 흐르며 바다의 바닥과 평원에 내려앉은 크레이터들은 어떤 모습일까요 — 그리고 왜 가장 큰 것은 녹아 있고, 중간 것은 번져 있고, 작은 것은 날카로울까요? 다음 장 — <strong>제9장: 바닥 위의 시계 — 녹은, 번진, 날카로운 크레이터와 노출의 세 세대</strong>(논문 05 — <em>바다</em>, G~I부에서) — 에서 우리는 달 얼굴 위의 온도와 점성의 시계를 읽는 법을 배울 것입니다!</p>
+<a href="story09_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제9장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">바닥 위의 시계 — 녹은, 번진, 날카로운 크레이터와 노출의 세 세대 →</p></div></a><p style="margin-top:22px"><a href="story07_ko.html">← 제7장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

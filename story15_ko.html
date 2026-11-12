@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제15장: 남극–에이트켄 분지(SPA) — 지하의 버너, 두 개의 초점, 그리고 두 개의 지각 고리 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제15장: 남극–에이트켄 분지 — 지하의 버너, 두 개의 초점, 그리고 두 개의 지각 고리.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story15_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story15_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story15_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story15_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story15_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story15_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story15_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story15_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story15_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story15_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story15_he.html" hreflang="he">עברית</a> · <a href="story15_en.html" hreflang="en">English</a> · <a href="story15_de.html" hreflang="de">Deutsch</a> · <a href="story15_es.html" hreflang="es">Español</a> · <a href="story15_fr.html" hreflang="fr">Français</a> · <a href="story15_ru.html" hreflang="ru">Русский</a> · <a href="story15_zh.html" hreflang="zh">中文</a> · <a href="story15_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제15장</p>
+<h1>제15장: 남극–에이트켄 분지(SPA) — 지하의 버너, 두 개의 초점, 그리고 두 개의 지각 고리</h1>
+<p>논문 08 — 남극–에이트켄: 크레이터가 부족한 중심(A~B9부: 5가지 연구와 이상 B1~B9)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 왜 달에서 가장 오래되고 가장 깊은 분지의 중심은 크레이터가 비어 있으며 — 가장자리는 높을까?</h2>
+<p>우리 눈에서 숨겨진 달의 뒷면에 <strong>남극–에이트켄 분지(SPA)</strong>가 있습니다 — 달 얼굴에서 알려진 가장 크고, 가장 깊고, 가장 오래된 분지입니다. 2,400 × 2,050 km(파리에서 모스크바까지쯤의 거리)의 거대한 타원으로, 바닥은 주위 고지보다 6~9 km 낮고, 연대는 42.5억 년으로 매겨집니다. 행성 지질학의 모든 규칙에 따르면, 40억 년 넘게 하늘에 드러나 있던 그런 오래된 표면은 크레이터로 붐벼야 합니다. 하지만 신중한 측정은 모순되는 수수께끼를 드러냅니다:</p>
+<ol class="steps">
+<li><strong>땅을 깨끗이 할수록 더 뚜렷해지는, 크레이터가 빈 중심(B1):</strong> 용암 평원, 34개의 바다, 각 바다 주위 200 km의 후광을 양쪽에서 빼면, 중심 고리(0°~10°)에서는 백만 km²당 겨우 <strong>125.7개의 크레이터</strong>(20 km 이상)만 살아남았습니다 — 가장자리 밖 고리(247.5) 밀도의 겨우 <strong>0.51</strong>입니다. 그리고 최소 지점(45.4°S, 197.9°E, 중심에서 북북동으로 약 270 km, <strong>정확히 맑음의 바다 대척점의 경도 위!</strong>)에서 밀도는 111(0.45)로 떨어집니다.</li>
+<li><strong>중간 크기 크레이터의 선택적 사라짐, 그리고 높은 가장자리 아래의 얕은 바닥:</strong> 작은 크레이터(10~20 km)는 거의 사라지지 않았고(0.91, 작은 것/큰 것의 비는 바깥 2.13에 비해 4.62), 중간 크레이터(20~40 km)는 대부분 지워졌습니다(0.47). 게다가 중심에 남은 크레이터(40~80 km)는 <strong>18% 얕은데도</strong> <strong>그 가장자리는 더 높이 서 있습니다</strong>(대응하는 대조군의 0.92에 비해 1.35) — 가장자리를 바닥과 함께 낮추는 보통의 침식이나 완화와는 정반대입니다!</li>
+<li><strong>같은 분지 안의 두 개의 별개 초점:</strong> 북쪽 초점(크레이터의 지움과 창어 6호의 착륙지)은 앞면에서 나온 열 출구의 맞은편에 있고, 남쪽 초점(가장 얇은 지각, 가장 낮은 바닥, 밀도 높은 지하 질량)은 그 남쪽 약 450 km에 있습니다!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 버너 불꽃 위에서 부푸는 반죽 쟁반, 그리고 구운 뒤 가운데가 꺼지는 케이크</h2>
+<p>세 가지 간단한 그림이, 뒷면 아래의 오래 지속된 열원 — <strong>"버너"</strong> — 가 어떻게 이 모순된 현상들을 한꺼번에 만드는지 설명합니다:</p>
+<ul>
+<li><strong>버너 불꽃 위의 반죽 쟁반(돔의 솟아오름과 지각의 옆으로의 미끄러짐):</strong> 일정한 불꽃 위에 놓인 부드러운 반죽을 상상해 보세요. 열은 중심을 돔으로 들어 올리고, 부드러워진 지각은 가장자리 쪽으로 미끄러져 아래로 밀려납니다(SPA 주위에 두 개의 두꺼워진 지각 고리를 만듦). 불꽃이 약해지고 반죽이 식으면 돔은 안으로 무너지며 — 처음 높이보다 <em>더 낮게</em> 꺼집니다. 열이 휘발성 물질을 몰아내고 그 안의 구멍을 닫았기 때문입니다!</li>
+<li><strong>뜨거운 판 위의 밀랍 판, 그리고 젖은 모래처럼 다져진 땅(높은 가장자리를 가진 얕은 크레이터):</strong> 아래에서 오는 열은 중심의 오래된 크레이터를 부드럽게 하고 완화시켰으며(그래서 바닥이 올라와 평평해짐), 동시에 되돌아온 물질의 다공질 층을 "구워" 밀도 높은 땅으로 다졌습니다. 나중의 크레이터가 이 구워지고 다져진 땅에 내려앉았을 때, 구멍을 짓누르는 데 쓰인 에너지는 적고 <strong>높은 가장자리</strong>를 쌓는 데 쓰인 에너지는 많았습니다!</li>
+<li><strong>가장자리가 먼저 구워지고 중심이 꺼지는 케이크(바깥 고리의 형성):</strong> 둥글어짐의 끝 무렵 버너가 약해지자, 돔의 가장자리는 먼저 식어 솟은 상태로 얼었고(두꺼운 동쪽에 능선과 지각의 뿌리를 남김), 중심은 오랫동안 뜨겁게 남아 다져지다가 마침내 오늘날 우리가 보는 깊은 분지로 꺼졌습니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: SPA의 다섯 가지 연구와 이상 B1~B6</h2>
+<p>논문 08의 B부는 SPA의 표면, 깊이, 지각, 고리, 공극률을 조사하는 다섯 개의 완전한 정량 연구(연구 1~5, 모두 완전한 초록 신호를 받음)를 제시합니다:</p>
+<ol class="steps">
+<li><strong>연구 1 — SPA의 크레이터 기록(B1):</strong> 깨끗한 세기(용암 평원, 34개 바다, 200 km 후광 제외)에서 크레이터 밀도(20 km 이상)는 0°~10° 고리의 <strong>125.7(0.51)</strong>에서 10°~20°의 200.4(0.81), 20°~30°의 226.7(0.92), 그리고 가장자리 밖(39.6°~50°)의 247.5(1.00)까지 조금씩 올라갑니다. 이상은 타원 위에서도 살아남고(심부 122~132, 바깥 230~235), 최소 지점(45.4°S, 197.9°E)은 맑음의 바다 대척점의 자오선(198.8°E) 바로 위에 있습니다.</li>
+<li><strong>연구 2 — 얇은 지각에 대한 분지의 깊이(B2):</strong> <strong>크레이터 사이의 평원</strong>에서 높이를 재면(오염을 피하려고 20 km 이상 크레이터를 가장자리째 모두 뺀 뒤), SPA의 바닥은 얇은 지각만의 지각 평형이 주는 것보다 <strong>1.1~1.8 km</strong> 더 깊습니다(밀도 2,900 kg/m³의 철이 풍부한 지각이라면 차이는 <strong>~ 4.4 km</strong>로 커짐). 깊이의 잔차는 중심에서 가장 크고(−1.1~−1.8 km) 가장자리 쪽으로 옅어지며(−0.2 km), 가장 낮은 지점(61°S, 199°E, −5.5 km)은 James 등의 밀도 높은 질량의 중심(62°S, 200°E)에서 겨우 35 km 떨어져 있습니다.</li>
+<li><strong>연구 3 — 두꺼워진 지각의 바깥 고리(B4):</strong> 뒷면의 지역적 경향을 빼면, 두꺼워진 지각의 고리가 나타나며(중심에서 50°~55° 거리에서 3.8~5.7 km, 깊이 42~56 km의 지각 뿌리), 8방향 중 7방향에서 그 바깥 지각보다 높이 섭니다(평균 +3.9~+4.4 km). 그러나 그것은 <strong>동서로 비대칭</strong>입니다. 동쪽과 북동쪽에서 두껍고(+7.8과 +7.4 km, 96°~99° 방향으로 7.7~9.1 km의 한쪽 성분), <strong>서쪽에서는 완전히 빠져 있습니다</strong>(지각에서 −2.3 km, 높이에서 −0.50 km)!</li>
+<li><strong>연구 4 — 안쪽 고리와 중심의 어긋남(B5):</strong> 중심에 더 가까이(28°~44°, 평균 반지름 36.7° ≈ 1,114 km) 24방향 중 22방향에서 뚜렷한 안쪽 고리가 나타납니다(특히 남동쪽에서 +24~30 km, 그리고 바깥 고리가 빠진 서쪽에서 +6~14 km로 두드러짐!). 그 중심은 <strong>타원 중심에서 북동쪽으로 108~118 km</strong>(51.4°S, 196.8°E — 돔의 중심!)에 있고, 안쪽 벽은 북쪽과 북동쪽에서 가장 가파르며(높이로 30.7 m/km, 지각으로 10.5 km/100 km, 두꺼운 고지의 벽을 마주함), 남서쪽에서 완만합니다(11.5 m/km).</li>
+<li><strong>연구 5 — 깊은 곳의 구멍 닫힘(B6):</strong> 표면에서 SPA 땅의 공극률은 고지와 같습니다(19.7% 대 20.3%, 휘발성 물질이 빠져나가며 다시 열림). 그러나 깊이 10 km에서는 <strong>SPA의 구멍이 중심에서 거의 완전히 닫혀 있고(2.9%~4.4%)</strong> 가장자리 쪽으로 조금씩 올라갑니다(7.1%~8.8%, 뒷면 나머지의 6.2%~12.8%에 비해). 9~15 km 기둥에서 12%의 공극률을 다지면, 연구 2에서 발견된 바닥의 꺼짐(1.1~1.8 km)이 정확히 설명됩니다!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="SPA clean crater density by ring" style="direction:ltr"><rect x="180.0" y="16" width="176.9" height="26" rx="4" fill="#b23a2e"/><text x="364.9" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦125.7⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >0°–10° · 심부</text><rect x="180.0" y="56" width="282.0" height="26" rx="4" fill="#c47f2c"/><text x="470.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦200.4⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10°–20°</text><rect x="180.0" y="96" width="319.1" height="26" rx="4" fill="#5f9a6e"/><text x="507.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦226.7⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20°–30°</text><rect x="180.0" y="136" width="317.5" height="26" rx="4" fill="#5f9a6e"/><text x="505.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦225.6⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >30°–39.6° · 가장자리까지</text><rect x="180.0" y="176" width="348.3" height="26" rx="4" fill="#2f7d57"/><text x="536.3" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦247.5⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >39.6°–50° · 가장자리 밖</text></svg><figcaption>깨끗한 세기에서 SPA 중심 둘레 고리의 지름 20 km 이상 크레이터 밀도(백만 km²당): 심부에는 가장자리 밖 밀도의 약 절반뿐입니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 철이 풍부한 바닥, 적은 보이는 용암, 묻힌 용암, 그리고 토륨 초승달(B7~B9)</h2>
+<p>논문 08의 B7~B9부는 SPA 바닥의 화학과 화산 활동을 버너 메커니즘과 중심 바다의 두 단계 역사에 연결합니다:</p>
+<ol class="steps">
+<li><strong>철의 기울기와 평평한 칼륨/토륨 비(B7):</strong> 감마선 분광계 측정(루나 프로스펙터 GRS)은 철 농도(FeO)가 중심(0°~10°)의 <strong>9.48 wt%</strong>에서 8.56%(10°~20°), 6.63%(20°~30°), 그리고 가장자리의 4.43%로 조금씩 떨어진다는 것을 보여 줍니다 — 깊고 철이 풍부한 물질이 돔 중심에서 열과 함께 올라왔기 때문입니다. 반면 <strong>K/Th 비는 분지 내부 전체 폭(0°~30°)에서 평평하고 낮으며(451~455)</strong>(주위 537~567보다 16%~20% 낮음), 가장자리에서야 뜁니다 — 아래로부터의 오랜 가열이 가열된 지역 전체에서 휘발성 칼륨을 고르게 몰아냈기 때문입니다!</li>
+<li><strong>가장 얇은 지각인데도 왜 SPA 면적의 겨우 4.1%만 보이는 용암으로 덮였나?(B8):</strong> 비슷하게 얇은 지각(15~17 km, 위기의 바다나 습기의 바다 등)을 가진 앞면 분지에서는 용암이 면적의 22%~74%를 덮지만, SPA에서는 겨우 <strong>4.1%</strong>입니다(안쪽 300 km에서 14.6%, 앞면 분지 크기의 중심 돔에서 8.4%, 가장자리에서 0.7%). 이유는 둘입니다. 첫째, SPA의 거대한 면적 대부분은 <strong>표면 분출 없이 아래에서 가열되고 녹은 지대</strong>입니다(분모에서 면적 비율을 묽힘). 둘째, 거듭된 용융이 맨틀에서 쉽게 녹는 원소를 비워 나중의 용융에 저항하게 만들었습니다(B13).</li>
+<li><strong>15° 원 안의 묻힌 용암과, 5.77시간의 "회전 나침반"으로서의 토륨 초승달(B9):</strong> 돔 중심 둘레 15° 원 안에는 처음에 <strong>보통의 큰 공급 구멍("중심 바다")</strong>이 있었고, 달이 지구에 붙어 빠르게(5.77시간) 도는 동안 물질을 바깥으로 발사했습니다. 지역의 열이 이 바다를 녹이고 덮었습니다 — 이것이 15° 원의 <strong>13.6%~24.1%</strong>를 덮는(그리고 그 바깥에는 거의 없는!) <strong>묻힌 용암(크립토마레)</strong>입니다. 그렇다면 중심 바다가 바깥으로 발사한 토륨이 풍부한 물질은 어떻게 되었을까요?
+<ul>
+<li>북서쪽 토륨 초승달(중심에서 12°~32°, 버클랜드와 오렘 V에서 4.45~4.90 ppm의 정점)의 크레이터 43개를 재면, 토륨 농도는 <strong>크레이터 안과 밖이 같고</strong>(32/43 대 34/43), 거리에 따라 약해집니다(r = −0.53) — 즉 그것은 아래에서 파낸 깊은 층이 아니라 <strong>위에서 내려앉은 덮개</strong>입니다!</li>
+<li><strong>탄도 궤적 모의실험(`sim577.py`):</strong> 공회전선(16,400 km, 지구의 하루 <strong>5.77시간</strong>)에서 붙어 있는 달의 끝으로부터 물질 덩어리 72개를 45°로 초속 0.95~1.0 km로 발사하면, 35~40분의 비행 동안 달의 땅이 앞으로 돌아, 물질은 <strong>한쪽(후행 쪽, 74%~96%, 비대칭 0.42~0.54)에만, 29°~32° 거리에</strong> 내려앉습니다 — 정확히 토륨 초승달의 위치입니다!</li>
+</ul>
+</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>열 압력으로 지각을 바깥으로 밀어내는 물리적 메커니즘, 아래로부터 녹는 전선의 전진(스테판 조건), 그리고 구멍 닫힘에 의한 땅의 꺼짐은 다음과 같이 표현됩니다(§B3, §B6):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>=</mo><mi>α</mi><mi>K</mi><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>0.4</mn><mtext>–</mtext><mn>1.2</mn><mtext> GPa</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>300</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta p = \alpha K \Delta T \approx 0.4\text{–}1.2\text{ GPa} \quad (\Delta T = 300\text{ K})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>≈</mo><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><mi>h</mi><mo>≈</mo><mn>5</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma \approx \Delta\rho\,g\,h \approx 5\text{ MPa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>q</mi><mrow><mi>ρ</mi><mtext> </mtext><mo stretchy="false">(</mo><msub><mi>c</mi><mi>p</mi></msub><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>+</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">v_{\mathrm{melt}} = \dfrac{q}{\rho\,(c_p\Delta T + L)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>z</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>ϕ</mi><mo>⋅</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\Delta z_{\mathrm{compaction}} = \Delta\phi \cdot H</annotation></semantics></math></span></div></div></div>
+<p>잠열 L = 4 × 10⁵ J/kg, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>800</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T = 800\text{ K}</annotation></semantics></math></span></span>의 가열(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>p</mi></msub><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mtext> J/kg</mtext></mrow><annotation encoding="application/x-tex">c_p\Delta T = 8 \times 10^5\text{ J/kg}</annotation></semantics></math></span></span>), 지각 밀도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho = 2,900</annotation></semantics></math></span></span> kg/m³에 대해, 20 km의 지각을 녹이려면 약 7 × 10¹³ J/m²가 필요합니다. 0.1~0.5 W/m²의 완만한 열 흐름으로도 20 km의 지각을 겨우 <strong>440만~2,200만 년</strong> 만에 녹입니다 — 버너가 활동한 기간보다 훨씬 짧습니다!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 두 연대 체계의 묶임과 일곱 관측의 통합</h2>
+<p>SPA 분지에서 측정된 연대는 버너 역사의 두 단계로 자연스럽게 나뉩니다(§B9):</p>
+<ul>
+<li><strong>붙어 있던 단계와 버너의 활동(4.25~3.87 Ga):</strong> 깊은 노라이트의 결정화(4.247 Ga), KREEP이 풍부한 현무암(4.203 Ga), 중심 바다의 활동, 그리고 빠른 5.77시간 자전 동안 토륨 초승달의 형성.</li>
+<li><strong>분리 뒤(3.873 Ga) — 옆으로의 분출 없는 제자리의 느린 냉각:</strong> 분리 순간 지구로부터의 압력이 멈추었고, 중심 바다는 잠잠해져 뜨거운 채로 약 15억 년에 걸쳐 제자리에서 천천히 얼었습니다(3.7~2.2 Ga, 정점은 3.6~3.2 Ga, 창어 6호 지점에서 2.8 Ga) — 그래서 이 젊은 용암에는 토륨 초승달이 전혀 없습니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: SPA의 크레이터, 깊이, 지각, 공극률, 화학의 단면(논문 08, B1~B9부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>SPA 중심(53°S, 191°E)으로부터의 고리</th><th>20 km 이상 크레이터(깨끗한 비)</th><th>지각만에 대한 바닥 깊이(km)</th><th>GRAIL 지각 두께(모델 1 / 4, km)</th><th>10 km에서의 공극률(지수 / 선형)</th><th>FeO(wt%) / K/Th 비</th></tr>
+<tr class="hl"><td><strong>0°~10°(중심 심부)</strong></td><td><strong>125.7(0.51)</strong></td><td>−7.0 대 −5.3~−5.9(<strong>잔차 −1.1~−1.8</strong>)</td><td><strong>16.0~16.4 / 22.9~23.4</strong></td><td><strong>2.9% / 4.4%</strong>(표면 19.7%)</td><td><strong>9.48% / 451</strong></td></tr>
+<tr><td><strong>10°~20°</strong></td><td>200.4(0.81)</td><td>−6.4~−6.5(잔차 −0.5~−1.2)</td><td>16.2~17.5 / 22.9~24.2</td><td>3.1% / 3.2%</td><td>8.56% / 451(Th 정점 1.96)</td></tr>
+<tr><td><strong>20°~30°</strong></td><td>226.7(0.92)</td><td>−4.0~−5.1(잔차 −0.2~−0.9)</td><td>21.5~26.5 / 28.7~34.2</td><td>3.6% / 5.1%</td><td>6.63% / 455</td></tr>
+<tr><td><strong>30°~39.6°(가장자리까지)</strong></td><td>225.6(0.91)</td><td>−0.8~−2.7(잔차 −0.2~−0.8)</td><td>33.4~39.5 / 42.2~49.5</td><td>4.2% / 6.2%</td><td>4.91% / 501</td></tr>
+<tr class="hl"><td><strong>39.6°~50°(가장자리 밖)</strong></td><td><strong>247.5(1.00)</strong></td><td>0.0(기준선)</td><td><strong>40.6~41.9 / 50.5~51.9</strong></td><td><strong>7.1% / 8.8%</strong></td><td><strong>4.43% / 567</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>SPA 둘레의 방향</th><th>바깥 고리의 계단(45°~60° 대 70°~90°)</th><th>LOLA 높이 계단(km)</th><th>안쪽 고리의 거리와 벽의 가파름(m/km)</th><th>LEF 모델의 해석</th></tr>
+<tr class="hl"><td><strong>북동(45°)</strong></td><td><strong>+7.4 km</strong>(54.8 대 47.4)</td><td><strong>+1.93 km</strong></td><td>36° — 가장 가파른 벽(<strong>30.7 m/km</strong>)</td><td>두꺼운 고지 지각의 용융과 밀도 높은 쌓임</td></tr>
+<tr class="hl"><td><strong>동(90°)</strong></td><td><strong>+7.8 km</strong>(46.2 대 38.4)</td><td><strong>+1.59 km</strong></td><td>37° — 가파른 벽(17.8 m/km)</td><td>최대의 한쪽 성분(97° 방향으로 7.7~9.1 km)</td></tr>
+<tr><td><strong>남(180°)</strong></td><td>+6.5 km(37.1 대 30.6)</td><td>+1.17 km</td><td>42° — 완만한 비탈(14.9 m/km)</td><td>남쪽 지각 뿌리(44 대 29 km)</td></tr>
+<tr><td><strong>남서(225°)</strong></td><td>+3.2 km(33.5 대 30.4)</td><td>+0.41 km</td><td>34° — 가장 완만한 비탈(<strong>11.5 m/km</strong>)</td><td>넓은 퍼짐을 허락하는 오래되고 얇은 지각</td></tr>
+<tr class="hl"><td><strong>서(270°)</strong></td><td><strong>−2.3 km</strong>(36.7 대 39.0)</td><td><strong>−0.50 km</strong></td><td><strong>31°</strong> — 중심에 가까움(+4.5~+13.9 km에서 두드러짐)</td><td>바깥 고리 없음 — 물질이 가까운 안쪽 고리에 쌓임</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>이 장에서 우리는 지하 <strong>"버너"</strong> 메커니즘이 SPA 분지의 표면, 깊이, 두 지각 고리, 구멍 닫힘, 적은 보이는 용암, 그리고 토륨 초승달의 모든 현상을 어떻게 설명하는지 — 그리고 분지를 두 초점으로 나누는지 보았습니다. 북쪽 초점(크레이터의 지움)과 남쪽 초점(얇은 지각과 낮은 바닥)입니다.</p><a href="story16_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제16장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">SPA의 깊은 곳, 창어 6호의 표본, 그리고 연속된 천체의 퍼텐셜 장벽 →</p></div></a>
+<p style="margin-top:22px"><a href="story14_ko.html">← 제14장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

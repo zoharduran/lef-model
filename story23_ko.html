@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제23장: 행성의 고리 — 물질의 근원, 13.4시간의 문턱 하루, 그리고 토성의 균형 흐름 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제23장: 행성의 고리 — 물질의 근원, 13.4시간의 문턱 하루, 그리고 토성의 균형 흐름.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story23_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story23_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story23_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story23_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story23_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story23_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story23_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story23_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story23_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story23_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story23_he.html" hreflang="he">עברית</a> · <a href="story23_en.html" hreflang="en">English</a> · <a href="story23_de.html" hreflang="de">Deutsch</a> · <a href="story23_es.html" hreflang="es">Español</a> · <a href="story23_fr.html" hreflang="fr">Français</a> · <a href="story23_ru.html" hreflang="ru">Русский</a> · <a href="story23_zh.html" hreflang="zh">中文</a> · <a href="story23_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제23장</p>
+<h1>제23장: 행성의 고리 — 물질의 근원, 13.4시간의 문턱 하루, 그리고 토성의 균형 흐름</h1>
+<p>논문 12 — 12. 고리: 고리는 부수고, 갈고, 되돌린다(A~D부: 두 개의 선, 두 개의 공급 경로, 13.4 h의 문턱 하루, 토성의 균형, 물의 탈출)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 고리의 물질은 어디서 오며, 왜 토성만 거대한 고리를 가지며, 왜 고리는 위성을 짓지 않을까?</h2>
+<p>21~22장에서 우리는 태양계의 위성이 공회전선 위에서 모체로부터 직접 태어난다는 것을 보았습니다. 논문 12에서 LEF 모델은 이 원리를 <strong>행성의 고리 체계</strong>로 넓히고 분명한 규칙을 정합니다: <strong>고리는 위성의 건설 현장이 아니라, 물질을 부수고, 갈고, 모체로 되돌리는 메커니즘입니다!</strong> 카시니, 보이저, 망원경의 관측에서 네 가지 중심 질문이 떠오릅니다:</p>
+<ol class="steps">
+<li><strong>태양계 고리들 사이의 극단적 차이(A.1~A.3):</strong> 왜 토성의 고리는 거대하고(1.54 × 10¹⁹ kg) 밝으며(95%~99% 순수한 물 얼음), 목성의 고리는 희미한 먼지로 되어 있고, 천왕성과 해왕성의 고리는 좁고 어두울까 — 반면 작은 천체(하우메아, 카리클로, 콰오아) 둘레에서는 빽빽한 고리가 <em>로슈 한계 훨씬 너머</em>에서 위성으로 뭉치지 않고 돌고 있을까?</li>
+<li><strong>토성 고리의 젊은 나이라는 역설(D.3):</strong> 카시니는 토성으로 떨어지는 "고리 비"를 <strong>초당 432~45,000 kg</strong>의 속도로 쟀습니다 — 1,100만~11억 년 안에 고리를 완전히 비웠을 속도입니다. 고리는 어떻게 오늘날 존재할까요?</li>
+<li><strong>무거운 고리를 위한 보편적 조건(B.5):</strong> 왜 태양계의 모든 행성 가운데 <strong>오늘날의 토성과 젊은 화성</strong>만이 땅에서 곧바로 무거운 고리를 키웠을까요?</li>
+<li><strong>천왕성과 해왕성의 각운동량은 어디로 갔을까(D.4)?</strong> 천왕성과 해왕성의 위성은 이 행성들이 잃은 각운동량의 겨우 1%와 0.002%만 지니고 있습니다 — 나머지를 가져간 것은 무엇이었을까요?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 그물과 공, 갈아 내는 깔때기, 그리고 균형 잡힌 분수</h2>
+<p>네 가지 손에 잡히는 그림이 태양계 고리의 물리와 순환을 설명합니다:</p>
+<ul>
+<li><strong>그물과 공 — 로슈 한계 안쪽의 공회전선(B.5):</strong> 행성 둘레에 물질을 무거운 고리로 붙잡으려면 두 가지가 동시에 필요합니다. <strong>올바른 자리의 그물</strong>과 <strong>그 안으로 던져지는 공</strong>입니다. 물질이 행성의 깊은 곳에서 공회전선(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>)으로 새어 나올 때, 선이 로슈 한계(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>)의 <em>안쪽</em>에 있으면, 차등 조석력이 그것이 위성으로 뭉치지 못하게 막고 고리로 붙잡습니다. 두 방정식을 나누면 행성의 밀도가 완전히 지워지고, <strong>우주의 모든 천체에 같은 보편적 문턱 하루: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span>시간</strong>이 나옵니다!</li>
+<li><strong>덩어리를 갈아 먼지를 집으로 되돌리는 점성 깔때기(C.1~C.4, D.1):</strong> 고리 원반 안에서 안쪽 입자는 바깥 입자보다 빠르게 움직입니다. 비탄성 충돌은 전체 각운동량을 보존하면서 궤도 에너지를 열로 바꿉니다 — 그래서 물질의 대부분은 에너지를 잃고 안으로 모체로 흐르고, 소수는 바깥으로 밀려납니다(그래서 토성의 A 고리는 135,300 km의 얼음 로슈 한계에서 정확히 끝나며, 로슈 한계의 2.4배에 있는 콰오아의 고리도 위성으로 뭉치지 않습니다!).</li>
+<li><strong>아래로부터의 공급이 위로부터의 비와 같은 분수 연못(토성의 균형, D.3):</strong> 토성의 고리는 최근에 생긴 정적인 잔해가 아니라 <strong>동적 균형 속의 연속된 흐름</strong>입니다. 안쪽 펌프는 고리 비가 물을 대기로 내리는 것과 정확히 같은 속도로 물을 공회전선(1.92 R)으로 새게 합니다(45억 년에 걸친 누적 비용은 최대 토성 질량의 1.1 × 10⁻⁵). "젊은" 겉모습은 물질의 끊임없는 교체에서 옵니다!</li>
+<li><strong>얕은 우물에서 물을 끌어올리는 기계 펌프(천왕성과 해왕성에서의 물의 탈출, D.4):</strong> 천왕성과 해왕성은 태양에서 멀고 차가운데도, <strong>모든 위성 질량의 270배</strong>에 이르는 물을 잃었습니다(천왕성 2.5 × 10²⁴ kg, 해왕성 3.2 × 10²⁴ kg) — 열에 의한 증발 때문이 아니라, 빠른 자전(7~8시간) 속에서 얇은 기체 뚜껑(10%~20%)과 얕은 중력 우물(목성의 59.5 km/s에 비해 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mn>21.3</mn><mtext>–</mtext><mn>23.5</mn></mrow><annotation encoding="application/x-tex">v_{\mathrm{esc}} = 21.3\text{–}23.5</annotation></semantics></math></span></span> km/s)을 통한 <strong>공회전선으로의 기계적 들어 올림</strong> 때문입니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 고리의 두 무리, 두 공급 경로, 그리고 조건의 행렬(A~D부)</h2>
+<p>논문 12의 A~D부는 고리 체계의 네 가지 기본 법칙에 대한 정량적 증명을 제시합니다:</p>
+<ol class="steps">
+<li><strong>공회전선에 대한 두 역학적 무리로의 분류(A.3):</strong>
+<ul>
+<li><strong>거대 행성의 무리(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}1.41\,a_c</annotation></semantics></math></span></span>):</strong> 목성(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>), 토성(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.60</mn><mtext>–</mtext><mn>1.23</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.60\text{–}1.23\,a_c</annotation></semantics></math></span></span>), 천왕성(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.51</mn><mtext>–</mtext><mn>0.62</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.51\text{–}0.62\,a_c</annotation></semantics></math></span></span>), 해왕성(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>)의 고리는 공회전선 아래에 있거나 그것을 가로지르며, 대부분 로슈 한계 안쪽입니다. 선 아래 부분은 안으로 모체로 떨어집니다(토성 B 고리의 "바큇살"이 보여 주듯이. 그것은 102,000~112,000 km, 정확히 111,600 km의 공회전선까지 나타남!).</li>
+<li><strong>작은 천체의 무리(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>):</strong> 하우메아(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.07</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.07\,a_c</annotation></semantics></math></span></span>), 카리클로(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.10</mn><mo separator="true">;</mo><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.10; 2.18\,a_c</annotation></semantics></math></span></span>), 콰오아(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mo separator="true">;</mo><mn>2.01</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25; 2.01\,a_c</annotation></semantics></math></span></span>)의 고리는 공회전선 훨씬 <em>위</em>에 있고, <strong>1:3 스핀–궤도 공명</strong>의 반지름(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>) 둘레에 모여 있습니다. 거기서 조석은 물질을 바깥으로 밀고, 공명은 그것을 붙잡습니다!</li>
+</ul>
+</li>
+<li><strong>행성 간 먼지를 근원에서 배제하고 두 공급 경로를 정하기(B.2~B.4):</strong> 토성 고리의 화학적 깨끗함(두께 10~30 m 적도 원반의 95%~99%가 순수한 물 얼음), 등방적 우주 먼지에는 공유된 각운동량이 없다는 것(그것은 어두운 C 고리를 바깥에서 더럽힐 뿐 짓지 않음), 그리고 대기 뚜껑의 두께와의 정밀한 상관은, 고리 물질 전체가 두 경로로 모체에서 온다는 것을 증명합니다. <strong>(a) 공회전선 아래 땅에서의 직접 공급</strong>(토성의 D, C, B 고리와 화성의 오래된 고리), 그리고 <strong>(b) 활동하는 본래 위성을 통한 공급</strong>(간헐천으로 E 고리를 먹이는 엔켈라두스, 먼지를 먹이는 목성의 안쪽 위성 넷, 천왕성의 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 고리를 먹이는 마브 — 반면 포이베 같은 포획 위성은 제외).</li>
+<li><strong>무거운 고리의 두 조건을 모든 행성에 적용하기(B.5):</strong> 오늘날의 토성(P = 10.6 h &lt; 13.4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.92</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.24</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.92 R &lt; a_R = 2.24 R</annotation></semantics></math></span></span> + 새는 뚜껑)과 젊은 화성(P = 7~9 h &lt; 13.4 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><mn>1.74</mn><mtext>–</mtext><mn>2.05</mn><mi>R</mi><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mn>2.68</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">a_c = 1.74\text{–}2.05 R &lt; a_R = 2.68 R</annotation></semantics></math></span></span> + 부풂 위의 화산)만이 두 조건을 함께 충족합니다. 목성(9.9 h)은 충분히 빠르지만 기체 뚜껑이 완전히 봉인되어 있고, 탄생 때의 지구(5.8 h)는 너무 빨리 말랐으며, 오늘날의 천왕성과 해왕성(17.2와 16.1 h)은 너무 느리고(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&gt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &gt; a_R</annotation></semantics></math></span></span>) 얼어붙었습니다.</li>
+</ol>
+<div class="callout"><span class="tag">로슈 한계에 대한 공회전선의 U자 곡선(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">x_c / x_R</annotation></semantics></math></span></span>, 그림 B.3)</span><p style="margin:0">태양계 한가운데, 두꺼운 뚜껑을 가진 목성과 토성에서 공회전선은 고리 지대 안에 머뭅니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c / x_R = 0.82</annotation></semantics></math></span></span>와 0.86). 반면 양쪽 끝에서는 질량이 선을 통해 빠져나가 자전을 늦추며 선이 고리 지대를 벗어났습니다 — 천왕성과 해왕성에서는 조금(1.18과 1.13, 좁은 고리가 남음), 화성(1.50, 고리가 사라짐)과 지구(1.47)에서는 많이, 그리고 수성과 금성에서는 22배와 57배까지!</p></div>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Corotation line relative to the Roche limit" style="direction:ltr"><rect x="140.0" y="16" width="215.2" height="26" rx="4" fill="#2f7d57"/><text x="363.2" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.82⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >목성</text><rect x="140.0" y="56" width="225.8" height="26" rx="4" fill="#2f7d57"/><text x="373.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.86⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >토성</text><rect x="140.0" y="96" width="296.6" height="26" rx="4" fill="#c47f2c"/><text x="444.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.13⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >해왕성</text><rect x="140.0" y="136" width="309.8" height="26" rx="4" fill="#c47f2c"/><text x="457.8" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1.18⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >천왕성</text><rect x="140.0" y="176" width="385.9" height="26" rx="4" fill="#b23a2e"/><text x="533.9" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.47⁩</text><text x="6.0" y="194.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >지구</text><rect x="140.0" y="216" width="393.8" height="26" rx="4" fill="#b23a2e"/><text x="541.8" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1.50⁩</text><text x="6.0" y="234.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >화성</text></svg><figcaption>오늘날 공회전선과 로슈 한계의 비(x_c/x_R): 1 아래면 선은 고리 지대 안에 있습니다. 수성(22)과 금성(57)은 눈금에서 멀리 벗어나 있습니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 보편적 문턱 하루(13.4시간)의 도출과 토성의 균형</h2>
+<p>논문 12의 B.5부와 D.1~D.4부는 궤도의 기하와 보존 법칙이 행성 고리의 존재, 나이, 조성을 어떻게 정하는지 보여 줍니다:</p>
+<ol class="steps">
+<li><strong>보편적 문턱 하루 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span>시간의 도출(§B.5):</strong> 공회전선(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>)은 모체의 질량과 자전 속도에 달려 있고, 얼음 입자의 로슈 한계(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>)는 모체의 반지름과 평균 밀도에 달려 있습니다. <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>를 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>로 나누면, 모체의 질량, 반지름, 밀도가 <strong>완전히 지워집니다</strong>! 그 결과 공회전선이 로슈 한계 안쪽에 들어가는 임계 자전 하루는 우주의 모든 행성, 위성, 소행성에서 같습니다: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span>시간</strong>(밀도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³의 얼음에 대해). 그래서 목성의 강한 중력도 젊은 화성의 약한 중력도 문턱 자체에는 영향을 주지 못하고 — 자전 속도(P &lt; 13.4시간)와 땅에서의 물질 누출만이 결정합니다.</li>
+<li><strong>점성 퍼짐 — 왜 고리는 물질을 집으로 되돌리는 깔때기인가(§D.1):</strong> 고리 원반 안에서 안쪽 입자는 바깥 입자보다 빠르게 움직입니다(차등 케플러 운동). 비탄성 충돌은 전체 각운동량을 보존하면서 궤도 에너지를 열로 바꿉니다. 두 보존 법칙을 함께 충족하려고 원반은 퍼집니다. <strong>고리 질량의 대부분은 에너지를 잃고 안으로 모체로 흐르고</strong>, 소수는 남는 각운동량을 지니고 바깥으로 밀려납니다.</li>
+<li><strong>토성 고리의 나이 역설 해결(§D.3):</strong> 카시니는 고리에서 토성으로 떨어지는 물질을 두 개의 나란한 경로로 쟀습니다 — 적도로의 중성 비가 <strong>초당 4,800~45,000 kg</strong>(Waite 등 2018), 자기력선을 따른 이온화된 비가 <strong>초당 432~2,870 kg</strong>(O'Donoghue 등 2019)입니다. 공급이 없다면 고리의 질량(1.54 × 10¹⁹ kg)은 1,100만~11억 년 안에 비워질 것입니다. LEF 모델에서 고리는 <strong>동적 균형 속의 끊임없는 흐름</strong>입니다. 안쪽 외피에서 새는 물이, 비가 위에서 비우는 것과 같은 속도로 아래에서 그것을 새롭게 합니다 — 45억 년에 걸친 누적 비용은 <strong>토성 질량의 겨우 10⁻⁷~1.1 × 10⁻⁵</strong>!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>공회전선 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_c</annotation></semantics></math></span></span>과 얼음의 로슈 한계 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_R</annotation></semantics></math></span></span>의 비, 그리고 보편적 문턱 하루 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P^*</annotation></semantics></math></span></span>는 다음과 같이 정식화됩니다(§A.2, §B.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_c = \left(\dfrac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>≈</mo><mn>2.46</mn><mtext> </mtext><mi>R</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ρ</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a_R \approx 2.46\,R\left(\dfrac{\rho}{\rho_{\mathrm{ice}}}\right)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac></mstyle><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{x_c}{x_R} = \left(\dfrac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2.4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mi>G</mi><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow></mfrac></mstyle></msqrt><mo>≈</mo><mn>13.4</mn><mtext> 시간</mtext></mrow><annotation encoding="application/x-tex">P^* = 2\pi\sqrt{\dfrac{3 \cdot 2.46^3}{4\pi G\rho_{\mathrm{ice}}}} \approx 13.4\text{ 시간}</annotation></semantics></math></span></div></div></div>
+<p><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\rho_{\mathrm{ice}} = 900</annotation></semantics></math></span></span> kg/m³일 때, P &lt; 13.4시간일 때에만 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>c</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">a_c &lt; a_R</annotation></semantics></math></span></span>가 얻어집니다. 두 번째 조건(땅이나 외피에서의 물과 물질의 활발한 누출)과 결합하면, 태양계 전체의 날카로운 분류가 따라 나옵니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span>시간의 검증과 얼음 거대 행성의 각운동량 수지</h2>
+<p>카시니와 보이저 탐사선의 자료를 보존 방정식과 비교하면, 두 가지 두드러진 정량적 발견이 확인됩니다(§B.5, §D.4):</p>
+<ul>
+<li><strong>여덟 행성 상태에 걸친 무거운 고리 조건의 일치(§B.5):</strong> 오늘날의 토성(P = 10.6 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span> + 새는 뚜껑)과 젊은 화성(P = 7~9 h, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.65</mn><mtext>–</mtext><mn>0.76</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.65\text{–}0.76</annotation></semantics></math></span></span> + 부풂 위의 화산)만이 땅에서 곧바로 생기는 무거운 고리의 두 조건을 충족합니다.</li>
+<li><strong>천왕성과 해왕성에서 빠져나간 물 질량의 270배 차이(§D.4):</strong> 천왕성을 8.3에서 17.2시간으로 늦춘 것은 1.3 × 10³⁶ kg·m²/s의 각운동량을 없앴고, 그 가운데 위성이 지닌 것은 겨우 1%(1.4 × 10³⁴)입니다. 공회전선을 통해 빠져나간 물(2.5 × 10²⁴ kg, 천왕성 질량의 약 2.8%)은 <strong>모든 위성을 합친 질량의 270배</strong>(9 × 10²¹ kg)의 무게였고, 해왕성(3.2 × 10²⁴ kg, 행성 질량의 약 3.1%)에서는 잃어버린 운동량의 99.998%를 가져갔습니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 무거운 고리 조건의 행렬(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* = 13.4</annotation></semantics></math></span></span> h), 토성의 고리 비 속도, 각운동량 수지(논문 12, A~D부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>행성과 시기</th><th>하루 P(h)</th><th>공회전선 / 로슈 한계(R)</th><th>조건 1(P &lt; 13.4 h)</th><th>조건 2(땅에서의 누출)</th><th>역학적 결과</th></tr>
+<tr class="hl"><td><strong>오늘날의 토성</strong></td><td><strong>10.6</strong></td><td>1.92 / 2.24(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.86</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.86</annotation></semantics></math></span></span>)</td><td><strong>예</strong></td><td><strong>예(뚜껑이 샘)</strong></td><td><strong>땅에서 곧바로 생긴 무거운 고리</strong></td></tr>
+<tr class="hl"><td><strong>젊은 화성</strong></td><td><strong>7~9</strong></td><td>1.74~2.05 / 2.68</td><td><strong>예</strong></td><td><strong>예(부풂 위의 화산)</strong></td><td><strong>오래된 고리가 있었음</strong></td></tr>
+<tr><td><strong>오늘날의 목성</strong></td><td>9.9</td><td>2.29 / 2.80(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><msub><mi>x</mi><mi>R</mi></msub><mo>=</mo><mn>0.82</mn></mrow><annotation encoding="application/x-tex">x_c/x_R = 0.82</annotation></semantics></math></span></span>)</td><td>예</td><td>거의 0(두꺼운 뚜껑)</td><td>위성에서만 온 얇은 먼지 고리</td></tr>
+<tr><td><strong>탄생 때의 지구</strong></td><td>5.8</td><td>2.29 / 4.02</td><td>예</td><td>아니오(빨리 마름)</td><td>고리 없음; 달은 서양배 위에 지어짐</td></tr>
+<tr><td><strong>오늘날의 천왕성 / 해왕성</strong></td><td>17.2 / 16.1</td><td>3.26/2.76 ; 3.39/3.00</td><td><strong>아니오</strong></td><td>아니오(물이 빠져나가고 얼어붙음)</td><td>좁은 잔해와 위성 고리</td></tr>
+<tr><td><strong>오늘날의 화성 / 지구</strong></td><td>24.6 / 23.9</td><td>6.03/4.02 ; 6.62/4.49</td><td><strong>아니오</strong></td><td>아니오(지각이 봉인됨)</td><td>고리가 사라짐 / 고리 없음</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>토성의 고리 비 속도(kg/s)</th><th>공급 없이 비워지는 시간</th><th>45억 년에 걸쳐 필요한 공급의 합</th><th>토성 전체 질량에 대한 비율</th></tr>
+<tr><td>432(이온화된 비 — 하한)</td><td>11억 년</td><td>고리 질량의 4배</td><td>1 × 10⁻⁷</td></tr>
+<tr><td>2,870(이온화된 비 — 상한)</td><td>1억 7천만 년</td><td>고리 질량의 26배</td><td>7 × 10⁻⁷</td></tr>
+<tr><td>4,800(중성 비 — 하한)</td><td>1억 년</td><td>고리 질량의 44배</td><td>1.2 × 10⁻⁶</td></tr>
+<tr class="hl"><td><strong>45,000(중성 비 — 상한)</strong></td><td><strong>1,100만 년</strong></td><td><strong>고리 질량의 415배</strong></td><td><strong>1.1 × 10⁻⁵(질량 보존 범위 안!)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>이 장에서 우리는 무거운 고리를 위한 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span>시간의 보편적 문턱 하루</strong>를 도출하고, 토성의 고리가 끊임없는 균형 흐름으로 어떻게 존재하는지 보았으며, 공회전선을 통한 물의 기계적 탈출이 천왕성과 해왕성이 잃은 각운동량의 99%~99.998%를 가져갔음을 증명했습니다.</p>
+<p>다음 장 — <strong>제24장: 갈아 내는 컨베이어로서의 고리, 위성과 행성에 남은 서명, 그리고 아타카마 암괴의 검증</strong>(논문 12 — E~M부에서) — 에서는 고리가 충돌로 덩어리를 어떻게 골라내어 "프로펠러"를 만드는지, 왜 얼음 고리는 판과 아틀라스에 적도 능선을 짓고 규산염 고리는 데이모스를 닳게 하는지, 2026년 4월 큐리오시티에서 아타카마 암석 가설이 어떻게 기각되었는지 살펴보고, L부의 반증 기준 5가지를 모을 것입니다!</p>
+<a href="story24_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제24장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">갈아 내는 컨베이어로서의 고리, 위성과 행성에 남은 서명, 그리고 아타카마 암괴의 검증 →</p></div></a><p style="margin-top:22px"><a href="story22_ko.html">← 제22장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

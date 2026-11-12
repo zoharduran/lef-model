@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제4장: 바깥에서 솟아오르는 껍질 — 돔의 4단계와 달 얼굴의 변환 규칙 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제4장: 지구의 시알 껍질이 천체와 함께 솟아올라 달의 피부가 된 과정, 돔의 네 단계, 그리고 달의 얼굴을 세 지대로 나누는 변환 규칙.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story04_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story04_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story04_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story04_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story04_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story04_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story04_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story04_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story04_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story04_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story04_he.html" hreflang="he">עברית</a> · <a href="story04_en.html" hreflang="en">English</a> · <a href="story04_de.html" hreflang="de">Deutsch</a> · <a href="story04_es.html" hreflang="es">Español</a> · <a href="story04_fr.html" hreflang="fr">Français</a> · <a href="story04_ru.html" hreflang="ru">Русский</a> · <a href="story04_zh.html" hreflang="zh">中文</a> · <a href="story04_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제4장</p>
+<h1>제4장: 바깥에서 솟아오르는 껍질 — 돔의 4단계와 달 얼굴의 변환 규칙</h1>
+<p>논문 03 — LEF 메커니즘의 실제(B부: §B.1–B.7)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 두꺼운 뒷면 지각은 어디서 왔으며 — 누가 그 위에 오래된 크레이터를 새겼을까?</h2>
+<p>앞 장에서 우리는 지구의 내부 엔진이 <span class="ltr">150.26 GPa</span>의 압력으로 깊은 거품 낀 마그마를 위로 밀어 올리는 과정을 알아냈습니다. 그러나 완벽한 내부 공급만으로는, 망원경과 GRAIL 탐사선의 중력 지도에서 보이는 달 표면의 세 가지 큰 수수께끼가 남습니다:</p>
+<ol class="steps">
+<li><strong>왜 뒷면의 지각은 앞면보다 훨씬 두꺼울까?</strong> 뒷면의 지각은 평균 두께가 약 55 km에 이르지만, 앞면은 약 30~35 km에 불과하고 큰 바다 아래에서는 더 얇습니다.</li>
+<li><strong>왜 달의 가장 오래된 크레이터는 두 반구에 걸쳐 퍼져 있고, 특히 극 주위에 몰려 있을까?</strong> 달이 뜨거운 파편 원반에서 우주에서 뭉쳤다면, 첫 표면은 크레이터 없는 매끄러운 마그마 바다여야 했습니다.</li>
+<li><strong>왜 두 반구는 서로 이렇게 다르게 보일까</strong> — 앞면은 어둡고 둥근 현무암 바다로 덮여 있는데, 뒷면은 크레이터 자국이 가득한 밝은 고지일까?</li>
+</ol>
+<p>LEF 모델의 답은 놀라울 만큼 단순합니다: <strong>달은 안에서만 만들어진 것이 아니라 — 동시에 바깥에서도 만들어졌습니다</strong>. 형성 지대 위에 놓여 있던 젊은 지구의 가벼운 바깥 지각(<strong>시알</strong> 층)은 찢어지지도, 뒤에 남지도 않았습니다. 그것은 <strong>자라나는 천체와 함께 솟아올라 그 끝으로 미끄러져 달의 바깥 피부가 되었습니다!</strong></p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 땅 위 천 아래에서 부푸는 풍선 — 그리고 지도를 줄이는 공</h2>
+<p>지구 표면의 평평한 덮개가 어떻게 세 개의 정해진 지대를 가진 구 전체로 바뀌는지 그려 보려면, 두 가지 간단한 실험을 상상해 보세요:</p>
+<ul>
+<li><strong>천 아래에서 부푸는 풍선(1단계와 2단계):</strong> 두껍고 유연한 천(지구의 바깥 시알 층을 나타냄)을 땅에 펴고, 그 중심 아래에 공급관을 연결합니다. 관이 공기와 물질을 안으로 밀어 넣으면 천은 땅에 평평하게 남지 않습니다 — 돔처럼 솟아오르고, 가운데를 들어 올린 식탁보처럼 가장자리에서 중심 쪽으로 모여듭니다. 천이 땅에 평평하게 놓여 있는 동안 이미 그려진 모든 표시나 새김(오래된 크레이터!)은 천과 함께 돔 꼭대기로 올라갑니다.</li>
+<li><strong>찌그러졌다가 부풀어 바깥으로 둥글어지는 스펀지 공(3단계 — 변환 규칙):</strong> 반쯤 바람 빠진 스펀지 공을 둥근 받침(“서양배의 끝”)의 둥근 머리 위에 위에서 누릅니다. 공의 아래쪽은 넓은 모자처럼 받침을 감싸고, 위쪽은 돔처럼 솟아오릅니다. 이제 공을 서서히 부풀려 완전한 구가 되게 하면, 바깥으로 둥글어지면서 <strong>아래쪽 가장자리가 바깥에서 안쪽으로 받침에서 떨어집니다</strong>. 결국 밑바닥 중심의 작은 원만 받침에 붙어 남고 — 공 표면의 모든 부분은 표면적에서 차지하는 상대적 몫을 정확히 유지합니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 바깥 형성의 네 단계 — 태평양 평원에서 거품 낀 돔까지</h2>
+<p>논문 03의 B부는 지구의 바깥 지각층 — 더 밀도 높은 <strong>시마</strong> 층(Sima: 규소와 마그네슘이 풍부) 위에 놓인 <strong>시알</strong> 층(Sial: 규소와 알루미늄이 풍부한 가벼운 암석, 밀도 약 2,800 kg/m³) — 을 연속된 네 단계를 따라 한 걸음씩 추적합니다:</p>
+<h3>1단계 — 평평한 단계와 지각의 모임(약 45억 년 전)</h3>
+<p>천체가 솟아오르기 전, 시알 층은 활동적인 공급 지대 위 지구 표면에 평평하게 놓여 있습니다. 지각의 구멍들을 통해 깊은 물질이 올라와 분출되고, 분출된 물질의 일부는 드러난 지각 위로 다시 떨어져 크레이터를 만듭니다(크레이터 장들에서 깊이 다룰 것입니다). 그 의미는 놀랍습니다: <strong>달의 가장 오래된 표면은 달에서 만들어진 것이 아니라 — 달이 지구에서 분리되기도 전에 지구 표면에서 만들어졌습니다!</strong></p>
+<p>논문에 제시된 지리적 복원에서, 돔 안쪽으로 모인 지각 물질은 고대 태평양 분지 지역(면적 약 1.0~1.65 × 10¹⁴ m², 다음 단계 위쪽 돔 면적의 1.4~2.4배)에서 왔습니다. 서양배의 밑동은 동쪽, 맨틀 바닥의 저속도 지역 위 키리바시의 키리티마티섬 근처(1.9°N, 157.5°W)에 서 있었고, 지구의 자전과 적도 북쪽에서의 비스듬한 공급 때문에 서양배는 뒤쪽(서쪽)과 북쪽으로 위도 22.5°N을 향해 기울었습니다.</p>
+<h3>2단계 — 서양배 끝 위의 찌그러진 천체(거품 상태)</h3>
+<p>달의 전체 질량(7.35 × 10²² kg)이 서양배 꼭대기에 쌓이면, 그것은 자유로운 구로 떠 있지 않고 지름 <strong>6,000 km</strong>의 넓은 서양배 끝 위에 두 개의 돔으로 이루어진 찌그러진 천체로 앉아 있습니다:</p>
+<ul>
+<li><strong>아래쪽 돔(표면적의 33%):</strong> 볼록한 서양배 끝(곡률 반지름 약 4,000 km, 천체 밑으로 약 1,350 km 파고듦)을 위에서 감쌉니다.</li>
+<li><strong>위쪽 돔(표면적의 67%):</strong> 접촉 가장자리 위로 약 <strong>3,650 km</strong> 높이까지 솟아올라 우주에 드러납니다.</li>
+</ul>
+<div class="callout"><span class="tag">형태와 압력의 완벽한 연결(밀도 1,300 kg/m³)</span><p style="margin:0">밑면 6,000 km 위 돔 높이 3,650 km일 때, 천체의 전체 부피는 5.65 × 10¹⁹ m³(오늘날 달 부피의 2.5배)입니다. 달의 질량을 이 부피로 나누면 <strong>1,300 kg/m³</strong>의 밀도가 나옵니다 — 바로 3장의 압력 검증이 물질을 들어 올리기 위해 요구했던, 기포가 풍부한 거품 낀 마그마의 밀도입니다! 높은 돔은 내부 엔진과 맞을 뿐 아니라, 시알과 시마 사이의 "윤활된" 약한 전단층 위에 실려 위로 운반되고, 차갑고 단단한 바깥 껍질(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>)이 그 위의 크레이터를 무너지지 않게 지킵니다.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 변환 규칙, 바다의 노출, 그리고 층층이 쌓인 지각</h2>
+<p>솟아오르는 천체의 자체 중력이 국지적인 조석 늘어남을 이기면, 천체는 <strong>3단계 — 바깥으로 둥글어짐</strong>으로 넘어갑니다. 찌그러진 천체는 부피를 유지한 채 부풀어 구로 둥글어집니다(표면적은 0.68배로 줄어듦. 구는 주어진 부피에 대해 최소 표면적을 가지므로). 서양배와의 접촉은 폭 6,000 km에서 <strong>3,000 km</strong>의 연결 원반으로 좁아지고, 나머지 아래쪽 돔 전체는 그 위에 앉아 있던 시알 층과 함께 바깥에서 안쪽으로 조금씩 떨어져 나갑니다.</p>
+<p>여기서 <strong>기하학적 변환 규칙</strong>이 따라 나옵니다. 바깥으로 둥글어질 때 <strong>모든 부분은 표면적에서 차지하는 상대적 몫을 유지합니다</strong>. 그래서 달의 얼굴은 접촉 중심(24.1°N, 335.2°E) 주위의 세 동심 지대로 나뉩니다:</p>
+<ol class="steps">
+<li><strong>앞면의 모자(0°~31°, 면적의 약 7% — 지름 약 1,900 km):</strong> 해방 순간까지 서양배에 붙어 있던 마지막 접촉 원반(3,000 km)입니다. 그곳을 통해 중심의 내부 공급 통로들이 지나갔습니다 — <strong>맑음의 바다</strong>(먼저 떨어져 나감)와 <strong>비의 바다</strong>(마지막 분리 순간까지 붙어 있었음!).</li>
+<li><strong>벗겨지는 띠(31°~70°, 면적의 약 26%):</strong> 바깥으로 둥글어지는 동안 조금씩 떨어져 나가며 그 위의 시알 층을 함께 가져간 아래쪽 돔의 고리입니다.</li>
+<li><strong>뒷면(70°~180°, 면적의 약 67%):</strong> 처음부터 우주에 드러나 있었고 오래된 크레이터를 함께 들고 올라간 위쪽 돔입니다.</li>
+</ol>
+<figure class="fig"><div class="zones"><svg viewBox="0 0 300 300" role="img" aria-label="Equal-area map of the three zones around the contact centre" style="direction:ltr"><circle cx="150" cy="150" r="130" fill="#d9d2bf" stroke="#8a846f"/><circle cx="150" cy="150" r="74.6" fill="#c9b48a"/><circle cx="150" cy="150" r="34.7" fill="#4a5568"/><circle cx="150" cy="150" r="34.7" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="150" r="74.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 3"/><text x="150.0" y="155.0" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">7%</text><text x="150.0" y="100.3" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">26%</text><text x="150.0" y="52.7" text-anchor="middle" font-family="Heebo" font-size="15" font-weight="700" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">67%</text><text x="188.7" y="160.9" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#fff" style="direction:ltr;unicode-bidi:embed">31°</text><text x="228.6" y="168.6" text-anchor="start" font-family="Heebo" font-size="11" font-weight="400" fill="#3d3420" style="direction:ltr;unicode-bidi:embed">70°</text></svg><div><ul class="pts" style="margin:0">
+<li style="border-color:#4a5568"><strong>앞면의 모자 · <span class="ltr">0°–31°</span> · 7%</strong><br>마지막 접촉 원반; 맑음의 바다와 비의 바다</li>
+<li style="border-color:#c9b48a"><strong>벗겨지는 띠 · <span class="ltr">31°–70°</span> · 26%</strong><br>시알과 함께 떨어져 나간 아래쪽 돔의 고리</li>
+<li style="border-color:#a49d86"><strong>뒷면 · <span class="ltr">70°–180°</span> · 67%</strong><br>처음부터 우주에 드러난 위쪽 돔</li></ul></div></div><figcaption>등면적 지도 위에서 본 접촉 중심(24.1°N, 335.2°E) 주위의 세 지대: 지도 위 각 고리의 면적은 달 표면에서 차지하는 몫과 같습니다.</figcaption></figure><p><strong>4단계</strong>(자전에 의한 납작해짐과, 천체가 다져지면서 안쪽으로 둥글어짐)에서 단단한 지각은 기존 크레이터의 크기를 유지하는 반면 그 사이의 표면들은 서로 가까워집니다 — 그것이 극 주위에 크레이터를 몰려들게 합니다. 그리고 동시에 여정 내내 활동적인 구멍들에서 물질이 발사되어 위쪽 돔으로 되돌아오는 일이 계속되었습니다. 이렇게 두꺼운 뒷면 지각은 끝으로 이동한 시알과 거듭 되돌아와 내려앉은 물질로 <strong>층층이</strong> 만들어졌습니다!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>찌그러진 돔에서 세 동심 띠를 가진 구로의 이행은 표면적 비의 보존(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_i = A_i / A_{\mathrm{tot}}</annotation></semantics></math></span></span>)으로 정의됩니다. 접촉 중심에서 중심각 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>인 구면 모자의 경우, 구 전체 면적에서 차지하는 상대적 몫(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\pi R^2</annotation></semantics></math></span></span>)은:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mrow><mn>4</mn><mi>π</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi></mrow><mn>2</mn></mfrac></mstyle><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>θ</mi><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>f</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\theta) = \dfrac{2\pi R^2(1 - \cos\theta)}{4\pi R^2} = \dfrac{1 - \cos\theta}{2} \quad \Longrightarrow \quad \theta = \arccos(1 - 2f)</annotation></semantics></math></span></div></div></div>
+<p>2단계의 면적 몫(3,000 km 접촉 원반에 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>0.07</mn></mrow><annotation encoding="application/x-tex">f_1 = 0.07</annotation></semantics></math></span></span>, 6,000 km 아래쪽 돔 전체에 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>+</mo><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">f_1 + f_2 = 0.33</annotation></semantics></math></span></span>)을 넣으면 곧바로 달 위의 정확한 각도가 나옵니다: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≃</mo><mn>3</mn><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_1 \simeq 31^\circ</annotation></semantics></math></span></span></strong>와 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mn>2</mn></msub><mo>≃</mo><mn>7</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta_2 \simeq 70^\circ</annotation></semantics></math></span></span></strong>. 동시에 지각의 질량 수지도 완전히 맞아떨어집니다. 뒷면 지각(밀도 2,550 kg/m³에서 평균 두께 55 km)은 약 2.6 × 10²¹ kg(달 질량의 3.5%), 앞면 지각(30~35 km)은 약 1.5 × 10²¹ kg으로 — 합쳐서 달 질량의 약 4%~6%이고, 나머지 94%~96%는 안에서 공급된 깊은 맨틀 물질입니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: GRAIL 지각 두께 지도와 바다의 포개짐</h2>
+<p>기하학적 변환 규칙의 두 원(24.1°N, 335.2°E 주위 31°와 70°)을 <strong>GRAIL</strong> 탐사선이 측정한 달의 실제 지각 두께 지도와 <strong>LOLA</strong> 표면 지형 위에 그리면, 놀라운 일치가 나타납니다:</p>
+<ul>
+<li><strong>바다의 정확한 지리적 포개짐:</strong> 바깥 원(형성 당시 6,000 km)은 앞면 현무암 바다 전체의 <strong>99%</strong>를, 안쪽 접촉 원(3,000 km)은 그중 <strong>66%</strong>를 담고 있으며, 비의 바다는 안쪽 접촉 원 바로 안에 놓여 있습니다.</li>
+<li><strong>양면 사이 지각 두께의 역전:</strong> 공급 구멍 역할을 하며 접촉의 열로 시알 층을 잃은 바다 아래, 앞면 중심에서는 지각이 특히 얇고(GRAIL 지도에서 파란색), 70° 경계 너머 뒷면에서는 층층이 쌓인 오래되고 두꺼운 고지가 솟아 있습니다.</li>
+<li><strong>깊이에 따른 조성의 예측:</strong> 지구 안의 내부 선별은 시간이 흐르며 진행되었으므로, 뒷면 지각 바닥에 가장 먼저 쌓인 층은 덜 선별되어 철이 더 많고, 위쪽의 나중 층은 가볍고 철이 적어야 합니다 — 서로 다른 깊이의 암석을 드러내는 충돌 크레이터의 중앙 봉우리에서 직접 검증할 수 있는 예측입니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 돔의 4단계, 변환 규칙, 그리고 지각 수지(논문 03, B부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>형성 당시의 지대(2단계)</th><th>표면적</th><th>상대적 몫</th><th>달 위 접촉 중심으로부터의 각도</th><th>오늘날 달 위의 지리적 정체</th></tr>
+<tr class="hl"><td><strong>접촉 원반(3,000 km)</strong></td><td>7.3 × 10¹² m²</td><td><strong>7%</strong></td><td><strong>0° – 31°</strong></td><td>앞면의 모자(지름 ~1,900 km); 바다의 66%를 담음(맑음의 바다와 비의 바다)</td></tr>
+<tr><td><strong>벗겨지는 고리(6,000 km까지)</strong></td><td>2.7 × 10¹³ m²</td><td><strong>26%</strong></td><td><strong>31° – 70°</strong></td><td>이행 띠 — 서양배에서 떨어져 나간 시알; 모자와 함께 바다의 99%를 담음</td></tr>
+<tr><td><strong>위쪽 돔(높이 3,650 km)</strong></td><td>7.0 × 10¹³ m²</td><td><strong>67%</strong></td><td><strong>70° – 180°</strong></td><td>뒷면 — 시알과 되돌아온 물질의 층으로 만들어진 두꺼운 지각(~55 km), 크레이터가 오래됨</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>천체의 상태(달 질량 일정)</th><th>기하와 치수</th><th>전체 부피</th><th>평균 밀도</th></tr>
+<tr><td><strong>서양배 끝 위(2단계)</strong></td><td>밑면 6,000 km, 돔 높이 3,650 km</td><td>5.65 × 10¹⁹ m³</td><td><strong>1,300 kg/m³</strong>(거품 상태)</td></tr>
+<tr><td><strong>해방 순간의 구(4단계)</strong></td><td>반지름 1,890 km</td><td>2.83 × 10¹⁹ m³</td><td><strong>2,600 kg/m³</strong>(단단한 껍질)</td></tr>
+<tr><td><strong>오늘날의 달</strong></td><td>반지름 1,737 km</td><td>2.20 × 10¹⁹ m³</td><td><strong>3,344 kg/m³</strong>(다져짐)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>우리는 지구의 바깥 피부가 천체와 함께 솟아올라 조금씩 떨어져 나가며 달 얼굴의 세 띠로 정리된 과정을, 그리고 내부 공급과 바깥 돔의 결합이 앞면과 뒷면의 두께 차이를 만든 과정을 보았습니다.</p>
+<p>그러나 이제 가장 섬세하고 극적인 공학적 질문이 남아 있습니다: <strong>어떤 다리가 위도 22.5°의 전단 응력에 부러지지 않고 이 돔을 지구와 이었으며, 어떻게 공회전선 너머 정확히 210 km에서 분리되었을까?</strong> 다음 장 — <strong>제5장: 서양배와 스테판 해방 — 달을 싣고 공회전선에서 정확히 찢어지는 다리</strong>(논문 03, C부: §C.1–C.6) — 에서 우리는 분리 메커니즘 자체를 살펴볼 것입니다.</p>
+<a href="story05_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제5장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">서양배와 스테판 해방 — 달을 싣고 공회전선에서 정확히 찢어지는 다리 →</p></div></a><p style="margin-top:22px"><a href="story03_ko.html">← 제3장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

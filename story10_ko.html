@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제10장: 화학적 지문 — 철의 고리, 접촉 지대의 토륨 수수께끼, 그리고 다섯 개의 시계 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제10장: 바다 주위 600 km까지 이르는 철과 타이타늄의 후광, 접촉 원반 안에 있는 달 토륨 과잉의 95%, 토륨이 부족한 바다 바닥, 사라진 외부 질량, 그리고 모든 구멍의 다섯 개 시계.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story10_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story10_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story10_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story10_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story10_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story10_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story10_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story10_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story10_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story10_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story10_he.html" hreflang="he">עברית</a> · <a href="story10_en.html" hreflang="en">English</a> · <a href="story10_de.html" hreflang="de">Deutsch</a> · <a href="story10_es.html" hreflang="es">Español</a> · <a href="story10_fr.html" hreflang="fr">Français</a> · <a href="story10_ru.html" hreflang="ru">Русский</a> · <a href="story10_zh.html" hreflang="zh">中文</a> · <a href="story10_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제10장</p>
+<h1>제10장: 화학적 지문 — 철의 고리, 접촉 지대의 토륨 수수께끼, 그리고 다섯 개의 시계</h1>
+<p>논문 05 — 바다(J~O부와 부록 A: 연구 9, 10, 11, 13과 16개 연구의 요약)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 왜 달의 방사능은 한 원 안에 모여 있을까 — 그리고 왜 바다 바닥에는 그것이 부족할까?</h2>
+<p>아폴로 탐사와 루나 프로스펙터 위성의 가장 놀라운 발견 가운데 하나는 달 얼굴의 극심한 화학적 불평등입니다. 방사성 원소 <strong>토륨</strong>은 — 칼륨, 희토류 원소, 인과 함께(문헌에서 <strong>KREEP</strong>이라 부르는 물질) — 달 전체에 고르게 퍼져 있지 않고, 거의 전부가 앞면 서쪽의 한 얼룩에 모여 있습니다.</p>
+<p>통용되는 문헌은 이 얼룩("폭풍의 대양 KREEP 지대")을 달에서 결정화된 전 지구적 "마그마 바다"의 마지막 잔재로 해석하고, KREEP의 방사성 열이 앞면의 암석을 녹여 현무암 바다를 만들었다고 봅니다. 하지만 자료를 고해상도로 살펴보면 이 설명의 <strong>세 가지 날카로운 모순</strong>이 드러납니다:</p>
+<ol class="steps">
+<li><strong>정확한 기하학적 중심:</strong> 왜 토륨 얼룩은 정확히 24.1°N, 335.2°E 지점 — 논문 3에서 달과 지구 사이 <strong>마지막 접촉 원반의 중심</strong>으로 미리 정해진 바로 그 지점 — 주위에 놓여 있을까?</li>
+<li><strong>접촉 지대 안의 역설:</strong> KREEP의 열이 바다를 뚫고 나오며 토륨을 함께 가져왔다면, 바다 바닥이 토륨이 가장 풍부해야 합니다. 실제로는 정반대입니다: <strong>접촉 지대 안의 바다 바닥은 그 지역에서 토륨이 가장 부족한 땅입니다!</strong></li>
+<li><strong>분지에 외부 질량이 없음:</strong> 큰 바다 분지(비의 바다, 맑음의 바다 등)가 우주에서 온 거대한 소행성에 파였다면, 그 용융 암석에는 그 외부 천체의 친철 금속(<strong>친철 원소</strong>) 지문이 담겨 있어야 합니다 — 그런데 없습니다!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 얼어 가는 바닷물(토륨은 소금물과 함께 물러남)과 거리를 지키는 사격장</h2>
+<p>이 세 가지 화학적 수수께끼가 어떻게 한 번에 풀리는지 보려면, 일상의 두 가지 간단한 실험을 상상해 보세요:</p>
+<ul>
+<li><strong>배수관과 연결된 탱크 속에서 얼어 가는 바닷물(토륨 수수께끼):</strong> 짠 바닷물이 위에서부터 얼기 시작하면, 생기는 얼음 결정은 거의 민물이고 — 소금은 모두 아래에 남은 액체 소금물로 밀려납니다. 이 소금물이 배수 없는 닫힌 평원에 있다면(제자리에서 녹은 <strong>현무암 평원</strong>처럼), 모든 것이 얼 때 소금은 암석 안에 갇힙니다. 하지만 소금물이 <strong>아래로 열린 관</strong> 위에 있다면(깊은 곳으로 이어진 공급 통로와 연결된 <strong>바다</strong>의 바닥처럼!), 토륨이 풍부한 무거운 소금물은 가라앉아 통로를 따라 깊은 곳으로 빠져나가고 — 바다 바닥은 주위의 평원과 고지보다 토륨이 부족하게 남습니다!</li>
+<li><strong>가벼운 마그마는 일찍 멀리, 무거운 마그마는 늦게 가까이 쏘는 사격장(철의 고리):</strong> 공급 구멍이 활동을 시작할 때 마그마는 휘발성 기체가 풍부하고 철이 적어 아주 가볍고 묽습니다 — 그래서 수백 킬로미터(600 km까지) 멀리 발사됩니다. 기체가 빠져나가면서 마그마는 더 무겁고 끈적하며 철(FeO)과 타이타늄(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>)이 풍부해져, 구멍 가장자리 바로 가까이에 내려앉습니다 — 그래서 모든 바다 주위에 <strong>단계적인 철의 후광</strong>이 생깁니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 철과 타이타늄의 고리, 접촉 원반 속 토륨의 95%, 그리고 외부 질량의 부재</h2>
+<p>논문 05의 J부는 가구야(철과 타이타늄, 해상도 240 m)와 루나 프로스펙터(토륨, 해상도 60 km)의 위성 화학 지도를 살펴 네 가지 결정적 발견을 제시합니다:</p>
+<ol class="steps">
+<li><strong>바다 주위 철과 타이타늄의 후광은 600 km까지 이른다(연구 9, §J.1–J.2):</strong> 여섯 바다(스미스의 바다, 비의 바다, 맑음의 바다, 위기의 바다, 모스크바의 바다, 넥타르의 바다) 주위에서 현무암 화소를 모두 뺀 뒤, 땅의 철 함량은 0~25 km 고리의 <strong>6.9 wt%</strong>에서 25~50 km의 5.1, 50~100 km의 3.9, 100~150 km의 <strong>3.1 wt%</strong>로 조금씩 떨어지고, <strong>300~600 km(3.4 wt%)</strong>에서도 배경 수준(2.3 wt%)보다 높게 유지됩니다 — 나중 크레이터에 의한 옆 방향 혼합 범위의 열 배입니다! 반면 공급 구멍 없이 가장자리 너머로 넘쳐흐르기만 한 현무암 평원인 <strong>폭풍의 대양</strong> 주위에서는, 철이 10.9 wt%에서 300~600 km의 2.4 wt%(먼 고지의 수준)로 떨어집니다.</li>
+<li><strong>달 토륨 과잉의 95%가 접촉 원반에 갇혀 있다(연구 10, §J.3):</strong> 접촉 원반(24.1°N, 335.2°E 주위 반지름 1,500 km)은 달 표면의 <strong>17.5%</strong>만 덮지만, <strong>3 ppm을 넘는 토륨 과잉 전체의 95.0%</strong>를 담고 있습니다(중앙값은 접촉 안 5.39 ppm, 밖 1.52 ppm). 같은 크기의 원반을 달 전체의 <strong>16,200개 가능한 중심점</strong> 위로 옮겨 보면, 논문 3에서 미리 정해진 접촉 중심은 <strong>16,200개 중 3위</strong>입니다(이론적 최대 지점에서 겨우 47 km 떨어져 있으며, 그 지점은 94.99%에 비해 95.14%를 모읍니다)!</li>
+<li><strong>접촉 지대 안 — 바다는 토륨이 부족하고 평원과 고지는 같다(연구 13, §J.4):</strong> 접촉 원반 안에서 현무암 평원(5.62 ppm)과 고지(5.48 ppm)는 거의 정확히 같은 토륨 농도를 지닙니다! 반면 접촉 안의 네 바다(비의 바다, 맑음의 바다, 코페르니쿠스 H, 끓는 만)는 평원보다 토륨이 <strong>30%</strong> 부족합니다(겨우 3.99 ppm이며, 네 바다 각각이 주위 고리보다 0.58~1.39 ppm 부족). 그런데 타이타늄 함량은 거의 변하지 않습니다(−5%, 비 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><mo>=</mo><mn>0.74</mn></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2 = 0.74</annotation></semantics></math></span></span>) — 타이타늄은 일메나이트 결정에 갇혀 남았고, 토륨이 풍부한 마지막 액체는 공급 통로를 따라 빠져나갔기 때문입니다!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="FeO halo around six maria" style="direction:ltr"><line x1="70" x2="610" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="62" y="234.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">2</text><line x1="70" x2="610" y1="125.0" y2="125.0" stroke="#ece7da"/><text x="62" y="129.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">4</text><line x1="70" x2="610" y1="72.5" y2="72.5" stroke="#ece7da"/><text x="62" y="76.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">6</text><line x1="70" x2="610" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8</text><line x1="70" x2="610" y1="169.6" y2="169.6" stroke="#9aa3af" stroke-dasharray="6 4"/><text x="527.6" y="186.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >배경: <tspan x="527.6" dy="14">⁦2.3 wt%⁩</tspan></text><rect x="72.0" y="48.9" width="56" height="181.1" rx="3" fill="#9b3d22" opacity="1.00"/><text x="100.0" y="42.9" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">6.9</text><text x="100.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦0–25⁩</text><rect x="189.4" y="96.1" width="56" height="133.9" rx="3" fill="#9b3d22" opacity="0.87"/><text x="217.4" y="90.1" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">5.1</text><text x="217.4" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦25–50⁩</text><rect x="306.8" y="127.6" width="56" height="102.4" rx="3" fill="#9b3d22" opacity="0.74"/><text x="334.8" y="121.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.9</text><text x="334.8" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦50–100⁩</text><rect x="424.2" y="148.6" width="56" height="81.4" rx="3" fill="#9b3d22" opacity="0.61"/><text x="452.2" y="142.6" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.1</text><text x="452.2" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦100–150⁩</text><rect x="575.0" y="140.8" width="56" height="89.2" rx="3" fill="#9b3d22" opacity="0.48"/><text x="603.0" y="134.8" font-size="12" font-family="Heebo" font-weight="700" fill="#9b3d22" text-anchor="middle">3.4</text><text x="603.0" y="248.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦300–600⁩</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >바다 주위의 고리(km) · 현무암 제외 땅의 FeO(wt%)</text></svg><figcaption>여섯 바다 주위의 철 후광(연구 9): 철은 거리에 따라 떨어지지만 600 km까지 배경보다 높게 남습니다.</figcaption></figure><figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Thorium inside and outside the contact disc" style="direction:ltr"><rect x="160.0" y="16" width="257.4" height="26" rx="4" fill="#b23a2e"/><text x="425.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦3.99 ppm⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >접촉 바다</text><rect x="160.0" y="56" width="353.5" height="26" rx="4" fill="#c47f2c"/><text x="521.5" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.48 ppm⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >접촉 안 고지</text><rect x="160.0" y="96" width="362.6" height="26" rx="4" fill="#c47f2c"/><text x="530.6" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦5.62 ppm⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >접촉 안 평원</text><rect x="160.0" y="136" width="98.1" height="26" rx="4" fill="#9aa3af"/><text x="266.1" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦1.52 ppm⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >접촉 밖</text></svg><figcaption>접촉 원반 안팎의 토륨(연구 10과 13): 평원과 고지는 같고, 바다는 30% 부족합니다 — 토륨이 풍부한 액체가 통로를 따라 빠져나갔습니다.</figcaption></figure><div class="callout"><span class="tag">분지의 외부 질량 검증(연구 11, §J.7)</span><p style="margin:0">큰 바다 분지가 초속 18 km의 우주 천체에 파였다면, 약 <strong>1 × 10¹⁹ kg</strong>의 충돌 질량이 필요했을 것입니다(비의 바다만 해도 스케일링으로 3 × 10¹⁸ kg, 또는 지름 250 km 천체라면 2 × 10¹⁹ kg으로, 6 × 10¹⁷~4 × 10¹⁸ kg의 외부 물질을 남겼을 것). 실제로 비의 바다 용융 암석의 친철 원소 비는 <strong>알려진 어떤 콘드라이트 군과도 맞지 않으며</strong>, 그 대부분은 비의 바다와 맑음의 바다 이전에 이미 지각에 있었습니다 — 분지는 외부 천체의 충돌이 아니라 <strong>지구의 공급 구멍</strong>이기 때문입니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 모든 구멍의 다섯 개 시계 — 그리고 아폴로와 창어의 연대 해독</h2>
+<p>논문 05의 K부는 달 연구에서 가장 큰 오해 가운데 하나를 풉니다: <strong>왜 우주 탐사가 가져온 현무암은 31억~39억 년(아폴로), 28억 년(뒷면의 창어 6호), 심지어 20억 년(폭풍의 대양의 창어 5호)으로 연대 측정될까?</strong> 이것은 구멍들이 달이 지구를 떠나고 수십억 년 뒤에 생겼다는 뜻일까요?</p>
+<p>답은 <strong>아니오</strong>입니다 — 모든 공급 구멍은 섞어서는 안 되는 <strong>다섯 개의 별개 시계</strong>를 지니고 있기 때문입니다(파이고, 열리고, 물을 나르고, 봉인되고, 마지막에야 꼭대기의 마지막 웅덩이가 마르는 우물처럼요):</p>
+<ol class="steps">
+<li><strong>구조가 만들어진 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>):</strong> 형성 단계(38.73억 년 전 분리 이전의 6억 년 동안)에 구멍과 그 아래 돔이 만들어진 순간.</li>
+<li><strong>노출 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{exp}}</annotation></semantics></math></span></span>):</strong> 접촉의 가장자리가 구멍 위에서 물러나 그것을 우주에 드러낸 순간(1세대는 곧바로, 2세대는 둥글어지는 동안, 3세대는 분리 무렵).</li>
+<li><strong>분출 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{vent}}</annotation></semantics></math></span></span>):</strong> 구멍이 바깥으로 물질을 발사하여 주위에 크레이터와 철의 고리를 만든 기간.</li>
+<li><strong>닫힘 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>):</strong> 흐름이 임계 문턱 아래로 떨어지거나(분리 순간 압력이 멈추어) 구멍이 활동을 멈춘 순간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>).</li>
+<li><strong>표면의 나이(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span>):</strong> 표면에서 얼어붙은 마지막 마그마 방울의 <strong>최종 냉각 연대</strong>. 방사성 시계는 암석이 닫힘 온도 아래로 식어 방사성 딸 원자를 가두는 순간부터야 비로소 째깍거리기 시작합니다!</li>
+</ol>
+<p>그래서 아폴로, 창어 5호, 창어 6호의 현무암은 모두 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{surface}}</annotation></semantics></math></span></span> — 뜨거운 액체의 최종 동결 시간</strong>(달의 내부 열이나 접촉 지대의 토륨 농집으로 오래 뜨겁게 유지된)을 재는 것이지, 구멍이 열린 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{structure}}</annotation></semantics></math></span></span>)을 재는 것이 아닙니다!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>접촉 지대 안에서 바다 바닥을 현무암 평원과 구별하는 화학적 비, 그리고 달의 사분면별 토륨 분포는 다음 식으로 요약됩니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext> </mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mi mathvariant="normal">/</mi><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">O</mi></mrow><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow></mfrac></mstyle><mo>=</mo><mn>0.74</mn><mtext>  </mtext><mtext>  </mtext><mo stretchy="false">(</mo><mn>0.60</mn><mtext>–</mtext><mn>0.88</mn><mo stretchy="false">)</mo><mspace width="1em"/><mtext>접촉 영역 내</mtext></mrow><annotation encoding="application/x-tex">\dfrac{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{mare\ floor}}}{(\mathrm{Th}/\mathrm{TiO}_2)_{\mathrm{plain}}} = 0.74 \;\; (0.60\text{–}0.88) \quad \text{접촉 영역 내}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>5.39</mn><mtext> ppm</mtext><mtext>  </mtext><mtext>  </mtext><mtext>대</mtext><mtext>  </mtext><mtext>  </mtext><msub><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>=</mo><mn>1.52</mn><mtext> ppm</mtext></mrow><annotation encoding="application/x-tex">\mathrm{Th}_{\mathrm{contact}} = 5.39\text{ ppm} \;\; \text{대} \;\; \mathrm{Th}_{\mathrm{outside}} = 1.52\text{ ppm}</annotation></semantics></math></span></div></div></div>
+<p>경도별로(§J.5) 토륨 농도의 중앙값은 지구를 향한 가까운 사분면(<strong>5.12 ppm</strong>)에서, 접촉 중심이 있는 90°W 주위의 선행 반구(3.27 ppm), 뒷면(2.20 ppm), 90°E 주위의 후행 반구(2.01 ppm)로 조금씩 떨어집니다 — 앞면 전체가 뒷면보다 1.5배 높습니다(1.76 ppm에 비해 2.56 ppm).</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 15개 연구와 34개 목록화된 구멍에 걸친 하나의 통합된 그림</h2>
+<p>논문 05의 L~O부는 다섯 갈래의 독립된 증거를 하나의 완전한 공급 체계로 통합합니다:</p>
+<ul>
+<li><strong>연구의 수지(15개 연구 중 초록 13개, 노랑 2개, §M.2):</strong> 주요 연구는 모두 완전히 검증되었습니다 — 바다 33/34와 중력 돔의 대응, 묻힌 돔 44개, 지각의 계단(17 km), 중심의 가라앉음(10/12), 균일한 수위(16/16), 깨끗한 바닥(12배와 83배), 철의 후광(600 km), 토륨의 중심(3/16,200), 외부 질량의 부재, 그리고 접촉 평원의 가장자리 마모. "노랑" 신호(부분 확인)를 받은 두 연구는 완전히 투명하게 보고되었습니다. 연구 13에서는 바닥의 상대적 타이타늄 풍부함 때문에 비 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{Th}/\text{TiO}_2</annotation></semantics></math></span></span>가 접촉 너머에서도 떨어졌고, 연구 16에서 발사 깃은 뒷면 바다 전체 주위(p = 0.009)와 묻힌 바다 주위(p = 0.001)에서는 유의하지만, 뒷면의 열린 바다 10개만 따로 보면 대조군과 구별되지 않습니다.</li>
+<li><strong>모델을 문헌과 가르는 다섯 가지 결정적 질문(§N.2):</strong> 문헌은 소행성이 어떻게 위에 분지 없는 중력 돔 44개를 만들었는지, 왜 바다 바닥이 하나의 수위로 얼고 강한 돔 위에서만 가라앉는지, 왜 철의 후광이 600 km까지 이르는지, 왜 토륨이 접촉의 평원과 고지에서는 같고 하필 바다에서만 낮은지, 그리고 10¹⁹ kg의 외부 금속이 어디로 사라졌는지 설명하지 못합니다.</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 화학 표, 주요 구멍의 표본, 그리고 8개 결론의 요약(논문 05, J~O부와 부록 A)</h3>
+<div class="tw"><table class="lab">
+<tr><th>연구 / 화학적 척도</th><th>지역 / 비교 집단</th><th>측정된 발견</th><th>LEF 모델에서의 의미</th></tr>
+<tr class="hl"><td><strong>철(FeO)과 타이타늄(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext>TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\text{TiO}_2</annotation></semantics></math></span></span>)의 고리(연구 9)</strong></td><td>여섯 바다 합산(0~25에서 300~600 km)</td><td>FeO: <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.9</mn><mo>→</mo><mn>3.1</mn><mtext> wt%</mtext></mrow><annotation encoding="application/x-tex">6.9 \rightarrow 3.1\text{ wt\%}</annotation></semantics></math></span></span></strong>(150 km), 600 km에서 <strong>3.4</strong> 유지(대조 2.3)</td><td>바다는 가벼운 물질을 멀리, 무거운 물질을 가까이 발사함; 폭풍의 대양에서는 2.4로 떨어짐(국지적 넘침)</td></tr>
+<tr class="hl"><td><strong>접촉 원반의 토륨 농도(연구 10)</strong></td><td>접촉 원반(달 표면의 17.5%) 대 16,200개 중심</td><td>토륨 과잉(&gt;3 ppm)의 <strong>95.0%</strong>; 중앙값 <strong>5.39</strong> 대 1.52 ppm</td><td>접촉 중심은 <strong>16,200개 중 3위</strong>(정점에서 47 km); 마지막으로 붙든 흔적</td></tr>
+<tr><td><strong>접촉 안의 토륨 배분(연구 13)</strong></td><td>접촉 안의 바다 4개 대 평원과 고지</td><td>바다: <strong>3.99 ppm</strong>(−30%); 평원: <strong>5.62</strong>; 고지: <strong>5.48</strong></td><td>토륨이 풍부한 마지막 액체가 바다의 통로로 다시 빠져나감</td></tr>
+<tr><td><strong>분지의 외부 질량(연구 11)</strong></td><td>모든 바다 분지(비의 바다 우선), 18 km/s</td><td>약 10¹⁹ kg 필요; 실제로는 <strong>어떤 콘드라이트와도 맞지 않음</strong></td><td>외부 충돌체는 없었음 — 분지는 지구의 공급 구멍</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>목록 번호</th><th>구멍의 이름(부록 A)</th><th>좌표와 지구 직하점으로부터의 거리</th><th>지대와 노출 세대</th><th>공급 돔(GRAIL)과 지름</th><th>오늘날의 덮임</th></tr>
+<tr class="hl"><td>#1</td><td><strong>맑음의 바다</strong></td><td>26°N, 18°E(31°)</td><td>접촉(3세대)</td><td>M660_008 — <strong>610 km</strong></td><td>열림(바다 아래)</td></tr>
+<tr class="hl"><td>#34</td><td><strong>비의 바다</strong></td><td>38°N, 341°E(42°)</td><td>접촉(3세대)</td><td>M660_015 — <strong>671 km</strong></td><td>열림(바다 아래)</td></tr>
+<tr><td>#35–36</td><td>코페르니쿠스 H / 끓는 만</td><td>6°N, 342°E / 10°N, 352°E</td><td>접촉(3세대)</td><td>M660_042(170) / M660_020(235 km)</td><td>열림(바다 아래)</td></tr>
+<tr><td>#3–4, #6, #33</td><td>넥타르, 위기, 스미스, 습기의 바다</td><td>거리 36°~86°</td><td>언덕(2세대)</td><td>375~518 km</td><td>열림(바다 아래)</td></tr>
+<tr><td>#32</td><td>실러–주키우스</td><td>57°S, 316°E(67°)</td><td>언덕(2세대)</td><td>M660_014 — <strong>909 km</strong>(가장 큼)</td><td>묻힘(고지 아래)</td></tr>
+<tr><td>#10, #26</td><td>모스크바의 바다 / 동쪽의 바다</td><td>140° / 95°(뒷면)</td><td>언덕 너머(1세대)</td><td>M660_002(313) / M660_001(435 km)</td><td>열림(뒷면의 예외)</td></tr>
+<tr><td>#7, #9, #13, #18–19, #23–24, #37</td><td>밀른, 멘델레예프, 프로인틀리흐–샤로노프, 코롤료프, 헤르츠스프룽, 슈뢰딩거 등</td><td>100°~162°(뒷면)</td><td>언덕 너머(1세대)</td><td>106~346 km(뒷면의 묻힌 돔 36개 중)</td><td>뒷면 층 아래 묻힘</td></tr>
+<tr><td>#12, #20, #29</td><td>지혜의 바다, 아폴로, 바이이</td><td>82°~146°(SPA 위)</td><td>언덕 너머(1세대)</td><td>그 돔은 남극–에이트켄 분지의 열에 익어 지워짐</td><td>SPA 분지 위</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>8~10장에서 우리는 달의 바다에 대한 조사를 마쳤습니다. 그것은 나중의 충돌 상처가 아니라, 73개의 중력 돔 위에서 달이 만들어진 <strong>오래된 공급 구멍</strong>이었습니다 — 접촉이 물러나는 순서대로 닫히고, 중심이 가라앉은 호수 수위로 얼었으며, 주위를 600 km까지 철의 고리로 칠하고, 접촉 원반에 지구를 마지막으로 붙든 토륨의 흔적을 남긴 구멍들입니다.</p>
+<p>그런데 바다가 물질을 바깥으로 발사한 포신이었다면, <strong>우주로 발사된 그 물질은 어떻게 되었을까요 — 그리고 어떻게 되돌아와 달을 때려 그 얼굴의 수십만 개 크레이터를 팠을까요?</strong> 다음 장 — <strong>제11장: 달의 크레이터 — 외부 소행성이 아니라 99%가 되돌아온 물질</strong>(논문 06 — <em>크레이터</em>에서) — 에서 우리는 크레이터의 이야기를 해독할 것입니다!</p>
+<a href="story11_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제11장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">달의 크레이터 — 외부 소행성이 아니라 99%가 되돌아온 물질 →</p></div></a><p style="margin-top:22px"><a href="story09_ko.html">← 제9장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

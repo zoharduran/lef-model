@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제6장: 서양배의 운명과 현실의 흉터 — 태평양 분지에서 지구의 핵까지 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제6장: 달 질량 9~12배의 서양배는 어디로 갔는가, 왜 지구 주위에 고리가 생기지 않았는가, 그리고 맨틀 바닥의 태평양 LLVP에 남은 서양배 밑동의 흔적.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story06_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story06_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story06_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story06_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story06_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story06_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story06_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story06_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story06_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story06_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story06_he.html" hreflang="he">עברית</a> · <a href="story06_en.html" hreflang="en">English</a> · <a href="story06_de.html" hreflang="de">Deutsch</a> · <a href="story06_es.html" hreflang="es">Español</a> · <a href="story06_fr.html" hreflang="fr">Français</a> · <a href="story06_ru.html" hreflang="ru">Русский</a> · <a href="story06_zh.html" hreflang="zh">中文</a> · <a href="story06_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제6장</p>
+<h1>제6장: 서양배의 운명과 현실의 흉터 — 태평양 분지에서 지구의 핵까지</h1>
+<p>논문 03 — LEF 메커니즘의 실제(C.7–C.11, D, E부)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 달 질량 10배는 어디로 사라졌을까 — 그리고 지구 얼굴의 흉터는 어디에 있을까?</h2>
+<p>앞 장에서 우리는 달이 서양배 끝에서, 공회전선 너머 210 km에서 풀려나 독립된 궤도로 날아오르는 것을 보았습니다. 그런데 달이 떨어져 나가 길을 떠나는 순간, 그 뒤에 행성 규모의 거대한 질문이 남았습니다: <strong>달을 실어 나른 거대한 다리는 어떻게 되었을까?</strong></p>
+<p>우리가 무엇을 이야기하는지 떠올려 봅시다. 초기 지구의 표면 위로 우뚝 솟았던 서양배는 작은 언덕이 아니었습니다. 그 밑동은 <strong>9,000~11,000 km</strong> 폭으로 펼쳐져 있었고, 표면에서 접촉 원반까지의 길이는 약 <strong>8,700 km</strong>에 이르렀으며, 그 안에 담긴 질량은 <strong>달 질량의 8.8~12.1배</strong>(지구 전체 질량의 약 11%!)였습니다.</p>
+<p>오늘날 지구는 완전히 둥글고, 거대한 서양배가 우주로 솟아 있지도 않습니다. 이 엄청난 질량은 어디로 사라졌을까요? 왜 그것은 우주로 찢겨 나가 지구 주위의 고리나 또 다른 위성이 되지 않았을까요? 그리고 무엇보다 — <strong>수억 년 동안 지구의 한쪽에 서 있다가 다시 안으로 가라앉은 그런 거대한 천체가</strong> 바다 밑바닥, 깊은 맨틀, 심지어 지구의 핵에 측정 가능한 지문을 남겼을까요?</p>
+<figure class="fig"><svg viewBox="0 0 640 150" role="img" aria-label="Mass of the pear against the mass of the Moon" style="direction:ltr"><rect x="40" y="20" width="407.3" height="34" rx="4" fill="#c4623a"/><rect x="447.3" y="20" width="152.7" height="34" rx="4" fill="#c4623a" opacity=".45"/><text x="437.3" y="42.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">서양배 · 달 질량의 ⁦8.8–12.1⁩배 · 지구 질량의 약 11%</text><rect x="40" y="76" width="46.3" height="34" rx="4" fill="#a49d86"/><text x="96.3" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5b5640" style="direction:ltr;unicode-bidi:embed">달 · 달 질량 1배</text><text x="40.0" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="132.6" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><text x="225.1" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><text x="317.7" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6</text><text x="410.2" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">8</text><text x="502.8" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="595.4" y="134" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12</text></svg><figcaption>뒤에 남은 것: 달의 질량과 비교한 서양배의 질량. 이 질량 전체가 공회전선 안쪽에 있었고, 지구 속으로 다시 끌려 들어갔습니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 흔들리는 모래 병 — 그리고 다시 빨려 들어가는 반죽 언덕</h2>
+<p>서양배가 어떻게 달을 만든 물질을 선별하고, 그 뒤 지구 속으로 다시 삼켜졌는지 이해하려면, 두 가지 간단한 실험을 상상해 보세요:</p>
+<ul>
+<li><strong>흔들었다가 가라앉게 둔 물과 모래 병(침강 기둥):</strong> 물, 무거운 모래알, 가벼운 나뭇조각을 채운 높은 유리병을 잘 흔듭니다. 이제 탁자 위에 세워 두면 곧바로 <strong>중력 선별</strong>이 시작됩니다 — 무거운 모래알은 병 바닥으로 가라앉고, 가벼운 나뭇조각은 위로 떠오릅니다. 서양배 전체는 공회전선 안쪽에 있으므로 그것을 따라 작용하는 중력은 언제나 아래쪽, 지구 중심을 향합니다. 무거운 철은 지구 속으로 다시 가라앉았고, 아주 조금만 꼭대기에 이르러 달의 작은 핵이 되었습니다!</li>
+<li><strong>우주를 쓸어 내는 넓은 와이퍼(왜 고리가 생기지 않았는가):</strong> 5.5~5.77시간마다 지구와 함께 돌며 공회전선까지 뻗은 거대한 시곗바늘을 상상해 보세요. 더 낮은 궤도로 지구를 돌려는 먼지 알갱이나 증기 방울은 모두 서양배의 회전 속도보다 빨리 움직이게 되어 — 곧바로 서양배와 부딪힙니다! 서양배는 가까운 우주의 모든 입자를 모아들여 지구 주위에 고리가 생기지 못하게 한 우주의 와이퍼였습니다.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 왜 달은 둥글고 밀도가 높은가 — 그리고 달을 만든 물질은 어떻게 되었나</h2>
+<p>논문 03은 모든 형성 요소를 모아, 하나의 연속된 과정이 달의 내부 구조, 분리 뒤의 작은 폭격, 그리고 고리의 부재를 설명한다는 것을 보여 줍니다:</p>
+<ol class="steps">
+<li><strong>하나의 근원에서 나온 세 층(§C.10):</strong>
+<br>• <strong>지각:</strong> 알루미늄이 풍부한 가벼운 시알 층이 시마 위의 "윤활된" 층을 타고 서양배 옆면을 따라 미끄러져 돔 꼭대기에 쌓였습니다 — 그렇게 알루미늄이 풍부하고 뒷면에서 두꺼운 회장암질 지각이 만들어졌습니다.
+<br>• <strong>맨틀:</strong> 압력을 받아 서양배를 따라 밀려 올라간 지구의 맨틀 물질 — 그래서 동위원소로는 지구와 구별되지 않습니다.
+<br>• <strong>아주 작은 핵:</strong> 서양배는 <strong>침강 기둥</strong> 역할을 했습니다. 서양배에 들어간 무거운 철 대부분은 지구 쪽으로 다시 가라앉았고, 꼭대기에 이른 소량의 철만 달에 남아 반지름 약 330 km의 작은 핵을 이루었습니다(달 질량의 1%~2%. 지구는 질량의 약 3분의 1).</li>
+<li><strong>왜 초기 지구에는 고리가 없었는가(§C.9a):</strong> 네 가지 이유가 지구 주위의 고리 형성을 막았습니다. 첫째, 서양배 자체가 안쪽 궤도로 움직이는 모든 입자를 "쓸어 모았습니다". 둘째, 휘발성 물질은 고리로 분출되는 대신 서양배를 통해 달로 흘러갔습니다. 셋째, 환경이 너무 뜨거워 얼음이 응결할 수 없었습니다. 넷째, 해방 직후 육중한 달이 조석력과 공명으로 궤도의 모든 잔해를 치웠습니다. 달 고지가 기계적 마모 없이 포화된 크레이터 집단을 보존했다는 사실은 달이 결코 고리를 지나간 적이 없음을 보여 줍니다!</li>
+<li><strong>해방 뒤에도 계속되는 지구의 발사(§C.11):</strong> 분리는 달 안의 내부 압력을 멈추었지만, 지구 표면의 구멍들은 마그마 폭풍이 잦아들면서 점점 작아지는 빛나는 방울과 덩어리를 계속 분출했습니다. 달 표면의 측정이 이를 세 가지로 확인합니다. 달 고지에서(공정한 비교를 위해 모든 바다를 제외하고), 지구를 향했던 앞면은 지름 1~2 km의 젊은 크레이터를 뒷면보다 <strong>1.19배</strong>(범위 1.12~1.27) 더 가지고 있습니다. 바다의 바닥은 드러난 순서대로 굳었습니다(접촉 안의 바다가 마지막으로 굳어 가장 깨끗함). 그리고 바다 위의 크레이터는 빛나는 천체의 연속을 보여 줍니다 — 처음에는 크고 녹은 것, 나중에는 중간 크기의 번진 것, 마지막에는 작고 날카로운 것입니다.</li>
+</ol>
+<div class="callout"><span class="tag">풀린 푸앵카레의 역설</span><p style="margin:0">푸앵카레와 다윈의 고전 이론(1885)에서는 서양배 모양으로 늘어나려면 지구 전체가 부서지기 직전까지 빨리 돌아야 합니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>π</mi><mi>G</mi><mi>ρ</mi><mo>≃</mo><mn>0.374</mn></mrow><annotation encoding="application/x-tex">\Omega^2/\pi G\rho \simeq 0.374</annotation></semantics></math></span></span>). LEF 모델에서 지구는 훨씬 온건한 속도로 돌고(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>π</mi><mi>G</mi><mi>ρ</mi><mo>≃</mo><mn>0.092</mn></mrow><annotation encoding="application/x-tex">\Omega^2/\pi G\rho \simeq 0.092</annotation></semantics></math></span></span>, 전역적 불안정 문턱의 약 4분의 1에 불과!), 서양배는 자전, 밀도 선별, 내부 압력의 결합으로 <strong>한 국지적 지역에서</strong> 자랍니다. 서양배 전체가 공회전선 안쪽에 있으므로 그 어떤 부분도 궤도에 남지 않고 — 해방 뒤에 전부 지구 속으로 다시 끌려 들어갑니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 서양배의 운명 — 달 질량 10배는 어떻게 지구 속으로 다시 끌려 들어갔나</h2>
+<p>달이 떨어져 나가 궤도로 들어간 순간부터, 거대한 서양배 — 지구 물질로 이루어진 달 질량의 약 8.8~12.1배(지구 질량의 약 11%) — 는 완전히 공회전선 아래에 매달린 채 남았습니다. 공회전선 안쪽의 모든 지점에서는 지구의 중력이 원심력보다 강하므로, <strong>서양배의 어떤 부분도 우주에 머물 수 없었습니다</strong>.</p>
+<p>해방 뒤 수천만~수억 년에 걸쳐 중력과 내부 선별은 서양배 전체를 지구 속으로 다시 모으며 세 갈래의 분명한 경로로 나누었습니다(논문 03의 E부):</p>
+<ol class="steps">
+<li><strong>무거운 부분은 서양배 밑동 아래 깊숙이 가라앉음:</strong> 서양배의 밀도 높은 부분 — 침강 기둥의 선별 뒤에 남은 무거운 철 대부분을 실은 시마 물질 — 은 밑동이 서 있던 지역 바로 아래, 지구의 하부 맨틀 깊숙이 수직으로 가라앉았습니다.</li>
+<li><strong>앞쪽 전면은 북태평양의 줄무늬로 모임:</strong> 서양배가 서쪽으로 기우는 동안 장력을 받아 동쪽으로 늘어난 앞부분은 표면으로 다시 모여 북태평양의 지질학적 줄무늬 체계를 만들었습니다(줄무늬 장들에서 다룰 것입니다).</li>
+<li><strong>뒤쪽 등은 서태평양의 호로 모임:</strong> 아시아와 일본 쪽 서쪽으로 기울었던 서양배의 뒷부분은 안으로 삼켜져 서태평양의 섬 호와 해구를 만들었습니다.</li>
+</ol>
+<p><strong>서양배가 서 있는 동안 초기 지구의 핵에는 무슨 일이 있었을까? (§E.5)</strong><br>
+서양배가 지구의 한쪽에 서 있던 수억 년 동안(38.73억 년 전의 분리까지 이어진 6억 년 창의 상당 부분), 그 엄청난 질량은 지구 중심까지 미치는 일정하고 한쪽으로 치우친 중력장을 행사했습니다! 그 초기 단계에서 지구의 핵은 아직 뚜렷이 분리되지 않은 <strong>넓고 반쯤 밀도 높은 "원시 핵"</strong>이었습니다. 지구 중심에서 서양배의 순 중력 — 세기 <strong>0.378~<span class="ltr">0.517 m/s²</span></strong> — 은 밀도 높은 원시 핵을 서양배 쪽으로 끌어당겨 늘였습니다! 서양배가 다시 삼켜지고 맨틀이 지각 평형(물에 자리 잡는 뗏목처럼)에 이른 뒤에야 원시 핵은 풀어져 중심으로 돌아왔지만 — 결정화되는 지구 내핵에 동서 방향의 서명을 남겼을지도 모릅니다.</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>서양배가 서 있는 동안 지구 중심에 작용하는 순 중력장(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}}</annotation></semantics></math></span></span>)은 서양배의 당김(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{pear}}</annotation></semantics></math></span></span>)과 달의 당김(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\mathrm{Moon}}</annotation></semantics></math></span></span>)의 합에서, 계의 공통 질량 중심이 지구 중심에서 서양배 쪽으로 치우쳐 생기는 원심 가속도(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{\mathrm{cent}}</annotation></semantics></math></span></span>)를 뺀 것으로 계산됩니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><msub><mi>g</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>+</mo><msub><mi>g</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><msub><mi>a</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mn>0.378</mn><mtext> to </mtext><mn>0.517</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}} = g_{\mathrm{pear}} + g_{\mathrm{Moon}} - a_{\mathrm{cent}} = 0.378 \text{ to } 0.517\text{ m/s}^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≃</mo><mn>8.1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> to </mtext><mn>1.05</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup><mtext> J</mtext><mo>∼</mo><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mtext>-</mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">W_{\mathrm{pear}} \simeq 8.1 \times 10^{30} \text{ to } 1.05 \times 10^{31}\text{ J} \sim E_{\mathrm{core\text{-}formation}}</annotation></semantics></math></span></div></div></div>
+<p>서양배 전체를 들어 올리는 일(8.1 × 10³⁰~1.05 × 10³¹줄, 달 하나만 들어 올리는 일의 5.4배)은 철이 가라앉아 지구 핵을 만들 때 나오는 중력 에너지(~ 10³¹줄)와 크기 정도가 맞습니다. 서양배가 다시 안으로 가라앉으면, 이 위치 에너지는 지구의 열 역사 속으로 다시 열로 풀려납니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 태평양 아래의 흔적(LLVP 지역)</h2>
+<p>지진파로 지구 내부를 지도화하는 현대의 지진 단층 촬영 — 의료용 CT 촬영과 비슷한 — 은 지구 맨틀 바닥, 맨틀과 핵의 경계 바로 위(깊이 약 2,800 km)에서 거대한 두 개의 "대륙"을 발견했습니다. 지진 전단파가 평균보다 느리게 지나가는 넓은 지역으로, <strong>대규모 저속도 지역(LLVP)</strong>이라고 불립니다 — 하나는 아프리카 아래, 하나는 태평양 아래에 있습니다.</p>
+<p>복원된 서양배 밑동의 지점 — 키리바시의 <strong>키리티마티</strong>섬 근처(1.9°N, 157.5°W 또는 202.5°E) — 이 하부 맨틀의 전 지구 단층 촬영 지도(§E.4)에서 어디에 놓이는지 확인하면, 분명한 결과가 나옵니다:</p>
+<ul>
+<li><strong>5개 모델 중 5개의 완전한 일치:</strong> 깊이 2,550~2,850 km에서의 Cottaar와 Lekić(2016)의 군집 분석에서, 다섯 개의 지진 모델 모두가 밑동 지점이 느린 태평양 지역 깊숙이 놓여 있다고 한목소리로 가리킵니다.</li>
+<li><strong>등치선(−1%) 깊숙이:</strong> 깊이 2,800 km의 전 지구 평균 모델 SMEAN과 SMEAN2에서, 이 지점의 전단파 감속은 각각 <strong>−2.25%</strong>와 <strong>−2.36%</strong>이며 — 지역의 가장자리에서 1,229~1,584 km 이상 떨어져 있고(우연한 경계와는 거리가 먼), 지역 중심에서 북북동으로 약 1,500 km, 하와이 아래 철이 풍부한 초저속도 지대(ULVZ)에서 약 1,120 km(핵–맨틀 경계에서) 떨어져 있습니다.</li>
+<li><strong>플룸 현무암에 대한 지구화학적 예측:</strong> 충돌 이론은 외부 천체 "테이아"의 맨틀 잔해가 지구 바닥으로 가라앉아 LLVP를 만들었다고 제안하지만, LEF 모델에서 서양배 전체는 <strong>지구 자신의 물질</strong>로 이루어져 있습니다 — 그래서 태평양 아래 맨틀 플룸에서 솟아오르는 용암은 다른 행성에서 온 외부 성분 없이 순수한 지구의 동위원소 지문을 지닐 것으로 예상됩니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 서양배의 수지, 침강 기둥, 그리고 맨틀 속 밑동의 위치(논문 03, C~E부)</h3>
+<figure class="fig"><svg viewBox="0 0 640 360" role="img" aria-label="Equatorial cross-section with the two LLVPs and the base of the pear above the Pacific one" style="direction:ltr"><circle cx="320" cy="175" r="150" fill="#f1d9b5" stroke="#c9a77a"/><path d="M260.1,119.1 A81.9337623606969,81.9337623606969 0 0 0 240.2,193.4 L229.6,188.4 A91.35143619525977,91.35143619525977 0 0 1 248.4,118.2 Z" fill="#b23a2e" opacity=".85"/><path d="M367.0,242.1 A81.9337623606969,81.9337623606969 0 0 0 399.1,153.8 L409.8,158.5 A91.35143619525977,91.35143619525977 0 0 1 378.2,245.4 Z" fill="#b23a2e" opacity=".85"/><circle cx="320" cy="175" r="81.9" fill="#e8a24a"/><circle cx="320" cy="175" r="28.7" fill="#f2c46d"/><circle cx="458.6" cy="232.4" r="7" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><line x1="458.6" y1="232.4" x2="404.4" y2="210.0" stroke="#1f3a5f" stroke-width="2" stroke-dasharray="5 4"/><text x="470.6" y="256.4" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">밑동 · 키리티마티</text><text x="470.6" y="274.4" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">⁦1.9°N, 157.5°W⁩</text><text x="164.0" y="117.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">아프리카 LLVP</text><text x="413.0" y="40.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">태평양 LLVP</text><text x="320.0" y="180.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#7a4a10" style="direction:ltr;unicode-bidi:embed">핵</text><text x="320.0" y="351.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">지구의 적도 단면 모식도, 북극에서 본 모습</text></svg><figcaption>맨틀 바닥의 두 저속도 지역(LLVP)과, 태평양 쪽 지역 위의 복원된 서양배 밑동 — 다섯 모델 모두에서 그 안에 있습니다. (모식도, 정확한 지리적 축척 아님.)</figcaption></figure><div class="tw"><table class="lab">
+<tr><th>구성 요소 / 척도</th><th>계산 또는 측정된 값</th><th>물리적·관측적 의미</th></tr>
+<tr><td><strong>서양배의 치수와 질량</strong></td><td>밑동 9,000~11,000 km, 길이 ~ 8,700 km, 질량 <strong>달 질량의 8.8~12.1배</strong></td><td>지구 질량의 약 11%; 전체가 공회전선 안쪽이어서 안으로 다시 끌려 들어감</td></tr>
+<tr><td><strong>서양배를 들어 올리는 일</strong></td><td>8.1 × 10³⁰~1.05 × 10³¹ J</td><td>달을 들어 올리는 일의 5.4배; 철이 핵으로 가라앉는 에너지(~ 10³¹ J)와 맞음</td></tr>
+<tr><td><strong>모천체의 자전 매개변수</strong></td><td><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>π</mi><mi>G</mi><mi>ρ</mi><mo stretchy="false">)</mo><mo>≃</mo><mn>0.092</mn></mrow><annotation encoding="application/x-tex">\Omega^2 / (\pi G \rho) \simeq 0.092</annotation></semantics></math></span></span></td><td>야코비 불안정 문턱(0.374)의 약 4분의 1 — 전역적 찢어짐이 아니라 국지적이고 압력에 이끌린 서양배</td></tr>
+<tr><td><strong>분리 뒤의 젊은 크레이터</strong></td><td>앞면에 <strong>1.19배</strong>(1.12~1.27) 더 많음(1~2 km)</td><td>지구에서 온 마지막 뜨거운 분출물이 주로 지구를 향한 달의 면을 때림</td></tr>
+<tr class="hl"><td><strong>밑동의 위치(1.9°N, 157.5°W)</strong></td><td><strong>5개 모델 중 5개가 저속</strong>(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><msub><mi>V</mi><mi>S</mi></msub><mo>=</mo><mo>−</mo><mn>2.25</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\delta V_S = -2.25\%</annotation></semantics></math></span></span>~−2.36%)</td><td>태평양 LLVP 지역 깊숙이(깊이 2,800 km에서 가장자리로부터 &gt;1,229 km)</td></tr>
+<tr><td><strong>원시 핵에 대한 서양배의 당김</strong></td><td><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>=</mo><mn>0.378</mn><mtext> to </mtext><mn>0.517</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g_{\mathrm{center}} = 0.378 \text{ to } 0.517\text{ m/s}^2</annotation></semantics></math></span></span></td><td>형성 동안 원시 핵을 서양배 쪽으로 늘임; 서양배가 돌아오자 풀어짐</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>우리는 달 탄생의 역학적 해독을 마쳤습니다. <span class="ltr">150.26 GPa</span>의 압력이 안에서 거품 낀 마그마를 들어 올린 과정(3장), 시알 지각이 바깥에서 솟아올라 세 띠로 나뉜 과정(4장), 3,000 km의 접촉 원반이 공회전선 너머 210 km에서 스테판 해방으로 열린 과정(5장), 그리고 서양배 전체가 지구 속으로 다시 끌려 들어가 태평양 아래에 흔적을 남긴 과정(6장)을 보았습니다.</p>
+<p>그러나 달이 떨어져 나가 자유로워진 순간은 그 긴 여정의 시작일 뿐입니다. <strong>위도 22.5°에서, 지구에서 겨우 17,496 km 떨어진 곳에서, 22.5°의 초기 궤도 경사로 풀려난 달이 어떻게 384,400 km 거리에, 황도면에 대해 겨우 5.145°의 궤도 기울기로 이르렀을까요?</strong> 다음 장 — <strong>제7장: 궤도로의 여정 — 감소하는 탄젠트 법칙과 5.145° 기울기의 해법</strong>(논문 04 — <em>궤도</em>에서) — 에서 우리는 달을 따라 우주로 나갈 것입니다!</p>
+<a href="story07_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제7장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">궤도로의 여정 — 감소하는 탄젠트 법칙과 5.145° 기울기의 해법 →</p></div></a><p style="margin-top:22px"><a href="story05_ko.html">← 제5장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

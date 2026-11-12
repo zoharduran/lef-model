@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제18장: 태평양 전체의 수렴, 주걱 능선, 그리고 해저의 젊은 나이라는 수수께끼의 해결 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제18장: 태평양 전체의 수렴, 주걱 능선, 그리고 해저의 젊은 나이라는 수수께끼의 해결.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story18_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story18_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story18_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story18_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story18_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story18_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story18_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story18_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story18_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story18_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story18_he.html" hreflang="he">עברית</a> · <a href="story18_en.html" hreflang="en">English</a> · <a href="story18_de.html" hreflang="de">Deutsch</a> · <a href="story18_es.html" hreflang="es">Español</a> · <a href="story18_fr.html" hreflang="fr">Français</a> · <a href="story18_ru.html" hreflang="ru">Русский</a> · <a href="story18_zh.html" hreflang="zh">中文</a> · <a href="story18_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제18장</p>
+<h1>제18장: 태평양 전체의 수렴, 주걱 능선, 그리고 해저의 젊은 나이라는 수수께끼의 해결</h1>
+<p>논문 09 — 줄무늬: 태평양 바닥에 남은 서양배의 앞쪽(C.5~H부: GEBCO 2026 추적, 주걱 능선, 오래된 적도, 3가지 도전, 10가지 연구)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 태평양의 모든 선은 서양배의 끝으로 이어질까 — 그리고 수십억 년 된 줄무늬가 어떻게 1억 8천만 년도 안 된 해저에서 살아남을까?</h2>
+<p>17장에서 우리는 북태평양의 평행한 줄무늬 여섯 개가 두 무릎 사이에 서쪽의 달 거울상 발자국을 가두고 있음을 보았습니다. 그러나 눈으로 본 통찰을 측정 가능한 과학으로 바꾸려면, 논문 09(C.5~F부)는 세 가지 근본적인 질문을 던집니다. 풀리지 않으면 설명 전체가 가설로 남을 질문들입니다:</p>
+<ol class="steps">
+<li><strong>태평양 중부와 남부의 줄무늬도 같은 끝으로 모여들까(C.5)?</strong> 적도 남쪽에는 더 거대한 체계들이 펼쳐져 있습니다 — 중앙의 살라이고메스~이스터섬~투아모투 열, 그리고 먼 남쪽의 엘타닌~루이빌~투발루 체계입니다. 전 지구 GEBCO 2026 수심 격자에서의 맹목적 정량 측정에서, 이 열 개의 궤적이 모두 달의 마지막 접촉 지대(8.7°N, 167.7°E)로 모여들까요?</li>
+<li><strong>왜 마셜 제도와 라인 제도의 거대한 섬 열에는 맨틀 플룸의 연대 진행이 없을까(D.1~D.3)?</strong> 주류 지구조 모델에서 태평양의 섬 열은 해양판이 맨틀의 고정된 "열점" 위를 움직일 때 생깁니다 — 그래서 연대는 한쪽 끝에서 다른 쪽 끝으로 연속적으로 진행해야 합니다(하와이–엠퍼러처럼 0~81 Ma). 그런데 라인 제도와 마셜 제도에서는 연대가 질서 없이 뛰며, 수천 km에 걸쳐 동시에 분출했습니다!</li>
+<li><strong>지질연대학의 나이 역설(F.1):</strong> 줄무늬 사이의 태평양 해저는 (자기 이상과 현무암으로) 최대 1억 8천만 년으로 연대 측정됩니다 — 달의 분리 순간(3.873 Ga)보다 수십억 년 젊습니다. 서양배가 다시 끌려 들어갈 때 만들어진 줄무늬가 어떻게 수십억 년 뒤에 생긴 해저에 새겨질 수 있을까요?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 갈아 놓은 밭 위의 새 눈, 주걱 아래로 끌리는 회반죽, 그리고 도는 공에 밀어 넣은 찰흙 덩어리</h2>
+<p>세 가지 간단하고 손에 잡히는 그림이 이 세 질문을 풀고, 그것들을 하나의 물리적 그림으로 묶습니다:</p>
+<ul>
+<li><strong>갈아 놓은 밭 위에 내린 새 눈(해저의 젊은 나이라는 수수께끼의 해결, F.1):</strong> 몇 달 전 깊은 고랑으로 갈아 놓은 밭에, 어젯밤 가벼운 눈이 내렸다고 상상해 보세요. 새 눈은 고랑을 감싸고, 하얀 담요를 통해 갈아 놓은 선을 계속 보여 줍니다. 눈의 나이를 재면, 갈아 놓은 날이 아니라 어젯밤 눈보라의 날짜가 나옵니다! 마찬가지로 해저는 위에서 새 층을 쌓고 그 아래 층은 아래에서 새로워집니다. 방사성 연대 측정은 <strong>마지막 맨 위층(&lt; 180 Ma)</strong>만 재고, 줄무늬는 젊은 층이 감싼 아래층의 <strong>깊은 밀도 습곡</strong>입니다 — 그래서 줄무늬는 바깥 지형에서는 희미한데, 깊은 곳을 보는 중력 기울기 지도(VGG)에서는 놀랄 만큼 날카롭습니다!</li>
+<li><strong>부드러운 회반죽에서 평평한 주걱을 떼어 내는 미장이("주걱 능선", D.1):</strong> 부드러운 회반죽을 바른 벽에 평평한 주걱을 대고 세게 떼어 보세요. 회반죽은 주걱과 벽에 붙어 그 사이에서 늘어나다가, 마침내 <strong>주걱의 가장자리를 따라 솟은 두 개의 능선</strong>으로 찢어집니다. 달이 공회전선 너머로 세게 벗겨지며 자신을 끌어냈을 때(접촉 지대가 6,000에서 3,000 km로 줄어들며), 접촉 지대의 부드러운 물질은 위로 끌려 올라가 두 줄의 능선이 되었습니다 — <strong>서쪽의 마셜~길버트~투발루 열과 동쪽의 라인 제도 열</strong>(2,800~3,500 km 떨어짐!) — 그리고 서양배가 다시 끌려 들어갈 때 끝과 함께 해저로 내려왔습니다!</li>
+<li><strong>도는 공의 적도에서 깊은 곳으로 밀어 넣은 무거운 찰흙 덩어리(줄무늬 적도의 기울기, E.3):</strong> 도는 공의 적도에 무거운 찰흙 덩어리(달 질량의 7~12배)를 붙이면 공은 안정되게 돕니다. 이제 그 덩어리를 공의 깊은 곳으로 안쪽으로 밀어 넣으면, 관성 모멘트가 바뀌고 균형이 흐트러져, 공은 새 평형을 찾을 때까지 자전축에 대해 천천히 굴러갑니다 — 그래서 줄무늬에 기록된 오래된 적도는 오늘날 적도에 대해 <strong>≥ 10°</strong> 기울어져 있습니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 태평양 전체에 걸친 GEBCO 2026 추적과 주걱 능선의 연대 패턴(C.5~E부)</h2>
+<p>논문 09의 C.5~E부는 태평양의 모든 선 체계에 대한 전례 없는 정량 검증을 제시합니다:</p>
+<ol class="steps">
+<li><strong>GEBCO 2026 격자에서의 태평양 전체 수렴 연구(C.5):</strong> 저자는 미리, 문서로, 알고리즘 절차(도당 30점 해상도의 GEBCO 2026 음영 기복도에서 0.5° 간격의 방향 필터)와 고정된 두 목표를 정했습니다. <strong>마지막 접촉</strong>(8.7°N, 167.7°E, 반지름 1,500 km)과 <strong>넓은 끝 지대</strong>(6°N, 179.5°W, 반지름 3,000 km)입니다. 결과는:
+<ul>
+<li><strong>추적한 궤적 10개 모두</strong>(북쪽, 중앙, 남쪽에서)가 끝 지대(3,000 km) 안으로 들어옵니다.</li>
+<li><strong>10개 중 6개 궤적</strong>(그중 5개는 겨우 450 km 안!)이 마지막 접촉의 원(1,500 km) 깊숙이 지나갑니다. 위쪽 남쪽 궤적(북쪽 엘타닌 + 루이빌)은 <strong>166 km</strong>, 접촉으로 곧장 들어가는 투발루~길버트~라타크 열은 <strong>190 km</strong>, 클라리온은 <strong>288 km</strong>, 아래쪽 남쪽 궤적(남쪽 엘타닌)은 <strong>300 km</strong>, 몰로카이는 <strong>434 km</strong>, 머리는 1,274 km(그리고 클리퍼턴은 겨우 14 km 차이로 빗나감 — 1,514 km).</li>
+<li><strong>대조선 3개 중 0개</strong>(파이오니어, 갈라파고스, 마르키즈. 끝으로 향하는 궤적으로 표시되지 않은 것)만이 마지막 접촉의 원에 들어갑니다(1,656~2,590 km)!</li>
+</ul>
+</li>
+<li><strong>주걱 능선의 간격과 맨틀 플룸 연대 진행의 부재(D.1~D.3):</strong> 서쪽의 마셜~길버트~투발루 열과 동쪽의 라인 제도 열 사이의 거리는 <strong>2,800~3,500 km</strong>입니다(마주로에서 키리티마티까지 3,490 km, 타라와에서 팔미라까지 2,810 km, 가운데에서 가운데까지 3,290 km) — 접촉 지대의 폭(3,000 km), 두 무릎 사이의 거리(3,360 km)와 같습니다. 게다가 두 열의 짝은 밑동 쪽으로 동쪽에 폭의 약 절반만큼 어긋나 있습니다(키리티마티는 라인 제도 위에 있고, 마셜 제도의 콰절레인은 끝 중심에서 180 km를 지남). 주걱 능선은 6,000과 3,000 km 사이의 <strong>벗겨짐 띠</strong> 안에서 위로 끌려 올라갔기 때문입니다! 그리고 연대 검증에서: 라인 제도에서는 1,200~&gt;4,000 km에 걸친 두 번의 동시 분출(81~86 Ma와 68~73 Ma)이 측정되었고 연대 진행은 전혀 없으며(문헌에서는 암석권의 늘어남에 돌려짐!), 마셜 제도에서는 플룸의 질서 없이 66~140 Ma의 연대가 측정되었습니다.</li>
+<li><strong>줄무늬 적도의 기울기(≥ 10°, E부):</strong> 오늘날의 위도선에 대한 각 줄무늬의 경사를 재면, 모든 줄무늬가 동쪽으로 갈수록 북쪽으로 올라간다는 것이 드러납니다. 머리(+12.7°), 클라리온(+9.0°), 클리퍼턴(+11.0°), 남쪽 줄무늬(+11.7°), 그리고 멘도시노(+2.4°). 공동 적합에는 <strong>적어도 10°</strong>(최대 ~ 20°) 기울어진 적도가 필요합니다. 11° 적합에서 그것은 159°W에서 오늘날 적도를 지나며, 키리티마티에서 겨우 1.6°입니다.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 348" role="img" aria-label="Distance of each traced path from the final contact" style="direction:ltr"><rect x="200.0" y="16" width="22.1" height="24" rx="4" fill="#2f7d57"/><text x="230.1" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦166⁩</text><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >북쪽 엘타닌 + 루이빌</text><rect x="200.0" y="52" width="25.3" height="24" rx="4" fill="#2f7d57"/><text x="233.3" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦190⁩</text><text x="6.0" y="69.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >투발루~길버트~라타크</text><rect x="200.0" y="88" width="38.4" height="24" rx="4" fill="#2f7d57"/><text x="246.4" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦288⁩</text><text x="6.0" y="105.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >클라리온</text><rect x="200.0" y="124" width="40.0" height="24" rx="4" fill="#2f7d57"/><text x="248.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦300⁩</text><text x="6.0" y="141.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >남쪽 엘타닌</text><rect x="200.0" y="160" width="57.9" height="24" rx="4" fill="#2f7d57"/><text x="265.9" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦434⁩</text><text x="6.0" y="177.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >몰로카이</text><rect x="200.0" y="196" width="169.9" height="24" rx="4" fill="#2f7d57"/><text x="377.9" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦1,274⁩</text><text x="6.0" y="213.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >머리</text><rect x="200.0" y="232" width="201.9" height="24" rx="4" fill="#c47f2c"/><text x="409.9" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦1,514⁩</text><text x="6.0" y="249.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >클리퍼턴</text><rect x="420.8" y="268" width="124.5" height="24" rx="4" fill="#b23a2e" opacity=".35"/><rect x="200.0" y="268" width="220.8" height="24" rx="4" fill="#b23a2e"/><text x="553.3" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦1,656–2,590⁩</text><text x="6.0" y="285.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >대조: 파이오니어 등</text><line x1="400.0" x2="400.0" y1="8" y2="322" stroke="#1f3a5f" stroke-dasharray="5 4"/><text x="400.0" y="338.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >마지막 접촉 원 · ⁦1,500⁩ km</text></svg><figcaption>GEBCO 2026 추적에서 각 (연장한) 궤적의 마지막 점과 마지막 접촉 중심 사이의 거리: 궤적 6개가 1,500 km 원에 들어가고, 대조선은 하나도 들어가지 않습니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 세 가지 지질학적 도전에 대한 답(F부)</h2>
+<p>논문 09의 F부는 지질학자들이 줄무늬와 주걱 능선의 해석에 맞서 제기하는 세 가지 주요 도전에 정면으로 맞서고, 각각에 대해 결정적인 물리 검증을 정합니다:</p>
+<ol class="steps">
+<li><strong>도전 1 — 해저의 젊은 나이(&lt; 180 Ma, §F.1):</strong> 줄무늬 사이의 태평양 해저는 자기 이상과 현무암으로 최대 1억 8천만 년으로 연대 측정됩니다. LEF 모델에서 해저는 한순간에 만들어진 "하나의 덩어리"가 아니라 <strong>층층이 새로워지는 지각</strong>입니다. 새 층이 위에 쌓이고, 그 아래 층은 아래에서 빼앗겨 새로워집니다. 방사성 연대 측정은 <strong>마지막 맨 위 담요</strong>만 재며(갈아 놓은 밭에 어젯밤 내린 눈의 나이를 재는 것처럼), 줄무늬는 그 아래 층에 남은 <strong>깊은 밀도 습곡</strong>입니다! 그래서 줄무늬는 바깥 지형에서는 흐릿한데, 깊은 곳의 밀도 차이를 드러내는 중력 기울기 지도(VGG)에서는 놀랄 만큼 날카롭습니다(이 지도는 어쨌든 Sandwell 등 2014에서 "묻힌 지구조 구조"를 드러낸다고 묘사됨). <strong>검증(연구 9):</strong> 줄무늬를 가로지르는 지진 탐사 단면과 시추공에서, 습곡은 젊은 층 아래로 이어지고, 그 위의 층은 습곡의 마루 위에서 얇고 골에서 두꺼울 것입니다.</li>
+<li><strong>도전 2 — 줄무늬와 능선의 형성 순서(§F.2):</strong> 줄무늬가 화산 능선을 자르지 않고 그 아래를 지난다는 사실(B.5)은 줄무늬가 아래와 옆에서의 습곡으로 만들어졌음을 증명하지만, 그것만으로는 어느 것이 먼저였는지 정해지지 않습니다 — 습곡이 그 아래에서 생길 때 능선은 이미 해저에 서 있었을지도 모릅니다(아래에서 구겨지는 식탁보 위에 선 식탁처럼). <strong>검증(연구 6):</strong> 수직 과장 없는 평면 지도에서 정밀한 좌표 측정으로, 줄무늬가 그 아래를 가로지르는 바로 그 지점에서 능선 자체가 <strong>짧아짐, 다져짐, 또는 휘어짐</strong>을 겪었는지 확인합니다.</li>
+<li><strong>도전 3 — 하와이–엠퍼러 열의 질서 있는 연대 진행(§F.3):</strong> 라인 제도(81~86과 68~73 Ma가 동시)나 마셜 제도(질서 없는 66~140 Ma)와 달리, 하와이–엠퍼러 열은 하와이의 0 Ma에서 엠퍼러 끝의 ~ 81 Ma까지 깨끗한 연대 진행을 보이며, 고전적인 맨틀 플룸과 부합합니다. 저자는 <strong>이론이 하와이–엠퍼러에 기대지 않는다는 것</strong>을 분명히 합니다(이차적 가설로만 제시됨). 이론은 라인 제도와 마셜 제도 위에 서 있으며 — 태평양 밖의 플룸 능선(나인티이스트, 월비스, 차고스–라카디브)과 연대, 형태, 휨 해자, 지각 뿌리, 방향의 다섯 척도로 비교하는 통제 비교의 후보입니다(연구 7).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>구면 위에서 오늘날의 위도선에 대한 각 줄무늬의 기울기 각 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>의 측정과, 서양배의 질량(달 질량의 7~12배)이 표면에서 하부 맨틀 깊은 곳으로 끌려 들어갈 때 지구 관성 모멘트 I의 보존은 다음과 같이 정식화됩니다(§E.1, §E.3):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mi>θ</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mover accent="true"><mi>ϕ</mi><mo>ˉ</mo></mover></mrow></mfrac></mstyle><mo>≥</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan\theta = \dfrac{\Delta\phi}{\Delta\lambda \cos\bar{\phi}} \ge \tan(10^\circ)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mo>∫</mo><msubsup><mi>r</mi><mo>⊥</mo><mn>2</mn></msubsup><mtext> </mtext><mi>d</mi><mi>m</mi><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi mathvariant="normal">Δ</mi><msub><mi>I</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>→</mo><mtext>Axial Roll </mtext><mo stretchy="false">(</mo><mo>≥</mo><mn>1</mn><msup><mn>0</mn><mo>∘</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I = \int r_\perp^2\,dm \implies \Delta I_{\mathrm{pear}} \rightarrow \text{Axial Roll } (\ge 10^\circ)</annotation></semantics></math></span></div></div></div>
+<p><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mtext>–</mtext><mn>12</mn><mtext> </mtext><msub><mi>M</mi><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">7\text{–}12\,M_{\mathrm{Moon}}</annotation></semantics></math></span></span>의 질량을 적도 위 수천 km 거리에서 맨틀 바닥(태평양 LLVP)으로 옮기면 지구의 관성 텐서가 바뀌므로, 지구는 새로운 자전 평형을 찾을 때까지 천천히 굴러갔습니다 — 줄무늬 체계의 적도를 현대의 적도에 대해 ≥ 10° 기울어진 채로 남기고요.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: G부의 열 가지 연구와 H부의 신호등 요약</h2>
+<p>논문 09의 요약(G~H부)에는 <strong>확인된 6가지 발견("초록 신호")</strong>과 <strong>10가지 정량 연구의 절차를 기다리는 4가지 관측("주황 신호")</strong>이 제시됩니다:</p>
+<ul>
+<li><strong>확인된 여섯 닻("초록 신호"):</strong> (1) 키리티마티의 서양배 밑동은 줄무늬의 적도에서 1.6°, 클리퍼턴(1.8°) 옆에 있음; (2) 무릎 사이 끝의 폭(3,360 km)은 접촉(3,000 km)과 돔(3,650 km)에 맞음; (3) 줄무늬 체계의 길이(9,360 km)는 서양배 몸통의 길이(8,890~9,000 km)에 맞음; (4) × 1.37의 거울상 각인은 비의 바다, 맑음의 바다, 접촉 중심을 발자국 안에 놓음; (5) 줄무늬는 네 교차점에서 능선 아래를 연속해서 지남; 그리고 (6) GEBCO 2026 추적에서 북쪽, 중앙, 남쪽의 궤적 10개 모두가 끝 지대에 닿고, 그중 6개가 마지막 접촉(1,500 km)에 들어감. 대조선은 0개.</li>
+<li><strong>추가 연구를 위한 네 방향("주황 신호"):</strong> 뒷면의 구겨진 호의 정량화(8,100~10,300 km), 수직 과장 없는 평면 지도에서 수렴 각도의 측정(연구 6), 주걱 능선을 세계의 플룸 능선과 다섯 척도로 비교하기(연구 7), 그리고 젊은 해저층 아래의 지진 탐사 단면과 시추공 조사(연구 9).</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: GEBCO 2026 추적(C.5), 주걱 능선(D), 10가지 연구의 결과(논문 09, C.5~H부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>GEBCO 2026의 체계 / 궤적</th><th>마지막 신뢰할 만한 점과 방향</th><th>마지막 접촉 중심(8.7°N, 167.7°E)으로부터의 거리</th><th>넓은 끝 중심(6°N, 179.5°W)으로부터의 거리</th><th>미리 정한 판정</th></tr>
+<tr class="hl"><td><strong>위쪽 남쪽: 엘타닌(북쪽 가지) + 루이빌</strong></td><td>174.6°W, 26.8°S(북북서 335°)</td><td><strong>166 km</strong>(연장 4,380 km)</td><td>1,025 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>피지 너머 위쪽 남쪽: 투발루~길버트~라타크</strong></td><td>167.9°E, 10.7°N(북서 319°)</td><td><strong>190 km</strong>(<strong>연장 0 km — 곧장 들어감!</strong>)</td><td>851 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>북쪽: 클라리온</strong></td><td>154.3°W, 13.8°N(서 270°)</td><td><strong>288 km</strong>(연장 4,170 km)</td><td>760 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>아래쪽 남쪽: 엘타닌(남쪽 가지)</strong></td><td>154.2°W, 52.5°S(북서 325°)</td><td><strong>300 km</strong>(연장 7,690 km)</td><td>928 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>북쪽: 몰로카이</strong></td><td>169.7°W, 18.9°N(서남서 257°)</td><td><strong>434 km</strong>(연장 2,660 km)</td><td>1,147 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr class="hl"><td><strong>북쪽: 머리</strong></td><td>168.6°W, 27.0°N(서 260°)</td><td><strong>1,274 km</strong>(연장 2,980 km)</td><td>2,004 km</td><td><strong>마지막 접촉 안(&lt; 1,500 km)</strong></td></tr>
+<tr><td><strong>북쪽: 클리퍼턴 / 멘도시노</strong></td><td>165.7°W, 0.1°S / 169.1°W, 36.8°N</td><td>1,514 km / 1,826 km</td><td>944 km / 2,770 km</td><td>끝 지대 안(&lt; 3,000 km)</td></tr>
+<tr><td><strong>중앙: 살라이고메스~이스터~투아모투~라인(+ 서쪽 가지)</strong></td><td>169.7°W, 16.4°N / 171.6°W, 11.2°N</td><td>2,441 km / 2,094 km</td><td>1,601 km / 1,340 km</td><td>끝 지대 안(&lt; 3,000 km)</td></tr>
+<tr><td><strong>대조선 3개(파이오니어, 갈라파고스, 마르키즈)</strong></td><td>끝으로의 궤적으로 표시되지 않음</td><td><strong>1,656~2,590 km</strong></td><td>1,769~2,563 km</td><td><strong>3개 중 0개가 마지막 접촉에 들어감</strong></td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>능선 열(D부)</th><th>측정된 연대 패턴</th><th>LEF 모델의 해석</th></tr>
+<tr class="hl"><td><strong>라인 제도(동쪽 주걱 능선)</strong></td><td>1,200~4,000+ km에 걸친 두 번의 동시 에피소드(81~86과 68~73 Ma), <strong>연대 진행 없음</strong></td><td>동쪽 벗겨짐 띠에서 위로 끌려 올라감(마셜에서 2,800~3,500 km); 키리티마티를 지남</td></tr>
+<tr class="hl"><td><strong>마셜~길버트~투발루(서쪽 주걱 능선)</strong></td><td>66~140 Ma, <strong>단순한 연대 진행 없음</strong>, 조각난 분출</td><td>서쪽 벗겨짐 띠에서 위로 끌려 올라감; 끝 중심을 지남(콰절레인은 중심에서 180 km)</td></tr>
+<tr><td><strong>하와이–엠퍼러</strong></td><td>0 Ma에서 ~ 81 Ma로의 깨끗한 진행</td><td>이차적 가설로만 제시(필수 아님); 연구 7에서 나인티이스트, 월비스, 차고스–라카디브와 비교 검증</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<a href="story19_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제19장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">젊은 화성 — 타르시스의 뾰족한 부풂과 파보니스산에서의 데이모스와 포보스의 분출 →</p></div></a>
+<p style="margin-top:22px"><a href="story17_ko.html">← 제17장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

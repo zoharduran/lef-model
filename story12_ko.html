@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제12장: 크레이터 내부의 화학, 존재하지 않는 외부 질량, 그리고 마지막 흩뿌리는 자로서의 지구 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제12장: 균일한 크레이터 내부, 달 지각에서 사라진 외부 질량, 지구의 루테늄 동위원소, 그리고 마지막 흩뿌리는 자로서의 지구.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story12_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story12_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story12_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story12_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story12_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story12_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story12_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story12_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story12_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story12_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story12_he.html" hreflang="he">עברית</a> · <a href="story12_en.html" hreflang="en">English</a> · <a href="story12_de.html" hreflang="de">Deutsch</a> · <a href="story12_es.html" hreflang="es">Español</a> · <a href="story12_fr.html" hreflang="fr">Français</a> · <a href="story12_ru.html" hreflang="ru">Русский</a> · <a href="story12_zh.html" hreflang="zh">中文</a> · <a href="story12_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제12장</p>
+<h1>제12장: 크레이터 내부의 화학, 존재하지 않는 외부 질량, 그리고 마지막 흩뿌리는 자로서의 지구</h1>
+<p>논문 06 — 크레이터(L~Q부와 재현 부록: 연구 2, 7, 8, 9, 12, 14)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 4.4~5.0 × 10¹⁹ kg의 외부 금속은 어디로 사라졌을까 — 그리고 왜 크레이터 내부는 균일할까?</h2>
+<p>앞 장에서 우리는 모천체의 공급 구멍에서 발사되어 껍질로 돌아온 물질이 수십 기가파스칼의 충격 압력을 낼 수 있으며, 크레이터의 형태가 선행 반구와 후행 반구 사이의 비대칭을 따른다는 것을 보았습니다. 이제 모델을 가장 날카로운 화학적 검증 — 원자와 동위원소의 수준에서 그것을 소행성 이론과 가르는 검증 — 에 올려놓습니다:</p>
+<ol class="steps">
+<li><strong>달 지각에서 사라진 외부 질량:</strong> 핵을 분리한 적 없는 콘드라이트 소행성은 <strong>친철("철을 좋아하는") 원소</strong> — 이리듐, 오스뮴, 백금, 루테늄 — 이 매우 풍부하지만, 달의 지각에는 그것이 거의 완전히 부족합니다. 오늘날 달에서 보이는 132만 개의 크레이터를 소행성이 팠다면, 그것들이 가져온 외부 금속은 어디에 있을까요?</li>
+<li><strong>크레이터 내부 — 층을 뚫고 판 구멍일까, 되돌아온 물질로 채워진 잔일까?</strong> 크레이터가 층진 지각에 거세게 파인 구덩이라면, 중앙 봉우리는 벽, 가장자리, 주위와 조성이 다른 깊은 암석을 끌어올려야 합니다 — 게다가 선행 반구(90°W)의 강한 정면 충돌은 후행 반구(90°E)의 부드러운 충돌보다 더 깊은 층을 드러내야 합니다. 수천 개의 크레이터에서 정말로 그렇게 측정될까요?</li>
+<li><strong>숨은 돔 위의 사라진 크레이터 수수께끼(연구 3):</strong> 8장에서 우리는 묻힌 공급 돔 44개(그중 36개는 뒷면)를 발견했습니다. 모든 돔이 활동하는 동안 주위에 크레이터를 발사했다면, 왜 오늘날 그 주위에는 남다른 크레이터 밀도가 없을까요?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 맑은 물 한 잔 속 잉크 방울, 그리고 뜨거운 밀랍 봉인</h2>
+<p>두 가지 간단한 그림이 크레이터 내부와 달 지각의 화학이 왜 되돌아온 지구 근원의 편을 드는지 분명히 해 줍니다:</p>
+<ul>
+<li><strong>맑은 물 한 잔 속 잉크 방울(친철 원소와 루테늄 동위원소):</strong> 달의 지각은 철을 좋아하는 금속이 거의 없는 맑은 물 한 잔과 같고, 콘드라이트 소행성은 진한 잉크와 같습니다. 소행성 물질이 조금만 더해져도 위쪽 지각은 곧바로 물들 것이고 — 게다가 소행성의 루테늄 원자는 지구와 다른 동위원소 "억양"을 지닙니다. 실제로 지각에는 외부 금속이 거의 없고, 크레이터의 충돌 용융 암석에서 측정된 루테늄 동위원소는 <strong>지구 자신의 것</strong>입니다!</li>
+<li><strong>종이에 누른 뜨거운 밀랍 봉인(크레이터 내부의 균일함):</strong> LEF 모델의 크레이터는 아래에서 이질적인 층을 끌어올리는 굴착이 아니라, 내려앉아 가장자리에서 가장자리까지 발린 뜨거운 되돌아온 물질의 덩어리입니다 — 그래서 중심에서 바닥을 거쳐 가장자리까지 <strong>하나의 균일한 화학 조성</strong>이 지배하며, 그것은 같은 바다에서 물질이 발사된 가까운 주위의 조성과 같습니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 균일한 크레이터 내부(7,227개 크레이터)와 "존재하지 않는 외부 질량"(132만 개 크레이터)</h2>
+<p>논문 06의 D부와 L부는 화학적·구조적 증명을 마무리하는 대규모의 정량 연구 네 가지를 제시합니다:</p>
+<ol class="steps">
+<li><strong>뒷면의 묻힌 크레이터와 바다 속 녹은 크레이터(연구 3, 4, 14):</strong>
+<ul>
+<li><strong>묻힌 돔 44개 주위(연구 3):</strong> 묻힌 돔 위의 크레이터 밀도는 반지름 3~5배 거리에서와 같거나 더 낮습니다(2~10 km에서 0.93, 10~50 km에서 1.00, 50~100 km에서 1.02) — 뒷면의 오래된 구멍들이 발사한 크레이터가 뒷면의 두꺼운 지각을 쌓은 시알과 되돌아온 물질의 층 아래 <strong>구멍과 함께 묻혔기</strong> 때문입니다!</li>
+<li><strong>바다 속 녹은 크레이터 아래의 가장자리 없는 질량(연구 4와 14):</strong> 바다 바닥에서 지름 10 km 이상 크레이터의 <strong>62%(79개 중 49개)</strong>가 고리로 녹아 있고, 118만 km²의 바닥 전체에 20 km 이상의 날카로운 크레이터는 단 하나뿐입니다(백만 km²당 0.8개, 고지는 207개!). 바다 속 녹은 크레이터 16개 아래에서(연구 14) 지각의 바닥은 바다 바닥 자체보다 <strong>+0.8 km</strong> 솟아 있지만(16개 중 13개, p = 0.04), <strong>부게 중력에서 날카로운 가장자리는 전혀 없습니다</strong>(가장자리 가파름 1.00에 비해 1.04) — 되돌아온 물질이 바깥에서 단단한 크레이터를 채운 것이 아니라 바다의 유체 마그마 속으로 가라앉아 섞였기 때문입니다!</li>
+</ul>
+</li>
+<li><strong>크레이터 내부는 하나의 균일한 물질(연구 7, §L.4):</strong> 지름 10~60 km의 크레이터 7,227개를 여섯 개의 방사 고리(중심 0~0.3R, 바닥 0.3~0.7R, 안쪽 벽 0.7~0.95R, 가장자리 0.95~1.1R, 분출물 1.2~2R, 주위 3~4R)로 조사하면, 중심과 안쪽 벽 사이 철과 타이타늄의 차이는 겨우 <strong>+0.08 wt% FeO</strong>와 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>0.060</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">+0.060\text{ wt\% TiO}_2</annotation></semantics></math></span></span>(지도의 보정 산포 0.81과 0.43 wt%보다 8~10배 작음!)이고, 바닥과 주위의 차이는 <strong>0.00 wt% FeO와 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong>입니다. 게다가 선행 반구(90°W)와 후행 반구(90°E)의 같은 크레이터 1,214~1,235쌍을 짝지어 비교하면 화학적 차이는 <strong>정확히 0(0.00 wt%)</strong>입니다 — 강한 정면 충돌은 모양을 바꾸었지만 이질적인 층은 드러내지 않았습니다!</li>
+<li><strong>존재하지 않는 외부 질량과 지구의 루테늄 동위원소(연구 8, §L.5):</strong> 오늘날 달에서 보이는 1,318,387개 크레이터(1 km 이상, 18 km/s) 전체를 만드는 데 필요한 질량을 계산하면 충돌체 질량 <strong>4.4~5.0 × 10¹⁹ kg</strong>이 나옵니다(SPA 분지만 68%, 다른 큰 분지 32개가 30%, 20~300 km 크레이터 6,940개가 2%, 1~20 km 크레이터 131만 개가 0.03%). 그것이 통용되는 보존율(20%~60%)로 위쪽 지각(5 km)에 남았다면 그 층의 <strong>2%~6%</strong>(0.9~3.0 × 10¹⁹ kg)를 차지했을 것입니다 — 그런데 달 지각 전체의 친철 원소를 모두 합해도 <strong>겨우 0.9%~2%(0.45~1.0 × 10¹⁹ kg)</strong>로, 필요한 양보다 6.7배 적습니다(전체 폭격 3.7 × 10²⁰ kg보다는 14~18배 적음)! 그리고 크레이터의 충돌 용융 암석에서 <strong>루테늄 동위원소</strong>를 측정한 두 표본에서, 그것은 <strong>지구의 규산염과 똑같습니다</strong>!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 175" role="img" aria-label="Foreign mass: required against found" style="direction:ltr"><g transform="translate(197.1,0)"><line x1="40.0" x2="40.0" y1="12" y2="140" stroke="#ece7da"/><text x="40.0" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><line x1="118.2" x2="118.2" y1="12" y2="140" stroke="#ece7da"/><text x="118.2" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1</text><line x1="196.4" x2="196.4" y1="12" y2="140" stroke="#ece7da"/><text x="196.4" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2</text><line x1="274.5" x2="274.5" y1="12" y2="140" stroke="#ece7da"/><text x="274.5" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">3</text><line x1="352.7" x2="352.7" y1="12" y2="140" stroke="#ece7da"/><text x="352.7" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">4</text><line x1="430.9" x2="430.9" y1="12" y2="140" stroke="#ece7da"/><text x="430.9" y="156" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">5</text><rect x="40.0" y="18" width="390.9" height="26" rx="4" fill="#b23a2e" opacity=".25"/><rect x="384.0" y="18" width="46.9" height="26" rx="4" fill="#b23a2e"/><rect x="40.0" y="58" width="234.5" height="26" rx="4" fill="#c47f2c" opacity=".25"/><rect x="110.4" y="58" width="164.2" height="26" rx="4" fill="#c47f2c"/><rect x="40.0" y="98" width="78.2" height="26" rx="4" fill="#2f7d57" opacity=".25"/><rect x="75.2" y="98" width="43.0" height="26" rx="4" fill="#2f7d57"/></g><text x="6.0" y="36.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >모든 크레이터에 필요 · ⁦4.4–5.0⁩</text><text x="6.0" y="76.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >위쪽 지각에 남아야 할 양 · ⁦0.9–3.0⁩</text><text x="6.0" y="116.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >지각 전체에서 실제 발견 · ⁦0.45–1.0⁩</text><text x="320.0" y="172.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >질량(×10¹⁹ kg)</text></svg><figcaption>외부 질량 수지(연구 8): 소행성이 남겼어야 할 양과 달 지각에서 발견된 친철 원소 전체의 비교 — 6.7배 적습니다.</figcaption></figure><div class="callout"><span class="tag">창어 5호와 창어 6호의 낱개 운석 알갱이 주장에 대한 답(§L.5)</span><p style="margin:0">창어 5호 표본에서 콘드룰 알갱이 하나가 발견되거나 창어 6호에서 미세한 운석 잔해가 발견된 것은 모델과 모순되지 않습니다. 태양계의 공기 없는 모든 천체는 아주 적은 양의 <strong>미소 운석 우주 먼지</strong>를 모으며 — 그것이 바로 모델이 허용하는 양("곁들여진 우주 먼지")으로, 달의 분지를 파는 데 필요했을 수백억 톤의 외부 금속과는 다릅니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: "마지막 흩뿌리는 자"로서의 지구, 붙잡힌 크레이터, 그리고 고리 검증</h2>
+<p>논문 06의 L.6~M.1부는 달이 지구에서 분리된 순간(38.73억 년 전)부터 표면이 최종적으로 얼어붙을 때까지 크레이터의 연대기적 역사를 완성합니다:</p>
+<ol class="steps">
+<li><strong>분리 뒤에도 지구는 달에 가벼운 물질을 계속 발사했다(연구 12, §L.6):</strong> 분리 순간 달 안의 내부 압력은 멈추고 공급 구멍은 봉인되었습니다. 하지만 지구 자신은 잠잠해지지 않았습니다 — 서양배는 천천히 안으로 다시 끌려 들어갔고(수천만~수억 년에 걸쳐), 그 구멍들은 계속 우주로 물질을 발사했습니다. 무거운 물질은 지구 속으로 다시 가라앉고 가벼운 물질은 떠올랐으므로, 8.8~10.75 km/s에 이르러 달에 도달한 물질은 지구 분출물 중 <strong>토륨이 풍부한(그리고 철이 부족한) 가벼운 부분</strong>이었습니다. 실제로 앞면 현무암 위 크레이터 3,478개 모두에서 크레이터 주위의 분출물은 주위 현무암보다 철이 부족합니다(바다 바닥에서 −0.20 wt%, 큰 크레이터에서는 최대 −3.8 wt%, 평원에서 −0.36 wt%. 그리고 코페르니쿠스의 광조와 연결된 아폴로 12호 표본은 국지 현무암의 20.5 wt%에 비해 14.0~15.7 wt% FeO를, 0.83 ppm에 비해 7.6~9.4 ppm의 토륨을 지닙니다).</li>
+<li><strong>앞면은 마지막 작은 크레이터를 더 많이 간직했다 — 지구는 "마지막 흩뿌리는 자"(연구 9, §L.7):</strong> 지구는 언제나 앞면(0°)의 하늘에 떠 있었으므로, 거기서 마지막으로 발사된 물질은 양쪽 고지에 내려앉았지만 앞면을 더 높은 비율로 때렸습니다. 고지에서만(모든 바다, SPA 분지, 젊은 광조 크레이터 16개의 이차 크레이터 지대를 뺀 뒤) 지름 1~2 km의 새 크레이터를 세면 <strong>앞면에 +19%의 과잉</strong>이 나타나고(백만 km²당 11,814개에 비해 14,103개; 신뢰 구간 1.12~1.27, 어떤 바다에서든 600 km 넘게 떨어진 곳에서는 1.51배까지!), 반면 더 크고 오래된 크레이터에서는 앞면이 훨씬 부족합니다(2~5 km에서 0.86, 5~10 km에서 0.63, 10~20 km에서 0.53). 접촉과 바다의 열에 지워졌기 때문입니다!</li>
+<li><strong>바다 위의 붙잡힌 분출물과, 고리를 지나간 적 없는 달(§L.8, §M.1):</strong> 얼어붙은 바다 바닥 위의 몇 안 되는 젊은 크레이터는 탈출 상한(10.748 km/s) 근처에서 지구가 발사하여 달의 중력에 소행성보다 훨씬 낮은 속도로 붙잡힌 <strong>붙잡힌 분출물</strong>입니다. 또한 화성의 데이모스(빽빽한 고리 속에서 오래 머물러 크레이터가 납작하고 매끄러움 — 깊이 중앙값 1.9%, 포보스는 5.5%)와 달리, 달은 <strong>얼음과 먼지의 고리를 지나간 적이 없습니다</strong>. 서양배가 공회전선까지의 지대를 쓸어 냈고 열이 얼음의 응결을 막았으므로, 달은 처음부터 날카로운 크레이터로 포화된 고지를 간직했습니다.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 250" role="img" aria-label="Near-to-far ratio of craters on the highlands by size" style="direction:ltr"><line x1="70" x2="610" y1="200.0" y2="200.0" stroke="#ece7da" /><text x="62" y="204.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0</text><line x1="70" x2="610" y1="130.8" y2="130.8" stroke="#ece7da" /><text x="62" y="134.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0.5</text><line x1="70" x2="610" y1="61.5" y2="61.5" stroke="#5b6676" stroke-dasharray="6 4"/><text x="62" y="65.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">1.0</text><rect x="76.0" y="35.2" width="68" height="164.8" rx="3" fill="#2f7d57"/><text x="110.0" y="29.2" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">×1.19</text><text x="110.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦1–2⁩ km</text><rect x="229.3" y="80.9" width="68" height="119.1" rx="3" fill="#9aa3af"/><text x="263.3" y="74.9" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.86</text><text x="263.3" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦2–5⁩ km</text><rect x="382.7" y="112.8" width="68" height="87.2" rx="3" fill="#9aa3af"/><text x="416.7" y="106.8" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.63</text><text x="416.7" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦5–10⁩ km</text><rect x="536.0" y="126.6" width="68" height="73.4" rx="3" fill="#9aa3af"/><text x="570.0" y="120.6" font-size="13" font-family="Heebo" font-weight="700" fill="#9aa3af" text-anchor="middle">×0.53</text><text x="570.0" y="218.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >⁦10–20⁩ km</text><text x="340.0" y="240.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >고지 크레이터의 앞면/뒷면 비, 지름별</text></svg><figcaption>마지막 흩뿌리는 자로서의 지구(연구 9): 작은 새 크레이터에서는 앞면이 더 많고, 크고 오래된 것에서는 더 적습니다.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 케플러 재현 처방(부록 A)</h2>
+<p>논문 06의 부록은 모천체 둘레 케플러 타원(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">K = GM_0</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>721</mn></mrow><annotation encoding="application/x-tex">r_0 = 6,721</annotation></semantics></math></span></span> km)의 비에너지 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span></span>와 비각운동량 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span>로부터 비행 표(§K.1)의 모든 행을 계산하는 완전한 해석적 재현 처방을 줍니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><mrow><mn>2</mn><mi mathvariant="script">E</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">a = -\dfrac{K}{2\mathcal{E}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi mathvariant="script">E</mi><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup></mrow><msup><mi>K</mi><mn>2</mn></msup></mfrac></mstyle></mrow></msqrt></mrow><annotation encoding="application/x-tex">e = \sqrt{1 + \dfrac{2\mathcal{E}\ell^2}{K^2}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>K</mi><msup><mi>a</mi><mn>3</mn></msup></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">n = \sqrt{\dfrac{K}{a^3}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msup><mi mathvariant="normal">ℓ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>K</mi><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mn>1</mn></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_0 = \arccos\left(\dfrac{\ell^2/(Kr_0) - 1}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub><mo>=</mo><mi>arccos</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>1</mn><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><mi>e</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_0 = \arccos\left(\dfrac{1 - r_0/a}{e}\right)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mo stretchy="false">(</mo><mi>π</mi><mo>−</mo><msub><mi>E</mi><mn>0</mn></msub><mo>+</mo><mi>e</mi><mi>sin</mi><mo>⁡</mo><msub><mi>E</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mi>n</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">t_f = \dfrac{2(\pi - E_0 + e\sin E_0)}{n}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><mrow><mo fence="true">[</mo><mi>ω</mi><msub><mi>t</mi><mi>f</mi></msub><mo>−</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><mo>−</mo><mn>2</mn><msub><mi>f</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">s_W = r_0\left[\omega t_f - (2\pi - 2f_0)\right]</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub><mo>=</mo><mi>a</mi><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">h_{\max} = a(1+e) - r_0</annotation></semantics></math></span></div></div></div>
+<p>이 공식들로 어떤 연구자든 u &lt; 10.748 km/s인 어떤 발사 속도를 넣어도 곧바로 최고 높이 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">h_{\max}</annotation></semantics></math></span></span>, 비행 시간 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">t_f</annotation></semantics></math></span></span>, 그리고 도는 적도를 따른 서쪽 편향 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>W</mi></msub></mrow><annotation encoding="application/x-tex">s_W</annotation></semantics></math></span></span>를 얻을 수 있습니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 포보스의 MMX 탐사에 대한 예측과 14개 연구의 요약</h2>
+<p>논문 06은 메커니즘을 달 너머로, 모행성으로부터 만들어지고 그 분출물에 노출된 모든 위성으로 확장합니다(§O.1):</p>
+<ul>
+<li><strong>포보스의 MMX 탐사(Martian Moons eXploration)에 대한 직접적 예측:</strong> 포보스와 데이모스는 화성에서 발사되었으므로(논문 10의 주제), 모델은 MMX 탐사가 가져올 포보스의 크레이터 암석이 <strong>화성 자신의 조성과 동위원소</strong>를 지닐 것이라고 예측합니다 — 미소 운석 우주 먼지를 넘는 외부 금속의 과잉 없이요!</li>
+<li><strong>논문 06의 14개 연구의 수지(§O.2):</strong> 논문의 번호 붙은 연구 14개 중 <strong>11개가 완전한 초록 신호</strong>를, <strong>3개가 노랑 신호</strong>(해상도 한계나 작은 표본에 따른 부분 확인)를 받았고, 빨강 신호를 받은 연구는 0개입니다.</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 외부 질량 수지, 크레이터 내부의 화학, 그리고 14개 연구의 요약(논문 06, L~Q부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>크레이터 집단 / 지각층(연구 8)</th><th>크레이터 수</th><th>18 km/s에서 필요한 질량(kg)</th><th>위쪽 지각(5 km)의 보존 대 측정</th></tr>
+<tr><td><strong>남극–에이트켄 분지(SPA)</strong></td><td>1</td><td>3.3 × 10¹⁹ kg(68%)</td><td rowspan="4">보이는 크레이터에서 필요(20%~60% 보존):<br><strong>0.9~3.0 × 10¹⁹ kg(층의 2%~6%)</strong><br>문헌의 전체 폭격에서 필요: <strong>7.4 × 10¹⁹ kg(15%)</strong></td></tr>
+<tr><td><strong>다른 큰 분지(≥ 300 km)</strong></td><td>32</td><td>1.4 × 10¹⁹ kg(30%)</td></tr>
+<tr><td><strong>중대형 크레이터(20~300 km)</strong></td><td>6,940</td><td>1.0 × 10¹⁸ kg(2%)</td></tr>
+<tr><td><strong>작은 크레이터(1~20 km)</strong></td><td>1,311,414</td><td>1.2 × 10¹⁶ kg(0.03%)</td></tr>
+<tr class="hl"><td><strong>합계 대 달 지각의 실제 발견</strong></td><td><strong>1,318,387</strong></td><td><strong>4.4~5.0 × 10¹⁹ kg</strong></td><td><strong>지각 전체에서 실제로 발견: 0.45~1.0 × 10¹⁹ kg(0.9%~2%)</strong> — 6.7배 적고, 루테늄 동위원소는 <strong>지구의 것</strong>!</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>화학적 / 연대기적 척도(연구 7, 9, 12, 14)</th><th>표본과 측정 조건</th><th>측정 결과</th><th>LEF 모델의 결론</th></tr>
+<tr class="hl"><td><strong>크레이터 내부의 균일함(연구 7)</strong></td><td>크레이터 7,227개(10~60 km), 고리 6개</td><td>바닥 빼기 주위: <strong>0.00 wt% FeO</strong>, <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000</mn><msub><mtext> wt% TiO</mtext><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">0.000\text{ wt\% TiO}_2</annotation></semantics></math></span></span></strong>; 중심 빼기 벽: +0.08 wt%</td><td>크레이터 내부는 하나의 균일한 되돌아온 물질; 선행/후행 1,235쌍에서도 같음</td></tr>
+<tr class="hl"><td><strong>분리 뒤의 마지막 흩뿌리는 자(연구 9)</strong></td><td>고지의 1~2 km 새 크레이터(바다와 광조 제외)</td><td>앞면: <strong>14,103</strong> 대 뒷면: <strong>11,814</strong>(백만 km²당, 비 <strong>× 1.19</strong>, 구간 1.12~1.27)</td><td>지구는 분리 뒤에도 앞면에 가벼운 물질을 계속 발사함; 2 km를 넘으면 비가 뒤집힘(0.53~0.86)</td></tr>
+<tr><td><strong>분리 뒤의 가벼운 물질(연구 12)</strong></td><td>앞면 현무암 위 크레이터 3,478개</td><td>분출물이 현무암보다 철이 −0.20 wt%(바다), −0.36 wt%(평원) 부족</td><td>지구를 벗어난 물질(&gt; 8.8 km/s)은 분출물의 가벼운 부분</td></tr>
+<tr><td><strong>녹은 크레이터 아래의 질량(연구 14)</strong></td><td>바다 속 녹은 크레이터 16개 대 무작위 지점 50개</td><td>지각 바닥 <strong>+0.8 km</strong> 솟음(13/16, p=0.04), 부게 중력에 날카로운 가장자리 없음(1.04 대 1.00)</td><td>되돌아온 물질은 바깥에서 단단한 크레이터를 채운 것이 아니라 바다의 유체 마그마 속으로 가라앉아 섞임</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>11~12장에서 우리는 달의 크레이터에 대한 조사(<em>소행성 없는 크레이터</em>)를 마쳤습니다. 크레이터는 공급 구멍에서 초속 2~8 km로 발사된 되돌아온 지구 물질이 판 것이었습니다. 그것은 13~<span class="ltr">46 GPa</span>의 힘으로 때리고, 후행 반구에 크레이터의 과잉을, 선행 반구에 강한 정면 충돌을 만들었으며, 모든 크레이터를 균일한 조성으로 채우고, 외부 금속 없이 정확히 지구의 루테늄 동위원소를 지각에 남겼습니다.</p>
+<p>그런데 달이 지구 위에서 찌그러진 구로 납작해져 이 모든 크레이터를 껍질에 모은 뒤, <strong>어떻게 다시 온전한 구로 둥글어졌으며, 왜 달의 극(북극과 남극)은 얼굴의 다른 어떤 지역보다 큰 크레이터로 붐빌까요?</strong> 다음 장 — <strong>제13장: 달의 극 — 껍질이 극으로 모여드는 것과 안쪽으로 둥글어짐의 기하</strong>(논문 07 — <em>극</em>에서) — 에서 우리는 극의 기하학적 열쇠를 발견할 것입니다!</p>
+<a href="story13_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제13장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">달의 극 — 껍질이 극으로 모여드는 것과 안쪽으로 둥글어짐의 기하 →</p></div></a><p style="margin-top:22px"><a href="story11_ko.html">← 제11장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

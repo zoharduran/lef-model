@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제3장: 내부의 엔진 — 150 GPa의 근원 압력과 거품 낀 마그마 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제3장: 150 GPa의 근원 압력, 거품 낀 마그마의 밀도 문턱 3,864 kg/m³, 유량, 에너지원, 그리고 통로가 가는 관이 아니라 서양배인 이유.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story03_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story03_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story03_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story03_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story03_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story03_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story03_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story03_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story03_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story03_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story03_he.html" hreflang="he">עברית</a> · <a href="story03_en.html" hreflang="en">English</a> · <a href="story03_de.html" hreflang="de">Deutsch</a> · <a href="story03_es.html" hreflang="es">Español</a> · <a href="story03_fr.html" hreflang="fr">Français</a> · <a href="story03_ru.html" hreflang="ru">Русский</a> · <a href="story03_zh.html" hreflang="zh">中文</a> · <a href="story03_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제3장</p>
+<h1>제3장: 내부의 엔진 — <span class="ltr">150 GPa</span>의 근원 압력과 거품 낀 마그마</h1>
+<p>논문 03 — LEF 메커니즘의 실제(서론과 A부: §A.1–A.13)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 누가 7,300경 톤을 16,000킬로미터 높이까지 밀어 올렸을까?</h2>
+<p class="lead">앞 장들에서 우리는 공회전선이 속도와 각운동량 수지의 수수께끼를 푼다는 것을 보았습니다. 달의 물질을 지구와 함께 돌게 하면서 지구 중심에서 약 16,000 km 거리까지 데려가기만 하면, 그것은 이미 자유 궤도의 속도로 움직이고 있을 것입니다. 하지만 이제 우리는 현실의 가장 어려운 질문과 마주합니다:</p>
+<div class="q">세상의 어떤 힘이 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg의 거대한 질량을 지구의 중력을 거슬러 들어 올릴 수 있을까?</div>
+<p>이 과제가 얼마나 벅찬지 이해하려면, 먼저 그럴듯하지만 실패하는 두 가지 제안을 살펴봅시다. 첫째, <strong>자전만으로는 아무것도 들어 올리지 못합니다</strong>. 5.5시간마다 도는 지구의 표면, 중심에서 8,991 km 높이(달 질량의 천체가 표면에 닿아 있는 위치)에서도 중력은 <span class="ltr">4.93 m/s²</span>의 가속도로 안쪽으로 당기는 반면, 바깥으로의 원심력은 <span class="ltr">0.905 m/s²</span>에 불과합니다. 1킬로그램마다 여전히 오늘날 지구 표면에서의 무게의 약 40%만큼 아래로 무겁습니다! 자전은 무게를 덜어 주지만, 들어 올리지는 않습니다.</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">안쪽으로의 중력 · ⁦4.93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:ltr;unicode-bidi:embed">바깥으로의 원심력 · ⁦0.905 m/s²⁩</text></svg><figcaption>하루 5.5시간일 때 중심에서 8,991 km 지점: 중력은 원심력의 다섯 배가 넘습니다.</figcaption></figure>
+<p>둘째, <strong>부력은 우주에서 작동하지 않습니다</strong>. 기름이 물 위에 뜨는 것은 주위의 더 무거운 물이 그것을 밀어 올리기 때문이지만, 지구 표면 위에는 달을 띄워 올릴 암석의 바다가 없습니다.</p>
+<div class="box"><span class="tag">결론</span><p style="margin:0">결론은 분명합니다. 지구 자신의 물질로 달을 만들려면 <strong>안에서부터 작동하는 거대한 내부 압력 엔진</strong>이 필요합니다 — 마그마 기둥을 지구 깊은 곳에서 위로 밀어 올리고, 충분한 속도로 질량을 공급하며, 꼭대기에서 만들어지는 달의 무게에 무너지지 않는 엔진입니다.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>비유: 치약, 옥상까지 올라가는 물, 그리고 뚜껑을 여는 탄산음료병</h2>
+<p>이 엔진이 어떻게 작동하는지 손에 잡히게 느끼려면, 일상의 세 가지 단순한 그림을 함께 떠올려 보세요:</p>
+<div class="three t">
+<div><b>01 · 근원 압력</b><h4>치약 튜브</h4><p>젊은 지구 깊은 곳에서는 위에 있는 모든 층의 무게가 엄청난 압력을 만듭니다. 한 유리한 지역에서 깊은 곳부터 표면까지 흐름의 길이 열리면, 내부 압력이 녹은 암석을 위로 짜냅니다 — 튜브를 누르면 치약이 입구로 나오는 것처럼요.</p></div>
+<div><b>02 · 정수압 수두</b><h4>옥상 탱크로 물을 올리는 펌프</h4><p>지하실의 펌프가 고층 건물 옥상의 탱크까지 물을 보내려면, 그 압력이 관 속 물기둥 전체의 무게보다 커야 합니다. 물이 너무 무겁고 건물이 너무 높으면 물기둥은 중간에서 멈춥니다.</p></div>
+<div><b>03 · 거품 낀 마그마</b><h4>뚜껑을 여는 탄산음료병</h4><p>아주 깊은 곳, 엄청난 압력 아래에서 물과 휘발성 기체는 닫힌 탄산음료병 속의 기체처럼 녹은 암석에 녹아 있습니다. 마그마가 올라가 압력이 낮아지자마자 기체가 빠져나와 수십억 개의 거품을 만듭니다 — <strong>거품 낀 마그마</strong>입니다. 이 거품은 단단한 암석보다 훨씬 가벼워서, 정확히 같은 압력으로 훨씬 높이 들어 올릴 수 있습니다!</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 왜 마른 암석은 실패하고 — 휘발성 물질이 풍부한 마그마만 문턱을 넘는가</h2>
+<p>LEF 모델에서 우리는 압력이 충분할 것이라고 추측하지 않습니다 — 바로 같은 중력장에서 <strong>밀어 올림의 값을 매깁니다</strong>. 계산하기 전에 논문 03은 엄격한 장부 규칙을 정합니다. 매 순간 모천체의 초기 질량(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> kg)은 네 개의 분명한 저장소로 나뉘어, 어떤 킬로그램도 두 번 세어지지 않습니다:</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>지구에 남은 질량</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>자라나는 천체에 쌓인 질량</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>둘 사이를 오가거나 분출 중인 질량</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>그리고 계에서 잃어버린 질량</span></div></div>
+<p>이제 논문은 젊은 지구의 중심(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> km, 하루 5.5시간)에서 모천체 전체의 공회전 반지름(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> km)까지, 마그마 기둥을 따라 일차원 압력 검증을 세웁니다:</p>
+<ul class="pts">
+<li><strong>근원에서 쓸 수 있는 압력</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>:</strong> 젊은 지구의 중심을 누르는 층들의 무게(빠른 자전의 원심력에 의한 경감을 뺀 것)는 <strong><span class="ltr">150.26 GPa</span></strong>의 암석정압 근원 압력을 줍니다(약 150만 기압!).</li>
+<li class="a"><strong>마그마 기둥의 비용</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>:</strong> 밀도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> kg/m³의 깊은 마그마로 이루어져 표면 위에서 밀도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> kg/m³로 거품이 이는 마그마 기둥을 지탱하려면 <strong><span class="ltr">139.78 GPa</span></strong>의 압력이 필요합니다.</li>
+<li class="c"><strong>달을 밀어 올리는 잉여:</strong> <span class="ltr">150.26 − 139.78 = <strong><span class="ltr">+10.49 GPa</span></strong></span>! 10기가파스칼이 넘는 양의 압력 잉여가 남아 흐름을 위로 몰아갑니다.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">근원 압력 · ⁦150.26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="end" style="direction:ltr;unicode-bidi:embed">마그마 기둥의 비용 · ⁦139.78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:ltr;unicode-bidi:embed">잉여: ⁦+⁦10.49 GPa⁩⁩</text></svg><figcaption>기준 밀도 3,500 kg/m³에서의 압력 수지: 근원 압력이 마그마 기둥의 무게를 감당하고도 잉여를 남깁니다.</figcaption></figure>
+<div class="callout"><span class="tag">임계 밀도 문턱 · 3,864 kg/m³</span>
+<p style="margin:0">어떤 마그마 밀도가 검증을 통과하는지 확인하면 날카로운 경계가 나타납니다. 밀도가 <strong>3,864 kg/m³</strong>보다 낮은 깊은 마그마(물과 휘발성 물질이 풍부한 마그마처럼)는 양의 압력 잉여를 남기고 공회전선에 이릅니다. 반면 밀도 4,000 kg/m³의 마르고 무거운 마그마는 <span class="ltr">154.19 GPa</span>가 필요해 <span class="ltr">−3.92 GPa</span>의 부족으로 실패합니다. <strong>물과 휘발성 물질은 우연한 첨가물이 아니라, 달이 솟아오를 수 있게 하는 물리적 조건입니다!</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68.12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24.89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10.49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3.92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18.33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="end" style="direction:ltr;unicode-bidi:embed">문턱: 3,864 kg/m³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">마그마가 솟음</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">실패</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">깊은 마그마의 밀도(kg/m³)</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:ltr;unicode-bidi:embed">압력 잉여(GPa)</text></svg><figcaption>논문 03에 따른, 깊은 마그마의 밀도에 대한 압력 잉여(하중과 마찰 이전): 선은 3,864 kg/m³에서 0을 지납니다.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 유량, 에너지원, 그리고 가는 관의 기각</h2>
+<p>우리는 <span class="ltr">10.49 GPa</span>의 압력 잉여가 거품 낀 마그마 기둥을 공회전선까지 밀어 올릴 수 있다는 것을 알았습니다. 하지만 달 하나를 통째로 만들려면 내부 엔진은 바로 같은 계 안에서 <strong>세 가지 실제적인 검증</strong>을 더 통과해야 합니다:</p>
+<div class="three">
+<div><b>TEST 1</b><h4>속도 검증</h4><p>마그마는 제때 도착하는가? 6억 년의 형성 창(민감도 검증에서는 1억 년) 동안 달 하나의 질량(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> kg)을 나르려면 평균 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> kg/s의 속도가 필요합니다(짧은 창에서는 최대 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> kg/s). 점성 흐름의 법칙(푸아죄유)에 따르면 유량은 <strong>통로 반지름의 네제곱</strong>(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>)으로 커집니다. 반지름이 수백 킬로미터 이상인 통로는 내부가 뜨겁고 움직일 수 있는 한 그 질량을 쉽게 나릅니다.</p></div>
+<div><b>TEST 2</b><h4>에너지 검증</h4><p>달을 들어 올리는 일은 어디서 오는가? 달의 질량을 표면(8,991 km)에서 해방 반지름(16,400 km)까지 들어 올리려면 약 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span>줄</strong>의 중력 일이 필요합니다(지구 결합 에너지의 1% 미만). 이 에너지는 어디서 올까요? 내부 진화를 이끄는 바로 그 과정에서입니다. <strong>무거운 철이 지구 핵으로 가라앉는 것</strong>과 젊은 지구의 수축은 약 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span>줄의 중력 에너지를 내놓습니다 — 들어 올림의 비용을 대고도 남습니다!</p></div>
+<div><b>TEST 3</b><h4>단열 지각 검증</h4><p>통로는 어떻게 도중에 얼어붙지 않는가? 통로 내부는 아래에서 열을 공급받아 액체로 남지만, 바깥 표면은 차가운 주변에 닿아 얼어붙습니다. 결빙 전선의 방정식은 바깥 지각의 첫 1미터가 겨우 <strong>1.9~23일</strong> 만에, 1킬로미터는 수천~수만 년 만에 굳는 반면, 50 km의 두꺼운 지각은 수백만 년이 걸린다는 것을 보여 줍니다 — 그래서 단단한 단열 껍질이 생겨 안쪽 심부를 뜨겁고 흐르는 상태로 유지합니다.</p></div>
+</div>
+<div class="box"><span class="tag">결합 검증의 놀라운 발견</span>
+<h3 style="margin-top:4px">왜 "가는 관"은 완전히 기각되는가</h3>
+<p style="margin:0">마지막 상승 단계(하루 5.77시간, 위도 22.5°, 달의 중심 15,397 km)에서 압력, 흐름, 달의 무게를 함께 검증하면 극적인 결과가 나타납니다. 통로가 반지름 500 km의 좁은 관이라면, 관 끝을 누르는 달의 무게가 <span class="ltr">46.18 GPa</span>의 하중을 만들어 압력 잉여 전체를 <span class="ltr">−35.03 GPa</span>의 부족으로 바꿔 버립니다. 반지름 방향의 균형은 <strong>통로 반지름 1,017 km</strong>를 넘어야 비로소 양이 되는데 — 그런 반지름에서는 통로의 바깥 부분 자체가 이미 <strong>달 질량의 0.46배</strong>(반지름 1,500 km에서는 달 하나의 질량!)에 이르고, 기가파스칼 수준의 옆 방향 전단 응력을 짊어집니다. <strong>결론:</strong> 통로는 질량 없는 가는 관이 아니라, 지구 자체의 넓고 뜨겁고 육중한 밑동 — <strong>서양배</strong>입니다!</p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>공급 경로를 따른 압력 수지는 중심의 암석정압 근원 압력(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>), 깊은 마그마 기둥(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>)과 바깥 마그마 기둥(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>)의 정수압 수두, 기둥 꼭대기 천체의 무게 하중(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>), 그리고 점성 마찰 손실(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>)을 잇습니다:</p>
+<div class="eqs">
+<div class="eq"><div class="k">근원 압력</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">마그마 기둥의 비용</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>들어 올림의 조건과 밀도 문턱</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>반지름 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>, 길이 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span>인 통로의 층류(푸아죄유 법칙), 바깥 지각의 결빙 전선이 두꺼워지는 속도(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>), 그리고 들어 올림의 중력 일(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>)에 대해:</p>
+<div class="eqs">
+<div class="eq"><div class="k">유량(푸아죄유)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">결빙 전선</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">들어 올림의 일</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 달 결정 속의 용융 포유물</h2>
+<p>물리적 검증은 물과 휘발성 물질이 풍부한 마그마(3,864 kg/m³보다 가벼운)만이 <span class="ltr">150.26 GPa</span>의 압력 문턱을 넘어 공회전선까지 솟아오를 수 있다는 것을 확인했습니다. 달이 물을 증발시킨 마르고 뜨거운 거대 충돌로 만들어졌다면, 그 오래된 암석은 완전히 말라 있어야 했습니다.</p>
+<p>그러나 과학자들이 첨단 현미경으로 <strong>용융 포유물</strong> — 달 깊은 곳에서 자란 감람석 결정 안에 갇혀 물이 우주로 빠져나가지 못하게 지켜 온 오래된 마그마의 작은 방울 — 을 조사했을 때, 놀라운 서명이 발견되었습니다. 지구 상부 맨틀의 농도와 비슷한 <strong>615~1,410 ppm</strong>의 높은 물 함량입니다.</p>
+<div class="q">달 결정 속에서 발견된 물은 달을 위로 밀어 올린 그 오래된 "거품 엔진"의 화석 같은 흔적입니다!</div>
+<h3 style="margin-top:28px">실험 상자: 압력 수지, 밀도 문턱, 그리고 결합 검증(논문 03, A부)</h3>
+<div class="tw"><table class="d"><tr><th>깊은 마그마의 밀도 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>쓸 수 있는 근원 압력 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>마그마 기둥의 비용 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>하중과 마찰 이전의 압력 잉여</th><th>들어 올림 검증의 결과</th></tr>
+<tr><td>1,500 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">82.14 GPa</span></td><td class="ok2"><span class="ltr">+68.12 GPa</span></td><td class="ok2">쉽게 통과(강하게 거품 낀 마그마)</td></tr>
+<tr><td>3,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">125.37 GPa</span></td><td class="ok2"><span class="ltr">+24.89 GPa</span></td><td class="ok2">통과(휘발성 물질이 풍부한 마그마)</td></tr>
+<tr class="hl"><td>3,500 kg/m³(기준)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">139.78 GPa</span></td><td class="ok"><span class="ltr">+10.49 GPa</span></td><td class="ok">통과 — 잉여가 형성을 이끔</td></tr>
+<tr class="hl"><td>3,864 kg/m³(문턱)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">150.26 GPa</span></td><td class="eq0"><span class="ltr">0.00 GPa</span></td><td class="eq0">정확한 균형점</td></tr>
+<tr><td>4,000 kg/m³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">154.19 GPa</span></td><td class="bad"><span class="ltr">−3.92 GPa</span></td><td class="bad">실패(너무 마르고 무거운 마그마)</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>통로 반지름 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>달의 반지름 방향 하중</th><th>흐름 마찰 손실</th><th>반지름 방향 잉여</th><th>옆 방향 전단 응력(22.5°)</th><th>바깥 통로의 질량(달 질량 단위)</th></tr>
+<tr><td>500 km</td><td><span class="ltr">46.18 GPa</span></td><td><span class="ltr">0.0103 GPa</span></td><td class="bad"><span class="ltr">−35.03 GPa</span>(실패)</td><td><span class="ltr">46.04 GPa</span></td><td>0.112</td></tr>
+<tr><td>1,000 km</td><td><span class="ltr">11.54 GPa</span></td><td><span class="ltr">0.0006 GPa</span></td><td class="bad2"><span class="ltr">−0.39 GPa</span>(문턱: 1,017 km)</td><td><span class="ltr">11.51 GPa</span></td><td>0.448(거의 달 절반!)</td></tr>
+<tr class="hl"><td>1,500 km(접촉 원반)</td><td><span class="ltr">5.13 GPa</span></td><td><span class="ltr">0.0001 GPa</span></td><td class="ok"><span class="ltr">+6.02 GPa</span>(통과!)</td><td><span class="ltr">5.12 GPa</span></td><td class="ok">1.008(육중한 구조 — 서양배)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>우리는 내부의 엔진이 어떻게 작동하는지 알아냈습니다. <span class="ltr">150.26 GPa</span>의 깊은 근원 압력은 3,864 kg/m³보다 가벼운 거품 낀 마그마를 들어 올리고, 결합 검증은 여기에 가는 관이 아니라 지구에서 솟아오르는 넓고 육중한 통로가 있음을 드러냈습니다.</p>
+<p>그렇다면 그 형성 지대 바로 위에 놓여 있던 지구의 바깥 지각은 어떻게 되었을까요? 다음 장 — <strong>제4장: 바깥에서 솟아오르는 껍질 — 돔의 4단계와 달 얼굴의 변환 규칙</strong>(논문 03, B부: §B.1–B.7) — 에서 우리는 지구의 시알 껍질이 천체와 함께 솟아올라 달의 피부가 되고, 달의 얼굴을 세 개의 정확한 지리적 지대로 나눈 과정을 알아볼 것입니다.</p>
+<a href="story04_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제4장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">바깥에서 솟아오르는 껍질 — 돔의 4단계와 달 얼굴의 변환 규칙 →</p></div></a>
+<p style="margin-top:22px"><a href="story02_ko.html">← 제2장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

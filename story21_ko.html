@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제21장: 태양계 위성의 법칙 — 탄생 양식의 자, 펌프의 원리, 대기의 뚜껑 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제21장: 태양계 위성의 법칙 — 탄생 양식의 자, 펌프의 원리, 대기의 뚜껑.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story21_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story21_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story21_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story21_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story21_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story21_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <a href="story21_de.html" hreflang="de">Deutsch</a> · <a href="story21_es.html" hreflang="es">Español</a> · <a href="story21_fr.html" hreflang="fr">Français</a> · <a href="story21_ru.html" hreflang="ru">Русский</a> · <a href="story21_zh.html" hreflang="zh">中文</a> · <a href="story21_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제21장</p>
+<h1>제21장: 태양계 위성의 법칙 — 탄생 양식의 자, 펌프의 원리, 대기의 뚜껑</h1>
+<p>논문 11 — 11. 위성의 탄생: 위성 탄생을 위한 하나의 메커니즘(A~B부: 탄생의 자, 펌프와 뚜껑의 원리, 분화의 단계, 13가지 점검의 절차)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 하나의 물리 법칙이 태양계의 모든 위성의 탄생을 설명할까 — 지구에서 명왕성까지?</h2>
+<p>앞 장들에서 우리는 지구가 서양배 끝에서 달을 만든 것(1~9장)과, 화성이 뾰족한 부풂 꼭대기의 화산에서 포보스와 데이모스를 분출한 것(19~20장)을 보았습니다. 논문 11에서 LEF 모델은 이 두 경우를 <strong>"위성의 법칙"</strong>으로 일반화합니다 — 태양계의 모든 행성과 왜소행성에 성립하는 하나의 균일한 메커니즘입니다:</p>
+<ol class="steps">
+<li><strong>왜 위성들은 크기와 조성이 이렇게 다를까?</strong> 지구의 달은 말라 있고 모체에 비해 거대합니다(지구 질량의 1.2%). 거대 행성(목성, 토성, 천왕성, 해왕성)의 위성은 아주 작고(0.01%~0.02%) 물과 얼음이 풍부합니다. 반면 카론은 명왕성–카론 계 질량의 11%를 차지합니다!</li>
+<li><strong>왜 위성의 밀도는 태양에서 멀어질수록 떨어지다가 — 천왕성에서 다시 뛸까?</strong> 지구 달의 밀도는 3,344 kg/m³, 목성의 갈릴레이 위성은 ~ 2,600 kg/m³, 토성의 위성은 ~ 1,350 kg/m³ — 그런데 더 먼 천왕성에서는 밀도가 1,505 kg/m³로 다시 올라갑니다!</li>
+<li><strong>왜 다섯 행성(화성, 목성, 토성, 천왕성, 해왕성)에서는 작은 위성이 공회전선 양쪽에 있을까?</strong> 그리고 왜 수성과 금성에는 위성이 전혀 남지 않았을까?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 공회전선의 거리 자, 팔을 당기는 스케이터, 그리고 거품 뚜껑을 덮은 두 개의 수프 냄비</h2>
+<p>네 가지 손에 잡히는 그림이 태양계 전체에서 위성 탄생의 물리를 설명합니다:</p>
+<ul>
+<li><strong>코트가 바깥으로 부푸는 동안 팔을 끌어당기는 아이스 스케이터(안에서 줄고 밖에서 부풂, A.5):</strong> 행성의 분화는 어떻게 공회전선을 표면에 가까이 데려올까요? 각운동량을 잃지 않고 고르게 부푸는 천체는 느려져 공회전선을 멀어지게 할 것입니다. 그러나 분화는 안과 밖에서 반대 방향의 과정입니다. 무거운 핵(질량 대부분을 지님)은 <strong>가라앉아 안으로 줄어들며</strong> 팔을 당기는 스케이터처럼 자전을 빠르게 하고, 가벼운 물과 휘발성 물질은 위로 밀려나 자전을 거의 늦추지 않으면서 <strong>바깥 외피를 부풀립니다</strong>. 그래서 공회전선의 상대적 거리는 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span>에 따라 줄어들어 표면과 만납니다!</li>
+<li><strong>"유체역학적 펌프"(펌프의 원리, A.4):</strong> 무거운 물질이 핵으로 가라앉으면, 정수압이 물과 가벼운 규산염을 분출 구멍(서양배의 끝이나, 부풂 위 화산의 화도)으로 밀어 올립니다. 펌프가 작동하고 지각이 봉인되지 않은 한, <strong>탄생의 창</strong>은 열려 있습니다.</li>
+<li><strong>불 위의 두 수프 냄비 — 두꺼운 거품 뚜껑과 얇은 거품 뚜껑(대기 뚜껑의 원리, A.4와 A.9):</strong> 태양으로부터의 거리가, 원시 행성계 원반이 흩어지기 전에 각 거대 행성이 얼마나 많은 수소와 헬륨을 붙잡았는지 정했습니다. 토성(9.5 AU)에는 물 위의 열역학적 뚜껑으로 작용하는 <strong>두꺼운 기체 외피(질량의 70%~85%)</strong>가 있습니다. 증기는 응결해 안으로 다시 떨어지고, 위쪽 층은 물로 포화되어 부드러운 채로 남으며, 공회전선은 제자리에 머물고(1.92 R), 분출되는 위성은 가볍고 얼음이 풍부합니다(1,346 kg/m³). 천왕성(19 AU)에는 <strong>얇은 기체 뚜껑(10%~20%)</strong>만 있습니다. 증기는 공회전선을 통해 우주로 빠져나가 선을 3.24 R로 밀어낸 각운동량을 가져갔고, 위쪽 분출층을 말리고 다졌습니다 — 그래서 천왕성의 위성은 밀도가 더 높습니다(1,505 kg/m³)!</li>
+<li><strong>태양계 전체의 세 가지 탄생 양식(A.4, L.4):</strong> 뜨겁고 마른 안쪽 가장자리(지구)에서는 크고 마른 위성이 서양배 끝에 지어졌습니다(<strong>건설</strong>). 젖은 중앙 지대(화성에서 해왕성까지)에서는 물이 풍부한 작은 위성들이 부풂 위의 화산에서 분출되었습니다(<strong>분출</strong>). 그리고 차갑고 빠른 바깥 가장자리(명왕성–카론)에서는 하나로 된 천체가 "땅콩"으로 늘어나 허리에서 찢어졌습니다(<strong>분열</strong>).</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 탄생의 법칙, 상태의 자, 그리고 분화의 네 단계(A부)</h2>
+<p>논문 11의 A부는 위성의 법칙의 정밀한 정량 조건을 정식화합니다:</p>
+<ol class="steps">
+<li><strong>탄생 양식의 자(A.3):</strong> 공회전선의 반지름을 모체 반지름 단위로 재면(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), 모체의 반지름은 완전히 지워집니다! 위치 x는 <strong>자전 속도와 평균 밀도의 비에만</strong> 달려 있으므로(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>), 하나의 자가 우주의 모든 천체에 적용됩니다:
+<ul>
+<li><strong>서양배(서양배 끝에서의 건설):</strong> x ≈ 2.29(5.77시간, 밀도 3,940 kg/m³의 지구 — 달은 모체 질량의 1.2%).</li>
+<li><strong>부풂과 화산(부풂 위에서의 분출):</strong> x ≈ 1.74~2.06(7~9시간, 밀도 1,170 kg/m³의 화성, 그리고 기체와 얼음의 거대 행성도 — 0.01%~0.02%의 아주 작은 위성).</li>
+<li><strong>부풂 없는 화산(이론적 가능성):</strong> x ≈ 1.1~1.5.</li>
+<li><strong>완전한 땅콩 분열(허리에서의 분열):</strong> x ≈ 0.85~1.02(늘어남 문턱 x = 1.53을 지나 찢어짐 문턱 x = 1로 — 1.9~2.5시간의 명왕성과 카론, 카론은 짝 질량의 11%).</li>
+</ul>
+</li>
+<li><strong>모체 분화 단계의 연대기적 단면으로서의 위성 조성(A.9):</strong> 분화가 진행되며 공회전선은 안으로 움직이므로(목성에서, 그리고 토성의 생애 초기에), <strong>더 먼 위성은 더 일찍</strong>, 더 가까운 위성은 더 늦게 태어났습니다:
+<ul>
+<li><strong>0단계(분화의 시작 — 물의 원심 분무):</strong> 로슈 한계 위의 바깥층에서 원시 물이 뿌려짐 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 공기처럼 가벼운 얼음 위성(이아페투스 1,088 kg/m³, 히페리온 544 kg/m³).</li>
+<li><strong>1단계(초기 — 섞인 물질):</strong> 선별이 끝나기 전, 모체 전체의 조성을 대표하는 물질의 분출 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 모체 내부 천체에 가까운 밀도의 큰 위성(f ≈ 0.6~0.7: 칼리스토 1,834, 가니메데 1,936, 타이탄 1,880, 티타니아 1,711, 오베론 1,630 kg/m³).</li>
+<li><strong>2단계(유체역학적 펌프의 정점):</strong> 물과 가벼운 규산염으로 포화된 마그마의 밀어 올림; 휘발성 물질이 우주로 빠져나가 높은 공극률("스펀지 같음", 30%~40%)과 낮은 밀도를 남김 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 포보스(1,860), 데이모스(1,470), 테티스(984), 미란다(1,200 kg/m³).</li>
+<li><strong>3단계(분화의 끝):</strong> 뚜렷한 금속 핵을 가진, 마르고 밀도 높은 규산염 잔여물의 분출 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 이오(3,528 kg/m³).</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 222" role="img" aria-label="모체 반지름 단위의 공회전선 위치" style="direction:ltr"><g transform="translate(227.0,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >서양배 끝에서의 건설 · ⁦2.29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >부풂 위에서의 분출 · ⁦1.74–2.06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >부풂 없는 화산 · ⁦1.1–1.5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >땅콩 분열 · ⁦0.85–1.02⁩</text><text x="320.0" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >모체 반지름 단위의 공회전선 위치 · 빨간 선: 찢어짐 문턱</text></svg><figcaption>탄생 양식의 자: 같은 수 x가 위성이 끝에 지어졌는지, 화산에서 분출되었는지, 땅콩에서 찢겨 나왔는지를 정합니다 — 모체의 반지름과 상관없이, 모든 천체에 대해.</figcaption></figure><div class="callout"><span class="tag">올바른 밀도 비교 — 내부 천체를 기체 외피에서 떼어 내기(A.9)</span><p style="margin:0">위성은 수소와 헬륨의 외피가 아니라 내부 천체(암석과 얼음)에서 태어납니다. 위성의 평균 밀도를 규산염·금속 성분(3,500 kg/m³)과 얼음 성분(950 kg/m³)으로 나누면, 규산염 질량 분율 f는 지구(f = 0.98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>)에서 목성(f = 0.83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>), 토성(f = 0.36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>)으로 조금씩 떨어지다가 — 천왕성에서 다시 올라갑니다(f = 0.49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>). 천왕성의 얇은 기체 뚜껑(10%~20%)이 물을 빠져나가게 하고 위쪽 분출층을 말렸기 때문입니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 위성의 법칙의 열여섯 조항(A.10)과 13가지 점검의 절차(B부)</h2>
+<p>논문 11의 A.10부와 B부는 모든 물리 조건을 하나의 법칙 체계와, 태양계의 모든 천체를 위한 하나의 균일한 13가지 점검 측정 절차로 묶습니다:</p>
+<ol class="steps">
+<li><strong>열역학적 시계로서의 태양 — 탄생의 호(A.10.4와 L.4):</strong> 위성의 탄생에는 활발한 분화, 열린 시간의 창, 봉인되지 않은 지각, 그리고 점성이 낮은 지하층이 동시에 필요합니다. 태양으로부터의 거리가 네 조건이 얼마나 오래 함께 성립하는지 정합니다. 안쪽 가장자리(수성과 금성)에서는 빠른 건조가 탄생의 창을 일찍 닫았고, 지구만이 서양배 끝에 위성 하나를 지을 수 있었습니다. 중앙 지대(화성에서 토성까지)에서는 위성이 풍부하게 분출되어 토성에서 정점(~ 24개의 규칙 위성)에 이릅니다. 그리고 차가운 바깥 가장자리(천왕성, 해왕성, 명왕성)에서는 지각의 동결이 펌프의 구멍을 조금씩 막아, 계를 역학적 분열로 옮깁니다.</li>
+<li><strong>구조적 경주와 위성 질량의 되먹임(A.4, A.10.16):</strong> 위성이 태어나려면 서양배나 부풂의 반지름 방향 성장 속도가 공회전선이 물러나는 속도를 넘어야 합니다. 탄생 뒤, 위성과 모체의 질량비가 크면(지구의 달처럼 1.2%) 위성이 각운동량의 대부분(84%)을 지니고 모체를 늦춥니다. 그러나 거대 행성과 화성에서는 위성의 질량이 아주 작아(0.01%~0.02%, 운동량의 겨우 0.4%~1.4%), 공회전선의 후퇴는 <strong>선을 통한 물과 기체의 탈출(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)에서만</strong> 옵니다!</li>
+<li><strong>13가지 점검의 체계적 절차(B부):</strong> 치우침을 피하려고, 모든 행성과 왜소행성은 연대순의 13가지 고정 매개변수로 점검됩니다. (1) 전 지구 기본 자료; (2) 목록과, 규칙 위성과 포획 위성의 구분; (3) 고대 자전의 역학적 복원(점검 3 — 탄생 시의 반지름과 관성 모멘트 계수 k를 사용!); (4) 탄생 법칙의 검증; (5) 물과 휘발성 물질의 분석; (6) 오늘날의 분화 정도(k = C/MR²); (7) 탄생 창의 정의; (8) 조석 이동의 경로(점검 8 — da/dt를 적분해 고리로부터의 이차적 밀림이 필요한지 가려냄); (9) 생존 매개변수(로슈 한계와 힐 반지름); (10) 모체에 남은 형태적 흔적; (11) 위성에 남은 구조적 흔적(공극률, 조석 고정, 얼어붙은 부풂); (12) 연속된 흐름으로서 고리 체계의 분석; 그리고 (13) 이상의 분리.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>모체 반지름 단위의 공회전선 위치(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), 탄생의 하루(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>), 그리고 분화 동안 안쪽 줄어듦과 바깥 부풂의 효과는 다음과 같이 정식화됩니다(§A.3, §A.5, §B):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>관성 모멘트 계수 k는 분화 공식 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span>에 제곱으로 나타나므로, k가 0.40(균질 천체)에서 0.20~0.25(촘촘한 핵)로 떨어지면, 바깥 외피가 1.3배 부풀더라도 공회전선 x는 2.10 R에서 1.44~1.68 R로 다가옵니다 — 그리고 이것이 표면과 공회전선을 한데 모으는 지구역학적 엔진입니다!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 공회전선의 복원과 위성의 혼합 방정식</h2>
+<p>절차의 점검 3과 5를 행성에 적용하면, 위성의 화학 조성과 각운동량 보존 사이의 인상적인 정량적 일치가 드러납니다(§A.9, §B):</p>
+<ul>
+<li><strong>위성 밀도의 두 성분 혼합 방정식(§A.9):</strong> 공식 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span>에 따르면, 분화 1단계에서 태어난 큰 위성의 규산염 질량 분율 f는 바깥 태양계 전체(칼리스토, 가니메데, 타이탄, 티타니아, 오베론, 그리고 명왕성–카론 계도)에서 <strong>f ≈ 0.6~0.7</strong>의 좁고 균일한 범위로 수렴합니다!</li>
+<li><strong>질량 손실 없는 공회전선 복원의 검증(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, B부):</strong> 위성의 각운동량만 모체에 되돌리면, 목성(2.29 R → 2.28 R)과 토성(1.92 R → 1.90 R)에서는 선이 거의 움직이지 않습니다(두꺼운 뚜껑의 원리와 부합). 지구에서는 선이 2.29 R로 돌아옵니다(달이 운동량의 84%를 지니므로). 반면 화성(6.03 R), 천왕성(3.24 R), 해왕성(3.39 R)에서는 선이 탄생 범위(x ≈ 2)에서 멀리 남습니다 — 셋 모두에서 엄청난 양의 물과 기체가 공회전선을 통해 빠져나갔다는 증거입니다!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 탄생 양식의 자, 분화의 단계, 두 냄비 모델, 13가지 점검의 절차(논문 11, A~B부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>탄생 양식</th><th>물질을 들어 올리는 메커니즘</th><th>공회전선의 위치(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th><th>위성/모체 질량비</th><th>태양계의 지대와 예</th></tr>
+<tr class="hl"><td><strong>1. 끝에서의 건설</strong></td><td>행성 서양배 끝에서의 오랜 축적; 선을 넘을 때 분리</td><td><strong>2.29</strong>(5.77 h, 3,940 kg/m³)</td><td><strong>1.2%</strong>(크고 마름)</td><td>마른 안쪽 가장자리: <strong>지구의 달</strong>(유일한 예)</td></tr>
+<tr class="hl"><td><strong>2. 부풂 위에서의 분출</strong></td><td>적도의 부풂과, 물로 포화된 마그마를 주입하는 화산</td><td><strong>1.74~2.06</strong>(화성 7~9 h, 1,170 kg/m³)</td><td>거대 행성에서 <strong>0.01%~0.02%</strong>(화성에서 1.9 × 10⁻⁸)</td><td>젖은 중앙 지대: <strong>포보스, 데이모스, 거대 행성의 위성</strong></td></tr>
+<tr><td><strong>2b. 부풂 없는 화산</strong></td><td>국지적 화산으로부터의 점 분출</td><td>≈ 1.1~1.5</td><td>아주 작음</td><td>이론적 가능성(계산된 예 없음)</td></tr>
+<tr class="hl"><td><strong>3. 완전한 분열</strong></td><td>분열 문턱(x = 1)을 넘는 자전; 땅콩으로 늘어나 허리에서 찢어짐</td><td><strong>0.85~1.02</strong>(1.9~2.5 h, 1,840 kg/m³)</td><td><strong>11%~12%</strong>(이중 고정)</td><td>차가운 바깥 가장자리: <strong>명왕성과 카론</strong>(그리고 분열 전의 하우메아)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>모체의 분화 단계(A.9)</th><th>지구역학적 메커니즘과 구멍의 물질</th><th>생긴 위성의 성질</th><th>태양계의 예</th></tr>
+<tr><td><strong>0단계: 분화의 시작</strong></td><td>로슈 한계 위 바깥층에서 물의 원심 분무</td><td>밀도가 아주 낮고 공기처럼 가벼운 스펀지 같은 얼음 위성</td><td>이아페투스(1,088), 히페리온(544 kg/m³)</td></tr>
+<tr class="hl"><td><strong>1단계: 초기 단계</strong></td><td>내부 천체 전체의 조성을 대표하는 섞인 물질</td><td>큰 위성, 내부 천체에 가까운 밀도(f ≈ 0.6~0.7), 부분적 분화</td><td>칼리스토(1,834), 가니메데(1,936), 타이탄(1,880), 티타니아(1,711), 오베론(1,630)</td></tr>
+<tr class="hl"><td><strong>2단계: 펌프의 정점</strong></td><td>빠른 핵의 가라앉음이 물과 가벼운 규산염으로 포화된 마그마를 밀어 올림</td><td>휘발성 물질의 탈출이 "스펀지 같음"(공극률 30%~40%)과 낮은 밀도를 만듦</td><td>포보스(1,860), 데이모스(1,470), 테티스(984), 미란다(1,200 kg/m³)</td></tr>
+<tr><td><strong>3단계: 분화의 끝</strong></td><td>거의 완전한 선별; 마르고 밀도 높은 규산염 잔여물의 분출</td><td>완전히 마르고 금속 핵을 가진 밀도 높은 규산염 위성</td><td>이오(3,528 kg/m³)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>이 장에서 우리는 LEF 모델의 <strong>위성의 법칙</strong>을 정식화했습니다. 모체 반지름 단위의 공회전선 위치(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), 유체역학적 펌프의 원리, 대기 뚜껑의 원리(토성 대 천왕성의 두 냄비 모델), 그리고 공회전선을 표면으로 데려오는 핵의 줄어듦입니다.</p>
+<p>다음 장 — <strong>제22장: 행성 전체 조사 — 수성과 금성에서 명왕성, 하우메아, 케레스까지</strong>(논문 11 — C~N부에서) — 에서는 13가지 점검의 절차를 행성마다 돌려 봅니다. 왜 수성과 금성에는 위성이 없는지, 토성의 고리가 균형 잡힌 연속 흐름으로 어떻게 작동하는지, 왜 천왕성은 98° 기울어져 있는지, 트리톤이 카이퍼 벨트에서 온 땅콩의 혹으로 어떻게 붙잡혔는지 알아내고, 태양계의 열린 질문 12가지를 지도로 그릴 것입니다!</p>
+<a href="story22_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제22장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">행성 전체 조사 — 수성과 금성에서 명왕성, 하우메아, 케레스까지 →</p></div></a><p style="margin-top:22px"><a href="story20_ko.html">← 제20장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

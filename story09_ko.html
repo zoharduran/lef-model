@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제9장: 바닥 위의 시계 — 녹은, 번진, 날카로운 크레이터, 공급 엔진, 그리고 노출의 세 세대 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제9장: 왜 바다 바닥의 큰 크레이터는 녹아 있고, 중간 것은 번져 있고, 작은 것은 날카로운가, 공급 엔진의 임계 흐름, 그리고 구멍의 세 세대.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story09_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story09_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story09_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story09_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story09_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story09_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story09_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story09_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story09_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story09_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story09_he.html" hreflang="he">עברית</a> · <a href="story09_en.html" hreflang="en">English</a> · <a href="story09_de.html" hreflang="de">Deutsch</a> · <a href="story09_es.html" hreflang="es">Español</a> · <a href="story09_fr.html" hreflang="fr">Français</a> · <a href="story09_ru.html" hreflang="ru">Русский</a> · <a href="story09_zh.html" hreflang="zh">中文</a> · <a href="story09_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제9장</p>
+<h1>제9장: 바닥 위의 시계 — 녹은, 번진, 날카로운 크레이터, 공급 엔진, 그리고 노출의 세 세대</h1>
+<p>논문 05 — 바다(G~I부: 연구 8과 15)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 왜 비의 바다의 큰 크레이터는 녹아 있고, 중간 것은 번져 있고, 작은 것은 날카로울까?</h2>
+<p>앞면의 큰 바다인 <strong>비의 바다</strong>의 바닥을 보세요. 정확히 같은 균일한 현무암 표면 위에, 유명한 크레이터 세 개가 완전히 다른 세 가지 상태로 나란히 있습니다:</p>
+<ul>
+<li><strong>무지개 만(지름 246 km):</strong> 절반이 녹아 사라진 거대한 크레이터 — 북쪽 가장자리만 쥐라 산맥의 능선으로 남았고, 남쪽 가장자리는 완전히 지워져 바닥이 바다 표면과 합쳐졌습니다(깊이/지름 비 0.008, 같은 크기의 보통 고지 크레이터의 4분의 1에 불과!).</li>
+<li><strong>플라톤(지름 101 km):</strong> 북쪽 기슭의 중간 크기 크레이터로, 벽의 고리는 온전하지만 바닥은 채워지고 평평하며 완전히 번져 있습니다(깊이/지름 비 0.020, 보통 고지 크레이터의 약 절반).</li>
+<li><strong>키르히(지름 11 km):</strong> 바다 바닥 한가운데의 작은 크레이터로, 날카롭고 또렷하며 새 고지 크레이터보다도 깊게 남아 있습니다(0.078에 비해 0.166)!</li>
+</ul>
+<p>셋 모두 정확히 같은 바다, 같은 위도, 같은 땅 위에 있었습니다. 그것들이 모두 수십억 년에 걸친 무작위 소행성 충돌로 만들어졌다면, 왜 비의 바다 바닥에는 지름 20 km 이상의 날카로운 크레이터가 단 하나도 없으며, 왜 크레이터의 보존 상태는 그 크기를 그토록 정확히 따를까요?</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 식어 가는 죽 냄비에 누른 숟가락 — 그리고 서리 내린 밤의 열린 수도꼭지</h2>
+<p>두 가지 간단한 그림이 크레이터의 크기, 바다의 냉각, 그리고 노출 순서를 잇는 물리적 메커니즘을 드러냅니다:</p>
+<ul>
+<li><strong>천천히 식어 가는 뜨거운 죽 냄비(크레이터의 세 상태):</strong> 불에서 내린 걸쭉한 죽 냄비에 세 단계에 걸쳐 숟가락을 눌러 보세요. 죽이 아직 뜨겁고 묽을 때(낮은 점성, 약 1 Pa·s)는 자국이 곧바로 닫혀 사라집니다 — 가장자리에 희미한 표시만 남습니다(무지개 만 같은 <strong>녹은 크레이터</strong>). 죽이 결정이 가득한 걸쭉한 "진흙"(머시)으로 식으면, 자국은 가장자리의 고리를 유지하지만 바닥이 주저앉아 채워집니다(플라톤 같은 <strong>번진 크레이터</strong>). 그리고 죽이 얼어 완전히 굳으면(고상선 아래, ~ 1,050°C), 숟가락 자국은 날카롭고 또렷한 홈으로 영원히 남습니다(키르히 같은 <strong>날카로운 크레이터</strong>)!</li>
+<li><strong>서리 내린 밤에 흐르는 수도꼭지(공급 엔진의 임계 흐름):</strong> 왜 어떤 구멍은 일찍 얼었고 어떤 구멍은 끝까지 열려 있었을까요? 서리 내린 밤 바깥의 수도관을 상상해 보세요. 물이 세차게 흐르는 동안에는 물이 나르는 열이 관이 얼지 않게 막지만, 흐름이 어떤 문턱(<strong>임계 흐름</strong>) 아래로 약해지자마자 추위가 이겨 관은 얼음으로 막힙니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 한 시계의 두 바늘 — 바다의 냉각과 지구에서 오는 발사의 약해짐</h2>
+<p>논문 05의 G부는 논문 06과의 공동 연구(<strong>연구 8</strong>)를 제시합니다. 이 연구는 앞면 현무암 위의 지름 3 km 이상 크레이터를 모두 훑었습니다(모두 3,478개: 공급 돔 위 바다 바닥에 324개, 현무암 평원에 3,154개). 각 크레이터를 정확히 같은 지름의 고지 크레이터와 비교해 <strong>날카로운</strong>, <strong>번진</strong>(고지 크레이터의 75%보다 얕음), <strong>녹은</strong>(그 95%보다 얕음)으로 분류했습니다:</p>
+<ol class="steps">
+<li><strong>바다 바닥에서 사라진 크레이터:</strong> 접촉 바다(비의 바다와 맑음의 바다)의 바닥에는 옆의 평원에 있는 2~5 km 크레이터의 3분의 1밖에 없고(백만 km²당 836개에 비해 263개), 20 km 이상 크레이터는 <strong>정확히 0개</strong>입니다! 그것들이 유체 상태일 때 내려앉은 큰 크레이터는 모두 그냥 삼켜져 지워졌습니다.</li>
+<li><strong>크레이터의 크기와 상태 사이의 분명한 연결:</strong> 바다 바닥에서 <strong>날카로운</strong> 크레이터의 비율은 3~5 km에서 <strong>71%</strong>, 5~10 km에서 57%, 10~20 km에서 35%로 떨어져 20~40 km에서 <strong>0%</strong>에 이르고 — <strong>녹은</strong> 크레이터의 비율은 17%에서 <strong>85%</strong>로, 80 km 이상에서는 <strong>100%</strong>로 뛰어오릅니다(통계적 유의성은 100억분의 1보다 좋음!).</li>
+<li><strong>왜 큰 것이 먼저 오고 작은 것이 마지막에 왔을까? (§G.4–G.5):</strong> 분리 뒤에도 지구는 빛나는 물질을 우주로 계속 발사했습니다. 달이 지구에서 멀어지면서 거기에 이르는 데 필요한 최소 속도가 올라갔습니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>R</mi><mo>⊕</mo></msub><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min} = \sqrt{2GM_\oplus(1/R_\oplus - 1/r)}</annotation></semantics></math></span></span> — 거리 17,000 km에서 8.8 km/s, 60,000 km에서 10.6 km/s). 동시에 지구의 마그마 폭풍은 조금씩 잦아들었습니다. 처음에는 큰 빛나는 덩어리가 발사되었고(달이 가깝고 바다가 유체였을 때 → 녹은 크레이터), 그다음 중간 덩어리(바다가 "머시" 상태일 때 → 번진 크레이터), 마지막으로 작은 빛나는 방울(바다가 이미 얼었을 때 → 날카로운 크레이터. 예를 들어 접촉 바다에서 3~10 km 크레이터의 82%가 날카로움!)이 발사되었습니다.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Share of sharp craters on mare floors by diameter" style="direction:ltr"><rect x="120.0" y="16" width="416.5" height="26" rx="4" fill="#2f7d57"/><text x="544.5" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦71%⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >3–5 km</text><rect x="120.0" y="56" width="334.4" height="26" rx="4" fill="#5f9a6e"/><text x="462.4" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦57%⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >5–10 km</text><rect x="120.0" y="96" width="205.3" height="26" rx="4" fill="#c47f2c"/><text x="333.3" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦35%⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >10–20 km</text><rect x="120.0" y="136" width="3.5" height="26" rx="4" fill="#b23a2e"/><text x="131.5" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦0%⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >20–40 km</text></svg><figcaption>지름별 바다 바닥의 날카로운 크레이터 비율(연구 8): 크레이터가 클수록 유체 바닥을 더 일찍 때렸습니다.</figcaption></figure><div class="callout"><span class="tag">아래에서 오는 지구의 열 — 접촉 평원의 크레이터 가장자리가 주는 증거(연구 15, §G.6)</span><p style="margin:0">통용되는 문헌은 평원(폭풍의 대양 등)의 큰 크레이터가 옆에서 용암에 잠겼다고 봅니다 — 주위로 물이 차올라 아래쪽 비탈은 덮지만 가장자리의 마루는 온전히 남기는 모래성처럼요. LEF 모델에서 접촉 평원은 가까운 지구의 복사(T ≈ 2,000 K, 시야 인자 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.205</mn><mo>→</mo><msub><mi>T</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>345</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">0.205 \rightarrow T_{\mathrm{surface}} \approx 1,345\text{ K}</annotation></semantics></math></span></span>, 현무암의 녹는점보다 높음!)로 <strong>아래에서부터</strong> 가열되었습니다.
+<br>지름 40 km 이상의 모든 크레이터 주위 36개의 방사 단면을 조사하면 차이가 드러납니다. 접촉 평원에서는 가장자리가 고지 쪽보다 평원을 향한 방향에서 <strong>+24% 더 많은 방향에서 완전히 사라지고</strong>(접촉 너머의 평원에서는 <strong>0%</strong>!), 남은 마루는 훨씬 무디고 닳아 있습니다(곡률은 −35 m/km² 낮고, 폭은 +0.14 km 넓고, 각도는 +5.3° 넓음) — 옆에서의 범람으로는 결코 만들 수 없는, 아래로부터의 열 마모입니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 공급 엔진, 노출 전선, 그리고 구멍의 세 세대</h2>
+<p>논문 05의 H부와 I부는 공급 엔진의 물리(압력, 부력, 점성, 휘발성 물질)가 줄어드는 접촉 원반의 기하(6,000 km에서 3,000 km로)와 어떻게 맞물려 달 얼굴에 <strong>구멍의 세 세대</strong>를 만드는지 보여 줍니다:</p>
+<ol class="steps">
+<li><strong>왜 유체만이 압력을 전달할 수 있는가(§H.1–H.2):</strong> 껍질 속의 고체는 13~<span class="ltr">16 GPa</span>의 응력(그 강도 ~ <span class="ltr">0.2 GPa</span>의 60~80배)을 짊어져야 했을 것이고 곧바로 부서졌을 것입니다. 그래서 구멍은 정수압과 부력을 전달하는 유체 마그마의 기둥이며, 물과 휘발성 물질의 함량이 그 점성을 정합니다. 단단한 껍질 아래에서 자유롭게 흐를 만큼 낮으면서도, 무거운 철 알갱이를 도중에 가라앉히지 않고 함께 나를 만큼은 높게요.</li>
+<li><strong>공급 흐름과 구멍의 닫힘 사이의 연결(§H.3):</strong> 솟아오르는 흐름(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msub><mi>Q</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{\mathrm{feed}} = Q_{\mathrm{retained}} + Q_{\mathrm{erupted}}</annotation></semantics></math></span></span>)이 우주로의 냉각 속도보다 빠르게 열을 가져오는 한 구멍은 열려 있습니다. 흐름이 <strong>임계 흐름</strong>의 문턱 아래로 떨어지면 구멍은 얼어 봉인됩니다(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}}</annotation></semantics></math></span></span>). 앞면에서는 빛나는 지구의 복사(~ 2,000 K, 시야 인자 0.205)가 표면을 약 <strong>1,345 K</strong> — 현무암의 녹는점(~ 1,320 K 또는 1,050°C)보다 높은 — 온도로 유지했으므로, 앞면의 구멍은 <strong>달이 붙어 있는 한 얼 수 없었습니다</strong>! 반면 뒷면에서는 서양배가 길어지며 지구의 열이 덜 닿게 되자 구멍들이 하나씩 얼었습니다(맑음의 바다에서 곧은 내부 통로를 통해 공급받은 <strong>모스크바의 바다</strong>는 예외).</li>
+<li><strong>움직이는 노출 전선과 구멍의 세 세대(§I.1–I.5):</strong> 바깥으로 둥글어지는 동안 접촉 원반이 6,000 km에서 3,000 km로 줄어들자, 접촉의 가장자리는 <strong>노출 전선</strong>으로서 안쪽으로 물러났습니다:
+<ul>
+<li><strong>1세대(위쪽 돔 — 뒷면, 70° 너머):</strong> 처음부터 우주에 드러나 있던 구멍들로, 바깥으로 물질을 발사해 자기 가장자리와 뒷면의 크레이터를 만들었고, 열이 줄어들자 일찍 얼어 나중의 형성 층 아래 묻혔습니다(묻힌 돔 36개).</li>
+<li><strong>2세대(벗겨지는 고리 — 31°~70° 띠, 언덕):</strong> 물질을 안으로 들여보내는 <strong>덮인 입</strong>으로 삶을 시작했다가, 노출 전선이 지나가자 오랫동안 바깥으로 물질을 발사하는 <strong>배출 구멍</strong>이 된 구멍들입니다.</li>
+<li><strong>3세대(접촉 원반 — 31°까지의 앞면 모자):</strong> 분리 순간까지 덮인 채 지구에 눌려 있던 구멍들(비의 바다, 맑음의 바다, 코페르니쿠스 H, 끓는 만)입니다. 그것들은 지구의 압력을 달 안으로 보내는 공급 입 역할을 했습니다. 분리 순간 압력은 단번에 멈추었고, 분출이 그쳤으며, 깊은 유체 바닥은 수억 년에 걸쳐 바깥에서 안쪽으로 천천히 얼었습니다!</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Minimum launch speed from Earth to reach the receding Moon" style="direction:ltr"><line x1="70" x2="610" y1="221.3" y2="221.3" stroke="#ece7da"/><text x="62" y="225.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">8.5</text><line x1="70" x2="610" y1="177.5" y2="177.5" stroke="#ece7da"/><text x="62" y="181.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9</text><line x1="70" x2="610" y1="133.8" y2="133.8" stroke="#ece7da"/><text x="62" y="137.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">9.5</text><line x1="70" x2="610" y1="90.0" y2="90.0" stroke="#ece7da"/><text x="62" y="94.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10</text><line x1="70" x2="610" y1="46.3" y2="46.3" stroke="#ece7da"/><text x="62" y="50.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">10.5</text><text x="127.4" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">20,000</text><text x="242.3" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">30,000</text><text x="357.2" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">40,000</text><text x="472.1" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">50,000</text><text x="587.0" y="248" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">60,000</text><path d="M93.0,191.1 L97.9,185.4 L102.9,180.0 L107.8,174.9 L112.7,170.0 L117.7,165.4 L122.6,161.1 L127.6,156.9 L132.5,153.0 L137.4,149.2 L142.4,145.6 L147.3,142.1 L152.3,138.8 L157.2,135.6 L162.1,132.6 L167.1,129.7 L172.0,126.9 L177.0,124.2 L181.9,121.6 L186.8,119.1 L191.8,116.7 L196.7,114.4 L201.7,112.2 L206.6,110.0 L211.5,107.9 L216.5,105.9 L221.4,103.9 L226.4,102.0 L231.3,100.2 L236.3,98.4 L241.2,96.7 L246.1,95.1 L251.1,93.5 L256.0,91.9 L261.0,90.4 L265.9,88.9 L270.8,87.4 L275.8,86.0 L280.7,84.7 L285.7,83.4 L290.6,82.1 L295.5,80.8 L300.5,79.6 L305.4,78.4 L310.4,77.2 L315.3,76.1 L320.2,75.0 L325.2,73.9 L330.1,72.9 L335.1,71.9 L340.0,70.9 L344.9,69.9 L349.9,68.9 L354.8,68.0 L359.8,67.1 L364.7,66.2 L369.6,65.3 L374.6,64.5 L379.5,63.6 L384.5,62.8 L389.4,62.0 L394.3,61.2 L399.3,60.4 L404.2,59.7 L409.2,59.0 L414.1,58.2 L419.0,57.5 L424.0,56.8 L428.9,56.1 L433.9,55.5 L438.8,54.8 L443.7,54.2 L448.7,53.5 L453.6,52.9 L458.6,52.3 L463.5,51.7 L468.5,51.1 L473.4,50.5 L478.3,50.0 L483.3,49.4 L488.2,48.9 L493.2,48.3 L498.1,47.8 L503.0,47.3 L508.0,46.8 L512.9,46.3 L517.9,45.8 L522.8,45.3 L527.7,44.8 L532.7,44.4 L537.6,43.9 L542.6,43.4 L547.5,43.0 L552.4,42.5 L557.4,42.1 L562.3,41.7 L567.3,41.3 L572.2,40.8 L577.1,40.4 L582.1,40.0 L587.0,39.6" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="93.0" cy="191.1" r="6" fill="#b23a2e"/><circle cx="587.0" cy="39.6" r="6" fill="#2f7d57"/><text x="103.0" y="197.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦8.8 km/s⁩</text><text x="103.0" y="215.1" text-anchor="start" font-family="Heebo" font-size="12" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >17,000 km 지점</text><text x="583.0" y="63.6" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦10.6 km/s⁩</text><text x="583.0" y="81.6" text-anchor="end" font-family="Heebo" font-size="12" font-weight="400" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >60,000 km 지점</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >지구–달 거리(km) · 도달에 필요한 최소 속도(km/s)</text></svg><figcaption>달이 멀어질수록 거기에 이르려면 지구에서 더 높은 발사 속도가 필요했고 — 발사는 시간이 지나며 약해졌습니다. 처음엔 크게, 끝에는 작게.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>위에서 아래로 얼어 가는 현무암 뚜껑의 냉각(시간의 제곱근 법칙, §G.3)과, 지구에서 발사된 물질이 멀어지는 달에 이르는 데 필요한 최소 탈출 속도(§G.4)는 다음과 같이 표현됩니다:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>2</mn><mi>λ</mi><msqrt><mrow><mi>κ</mi><mtext> </mtext><mi>t</mi></mrow></msqrt><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>∝</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msup><mi>h</mi><mn>2</mn></msup><mi>κ</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\delta(t) \approx 2\lambda\sqrt{\kappa\,t} \quad \Longrightarrow \quad t_{\mathrm{freeze}} \propto \dfrac{h^2}{\kappa}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>min</mi><mo>⁡</mo></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><msqrt><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo>⊕</mo></msub><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>R</mi><mo>⊕</mo></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mi>r</mi></mfrac></mstyle><mo fence="true">)</mo></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">v_{\min}(r) = \sqrt{2GM_\oplus\left(\dfrac{1}{R_\oplus} - \dfrac{1}{r}\right)}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></div></div></div>
+<p>어는 시간(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">z</mi><mi mathvariant="normal">e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{freeze}}</annotation></semantics></math></span></span>)은 마그마 저장소 <strong>깊이의 제곱(h²)</strong>으로 커지므로, 깊고 뜨거운 접촉 바다(비의 바다와 맑음의 바다)는 가장자리의 얕은 구멍보다 수십~수백 배 더 오래 유체로 남았습니다 — 그리고 조건 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">w</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≥</mo><msub><mi>t</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{\mathrm{shutdown}} \ge t_{\mathrm{exp}}</annotation></semantics></math></span></span>는 노출 전선이 지나갈 때 아직 활동하던 구멍만이 활동하는 배출 구멍이 되었음을 보여 줍니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 공급 기간의 기억으로서의 구멍 크기</h2>
+<p>공급 엔진의 직접적인 기하학적 예측 가운데 하나(§I.6)는, 압력을 받은 뜨거운 마그마의 오랜 흐름이 구멍의 목을 조금씩 넓힌다는 것입니다 — 흐르는 물이 얼음 속 수로를 넓히는 것처럼요(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mtext>feeding history</mtext><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>η</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = F(\text{feeding history}, P, T, Q, \eta)</annotation></semantics></math></span></span>):</p>
+<ul>
+<li><strong>공급 돔 지름의 분명한 위계:</strong> 34개 바다의 목록(논문 05의 부록 A)에서 <strong>달에서 가장 큰 공급 돔 여섯 개(450~909 km)는 모두 앞면에 있고</strong>, 앞면 돔의 지름 중앙값은 <strong>375 km</strong>로, 뒷면의 겨우 <strong>227 km</strong>(가장 큰 돔은 동쪽의 바다, 435 km)와 비교됩니다!</li>
+<li><strong>매끄러운 바닥 위 큰 크레이터의 부족:</strong> 비의 바다 바닥에는 지름 20 km 이상 크레이터가 백만 km²당 11개뿐이고(맑음의 바다는 16개), 뒷면 고지에서는 백만 km²당 <strong>205개</strong>입니다 — 13~18배의 차이로, 접촉 바닥이 충돌 폭풍의 대부분이 이미 지나간 뒤에야 얼었음을 보여 줍니다.</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 크레이터의 보존 상태, 가장자리의 마모, 그리고 노출의 세대(논문 05, G~I부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>연구 / 척도</th><th>비교와 표본</th><th>정량적 발견</th><th>유의성과 물리적 의미</th></tr>
+<tr class="hl"><td><strong>지름별 크레이터 상태(연구 8)</strong></td><td>바다 바닥의 크레이터 324개(≥ 3 km)</td><td>날카로움: <strong>71%</strong>(3~5 km) <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>0%</strong>(20~40 km)<br>녹음: <strong>17%</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>85%</strong>(80 km 이상에서 100%)</td><td>코크런–아미티지 추세 검정: p &lt; 10⁻¹⁰; 큰 크레이터는 일찍 유체 바닥을 때림</td></tr>
+<tr><td><strong>바닥에서 사라진 크레이터(연구 8)</strong></td><td>바다 바닥 대 현무암 평원(광조 제외)</td><td>접촉(2~5 km): 백만 km²당 836개에 비해 263개<br>접촉(20 km 이상): 백만 km²당 23개에 비해 <strong>0</strong></td><td>초기 충돌은 접촉 바다의 유체 마그마에 삼켜져 지워짐</td></tr>
+<tr class="hl"><td><strong>접촉 평원의 가장자리 마모(연구 15)</strong></td><td>크레이터 137개(≥ 40 km), 방사 단면 36개</td><td>평원 쪽 가장자리 소실: 접촉에서 <strong>+24%</strong>, 그 너머에서 <strong>0%</strong>; 마루가 −35 m/km² 무디고 각도 +5.3°</td><td>접촉 평원은 옆에서 잠긴 것만이 아니라 지구(1,345 K)에 의해 <strong>아래에서</strong> 녹고 가열됨</td></tr>
+<tr><td><strong>노출의 세 세대(§I.4)</strong></td><td>물러나는 접촉의 기하(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>000</mn><mo>→</mo><mn>3</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">6,000 \rightarrow 3,000</annotation></semantics></math></span></span> km)</td><td>1세대(&gt;70°): 곧바로 드러나 일찍 닫힘<br>2세대(31°~70°): 배출 구멍이 된 입<br>3세대(&lt;31°): 분리 때 닫힌 접촉 입</td><td>냉각 순서: 뒷면 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 띠 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 접촉 지대(비의 바다와 맑음의 바다)</td></tr>
+<tr><td><strong>기억으로서의 공급 돔 지름(§I.6)</strong></td><td>부록 A 목록의 34개 바다</td><td>앞면 중앙값: <strong>375 km</strong>(최대 909 km)<br>뒷면 중앙값: <strong>227 km</strong>(최대 435 km)</td><td>앞면의 높은 열 속 오랜 공급이 공급 구멍을 넓힘</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>바다 바닥의 크레이터들은 냉각의 정확한 시간표를 드러냈습니다. 달이 가깝고 바다가 유체였을 때 그 위에 큰 덩어리가 내려앉아 삼켜지거나 고리로 녹았고, 결정 "머시"로 바뀌었을 때 중간 크레이터가 번졌으며, 완전히 얼어붙은 뒤에야 지구에서 온 마지막 작은 방울이 날카로운 크레이터를 남겼습니다.</p>
+<p>그러나 바다가 정말로 주위에 물질을 발사한 <strong>근원</strong>이며, 접촉 지대가 달이 마지막 순간까지 지구를 붙들고 있던 곳임을 확실히 증명하려면 암석의 화학적 지문을 확인해야 합니다. 다음 장 — <strong>제10장: 화학적 지문 — 철의 고리, 접촉 지대의 토륨 수수께끼, 그리고 다섯 개의 시계</strong>(논문 05 — <em>바다</em>, J~O부와 부록 A에서) — 에서 우리는 달의 바다에 대한 파일을 닫을 것입니다!</p>
+<a href="story10_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제10장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">화학적 지문 — 철의 고리, 접촉 지대의 토륨 수수께끼, 그리고 다섯 개의 시계 →</p></div></a><p style="margin-top:22px"><a href="story08_ko.html">← 제8장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

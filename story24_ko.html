@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제24장: 갈아 내는 컨베이어로서의 고리, 위성과 행성에 남은 서명, 그리고 아타카마 암괴의 검증 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제24장: 갈아 내는 컨베이어로서의 고리, 위성과 행성에 남은 서명, 그리고 아타카마 암괴의 검증.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story24_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story24_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story24_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story24_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story24_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story24_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <a href="story24_de.html" hreflang="de">Deutsch</a> · <a href="story24_es.html" hreflang="es">Español</a> · <a href="story24_fr.html" hreflang="fr">Français</a> · <a href="story24_ru.html" hreflang="ru">Русский</a> · <a href="story24_zh.html" hreflang="zh">中文</a> · <a href="story24_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제24장</p>
+<h1>제24장: 갈아 내는 컨베이어로서의 고리, 위성과 행성에 남은 서명, 그리고 아타카마 암괴의 검증</h1>
+<p>논문 12 — 12. 고리: 고리는 부수고, 갈고, 되돌린다(E~M부: 갈아 내는 컨베이어, 위성과 모체에 남은 서명, 아타카마 암석, 5가지 반증 기준)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 고리는 위성과 행성의 표면을 어떻게 빚을까 — 그리고 왜 위성 둘레에는 고리가 없을까?</h2>
+<p>23장에서 우리는 행성의 고리가, 하루가 13.4시간보다 짧을 때 모체에서 먹고 모체로 물질을 되돌리는 균형 흐름으로 존재한다는 것을 보았습니다. 논문 12의 E~M부에서 LEF 모델은 고리가 남기는 형태적·물리적 흔적을 살펴봅니다:</p>
+<ol class="steps">
+<li><strong>왜 판, 아틀라스, 다프니스에는 비행접시 같은 적도의 "치마"가 있는데 — 데이모스는 매끄러운 공으로 닦였을까(G.1~G.4)?</strong> 데이모스는 판과 아틀라스보다 자체 중력이 강한데도, 판과 아틀라스는 두드러진 적도 능선을 쌓았고, 데이모스는 물질을 잃고 완전히 닳았습니다!</li>
+<li><strong>태양계의 어떤 고리가 가까운 미래에 사라질 운명일까(F.3)?</strong> 왜 천왕성과 해왕성의 어떤 좁은 고리들은 목동 위성도 땅에서의 공급도 없는데 지금은 살아남아 있을까?</li>
+<li><strong>화성 표면 어디에서 오래된 고리의 흔적을 찾을 수 있을까 — 그리고 왜 2026년 4월에 시추된 "아타카마" 암괴는 기각되었을까(H.2~H.3)?</strong></li>
+<li><strong>왜 태양계의 어떤 위성 둘레에서도 고리가 발견되지 않았을까 — 그리고 작은 천체(하우메아, 카리클로, 콰오아)는 어떻게 1:3 공명으로 고리를 지닐까(J.1~J.2)?</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 한 방향의 갈아 내는 컨베이어, 숫돌에 맞선 끈적한 눈덩이, 그리고 토성 하늘의 줄무늬</h2>
+<p>네 가지 손에 잡히는 그림이 고리 안의 내부 선별과, 고리가 주위에 새기는 서명을 설명합니다:</p>
+<ul>
+<li><strong>덩어리가 들어가고 먼지가 나오는 한 방향의 갈아 내는 컨베이어(E.1~E.3):</strong> 고리 안에서 같은 반지름의 무거운 입자와 가벼운 입자는 같은 케플러 속도로 움직이므로 밀도에 따라 가라앉지 않습니다. 선별은 <strong>충돌 속 운동량의 주고받음을 통해</strong> 일어납니다. 지름 ~ 100 m의 단단한 덩어리는 안정된 궤도를 유지하며 토성 A 고리에 <strong>"프로펠러"</strong> 모양의 깨끗한 길을 스스로 쓸어 내고, 아주 작은 입자는 무작위 속도를 받아 큰 덩어리의 얇은 층(10 m) 둘레에 위아래로 퍼집니다. 크기 분포 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span>는 전형적인 갈아 냄의 서명입니다. 큰 덩어리는 고리로의 새로운 유입을 가리킵니다!</li>
+<li><strong>규산염 숫돌에 맞선 서리 덮인 눈덩이(G.2~G.3):</strong> 고리의 조성이, 그곳을 지나는 위성이 <em>질량을 얻을지</em> <em>닳을지</em>를 정합니다. 차갑고 서리로 덮인 얼음 알갱이는 천천히 닿으면 서로 달라붙어(Bridges 등 1984) 판, 아틀라스, 다프니스에 적도 능선을 지었습니다. 반면 화성의 오래된 고리는 응결된 증기와 단단한 규산염 알갱이로 되어 있어 <strong>숫돌</strong>로 작용했고, 데이모스에 질량을 더하지 않고 그것을 닦아 냈습니다!</li>
+<li><strong>물속에 완전히 잠기는 것과 공 둘레의 가는 실(D/H 비, G.4):</strong> 위성의 지름이 고리의 두께보다 작으면(D &lt; H, 화성의 두꺼운 증기 고리 속 데이모스 14~22 km나 메토네처럼) 표면 전체가 잠겨 매끄러워집니다. D &gt; H이면(두께 수십 m의 원반 속 판, 아틀라스, 다프니스) 극이 고리 위로 튀어나오고 넓은 적도 띠가 지어집니다. 그리고 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span>이면(이아페투스) 고리는 가는 실로 작용합니다.</li>
+<li><strong>두 비의 경로 — 적도의 중성 물질과 자기력선을 따른 어두운 줄무늬(H.1):</strong> 2017년 카시니의 마지막 돌입에서 고리에서 토성으로의 낙하 경로 두 개가 측정되었습니다. 중성 분자와 나노미터 규산염 알갱이는 곧장 적도로 내려가고, 이온화된 물 분자는 자기력선을 따라 중위도(적도 양쪽 25°~55°)로 흘러, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span> 이온을 중화하고 적외선에서 어두운 줄무늬를 만듭니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 고리의 일생, 위성에 남은 서명, 그리고 아타카마 암괴의 검증(E~J부)</h2>
+<p>논문 12의 E~J부는 고리의 흔적을 평범한 지질 현상과 가려내기 위한 날카로운 관측 검증을 제시합니다:</p>
+<ol class="steps">
+<li><strong>고리의 일생과 사라질 것으로 예상되는 고리(F.1~F.3):</strong> 먹이는 위성도 땅에서의 누출도 없는 고리는 쇠퇴 단계에 있고 사라질 것으로 예상됩니다. 그래서 <strong>천왕성의 위성 없는 좁은 고리 아홉 개</strong>(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>)와 <strong>해왕성의 갈레 고리와 라셀 고리</strong>는 물의 탈출과 동결 뒤 공회전선 아래에 남은 죽어 가는 고리로 분류됩니다. 위성이 붙들고 있는 천왕성의 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span> 고리나 해왕성의 애덤스 고리와 르베리에 고리와는 대조적입니다.</li>
+<li><strong>고리를 지난 위성을 식별하는 형태 규칙(G.1~G.5):</strong> 완전히 매끄러운 규산염 위성(유로파나 엔켈라두스 같은 표면을 새롭게 하는 지질 활동이 없는 것)은 고리의 심장에서의 오랜 체류를 가리킵니다. 데이모스에서 움푹함의 깊이 중앙값은 폭의 1.9%(6%보다 84% 얕음)이고 포보스는 5.5%이며, 그 궤도는 거의 완전한 원입니다(e = 0.0003). 가로지르는 속도는 위성의 질량에 달려 있습니다. 작은 위성은 천천히 이동하며 깊은 서명을 쌓고, 큰 위성은 빨리 밀려나 짧은 시간에 고리를 가로지릅니다.</li>
+<li><strong>위성 둘레 고리의 배제와, 1:3 공명 속 작은 천체 고리의 안정화(J.1~J.2):</strong> 태양계의 어떤 위성도 고리를 지니지 않습니다(레아 둘레의 의심되던 고리조차 Tiscareno 등 2010에서 완전히 배제됨). 모행성의 중력이 지배해, 위성에서 분출된 물질을 모두 모체의 고리로 붙잡기 때문입니다. 반면 작은 천체(하우메아, 카리클로, 콰오아) 둘레에서는 다섯 고리 가운데 넷이 공회전선 위 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span>의 범위에 있습니다 — 정확히 <strong>1:3 스핀–궤도 공명</strong>의 반지름(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>)으로, 거기서 입자는 모체가 세 번 자전할 때마다 한 바퀴를 돕니다.</li>
+<li><strong>화성의 "아타카마" 암괴 검증(2026년 4월 25일, H.3):</strong> 탐사차 큐리오시티가 게일 크레이터에서 떨어져 나온 암괴 "아타카마"(~ 45 cm, ~ 13 kg)를 시추했을 때, 그것이 화성의 오래된 고리에서 떨어진 단단한 잔해일 가능성이 조사되었습니다. 검증은 이것을 완전히 기각했고(건조 균열이 있는 함수 황산염의 층상 퇴적암으로, 그 아래층과 같은 조성이며 샤프산 단위에 속함), <strong>화성에서 진짜 고리 잔해를 식별하기 위한 엄격한 기준 네 가지</strong>를 정했습니다. 물로 쌓인 층리가 없는 화산성/스펀지 같은 암석, 가열을 겪은 마른 광물, 대기 진입에 의한 용융 껍질, 그리고 국지 지질층과 다른 조성(포보스와 데이모스와 맞음)입니다.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="공회전선 단위의 고리 위치" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0.5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1.5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2.0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >목성 · ⁦0.57–1.41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >토성 · ⁦0.60–1.23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >천왕성 · ⁦0.51–0.62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >해왕성 · ⁦0.50–0.75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >하우메아 · ⁦2.07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >카리클로 · ⁦2.10 ; 2.18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >콰오아 · ⁦1.25 ; 2.01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >공회전선 단위의 고리 위치 · 파랑: 공회전선 · 빨강: 2.08의 1:3 공명</text></svg><figcaption>고리의 두 무리: 공회전선 둘레와 아래의 거대 행성 고리, 그리고 그 위에서 1:3 공명 둘레에 모인 작은 천체의 고리.</figcaption></figure><div class="callout"><span class="tag">고리에 대한 태양 복사의 효과 — "바큇살", 이온화된 비, 포인팅–로버트슨 저항(I부)</span><p style="margin:0">태양 복사는 세 가지 메커니즘으로 고리에 작용합니다. (1) 마이크로미터 먼지의 정전기적 대전으로, 그것은 B 고리 면 위에 <strong>"바큇살"</strong>로 떠오르며 춘분·추분 무렵 정점에 이릅니다. (2) 물 분자의 자외선 이온화로, 그것이 자기력선을 따른 <strong>이온화된 비</strong>를 빠르게 합니다. 그리고 (3) <strong>포인팅–로버트슨 복사 저항</strong>으로, 그것이 아주 작은 먼지 입자에 제동을 걸어 안쪽으로 모체 위에 다시 떨어뜨립니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 화성에서의 식별 기준, 체계적 조사, 그리고 다섯 가지 반증 검증</h2>
+<p>논문 12의 H.2~H.3부와 K~M부는 행성 표면에 남은 지질 흔적과, LEF 모델의 고리 이론을 검증하거나 반증할 수 있는 실험 규칙을 모읍니다:</p>
+<ol class="steps">
+<li><strong>화성 오래된 고리의 흔적을 찾는 네 가지 목표(§H.2):</strong> 화성의 증기와 규산염 고리가 35억~37억 년 전에 말랐을 때, 그 물질은 표면에 내려앉았습니다. 네 가지 탐색 목표는: (a) 땅에서의 흐름 근원이 없는, 두껍고 밀도 낮은 적도 퇴적물(<strong>메두사이 포사이 층</strong> 같은); (b) 국지 주위에서 벗어나 포보스와 데이모스와 맞는 중수소–수소(D/H) 서명; (c) 게일 크레이터 샤프산의 화산성 조성의 돌과 어둡고 단단한 표지층; 그리고 (d) 고리가 있던 동안 화성에 활발한 쌍극 자기장이 있었다면, 중위도의 대칭 퇴적 띠입니다.</li>
+<li><strong>천체마다의 체계적 조사 요약(K부):</strong> 태양계의 각 계는 고리 순환에서 분명한 역할을 가집니다. 지구(서양배가 적도 띠를 쓸어 냈기에 오래가는 고리 없음); 화성(땅에서 생긴 오래된 고리가 데이모스와 포보스를 옮기고 지각이 닫히자 사라짐); 목성(가장 두꺼운 기체 뚜껑 때문에 위성에서만 온 먼지 고리); 토성(땅과 위성에서 온 균형 흐름 속 거대한 얼음 고리); 천왕성과 해왕성(물의 탈출 뒤 공회전선 아래 남은 좁고 어두운 잔해, 위성 없는 고리는 죽어 감); 그리고 하우메아, 카리클로, 콰오아(위성으로 뭉치지 않는, 1:3 공명 속 공회전선 위의 빽빽한 고리).</li>
+<li><strong>L.3부의 날카로운 반증 기준 다섯 가지:</strong> 모델은 분명한 반증 조건 다섯 가지를 정해 둡니다. (1) 고리 원반에서 위성이 뭉치는 것을 직접 관측함; (2) 한 번도 고리 환경에 머문 적 없는, 완전히 매끄러운 규산염 위성을 발견함; (3) 동위원소 조성이 모체와 모순되고 계 바깥 근원과 맞는 행성 고리를 측정함; (4) 안정시키는 궤도 공명 없이, 큰 행성의 공회전선 훨씬 위에 있는 무거운 고리를 발견함; 또는 (5) 먹이는 위성도 땅에서의 공급도 없이 지질학적 시간 동안 고갈되지 않고 질량을 유지하는 고리를 기록함.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>갈아 내는 고리 속 덩어리의 크기 분포와, 작은 천체 둘레의 고리를 붙잡는 1:3 스핀–궤도 공명의 반지름은 다음과 같이 정식화됩니다(§E.2, §J.2):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>거듭제곱 법칙 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span>는 충돌 속 끊임없는 부숨과 갈아 냄의 체계를 특징짓고(Zebker 등 1985), 공명 반지름 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2.08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span>는 하우메아, 카리클로, 콰오아의 다섯 고리 가운데 넷이 왜 공회전선 위 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.01</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span>의 범위에 정확히 있는지 설명합니다.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 아타카마 암괴의 검증(2026년 4월)과 사라질 것으로 예상되는 고리</h2>
+<p>두 가지 중심적인 관측 발견이 LEF 고리 이론이 살아 있는 경험적 검증을 어떻게 견디는지 보여 줍니다(§F.3, §H.3):</p>
+<ul>
+<li><strong>큐리오시티에서의 아타카마 암석 선별 절차(2026년 4월 25일):</strong> 게일 크레이터의 떨어져 나온 아타카마 암괴(~ 45 cm, ~ 13 kg)의 지구화학 분석은 그것이 건조 균열이 있는 함수 황산염 퇴적암이며 그 아래층과 같다는 것을 보여 주었습니다 — 그래서 화성에서 진짜 고리 잔해를 식별하기 위한 네 가지 문턱 조건(화산성/스펀지 같은 조직, 마른 광물, 용융 껍질, 다른 조성)이 정해졌습니다.</li>
+<li><strong>태양계의 죽어 가는 고리 목록(§F.3):</strong> 천왕성의 위성 없는 좁은 고리 아홉 개(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>)와 해왕성의 갈레 고리와 라셀 고리는 앞으로의 관측에서 계속 가늘어져 사라질 것으로 예상되고, 토성의 D, C, B 고리는 안쪽 펌프가 먹이는 한 계속 존재할 것입니다.</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 고리 조성과 D/H 비가 위성에 주는 효과, 체계적 조사, 반증 기준(논문 12, E~M부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>위성</th><th>지름 / 밀도</th><th>자체 중력(m/s²)</th><th>고리 환경과 D/H 비</th><th>형태의 서명</th></tr>
+<tr class="hl"><td><strong>데이모스</strong></td><td>12.4 km / 1,471 kg/m³</td><td>0.0025</td><td><strong>규산염과 증기</strong>(D &lt; H, 완전히 잠김)</td><td><strong>매끄러운 공으로 완전히 닳음</strong>(움푹함 깊이 중앙값 1.9%)</td></tr>
+<tr><td><strong>포보스</strong></td><td>22.2 km / 1,860 kg/m³</td><td>0.0058</td><td>엷어지는 기체 가장자리</td><td>부분적 마모만; 홈을 간직함(5.5%)</td></tr>
+<tr class="hl"><td><strong>판, 아틀라스, 다프니스</strong></td><td>7.6~30 km / 340~460 kg/m³</td><td>0.0004~0.0019</td><td><strong>물 얼음</strong>(D &gt; H, 극이 튀어나옴)</td><td><strong>두드러진 적도 능선의 축적</strong>("비행접시" 모양)</td></tr>
+<tr><td><strong>메토네</strong></td><td>2.9 km / 310 kg/m³</td><td>0.0001</td><td>G 고리 근처 호 속의 얼음(D &lt; H)</td><td>매끄럽고 덮여 있음</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>태양계의 계</th><th>오늘날 고리의 상태</th><th>공급원</th><th>공회전선에 대한 위치와 LEF 해석</th></tr>
+<tr><td><strong>지구 / 화성</strong></td><td>없음 / 과거에 있었음</td><td>화성: 부풂에서 온 증기와 암석</td><td>지구: 서양배가 선을 쓸어 냄; 화성: 지각이 닫힌 35억~37억 년 전에 사라짐</td></tr>
+<tr><td><strong>목성</strong></td><td>얇은 먼지</td><td>안쪽 위성(메티스에서 테베까지)</td><td>선 둘레(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.57</mn><mtext>–</mtext><mn>1.41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>); 두꺼운 기체 뚜껑이 내부 누출을 봉인</td></tr>
+<tr class="hl"><td><strong>토성</strong></td><td><strong>무거움(95%~99% 얼음)</strong></td><td><strong>땅에서(D, C, B, A)와 위성에서(E, F, G)</strong></td><td><strong>끊임없는 균형 흐름</strong>(P = 10.6 h &lt; 13.4 h); A의 가장자리는 로슈 한계</td></tr>
+<tr><td><strong>천왕성 / 해왕성</strong></td><td>좁고 어두움(그리고 호)</td><td>일부는 위성에서, 일부는 위성 없음</td><td>선 아래(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.50</mn><mtext>–</mtext><mn>0.75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>); 위성 없는 고리는 사라질 것으로 예상</td></tr>
+<tr class="hl"><td><strong>하우메아, 카리클로, 콰오아</strong></td><td>빽빽함</td><td>하우메아: 긴 축의 끝</td><td>선 위(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.25</mn><mtext>–</mtext><mn>2.18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>), <strong>1:3 공명</strong>에 붙잡힘; 위성을 짓지 않음</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>23~24장에서 우리는 LEF 모델의 고리 이론을 완성했습니다. 무거운 고리를 위한 <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13.4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span>시간의 보편적 문턱 하루</strong>를 도출하고, 토성의 고리를 동적 균형 속의 끊임없는 흐름으로 설명했으며, 천왕성과 해왕성의 물과 각운동량의 행방을 좇고, 위성(데이모스의 마모와 판·아틀라스의 능선 쌓기의 대비)과 화성(아타카마 암석의 검증과 메두사이 포사이 퇴적물)에 남은 형태의 서명을 정했습니다.</p>
+<a href="story25_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제25장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">LEF 모델의 기본 요건(R1–R8) — 동위원소, 핵, 지각, 질량 중심의 치우침, 노출 지대 →</p></div></a>
+<p style="margin-top:22px"><a href="story23_ko.html">← 제23장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

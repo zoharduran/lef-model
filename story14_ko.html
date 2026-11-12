@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제14장: 외부 회전 분화 — 극의 수축, 얇은 극 지각, 그리고 크레이터 크기의 검증 — LEF 모델</title>
+<meta name="description" content="LEF 모델 이야기의 제14장: 외부 회전 분화 — 극 면적의 수축, 에너지 수지, 얇은 극 지각, 그리고 크레이터 크기의 보존.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story14_ko.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Noto Sans KR','Noto Sans CJK KR','Apple SD Gothic Neo','Malgun Gothic',Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story14_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story14_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story14_de.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/story14_es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/story14_fr.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/story14_ru.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/story14_zh.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/story14_ja.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/story14_ko.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story14_he.html" hreflang="he">עברית</a> · <a href="story14_en.html" hreflang="en">English</a> · <a href="story14_de.html" hreflang="de">Deutsch</a> · <a href="story14_es.html" hreflang="es">Español</a> · <a href="story14_fr.html" hreflang="fr">Français</a> · <a href="story14_ru.html" hreflang="ru">Русский</a> · <a href="story14_zh.html" hreflang="zh">中文</a> · <a href="story14_ja.html" hreflang="ja">日本語</a> · <b>한국어</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · 제14장</p>
+<h1>제14장: 외부 회전 분화 — 극의 수축, 얇은 극 지각, 그리고 크레이터 크기의 검증</h1>
+<p>논문 07 — 극: 왜 극은 붐비는가(C.3~E부: 수축의 기하, 에너지 수지, 4가지 검증, 5가지 지름 보존 검증)에 바탕</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>수수께끼: 극이 절반으로 줄어들었다면 — 왜 극 아래의 지각은 더 얇으며, 왜 크레이터 자체는 줄어들지 않았을까?</h2>
+<p>13장에서 우리는 젊은 달이 납작하고 길쭉한 천체(a : b : c ≈ 1.8 : 1.4 : 1)에서 부피를 줄이며 구 모양으로 넘어갔고, 이 과정이 극의 크레이터를 붐비게 했다는 것을 보았습니다(집단 전체에서 1.20 ± 0.05, 60~100 km 크레이터에서 1.53 ± 0.19). 그런데 여기서 <strong>세 가지 핵심 물리 질문</strong>이 한꺼번에 떠오르며, 풀리지 않으면 모델 전체를 무너뜨립니다:</p>
+<ol class="steps">
+<li><strong>극 지각 두께의 역설:</strong> 둥글어지는 동안 극의 면적이 원래의 약 <strong>0.55×</strong>로 줄었다면, 극 껍질의 물질은 안으로 밀려들어 극 아래의 지각은 적도 아래의 지각보다 <em>두꺼워졌어야</em> 합니다! 그런데 GRAIL의 측정은 정반대를 보여 줍니다: <strong>극 아래의 지각은 적도 아래의 지각보다 얇고 밀도가 높습니다!</strong></li>
+<li><strong>크레이터 크기 보존의 역설:</strong> 극의 표면이 줄어들었다면, 왜 크레이터 자체는 함께 줄어들지 않았을까요? 크레이터의 지름이 줄었다면, 세기 문턱(20 km) 근처의 크레이터는 그 아래로 떨어져 밀도 과잉을 완전히 지웠을 것입니다!</li>
+<li><strong>에너지와 압력의 엔진:</strong> 공회전선을 넘은 뒤 안쪽으로의 둥글어짐을 이끈 것은 어떤 물리 엔진이었을까요 — 그리고 이 둥글어짐이 단단한 바깥 껍질에 가한 엄청난 압력(2~<span class="ltr">12 GPa</span>)은 어떻게 되었을까요?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>비유: 수평으로 돌아오는 꿀 그릇, 줄어드는 시트 위의 단단한 타일, 그리고 "외부 회전 분화"</h2>
+<p>세 가지 간단한 그림이 세 수수께끼를 풀고, 그것들을 하나의 지구역학적 과정으로 묶습니다:</p>
+<ul>
+<li><strong>기울였다가 다시 수평으로 둔 꿀 그릇(중력 엔진, §C.4):</strong> 달이 지구에 붙어 빠르게(5.5시간) 도는 동안, 원심력은 극을 적도보다 120 km "에너지적으로 높게" 유지했습니다(가벼운 물질이 적도로 미끄러져 내려가는 에너지의 언덕처럼). 질량 중심이 공회전선(15,818~16,399 km)을 넘는 순간, 서양배 밑동의 늘어남은 0으로 떨어지고 밀도는 1,700에서 2,600 kg/m³로 올라갔습니다. 달의 자체 중력은 갑자기 자전을 이겼습니다 — 몸무게가 한꺼번에 두 배가 되어 더는 팔을 벌리고 있을 수 없는 피겨 스케이터처럼 — 그리고 극은 곧바로 "산꼭대기"에서, 모든 물질이 제 무게로 흘러드는 "골짜기 바닥"으로 바뀌었습니다!</li>
+<li><strong>줄어드는 고무 시트 위의 단단한 도자기 타일(크레이터 크기의 보존, §C.7, §D.2):</strong> 위쪽 껍질은 이미 얼어 있었고, 크레이터를 <strong>원래 지름을 유지하는 단단하고 온전한 타일</strong>로 나를 만큼 단단했습니다. 그동안 크레이터 사이의 탄성적인 틈은 닫혀 지각의 구조에 흡수되었습니다!</li>
+<li><strong>"외부 회전 분화"(§C.8, §D.6):</strong> 수축했는데도 왜 오늘날 극 아래의 지각은 더 얇을까요? <strong>납작한 단계의 수천만 년</strong> 동안(수축이 시작되기 전!), 빠른 자전이 바깥 껍질의 가벼운 물질을 <strong>극에서 적도 쪽으로</strong> 흘려보내 <em>특히 얇은</em> 극 껍질을 만들었기 때문입니다. 둥글어지는 단계가 오자, 이 얇은 껍질은 안으로 밀려들어 <strong>얇고 밀도 높은 극 지각</strong>이 되었고(두꺼운 적도 지각보다 여전히 얇음!), 늘어난 껍질 위에 고르게 내려앉았던 크레이터는 극의 중심으로 몰려들었습니다!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>과학과 모델: 면적 수축(0.55×)과 에너지 수지(1.5 × 10²⁸ 줄)의 계산</h2>
+<p>논문 07의 C.3부와 C.4부는 달 얼굴의 모든 점에서의 면적 변화와, 둥글어지는 동안 에너지와 내부 압력의 방출을 수학적 정밀성으로 정량화합니다:</p>
+<ol class="steps">
+<li><strong>부피 감소와 결합된 절대적 면적 수축(§C.3.1):</strong> 최대 납작해짐(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³, 등가 반지름 2,180 km, 치수 5,585 × 4,628 × 3,191 km)에서 분리 때의 구형 천체(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>2</mn><mo separator="true">,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">\rho \approx 2,600</annotation></semantics></math></span></span> kg/m³, 구의 지름 3,778 km, 반지름 1,890 km)로 넘어가면, 부피는 <strong>1.53</strong>분의 1로 떨어지고, 등가 반지름은 13% 줄며, 평균 표면적은 <strong>0.75×</strong>로 떨어집니다. 그러나 삼축 형태의 변화(무리의 중심에서 1.75 : 1.45 : 1) 때문에 변화는 고르지 않습니다:
+<ul>
+<li><strong>극의 면적(c축):</strong> 원래 면적의 약 <strong>0.55×</strong>로 줄어듦(최대 수축!).</li>
+<li><strong>옆면의 면적(선행과 후행, b축):</strong> <strong>0.80×</strong>로 줄어듦.</li>
+<li><strong>지구 선 끝의 면적(a축):</strong> 겨우 <strong>0.97×</strong>로 줄어듦(최소 수축!).</li>
+<li><strong>극관(0.58×)과 적도 띠(0.86×) 사이의 비:</strong> 면적 비가 0.67×이므로, 극의 크레이터 밀도는 1/0.67 = 1.49×로 뜁니다!</li>
+</ul>
+</li>
+<li><strong>중력 에너지의 방출과 내부 가열(§C.4):</strong> 부피 붕괴와 둥글어짐은 달 안에서 열과 정수압으로 바뀌는 중력 에너지의 두 성분을 방출합니다:
+<ul>
+<li><strong>형태 변화(이심률)의 에너지:</strong> <strong>2 × 10²⁷ 줄</strong>을 방출하고(결합 에너지의 2.1%, ~ 3 × 10⁴ 줄/kg), 평균 약 <strong>30 켈빈</strong>의 가열을 더해 핵을 점성 있고 움직일 수 있는 상태로 유지합니다.</li>
+<li><strong>부피 수축(압축)의 에너지:</strong> 일곱 배 큼 — <strong>1.5 × 10²⁸ 줄</strong>을 방출하며(~ 2.1 × 10⁵ 줄/kg), 평균 <strong>206 켈빈</strong>의 가열에 해당합니다(열용량 1 kJ/kg·K에서).</li>
+</ul>
+</li>
+<li><strong>단단한 껍질에 가해지는 압력과 바다 분출의 공급(§C.4):</strong> 단단한 암석 껍질(강성률 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">\mu \ge 10\text{ GPa}</annotation></semantics></math></span></span>)이 형태를 10%~20% 바꾸도록 강요하면 <strong>2~<span class="ltr">12 GPa</span></strong>의 내부 전단 응력이 생깁니다 — 암석의 전단 강도(~ <span class="ltr">0.1 GPa</span>)의 20~120배입니다. 껍질은 부서지지 않지만, <strong>바다의 공급 구멍</strong>(논문 5)을 통해 정수압을 풀어 주고, 그것이 마그마를 탄도 비행으로 바깥에 쏘아 되돌아오는 물질의 크레이터를 만듭니다(논문 6)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 190" role="img" aria-label="Area change from peak flattening to sphere" style="direction:ltr"><rect x="200.0" y="16" width="332.6" height="26" rx="4" fill="#9aa3af"/><text x="540.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦0.97×⁩</text><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >지구 선의 끝(a축)</text><rect x="200.0" y="56" width="274.3" height="26" rx="4" fill="#c47f2c"/><text x="482.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦0.80×⁩</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >옆면(b축)</text><rect x="200.0" y="96" width="257.1" height="26" rx="4" fill="#5f9a6e"/><text x="465.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦0.75×⁩</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >전 지구 평균</text><rect x="200.0" y="136" width="188.6" height="26" rx="4" fill="#2f7d57"/><text x="396.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0.55×⁩</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >극(c축)</text></svg><figcaption>최대 납작해짐에서 분리 때의 구로 넘어갈 때의 면적 변화: 극은 다른 어떤 지역보다 많이 줄어들어, 그 위의 크레이터가 몰려듭니다.</figcaption></figure><div class="callout"><span class="tag">외부 회전 분화 — 논문 07의 핵심 명제(§C.8, §D.6)</span><p style="margin:0">젊은 달이 지구에 붙어 함께 도는 동안, 납작해짐은 바깥 껍질의 가벼운 물질을 조금씩 <strong>극에서 적도 쪽으로</strong> 흘려보냈고, 크레이터가 고르게 내려앉은 수천만 년의 창 동안 얇은 극 껍질을 남겼습니다. 마지막 단계에서 천체가 공회전선에서의 분리까지 둥글어지며, 극의 면적은 안으로 모여들고, 크레이터는 몰려들었으며, 극 아래에는 <strong>얇고 밀도 높은 지각</strong>이 남았습니다. 그것이 오늘날 GRAIL 자료에서 측정되는 것입니다!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>말로 푸는 메커니즘: 네 가지 통계적 검증과, 크레이터 크기 보존의 다섯 가지 검증</h2>
+<p>논문 07의 D부는 둥글어짐과 수축의 모델을 이중의 정량적 검증에 올립니다. 먼저 <strong>네 가지 주요 통계적 검증</strong>으로, 다음으로 크레이터 자체가 땅과 함께 물리적으로 줄었는지 온전히 보존되었는지 확인하는 <strong>다섯 가지 보완적 형태 계측 검증</strong>으로요:</p>
+<ol class="steps">
+<li><strong>검증 1 — 깨끗한 세기에서 극/적도 밀도 비:</strong> 바다와 SPA 분지를 양쪽에서 뺀 뒤, 20 km 이상 크레이터의 전체 비는 <strong>1.20 ± 0.05</strong>(95% 신뢰 구간: 1.10~1.30)이며, 20~30 km 크레이터의 1.09에서 60~100 km 크레이터의 1.53 ± 0.19, 100~300 km 크레이터의 1.84 ± 0.38로 꾸준히 올라갑니다 — <strong>통과</strong>.</li>
+<li><strong>검증 2 — 크레이터 지름의 변화(극에 큰 크레이터가 풍부함):</strong> 극 크레이터의 지름 중앙값은 적도 중앙값의 <strong>1.06</strong>배(95% 신뢰 구간: 1.01~1.12) — <strong>통과</strong>(극에 크고 오래된 크레이터가 풍부함을 확인).</li>
+<li><strong>검증 3 — 젊은 크레이터(둥글어진 뒤 생긴)의 분포:</strong> 천체가 이미 구로 둥글어진 뒤 내려앉은 젊은 크레이터의 독립 표본 두 개에서 극/적도 비 <strong>0.92와 1.12</strong>가 측정되었습니다(1.00 근처, 유의한 극 과잉 없음) — <strong>예측과 일치</strong>.</li>
+<li><strong>검증 4 — 두 극 사이의 완전한 대칭:</strong> 남극의 일부를 덮은 SPA 분지를 뺀 뒤, 75°~90° 띠에서 북극은 백만 km²당 <strong>300개</strong>, 남극은 <strong>305개</strong>가 측정되었습니다(15° 원관에서도 300 대 305, 비 1.02, 신뢰 구간 0.78~1.32) — <strong>통과</strong>(세기 오차 범위에서 완전히 같음).</li>
+<li><strong>크레이터 지름 보존에 대한 다섯 가지 형태 계측 검증(§D.2):</strong> (a) 같은 단위 면적당 가장 큰 크레이터, (b) 크기 분포의 모양(누적 곡선), (c) 오래된 크레이터와 새 크레이터의 비교, (d) 크레이터 가장자리의 타원도, (e) 단순 크레이터에서 복합 크레이터로의 전이 지름 — 을 조사한 결과, <strong>네 가지 검증이 크레이터 지름이 온전히 보존되었음을 분명히 확정했고, 크레이터 자체가 줄어든 흔적을 보인 검증은 하나도 없었습니다</strong>! 크레이터가 땅과 함께 줄어들었다면, 20 km 안팎의 크레이터는 세기 문턱 아래로 떨어져 측정된 밀도 과잉(1.20)을 완전히 지웠을 것입니다.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>학술적 설명과 핵심 방정식</h2>
+<p>삼축 타원체(a, b, c)에서 반지름 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_s = (abc)^{1/3}</annotation></semantics></math></span></span>의 등가 구로 넘어갈 때 법선 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">n</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat{\mathbf{n}} = (n_x, n_y, n_z)</annotation></semantics></math></span></span>을 가진 땅 단위의 면적의 미분적 변화와, 이심률 e를 가진 납작한 회전타원체의 중력 결합 에너지 W는 다음 방정식으로 주어집니다(§C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">[</mo><msubsup><mi>n</mi><mi>x</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>y</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>b</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>z</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>c</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J^{-1} = \left[n_x^2\left(\dfrac{R_s}{a}\right)^2 + n_y^2\left(\dfrac{R_s}{b}\right)^2 + n_z^2\left(\dfrac{R_s}{c}\right)^2\right]^{-1/2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><mi>c</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\rho_{\mathrm{polar}}}{\rho_{\mathrm{equatorial}}} = \dfrac{a}{c}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msup><mi>M</mi><mn>2</mn></msup></mrow><msub><mi>R</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mi>e</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">W = -\dfrac{3}{5}\dfrac{GM^2}{R_s}\dfrac{\arcsin(e)}{e}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≈</mo><mn>1.5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>28</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{compression}} \approx 1.5 \times 10^{28}\text{ J} \quad (\Delta T \approx 206\text{ K})</annotation></semantics></math></span></div></div></div>
+<p>야코비안 방정식 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">[</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><msup><mo stretchy="false">]</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J(\lambda, \phi) = R_s^{-1}[\cos^2\lambda(a^2\cos^2\phi + b^2\sin^2\phi) + c^2\sin^2\lambda]^{1/2}</annotation></semantics></math></span></span>로부터 곧바로, 극(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_z = 1</annotation></semantics></math></span></span>)에서는 밀도가 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">R_s/c</annotation></semantics></math></span></span>배로, 옆면(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_y = 1</annotation></semantics></math></span></span>)에서는 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">R_s/b</annotation></semantics></math></span></span>배로, 지구 선의 끝(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_x = 1</annotation></semantics></math></span></span>)에서는 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">R_s/a</annotation></semantics></math></span></span>배로 된다는 것이 나옵니다 — 여섯 축 끝 주위에서 측정된 밀도의 순위와 정확히 같습니다!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>현실에 남은 서명: 분리 전에 사라진 납작해짐과, 후퇴 뒤에 유지된 형태</h2>
+<p>둥글어지는 단계의 끝에서, 질량 중심이 공회전선을 약 210 km 넘은 순간(r ≈ 16,610 km), 달은 <strong>이미 완전히 구형이고 단단한 상태로</strong> 지구에서 분리되었습니다(최대 축비 ≤ 1.04, §C.1, §C.5):</p>
+<ul>
+<li><strong>초기의 납작해짐은 분리 전에 사라졌다(뒤가 아니라):</strong> 분리 뒤 달이 30,000 km(주기 14시간), 그리고 60,000 km(41시간)로 물러나는 동안, 조석과 자전의 힘은 단단한 천체에 아주 작은 탄성적 부풂만 일으켰고(30,000 km에서 축비 1.03, 60,000 km에서 1.00), 오늘날 달의 <strong>"화석 납작해짐"</strong>(f ≈ 0.001, 지구 반지름 16배 이전에 얼어붙음)은 붙어 있던 단계의 삼축 납작해짐(1.8 : 1.4 : 1)보다 수백 배 작습니다.</li>
+<li><strong>논문 05, 06, 07 사이의 원을 닫기:</strong> 둥글어지는 동안 단단한 껍질이 가한 바로 그 2~<span class="ltr">12 GPa</span>의 수축 압력이, 바다의 공급 구멍을 통해 마그마를 바깥으로 밀어내고(논문 05), 거대한 크레이터를 만든 되돌아오는 물질을 발사했으며(논문 06), 그것들을 얇고 밀도 높은 극 지각 위의 두 극으로 몰려들게 했습니다(논문 07)!</li>
+</ul>
+<h3 style="margin-top:28px">실험 상자: 면적 수축, 에너지와 압력의 수지, 그리고 4가지 검증의 요약(논문 07, C.3~E부)</h3>
+<div class="tw"><table class="lab">
+<tr><th>달 얼굴의 지역(최대 납작해짐 1.75:1.45:1, 1,700 kg/m³)</th><th>면적의 절대 변화(부피 감소 포함)</th><th>둥글어지는 동안 표면의 변위</th><th>크레이터 밀도와 지각 두께에 대한 효과</th></tr>
+<tr class="hl"><td><strong>극 지역(c축, 기하학적 닻)</strong></td><td><strong>0.55×</strong>(30° 원관에서 0.58×)</td><td>안정된 닻(~ +290 km의 극 반지름)</td><td><strong>최대 밀도(적도 대비 1.49×)</strong>, 얇고 밀도 높은 지각 위</td></tr>
+<tr><td><strong>선행과 후행 반구(b축)</strong></td><td><strong>0.80×</strong></td><td>~ 430 km 안으로 무너짐</td><td>둘레 고리를 따른 중간 밀도</td></tr>
+<tr><td><strong>지구 선의 끝(a축, 지구 직하점과 반지구점)</strong></td><td><strong>0.97×</strong></td><td>~ 900 km 안으로 무너짐</td><td>최소 수축 — 지구 직하점에서 최소 밀도(148)</td></tr>
+<tr><td><strong>달 얼굴의 전 지구 평균</strong></td><td><strong>0.75×</strong>(부피는 1.53분의 1로)</td><td>등가 반지름이 2,180에서 1,890 km로 떨어짐</td><td>압축 에너지 1.5 × 10²⁸ J(<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T \approx 206\text{ K}</annotation></semantics></math></span></span>)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>경험적 검증(D부)</th><th>정의와 표본</th><th>측정 결과</th><th>상태</th></tr>
+<tr class="hl"><td><strong>검증 1: 극/적도 밀도 비</strong></td><td>깨끗한 세기(바다와 SPA 제외), 30° 원관 대 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi|&lt;15^\circ</annotation></semantics></math></span></span></td><td><strong>1.20 ± 0.05</strong>(20~30 km에서 1.09 <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 60~100 km에서 <strong>1.53</strong>)</td><td><strong>통과</strong></td></tr>
+<tr class="hl"><td><strong>검증 2: 크레이터 지름의 중앙값</strong></td><td>극과 적도의 크레이터 크기 비교</td><td>극의 중앙값이 <strong>1.06</strong>배 큼(신뢰 구간 1.01~1.12)</td><td><strong>통과</strong></td></tr>
+<tr><td><strong>검증 3: 젊은 크레이터(둥글어진 뒤)</strong></td><td>늦은 크레이터의 독립 표본 두 개</td><td>비 <strong>0.92와 1.12</strong>(극 과잉 없음)</td><td><strong>예측과 일치</strong></td></tr>
+<tr class="hl"><td><strong>검증 4: 두 극 사이의 대칭</strong></td><td>75°~90° 띠와 15° 원관(SPA 제외)</td><td>백만 km²당 북 <strong>300</strong> 대 남 <strong>305</strong>(1.02)</td><td><strong>통과</strong></td></tr>
+<tr><td><strong>크레이터 크기 보존의 5가지 검증</strong></td><td>최대, 크기 분포, 오래됨/새것, 타원도, 복합으로의 전이</td><td><strong>5개 중 4개</strong>가 완전한 보존을 확인, 크레이터 축소를 보인 것은 <strong>0</strong></td><td><strong>통과</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>앞에 놓인 문</h2>
+<p>13~14장에서 우리는 달의 극의 수수께끼(<em>왜 극은 붐비는가</em>)를 풀었습니다. 납작한 삼축 천체(1.8 : 1.4 : 1)에서 단단한 구(3,778 km)로의 이행이 "외부 회전 분화"를 겪은 얇은 극 지각 위에서 극을 1.20~1.53배로 압축하면서도, 원래의 크레이터 지름은 완전히 보존했음을 발견했습니다.</p>
+<p>그런데 13장에서 남극의 중심에 예상치 못한 발견이 나타났습니다: <strong>남극–에이트켄 분지(SPA)</strong> — 달에서 가장 크고 가장 수수께끼 같은 분지(2,400 km)로, 그 심부(0°~10°)에서 크레이터 밀도는 백만 km²당 132로 떨어집니다! LEF 모델에서 SPA 분지는 정말 무엇이며, 왜 그 모양은 둥글지 않고 타원이며, 어떻게 만들어졌을까요? 다음 장 — <strong>제15장: 남극–에이트켄 분지(SPA) — 분리의 상처인가, 가장 큰 충돌 크레이터인가?</strong>(논문 08 — <em>남극–에이트켄</em>에서) — 에서 우리는 이 거대한 분지로 뛰어들 것입니다!</p>
+<a href="story15_ko.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">제15장</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">남극–에이트켄 분지(SPA) — 분리의 상처인가, 가장 큰 충돌 크레이터인가? →</p></div></a><p style="margin-top:22px"><a href="story13_ko.html">← 제13장</a> · <a href="story00_ko.html">서장</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · LEF 모델 · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
