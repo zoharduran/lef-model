@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 3: המנוע מבפנים — לחץ המקור של 150 GPa והמגמה המוקצפת — מודל LEF</title>
+<meta name="description" content="פרק 3 בסיפור מודל LEF: לחץ המקור של 150 GPa, סף הצפיפות של 3,864 ק״ג/מ³ למגמה מוקצפת, קצב הזרימה, מקור האנרגיה, ומדוע המעבר אינו צינור דק אלא האגס.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story03_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:right}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 3</p>
+<h1>פרק 3: המנוע מבפנים — לחץ המקור של <span class="ltr">150 GPa</span> והמגמה המוקצפת</h1>
+<p>מבוסס על מאמר 03 — LEF Mechanism in Practice (מבוא וחלק A: §A.1–A.13)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: מי דחף 73 מיליארד מיליארדי טונות לגובה של 16,000 קילומטר?</h2>
+<p class="lead">בפרקים הקודמים ראינו שקו הקורוטציה פותר את חידת המהירות ואת תקציב התנע הזוויתי: אם רק נצליח להביא את חומר הירח אל מרחק של כ-16,000 ק"מ ממרכז כדור הארץ בעודו מסתובב איתו, הוא כבר ינוע במהירות של מסלול חופשי. אבל כעת ניצבת מולנו שאלת המציאות הקשה ביותר:</p>
+<div class="q">איזה כוח בעולם מסוגל להרים מסה עצומה של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> ק"ג נגד כוח הכבידה של כדור הארץ?</div>
+<p>כדי להבין עד כמה המשימה הזו תובענית, בואו נבדוק תחילה שתי הצעות מפתות אך כושלות. ראשית, <strong>הסיבוב לבדו אינו מרים דבר</strong>: גם על פני כדור ארץ שמסתובב בכל 5.5 שעות, בגובה של 8,991 ק"מ מן המרכז (גוף במסת הירח הנוגע בפני השטח), כוח הכבידה מושך פנימה בתאוצה של <span class="ltr">4.93 m/s²</span>, בעוד שהדחיפה הצנטריפוגלית החוצה היא <span class="ltr">0.905 m/s²</span> בלבד. כל קילוגרם עדיין שוקל כלפי מטה כארבעים אחוז ממשקלו על פני כדור הארץ כיום! הסיבוב אמנם מקל על המשקל, אך אינו נושא אותו.</p>
+<figure class="fig"><svg viewBox="0 0 640 110" role="img" aria-label="Gravity against centrifugal push at 8,991 km" style="direction:ltr"><rect x="40" y="16" width="512.7" height="28" rx="4" fill="#b23a2e"/><text x="544.7" y="35" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="start" style="direction:rtl;unicode-bidi:embed">כבידה פנימה · ⁦4.93 m/s²⁩</text><rect x="40" y="56" width="94.1" height="28" rx="4" fill="#2f7d57"/><text x="142.1" y="75" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end" style="direction:rtl;unicode-bidi:embed">דחיפה צנטריפוגלית החוצה · ⁦0.905 m/s²⁩</text></svg><figcaption>ב-8,991 ק"מ מן המרכז, ביממה של 5.5 שעות: הכבידה גדולה פי חמישה ויותר מן הדחיפה הצנטריפוגלית.</figcaption></figure>
+<p>שנית, <strong>ציפה אינה פועלת בחלל</strong>: שמן צף על מים מפני שהמים הכבדים שסביבו דוחפים אותו למעלה, אך מעל פני השטח של כדור הארץ אין אוקיינוס סלע שיציף את הירח למעלה.</p>
+<div class="box"><span class="tag">המסקנה</span><p style="margin:0">כדי לבנות ירח מחומרו של כדור הארץ, דרוש <strong>מנוע לחץ פנימי אדיר</strong> שיפעל מבפנים — מנוע שידחף עמוד של מגמה מעומק כדור הארץ כלפי מעלה, יספק מסה בקצב מספיק, ולא יקרוס תחת משקלו של הירח הנבנה בראשו.</p></div>
+</section>
+
+<section>
+<span class="lab">02 · THREE IMAGES</span>
+<h2>דימוי מוחשי: משחת השיניים, המים שעולים לגג, ובקבוק הסודה שנפתח</h2>
+<p>כדי להרגיש בידיים כיצד פועל המנוע הזה, חברו יחד שלושה דימויים פשוטים מחיי היום-יום:</p>
+<div class="three t">
+<div><b>01 · לחץ המקור</b><h4>שפופרת משחת השיניים</h4><p>עמוק בתוך כדור הארץ הצעיר, משקלן של כל השכבות שמעל יוצר לחץ כביר. כאשר נפתח נתיב זרימה מן העומק אל פני השטח באזור מועדף אחד, הלחץ הפנימי סוחט את הסלע המותך כלפי מעלה — בדיוק כפי שמשחת שיניים עולה מתוך הפייה כאשר לוחצים על השפופרת.</p></div>
+<div><b>02 · עומד הידרוסטטי</b><h4>משאבה שמעלה מים למיכל על הגג</h4><p>כדי שמשאבה במרתף תצליח להזרים מים אל מיכל על גג של גורד שחקים, הלחץ שלה חייב להיות גדול ממשקלו של כל עמוד המים שבתוך הצינור. אם המים כבדים מדי והבניין גבוה מדי, העמוד נעצר באמצע הדרך.</p></div>
+<div><b>03 · מגמה מוקצפת</b><h4>בקבוק סודה שנפתח</h4><p>בעומק רב, תחת לחץ עצום, מים וגזים נדיפים מומסים בתוך הסלע המותך כמו גז בתוך בקבוק סודה סגור. ברגע שהמגמה עולה והלחץ עליה יורד, הגזים משתחררים ויוצרים מיליארדי בועות — <strong>מגמה מוקצפת</strong>. הקצף הזה קל בהרבה מסלע מוצק, ולכן אותו לחץ בדיוק מסוגל להרים אותו גבוה בהרבה!</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: מדוע סלע יבש נכשל — ורק מגמה עשירה בנדיפים עוברת את הסף</h2>
+<p>במודל LEF אנחנו לא מנחשים שהלחץ מספיק — אנחנו <strong>מתמחרים את הדחיפה</strong> מתוך אותו שדה כבידה עצמו. לפני שמתחילים לחשב, קובע מאמר 03 כלל הנהלת חשבונות קפדני: בכל רגע נתון, המסה ההתחלתית של גוף האב (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6.0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455\times10^{24}</annotation></semantics></math></span></span> ק"ג) מתחלקת לארבעה מאגרים ברורים כך ששום קילוגרם לא ייספר פעמיים:</p>
+<div class="spec"><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">M_E</annotation></semantics></math></span></b><span>המסה שנותרה בכדור הארץ</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></b><span>המסה שהצטברה בגוף המתפתח</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{transit}}</annotation></semantics></math></span></b><span>בתנועה בדרך ביניהם או בפליטה</span></div><div><b class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{\mathrm{escaped}}</annotation></semantics></math></span></b><span>המסה שאבדה למערכת</span></div></div>
+<p>כעת מציב המאמר מבחן לחץ חד-ממדי לאורך עמוד המגמה ממרכז כדור הארץ הצעיר (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>V</mi></msub><mo>=</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>517</mn></mrow><annotation encoding="application/x-tex">R_V = 6{,}517</annotation></semantics></math></span></span> ק"מ, יממה של 5.5 שעות) ועד לרדיוס הקורוטציה של גוף האב כולו (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn></mrow><annotation encoding="application/x-tex">r_* = 15{,}882.9</annotation></semantics></math></span></span> ק"מ):</p>
+<ul class="pts">
+<li><strong>הלחץ הזמין במקור</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span><strong>:</strong> משקל השכבות הלוחצות אל מרכז כדור הארץ הצעיר (בקיזוז ההקלה הצנטריפוגלית של הסיבוב המהיר) מעניק לחץ מקור ליתוסטטי של <strong><span class="ltr">150.26 GPa</span></strong> (כמיליון וחצי אטמוספרות!).</li>
+<li class="a"><strong>העלות של עמוד המגמה</strong> <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span><strong>:</strong> כדי להחזיק עמוד מגמה המורכב ממגמה עמוקה בצפיפות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub><mo>=</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_d = 3{,}500</annotation></semantics></math></span></span> ק"ג/מ³ שמתקצפת מעל פני השטח לצפיפות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">\rho_o = 1{,}500</annotation></semantics></math></span></span> ק"ג/מ³, נדרש לחץ של <strong><span class="ltr">139.78 GPa</span></strong>.</li>
+<li class="c"><strong>היתרה שדוחפת את הירח:</strong> <span class="ltr">150.26 − 139.78 = <strong><span class="ltr">+10.49 GPa</span></strong></span>! נותר עודף לחץ חיובי של למעלה מעשרה גיגה-פסקל שמניע את הזרימה כלפי מעלה.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 130" role="img" aria-label="Source pressure against the cost of the melt column" style="direction:ltr"><rect x="40" y="18" width="560" height="30" rx="4" fill="#1f3a5f"/><text x="592" y="38" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="start" style="direction:rtl;unicode-bidi:embed">לחץ המקור · ⁦150.26 GPa⁩</text><rect x="40" y="62" width="520.9" height="30" rx="4" fill="#9aa3af"/><text x="552.9" y="82" font-size="13" font-family="Heebo" fill="#fff" text-anchor="start" style="direction:rtl;unicode-bidi:embed">עלות עמוד המגמה · ⁦139.78 GPa⁩</text><rect x="560.9" y="62" width="39.1" height="30" rx="4" fill="#2f7d57"/><text x="600.0" y="114" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start" style="direction:rtl;unicode-bidi:embed">היתרה: ⁦+⁦10.49 GPa⁩⁩</text></svg><figcaption>מאזן הלחץ בצפיפות הייחוס 3,500 ק"ג/מ³: לחץ המקור מכסה את משקל עמוד המגמה ומשאיר יתרה.</figcaption></figure>
+<div class="callout"><span class="tag">סף הצפיפות הקריטי · 3,864 ק"ג/מ³</span>
+<p style="margin:0">כאשר בודקים אילו צפיפויות מגמה עוברות את המבחן, מתגלה גבול חד: כל מגמה עמוקה שצפיפותה נמוכה מ-<strong>3,864 ק"ג/מ³</strong> (כמו מגמה עשירה במים ובחומרים נדיפים) מותירה עודף לחץ חיובי ומגיעה לקו הקורוטציה; לעומת זאת, מגמה יבשה וכבדה בצפיפות של 4,000 ק"ג/מ³ דורשת <span class="ltr">154.19 GPa</span> ונכשלת בגירעון של <span class="ltr">−3.92 GPa</span>. <strong>המים והנדיפים אינם תוספת מקרית — הם התנאי הפיזיקלי שמאפשר לירח להתרומם!</strong></p></div>
+<figure class="fig"><svg viewBox="0 0 640 320" role="img" aria-label="Residual pressure against deep melt density" style="direction:ltr"><rect x="70" y="20" width="415.8" height="250" fill="#e8f2ec"/><rect x="485.8" y="20" width="124.2" height="250" fill="#fbeceb"/><line x1="70" x2="610" y1="257.5" y2="257.5" stroke="#ece7da"/><text x="62" y="261.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">-20</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#ece7da"/><text x="62" y="211.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+0</text><line x1="70" x2="610" y1="157.5" y2="157.5" stroke="#ece7da"/><text x="62" y="161.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+20</text><line x1="70" x2="610" y1="107.5" y2="107.5" stroke="#ece7da"/><text x="62" y="111.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+40</text><line x1="70" x2="610" y1="57.5" y2="57.5" stroke="#ece7da"/><text x="62" y="61.5" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">+60</text><line x1="70" x2="610" y1="207.5" y2="207.5" stroke="#5b6676" stroke-width="1.5"/><text x="86.9" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,500</text><text x="171.2" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,000</text><text x="255.6" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,500</text><text x="340.0" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,000</text><text x="424.4" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">3,500</text><text x="508.8" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,000</text><text x="593.1" y="288" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">4,500</text><path d="M86.9,37.2 L340.0,145.3 L424.4,181.3 L485.8,207.5 L508.8,217.3 L593.1,253.3" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="86.9" cy="37.2" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="94.9" y="28.2" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+68.12</text><circle cx="340.0" cy="145.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="348.0" y="136.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+24.89</text><circle cx="424.4" cy="181.3" r="5.5" fill="#2f7d57" stroke="#fff" stroke-width="2"/><text x="432.4" y="172.3" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57">+10.49</text><circle cx="485.8" cy="207.5" r="5.5" fill="#c47f2c" stroke="#fff" stroke-width="2"/><text x="493.8" y="198.5" font-size="12" font-family="Heebo" font-weight="700" fill="#c47f2c">0</text><circle cx="508.8" cy="217.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="516.8" y="208.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-3.92</text><circle cx="593.1" cy="253.3" r="5.5" fill="#b23a2e" stroke="#fff" stroke-width="2"/><text x="601.1" y="244.3" font-size="12" font-family="Heebo" font-weight="700" fill="#b23a2e">-18.33</text><line x1="485.8" x2="485.8" y1="20" y2="270" stroke="#c47f2c" stroke-width="1.5" stroke-dasharray="5 4"/><text x="479.8" y="36" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="start" style="direction:rtl;unicode-bidi:embed">סף: 3,864 ק"ג/מ³</text><text x="205.0" y="242.5" font-size="14" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle" style="direction:rtl;unicode-bidi:embed">המגמה עולה</text><text x="556.0" y="107.5" font-size="14" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" style="direction:rtl;unicode-bidi:embed">נכשלת</text><text x="340" y="308" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" style="direction:rtl;unicode-bidi:embed">צפיפות המגמה העמוקה (ק"ג/מ³)</text><text x="16" y="145" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle" transform="rotate(-90 16 145)" style="direction:rtl;unicode-bidi:embed">יתרת לחץ (GPa)</text></svg><figcaption>יתרת הלחץ (לפני עומס וחיכוך) כפונקציה של צפיפות המגמה העמוקה, לפי מאמר 03: הקו חוצה את האפס ב-3,864 ק"ג/מ³.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: קצב הזרימה, מקור האנרגיה ופסילת הצינור הדק</h2>
+<p>מצאנו שעודף לחץ של <span class="ltr">10.49 GPa</span> מסוגל לדחוף עמוד מגמה מוקצפת עד לקו הקורוטציה. אבל כדי לבנות ירח שלם, המנוע הפנימי חייב לעמוד גם ב<strong>שלושה מבחנים מעשיים נוספים</strong> באותה מערכת עצמה:</p>
+<div class="three">
+<div><b>TEST 1</b><h4>מבחן הקצב</h4><p>האם המגמה מספיקה להגיע בזמן? כדי להזרים מסה של ירח שלם (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.35</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup></mrow><annotation encoding="application/x-tex">7.35\times10^{22}</annotation></semantics></math></span></span> ק"ג) לאורך חלון הבנייה של 600 מיליון שנים (או 100 מיליון שנים במבחן הרגישות), נדרש קצב ממוצע של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.88\times10^{6}</annotation></semantics></math></span></span> ק"ג/שנ' (ועד <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.33</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2.33\times10^{7}</annotation></semantics></math></span></span> ק"ג/שנ' בחלון הקצר). על פי חוק הזרימה הצמיגה (פואזיי), ספיקת הזרימה גדלה כ<strong>חזקה הרביעית של רדיוס המעבר</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">b^4</annotation></semantics></math></span></span>): מעבר ברדיוס של כמה מאות קילומטרים ומעלה מעביר את המסה בקלות כל עוד פנים המעבר נותר חם ונייד.</p></div>
+<div><b>TEST 2</b><h4>מבחן האנרגיה</h4><p>מאיפה מגיעה העבודה להרים ירח? הרמת מסת הירח מפני השטח (8,991 ק"מ) אל רדיוס השחרור (16,400 ק"מ) דורשת עבודה כבידתית של כ-<strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1.47\times10^{30}</annotation></semantics></math></span></span> ג'אול</strong> (פחות מאחוז אחד מאנרגיית הקשירה של כדור הארץ). מאין מגיעה האנרגיה הזו? מאותו תהליך ממש שמניע את ההתפתחות הפנימית: <strong>שקיעת הברזל הכבד אל ליבת כדור הארץ</strong> והתכווצות כדור הארץ הצעיר משחררות אנרגיה כבידתית של כ-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>31</mn></msup></mrow><annotation encoding="application/x-tex">10^{31}</annotation></semantics></math></span></span> ג'אול — די והותר כדי לממן את ההרמה!</p></div>
+<div><b>TEST 3</b><h4>מבחן קרום הבידוד</h4><p>איך המעבר אינו קופא בדרך? בעוד שפנים המעבר מוזן בחום מלמטה ונשאר נוזלי, פני השטח החיצוניים שלו קופאים במגע עם הסביבה הקרה. משוואת חזית הקיפאון מראה שהמטר הראשון של הקרום החיצוני מתמצק בתוך <strong>1.9 עד 23 ימים</strong> בלבד, קילומטר אחד בתוך אלפי עד עשרות אלפי שנים, ואילו קרום עבה של 50 ק"מ דורש מיליוני שנים — כך שנוצרת מעטפת מוצקה ומבודדת השומרת על הליבה הפנימית לוהטת וזורמת.</p></div>
+</div>
+<div class="box"><span class="tag">התגלית המפתיעה של המבחן המשולב</span>
+<h3 style="margin-top:4px">מדוע "צינור דק" נפסל לחלוטין</h3>
+<p style="margin:0">כאשר בודקים את הלחץ, הזרימה ומשקל הירח יחד בשלב הטיפוס האחרון (יממה של 5.77 שעות, קו רוחב 22.5°, מרכז הירח ב-15,397 ק"מ), מגלים תוצאה דרמטית: אם המעבר היה צינור צר ברדיוס 500 ק"מ, משקל הירח שלוחץ על קצה הצינור היה יוצר עומס של <span class="ltr">46.18 GPa</span> ומוחק את כל עודף הלחץ לגירעון של <span class="ltr">−35.03 GPa</span>. המאזן הרדיאלי הופך לחיובי רק מעל <strong>רדיוס מעבר של 1,017 ק"מ</strong> — וברדיוס כזה, החלק החיצוני של המעבר עצמו כבר שוקל <strong>0.46 ממסת הירח</strong> (וברדיוס 1,500 ק"מ — מסת ירח שלמה!) ונושא מאמץ גזירה צידי של גיגה-פסקלים. <strong>המסקנה:</strong> המעבר אינו צינור דק חסר מסה, אלא בסיס רחב, חם ומסיבי של כדור הארץ עצמו — <strong>האגס</strong>!</p></div>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+<p>איזון הלחצים לאורך מסלול ההזנה מחבר בין לחץ המקור הליתוסטטי במרכז (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span>), העומד ההידרוסטטי של עמוד המגמה העמוק (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span></span>) והחיצוני (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">I_o</annotation></semantics></math></span></span>), עומס המשקל של הגוף בראש העמוד (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{load}}</annotation></semantics></math></span></span>), והפסדי החיכוך הצמיג (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta p_{\mathrm{loss}}</annotation></semantics></math></span></span>):</p>
+<div class="eqs">
+<div class="eq"><div class="k">לחץ המקור</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mi>p</mi></msub><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac></mstyle><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">p_s = \dfrac{\rho_p}{2}\left(\dfrac{GM_0}{R} - \omega_0^{2} R^{2}\right) = 150.26\ \mathrm{GPa}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">עלות עמוד המגמה</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}} = \rho_d I_d + \rho_o I_o</annotation></semantics></math></span></div></div>
+<div class="eq key"><div class="k"><strong>תנאי ההרמה וסף הצפיפות</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mrow><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>&gt;</mo><mn>0</mn><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac></mstyle><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">p_s - p_{\mathrm{head}} - p_{\mathrm{load}} - \Delta p_{\mathrm{loss}} &gt; 0 \;\Longrightarrow\; \rho_{d,\max} = \dfrac{p_s - \rho_o I_o}{I_d} \simeq 3{,}864\ \mathrm{kg/m^3}</annotation></semantics></math></span></div></div>
+</div>
+<p>עבור ספיקת זרימה למינרית במעבר ברדיוס <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> ואורך <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">\ell</annotation></semantics></math></span></span> (חוק פואזיי), ועבור קצב התעבות חזית הקיפאון של הקרום החיצוני (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}</annotation></semantics></math></span></span>) ועבודת ההרמה הכבידתית (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">W_g</annotation></semantics></math></span></span>):</p>
+<div class="eqs">
+<div class="eq"><div class="k">ספיקת הזרימה (פואזיי)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>π</mi><msup><mi>b</mi><mn>4</mn></msup><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mn>8</mn><mi>η</mi><mi mathvariant="normal">ℓ</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">Q = \dfrac{\pi b^{4} \Delta p}{8\eta\ell}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">חזית הקיפאון</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">r</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>≃</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>2</mn><mi>k</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi><mtext> </mtext><mi>t</mi></mrow><mrow><msub><mi>ρ</mi><mi>s</mi></msub><msub><mi>L</mi><mi>f</mi></msub></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">h_{\mathrm{fr}}(t) \simeq \sqrt{\dfrac{2k\,\Delta T\,t}{\rho_s L_f}}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">עבודת ההרמה</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>g</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mi>E</mi></msub><mi>m</mi><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>≃</mo><mn>1.47</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> </mtext><mi mathvariant="normal">J</mi></mrow><annotation encoding="application/x-tex">W_g = GM_E m\left(\dfrac{1}{r_0} - \dfrac{1}{r_1}\right) \simeq 1.47\times10^{30}\ \mathrm{J}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: תכלילי ההתכה שבתוך הגבישים הירחיים</h2>
+<p>המבחן הפיזיקלי קבע שרק מגמה עשירה במים ובנדיפים (קלה מ-3,864 ק"ג/מ³) יכולה לעבור את סף הלחץ של <span class="ltr">150.26 GPa</span> ולהתרומם אל קו הקורוטציה. אילו הירח היה נוצר מהתנגשות ענקית יבשה ולוהטת שמאדה את המים, הסלעים הקדומים שלו היו אמורים להיות יבשים לחלוטין.</p>
+<p>אך כאשר מדענים בחנו באמצעות מיקרוסקופיה מתקדמת <strong>תכלילי התכה</strong> (<em>Melt Inclusions</em>) — טיפות זעירות של מגמה עתיקה שנלכדו בתוך גבישי אוליבין שהתגבשו בעומק הירח והגנו על המים מפני בריחה לחלל — התגלתה חתימה מפתיעה: שיעור מים גבוה של <strong>615 עד 1,410 ppm</strong>, הדומה לריכוזים במעטפת העליונה של כדור הארץ.</p>
+<div class="q">המים שנמצאו בתוך הגבישים הירחיים הם השריד המאובן של אותו "מנוע הקצפה" קדום שדחף את הירח למעלה!</div>
+<h3 style="margin-top:28px">ריבוע המעבדה: מאזן הלחצים, סף הצפיפות והמבחן המשולב (מאמר 03, חלק A)</h3>
+<div class="tw"><table class="d"><tr><th>צפיפות המגמה העמוקה <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\rho_d</annotation></semantics></math></span></span></th><th>לחץ מקור זמין <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">p_s</annotation></semantics></math></span></span></th><th>עלות עמוד המגמה <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm{head}}</annotation></semantics></math></span></span></th><th>יתרת לחץ לפני עומס וחיכוך</th><th>תוצאת מבחן ההרמה</th></tr>
+<tr><td>1,500 ק"ג/מ³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">82.14 GPa</span></td><td class="ok2"><span class="ltr">+68.12 GPa</span></td><td class="ok2">עובר בקלות (מגמה מוקצפת מאוד)</td></tr>
+<tr><td>3,000 ק"ג/מ³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">125.37 GPa</span></td><td class="ok2"><span class="ltr">+24.89 GPa</span></td><td class="ok2">עובר (מגמה עשירה בנדיפים)</td></tr>
+<tr class="hl"><td>3,500 ק"ג/מ³ (ייחוס)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">139.78 GPa</span></td><td class="ok"><span class="ltr">+10.49 GPa</span></td><td class="ok">עובר — היתרה מניעה את הבנייה</td></tr>
+<tr class="hl"><td>3,864 ק"ג/מ³ (הסף)</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">150.26 GPa</span></td><td class="eq0"><span class="ltr">0.00 GPa</span></td><td class="eq0">נקודת האיזון המדויקת</td></tr>
+<tr><td>4,000 ק"ג/מ³</td><td><span class="ltr">150.26 GPa</span></td><td><span class="ltr">154.19 GPa</span></td><td class="bad"><span class="ltr">−3.92 GPa</span></td><td class="bad">נכשל (מגמה יבשה וכבדה מדי)</td></tr>
+</table></div>
+<div class="tw"><table class="d"><tr><th>רדיוס המעבר <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span></th><th>עומס רדיאלי של הירח</th><th>הפסד חיכוך זרימה</th><th>יתרה רדיאלית</th><th>מאמץ גזירה צידי (22.5°)</th><th>מסת המעבר החיצוני (במסות ירח)</th></tr>
+<tr><td>500 ק"מ</td><td><span class="ltr">46.18 GPa</span></td><td><span class="ltr">0.0103 GPa</span></td><td class="bad"><span class="ltr">−35.03 GPa</span> (נכשל)</td><td><span class="ltr">46.04 GPa</span></td><td>0.112</td></tr>
+<tr><td>1,000 ק"מ</td><td><span class="ltr">11.54 GPa</span></td><td><span class="ltr">0.0006 GPa</span></td><td class="bad2"><span class="ltr">−0.39 GPa</span> (סף: 1,017 ק"מ)</td><td><span class="ltr">11.51 GPa</span></td><td>0.448 (כמעט חצי ירח!)</td></tr>
+<tr class="hl"><td>1,500 ק"מ (דיסקת המגע)</td><td><span class="ltr">5.13 GPa</span></td><td><span class="ltr">0.0001 GPa</span></td><td class="ok"><span class="ltr">+6.02 GPa</span> (עובר!)</td><td><span class="ltr">5.12 GPa</span></td><td class="ok">1.008 (מבנה מסיבי — האגס)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>גילינו כיצד פועל המנוע מבפנים: לחץ המקור העמוק של <span class="ltr">150.26 GPa</span> מרים מגמה מוקצפת הקלה מ-3,864 ק"ג/מ³, והמבחן המשולב חשף שאין כאן צינור דק — אלא מעבר רחב ומסיבי שמתרומם מתוך כדור הארץ.</p>
+<p>אבל מה קרה לקרום החיצוני של כדור הארץ שהיה מונח ממש מעל אותו אזור בנייה? בפרק הבא — <strong>פרק 4: העור העולה מבחוץ — 4 שלבי הכיפה וכלל התרגום של פני הירח</strong> (מאמר 03, חלק B: §B.1–B.7) — נגלה כיצד קליפת הסיאל של כדור הארץ עלתה עם הגוף, הפכה לעורו של הירח, וחילקה את פני הירח לשלושה אזורים גיאוגרפיים מדויקים.</p>
+<div class="box next"><span class="tag">פרק 4</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">העור העולה מבחוץ — 4 שלבי הכיפה וכלל התרגום של פני הירח ←</p></div>
+<p style="margin-top:22px"><a href="story01_he.html">→ פרק 1</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
