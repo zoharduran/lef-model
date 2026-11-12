@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 14: Äußere Rotationsdifferenzierung — die Kontraktion der Pole, die dünne Polkruste und die Tests der Kratergröße — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 14 der Geschichte des LEF-Modells: äußere Rotationsdifferenzierung — die Kontraktion der Polfläche, die Energiebilanz, die dünne Polkruste und die Erhaltung der Kratergröße.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story14_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story14_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story14_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story14_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story14_he.html" hreflang="he">עברית</a> · <a href="story14_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 14</p>
+<h1>Kapitel 14: Äußere Rotationsdifferenzierung — die Kontraktion der Pole, die dünne Polkruste und die Tests der Kratergröße</h1>
+<p>Auf Grundlage von Artikel 07 — The Poles: Why the Poles Are Crowded (Teile C.3–E: die Geometrie der Kontraktion, die Energiebilanz, die 4 Tests und die 5 Tests zur Erhaltung des Durchmessers)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Wenn die Pole um die Hälfte schrumpften — warum ist die Kruste unter den Polen dünner, und warum schrumpften die Krater selbst nicht?</h2>
+<p>In Kapitel 13 haben wir gesehen, dass der junge Mond von einem abgeplatteten, langgestreckten Körper (a : b : c ≈ 1,8 : 1,4 : 1) unter Volumenkontraktion in eine Kugelform überging und dass dieser Prozess die Polkrater zusammendrängte (1,20 ± 0,05 in der gesamten Population und 1,53 ± 0,19 bei Kratern von 60–100 km). Doch hier stellen sich sofort <strong>drei physikalische Schlüsselfragen</strong>, die, blieben sie ungelöst, das ganze Modell zu Fall bringen würden:</p>
+<ol class="steps">
+<li><strong>Das Paradox der polaren Krustendicke:</strong> Wenn die Polfläche während der Abrundung auf etwa <strong>0,55×</strong> ihrer ursprünglichen Fläche schrumpfte, wurde das Material der Polhülle nach innen gestaucht, und die Kruste unter den Polen hätte <em>dicker</em> sein müssen als die Kruste unter dem Äquator! Tatsächlich zeigen die GRAIL-Messungen genau das Gegenteil: <strong>Die Kruste unter den Polen ist dünner und dichter als die Kruste unter dem Äquator!</strong></li>
+<li><strong>Das Paradox der Erhaltung der Kratergröße:</strong> Wenn sich die Oberfläche an den Polen zusammenzog — warum zogen sich die Krater selbst nicht mit ihr zusammen? Wären die Krater im Durchmesser geschrumpft, wären Krater nahe der Zählschwelle (20 km) unter sie gefallen und hätten den Dichteüberschuss vollständig ausgelöscht!</li>
+<li><strong>Der Motor aus Energie und Druck:</strong> Welcher physikalische Motor trieb die Abrundung nach innen nach dem Überschreiten der Korotationslinie an — und was geschah mit dem enormen Druck (2–<span class="ltr">12 GPa</span>), den diese Abrundung auf die starre Außenhülle ausübte?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: eine Schale Honig, die sich wieder ebnet, steife Fliesen auf einer schrumpfenden Folie und „äußere Rotationsdifferenzierung“</h2>
+<p>Drei einfache Bilder lösen die drei Rätsel und vereinen sie zu einem einzigen geodynamischen Prozess:</p>
+<ul>
+<li><strong>Eine Schale Honig, die gekippt und wieder gerade hingestellt wurde (der Schwerkraftmotor, §C.4):</strong> Solange der Mond mit der Erde verbunden war und sich schnell drehte (5,5 Stunden), hielt die Zentrifugalkraft die Pole um 120 km „energetisch erhöht“ über dem Äquator (wie ein Energiehügel, von dem leichtes Material zum Äquator abglitt). In dem Moment, in dem der Massenmittelpunkt die Korotationslinie (15 818–16 399 km) überschritt, fiel die Dehnung an der Basis der Birne auf null, und die Dichte stieg von 1 700 auf 2 600 kg/m³. Die Eigengravitation des Mondes überwand plötzlich die Rotation — wie eine Eiskunstläuferin, deren Gewicht sich auf einen Schlag verdoppelt und die ihre Arme nicht mehr ausgestreckt halten kann —, und der Pol verwandelte sich sofort von einem „Berggipfel“ in einen „Talgrund“, in den alles Material unter seinem eigenen Gewicht fließt!</li>
+<li><strong>Steife Keramikfliesen auf einer schrumpfenden Gummifolie (die Erhaltung der Kratergröße, §C.7, §D.2):</strong> Die obere Hülle war bereits erstarrt und steif genug, um die Krater als <strong>steife, ganze Fliesen</strong> zu tragen, die ihren ursprünglichen Durchmesser behalten, während sich die elastischen Zwischenräume zwischen den Kratern schlossen und in den Aufbau der Kruste aufgenommen wurden!</li>
+<li><strong>„Äußere Rotationsdifferenzierung“ (§C.8, §D.6):</strong> Warum ist die Kruste unter den Polen heute trotz der Kontraktion dünner? Weil die schnelle Rotation während <strong>der Zehnmillionen Jahre des abgeplatteten Stadiums</strong> (bevor die Kontraktion begann!) das leichte Material der Außenhülle nach außen fließen ließ — <strong>von den Polen zum Äquator</strong> — und so eine <em>besonders dünne</em> Polhülle schuf. Als das Stadium der Abrundung kam, wurde diese dünne Hülle nach innen gestaucht und wurde zu <strong>einer dünnen, dichten Polkruste</strong> (immer noch dünner als die dicke Äquatorkruste!), während die Krater, die gleichmäßig auf der gedehnten Hülle gelandet waren, zu den Polzentren zusammengedrängt wurden!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: die Berechnung der Flächenkontraktion (0,55×) und der Energiebilanz (1,5 × 10²⁸ Joule)</h2>
+<p>Die Teile C.3 und C.4 von Artikel 07 quantifizieren mit mathematischer Genauigkeit sowohl die Flächenänderung an jedem Punkt der Mondoberfläche als auch die Freisetzung von Energie und innerem Druck während der Abrundung:</p>
+<ol class="steps">
+<li><strong>Die absolute Flächenkontraktion zusammen mit dem Volumenrückgang (§C.3.1):</strong> Beim Übergang von der maximalen Abplattung (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>700</mn></mrow><annotation encoding="application/x-tex">\rho \approx 1,700</annotation></semantics></math></span></span> kg/m³, äquivalenter Radius 2 180 km, Abmessungen 5 585 × 4 628 × 3 191 km) zum kugelförmigen Körper bei der Ablösung (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>2</mn><mo separator="true">,</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">\rho \approx 2,600</annotation></semantics></math></span></span> kg/m³, Kugeldurchmesser 3 778 km, Radius 1 890 km) fällt das Volumen um den Faktor <strong>1,53</strong>, der äquivalente Radius schrumpft um 13%, und die mittlere Oberfläche fällt auf <strong>0,75×</strong>. Wegen der dreiachsigen Formänderung (1,75 : 1,45 : 1 in der Mitte der Familie) ist die Änderung jedoch nicht gleichmäßig:
+<ul>
+<li><strong>Die Polfläche (Achse c):</strong> schrumpft auf etwa <strong>0,55×</strong> ihrer ursprünglichen Fläche (maximale Kontraktion!).</li>
+<li><strong>Die Fläche der Seiten (vorauslaufend und nachlaufend, Achse b):</strong> schrumpft auf <strong>0,80×</strong>.</li>
+<li><strong>Die Fläche der Enden der Erdlinie (Achse a):</strong> schrumpft auf nur <strong>0,97×</strong> (eine minimale Kontraktion!).</li>
+<li><strong>Das Verhältnis zwischen den Polkappen (0,58×) und dem Äquatorgürtel (0,86×):</strong> Das Flächenverhältnis beträgt 0,67×, daher springt die Kraterdichte an den Polen um 1/0.67 = 1,49×!</li>
+</ul>
+</li>
+<li><strong>Die Freisetzung von Gravitationsenergie und die innere Erwärmung (§C.4):</strong> Der Volumenkollaps und die Abrundung setzen zwei Anteile Gravitationsenergie frei, die sich im Mond in Wärme und hydrostatischen Druck verwandeln:
+<ul>
+<li><strong>Die Energie der Formänderung (Exzentrizität):</strong> setzt <strong>2 × 10²⁷ Joule</strong> frei (2,1% der Bindungsenergie, ~ 3 × 10⁴ Joule/kg), was eine mittlere Erwärmung von etwa <strong>30 Kelvin</strong> hinzufügt und den Kern zähflüssig und beweglich hält.</li>
+<li><strong>Die Energie der Volumenkontraktion (Kompression):</strong> siebenmal größer — setzt <strong>1,5 × 10²⁸ Joule</strong> frei (~ 2,1 × 10⁵ Joule/kg), entsprechend einer mittleren Erwärmung von <strong>206 Kelvin</strong> (bei einer Wärmekapazität von 1 kJ/kg·K).</li>
+</ul>
+</li>
+<li><strong>Der Druck auf die starre Hülle und die Speisung der Mare-Ausbrüche (§C.4):</strong> Eine steife Gesteinshülle (Schubmodul <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">\mu \ge 10\text{ GPa}</annotation></semantics></math></span></span>) zu zwingen, ihre Form um 10%–20% zu ändern, erzeugt innere Scherspannungen von <strong>2–<span class="ltr">12 GPa</span></strong> — das 20- bis 120-Fache der Scherfestigkeit von Gestein (~ <span class="ltr">0,1 GPa</span>). Die Hülle zerbricht nicht, sondern gibt den hydrostatischen Druck durch <strong>die Speiseöffnungen der Maria</strong> ab (Artikel 05), die das Magma in ballistischen Flügen nach außen feuern und die Krater aus zurückkehrendem Material erzeugen (Artikel 06)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 654.0 190" role="img" aria-label="Area change from peak flattening to sphere" style="direction:ltr"><g transform="translate(14.0,0)"><rect x="200.0" y="16" width="332.6" height="26" rx="4" fill="#9aa3af"/><text x="540.6" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦0,97×⁩</text><rect x="200.0" y="56" width="274.3" height="26" rx="4" fill="#c47f2c"/><text x="482.3" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >⁦0,80×⁩</text><rect x="200.0" y="96" width="257.1" height="26" rx="4" fill="#5f9a6e"/><text x="465.1" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#5f9a6e" style="direction:ltr;unicode-bidi:embed" >⁦0,75×⁩</text><rect x="200.0" y="136" width="188.6" height="26" rx="4" fill="#2f7d57"/><text x="396.6" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >⁦0,55×⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Enden der Erdlinie (Achse a)</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Die Seiten (Achse b)</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Globaler Mittelwert</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Die Pole (Achse c)</text></svg><figcaption>Die Flächenänderung beim Übergang von der maximalen Abplattung zur Kugel bei der Ablösung: Die Pole ziehen sich stärker zusammen als jede andere Region, daher werden die Krater auf ihnen zusammengedrängt.</figcaption></figure><div class="callout"><span class="tag">Äußere Rotationsdifferenzierung — die Kernaussage von Artikel 07 (§C.8, §D.6)</span><p style="margin:0">Solange der junge Mond mit der Erde verbunden war und sich mit ihr drehte, ließ die Abplattung das leichte Material der Außenhülle allmählich <strong>von den Polen zum Äquator</strong> fließen und hinterließ eine dünne Polhülle über ein Fenster von Zehnmillionen Jahren, in dem die Krater gleichmäßig landeten. Im letzten Stadium, als sich der Körper bis zur Ablösung an der Korotationslinie rundete, liefen die Polflächen nach innen zusammen, die Krater wurden zusammengedrängt, und unter den Polen blieb <strong>eine dünne, dichte Kruste</strong> zurück, die heute in den GRAIL-Daten gemessen wird!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: die vier statistischen Tests und die fünf Tests zur Erhaltung der Kratergröße</h2>
+<p>Teil D von Artikel 07 unterzieht das Modell der Abrundung und Kontraktion einer doppelten quantitativen Prüfung: erstens durch <strong>vier statistische Haupttests</strong> und zweitens durch <strong>fünf ergänzende morphometrische Tests</strong>, die prüfen, ob die Krater selbst physikalisch mit dem Boden schrumpften oder ganz erhalten blieben:</p>
+<ol class="steps">
+<li><strong>Test 1 — das Pol/Äquator-Dichteverhältnis in der bereinigten Zählung:</strong> Nach Entfernen der Maria und des SPA-Beckens auf beiden Seiten beträgt das Gesamtverhältnis für Krater ab 20 km <strong>1,20 ± 0,05</strong> (95%-Konfidenzintervall: 1,10–1,30) und steigt durchgehend von 1,09 bei Kratern von 20–30 km auf 1,53 ± 0,19 bei Kratern von 60–100 km und 1,84 ± 0,38 bei Kratern von 100–300 km — <strong>bestanden</strong>.</li>
+<li><strong>Test 2 — eine Änderung des Kraterdurchmessers (ein Reichtum an großen Kratern an den Polen):</strong> Der mediane Kraterdurchmesser an den Polen ist <strong>1,06-mal</strong> so groß wie der mediane Durchmesser am Äquator (95%-Konfidenzintervall: 1,01–1,12) — <strong>bestanden</strong> (bestätigt einen Reichtum an großen, alten Kratern an den Polen).</li>
+<li><strong>Test 3 — die Verteilung junger Krater (nach der Abrundung entstanden):</strong> In zwei unabhängigen Stichproben junger Krater, die landeten, nachdem der Körper sich bereits zur Kugel gerundet hatte, wurden Pol/Äquator-Verhältnisse von <strong>0,92 und 1,12</strong> gemessen (um 1,00, ohne signifikanten Polüberschuss) — <strong>entspricht der Vorhersage</strong>.</li>
+<li><strong>Test 4 — volle Symmetrie zwischen den beiden Polen:</strong> Nach Entfernen des SPA-Beckens, das einen Teil des Südpols bedeckte, wurden im Band 75°–90° am Nordpol <strong>300 Krater</strong> pro Million km² gemessen gegenüber <strong>305</strong> am Südpol (in der 15°-Kappe: 300 gegenüber 305, Verhältnis 1,02, Konfidenzintervall 0,78–1,32) — <strong>bestanden</strong> (volle Gleichheit innerhalb des Zählfehlers).</li>
+<li><strong>Die fünf morphometrischen Tests zur Erhaltung des Kraterdurchmessers (§D.2):</strong> Die Untersuchung (a) der größten Krater pro gleicher Flächeneinheit, (b) der Form der Größenverteilung (der kumulativen Kurve), (c) eines Vergleichs alter gegenüber frischen Kratern, (d) des Elliptizitätsgrades der Kraterränder und (e) des Übergangsdurchmessers vom einfachen zum komplexen Krater — <strong>vier Tests stellten eindeutig fest, dass die Kraterdurchmesser ganz erhalten blieben, und kein einziger Test zeigte irgendein Zeichen eines Schrumpfens der Krater selbst</strong>! Wären die Krater mit dem Boden geschrumpft, wären Krater um 20 km unter die Zählschwelle gefallen und hätten den gemessenen Dichteüberschuss (1,20) vollständig ausgelöscht.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die differentielle Flächenänderung einer Bodeneinheit mit der Normalen <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">n</mi><mo>^</mo></mover><mo>=</mo><mo stretchy="false">(</mo><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat{\mathbf{n}} = (n_x, n_y, n_z)</annotation></semantics></math></span></span> beim Übergang von einem dreiachsigen Ellipsoid (a, b, c) zu einer äquivalenten Kugel mit dem Radius <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mi>b</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_s = (abc)^{1/3}</annotation></semantics></math></span></span> und die gravitative Bindungsenergie W eines abgeplatteten Sphäroids mit der Exzentrizität e sind in den folgenden Gleichungen gegeben (§C.3–C.4):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mrow><mo fence="true">[</mo><msubsup><mi>n</mi><mi>x</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>y</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>b</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msubsup><mi>n</mi><mi>z</mi><mn>2</mn></msubsup><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>R</mi><mi>s</mi></msub><mi>c</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J^{-1} = \left[n_x^2\left(\dfrac{R_s}{a}\right)^2 + n_y^2\left(\dfrac{R_s}{b}\right)^2 + n_z^2\left(\dfrac{R_s}{c}\right)^2\right]^{-1/2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><msub><mi>ρ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>a</mi><mi>c</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{\rho_{\mathrm{polar}}}{\rho_{\mathrm{equatorial}}} = \dfrac{a}{c}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>3</mn><mn>5</mn></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msup><mi>M</mi><mn>2</mn></msup></mrow><msub><mi>R</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>arcsin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mi>e</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">W = -\dfrac{3}{5}\dfrac{GM^2}{R_s}\dfrac{\arcsin(e)}{e}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>≈</mo><mn>1,5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>28</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{compression}} \approx 1.5 \times 10^{28}\text{ J} \quad (\Delta T \approx 206\text{ K})</annotation></semantics></math></span></div></div></div>
+<p>Aus der Jacobi-Gleichung <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>R</mi><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">[</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>ϕ</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi><msup><mo stretchy="false">]</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J(\lambda, \phi) = R_s^{-1}[\cos^2\lambda(a^2\cos^2\phi + b^2\sin^2\phi) + c^2\sin^2\lambda]^{1/2}</annotation></semantics></math></span></span> folgt sofort, dass sich die Dichte am Pol (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_z = 1</annotation></semantics></math></span></span>) mit <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">R_s/c</annotation></semantics></math></span></span> multipliziert, an den Seiten (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_y = 1</annotation></semantics></math></span></span>) mit <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">R_s/b</annotation></semantics></math></span></span> und an den Enden der Erdlinie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_x = 1</annotation></semantics></math></span></span>) mit <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">R_s/a</annotation></semantics></math></span></span> — genau die Reihenfolge der Dichten, die um die sechs Achsenenden gemessen wird!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: das Verschwinden der Abplattung vor der Ablösung und die Form, die nach dem Zurückweichen erhalten blieb</h2>
+<p>Am Ende des Abrundungsstadiums, in dem Moment, in dem der Massenmittelpunkt die Korotationslinie um etwa 210 km überschritt (r ≈ 16 610 km), löste sich der Mond <strong>bereits vollständig kugelförmig und starr</strong> von der Erde (maximales Achsenverhältnis ≤ 1,04, §C.1, §C.5):</p>
+<ul>
+<li><strong>Die frühe Abplattung verschwand vor der Ablösung (nicht danach):</strong> Nach der Ablösung, als der Mond auf 30 000 km (Periode 14 Stunden) und auf 60 000 km (41 Stunden) zurückwich, hoben die Gezeiten- und Rotationskräfte nur einen winzigen elastischen Wulst auf dem starren Körper an (Achsenverhältnis 1,03 bei 30 000 km und 1,00 bei 60 000 km), und die heutige <strong>„fossile Abplattung“</strong> des Mondes (f ≈ 0,001, vor 16 Erdradien eingefroren) ist Hunderte Male kleiner als die dreiachsige Abplattung des verbundenen Stadiums (1,8 : 1,4 : 1).</li>
+<li><strong>Der Kreis zwischen den Artikeln 05, 06 und 07 schließt sich:</strong> Derselbe Kontraktionsdruck von 2–<span class="ltr">12 GPa</span>, den die starre Hülle während der Abrundung ausübte, drückte das Magma durch die Speiseöffnungen der Maria hinaus (Artikel 05), feuerte das zurückkehrende Material, das die Riesenkrater erzeugte (Artikel 06), und drängte sie über einer dünnen, dichten Polkruste zu den beiden Polen zusammen (Artikel 07)!</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: die Flächenkontraktion, die Energie- und Druckbilanz und eine Zusammenfassung der 4 Tests (Artikel 07, Teile C.3–E)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Region der Mondoberfläche (maximale Abplattung 1,75:1,45:1, 1 700 kg/m³)</th><th>Absolute Flächenänderung (einschließlich Volumenrückgang)</th><th>Verschiebung der Oberfläche während der Abrundung</th><th>Wirkung auf Kraterdichte und Krustendicke</th></tr>
+<tr class="hl"><td><strong>Die Polregionen (Achse c, geometrischer Anker)</strong></td><td><strong>0,55×</strong> (0,58× in den 30°-Kappen)</td><td>Ein stabiler Anker (~ +290 km Polradius)</td><td><strong>Maximale Dichte (1,49× gegenüber dem Äquator)</strong> über einer dünnen, dichten Kruste</td></tr>
+<tr><td><strong>Die vorauslaufende und die nachlaufende Seite (Achse b)</strong></td><td><strong>0,80×</strong></td><td>Kollaps nach innen um ~ 430 km</td><td>Mittlere Dichte entlang des Randrings</td></tr>
+<tr><td><strong>Die Enden der Erdlinie (Achse a, unter und gegenüber der Erde)</strong></td><td><strong>0,97×</strong></td><td>Kollaps nach innen um ~ 900 km</td><td>Minimale Kontraktion — die geringste Dichte unter der Erde (148)</td></tr>
+<tr><td><strong>Der globale Mittelwert der Mondoberfläche</strong></td><td><strong>0,75×</strong> (Volumen fällt um das 1,53-Fache)</td><td>Äquivalenter Radius fällt von 2 180 auf 1 890 km</td><td>Kompressionsenergie 1,5 × 10²⁸ J (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>≈</mo><mn>206</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">\Delta T \approx 206\text{ K}</annotation></semantics></math></span></span>)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Empirischer Test (Teil D)</th><th>Definition und Stichprobe</th><th>Gemessenes Ergebnis</th><th>Status</th></tr>
+<tr class="hl"><td><strong>Test 1: Pol/Äquator-Dichteverhältnis</strong></td><td>Bereinigte Zählung (ohne Maria und SPA), 30°-Kappen gegenüber <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ϕ</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">|\phi|&lt;15^\circ</annotation></semantics></math></span></span></td><td><strong>1,20 ± 0,05</strong> (1,09 bei 20–30 km <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> <strong>1,53</strong> bei 60–100 km)</td><td><strong>Bestanden</strong></td></tr>
+<tr class="hl"><td><strong>Test 2: medianer Kraterdurchmesser</strong></td><td>Vergleich der Kratergrößen an den Polen gegenüber dem Äquator</td><td>Der polare Median ist <strong>1,06-mal</strong> größer (Konfidenzintervall 1,01–1,12)</td><td><strong>Bestanden</strong></td></tr>
+<tr><td><strong>Test 3: junge Krater (nach der Abrundung)</strong></td><td>Zwei unabhängige Stichproben später Krater</td><td>Verhältnisse von <strong>0,92 und 1,12</strong> (kein Polüberschuss)</td><td><strong>Entspricht der Vorhersage</strong></td></tr>
+<tr class="hl"><td><strong>Test 4: Symmetrie zwischen den beiden Polen</strong></td><td>Das Band 75°–90° und die 15°-Kappe (ohne SPA)</td><td><strong>300</strong> im Norden gegenüber <strong>305</strong> im Süden pro Million km² (1,02)</td><td><strong>Bestanden</strong></td></tr>
+<tr><td><strong>5 Tests zur Erhaltung der Kratergröße</strong></td><td>Größte Krater, Größenverteilung, alt/frisch, Elliptizität, Übergang zu komplex</td><td><strong>4 von 5</strong> bestätigen volle Erhaltung, <strong>0</strong> zeigen ein Schrumpfen der Krater</td><td><strong>Bestanden</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>In den Kapiteln 13–14 haben wir das Rätsel der Mondpole gelöst (<em>Why the Poles Are Crowded</em>): Wir haben entdeckt, wie der Übergang von einem abgeplatteten dreiachsigen Körper (1,8 : 1,4 : 1) zu einer starren Kugel (3 778 km) die Pole um das 1,20- bis 1,53-Fache verdichtete, über einer dünnen Polkruste, die eine „äußere Rotationsdifferenzierung“ durchlaufen hatte, bei voller Erhaltung der ursprünglichen Kraterdurchmesser.</p>
+<p>Doch in Kapitel 13 tauchte im Herzen des Südpols eine unerwartete Entdeckung auf: <strong>das Südpol-Aitken-Becken (SPA)</strong> — das größte und rätselhafteste Becken des Mondes (2 400 km), in dessen Kern (0°–10°) die Kraterdichte auf 132 pro Million km² fällt! Was ist das SPA-Becken im LEF-Modell wirklich, warum ist seine Form elliptisch statt rund, und wie entstand es? Im nächsten Kapitel — <strong>Kapitel 15: Das Südpol-Aitken-Becken (SPA) — eine Ablösungswunde oder der größte Einschlagkrater?</strong> (aus Artikel 08 — <em>South Pole–Aitken</em>) — tauchen wir in dieses riesige Becken ein!</p>
+<a href="story15_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 15</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Das Südpol-Aitken-Becken (SPA) — eine Ablösungswunde oder der größte Einschlagkrater? →</p></div></a><p style="margin-top:22px"><a href="story13_de.html">← Kapitel 13</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

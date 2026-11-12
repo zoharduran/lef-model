@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 21: Das Gesetz der Monde im Sonnensystem — das Lineal der Geburtsarten, das Pumpenprinzip und der atmosphärische Deckel — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 21 der Geschichte des LEF-Modells: das Gesetz der Monde im Sonnensystem — das Lineal der Geburtsarten, das Pumpenprinzip und der atmosphärische Deckel.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story21_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story21_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story21_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story21_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story21_he.html" hreflang="he">עברית</a> · <a href="story21_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 21</p>
+<h1>Kapitel 21: Das Gesetz der Monde im Sonnensystem — das Lineal der Geburtsarten, das Pumpenprinzip und der atmosphärische Deckel</h1>
+<p>Auf Grundlage von Artikel 11 — 11. Moon Births: One mechanism for the births of moons (Teile A–B: das Geburtslineal, das Pumpen- und das Deckelprinzip, die Stadien der Differenzierung und das Protokoll der 13 Prüfungen)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Erklärt ein einziges physikalisches Gesetz die Geburt aller Monde im Sonnensystem — von der Erde bis Pluto?</h2>
+<p>In den vorigen Kapiteln haben wir gesehen, wie die Erde den Mond an der Spitze einer Birne erschuf (Kapitel 1–9) und wie der Mars Phobos und Deimos aus einem Vulkan an der Spitze einer spitzen Ausbuchtung auswarf (Kapitel 19–20). In Artikel 11 verallgemeinert das LEF-Modell diese beiden Fälle zu <strong>„dem Gesetz der Monde“ (The Moon Law)</strong> — einem einheitlichen Mechanismus, der für jeden Planeten und Zwergplaneten des Sonnensystems gilt:</p>
+<ol class="steps">
+<li><strong>Warum sind die Monde in Größe und Zusammensetzung so verschieden?</strong> Der Mond der Erde ist trocken und im Verhältnis zu seinem Mutterkörper riesig (1,2% der Erdmasse); die Monde der Riesen (Jupiter, Saturn, Uranus und Neptun) sind winzig (0,01%–0,02%) und reich an Wasser und Eis; Charon dagegen macht 11% der Masse des Systems Pluto–Charon aus!</li>
+<li><strong>Warum nimmt die Dichte der Monde mit dem Abstand von der Sonne ab — und springt dann beim Uranus wieder an?</strong> Die Dichte des Erdmondes beträgt 3 344 kg/m³, die der Galileischen Monde des Jupiter ~ 2 600 kg/m³, die der Saturnmonde ~ 1 350 kg/m³ — doch beim ferneren Uranus steigt die Dichte wieder auf 1 505 kg/m³!</li>
+<li><strong>Warum liegen bei fünf Planeten (Mars, Jupiter, Saturn, Uranus und Neptun) kleine Monde auf beiden Seiten der Korotationslinie?</strong> Und warum blieben Merkur und Venus völlig ohne Monde?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: das Abstandslineal der Korotationslinie, eine Läuferin, die die Arme anzieht, und zwei Suppentöpfe mit Schaumdeckeln</h2>
+<p>Vier greifbare Bilder erklären die Physik der Geburt von Monden im ganzen Sonnensystem:</p>
+<ul>
+<li><strong>Die Eiskunstläuferin, die die Arme anzieht, während sich ihr Mantel nach außen bläht (Schrumpfen innen und Aufblähen außen, A.5):</strong> Wie bringt die planetare Differenzierung die Korotationslinie nahe an die Oberfläche? Ein Körper, der sich gleichmäßig ohne Drehimpulsverlust aufbläht, würde langsamer werden und die Korotationslinie wegschieben. Die Differenzierung ist jedoch ein gegenläufiger Prozess innen und außen: Der schwere Kern (der den Großteil der Masse enthält) <strong>sinkt und schrumpft nach innen</strong> und beschleunigt die Rotation wie eine Läuferin, die die Arme anzieht, während das leichte Wasser und die flüchtigen Stoffe nach oben gedrückt werden und <strong>die äußere Hülle aufblähen</strong>, fast ohne die Rotation zu bremsen. So schrumpft der relative Abstand der Korotationslinie nach <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> und trifft die Oberfläche!</li>
+<li><strong>„Die hydrodynamische Pumpe“ (The Pump Principle, A.4):</strong> Das Absinken der schweren Stoffe in den Kern drückt durch hydrostatischen Druck Wasser und leichte Silikate nach oben zu den Auswurföffnungen (der Spitze der Birne oder dem Schlot des Vulkans auf der Ausbuchtung). Solange die Pumpe aktiv und die Kruste nicht versiegelt ist, bleibt <strong>das Geburtsfenster (The Birth Window)</strong> offen.</li>
+<li><strong>Zwei Suppentöpfe auf dem Feuer — ein dicker Schaumdeckel gegenüber einem dünnen (das Prinzip des atmosphärischen Deckels, A.4 &amp; A.9):</strong> Der Abstand von der Sonne bestimmte, wie viel Wasserstoff und Helium jeder Riese einfing, bevor sich die protoplanetare Scheibe auflöste. Saturn (9,5 AE) hat <strong>eine dicke Gashülle (70%–85% der Masse)</strong>, die als thermodynamischer Deckel über dem Wasser wirkt: Die Dämpfe kondensieren und fallen nach innen zurück, die obere Schicht bleibt wassergesättigt und weich, die Korotationslinie bleibt an ihrem Platz (1,92 R), und die ausgeworfenen Monde sind leicht und eisreich (1 346 kg/m³). Uranus (19 AE) hat <strong>einen dünnen Gasdeckel (10%–20%)</strong>: Die Dämpfe entwichen durch die Korotationslinie ins All, trugen Drehimpuls fort, der die Linie auf 3,24 R hinausschob, und trockneten und verdichteten die obere Auswurfschicht — deshalb sind die Uranusmonde dichter (1 505 kg/m³)!</li>
+<li><strong>Die drei Geburtsarten entlang des Sonnensystems (A.4, L.4):</strong> Am heißen, trockenen inneren Rand (der Erde) wurde ein großer, trockener Mond auf der Spitze einer Birne gebaut (<strong>Built</strong>); in der feuchten mittleren Zone (vom Mars bis zum Neptun) wurden kleine, wasserreiche Monde aus Vulkanen auf Ausbuchtungen ausgeworfen (<strong>Ejected</strong>); und am kalten, schnellen äußeren Rand (Pluto–Charon) wurde ein vereinter Körper zu einer „Erdnuss“ gestreckt und an seiner Taille zerrissen (<strong>Split</strong>).</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: das Geburtsgesetz, das Lineal der Zustände und die vier Stadien der Differenzierung (Teil A)</h2>
+<p>Teil A von Artikel 11 formuliert die genauen quantitativen Bedingungen des Gesetzes der Monde:</p>
+<ol class="steps">
+<li><strong>Das Lineal der Geburtsarten (The Ruler of Birth Modes, A.3):</strong> Misst man den Radius der Korotationslinie in Einheiten des Radius des Mutterkörpers (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c / R</annotation></semantics></math></span></span>), fällt der Radius des Mutterkörpers vollständig heraus! Die Lage x hängt <strong>nur vom Verhältnis zwischen Drehtempo und mittlerer Dichte</strong> ab (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi><mi mathvariant="normal">/</mi><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^3 = 4\pi G\rho / 3\Omega^2</annotation></semantics></math></span></span>), daher gilt ein einziges Lineal für jeden Körper im Universum:
+<ul>
+<li><strong>Birne (Built on Pear Tip):</strong> x ≈ 2,29 (die Erde bei 5,77 Stunden und einer Dichte von 3 940 kg/m³ — der Mond macht 1,2% der Masse des Mutterkörpers aus).</li>
+<li><strong>Ausbuchtung und Vulkan (Ejected on Bulge):</strong> x ≈ 1,74–2,06 (der Mars bei 7–9 Stunden und einer Dichte von 1 170 kg/m³, ebenso die Gas- und Eisriesen — winzige Monde von 0,01%–0,02%).</li>
+<li><strong>Ein Vulkan ohne Ausbuchtung (eine theoretische Möglichkeit):</strong> x ≈ 1,1–1,5.</li>
+<li><strong>Eine vollständige Erdnussspaltung (Split at Neck):</strong> x ≈ 0,85–1,02 (Übergang von der Dehnungsschwelle x = 1,53 zur Reißschwelle x = 1 — Pluto und Charon bei 1,9–2,5 Stunden, Charon 11% der Masse des Paares).</li>
+</ul>
+</li>
+<li><strong>Die Zusammensetzung des Mondes als chronologischer Querschnitt der Differenzierungsstadien des Mutterkörpers (A.9):</strong> Mit fortschreitender Differenzierung wandert die Korotationslinie nach innen (beim Jupiter und früh im Leben des Saturn), daher <strong>wurden fernere Monde früher geboren</strong> und nähere Monde später:
+<ul>
+<li><strong>Stadium 0 (Beginn der Differenzierung — zentrifugales Versprühen von Wasser):</strong> Versprühen von Urwasser aus der äußeren Schicht über der Roche-Grenze <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> luftige Eismonde (Iapetus 1 088 kg/m³, Hyperion 544 kg/m³).</li>
+<li><strong>Stadium 1 (früh — gemischtes Material):</strong> Auswurf von Material, das die Zusammensetzung des gesamten Mutterkörpers vor Abschluss der Sortierung darstellt <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> große Monde mit einer Dichte ähnlich dem Innenkörper des Mutterkörpers (f ≈ 0,6–0,7: Kallisto 1,834, Ganymed 1,936, Titan 1,880, Titania 1,711, Oberon 1 630 kg/m³).</li>
+<li><strong>Stadium 2 (Höhepunkt der hydrodynamischen Pumpe):</strong> Ausstoß von Magma, gesättigt mit Wasser und leichten Silikaten; das Entweichen flüchtiger Stoffe ins All hinterlässt hohe Porosität („Schwammigkeit“, 30%–40%) und geringe Dichte <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Phobos (1 860), Deimos (1 470), Tethys (984), Miranda (1 200 kg/m³).</li>
+<li><strong>Stadium 3 (Ende der Differenzierung):</strong> Auswurf eines trockenen, dichten silikatischen Rests mit definiertem Metallkern <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> Io (3 528 kg/m³).</li>
+</ul>
+</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 723.5 222" role="img" aria-label="Lage der Korotationslinie in Radien des Mutterkörpers" style="direction:ltr"><g transform="translate(310.5,0)"><line x1="40.0" x2="40.0" y1="10" y2="168" stroke="#ece7da"/><text x="40.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,6</text><line x1="116.0" x2="116.0" y1="10" y2="168" stroke="#ece7da"/><text x="116.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="211.0" x2="211.0" y1="10" y2="168" stroke="#ece7da"/><text x="211.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="306.0" x2="306.0" y1="10" y2="168" stroke="#ece7da"/><text x="306.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="401.0" x2="401.0" y1="10" y2="168" stroke="#ece7da"/><text x="401.0" y="184" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,5</text><line x1="116.0" x2="116.0" y1="8" y2="168" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="116.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><circle cx="361.1" cy="28" r="7" fill="#1f3a5f"/><rect x="256.6" y="54" width="60.8" height="24" rx="4" fill="#2f7d57"/><rect x="135.0" y="92" width="76.0" height="24" rx="4" fill="#9aa3af"/><rect x="87.5" y="130" width="32.3" height="24" rx="4" fill="#b23a2e"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >Auf einer Birnenspitze gebaut · ⁦2,29⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed" >Auf einer Ausbuchtung ausgeworfen · ⁦1,74–2,06⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >Vulkan ohne Ausbuchtung · ⁦1,1–1,5⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Erdnussspaltung · ⁦0,85–1,02⁩</text><text x="361.8" y="214.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Lage der Korotationslinie in Radien des Mutterkörpers · rote Linie: die Reißschwelle</text></svg><figcaption>Das Lineal der Geburtsarten: Dieselbe Zahl x bestimmt, ob ein Mond auf einer Spitze gebaut, aus einem Vulkan ausgeworfen oder aus einer Erdnuss gerissen wurde — für jeden Körper, unabhängig vom Radius des Mutterkörpers.</figcaption></figure><div class="callout"><span class="tag">Der richtige Dichtevergleich — die Trennung des Innenkörpers von der Gashülle (A.9)</span><p style="margin:0">Monde werden aus dem Innenkörper (Gestein und Eis) geboren, nicht aus der Hülle aus Wasserstoff und Helium. Zerlegt man die mittlere Dichte der Monde in eine silikatisch-metallische Komponente (3 500 kg/m³) und eine Eiskomponente (950 kg/m³), fällt der silikatische Massenanteil f allmählich von der Erde (f = 0,98, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>344</mn></mrow><annotation encoding="application/x-tex">\rho = 3,344</annotation></semantics></math></span></span>) über Jupiter (f = 0,83, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>578</mn></mrow><annotation encoding="application/x-tex">\rho = 2,578</annotation></semantics></math></span></span>) bis Saturn (f = 0,36, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>346</mn></mrow><annotation encoding="application/x-tex">\rho = 1,346</annotation></semantics></math></span></span>) — und steigt beim Uranus wieder an (f = 0,49, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>505</mn></mrow><annotation encoding="application/x-tex">\rho = 1,505</annotation></semantics></math></span></span>), weil der dünne Gasdeckel des Uranus (10%–20%) das Wasser entweichen ließ und die obere Auswurfschicht trocknete!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: die sechzehn Klauseln des Gesetzes der Monde (A.10) und das Protokoll der 13 Prüfungen (Teil B)</h2>
+<p>Die Teile A.10 und B von Artikel 11 vereinen alle physikalischen Bedingungen zu einem einzigen Gesetzessystem und einem einheitlichen Messprotokoll von 13 Prüfungen für jeden Körper des Sonnensystems:</p>
+<ol class="steps">
+<li><strong>Die Sonne als thermodynamische Uhr — der Bogen der Geburten (A.10.4 &amp; L.4):</strong> Die Geburt von Monden erfordert zugleich aktive Differenzierung, ein offenes Zeitfenster, eine nicht versiegelte Kruste und eine unterirdische Schicht niedriger Viskosität. Der Abstand von der Sonne bestimmt, wie lange die vier Bedingungen zusammen bestehen: Am inneren Rand (Merkur und Venus) schließt eine schnelle Austrocknung das Geburtsfenster früh, und nur die Erde schaffte es, einen Mond auf einer Birnenspitze zu bauen; in der mittleren Zone (vom Mars bis zum Saturn) werden Monde reichlich ausgeworfen, bis zum Höhepunkt beim Saturn (~ 24 reguläre Monde); und am kalten äußeren Rand (Uranus, Neptun und Pluto) blockiert das Gefrieren der Kruste allmählich die Öffnungen der Pumpe und führt das System zur mechanischen Spaltung.</li>
+<li><strong>Das strukturelle Rennen und die Rückkopplung der Mondmasse (A.4, A.10.16):</strong> Damit ein Mond geboren wird, muss die radiale Wachstumsrate der Birne oder der Ausbuchtung die Rate übertreffen, mit der die Korotationslinie zurückweicht. Nach der Geburt trägt der Mond, wenn das Massenverhältnis von Mond zu Mutterkörper groß ist (wie beim Erdmond, 1,2%), den größten Teil des Drehimpulses (84%) und bremst den Mutterkörper; bei den Riesen und beim Mars aber ist die Masse der Monde winzig (0,01%–0,02%, nur 0,4%–1,4% des Drehimpulses), daher stammt jedes Zurückweichen der Korotationslinie <strong>allein vom Entweichen von Wasser und Gas durch die Linie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}}</annotation></semantics></math></span></span>)</strong>!</li>
+<li><strong>Das systematische Protokoll der 13 Prüfungen (Teil B):</strong> Um Verzerrungen zu vermeiden, wird jeder Planet und Zwergplanet nach 13 festen Parametern in chronologischer Abfolge geprüft: (1) globale Grunddaten; (2) Katalog und Trennung regulärer von eingefangenen Monden; (3) dynamische Rekonstruktion der alten Rotation (Prüfung 3 — mit dem Radius und dem Trägheitsmomentfaktor k zum Zeitpunkt der Geburt!); (4) Überprüfung des Geburtsgesetzes; (5) Analyse von Wasser und flüchtigen Stoffen; (6) der heutige Differenzierungsgrad (k = C/MR²); (7) Festlegung des Geburtsfensters; (8) der Weg der Gezeitenwanderung (Prüfung 8 — Integration von da/dt, um den Bedarf an einem sekundären Schub durch einen Ring zu erkennen); (9) Überlebensparameter (Roche-Grenze und Hill-Radius); (10) morphologische Spuren auf dem Mutterkörper; (11) strukturelle Spuren auf den Monden (Porosität, Gezeitenbindung und eingefrorener Wulst); (12) Analyse von Ringsystemen als kontinuierlicher Fluss; und (13) Isolierung von Anomalien.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die Lage der Korotationslinie in Einheiten des Radius des Mutterkörpers (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), der Geburtstag (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}}</annotation></semantics></math></span></span>) und die Wirkung des inneren Schrumpfens und des äußeren Aufblähens während der Differenzierung werden wie folgt formuliert (§A.3, §A.5, §B):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">x^3 = \dfrac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt></mrow><annotation encoding="application/x-tex">P_{\mathrm{birth}} = \sqrt{\dfrac{3\pi x^3}{G\rho}}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msqrt><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mi>G</mi><mi>ρ</mi></mrow></mfrac></mstyle></msqrt><mspace width="1em"/><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{\mathrm{critical}} = \sqrt{\dfrac{3\pi}{G\rho}} \quad (x = 1)</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>k</mi><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mi mathvariant="normal">Ω</mi><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi></mrow><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L = kMR^2\Omega = \mathrm{const} \implies x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>H</mi></msub><mo>=</mo><mi>a</mi><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>M</mi><mrow><mn>3</mn><msub><mi>M</mi><mo>⊙</mo></msub></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_H = a\left(\dfrac{M}{3M_\odot}\right)^{1/3}</annotation></semantics></math></span></div></div></div>
+<p>Da der Trägheitsmomentfaktor k in der Differenzierungsformel <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∝</mo><mo stretchy="false">(</mo><msup><mi>k</mi><mn>2</mn></msup><mi>R</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x \propto (k^2 R)^{1/3}</annotation></semantics></math></span></span> quadratisch erscheint, bringt ein Rückgang von k von 0,40 (ein homogener Körper) auf 0,20–0,25 (ein kompakter Kern) die Korotationslinie x von 2,10 R auf 1,44–1,68 R, selbst wenn sich die äußere Hülle um das 1,3-Fache aufbläht — und das ist der geodynamische Motor, der Oberfläche und Korotationslinie zusammenführt!</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: die Rekonstruktion der Korotationslinie und die Mischungsgleichung der Monde</h2>
+<p>Die Anwendung der Prüfungen 3 und 5 des Protokolls auf die Planeten zeigt eine eindrucksvolle quantitative Übereinstimmung zwischen der chemischen Zusammensetzung der Monde und der Erhaltung des Drehimpulses (§A.9, §B):</p>
+<ul>
+<li><strong>Die Zweikomponenten-Mischungsgleichung der Monddichte (§A.9):</strong> Nach der Formel <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>ρ</mi></mfrac><mo>=</mo><mfrac><mi>f</mi><mn>3500</mn></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>f</mi></mrow><mn>950</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho} = \frac{f}{3500} + \frac{1-f}{950}</annotation></semantics></math></span></span> konvergiert der silikatische Massenanteil f der großen Monde, die im Stadium 1 der Differenzierung geboren wurden, im ganzen äußeren Sonnensystem auf einen schmalen, einheitlichen Bereich von <strong>f ≈ 0,6–0,7</strong> (Kallisto, Ganymed, Titan, Titania, Oberon und auch das System Pluto–Charon)!</li>
+<li><strong>Der Test der Rekonstruktion der Korotationslinie ohne Massenverlust (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta L_{\mathrm{escaped}} = 0</annotation></semantics></math></span></span>, Teil B):</strong> Gibt man nur den Drehimpuls der Monde an den Mutterkörper zurück, bewegt sich die Linie beim Jupiter (2,29 R → 2,28 R) und beim Saturn (1,92 R → 1,90 R) kaum (im Einklang mit dem Prinzip des dicken Deckels); bei der Erde kehrt die Linie auf 2,29 R zurück (da der Mond 84% des Drehimpulses trägt); beim Mars (6,03 R), Uranus (3,24 R) und Neptun (3,39 R) dagegen bleibt die Linie weit vom Geburtsbereich (x ≈ 2) entfernt — der Beweis, dass bei allen dreien gewaltige Mengen Wasser und Gas durch die Korotationslinie entwichen!</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: das Lineal der Geburtsarten, die Stadien der Differenzierung, das Zwei-Töpfe-Modell und das Protokoll der 13 Prüfungen (Artikel 11, Teile A–B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Geburtsart</th><th>Mechanismus, der das Material hebt</th><th>Lage der Korotationslinie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>)</th><th>Massenverhältnis Mond/Mutterkörper</th><th>Zone im Sonnensystem und Beispiel</th></tr>
+<tr class="hl"><td><strong>1. Auf einer Spitze gebaut</strong></td><td>Anhaltende Ansammlung an der Spitze einer planetaren Birne; Ablösung beim Überschreiten der Linie</td><td><strong>2,29</strong> (5,77 h, 3 940 kg/m³)</td><td><strong>1,2%</strong> (groß und trocken)</td><td>Der trockene innere Rand: <strong>der Mond der Erde</strong> (ein Einzelfall)</td></tr>
+<tr class="hl"><td><strong>2. Auf einer Ausbuchtung ausgeworfen</strong></td><td>Eine äquatoriale Ausbuchtung und ein Vulkan, der wassergesättigtes Magma ausstößt</td><td><strong>1,74–2,06</strong> (Mars 7–9 h, 1 170 kg/m³)</td><td><strong>0,01%–0,02%</strong> bei den Riesen (1,9 × 10⁻⁸ beim Mars)</td><td>Die feuchte mittlere Zone: <strong>Phobos, Deimos und die Monde der Riesen</strong></td></tr>
+<tr><td><strong>2b. Ein Vulkan ohne Ausbuchtung</strong></td><td>Punktueller Auswurf aus einem lokalen Vulkan</td><td>≈ 1,1–1,5</td><td>Winzig</td><td>Eine theoretische Möglichkeit (kein berechnetes Beispiel)</td></tr>
+<tr class="hl"><td><strong>3. Vollständige Spaltung</strong></td><td>Rotation jenseits der Spaltungsschwelle (x = 1); Dehnung zu einer Erdnuss und Reißen an der Taille</td><td><strong>0,85–1,02</strong> (1,9–2,5 h, 1 840 kg/m³)</td><td><strong>11%–12%</strong> (doppelte Bindung)</td><td>Der kalte äußere Rand: <strong>Pluto und Charon</strong> (und Haumea vor der Spaltung)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Differenzierungsstadium im Mutterkörper (A.9)</th><th>Der geodynamische Mechanismus und das Material an der Öffnung</th><th>Eigenschaften des entstandenen Mondes</th><th>Beispiele im Sonnensystem</th></tr>
+<tr><td><strong>Stadium 0: Beginn der Differenzierung</strong></td><td>Zentrifugales Versprühen von Wasser aus der äußeren Schicht über der Roche-Grenze</td><td>Ein luftiger, schwammiger Eismond sehr geringer Dichte</td><td>Iapetus (1 088), Hyperion (544 kg/m³)</td></tr>
+<tr class="hl"><td><strong>Stadium 1: frühes Stadium</strong></td><td>Gemischtes Material, das die Zusammensetzung des gesamten Innenkörpers darstellt</td><td>Ein großer Mond, Dichte ähnlich dem Innenkörper (f ≈ 0,6–0,7), teilweise Differenzierung</td><td>Kallisto (1 834), Ganymed (1 936), Titan (1 880), Titania (1 711), Oberon (1 630)</td></tr>
+<tr class="hl"><td><strong>Stadium 2: Höhepunkt der Pumpe</strong></td><td>Schnelles Absinken des Kerns, das wassergesättigtes Magma und leichte Silikate hinausdrückt</td><td>Das Entweichen flüchtiger Stoffe erzeugt „Schwammigkeit“ (30%–40% Porosität) und geringe Dichte</td><td>Phobos (1 860), Deimos (1 470), Tethys (984), Miranda (1 200 kg/m³)</td></tr>
+<tr><td><strong>Stadium 3: Ende der Differenzierung</strong></td><td>Fast vollständige Sortierung; Auswurf eines trockenen, dichten silikatischen Rests</td><td>Ein dichter silikatischer Mond, völlig trocken und mit Metallkern</td><td>Io (3 528 kg/m³)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>In diesem Kapitel haben wir <strong>das Gesetz der Monde</strong> des LEF-Modells formuliert: die Lage der Korotationslinie in Einheiten des Radius des Mutterkörpers (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>a</mi><mi>c</mi></msub><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">x = a_c/R</annotation></semantics></math></span></span>), das Prinzip der hydrodynamischen Pumpe, das Prinzip des atmosphärischen Deckels (das Zwei-Töpfe-Modell von Saturn gegenüber Uranus) und das Schrumpfen des Kerns, das die Korotationslinie an die Oberfläche bringt.</p>
+<p>Im nächsten Kapitel — <strong>Kapitel 22: Eine vollständige planetare Übersicht — von Merkur und Venus bis Pluto, Haumea und Ceres</strong> (aus Artikel 11 — Teile C–N) — wenden wir das Protokoll der 13 Prüfungen Planet für Planet an: Wir entdecken, warum Merkur und Venus keine Monde haben, wie die Saturnringe als kontinuierlicher Fluss im Gleichgewicht arbeiten, warum Uranus um 98° geneigt ist, wie Triton als Erdnusslappen aus dem Kuipergürtel eingefangen wurde, und kartieren die 12 offenen Fragen des Sonnensystems!</p>
+<a href="story22_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 22</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Eine vollständige planetare Übersicht — von Merkur und Venus bis Pluto, Haumea und Ceres →</p></div></a><p style="margin-top:22px"><a href="story20_de.html">← Kapitel 20</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

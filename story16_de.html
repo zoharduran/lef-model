@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 16: Die Tiefen von SPA, die Proben von Chang'e-6 und die Potenzialbarriere eines zusammenhängenden Körpers — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 16 der Geschichte des LEF-Modells: die Tiefen von SPA, die Proben von Chang&#x27;e-6 und die Potenzialbarriere eines zusammenhängenden Körpers.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story16_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story16_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story16_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story16_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story16_he.html" hreflang="he">עברית</a> · <a href="story16_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 16</p>
+<h1>Kapitel 16: Die Tiefen von SPA, die Proben von Chang'e-6 und die Potenzialbarriere eines zusammenhängenden Körpers</h1>
+<p>Auf Grundlage von Artikel 08 — South Pole–Aitken: The Crater-Poor Centre (Teile B10–G: die tiefen Anomalien B10–B18, die Geometrie der Antipoden, der Siphon der Potenzialbarriere und der entscheidende Isotopentest)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Was haben die Rückseitenproben von Chang'e-6 enthüllt, und wie stieg die Hitze über die Schwerkraftbarriere der Erde?</h2>
+<p>Im Juni 2024 brachte die chinesische Mission <strong>Chang'e-6</strong> die ersten Bodenproben der Geschichte von der Rückseite des Mondes zurück — aus dem Apollo-Becken im Nordosten von SPA (41,625°S, 206,022°E, etwa 11,6° vom Zentrum der Kuppel und 210 km vom Kraterminimum entfernt). Die Laborbefunde enthüllen, zusammen mit Schwere- und Magnetdaten aus der Umlaufbahn, eine Kette von Entdeckungen, die ein augenblicklicher Asteroideneinschlag kaum vereinen kann:</p>
+<ol class="steps">
+<li><strong>Eine in der Tiefe begrabene dichte Masse (2,18 × 10¹⁸ kg, B10):</strong> Unter der Südhälfte des zentralen Mare-Gebiets (62°S, 200°E, über eine Fläche von ~ 444 500 km², äquivalenter Radius 12,4°) verbirgt sich eine diffuse Überschussmasse, die einer Metallkugel von ~ 95 km Durchmesser entspricht — und die nicht in den Mondkern absank!</li>
+<li><strong>Ein „gebackener“ Mantel, 13-mal ärmer an Sauerstoff, mit schweren Isotopen von Kalium und Eisen (B11–B13):</strong> Die Quelle des Chang'e-6-Basalts ist völlig trocken, <strong>~ 13-mal</strong> ärmer an verfügbarem Sauerstoff als die Vorderseite (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1,93</mn><mo>±</mo><mn>0,58</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW} = -1.93 \pm 0.58</annotation></semantics></math></span></span> gegenüber −0,80 ± 0,64), an KREEP-Elementen verarmt (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> bei einem Alter von 2,8 Ga gegenüber <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> in einem alten Basalt von 4,203 Ga im selben Gebiet!) und trägt <strong>isotopisch schweres Eisen</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext><mo>=</mo><mn>0,13</mn><mtext>–</mtext><mn>0,21</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe} = 0.13\text{–}0.21</annotation></semantics></math></span></span>‰) zusammen mit schwerem Kalium (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K} = 0</annotation></semantics></math></span></span> bis +0,09‰).</li>
+<li><strong>Ein im Zentrum gelöschter und nur auf der nachlaufenden Seite starker Magnetismus, und die Potenzialbarriere von 26,2 MJ/kg (B16–D.3):</strong> Im Zentrum von SPA ist der Magnetismus fast null (0,8% der Fläche über 5 nT), und der gesamte starke Magnetismus (32%–42%, Spitze ~ 22 nT nahe Mare Ingenii und den hellen Wirbeln) konzentriert sich im Nordwesten (der nachlaufenden Seite) — auf derselben Seite wie der Thoriumhalbmond, aber etwa 8° nördlich davon verschoben. Und zudem: Wie gelang es der Hitze und dem Material von der Erde, über die Potenzialbarriere (26,2 MJ/kg) auf die Rückseite zu steigen?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: eine Soße, die auf kleiner Flamme einkocht, ein Teebeutel, der immer wieder aufgegossen wird, und ein durchgehender Siphon</h2>
+<p>Vier Alltagsbilder beleuchten die Physik und Chemie der Tiefen von SPA im LEF-Modell:</p>
+<ul>
+<li><strong>Eine Soße, die auf niedriger Flamme einkocht (die Konzentration des Eisens an Ort und Stelle ohne Absinken, B10, B12):</strong> Anders als in einem aktiven Mare, in dem Material auf- und absteigt und Eisenbrocken in den Kern hinabreißen kann (wie im Mare Moscoviense), <em>war SPA kein aktives Mare</em> — es gab keine zyklische Auf-und-ab-Strömung. Material, reich an metallischem Eisen, das von der Erde an die Basis von SPA gelangte, wurde an Ort und Stelle erhitzt und gebacken: Das metallische Eisen „trank“ den Sauerstoff um sich und band ihn (und senkte <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span> auf −1,93), und als die Hitze die übrigen Stoffe verdampfte, konzentrierte sich das nicht verdampfte Eisen an Ort und Stelle und erstarrte, als die Region abkühlte!</li>
+<li><strong>Ein Teebeutel, der immer wieder aufgegossen wird (der Übergang von einer angereicherten Quelle bei 4,20 Ga zu einer verarmten Quelle bei 2,81 Ga, B13):</strong> Das Material, das von der Erde durch die Birne kam, landete reich an KREEP-Elementen (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span></span> bei 4,203 Ga). Anhaltendes Heizen von unten schmolz den Mantel immer wieder und entfernte jedes Mal die erste Schmelze (die das Thorium zum Halbmond trug), bis ein „ausgelaugter“, schmelzresistenter Rest blieb (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span></span> bei 2,807 Ga) — was auch erklärt, warum nur winzige Mengen später Lava ausbrachen!</li>
+<li><strong>Milch, die in Kaffee gegossen wird und gefriert, bevor sie sich mischt (die hellen Wirbel von Mare Ingenii gegenüber Moscoviense, B17):</strong> Als der Zweistoffstrom aus Eisen von unten und Aluminium-Silikat von oben ausbrach und unter der Rotation des Mondes schnell erstarrte (Ekman-Zahl <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ll 1</annotation></semantics></math></span></span>), stellten sich die länglichen Körner im Speisekanal senkrecht (dunkle, eisenreiche Bahnen) und legten sich bei der Ausbreitung waagerecht (helle, plagioklasreiche Schleifen), während im aktiven Moscoviense das Eisen vor dem Erstarren absank, weshalb sich dort weder ein Magnetfeld (1,3 nT, 0% über 5 nT) noch Wirbel bildeten!</li>
+<li><strong>Ein durchgehender Siphon über einer Hügelkuppe (das Überschreiten der Potenzialbarriere, D.3–D.3a):</strong> Ein einzelnes Materialpaket, allein mit 1,8–2,6 km/s abgefeuert (1,6–3,4 MJ/kg), fiele vor der Korotationslinie (26,2 MJ/kg) zurück. Hier aber geht es um <strong>einen zusammenhängenden, mit Material gefüllten Körper</strong>, der von unten mit einem Quelldruck von ~ <span class="ltr">150 GPa</span> geschoben wird (Artikel 3): In dem Moment, in dem sein oberer Teil die Korotationslinie überschreitet und von der Rotation nach außen gezogen wird, senkt er den Druck an der Basis und zieht weiteres Material von unten nach — <strong>wie ein Siphon</strong> —, ohne dass der Druck jemals negativ wird!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: die acht tiefen Anomalien (B10–B17) und die Geometrie der Antipoden</h2>
+<p>Die Teile B10–B17 und C von Artikel 08 schließen die übrigen der 17 Anomalien von SPA und die Karte der Zentren auf der Rückseite ab:</p>
+<ol class="steps">
+<li><strong>Der Test des starren Spiegels gegenüber der Karte der drei Zentrengruppen (Teil C):</strong> Eine starre Kopie (ein „Stempel“) der Ringe und Maria von Imbrium und Serenitatis auf ihre Antipoden ergibt eine schmale Ellipse (2 144 × 1 340 km, Achsenverhältnis 1,60), die nicht zur Form von SPA passt (2 402 × 2 056 km, Verhältnis 1,17) — und dieses negative Ergebnis wird ausdrücklich festgehalten, um klarzustellen, dass der Brenner bestimmte, wo die Krater gelöscht wurden, während der Umriss des Beckens durch den Kollaps der Kuppel festgelegt wurde. Setzt man alle Zentren auf eine Karte (Abbildung C.1), ergibt sich <strong>eine geordnete Reihe von Nord nach Süd in drei Gruppen</strong>:
+<ul>
+<li><strong>(a) Im Norden — die beiden Ausgänge des Brenners:</strong> der Imbrium-Antipode (37,6°S, 160,0°E, darüber die Kuppel dünner Kruste von Ingenii in 5,7° Abstand) und der Serenitatis-Antipode (27,3°S, 198,4°E, darüber die Apollo-Kuppel in 10° Abstand).</li>
+<li><strong>(b) In der Mitte — der Brennpunkt der Hitze und der Kraterlöschung:</strong> das Zentrum der Kuppel/des inneren Rings (51,4°S, 196,8°E), das Zentrum der Ellipse (53°S, 191°E), die nahe magnetische Spitze (51,0°S, 190,0°E) und das Kraterminimum (45,4°S, 197,9°E) — alle innerhalb von 6° vom Zentrum der Kuppel!</li>
+<li><strong>(c) Im Süden — der schwere strukturelle Brennpunkt:</strong> der tiefste Boden (61°S, 199°E), die dichte Masse (62°S, 200°E) und die dünnste Kruste (61°S, 184°E) — alle innerhalb von ~ 230 km voneinander!</li>
+</ul>
+</li>
+<li><strong>Warum sitzt die Kuppel südlich der beiden Ausgänge? — der waagerechte Schub in der Birne und die Abrundung des Körpers (§C.3–C.4):</strong> Die Spitze der Birne, auf der der Mond saß, stand auf einer Breite von ~ 22,5°N, während ihre Basis um den Äquator lag. In einem rotierenden Körper wirkt die Zentrifugalkraft <strong>senkrecht zur Drehachse (waagerecht)</strong> und nicht entlang der Linie zum Erdmittelpunkt — daher trat der Strom nördlich ihres Zentrums in die Kontaktscheibe ein (wo Imbrium und Serenitatis liegen) und auf der Rückseite <strong>bis zu ~ 22,5° südlich des Gegenpunkts</strong> aus! Im abgeplatteten Stadium (1 : 0,637 : 0,601) lag das Zentrum der Kuppel 17,0° südlich des Serenitatis-Ausgangs und 21,2° südöstlich des Imbrium-Ausgangs; danach weitete <strong>die Abrundung zur Kugel</strong> (Kapitel 13–14) diese Winkelabstände auf genau die heute gemessenen <strong>24,1° und 29,2°</strong>!</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: Antworten auf die sieben Herausforderungen (E.1–E.7) und die Kartierung des Übergangs von der Abplattung zur Kugel</h2>
+<p>Die Teile C.3 und E von Artikel 08 geben präzise quantitative Antworten auf alle sieben Fragen und Herausforderungen aus der aktuellen Fachliteratur (einschließlich der Chang'e-6-Befunde von 2025–2026):</p>
+<ol class="steps">
+<li><strong>Iridium und Gold im Regolith von Chang'e-6 (E.1):</strong> Die Ir- und Au-haltigen Metallkörner, die Liu et al. (2026) fanden, lagen in <em>undatierten Basalt- und Anorthositfragmenten des Oberflächenregoliths</em> (später Weltraumstaub, über Milliarden Jahre gesammelt, den die Vorhersage ausdrücklich zulässt), nicht in den datierten Noriten von 4,25 Ga. Zudem unterscheiden Elementverhältnisse von Ir und Au nicht zwischen Metall aus der Tiefe der Erde und einem Asteroiden — nur eine Isotopenmessung (Cr, Ti, Mo, Ru, Os) entscheidet.</li>
+<li><strong>Die dichte Masse, die magnetischen Spitzen und die dünne Kruste liegen nicht unter dem Kraterminimum (E.3–E.5):</strong> Das Minimum (45,4°S, 197,9°E) markiert, wo die Hitze in Richtung des Serenitatis-Ausgangs Krater an der Oberfläche löschte; die magnetische Spitze (51,0°S, 190,0°E, 230 km entfernt) markiert <strong>die Ränder des heißen Kerns</strong>, wo der Magnetismus nicht über der Curie-Temperatur gelöscht wurde (im Zentrum beträgt das Feld nur 0,85–1,9 nT); und die dichte Masse (62°S, 200°E) liegt im tiefen strukturellen Süden des Beckens.</li>
+<li><strong>Begrabener Basalt als Ursache der flachen Krater (E.6):</strong> Im LEF-Modell ist der begrabene Basalt (8,7 × 10⁴ km²) ein <em>Produkt</em> des Brenners, nicht sein Rivale — und der entscheidende Test ist, dass die Flachheit der Krater auch außerhalb der Gebiete begrabenen Basalts fortbesteht, wegen der Verdichtung des gebackenen Bodens.</li>
+<li><strong>Die geometrische Verschiebung bei der Abrundung von der Abplattung zur Kugel (Tabelle §C.3):</strong> Beim Übergang vom langgestreckten Körper (1 : 0,637 : 0,601) zur heutigen Kugel glitt kein Punkt über den Boden, doch die Winkel relativ zur Spitze der langen Achse öffneten sich: Der Imbrium-Ausgang wanderte von 32,3°S, 158,1°E nach 37,6°S, 160,0°E (eine Änderung um 5,5°), der Serenitatis-Ausgang von 27,4°S, 185,1°E nach 27,3°S, 198,4°E (11,8°), das Zentrum der Kuppel von 44,0°S, 180,8°E nach 51,4°S, 196,8°E (13,0°) und das Kraterminimum von 39,9°S, 182,5°E nach 45,4°S, 197,9°E (12,6°).</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die effektive Potenzialbarriere <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Delta\Phi</annotation></semantics></math></span></span> zwischen der Oberfläche der frühen Erde (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>≈</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">r_0 \approx 6,602</annotation></semantics></math></span></span> km auf der Breite 25°N, Masse des Mutterkörpers <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mn>6,0455</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>24</mn></msup></mrow><annotation encoding="application/x-tex">M_0 = 6.0455 \times 10^{24}</annotation></semantics></math></span></span> kg) und der Korotationslinie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>15</mn><mo separator="true">,</mo><mn>883</mn></mrow><annotation encoding="application/x-tex">R_c = 15,883</annotation></semantics></math></span></span> km bei 5,5 h und 16 399 km bei 5,77 h) sowie die Ekman-Zahl (Ek), die bestimmt, wie die Rotation den Lavastrom ablenkt, werden wie folgt formuliert (§B17, §D.3–D.5):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>r</mi></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Phi_{\mathrm{eff}}(r) = -\dfrac{GM_0}{r} - \dfrac{1}{2}\Omega^2 r^2</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Φ</mi><mo>=</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>R</mi><mi>c</mi></msub><mo stretchy="false">)</mo><mo>−</mo><msub><mi mathvariant="normal">Φ</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>26,2</mn><mtext> MJ/kg</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mi>T</mi><mo>=</mo><mn>5,77</mn><mtext> h</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta\Phi = \Phi_{\mathrm{eff}}(R_c) - \Phi_{\mathrm{eff}}(r_0) = 26.2\text{ MJ/kg} \quad (T = 5.77\text{ h})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>ν</mi><mrow><mn>2</mn><mi mathvariant="normal">Ω</mi><msup><mi>L</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Ek = \dfrac{\nu}{2\Omega L^2} \ll 1</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>L</mi><mi>tan</mi><mo>⁡</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">s = L\tan\alpha</annotation></semantics></math></span></div></div></div>
+<p>Für Lava mit einer Viskosität von <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∼</mo><mn>100</mn><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\nu \sim 100\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span> bei der schnellen Rotation des verbundenen Stadiums (5,77 Stunden) beträgt die Ekman-Zahl 0,012 im Maßstab von 100 m, 0,0001 bei 1 km und 10⁻⁶ bei 10 km — die Rotationskraft lenkt also jeden Lavastrom und jeden Auswurf vollständig ab und erzeugt den Thoriumhalbmond und die hellen Wirbel von Ingenii! Zudem reicht jenseits der Korotationslinie (16 400 km) die Hill-Sphäre des Mondes bis ≈ 2 600 km von seinem Zentrum (1,4 Mondradien jener Zeit, 1 890 km), sodass jedes Material, das auf eine Höhe von weniger als ≈ 700 km ausgeworfen wird, zurückkehrt und als Krater auf der Mondoberfläche landet.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: 16 von 17 Anomalien passen — und die offenen Vorhersagen</h2>
+<p>In der Zusammenfassung des systematischen Vergleichs in Abschnitt B18 von Artikel 08: Von den 17 Anomalien von SPA erklärt die etablierte Wissenschaft 6 vollständig, 9 teilweise, 1 kaum (den anhaltenden Vulkanismus über 2 Milliarden Jahre) und <strong>0 (erklärt gar nicht)</strong> das Muster der Kraterbilanz im Zentrum des Beckens. Der <strong>Brennermechanismus des LEF-Modells</strong> dagegen passt auf einen Schlag zu <strong>16 der 17 Anomalien</strong> und zu <strong>1 teilweise (B14)</strong>, die auf den Isotopentest wartet:</p>
+<ul>
+<li><strong>Die schärfste Vorhersage für eine künftige Labormessung (Teil F):</strong> Die Messung der Isotope von Cr, Ti, Mo, Ru, Os in den Metallkörnern innerhalb der beiden datierten Norite von Chang'e-6 (`CE6C0100YJFM002-158` und `CE6C0200YJFM001EGP07-16`) wird <strong>eine rein irdische Signatur ohne meteoritische Abweichung</strong> zeigen.</li>
+<li><strong>Weitere aus der Umlaufbahn prüfbare Vorhersagen:</strong> (1) eine Häufung von Kratern mit gebrochenem Boden (Floor-Fractured Craters) im zentralen Defizitgebiet; (2) das Fortbestehen der Flachheit der Krater auch außerhalb der Gebiete begrabenen Basalts; (3) ein radialer Gradient von Verlust flüchtiger Stoffe und Sauerstoffreduktion (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}</annotation></semantics></math></span></span>), am stärksten um den Minimumpunkt und zum Rand hin schwächer; und (4) das vollständige Fehlen von Lava in SPA, die jünger als ~ 1,5 Ga ist.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 649.0 152" role="img" aria-label="Verdicts on the 17 SPA anomalies" style="direction:ltr"><g transform="translate(9.0,0)"><rect x="170.0" y="20" width="155.3" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="247.6" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >6 erklärt</text><rect x="325.3" y="20" width="232.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="441.8" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >9 teilweise</text><rect x="558.2" y="20" width="25.9" height="30" fill="#d9a35e" stroke="#fff" stroke-width="1.5"/><text x="571.2" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="584.1" y="20" width="25.9" height="30" fill="#b23a2e" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="40.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><rect x="170.0" y="78" width="414.1" height="30" fill="#2f7d57" stroke="#fff" stroke-width="1.5"/><text x="377.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >16 passen</text><rect x="584.1" y="78" width="25.9" height="30" fill="#c47f2c" stroke="#fff" stroke-width="1.5"/><text x="597.1" y="98.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed" >⁦1⁩</text><text x="390.0" y="140.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Grün: erklärt/passt · orange: teilweise · hellorange: kaum · rot: gar nicht</text></g><text x="6.0" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Etablierte Wissenschaft</text><text x="6.0" y="98.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >LEF-Modell</text></svg><figcaption>Die Urteile über die 17 Anomalien von SPA (B18): wie viele davon jede Seite vollständig, teilweise, kaum oder gar nicht erklärt.</figcaption></figure><h3 style="margin-top:28px">Der Laborkasten: Zusammenfassung der 17 Anomalien von SPA (B1–B18) und die Potenzialbarriere (Artikel 08, Teile B10–G)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Anomalie (B1–B17)</th><th>Der zentrale empirische Befund</th><th>Urteil der etablierten Wissenschaft</th><th>Urteil des LEF-Modells (der Brenner)</th></tr>
+<tr class="hl"><td><strong>B1. Die Kraterbilanz</strong></td><td>Defizit von 0,51 im Zentrum; Minimum 45,4°S, 197,9°E (0,45); 20–40 km fehlen (0,47); 18% flacher mit hohen Rändern (1,35)</td><td><strong>Erklärt gar nicht</strong></td><td><strong>Passt</strong> (Hitze von unten entspannte und löschte; hohe Ränder auf verdichtetem Boden)</td></tr>
+<tr><td><strong>B2. Form und Tiefe</strong></td><td>Das tiefste Gebiet des Mondes (6–9 km); Tiefenrest von −1,1 bis −1,8 km im Zentrum jenseits der dünnen Kruste</td><td>Erklärt (mit der schweren Masse)</td><td><strong>Passt</strong> (Kollaps der Kuppel + Porenverdichtung über 9–15 km)</td></tr>
+<tr><td><strong>B3. Dünne Kruste</strong></td><td>Die dünnste Kruste des Mondes (12–20 km im Süden, 61°S, 184°E); kleine Kuppeln über Apollo und Ingenii</td><td>Erklärt (schräger Einschlag nach Süden)</td><td><strong>Passt</strong> (Abgleiten der Kruste von der Kuppel + Schmelzen von unten)</td></tr>
+<tr><td><strong>B4–B5. Die zwei Krustenringe</strong></td><td>Außen (50°–55°): dick im Osten (+7,8 km), fehlt im Westen; innen (36,7°): 118 km nach NO verschoben</td><td>Erklärt teilweise (keine Erklärung für den Westen)</td><td><strong>Passt</strong> (Aufstapeln gegen die dicke Hochlandwand im O, nah im W)</td></tr>
+<tr><td><strong>B6. Dichte und Porosität</strong></td><td>Oberfläche 19,7%, aber in 10 km auf 2,9%–4,4% im Zentrum geschlossen, zum Rand steigend (7,1%–8,8%)</td><td>Erklärt teilweise (ein Einschlag bricht, er schließt nicht)</td><td><strong>Passt</strong> (anhaltendes Backen und Verdichten vom Zentrum nach außen)</td></tr>
+<tr><td><strong>B7–B9. Chemie, wenig Lava und der Th-Halbmond</strong></td><td>FeO fällt von 9,48% auf 4,43%; flaches K/Th (451); 4,1% sichtbare Lava; begrabene Lava im 15°-Kreis; Th-Halbmond im NW</td><td>Erklärt / erklärt teilweise</td><td><strong>Passt</strong> (Schmelzen ohne Ausbruch + ein zentrales Mare bei 5,77 h)</td></tr>
+<tr class="hl"><td><strong>B10–B13. Schwere Masse, flüchtige Stoffe, Sauerstoff und KREEP</strong></td><td>Masse von 2,18 × 10¹⁸ kg im Süden; schweres <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>41</mn></msup><mtext>K</mtext></mrow><annotation encoding="application/x-tex">\delta^{41}\text{K}</annotation></semantics></math></span></span> und <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mtext>Fe</mtext></mrow><annotation encoding="application/x-tex">\delta^{56}\text{Fe}</annotation></semantics></math></span></span>; <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mrow><mi mathvariant="normal">I</mi><mi mathvariant="normal">W</mi></mrow><mo>=</mo><mo>−</mo><mn>1,93</mn></mrow><annotation encoding="application/x-tex">\Delta\mathrm{IW}=-1.93</annotation></semantics></math></span></span> (13-mal weniger Sauerstoff); <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>:</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn><mo>→</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu: 1,620 \to 360</annotation></semantics></math></span></span></td><td>Erklärt teilweise / erklärt</td><td><strong>Passt</strong> (irdisches Eisen, das Sauerstoff band und sich an Ort und Stelle konzentrierte + wiederholtes Auslaugen)</td></tr>
+<tr class="hl"><td><strong>B14. Metall in den Noriten</strong></td><td>Fe–Ni-Körner (Ni/Co = 8,5–11) in Noriten von 4,247 Ga, die bei 3,873 Ga zurückgesetzt wurden</td><td>Erklärt (Impaktormaterial)</td><td><strong>Passt teilweise — der Isotopentest wird entscheiden (Cr, Ti, Mo, Ru, Os)</strong></td></tr>
+<tr><td><strong>B15. Anhaltender Vulkanismus</strong></td><td>Durchgehende Aktivität über 2 Milliarden Jahre (4,25 → 3,87 → 3,6–3,2 → 2,8–2,2 Ga) in kleinen Mengen</td><td>Erklärt kaum (erfordert zwei Ereignisse und Quellen)</td><td><strong>Passt</strong> (Brenner im verbundenen Stadium, Ablösung bei 3,873 Ga und ein Abkühlungsschweif)</td></tr>
+<tr><td><strong>B16–B17. Magnetismus und Wirbel</strong></td><td>Leeres Zentrum (0,8% &gt; 5 nT); Spitze auf der nachlaufenden Seite (42% im NW); Wirbel bei Ingenii (5,9 nT) gegenüber Moscoviense (1,3 nT)</td><td>Erklärt teilweise</td><td><strong>Passt</strong> (Löschung im Zentrum + Eisentransport auf der nachlaufenden Seite; bei Moscoviense sank das Eisen ab)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Dynamischer Parameter / Potenzialbarriere (Teil D)</th><th>Erdtag von 5,50 Stunden (maximale Abplattung)</th><th>Erdtag von 5,77 Stunden (Ablösezustand der Serie)</th></tr>
+<tr><td><strong>Radius der Korotationslinie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">R_c</annotation></semantics></math></span></span>)</strong></td><td>15 883 km (15 818 km für ein Testteilchen)</td><td><strong>16 399 km</strong> (≈ 2,6 Erdradien)</td></tr>
+<tr class="hl"><td><strong>Potenzialbarriere auf der Quellbreite (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>5</mn><mo>∘</mo></msup><mtext>N</mtext><mo separator="true">,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>6</mn><mo separator="true">,</mo><mn>602</mn></mrow><annotation encoding="application/x-tex">25^\circ\text{N}, r_0 = 6,602</annotation></semantics></math></span></span> km)</strong></td><td>25,2 MJ/kg</td>
+<td>26,2 MJ/kg</td></tr></table></div></section>
+<section>
+<a href="story17_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 17</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Die Streifen des Pazifiks — die Vorderwand der Birne und der Spiegelabdruck des Mondes →</p></div></a>
+<p style="margin-top:22px"><a href="story15_de.html">← Kapitel 15</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

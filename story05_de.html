@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 5: Die Birne und die Stefan-Freisetzung — die Brücke, die den Mond trägt und genau an der Korotationslinie reißt — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 5 der Geschichte des LEF-Modells: die breite Kontaktscheibe, die den Mond auf der Breite 22,5° hält, die Stefan-Freisetzung, die ihn etwa 210 km jenseits der Korotationslinie freigibt, und die beiden Bahntests, die sich bei diesem Abstand treffen.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story05_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story05_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story05_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story05_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story05_he.html" hreflang="he">עברית</a> · <a href="story05_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 5</p>
+<h1>Kapitel 5: Die Birne und die Stefan-Freisetzung — die Brücke, die den Mond trägt und genau an der Korotationslinie reißt</h1>
+<p>Auf Grundlage von Artikel 03 — LEF Mechanism in Practice (Teil C: §C.1–C.6)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Wie hält man einen ganzen Mond auf der Breite 22,5° — und löst ihn, ohne einen Schweif zurückzulassen?</h2>
+<p>In den vorigen Kapiteln haben wir gesehen, wie der innere Motor aufgeschäumtes Magma nach oben drückt (Kapitel 3) und wie die äußere Sial-Kruste den aufsteigenden Körper als Kuppel umhüllt (Kapitel 4). Doch sobald wir das technische Bild der <strong>Verbindung zwischen Erde und Mond</strong> gegen Ende des Aufstiegs betrachten, zeigt sich ein doppeltes und vielschichtiges Rätsel:</p>
+<ol class="steps">
+<li><strong>Die gewaltige Seitenkraft auf der Breite 22,5°:</strong> Der Mond sitzt nicht am Äquator, sondern auf der Breite <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span> (17 287 km vom Erdmittelpunkt, bei einem 5,77-Stunden-Tag). Während sich auf der Korotationslinie der radiale Zug genau ausgleicht (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span>), weist der Zentrifugalschub der Rotation von der Drehachse weg — und hat daher eine seitliche Komponente (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><mn>0,559</mn><msup><mtext> m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a_\lambda = 0.559\text{ m/s}^2</annotation></semantics></math></span></span>), die den Mond kräftig zum Äquator zieht! Das ist eine gewaltige seitliche Scherlast von <strong>4,06 × 10²² Newton</strong>. Wie kann ein heißer, geschmolzener „Hals“ eine solche Kraft halten, ohne sich zu verbiegen und zum Äquator abzurutschen?</li>
+<li><strong>Der saubere Bruch ohne schmalen Hals:</strong> In der vertrauten Strömungsmechanik dehnt sich ein Tropfen, der sich von einer Spritze oder einem Wasserhahn löst, zu einem dünnen Faden und reißt — wobei ein Teil des Materials zurückbleibt. Hätte sich der Mond auf diese Weise gelöst, wäre er mit einem verzerrten „Schweif“ davongezogen oder zerbrochen. Wie wird er als runder, ganzer und starrer Körper freigesetzt, in einem genauen Abstand von etwa <strong>210 km</strong> jenseits der Korotationslinie?</li>
+</ol>
+<p>Teil C von Artikel 03 löst beide Rätsel zugleich: Die Verbindung ist kein dünner „Hals“, sondern <strong>eine breite, heiße Kontaktscheibe von 3 000 km Durchmesser</strong>, die auf dem breiten Rücken einer gravitativ festen Birne sitzt; und die Trennung ist kein spröder Bruch eines Festkörpers, sondern <strong>ein viskoses Haftphänomen (Stefan-Adhäsion)</strong>, bei dem sich eine dünne Magmaschicht allmählich öffnet, sobald der Massenmittelpunkt die Korotationslinie überschreitet!</p>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: zwei Glasplatten mit einem Tropfen Honig dazwischen</h2>
+<p>Um zu verstehen, wie sich eine breite, heiße Kontaktscheibe trennt, stellen Sie sich ein einfaches Küchenexperiment vor: Nehmen Sie zwei flache Glasplatten und bringen Sie eine dünne Schicht Wasser oder Honig dazwischen.
+<br>• Versuchen Sie, die Platten seitlich übereinander zu <strong>schieben</strong>, spüren Sie sehr wenig Widerstand.
+<br>• Versuchen Sie aber, sie <strong>senkrecht auseinanderzuziehen</strong>, spüren Sie plötzlich eine starke Gegenkraft! Warum? Nicht weil Honig oder Wasser ein fester Kleber wäre, sondern weil, damit sich der Spalt öffnen kann, neue Flüssigkeit von den Rändern zur Mitte nachfließen muss — und wenn der Spalt sehr eng ist, ist dieser Zufluss langsam und hemmt die Öffnungsgeschwindigkeit.</p>
+<p>Und was geschieht, wenn Sie weiterziehen? Sobald sich der Spalt ein wenig öffnet (sagen wir, auf das Dreifache seiner Anfangsdicke), fließt die Flüssigkeit leicht nach, <strong>der Widerstand bricht auf einen Schlag zusammen (er fällt um das 27-Fache!)</strong>, und die beiden Platten lösen sich vollständig voneinander!</p>
+<p>In der Physik heißt dieses Phänomen <strong>Stefan-Freisetzung</strong>. Die heiße Kontaktschicht zwischen Birne und Mond verhält sich genau wie diese Honigschicht zwischen zwei riesigen, 3 000 km breiten Platten: Solange der Massenmittelpunkt des Mondes innerhalb der Korotationslinie liegt, presst die Schwerkraft die Platten zusammen; sobald der Massenmittelpunkt die Korotationslinie nach außen überschreitet, kehrt sich die Kraft in Zug um, die Kontaktschicht öffnet sich zunächst langsam und bricht etwa <strong>210 km</strong> jenseits der Linie auf einen Schlag zusammen!</p>
+<figure class="fig"><svg viewBox="0 0 640 280" role="img" aria-label="Stefan resistance falling as the cube of the gap" style="direction:ltr"><path d="M70.0,20.0 L74.9,32.1 L79.8,43.3 L84.7,53.7 L89.6,63.3 L94.5,72.2 L99.5,80.5 L104.4,88.3 L109.3,95.5 L114.2,102.2 L119.1,108.5 L124.0,114.4 L128.9,119.9 L133.8,125.0 L138.7,129.9 L143.6,134.4 L148.5,138.7 L153.5,142.7 L158.4,146.5 L163.3,150.1 L168.2,153.5 L173.1,156.7 L178.0,159.7 L182.9,162.5 L187.8,165.2 L192.7,167.8 L197.6,170.2 L202.5,172.5 L207.5,174.7 L212.4,176.8 L217.3,178.7 L222.2,180.6 L227.1,182.4 L232.0,184.1 L236.9,185.7 L241.8,187.3 L246.7,188.7 L251.6,190.1 L256.5,191.5 L261.5,192.8 L266.4,194.0 L271.3,195.2 L276.2,196.3 L281.1,197.4 L286.0,198.4 L290.9,199.4 L295.8,200.3 L300.7,201.2 L305.6,202.1 L310.5,202.9 L315.5,203.8 L320.4,204.5 L325.3,205.3 L330.2,206.0 L335.1,206.7 L340.0,207.3 L344.9,208.0 L349.8,208.6 L354.7,209.2 L359.6,209.7 L364.5,210.3 L369.5,210.8 L374.4,211.3 L379.3,211.8 L384.2,212.3 L389.1,212.7 L394.0,213.2 L398.9,213.6 L403.8,214.0 L408.7,214.4 L413.6,214.8 L418.5,215.2 L423.5,215.5 L428.4,215.9 L433.3,216.2 L438.2,216.6 L443.1,216.9 L448.0,217.2 L452.9,217.5 L457.8,217.8 L462.7,218.1 L467.6,218.3 L472.5,218.6 L477.5,218.8 L482.4,219.1 L487.3,219.3 L492.2,219.6 L497.1,219.8 L502.0,220.0 L506.9,220.2 L511.8,220.4 L516.7,220.6 L521.6,220.8 L526.5,221.0 L531.5,221.2 L536.4,221.4 L541.3,221.6 L546.2,221.7 L551.1,221.9 L556.0,222.1 L560.9,222.2 L565.8,222.4 L570.7,222.5 L575.6,222.7 L580.5,222.8 L585.5,223.0 L590.4,223.1 L595.3,223.2 L600.2,223.3 L605.1,223.5 L610.0,223.6" fill="none" stroke="#c47f2c" stroke-width="3"/><line x1="70.0" x2="70.0" y1="20" y2="230" stroke="#ece7da"/><text x="70.0" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">d₀</text><line x1="315.5" x2="315.5" y1="20" y2="230" stroke="#ece7da"/><text x="315.5" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">2d₀</text><line x1="560.9" x2="560.9" y1="20" y2="230" stroke="#ece7da"/><text x="560.9" y="248" font-size="13" font-family="Heebo" fill="#6b7480" text-anchor="middle">3d₀</text><line x1="70" x2="610" y1="230" y2="230" stroke="#9aa3af"/><circle cx="70.0" cy="20.0" r="6" fill="#b23a2e"/><circle cx="560.9" cy="222.2" r="6" fill="#2f7d57"/><text x="82.0" y="25.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Voller Widerstand</text><text x="560.9" y="208.2" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">1/27 · der Mond ist frei</text><text x="340.0" y="270.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Dicke der Kontaktschicht (Vielfaches der Anfangsdicke)</text><text transform="rotate(-90 18 125)" x="18.0" y="125.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Widerstand</text></svg><figcaption>Die Stefan-Freisetzung: Der Widerstand gegen das Öffnen der Schicht fällt mit der dritten Potenz ihrer Dicke; bei dreifacher Dicke ist er 27-mal kleiner — eine Verschiebung von etwa 210 km.</figcaption></figure></section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: die Begriffe trennen — Kraft, Spannung und Verankerung</h2>
+<p>Um häufige Fehler bei der Berechnung planetarer Lasten zu vermeiden, trennt Artikel 03 sorgfältig drei Grundbegriffe: <strong>Kraft</strong> (der gesamte Schub oder Zug, in Newton), <strong>Spannung</strong> (die Kraft geteilt durch die tragende Fläche, in Gigapascal) und <strong>Verformung</strong>. Daraus folgen drei Hauptschlüsse:</p>
+<ol class="steps">
+<li><strong>Die obere Kuppel trägt nicht den Quelldruck von <span class="ltr">150 GPa</span>:</strong> Im hydrostatischen Gleichgewicht wird der größte Teil des tiefen Drucks dafür verbraucht, die Gesteinssäule darunter zu heben. Der Eigendruck im Zentrum des Mondes (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>b</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_b = 1,890</annotation></semantics></math></span></span> km, Dichte 2 600 kg/m³) beträgt nur <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>c</mi></msub><mo>≃</mo><mn>3,37</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">p_c \simeq 3.37\text{ GPa}</annotation></semantics></math></span></span> — vierzigmal weniger als der Quelldruck!</li>
+<li><strong>Warum ein schmaler Hals scheitert — und eine breite Kontaktscheibe (3 000 km) gewinnt:</strong> Die Seitenlast von 4,06 × 10²² Newton auf der Breite 22,5° verteilt sich über die Fläche der Verbindung. Wäre die Verbindung ein Hals mit 1 000 km Radius gewesen, hätte die Scherspannung auf ihm <span class="ltr">12,92 GPa</span> betragen (bei einem Hals von 500 km — <span class="ltr">46,04 GPa</span>), eine Spannung, die heißes Material zum Fließen bringen und zum Äquator hin verschmieren würde. Auf der breiten Kontaktscheibe von Stadium 3 dagegen (3 000 km Durchmesser, Radius <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> km) sinkt die mittlere Spannung auf <strong><span class="ltr">5,74 GPa</span></strong>, und sie wird von der breiten Struktur der Birne darunter getragen, die von der eigenen Schwerkraft der Erde gehalten wird!</li>
+<li><strong>Warum der Mond auf dem Weg nach oben nicht zum Äquator abrutschte:</strong> Zwei Verankerungssysteme hielten den aufsteigenden Körper davon ab, unter der seitlichen Zentrifugalkraft zum Äquator zu gleiten: Im Stadium der breiten Kuppel (6 000 km) war der Körper in der Öffnung der steifen Sial-Hülle verankert (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>, dieselbe Hülle, die 100-km-Krater ohne Einsturz trägt); und im Stadium der Abrundung nach außen (3 000 km) wurde die Seitenlast direkt auf die massive Birne darunter übertragen.</li>
+</ol>
+<div class="callout"><span class="tag">Eine doppelte Trennung zugleich (Ablösen + Ziehen)</span><p style="margin:0">Die Trennung des Mondes von der Erde verlief auf zwei sich ergänzende Weisen: Entlang des äußeren Rings der unteren Kuppel (von 6 000 auf 3 000 km) <strong>löste sich</strong> die Sial-Schicht, auf der der Körper saß, entlang der „geschmierten“ Grenze über dem Sima <strong>allmählich ab</strong> und schloss sich dem Mond an (so entstand der Gürtel 31°–70°); in der zentralen Kontaktscheibe (3 000 km) dagegen schmolz die extreme Hitze das Sial und entfernte es, und die heiße Schicht wurde gleich nach dem Überschreiten der Korotationslinie in der <strong>Stefan-Freisetzung</strong> auseinandergezogen und geöffnet!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: die Stefan-Freisetzung und der 210-km-Spielraum, der zwei Tatsachen über den Mond zugleich erklärt</h2>
+<p>Was genau geschieht in dem Moment, in dem der Massenmittelpunkt des Mondes die Korotationslinie überschreitet (auf der Breite 22,5°, in einem Abstand von 17 287 km, bei einem 5,77-Stunden-Tag)?</p>
+<ol class="steps">
+<li><strong>Der Wendepunkt am Massenmittelpunkt:</strong> Die Rückseite des Mondes überschreitet die Korotationslinie schon früher während des Aufstiegs, doch solange der Massenmittelpunkt innerhalb der Linie liegt, ist der innere Teil des Mondes (gravitativ) schwerer als der äußere, und der Kontakt bleibt unter Druck. Sobald der Massenmittelpunkt die Linie überschreitet, kehrt sich die Summe der Kräfte in einen Zug nach außen um (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><mi>m</mi><mo>⋅</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">F_{\mathrm{net}} = m \cdot 3\omega^2 \Delta r</annotation></semantics></math></span></span>).</li>
+<li><strong>Der Zusammenbruch der Stefan-Schicht (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>):</strong> Die heiße Kontaktschicht (Anfangsdicke <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">d_0 \approx 105</annotation></semantics></math></span></span> km, Viskosität <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\eta_c</annotation></semantics></math></span></span>) hemmt zunächst die Öffnungsgeschwindigkeit, doch während sich der Spalt öffnet, fällt der Widerstand mit der dritten Potenz des Spalts (d⁻³). Erreicht der Spalt das Dreifache seiner Anfangsdicke (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>3</mn><msub><mi>d</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">d = 3d_0</annotation></semantics></math></span></span>, also eine Verschiebung von <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km jenseits der Korotationslinie, wenn bereits etwa 58% des Mondvolumens die Linie überschritten haben), fällt der Widerstand um den Faktor 27, und der Mond ist frei.</li>
+<li><strong>Rotationskopplung ohne vorzeitiges Reißen:</strong> Während des gesamten Aufstiegs (mit einer Rate von etwa 1 km pro Jahr) gibt dieselbe Kontaktscheibe dem Mond das Drehmoment, das ihn in Korotation hält — bei einer winzigen Scherspannung von nur etwa <span class="ltr">0,2 kPa</span> (etwa ein Fünfhundertstel des Luftdrucks auf Meereshöhe!).</li>
+</ol>
+<p><strong>Der doppelte Beweis aus der heutigen Mondbahn (§C.5a):</strong><br>
+Warum wurde der Mond etwa <strong>210 km</strong> jenseits der Korotationslinie freigesetzt und nicht genau auf der Linie selbst? Es zeigt sich, dass eine Freisetzung genau auf der Linie (0 km) den Mond in eine vollkommen kreisförmige Bahn brächte (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e_0 = 0</annotation></semantics></math></span></span>), und die Gezeiten der Erde halten eine Kreisbahn für immer kreisförmig — die Exzentrizität (die elliptische Abflachung) der heutigen Mondbahn (e = 0,0549) wäre also nie entstanden! Die rechnerische Suche in Artikel 03 ergibt, dass sich zwei unabhängige Tests bei genau demselben Freisetzungsabstand treffen:</p>
+<ul>
+<li><strong>Der Test der Bahnneigung:</strong> Eine Freisetzung auf der Breite 22,5° etwa 210 km jenseits der Linie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>=</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 = 0.037</annotation></semantics></math></span></span>) ergibt über die Bahnentwicklung eine Endneigung von <strong>5,145°</strong> — den heute gemessenen Winkel der Mondbahn!</li>
+<li><strong>Der Exzentrizitätstest:</strong> Genau derselbe Spielraum (≈ 210 km) reproduziert für einen jungen, heißen Mond (A ≈ 3,0) die heute gemessene Exzentrizität — <strong>0,0549</strong>!</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 300" role="img" aria-label="Final orbital inclination against release distance beyond the corotation line" style="direction:ltr"><line x1="70" x2="610" y1="237.9" y2="237.9" stroke="#ece7da"/><text x="62" y="241.9" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,0°</text><line x1="70" x2="610" y1="177.4" y2="177.4" stroke="#ece7da"/><text x="62" y="181.4" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,1°</text><line x1="70" x2="610" y1="116.8" y2="116.8" stroke="#ece7da"/><text x="62" y="120.8" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,2°</text><line x1="70" x2="610" y1="56.3" y2="56.3" stroke="#ece7da"/><text x="62" y="60.3" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">5,3°</text><text x="90.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="190.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">100</text><text x="290.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">200</text><text x="390.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">300</text><text x="490.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">400</text><text x="590.0" y="268" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">500</text><line x1="70" x2="610" y1="150.1" y2="150.1" stroke="#2f7d57" stroke-width="1.5" stroke-dasharray="6 4"/><text x="606.0" y="142.1" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Heute gemessene Neigung · ⁦5,145°⁩</text><path d="M90.0,225.8 L190.0,190.1 L300.0,150.1 L390.0,115.6 L590.0,35.7" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="90.0" cy="225.8" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="190.0" cy="190.1" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="300.0" cy="150.1" r="7" fill="#2f7d57" stroke="#fff" stroke-width="2"/><circle cx="390.0" cy="115.6" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><circle cx="590.0" cy="35.7" r="5" fill="#1f3a5f" stroke="#fff" stroke-width="2"/><text x="310.0" y="172.1" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">210 km</text><text x="340.0" y="290.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Freisetzungsabstand jenseits der Korotationslinie (km)</text></svg><figcaption>Die Endneigung der Bahn nach Freisetzungsabstand (Artikel 03, Teil C): Nur eine Freisetzung etwa 210 km jenseits der Linie ergibt 5,145° — und beim selben Abstand auch die Exzentrizität von 0,0549.</figcaption></figure></section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die auf die Verbindung auf der Breite <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> wirkenden Lasten (die radiale <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">a_r</annotation></semantics></math></span></span> und die seitliche <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub></mrow><annotation encoding="application/x-tex">a_\lambda</annotation></semantics></math></span></span>) und die Gegenkraft der Stefan-Schicht mit der Dicke d und dem Radius <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">R_c = 1,500</annotation></semantics></math></span></span> km werden in den folgenden Gleichungen ausgedrückt:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mi>E</mi></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></mstyle><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_r = \dfrac{G(M_E+m)}{r^2} - \omega^2 r \cos^2\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>λ</mi></msub><mo>=</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi><mi>sin</mi><mo>⁡</mo><mi>λ</mi><mi>cos</mi><mo>⁡</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">a_\lambda = \omega^2 r \sin\lambda \cos\lambda</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><msub><mi>m</mi><mi>r</mi></msub><msqrt><mrow><msubsup><mi>a</mi><mi>r</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>a</mi><mi>λ</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = m_r\sqrt{a_r^2 + a_\lambda^2}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mn>3</mn><mi>π</mi><msub><mi>η</mi><mi>c</mi></msub><msubsup><mi>R</mi><mi>c</mi><mn>4</mn></msubsup><mover accent="true"><mi>d</mi><mo>˙</mo></mover></mrow><mrow><mn>2</mn><msup><mi>d</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mi>m</mi><mo stretchy="false">(</mo><mn>3</mn><msup><mi>ω</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>d</mi><mo>−</mo><msub><mi>d</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi mathvariant="normal">Δ</mi><msub><mi>r</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{Stefan}} = \dfrac{3\pi \eta_c R_c^4 \dot{d}}{2d^3} = m(3\omega^2)(d - d_0) \quad \Longrightarrow \quad \Delta r_{\mathrm{release}} \simeq 2d_0 \approx 210\text{ km}</annotation></semantics></math></span></div></div></div>
+<p>Am gewählten Freisetzungspunkt (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>22.</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\lambda = 22.5^\circ</annotation></semantics></math></span></span>, ein 5,77-Stunden-Tag) beträgt der Radius der Korotationslinie <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi></mrow></msub><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi>λ</mi><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>287</mn></mrow><annotation encoding="application/x-tex">r = r_{\mathrm{co}}\cos^{-2/3}\lambda = 17,287</annotation></semantics></math></span></span> km, und der Mondmittelpunkt steht im Moment der vollständigen Ablösung bei <strong>17 496 km</strong> (für den Äquator: Linie bei 16 399 km und Freisetzung bei 16 610 km). Die Freisetzung hinterlässt eine fast kreisförmige Bahn mit einer Anfangsexzentrizität <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub><mo>≃</mo><mn>0,037</mn></mrow><annotation encoding="application/x-tex">e_0 \simeq 0.037</annotation></semantics></math></span></span> und einer großen Halbachse <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>18</mn><mo separator="true">,</mo><mn>163</mn></mrow><annotation encoding="application/x-tex">a_0 = 18,163</annotation></semantics></math></span></span> km, die als direkte Eingabe an Artikel 04 (<em>The Orbit</em>) weitergegeben werden.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: die letzte Verbindung am Mare Imbrium und die Spachtelrücken</h2>
+<p>Die Stefan-Freisetzung und die zweistufige Trennung haben greifbare Fingerabdrücke auf der Oberfläche des Mondes selbst hinterlassen:</p>
+<ul>
+<li><strong>Die Reihenfolge der Trennung der großen Maria:</strong> Entlang des Ablösungsrings wurde zuerst <strong>Mare Serenitatis</strong> freigelegt und abgelöst, während <strong>Mare Imbrium</strong> (tief innerhalb der 3 000-km-Kontaktscheibe gelegen) als letzter innerer Speisekanal diente und bis zum Moment der endgültigen Ablösung mit der Birne verbunden blieb! Sobald Imbrium abgeschnitten war, hörte der innere Druck der Erde auf den Mond auf, und die großen Maria der Vorderseite erstarrten langsam zu glatten Flächen wie ein zugefrorener See.</li>
+<li><strong>Die Spachtelrücken:</strong> Als der Massenmittelpunkt des Mondes die Korotationslinie überschritt und die nach außen ziehenden Kräfte den Widerstand des heißen, weichen Kontakts überwanden, dehnte und ritzte der starke Zug nach außen die Oberfläche der Ablösungszone und erzeugte die charakteristischen <strong>Spachtelrücken</strong>.</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: die Kräfte der Verbindung, die Stefan-Freisetzung und die Suche nach dem Freisetzungsabstand (Artikel 03, Teil C)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Abstand jenseits der Korotationslinie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta r</annotation></semantics></math></span></span>)</th><th>Mondvolumen jenseits der Linie</th><th>Anfängliche große Halbachse (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span></span>)</th><th>Anfangsexzentrizität (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">e_0</annotation></semantics></math></span></span>)</th><th>Endneigung der Bahn (heute)</th><th>Bedeutung und Ergebnis des Tests</th></tr>
+<tr class="bad"><td>0 km (genau auf der Linie)</td><td>50%</td><td>17 287 km</td><td>0,000</td><td>5,020°</td><td>Eine Kreisbahn für immer — reproduziert e = 0,0549 nicht</td></tr>
+<tr class="mid"><td>100 km</td><td>54%</td><td>17 696 km</td><td>0,017</td><td>5,079°</td><td>Neigung zu gering; Exzentrizität zu gering (0,013 bei A=3)</td></tr>
+<tr class="hl"><td><strong>≈ 210 km (der gewählte Zustand)</strong></td><td><strong>58%</strong></td><td><strong>18 163 km</strong></td><td><strong>0,037</strong></td><td><strong>5,145° (gemessen!)</strong></td><td><strong>Reproduziert zugleich die Neigung von 5,145° und e ≈ 0,0549</strong></td></tr>
+<tr class="mid"><td>300 km</td><td>62%</td><td>18 571 km</td><td>0,053</td><td>5,202°</td><td>Neigung und Exzentrizität (0,11) zu hoch</td></tr>
+<tr class="bad"><td>500 km</td><td>69%</td><td>19 531 km</td><td>0,089</td><td>5,334°</td><td>Eine deutliche Abweichung von den heutigen Monddaten</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Breite der Freisetzung</th><th>Länge des Erdtages</th><th>Die Korotationslinie</th><th>Mondmittelpunkt bei vollständiger Freisetzung</th><th>Last auf der Verbindung im Moment der Freisetzung</th></tr>
+<tr><td><strong>0° (der Äquator)</strong></td><td>5,77 Stunden</td><td>16 399 km</td><td>~ 16 610 km</td><td>Volles radiales Gleichgewicht; nur vernachlässigbarer Stefan-Widerstand</td></tr>
+<tr class="hl"><td><strong>22,5° (der gewählte Weg)</strong></td><td><strong>5,77 Stunden</strong></td><td><strong>17 287 km</strong></td><td><strong>17 496 km</strong></td><td><strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_r = 0</annotation></semantics></math></span></span>; Seitenlast <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>=</mo><mn>4,06</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{conn}} = 4.06 \times 10^{22}\text{ N}</annotation></semantics></math></span></span> (<span class="ltr">5,74 GPa</span>)</strong></td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>Wir haben gesehen, wie der Mond als starre, ganze Kugel genau 210 km jenseits der Korotationslinie freigesetzt wird — ohne schmalen Hals und ohne einen Schweif aus Bruchstücken im All zurückzulassen. Doch was geschah mit dem gewaltigen Körper, der unter der Kontaktscheibe zurückblieb — <strong>der Birne selbst</strong>, etwa 8 700 km lang und neun bis zwölf Mondmassen schwer?</p>
+<p>Im nächsten Kapitel — <strong>Kapitel 6: Das Schicksal der Birne und die Narben der Wirklichkeit — vom Pazifikbecken bis zum Erdkern</strong> (Artikel 03, Teile C.7–C.11, D und E) — entdecken wir, warum die ganze Birne in die Erde zurückgezogen wurde, wo ihr Fußabdruck auf dem Boden des Pazifiks und am Grund des Mantels liegt und wie sie sogar den Kern der frühen Erde dehnte!</p>
+<a href="story06_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 6</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Das Schicksal der Birne und die Narben der Wirklichkeit — vom Pazifikbecken bis zum Erdkern →</p></div></a><p style="margin-top:22px"><a href="story04_de.html">← Kapitel 4</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

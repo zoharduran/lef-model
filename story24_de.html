@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 24: Der Ring als Mahlförderband, die Signaturen auf Monden und Planeten und der Atacama-Blocktest — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 24 der Geschichte des LEF-Modells: der Ring als Mahlförderband, die Signaturen auf Monden und Planeten und der Test des Atacama-Blocks.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story24_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story24_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story24_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story24_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story24_he.html" hreflang="he">עברית</a> · <a href="story24_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 24</p>
+<h1>Kapitel 24: Der Ring als Mahlförderband, die Signaturen auf Monden und Planeten und der Atacama-Blocktest</h1>
+<p>Auf Grundlage von Artikel 12 — 12. The Rings: A ring breaks, grinds and returns (Teile E–M: das Mahlförderband, Signaturen auf Monden und Mutterkörpern, das Atacama-Gestein und die 5 Falsifikationskriterien)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Wie formt ein Ring die Oberflächen von Monden und Planeten — und warum gibt es keine Ringe um Monde?</h2>
+<p>In Kapitel 23 haben wir gesehen, dass ein planetarer Ring als Gleichgewichtsfluss existiert, der sich vom Mutterkörper speist und ihm Material zurückgibt, wenn dessen Tag kürzer als 13,4 Stunden ist. In den Teilen E–M von Artikel 12 untersucht das LEF-Modell die morphologischen und physikalischen Spuren, die der Ring hinterlässt:</p>
+<ol class="steps">
+<li><strong>Warum haben Pan, Atlas und Daphnis einen äquatorialen „Rock“ wie eine fliegende Untertasse — während Deimos zu einer glatten Kugel poliert wurde (G.1–G.4)?</strong> Obwohl Deimos eine stärkere Eigengravitation hat als Pan und Atlas, sammelten Pan und Atlas einen markanten Äquatorrücken an, während Deimos Material verlor und vollständig abgeschliffen wurde!</li>
+<li><strong>Welche Ringe im Sonnensystem sind dazu verurteilt, in naher Zukunft zu verschwinden (F.3)?</strong> Warum überleben bestimmte schmale Ringe bei Uranus und Neptun vorerst ohne Hirtenmond und ohne Speisung aus dem Boden?</li>
+<li><strong>Wo auf der Marsoberfläche lassen sich Überreste seines alten Rings finden — und warum wurde der im April 2026 angebohrte Gesteinsblock „Atacama“ ausgeschlossen (H.2–H.3)?</strong></li>
+<li><strong>Warum wurde um keinen Mond im Sonnensystem ein Ring entdeckt — und wie halten kleine Körper (Haumea, Chariklo, Quaoar) Ringe in einer 1:3-Resonanz (J.1–J.2)?</strong></li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: ein Einbahn-Mahlförderband, ein klebriger Schneeball gegen einen Schleifstein und Streifen am Saturnhimmel</h2>
+<p>Vier greifbare Bilder erklären die innere Sortierung im Ring und die Signaturen, die er seiner Umgebung aufprägt:</p>
+<ul>
+<li><strong>Ein Einbahn-Mahlförderband, in das Brocken hinein- und aus dem Staub herauskommt (E.1–E.3):</strong> Im Ring bewegen sich ein schweres und ein leichtes Teilchen auf demselben Radius mit derselben Kepler-Geschwindigkeit und setzen sich daher nicht nach Dichte ab. Die Sortierung geschieht <strong>durch Impulsübertrag bei Stößen</strong>: Ein steifer Brocken von ~ 100 m Durchmesser behält seine stabile Bahn und räumt sich saubere Bahnen in Form von <strong>„Propellern“</strong> im Ring A des Saturn frei, während winzige Teilchen zufällige Geschwindigkeiten erhalten und sich vertikal um die dünne Schicht (10 m) der großen Brocken verteilen. Die Größenverteilung <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> ist eine klassische Mahlsignatur: Große Brocken zeigen einen frischen Eintrag in den Ring an!</li>
+<li><strong>Ein reifüberzogener Schneeball gegen einen Silikat-Schleifstein (G.2–G.3):</strong> Die Zusammensetzung des Rings bestimmt, ob ein Mond, der ihn durchquert, <em>Masse gewinnt</em> oder <em>abgeschliffen wird</em>: Kalte, reifüberzogene Eiskörner kleben bei langsamem Kontakt aneinander (Bridges et al. 1984) und bauten die Äquatorrücken auf Pan, Atlas und Daphnis; der alte Ring des Mars dagegen bestand aus kondensierten Dämpfen und harten Silikatkörnern, die als <strong>Schleifstein</strong> wirkten und Deimos polierten, ohne ihm Masse hinzuzufügen!</li>
+<li><strong>Vollständiges Eintauchen in Wasser gegenüber einem dünnen Faden um eine Kugel (das Verhältnis D/H, G.4):</strong> Ist der Durchmesser des Mondes kleiner als die Dicke des Rings (D &lt; H, wie bei Deimos, 14–22 km, im dicken Dampfring des Mars, oder bei Methone), wird die ganze Oberfläche eingetaucht und geglättet; bei D &gt; H (Pan, Atlas und Daphnis in einer Scheibe von einigen zehn Metern Dicke) ragen die Pole über den Ring hinaus, und ein breiter Äquatorgürtel wird aufgebaut; und bei <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≫</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">D \gg H</annotation></semantics></math></span></span> (Iapetus) wirkt der Ring wie ein dünner Faden.</li>
+<li><strong>Zwei Regenkanäle — neutrales Material am Äquator und dunkle Streifen entlang der Magnetfeldlinien (H.1):</strong> Beim letzten Tauchgang von Cassini im Jahr 2017 wurden zwei Fallkanäle von den Ringen auf den Saturn gemessen: Neutrale Moleküle und nanometergroße Silikatkörner gehen direkt zum Äquator hinab, während ionisierte Wassermoleküle entlang der Magnetfeldlinien zu den mittleren Breiten (25°–55° beiderseits des Äquators) strömen, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mtext>H</mtext><mn>3</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\text{H}_3^+</annotation></semantics></math></span></span>-Ionen neutralisieren und im Infrarotlicht dunkle Streifen erzeugen!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: der Lebenszyklus des Rings, die Signaturen auf Monden und der Atacama-Blocktest (Teile E–J)</h2>
+<p>Die Teile E–J von Artikel 12 legen scharfe Beobachtungstests vor, um Ringüberreste von gewöhnlichen geologischen Erscheinungen zu unterscheiden:</p>
+<ol class="steps">
+<li><strong>Der Lebenszyklus des Rings und die Ringe, deren Verschwinden erwartet wird (F.1–F.3):</strong> Ein Ring ohne speisenden Mond und ohne Durchsickern aus dem Boden befindet sich im Zerfall und wird voraussichtlich verschwinden. Daher werden <strong>die neun schmalen mondlosen Ringe des Uranus</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) und <strong>die Ringe Galle und Lassell des Neptun</strong> als sterbende Ringe eingestuft, die nach der Flucht des Wassers und dem Gefrieren unterhalb der Korotationslinie zurückblieben — im Gegensatz zu den <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo separator="true">,</mo><mi>ν</mi><mo separator="true">,</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\varepsilon, \nu, \mu</annotation></semantics></math></span></span>-Ringen des Uranus und den Ringen Adams und Le Verrier des Neptun, die von Monden gehalten werden.</li>
+<li><strong>Die morphologische Erkennungsregel für einen Mond, der einen Ring durchquert hat (G.1–G.5):</strong> Ein vollständig glatter Silikatmond (ohne erneuernde geologische Aktivität wie bei Europa oder Enceladus) zeigt einen langen Aufenthalt im Herzen eines Rings an: Auf Deimos beträgt die mittlere Tiefe der Mulden 1,9% ihrer Breite (84% flacher als 6%) gegenüber 5,5% auf Phobos, und seine Bahn ist fast vollkommen kreisförmig (e = 0,0003). Die Durchquerungsrate hängt von der Masse des Mondes ab: Ein kleiner Mond wandert langsam und sammelt eine tiefe Signatur an, während ein großer Mond schnell geschoben wird und den Ring in kurzer Zeit durchquert.</li>
+<li><strong>Der Ausschluss von Ringen um Monde und die Stabilisierung der Ringe kleiner Körper in einer 1:3-Resonanz (J.1–J.2):</strong> Kein Mond im Sonnensystem hält einen Ring (selbst der vermutete Ring um Rhea wurde in Tiscareno et al. 2010 vollständig ausgeschlossen), weil die Schwerkraft des Mutterplaneten dominiert und jedes von einem Mond ausgeworfene Material in den Ring des Mutterkörpers einfängt. Um kleine Körper (Haumea, Chariklo und Quaoar) dagegen liegen vier der fünf Ringe oberhalb der Korotationslinie im Bereich <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> — genau am Radius <strong>der 1:3-Spin-Bahn-Resonanz</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3} a_c \approx 2.08\,a_c</annotation></semantics></math></span></span>), wo ein Teilchen einen Umlauf auf drei Rotationen des Mutterkörpers vollendet.</li>
+<li><strong>Der Test des Gesteinsblocks „Atacama“ auf dem Mars (25. April 2026, H.3):</strong> Als der Rover Curiosity in den losen Gesteinsblock „Atacama“ (~ 45 cm, ~ 13 kg) im Krater Gale bohrte, wurde die Möglichkeit geprüft, dass es sich um einen festen Überrest handelt, der aus dem alten Marsring gefallen ist. Der Test schloss dies vollständig aus (ein geschichtetes Sedimentgestein aus hydratisierten Sulfatsalzen mit Trockenrissen und einer mit der darunterliegenden Schicht identischen Zusammensetzung, zugehörig zur Einheit des Mount Sharp) und legte <strong>vier strenge Kriterien zur Erkennung eines echten Ringüberrests auf dem Mars</strong> fest: ein vulkanisches/schwammiges Gestein ohne wasserabgelagerte Schichtung, trockene Minerale, die eine Erhitzung durchlaufen haben, eine Schmelzkruste vom Atmosphäreneintritt und eine der örtlichen geologischen Schicht fremde Zusammensetzung (passend zu Phobos und Deimos).</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640.0 336" role="img" aria-label="Lage des Rings in Einheiten der Korotationslinie" style="direction:ltr"><g transform="translate(207.2,0)"><line x1="61.0" x2="61.0" y1="10" y2="282" stroke="#ece7da"/><text x="61.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">0,5</text><line x1="166.0" x2="166.0" y1="10" y2="282" stroke="#ece7da"/><text x="166.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,0</text><line x1="271.0" x2="271.0" y1="10" y2="282" stroke="#ece7da"/><text x="271.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">1,5</text><line x1="376.0" x2="376.0" y1="10" y2="282" stroke="#ece7da"/><text x="376.0" y="298" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">2,0</text><line x1="166.0" x2="166.0" y1="8" y2="282" stroke="#1f3a5f" stroke-width="1.8" stroke-dasharray="5 4"/><text x="166.0" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" ></text><line x1="392.8" x2="392.8" y1="8" y2="282" stroke="#b23a2e" stroke-width="1.8" stroke-dasharray="5 4"/><text x="392.8" y="8.0" text-anchor="middle" font-family="Heebo" font-size="13" font-weight="400" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" ></text><rect x="75.7" y="16" width="176.4" height="24" rx="4" fill="#2a4d7a"/><rect x="82.0" y="54" width="132.3" height="24" rx="4" fill="#2a4d7a"/><rect x="63.1" y="92" width="23.1" height="24" rx="4" fill="#6f93bd"/><rect x="61.0" y="130" width="52.5" height="24" rx="4" fill="#6f93bd"/><circle cx="390.7" cy="180" r="7" fill="#c47f2c"/><circle cx="397.0" cy="218" r="7" fill="#c47f2c"/><circle cx="413.8" cy="218" r="7" fill="#c47f2c"/><circle cx="218.5" cy="256" r="7" fill="#c47f2c"/><circle cx="378.1" cy="256" r="7" fill="#c47f2c"/></g><text x="6.0" y="33.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Jupiter · ⁦0,57–1,41⁩</text><text x="6.0" y="71.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2a4d7a" style="direction:ltr;unicode-bidi:embed" >Saturn · ⁦0,60–1,23⁩</text><text x="6.0" y="109.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Uranus · ⁦0,51–0,62⁩</text><text x="6.0" y="147.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#6f93bd" style="direction:ltr;unicode-bidi:embed" >Neptun · ⁦0,50–0,75⁩</text><text x="6.0" y="185.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Haumea · ⁦2,07⁩</text><text x="6.0" y="223.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Chariklo · ⁦2,10 ; 2,18⁩</text><text x="6.0" y="261.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed" >Quaoar · ⁦1,25 ; 2,01⁩</text><text x="320.0" y="328.0" text-anchor="middle" font-family="Heebo" font-size="11" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Lage des Rings in Einheiten der Korotationslinie · blau: Korotationslinie · rot: 1:3-Resonanz bei 2,08</text></svg><figcaption>Die zwei Ringfamilien: die Ringe der Riesen um und unterhalb der Korotationslinie und die Ringe der kleinen Körper oberhalb davon, gesammelt um die 1:3-Resonanz.</figcaption></figure><div class="callout"><span class="tag">Die Wirkung der Sonnenstrahlung auf die Ringe — die „Speichen“, der ionisierte Regen und der Poynting-Robertson-Widerstand (Teil I)</span><p style="margin:0">Die Sonnenstrahlung wirkt über drei Mechanismen auf die Ringe: (1) elektrostatische Aufladung von Mikrometerstaub, der als <strong>„Speichen“</strong> über der Ebene von Ring B schwebt, mit einem Höhepunkt um die Tagundnachtgleichen; (2) UV-Ionisierung von Wassermolekülen, die <strong>den ionisierten Regen</strong> entlang der Magnetfeldlinien beschleunigt; und (3) <strong>der Poynting-Robertson-Strahlungswiderstand</strong>, der winzige Staubteilchen bremst und sie nach innen auf den Mutterkörper zurückfallen lässt!</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: die Erkennungskriterien auf dem Mars, die systematische Übersicht und die fünf Falsifikationstests</h2>
+<p>Die Teile H.2–H.3 und K–M von Artikel 12 sammeln die geologischen Spuren auf den Oberflächen der Planeten und die experimentellen Regeln, nach denen die Ringtheorie des LEF-Modells bestätigt oder widerlegt werden kann:</p>
+<ol class="steps">
+<li><strong>Die vier Suchziele für Überreste des alten Marsrings (§H.2):</strong> Als der Dampf- und Silikatring des Mars vor 3,5–3,7 Milliarden Jahren austrocknete, setzte sich sein Material auf der Oberfläche ab. Die vier Suchziele sind: (a) dicke, äquatoriale Ablagerungen geringer Dichte ohne Fließquelle im Boden (wie <strong>die Medusae-Fossae-Formation</strong>); (b) eine Deuterium-Wasserstoff-Signatur (D/H), die von der örtlichen Umgebung abweicht und zu Phobos und Deimos passt; (c) Steine vulkanischer Zusammensetzung und eine dunkle, harte Leitschicht im Mount Sharp im Krater Gale; und (d) symmetrische Sedimentbänder in mittleren Breiten, falls der Mars ein aktives dipolares Magnetfeld hatte, während der Ring existierte.</li>
+<li><strong>Zusammenfassung der systematischen Übersicht für jeden Körper (Teil K):</strong> Jedes System im Sonnensystem hat eine klare Rolle im Ringkreislauf: die Erde (kein dauerhafter Ring, weil die Birne das Äquatorband leerfegte); Mars (ein alter Ring aus dem Boden, der Deimos und Phobos bewegte und verschwand, als sich die Kruste schloss); Jupiter (ein Staubring nur aus Monden wegen des dicksten Gasdeckels); Saturn (ein riesiger Eisring im Gleichgewichtsfluss aus dem Boden und aus Monden); Uranus und Neptun (schmale, dunkle Überreste unterhalb der Korotationslinie nach der Flucht des Wassers, wobei die mondlosen Ringe sterben); und Haumea, Chariklo und Quaoar (dichte Ringe oberhalb der Korotationslinie in einer 1:3-Resonanz, die nicht zu Monden zusammenwachsen).</li>
+<li><strong>Die fünf scharfen Falsifikationskriterien von Teil L.3:</strong> Das Modell legt fünf ausdrückliche Widerlegungsbedingungen fest: (1) direkte Beobachtung eines Mondes, der aus einer Ringscheibe zusammenwächst; (2) Entdeckung eines vollständig glatten Silikatmondes, der sich nie in einer Ringumgebung aufgehalten hat; (3) Messung eines planetaren Rings, dessen Isotopenzusammensetzung dem Mutterkörper widerspricht und zu einer Quelle außerhalb des Systems passt; (4) Entdeckung eines massiven Rings weit oberhalb der Korotationslinie eines großen Planeten ohne stabilisierende Bahnresonanz; oder (5) Dokumentation eines Rings ohne speisenden Mond und ohne Speisung aus dem Boden, der seine Masse über geologische Zeit bewahrt, ohne zu verarmen.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die Größenverteilung der Brocken in einem mahlenden Ring und der Radius der 1:3-Spin-Bahn-Resonanz, die Ringe um kleine Körper festhält, werden wie folgt formuliert (§E.2, §J.2):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mn>3</mn><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} = 3^{2/3}\,a_c \approx 2.08\,a_c</annotation></semantics></math></span></div></div></div>
+<p>Das Potenzgesetz <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>∝</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n(D) \propto D^{-3}</annotation></semantics></math></span></span> kennzeichnet ein System ständigen Zerkleinerns und Zermahlens in Stößen (Zebker et al. 1985), während der Resonanzradius <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></msub><mo>≈</mo><mn>2,08</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">a_{1:3} \approx 2.08\,a_c</annotation></semantics></math></span></span> erklärt, warum vier der fünf Ringe von Haumea, Chariklo und Quaoar genau im Bereich <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,01</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">2.01\text{–}2.18\,a_c</annotation></semantics></math></span></span> oberhalb der Korotationslinie liegen.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: der Atacama-Blocktest (April 2026) und die Ringe, deren Verschwinden erwartet wird</h2>
+<p>Zwei zentrale Beobachtungsbefunde zeigen, wie die LEF-Ringtheorie einer lebendigen empirischen Prüfung standhält (§F.3, §H.3):</p>
+<ul>
+<li><strong>Das Prüfprotokoll des Atacama-Gesteins bei Curiosity (25. April 2026):</strong> Die geochemische Analyse des losen Atacama-Blocks (~ 45 cm, ~ 13 kg) im Krater Gale zeigte, dass es sich um ein Sedimentgestein aus hydratisierten Sulfatsalzen mit Trockenrissen handelt, identisch mit der Schicht darunter — und so wurden die vier Schwellenbedingungen (vulkanische/schwammige Textur, trockene Minerale, eine Schmelzkruste und eine fremde Zusammensetzung) zur Erkennung eines echten Ringüberrests auf dem Mars festgelegt.</li>
+<li><strong>Die Liste der sterbenden Ringe im Sonnensystem (§F.3):</strong> Die neun schmalen mondlosen Ringe des Uranus (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>η</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\zeta, 6, 5, 4, \alpha, \beta, \eta, \gamma, \delta</annotation></semantics></math></span></span>) und die Ringe Galle und Lassell des Neptun werden in künftigen Beobachtungen voraussichtlich weiter ausdünnen und verschwinden, während die Ringe D, C und B des Saturn weiter existieren werden, solange die innere Pumpe sie speist.</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: die Wirkung der Ringzusammensetzung und des Verhältnisses D/H auf Monde, die systematische Übersicht und die Falsifikationskriterien (Artikel 12, Teile E–M)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Mond</th><th>Durchmesser / Dichte</th><th>Eigengravitation (m/s²)</th><th>Ringumgebung und Verhältnis D/H</th><th>Die morphologische Signatur</th></tr>
+<tr class="hl"><td><strong>Deimos</strong></td><td>12,4 km / 1 471 kg/m³</td><td>0,0025</td><td><strong>Silikat und Dämpfe</strong> (D &lt; H, vollständiges Eintauchen)</td><td><strong>Vollständig zu einer glatten Kugel abgeschliffen</strong> (mittlere Muldentiefe 1,9%)</td></tr>
+<tr><td><strong>Phobos</strong></td><td>22,2 km / 1 860 kg/m³</td><td>0,0058</td><td>Ein verblassender gasförmiger Rand</td><td>Nur teilweise Abnutzung; behielt seine Rillen (5,5%)</td></tr>
+<tr class="hl"><td><strong>Pan, Atlas und Daphnis</strong></td><td>7,6–30 km / 340–460 kg/m³</td><td>0,0004–0,0019</td><td><strong>Wassereis</strong> (D &gt; H, die Pole ragen heraus)</td><td><strong>Ansammlung eines markanten Äquatorrückens</strong> („Untertassen“-Form)</td></tr>
+<tr><td><strong>Methone</strong></td><td>2,9 km / 310 kg/m³</td><td>0,0001</td><td>Eis in einem Bogen nahe Ring G (D &lt; H)</td><td>Glatt und überzogen</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>System im Sonnensystem</th><th>Zustand des Rings heute</th><th>Speisequelle</th><th>Lage relativ zur Korotationslinie und die LEF-Deutung</th></tr>
+<tr><td><strong>Erde / Mars</strong></td><td>Keiner / existierte früher</td><td>Mars: Dampf und Gestein von der Ausbuchtung</td><td>Erde: die Birne fegte die Linie leer; Mars: verschwand vor 3,5–3,7 Ga, als sich die Kruste schloss</td></tr>
+<tr><td><strong>Jupiter</strong></td><td>Dünner Staub</td><td>Innere Monde (Metis bis Thebe)</td><td>Um die Linie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,57</mn><mtext>–</mtext><mn>1,41</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.57\text{–}1.41\,a_c</annotation></semantics></math></span></span>); der dicke Gasdeckel versiegelt das innere Durchsickern</td></tr>
+<tr class="hl"><td><strong>Saturn</strong></td><td><strong>Massiv (95%–99% Eis)</strong></td><td><strong>Aus dem Boden (D, C, B, A) und aus Monden (E, F, G)</strong></td><td><strong>Ein konstanter Gleichgewichtsfluss</strong> (P = 10,6 h &lt; 13,4 h); Rand von A an der Roche-Grenze</td></tr>
+<tr><td><strong>Uranus / Neptun</strong></td><td>Schmal und dunkel (und Bögen)</td><td>Teils aus Monden, teils mondlos</td><td>Unterhalb der Linie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0,50</mn><mtext>–</mtext><mn>0,75</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">0.50\text{–}0.75\,a_c</annotation></semantics></math></span></span>); die mondlosen Ringe werden voraussichtlich verschwinden</td></tr>
+<tr class="hl"><td><strong>Haumea, Chariklo, Quaoar</strong></td><td>Dicht</td><td>Haumea: die Enden der langen Achse</td><td>Oberhalb der Linie (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,25</mn><mtext>–</mtext><mn>2,18</mn><mtext> </mtext><msub><mi>a</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">1.25\text{–}2.18\,a_c</annotation></semantics></math></span></span>), gefangen in <strong>der 1:3-Resonanz</strong>; sie bauen keine Monde</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>In den Kapiteln 23–24 haben wir die Ringtheorie des LEF-Modells vervollständigt: Wir haben <strong>den universellen Schwellentag von <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>≈</mo><mn>13,4</mn></mrow><annotation encoding="application/x-tex">P^* \approx 13.4</annotation></semantics></math></span></span> Stunden</strong> hergeleitet, die Saturnringe als konstanten Fluss im dynamischen Gleichgewicht erklärt, das Schicksal des Wassers und des Drehimpulses von Uranus und Neptun verfolgt und die morphologischen Signaturen auf Monden (das Abschleifen von Deimos gegenüber dem Rückenbau auf Pan und Atlas) und auf dem Mars (der Atacama-Gesteinstest und die Ablagerungen von Medusae Fossae) bestimmt.</p>
+<a href="story25_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 25</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Die grundlegenden Anforderungen des LEF-Modells (R1–R8) — Isotope, der Kern, die Kruste, die Verschiebung des Massenmittelpunkts und die Freilegungszonen →</p></div></a>
+<p style="margin-top:22px"><a href="story23_de.html">← Kapitel 23</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

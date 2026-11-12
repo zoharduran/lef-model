@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 26: Die zehn weiteren Anforderungen (R9–R18), die Hafnium-Wolfram-Uhr und die Karte der künftigen LEF-Forschung — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 26 der Geschichte des LEF-Modells: die zehn weiteren Anforderungen R9–R18, die Hafnium-Wolfram-Uhr und die Karte der künftigen Forschung.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story26_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story26_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story26_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story26_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story26_he.html" hreflang="he">עברית</a> · <a href="story26_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 26</p>
+<h1>Kapitel 26: Die zehn weiteren Anforderungen (R9–R18), die Hafnium-Wolfram-Uhr und die Karte der künftigen LEF-Forschung</h1>
+<p>Auf Grundlage von Artikel 13 — 13. The Requirements (Teile C–D und Anhang B: die Anforderungen R9–R18, der Informationsfluss zwischen den Artikeln, die Hf-W-Uhr und die 7 Forschungsaufgaben)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Welche Signaturen, die allein der Erdbirne eigen sind, hat der Prozess auf der Erde und auf dem Mond hinterlassen?</h2>
+<p>In Kapitel 25 haben wir die ersten acht Anforderungen (R1–R8) geprüft. Doch während Merkmale wie die Isotopenidentität oder ein kleiner Kern in der Literatur alternative Erklärungen finden können, legen <strong>die Teile C und D von Artikel 13</strong> zehn weitere Anforderungen fest (<strong>R9–R18</strong>), die allein aus der Geometrie der Erdbirne, ihrem Zurückfallen in den Mantel und den Austrittskanälen folgen:</p>
+<ol class="steps">
+<li><strong>Die Spuren der Birne auf der Erde und auf dem Mond (R9–R15, §C.1–C.6):</strong> Wohin sanken die 7–12 Mondmassen des Birnenkörpers nach der Ablösung? Wie entstand die Konzentration der KREEP-Elemente auf der Vorderseite des Mondes? Und warum steigt die Kraterdichte an den Polen gerade umso stärker, je größer und älter der Krater ist?</li>
+<li><strong>Die Folgeanforderungen nach der Birne (R16–R18, §C.7):</strong> Wie beweisen wir, dass die 34 Maria des Mondes Auswurföffnungen sind, in denen alte Krater geschmolzen wurden, warum ist das Zentrum des Südpol-Aitken-Beckens (SPA) relativ zu den zwei gegenüberliegenden Öffnungen nach Süden verschoben, und wie dient der Mars als unabhängiger Kontrolltest?</li>
+<li><strong>Die zeitliche Einschränkung durch die Hafnium-Wolfram-Uhr (Hf-W, §D.2) und die Karte der künftigen Forschung:</strong> Wie passt ein allmählicher Aufbau über 600 Millionen Jahre zu einer radioaktiven Zerfallsuhr mit einer Halbwertszeit von nur 8,9 Millionen Jahren?</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: eine harte Kruste auf rutschigem Öl, die eingefalteten Ränder einer Schale und eine Sanduhr, die früh abgelaufen ist</h2>
+<p>Vier greifbare Bilder beleuchten die zehn weiteren Anforderungen und die chronologische Einschränkung des Modells:</p>
+<ul>
+<li><strong>Eine steife Schale, die auf einer weichen Schmierschicht gleitet (reine Verdichtung der Krater, §C.1):</strong> Um die alten runden Krater zu bewahren, die beim Aufstieg der Birne auf der Krustenkuppel getragen wurden, muss die äußere Kruste sehr steif bleiben (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>), während ihre Basis auf einer weichen thermomechanischen Grenzfläche liegt (der Grenze zwischen dem leichten Sial und dem dichten Sima), die sie in gleichmäßiger hydrostatischer Verdichtung (Pure Compaction) gleiten und schrumpfen lässt, ohne die Krater zu Ellipsen zu verzerren!</li>
+<li><strong>Die Ränder einer Schale, die sich beim Abschälen nach innen falten (der KREEP-Komplex, R12):</strong> Als sich der Mond von der Basis der Erdbirne abschälte, falteten sich die zerrissenen Ränder der Sial-Kruste der Erde mechanisch nach innen auf den Umfang der Basis auf der Vorderseite (die Region Procellarum PKT) und nahmen die inkompatiblen Elemente (Kalium K, Seltene Erden REE und Phosphor P) mit — daher müssen die ältesten Anorthosite im Hochland des Mondes an Kalium und Thorium verarmt sein!</li>
+<li><strong>Ein schwerer Eisenhaufen, der auf den Grund des Topfes sinkt (die untere LLVP-Anomalie im Pazifik, R10–R11):</strong> Im Moment, als der Mond an der Korotationslinie (16 399 km) freikam, fiel der restliche Birnenkörper (~ 9 Mondmassen, etwa 11% der Erdmasse, vollständig innerhalb der Korotationslinie gelegen, sodass kein Rest von ihm auf der Umlaufbahn blieb) in den Mantel zurück und sank zur Kern-Mantel-Grenze direkt unter der Basis nahe der Insel Kiritimati (1,9°N, 157,5°W) — und schuf so die eisenreiche untere Anomalie des Pazifiks (Pacific LLVP), während die afrikanische Anomalie der gegenüberliegende, ungestörte Lappen ist!</li>
+<li><strong>Eine Sanduhr, die sich in einigen zehn Millionen Jahren geleert hat (die <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf–</mtext><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}\text{–}{}^{182}\text{W}</annotation></semantics></math></span></span>-Uhr, §D.2):</strong> Das radioaktive Isotop <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span> zerfällt mit einer Halbwertszeit von 8,9 Millionen Jahren zu <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{W}</annotation></semantics></math></span></span>. Nach 600 Millionen Jahren bleibt nur ein verschwindender Rest von 5,1 × 10⁻²¹ — die Sanduhr blieb also schon zu Beginn des Aufbaufensters vollständig stehen, und die heute am Mond gemessenen Wolframsignaturen wurden am Anfang festgeschrieben und unversehrt weitergetragen, ohne gelöscht zu werden!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: die sieben Anforderungen der Birne (R9–R15) und die drei Folgeanforderungen (R16–R18)</h2>
+<p>Die Teile C.6 und C.7 von Artikel 13 beschreiben alle zehn weiteren Anforderungen im Einzelnen und trennen jene, die in den Artikeln 6–8 bereits quantitativ gestützt wurden, von jenen, die noch auf eine abschließende Berechnung warten:</p>
+<ol class="steps">
+<li><strong>R9 und R10 — die Gleichgewichtsform der Birne und ihr vollständiger Kollaps:</strong> Der Birnenkörper (9 000 km breit an der Basis, auf einen Kontakt von 3 000 km zulaufend) wird als hydrostatisch-dynamische Gleichgewichtsform gehalten (Eigengravitation gegen Innendruck und Fliehkraft, nicht die Zugfestigkeit des Gesteins), vollständig innerhalb der Korotationslinie, sodass er bei der Ablösung ganz nach innen kollabiert, ohne einen Rest auf der Umlaufbahn zu hinterlassen.</li>
+<li><strong>R11–R14 — die pazifische Signatur, das Kernmaß und das Fehlen fremden Materials:</strong> Die Basis der Birne bei Kiritimati liegt über dem pazifischen LLVP (R11); der winzige Kern des Mondes (1,0%–2,0%) dient als Tiefenmaß, das zeigt, wie nahe der Speisestrom dem sinkenden Eisen kam (R13); und im Gesamtkörper des Mondes und in den Basaltplumes des Pazifiks wird keine fremde außerirdische Komponente gefunden werden (R14).</li>
+<li><strong>R15 (in Artikel 7 quantitativ gestützt) — Verdichtung der Krater an den Polen in Abhängigkeit vom Durchmesser:</strong> Die mechanische Abrundung verdichtete die alten Krater zu den Polen hin, ohne ihren linearen Durchmesser zu verkleinern: Das Dichteverhältnis zwischen Polen und Äquator steigt von <strong>1,09</strong> bei Kratern von 20–30 km auf <strong>1,53</strong> bei alten Kratern von 60–100 km!</li>
+<li><strong>R16 und R17 (in den Artikeln 6 und 8 quantitativ gestützt) — Maria als Auswurföffnungen und das SPA-Siegel:</strong> Auf dem Boden der 34 aktiven Maria wurden die Krater, die auf flüssiger Lava landeten, geschmolzen, sodass die Dichte scharfer Krater (≥ 20 km) dort <strong>nur 0,8 pro Million km²</strong> beträgt, gegenüber 18,3 in den Ebenen und 207 im Hochland (R16); und im Südpol-Aitken-Becken (SPA) sind das Zentrum der Kuppel, das Wärmezentrum und das Kraterminimum nach Süden verschoben (von 17°–21° im abgeflachten Stadium auf 24°–29° heute), relativ zu den zwei Punkten gegenüber Imbrium und Serenitatis (R17).</li>
+<li><strong>R18 (ein unabhängiger Kontrolltest in Artikel 10) — die Marsmonde vom Pavonis Mons:</strong> der Start von Phobos und Deimos als Korken aus einem einzigen Auswurfkanal am Pavonis Mons (1,48°N) in einen kondensierten Dampfring; die Bestätigung der rein marsianischen Zusammensetzung wartet auf die Proben der Mission MMX.</li>
+</ol>
+<div class="callout"><span class="tag">Das Prinzip der Isolierung der Ebenen (Multi-Level Constraint, §C.3 &amp; §D.3)</span><p style="margin:0">Artikel 13 betont, dass eine Nichtübereinstimmung in einer morphologischen Klausel (etwa der Sortierung der Auswurföffnungen in §C.3 oder dem Mars-Kontrolltest in R18) auf diesen Zweig allein beschränkt ist und die Gleichung der Korotationslinie aus Artikel 2, die auf den Erhaltungssätzen für Masse und Drehimpuls beruht, nicht widerlegt.</p></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: Forschungstransparenz, die Einschränkung durch die Hafnium-Wolfram-Uhr und die sieben offenen Aufgaben</h2>
+<p>Teil D, Anhang B und der Abschnitt zur künftigen Forschung in Artikel 13 legen einen vollständigen wissenschaftlichen Fahrplan vor, trennen mit intellektueller Redlichkeit das vorhandene Wissen vom Beitrag des Modells und markieren sieben klare Forschungsziele:</p>
+<ol class="steps">
+<li><strong>Die wissenschaftliche Kontrollkette und der Verzicht auf einen einzelnen Erfolgspunkt (§D.3):</strong> Um festzustellen, dass eine Anforderung <em>nicht erfüllt</em> ist, bedarf es eines mathematischen Beweises, dass es über den gesamten Bereich der Parameter und Messfehler keine physikalische Lösung gibt (und nicht einer Prüfung an einem einzigen Punkt). Zugleich bestätigt ein einzelner Erfolgspunkt keinen ganzen Pfad — jede Behauptung unterliegt der Kette: <strong>Vorhersage → mathematische Ausarbeitung → Robustheit gegenüber Rauschen → Zugänglichkeit zur Prüfung (das Codepaket auf Zenodo) → empirischer Test</strong>.</li>
+<li><strong>Eine ausdrückliche Trennung zwischen vorhandener Physik und der Neuheit des LEF-Modells (Anhang B):</strong> Der Artikel stellt ausdrücklich fest, dass die Gesetze der Schwerkraft, der Massenerhaltung und der Differenzierung, die Theorie des alten „Erdscheins“ (Roy et al. 2014) oder die Identifizierung des Grabenrechtecks von Procellarum (Andrews-Hanna et al. 2014) ihren ursprünglichen Urhebern gehören. Die einzigartige Neuheit von LEF ist <strong>die doppelte mechanische Integration im selben Körper</strong> — innere Füllung von unten durch einen tiefen Mantelstrom, zusammen mit dem Anheben der lithosphärischen Schale der Erde von oben, unter einer geschlossenen Massenbilanz und Verschiebung des Massenmittelpunkts.</li>
+<li><strong>Die sieben offenen Aufgaben für künftige Forschung (Further Work):</strong> (1) Vervollständigung der Statistik der konzentrischen Gürtel (T3, T4 und T1 an den Modellen 2–4 und GRGM1200B); (2) Aufbau einer einheitlichen isotopischen Mehrsystembilanz (O, Ti, Cr, W); (3) ein Mehrphasen-Strömungsmodell für den Transport von Eisentröpfchen zum Kern (1,4%); (4) eine gemeinsame Vektorinversion von Krustendicke und Verschiebung des Massenmittelpunkts in der wahren Kontaktgeometrie; (5) ein kontrollierter chronologischer Vergleich der Uhr 1 in primärer Hochlandkruste von beiden Seiten; (6) eine quantitative Klassifizierung der 34 Maria als Auswurföffnungen; und (7) eine unabhängige tektonische Rekonstruktion der pazifischen Lithosphäre über dem pazifischen LLVP.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die radioaktive Zerfallsgleichung der kurzen Hafnium-Wolfram-Differenzierungsuhr (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext><mo>→</mo><msup><mrow></mrow><mn>182</mn></msup><mtext>W</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf} \to {}^{182}\text{W}</annotation></semantics></math></span></span>, Halbwertszeit <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mn>8,9</mn><mtext> Myr</mtext></mrow><annotation encoding="application/x-tex">T_{1/2} = 8.9\text{ Myr}</annotation></semantics></math></span></span>) über das Aufbaufenster von 600 Millionen Jahren und die methodische Prüfkette werden wie folgt formuliert (§D.2–D.3):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8,9</mn><mtext> Myr</mtext><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(t)}{N_0} = 2^{-t / (8.9\text{ Myr})}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac></mstyle><mo>≈</mo><mn>5,1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{N(600\text{ Ma})}{N_0} \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>prediction</mtext><mo>⟶</mo><mtext>detailed</mtext><mo>⟶</mo><mtext>robust</mtext><mo>⟶</mo><mtext>assessable</mtext><mo>⟶</mo><mtext>testable</mtext></mrow><annotation encoding="application/x-tex">\text{prediction} \longrightarrow \text{detailed} \longrightarrow \text{robust} \longrightarrow \text{assessable} \longrightarrow \text{testable}</annotation></semantics></math></span></div></div></div>
+<p>Da das Verhältnis <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mn>600</mn><mtext> Ma</mtext><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><msub><mi>N</mi><mn>0</mn></msub><mo>≈</mo><mn>5,1</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N(600\text{ Ma})/N_0 \approx 5.1 \times 10^{-21}</annotation></semantics></math></span></span> am Ende des Aufbaus null lebende <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>182</mn></msup><mtext>Hf</mtext></mrow><annotation encoding="application/x-tex">{}^{182}\text{Hf}</annotation></semantics></math></span></span>-Atome übrig lässt, kann die Wolframuhr am Ende des Fensters nicht zurückgesetzt werden — daher muss jedes chronologische Modell die zu Beginn der Differenzierung festgelegte Wolframsignatur über 600 Millionen Jahre bewahren.</p>
+<figure class="fig"><svg viewBox="0 0 640 270" role="img" aria-label="Hf-182 remaining against time" style="direction:ltr"><line x1="70" x2="600" y1="220.0" y2="220.0" stroke="#ece7da"/><text x="62" y="224.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">0%</text><line x1="70" x2="600" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="62" y="174.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">25%</text><line x1="70" x2="600" y1="120.0" y2="120.0" stroke="#ece7da"/><text x="62" y="124.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">50%</text><line x1="70" x2="600" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="62" y="74.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">75%</text><line x1="70" x2="600" y1="20.0" y2="20.0" stroke="#ece7da"/><text x="62" y="24.0" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="end">100%</text><text x="70.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">0</text><text x="158.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">10</text><text x="246.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">20</text><text x="335.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">30</text><text x="423.3" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">40</text><text x="511.7" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">50</text><text x="600.0" y="238" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">60</text><path d="M70.0,20.0 L74.4,27.6 L78.8,35.0 L83.2,42.1 L87.7,48.8 L92.1,55.4 L96.5,61.7 L100.9,67.7 L105.3,73.5 L109.8,79.1 L114.2,84.5 L118.6,89.7 L123.0,94.7 L127.4,99.4 L131.8,104.1 L136.2,108.5 L140.7,112.7 L145.1,116.8 L149.5,120.8 L153.9,124.6 L158.3,128.2 L162.8,131.7 L167.2,135.1 L171.6,138.3 L176.0,141.4 L180.4,144.4 L184.8,147.3 L189.2,150.1 L193.7,152.8 L198.1,155.3 L202.5,157.8 L206.9,160.2 L211.3,162.5 L215.8,164.7 L220.2,166.8 L224.6,168.8 L229.0,170.8 L233.4,172.7 L237.8,174.5 L242.2,176.2 L246.7,177.9 L251.1,179.5 L255.5,181.0 L259.9,182.5 L264.3,183.9 L268.8,185.3 L273.2,186.7 L277.6,187.9 L282.0,189.1 L286.4,190.3 L290.8,191.5 L295.2,192.6 L299.7,193.6 L304.1,194.6 L308.5,195.6 L312.9,196.5 L317.3,197.4 L321.8,198.3 L326.2,199.1 L330.6,199.9 L335.0,200.7 L339.4,201.4 L343.8,202.1 L348.2,202.8 L352.7,203.5 L357.1,204.1 L361.5,204.7 L365.9,205.3 L370.3,205.8 L374.8,206.4 L379.2,206.9 L383.6,207.4 L388.0,207.9 L392.4,208.3 L396.8,208.8 L401.2,209.2 L405.7,209.6 L410.1,210.0 L414.5,210.4 L418.9,210.8 L423.3,211.1 L427.8,211.5 L432.2,211.8 L436.6,212.1 L441.0,212.4 L445.4,212.7 L449.8,213.0 L454.2,213.2 L458.7,213.5 L463.1,213.8 L467.5,214.0 L471.9,214.2 L476.3,214.4 L480.8,214.7 L485.2,214.9 L489.6,215.1 L494.0,215.2 L498.4,215.4 L502.8,215.6 L507.2,215.8 L511.7,215.9 L516.1,216.1 L520.5,216.2 L524.9,216.4 L529.3,216.5 L533.8,216.6 L538.2,216.8 L542.6,216.9 L547.0,217.0 L551.4,217.1 L555.8,217.2 L560.2,217.3 L564.7,217.4 L569.1,217.5 L573.5,217.6 L577.9,217.7 L582.3,217.8 L586.8,217.9 L591.2,218.0 L595.6,218.1 L600.0,218.1" fill="none" stroke="#1f3a5f" stroke-width="3"/><circle cx="148.6" cy="120.0" r="4.5" fill="#b23a2e"/><circle cx="227.2" cy="170.0" r="4.5" fill="#b23a2e"/><circle cx="305.9" cy="195.0" r="4.5" fill="#b23a2e"/><circle cx="384.5" cy="207.5" r="4.5" fill="#b23a2e"/><text x="298.6" y="114.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >Halbwertszeit · ⁦8,9⁩ Millionen Jahre</text><text x="335.0" y="262.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed" >Zeit (Millionen Jahre) · verbleibendes ¹⁸²Hf · am Ende eines Fensters von 600 Millionen Jahren: ⁦5,1×10⁻²¹⁩</text></svg><figcaption>Die Hafnium-Wolfram-Uhr: Nach etwa 50 Millionen Jahren ist fast kein ¹⁸²Hf mehr übrig, daher wird die Wolframsignatur zu Beginn des Aufbaufensters festgeschrieben und bis zu dessen Ende bewahrt.</figcaption></figure></section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: der Datenfluss durch die Artikelreihe und das offene Protokoll auf Zenodo</h2>
+<p>Teil D.1 und der Codeabschnitt von Artikel 13 verbinden die gesamte Artikelreihe zu einem transparenten System von Abhängigkeiten, das jeder externe Forscher vollständig reproduzieren kann (§D.1, Data &amp; Code):</p>
+<ul>
+<li><strong>Der Fluss der Einschränkungen von Artikel 2 bis Artikel 13 (§D.1):</strong> Artikel 2 legt den Korotationsradius bei der Ablösung fest (16 399 km in der Äquatorebene, 17 287 km auf 22,5° Breite bei einem Tag von 5,77 Stunden); Artikel 3 setzt einen minimalen Übergangsradius von ~ 1 000 km, der 0,46 Mondmassen und eine seitliche Scherlast <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></msub><mo>≈</mo><mn>1</mn><msup><mn>0</mn><mn>22</mn></msup><mtext> N</mtext></mrow><annotation encoding="application/x-tex">F_{\mathrm{shear}} \approx 10^{22}\text{ N}</annotation></semantics></math></span></span> trägt (womit ein „schmaler Hals“ ausgeschlossen wird), sowie eine Schalenviskosität <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≳</mo><mn>1</mn><msup><mn>0</mn><mn>23</mn></msup><mtext> Pa</mtext><mo>⋅</mo><mtext>s</mtext></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{shell}} \gtrsim 10^{23}\text{ Pa}\cdot\text{s}</annotation></semantics></math></span></span>; und die Artikel 4–10 fügen die Umlaufbahn, die Maria, die Krater, die Pole, das SPA-Becken und den Mars hinzu.</li>
+<li><strong>Das offene Reproduktionspaket (Zenodo DOI: 10.5281/zenodo.22743615):</strong> Alle Rechenskripte in Python 3 (NumPy und SciPy), die Eingabedateien und die Ausgaben der Tests T1, T2 und T5 sind dauerhaft im Zenodo-Repositorium zur unabhängigen Reproduktion hinterlegt.</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: die zehn weiteren Anforderungen (R9–R18) und die Nichtübereinstimmungskriterien des LEF-Modells (Artikel 13, Teile C–D)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Anforderung</th><th>Die im Modell verlangte physikalische Bedingung</th><th>Prüfmaß / Ergebnis der Nichtübereinstimmung</th><th>Aktueller Status</th></tr>
+<tr><td><strong>R9 (Birne im Gleichgewicht)</strong></td><td>Ein Körper von 9 000 km Breite, der auf 3 000 km zuläuft, wird durch Eigengravitation innerhalb der Korotationslinie gehalten</td><td>Nichtübereinstimmung: keine mathematische Gleichgewichtsform im Bereich von Dichte und Rotation</td><td>Offen für eine vollständige Gleichgewichtsrechnung</td></tr>
+<tr><td><strong>R10 (Kollaps der Birne)</strong></td><td>Der Rest der Birne (7–12 Mondmassen, ~ 11% der Erdmasse) kollabiert vollständig nach innen ohne Rest auf der Umlaufbahn</td><td>Nichtübereinstimmung: Nachweis eines Restes auf der Umlaufbahn oder Fehlen einer Massenanomalie unter der Quelle</td><td>Offen (vereinbar mit den Falten aus Artikel 9)</td></tr>
+<tr><td><strong>R11 (pazifisches LLVP)</strong></td><td>Die Basis der Birne bei Kiritimati (1,9°N, 157,5°W) liegt über dem eisenreichen pazifischen LLVP</td><td>Nichtübereinstimmung: die Basis außerhalb des LLVP oder die zwei Lappen (pazifisch und afrikanisch) identisch</td><td>Offen für einen tomographischen Test</td></tr>
+<tr><td><strong>R12 (KREEP-Komplex)</strong></td><td>Die nach innen gefalteten Ränder des irdischen Sial fixieren KREEP in Procellarum; die Anorthosite sind an K und Th verarmt</td><td>Nichtübereinstimmung: kein geometrischer Bezug zu den Rändern der Basis oder eine Sial-Signatur in den Anorthositen</td><td>Offen für eine geochemische Kartierung</td></tr>
+<tr><td><strong>R13–R14 (Kernmaß und null fremdes Material)</strong></td><td>Der Kern (1,4%) misst die Nähe zum sinkenden Eisen; null fremde Impaktorkomponente im Mond und in den pazifischen Plumes</td><td>Nichtübereinstimmung: Nachweis einer außerirdischen chemischen/isotopischen Komponente im Gesamtkörper des Mondes oder in den Plumes</td><td>Offen für eine Mehrsystembilanz</td></tr>
+<tr class="hl"><td><strong>R15 (Verdichtung der Krater an den Polen)</strong></td><td>Die Abrundung verdichtete die Krater zu den Polen hin in einem mit dem Durchmesser steigenden Verhältnis, ohne ihren linearen Durchmesser zu verkleinern</td><td>Dichteverhältnis Pol/Äquator: <strong>1,09</strong> (20–30 km) → <strong>1,53</strong> (60–100 km)</td><td><strong>Erfolgreich bestanden (Artikel 7)</strong></td></tr>
+<tr class="hl"><td><strong>R16 (die 34 Maria als Auswurföffnungen)</strong></td><td>Der Boden der aktiven Maria schmolz alte Krater, die auf ihm landeten</td><td>Dichte scharfer Krater ≥ 20 km: <strong>0,8</strong> in den Maria gegenüber 18,3 in den Ebenen und 207 im Hochland</td><td><strong>Quantitativ gestützt (Artikel 6)</strong></td></tr>
+<tr class="hl"><td><strong>R17 (zwei Öffnungen und eine Kuppel bei SPA)</strong></td><td>Das Zentrum der Kuppel, die Wärme und das Kraterminimum bei SPA sind relativ zu den Punkten gegenüber Imbrium und Serenitatis nach Süden verschoben (24°–29°)</td><td>Nichtübereinstimmung: kein geometrischer Bezug oder eine Lage nördlich der gegenüberliegenden Punkte</td><td><strong>Quantitativ gestützt (Artikel 8)</strong></td></tr>
+<tr><td><strong>R18 (die Marsmonde vom Pavonis)</strong></td><td>Phobos und Deimos wurden aus einem einzigen Auswurfkanal am Pavonis Mons (1,48°N) in einen Dampfring gestartet</td><td>Nichtübereinstimmung: eine nicht-marsianische Zusammensetzung in den MMX-Proben oder ein Massenüberschuss unter dem Pavonis</td><td>Offen (ein externer Kontrolltest, Artikel 10)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>In den Kapiteln 25–26 haben wir den Überblick über <strong>Artikel 13 (The Requirements)</strong> abgeschlossen — den methodischen Kompass der LEF-Reihe, der alle 18 Anforderungen (<strong>R1–R18</strong>), die Ergebnisse der statistischen Tests (<strong>T1–T5</strong>), die Einschränkung durch die Hafnium-Wolfram-Uhr und die 7 offenen Aufgaben für künftige Forschung zusammenführt.</p>
+<a href="story27_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 27</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Die Forschungskarte des LEF-Modells (Teil A) — die frühe Erde, die Entstehung des Mondes und das SPA-Becken (Themen 1–79) →</p></div></a>
+<p style="margin-top:22px"><a href="story25_de.html">← Kapitel 25</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

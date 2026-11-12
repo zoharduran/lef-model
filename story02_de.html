@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 2: Der Kampf um die Tageslänge und die Drehimpulsbilanz — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 2 der Geschichte des LEF-Modells: der Kampf zwischen der bremsenden Birne und dem beschleunigenden Kern, ein 5,77-Stunden-Tag im Moment der Freisetzung, eine Drehimpulsbilanz, die sich bei 1,007 schließt, die Roche-Grenzen und die Gezeitenscheide.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story02_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:left}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:left}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story02_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story02_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story02_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story02_he.html" hreflang="he">עברית</a> · <a href="story02_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 2</p>
+<h1>Kapitel 2: Der Kampf um die Tageslänge und die Drehimpulsbilanz</h1>
+<p>Auf Grundlage von Artikel 02 — LEF Mechanism in Principle (Abschnitte A.4–A.8 und Teil B)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Läuft der Mond vor der Ziellinie davon, während er auf sie zuläuft?</h2>
+<p class="lead">Im vorigen Kapitel haben wir die Ziellinie entdeckt, die das Material erreichen muss, um zum Mond zu werden: <strong>den Korotationsradius</strong>, der am Ausgangspunkt (einem 5,5-Stunden-Tag) 15 818 km vom Erdmittelpunkt entfernt lag. Doch sobald der Prozess beginnt und sich die Birne nach oben verlängert, tut sich eine verblüffende physikalische Falle auf.</p>
+<p>Der Satz von der Erhaltung des Drehimpulses besagt, dass die gesamte Rotationsmenge eines abgeschlossenen Systems nicht aus dem Nichts entstehen kann. Wenn die Erde eine große Masse weit von ihrer Achse anhebt und sie zwingt, sich im selben Tempo mitzudrehen, „stiehlt“ die aufsteigende Masse der Erdrotation Drehimpuls. Die Folge: Die Erdrotation verlangsamt sich, der Tag wird länger — <strong>und die Korotationslinie selbst weicht zurück und wandert nach außen!</strong></p>
+<p>Hier entstehen drei entscheidende Fragen, die über das Schicksal des gesamten Modells bestimmen:</p>
+<div class="three">
+<div><b>01</b><p>Erstens: <strong>Treibt die Verlängerung des Tages die Korotationslinie zu weit hinaus</strong>, oder läuft gleichzeitig ein innerer Prozess ab, der die Rotation beschleunigt und ausgleicht?</p></div>
+<div><b>02</b><p>Zweitens: <strong>Reicht die gesamte Drehimpulsbilanz der frühen Erde aus</strong>, um die „Steuer“ für das Anheben des Mondes zu bezahlen — und uns dennoch genau den Drehimpuls zu hinterlassen, der heute im Erde-Mond-System gemessen wird?</p></div>
+<div><b>03</b><p>Und drittens: <strong>Was verhindert, dass der junge Mond im Moment der Trennung</strong> von den gewaltigen Gezeitenkräften der Erde in Stücke gerissen wird?</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: die Eiskunstläuferin, die einen Arm ausstreckt — und den anderen anzieht</h2>
+<p>Wir alle kennen das klassische Bild einer Eiskunstläuferin, die sich auf der Stelle dreht: Breitet sie die Arme zur Seite aus, wird ihre Drehung sofort langsamer; zieht sie die Arme an den Körper, dreht sie sich in schwindelerregendem Tempo. Der Grund: Masse weit von der Drehachse vergrößert das Trägheitsmoment, Masse nahe der Achse verkleinert es.</p>
+<p>Stellen Sie sich nun eine besondere akrobatische Nummer vor, in der die Läuferin <strong>zwei gegensätzliche Bewegungen zugleich</strong> ausführt: Mit der einen Hand streckt sie eine lange, schwere Stange aus (die „Birne“, die sich zur Korotationslinie hin verlängert und sie zu bremsen versucht), und gleichzeitig zieht sie ein schweres Eisengewicht, das sie zuvor weit von der Achse hielt, nach innen zur Körpermitte (der „Kern“, der zum Erdmittelpunkt sinkt und sie beschleunigt).</p>
+<div class="box"><span class="tag">Zwei gegensätzliche Kräfte</span><p style="margin:0">Weil diese beiden gegensätzlichen Kräfte zusammenwirken, verliert die Läuferin kaum etwas von ihrem Drehtempo! Sie wird nur ein wenig langsamer und bleibt stabil bei genau dem Tempo, das sie braucht, um die Nummer zu vollenden.</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: warum ein „gleichförmiges Inneres“ eine Schwellenbedingung ist</h2>
+<p>Viele Modelle der Erdentwicklung nehmen an, dass sich ihr schwerer Eisenkern in höchstem Tempo bildete und zum Zentrum sank, noch bevor der Mond entstand. Artikel 02 zeigt jedoch, dass eine solche Annahme die Drehimpulsbilanz blockiert: Ist das gesamte Eisen im Zentrum konzentriert, ist das Trägheitsmoment der Erde klein (der Trägheitsfaktor sinkt von <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> für eine gleichförmige Kugel auf <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0,33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span> für die heutige differenzierte Erde), und mit demselben 5,5-Stunden-Tag kann sie nicht genug Drehimpuls speichern.</p>
+<p>Im LEF-Modell dagegen ist die Ordnung des Kerns kein einmaliges, vorher abgeschlossenes Ereignis, sondern <strong>ein einziger, durchgehender Prozess</strong>:</p>
+<ul class="pts">
+<li><strong>Zu Beginn des Massentransfers:</strong> Die junge Erde war heiß, aufgebläht (eine thermische Ausdehnung von 120 km, innerhalb des zulässigen Bereichs von 98–520 km) und in ihrer Massenverteilung noch fast gleichförmig (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>). In diesem Zustand speicherte sie eine anfängliche Drehimpulsbilanz von <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>.</li>
+<li class="c"><strong>Während des Aufstiegs der Birne:</strong> Das schwere Eisen sank allmählich nach innen zum Zentrum (im Zweischichtenmodell: Radiusverhältnis <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span> und Dichteverhältnis <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) und erzeugte genau die Beschleunigung der Rotation, die nötig war, um die Verlängerung der Birne auszugleichen!</li>
+</ul>
+<div class="callout"><span class="tag">Der Schlüssel zum Preis an Drehimpuls</span>
+<p style="margin:0">Auf dem klassischen Jacobi-Spaltungsweg (bei dem die Erde versucht, ihre eigene Oberfläche bis zum Bruchpunkt zu beschleunigen, ein Tag von 2,73 Stunden) braucht das System <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9,42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> — also das <strong>2,74-Fache</strong> des Drehimpulses des heutigen Erde-Mond-Systems (am ursprünglichen Bezugspunkt das 4,08-Fache). Im LEF-Modell, in dem das Material zur Korotationslinie getragen wird, liegt die Anfangsbilanz des Mutterkörpers beim <strong>1,007-Fachen</strong> des heutigen Drehimpulses — ein winziger Überschuss von nur 0,7% (bei vektorieller Addition unter den geprüften Winkeln: 1,5%–2,5%), der genau dem späteren Verlust an die Sonnengezeiten entspricht!</p></div>
+<div class="vs"><div><b>4,08</b><span>Klassische Spaltung · ursprünglicher Bezugspunkt</span></div><div><b>2,74</b><span>Klassische Spaltung · Jacobi-Verzweigungspunkt</span></div><div class="hit"><b>1,007</b><span>LEF-Modell · Freisetzung an der Korotationslinie</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: der Kampf um den Tag, die Roche-Grenze und die Wasserscheide</h2>
+<p>Verfolgen wir Schritt für Schritt den Ausgang des faszinierenden Kampfes, der sich im Inneren der Erde abspielt, während die Birne aufsteigt:</p>
+<ol class="steps">
+<li><strong>Die Birne versucht, die Erde zu bremsen (+0,94 Stunden):</strong> Der Transport von Masse nach außen in Korotation überträgt dem aufsteigenden Material in der Grundrechnung etwa 15,6% der Drehimpulsbilanz (in der gekoppelten Lösung etwa 16,5%). Dieser Drehimpuls wird der Erdrotation entzogen. Hätte die Birne allein gewirkt, ohne die Ordnung des Kerns (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>), hätte sich der Tag von 5,50 auf <strong>6,44 Stunden</strong> verlängert und die Korotationslinie wäre bis auf <strong>17 569 km</strong> davongelaufen.</li>
+<li><strong>Der sinkende Kern beschleunigt die Erde (−0,67 Stunden):</strong> Gleichzeitig sinkt das schwere Eisen zum Erdmittelpunkt (im Zweischichtenszenario <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) und verkürzt den Tag um <strong>0,67 Stunden</strong>.</li>
+<li><strong>Der Gleichgewichtspunkt im Moment der Freisetzung (5,77 Stunden und 16 399 km):</strong> Wirken beide Prozesse zusammen, gleicht die Beschleunigung durch den Kern den größten Teil der Bremsung durch die Birne aus. Der Tag beträgt im Moment der Trennung nur <strong>5,77 Stunden</strong>, und die Korotationslinie stellt sich in einem Abstand von <strong>16 331 km</strong> (in der Testteilchen-Näherung) oder <strong>16 399 km</strong> (≃ 16 400 km) ein, wenn man die Eigenmasse des Mondes in einem Zweikörperproblem berücksichtigt.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5,75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed">Ausgangspunkt · ⁦5,50 h⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Die Birne bremst · ⁦+0,94 h⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Der Kern beschleunigt · ⁦−0,67 h⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:ltr;unicode-bidi:embed">Moment der Freisetzung · ⁦5,77 h⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Tageslänge (Stunden)</text></svg><figcaption>Der Kampf um die Tageslänge: Die Birne allein hätte ihn auf 6,44 Stunden verlängert; der sinkende Kern gibt 0,67 Stunden zurück, und der Tag beträgt im Moment der Freisetzung 5,77 Stunden.</figcaption></figure>
+<div class="q">Wie übersteht der Mond die Roche-Grenze und beginnt sofort, sich zu entfernen?</div>
+<p>Im Moment der Freisetzung ist der Mond ein runder, starrer Körper (Radius <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mspace width="0.17em"></mspace><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> km bei einer Dichte von 2 600 kg/m³): Seine Vorderseite steht 14 509 km vom Erdmittelpunkt entfernt (etwa 7 800 km über der Oberfläche der abgeplatteten Erde, deren Äquatorradius 6 701 km beträgt), seine Rückseite bei 18 289 km. Diese Position liegt innerhalb der <strong>Roche-Grenze für Flüssigkeiten</strong> (19 971 km) — des Abstands, innerhalb dessen die Gezeitenkräfte der Erde eine weiche flüssige Kugel zerreißen würden —, aber weit außerhalb der <strong>Roche-Grenze für starre Körper</strong> (10 314 km). Da der Mond seine Abrundung bereits abgeschlossen und eine starre Außenhülle (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>) entwickelt hatte, solange er noch an der Birne hing, bleibt sein Achsenverhältnis höchstens 1,04 (fast eine perfekte Kugel), und er übersteht den Moment unversehrt!</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6 000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9 000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12 000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15 000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18 000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21 000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:ltr;unicode-bidi:embed">Der Mond</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:ltr;unicode-bidi:embed">Erde · 6 701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Starre Roche-Grenze · 10 314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Korotationslinie · 16 399</text><text x="636.0" y="58.0" text-anchor="end" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:ltr;unicode-bidi:embed">Flüssige Roche-Grenze · 19 971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Vorderseite · 14 509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:ltr;unicode-bidi:embed">Rückseite · 18 289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:ltr;unicode-bidi:embed">Abstand vom Erdmittelpunkt (km) · der Mond bei der Freisetzung, Radius 1 890 km</text></svg><figcaption>Der Mond im Moment der Freisetzung auf der Abstandsachse: außerhalb der starren und innerhalb der flüssigen Roche-Grenze, während die Korotationslinie durch ihn hindurchläuft.</figcaption></figure>
+<p>Und schließlich: Warum entfernt er sich sofort, statt zurückzufallen? Weil die Korotationslinie eine <strong>Gezeitenscheide</strong> ist: Ein Körper genau auf der Linie befindet sich im indifferenten Gleichgewicht; ein Körper innerhalb der Linie wird von den Gezeiten nach innen gezogen; ein Körper dagegen, der <strong>knapp jenseits der Linie</strong> freigesetzt wird — mit einem Spielraum von <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> km jenseits der Korotationslinie, wenn bereits etwa 58% des Mondvolumens sie überschritten haben —, wird vom Gezeitenwulst der Erde, die sich schneller dreht als der Mond, nach vorn und nach außen geschoben und beginnt sich schon ab dem allerersten Umlauf zu entfernen!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Die Drehimpulsbilanz des Systems (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>) bleibt zwischen dem Anfangszustand und dem Moment der Freisetzung erhalten und teilt sich zwischen der Erdrotation und der Mondbahn auf:</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>Erhaltung des Drehimpulses</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">Die Korotationslinie im Moment der Freisetzung (<span class="ltr">5,77 h</span>)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mspace width="0.17em"></mspace><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>Im Moment der Trennung hält die Mondbahn <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5,9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> (17% der Bilanz, mit der reduzierten Masse <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span>; oder <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6,0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span> bei Rechnung mit der vollen Masse um den Erdmittelpunkt), und die Erdrotation hält <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2,88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>. Der für die Erde in diesem Moment abgeleitete Trägheitsfaktor beträgt <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span> — eine bemerkenswerte Übereinstimmung mit dem Wert <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> einer Zweischichtenstruktur (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0,55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>):</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Erdrotation · ⁦2,88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:ltr;unicode-bidi:embed">Mondbahn · 17%</text></svg><figcaption>Die Aufteilung der Drehimpulsbilanz im Moment der Freisetzung.</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">Der Trägheitsfaktor der Zweischichtenstruktur</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0,360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">Die Roche-Grenze für starre Körper</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1,26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mspace width="0.17em"></mspace><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: Phobos und Deimos um den Mars</h2>
+<p>Die Vorstellung, dass die Korotationslinie als Gezeiten-„Wasserscheide“ wirkt, ist keine theoretische Hypothese — sie ist in unserem Sonnensystem live zu beobachten, rund um den Planeten <strong>Mars</strong>. Der Mars hat zwei kleine Monde, die ihn auf beiden Seiten des Mars-Korotationsradius (20 428 km) umkreisen:</p>
+<ul class="pts">
+<li class="c"><strong>Deimos (der äußere Mond, 23 463 km):</strong> liegt <em>außerhalb</em> der Korotationslinie des Mars (er umläuft ihn langsamer, als der Mars rotiert). Daher schieben die Gezeiten des Mars ihn nach außen, und er entfernt sich allmählich vom Mars — genau wie unser Mond, der etwa 210 km jenseits der Korotationslinie freigesetzt wurde.</li>
+<li class="a"><strong>Phobos (der innere Mond, etwa 9 376 km):</strong> liegt <em>innerhalb</em> der Korotationslinie (er läuft der Rotation des Mars voraus). Daher bremsen die Gezeiten des Mars ihn und ziehen ihn nach innen, und er stürzt in einigen zehn Millionen Jahren allmählich auf die Marsoberfläche zu.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed">Phobos · 9 376 km · nach innen gezogen</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Korotationslinie des Mars · 20 428 km</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:ltr;unicode-bidi:embed">Deimos · 23 463 km · entfernt sich</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:ltr;unicode-bidi:embed">Mars</text></svg><figcaption>Die Gezeitenscheide um den Mars: Phobos innerhalb der Linie und nach innen gezogen, Deimos außerhalb und sich entfernend.</figcaption></figure>
+<h3 style="margin-top:28px">Der Laborkasten: das Gleichgewicht des Tages, der Drehimpuls und die Roche-Grenzen (Artikel 02, Teil B)</h3>
+<div class="tw"><table class="lt2"><tr><th>Stufe / Parameter</th><th>Länge des Erdtages</th><th>Radius der Korotationslinie</th><th>Bedeutung und Aufteilung der Bilanz</th></tr>
+<tr><td><strong>1. Der Ausgangspunkt</strong></td><td>5,50 Stunden</td><td>15 818 km</td><td>Anfangsbilanz <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3,466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0,397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)</td></tr>
+<tr class="r1"><td><strong>2. Die Birne verlängert sich allein</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>)</td><td>6,44 Stunden (<span class="ltr">+0,94 h</span>)</td><td>17 569 km</td><td>Bremsung durch den Transfer von 15,6%–16,5% des Drehimpulses an das aufsteigende Material</td></tr>
+<tr class="r2"><td><strong>3. Der Kern sinkt</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>)</td><td><span class="ltr">−0,67</span> Stunden</td><td>Nach innen gezogen</td><td>Eine Beschleunigung („die Läuferin zieht die Arme an“), die den größten Teil der Bremsung ausgleicht</td></tr>
+<tr class="hl"><td><strong>4. Der kombinierte Freisetzungszustand</strong></td><td>5,77 Stunden</td><td>16 399 km (16 331 Testteilchen)</td><td>Die Bilanz schließt bei 1,007 × heute (17% in der Bahn, 83% in der Erdrotation)</td></tr>
+<tr><td><strong>5. Freisetzungsspielraum und Roche</strong></td><td>5,77 Stunden</td><td>Freisetzung +210 km jenseits der Linie</td><td>Ein starrer Mond (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>, Achsenverhältnis ≤ 1,04) außerhalb der starren Roche-Grenze (10 314 km)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>Wir haben gezeigt, dass die Mechanik der Natur es zulässt: Die Drehimpulsbilanz schließt sich bis auf 1,007, der Kampf zwischen der Birne und dem sinkenden Kern stabilisiert den Tag bei 5,77 Stunden, und der Mond wird starr und rund jenseits der Korotationslinie freigesetzt und beginnt sofort, sich zu entfernen.</p>
+<p>Doch Artikel 02 hat nur bewiesen, dass der Weg <em>im Prinzip</em> möglich ist. Nun stellt sich die Frage der Umsetzung: <strong>Welcher gewaltige Motor hat Milliarden Tonnen Gestein gegen die Schwerkraft auf eine Höhe von Tausenden Kilometern gedrückt?</strong> Im nächsten Kapitel — <strong>Kapitel 3: Der Motor im Inneren — der Quelldruck von <span class="ltr">150 GPa</span> und das aufgeschäumte Magma</strong> (aus Artikel 03 — <em>LEF Mechanism in Practice</em>) — steigen wir in die Tiefen der frühen Erde hinab und begegnen dem Druck, der den Mond emporhob.</p>
+<a href="story03_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 3</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Der Motor im Inneren — der Quelldruck von <span class="ltr">150 GPa</span> und das aufgeschäumte Magma →</p></div></a>
+<p style="margin-top:22px"><a href="story01_de.html">← Kapitel 1</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kapitel 20: Der Dampfring des Mars, die Entwässerung durch Valles Marineris und der Test der MMX-Mission — Das LEF-Modell</title>
+<meta name="description" content="Kapitel 20 der Geschichte des LEF-Modells: der Dampfring des Mars, die Entwässerung durch Valles Marineris und der Test der MMX-Mission.">
+<meta name="author" content="Zohar Duran"><link rel="canonical" href="https://lef-model.com/story20_de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:left}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:6px 0 0 6px}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:6px 0 0 6px}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:left;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:left;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:left;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:left!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<link rel="alternate" hreflang="he" href="https://lef-model.com/story20_he.html"><link rel="alternate" hreflang="en" href="https://lef-model.com/story20_en.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/story20_de.html">
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span><a href="story20_he.html" hreflang="he">עברית</a> · <a href="story20_en.html" hreflang="en">English</a> · <b>Deutsch</b></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · KAPITEL 20</p>
+<h1>Kapitel 20: Der Dampfring des Mars, die Entwässerung durch Valles Marineris und der Test der MMX-Mission</h1>
+<p>Auf Grundlage von Artikel 10 — Mars: The Protrusion and the Ring (Teile F–O und Anhang B: die Dynamik des Rings, Valles Marineris, die Rillen von Phobos und die Vorhersagen für 2027–2031)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>Das Rätsel: Wie formte ein einziger Ring zwei entgegengesetzte Monde — und welchen Beweis wird die MMX-Mission 2031 bringen?</h2>
+<p>In Kapitel 19 haben wir gesehen, wie Pavonis Mons an der Spitze der spitzen Ausbuchtung von Tharsis (4 450 km über dem Äquator) <strong>Deimos</strong> bei 7,3 Stunden in eine lange elliptische Bahn (10 170–23 990 km, e = 0,41, Neigung ~ 10°) und <strong>Phobos</strong> bei 8,3 Stunden in eine Kreisbahn (e = 0,002) auf der Korotationslinie (9 870 km) entließ. Nun bleiben drei entscheidende abschließende Rätsel:</p>
+<ol class="steps">
+<li><strong>Entgegengesetzte Schicksale im selben Ring (F.1–F.6, G):</strong> Warum wurde Deimos kreisförmig, richtete sich auf den Äquator aus, wurde auf einen Durchmesser von 12,4 km abgetragen und entfernte sich auf 23 463 km, während der schwerere und schnellere Phobos nicht mit der Gezeit nach außen entkam, seine Rillen behielt und heute von 19 100 km auf 9 375 km stürzt?</li>
+<li><strong>Die gewaltige Narbe von Valles Marineris und die Wasserbilanz (H.1–H.6, M):</strong> Welche Rolle spielen das Labyrinth Noctis Labyrinthus, die Schlucht Valles Marineris und die Abflusskanäle nach Chryse — und wo verbirgt sich das Wasser des jungen Mars?</li>
+<li><strong>Die Laborentscheidung der MMX-Mission (Teil III und Anhang B):</strong> Die Mission <strong>MMX</strong> der japanischen Raumfahrtagentur JAXA (Start im Oktober 2026, Landung auf Phobos 2027 und Rückkehr der Proben zur Erde <strong>2031</strong>) wird die Isotope, den Massenmittelpunkt und die Rillen von Phobos messen und eindeutig zwischen dem LEF-Modell und den Einschlags- und Einfangtheorien entscheiden.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>Ein Bild: Schmirgelpapier auf einer kreuzenden Bahn, eine Gegenwind-Leine und die Kugeln in einem Kugellager</h2>
+<p>Vier greifbare Bilder beleuchten die Dynamik des Dampfrings, die Narbe der Entwässerung und die Spuren des Schlots auf Phobos:</p>
+<ul>
+<li><strong>Ein Körper, der einen kreisförmigen Strom wie Schmirgelpapier kreuzt, gegenüber einem Boot, das mit der Strömung fährt (F.2–F.3):</strong> Vor den Auswürfen baute der Mars <strong>einen runden äquatorialen Ring aus Dampf und Staub</strong>, der jenseits der Korotationslinie zu Eiskörnern kondensierte (und jenseits der Roche-Grenze für Eis bei 13 000 km zu Klumpen zusammenwuchs). Deimos, in eine lange elliptische Bahn geworfen (e = 0,41), kreuzte den Ring bei jedem Umlauf mit einer Relativgeschwindigkeit von Hunderten Metern pro Sekunde: Der Ring <strong>trug ihn von 20,7 auf 12,4 km ab</strong> (ein Verlust von 76%–83% seines Volumens), drückte seine Neigung von 10° auf 1,8° und beschleunigte ihn am fernen Ende (wo er sich langsamer als der Ring bewegte), bis er ihn rundete und auf 14 300 km hinausbrachte (und von dort trug ihn die Gezeit des weichen Mars, 8- bis 20-mal stärker als heute, binnen 150–370 Millionen Jahren auf 23 463 km). Phobos dagegen trat sofort mit der Geschwindigkeit des Rings selbst in eine Kreisbahn ein — daher konnte ihn der Ring weder beschleunigen noch abtragen!</li>
+<li><strong>„Die Gasleine“ — ein schwacher Gegenwind im Gleichgewicht mit dem Gezeitenschub (F.4–F.6):</strong> Am inneren Rand des Rings bewegt sich Gas, das teilweise durch seinen eigenen Druck gehalten wird, etwas langsamer als die Bahngeschwindigkeit und erzeugt <strong>einen Gegenwind von ~ 100 m/s</strong>. Bei einer winzigen Gasdichte von <strong>3–8 × 10⁻⁸ kg/m³</strong> (so dünn wie die Erdluft in 115 km Höhe) gleicht der Widerstand des Windes genau die winzige Gezeitenbeschleunigung (~ 10⁻¹¹ m/s²) aus. So diente der innere Rand des Rings als <strong>„Leine“</strong>, die Phobos nahe an der Korotationslinie hielt und ihn langsam mit der Linie nach außen führte, während der Mars langsamer wurde — bis der Dampf versiegte und der Ring <strong>vor 3,5–3,9 Milliarden Jahren</strong> von außen nach innen austrocknete (als Phobos bei ~ 19 100 km stand und sich der Marstag auf ~ 22 Stunden verlängert hatte)!</li>
+<li><strong>Eingeklemmte Felsen wie die Kugeln in einem Kugellager und die Höcker eines Vulkanschlots (K.1–K.3):</strong> Phobos war der zweite, steifere Korken, der unter Druck kräftig durch den engen Schlot von Pavonis (20–23 km breit) gedrückt wurde. Steife Felshöcker in der Schlotwand (wie die festen Lavadorne, die 2004–2006 aus dem Schlot des Mount St. Helens gedrückt wurden) ritzten <strong>die parallelen Rillen</strong> entlang seiner Bewegungsrichtung in Phobos (die sich leicht krümmten, als sich der heiße Körper im All rundete); und Felsen, die im engen Spalt zwischen Korken und Wand eingeklemmt waren, rollten wie <strong>die Kugeln in einem Kugellager</strong> und drückten in die weiche Oberfläche <strong>die Grubenketten</strong> — gleichmäßig verteilt und stets parallel zu den Rillen, ohne sie je zu kreuzen!</li>
+<li><strong>Das Entwässerungssystem eines absinkenden Beckens (H.2–H.4):</strong> Als die Ausbuchtung absank und sich nach Westen legte, floss ihr flüssiger und zähflüssiger Inhalt entlang der Achse der Ausbuchtung nach Osten: vom gebrochenen „Hals“ von <strong>Noctis Labyrinthus</strong> durch die Rinne von <strong>Valles Marineris</strong>, die von West nach Ost um 10 km abfällt (von +4,9 km auf −5,2 km), füllte einen inneren See auf einem gleichmäßigen Niveau von −3 560 m und lief über die Schwelle von Eos Chasma und die Abflusskanäle Simud und Tiu nach Osten auf die Ebene von Chryse!</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>Wissenschaft und Modell: die Entwicklung von Phobos, die Caldera von Pavonis und die Oberflächenaufzeichnungen (Teile F–M)</h2>
+<p>Die Teile F–M von Artikel 10 verbinden jedes Beobachtungsdetail auf dem Mars und seinen beiden Monden zu einer einzigen physikalischen Abfolge:</p>
+<ol class="steps">
+<li><strong>Die Rekonstruktion des Sturzes von Phobos und der Ursprung des Verhältnisses von 3,2 Umläufen pro Tag (G, K.7–K.8):</strong> In dem Moment, in dem der Ring vor 3,9 Ga austrocknete, als Phobos bei 19 100 km stand (eine Umlaufzeit von 22,3 Stunden gegenüber einem Marstag von ~ 22 Stunden — also <strong>genau ein Umlauf pro Tag</strong>), zog die Korotationslinie an ihm vorbei nach außen, und Phobos begann nach innen zu fallen. Da die Gezeitenkraft mit der 5,5. Potenz des Abstands abnimmt, sank er in den ersten 3 Milliarden Jahren nur um 3 800 km (etwa 4 cm pro Jahrhundert), und in den letzten 400 Millionen Jahren stürzte er um mehr als 4 000 km (bis zu 1,8 m pro Jahrhundert heute bei 9 375 km, Umlaufzeit 7,65 Stunden — eine Beschleunigung um das 2,9-Fache, die zusammen mit der Verlangsamung des Mars von 22 auf 24,6 h um das 1,1-Fache genau das Verhältnis 2,9 × 1,1 = 3,2 Umläufe pro Tag ergibt!).</li>
+<li><strong>Die Volumenbilanz der Caldera von Pavonis und die Aufzeichnung von Stickney (I.1–I.3, K.4–K.6):</strong> Die Caldera an der Spitze von Pavonis Mons ist eine einzige zylindrische Grube, rund und steil, 47 km breit und fast 5 km tief (Verhältnis Tiefe/Breite 0,10, die tiefste der vier Tharsis-Vulkane), mit einem Volumen von <strong>8 300–8 700 km³</strong> — passend zum Gesamtvolumen der beiden aus ihr ausgeworfenen Korken (~ 6 740 km³ heute) nach dem Einsturz des Dachs der flachen Kammer. Am stumpfen Ende von Phobos liegt die Mulde von <strong>Stickney</strong> (9 km), die entstand, als das vorauslaufende stumpfe Ende auf das Material in der Mündung des Schlots traf: Eine Messung am Formmodell von Ernst et al. (2023) bei 36 m Auflösung beweist, dass die Rillen auf dem Boden von Stickney <strong>gequetscht und breiter</strong> sind (Schärfe 0,34 gegenüber 0,44 außerhalb — niedriger als 89% von 80 zufälligen Orten auf Phobos), ohne Regolithdecke — die Rillen wurden also im Schlot geritzt, <em>bevor</em> Stickney beim Austritt eingedrückt wurde!</li>
+<li><strong>Die Lösung der doppelten Wasserbilanz des Mars und die Quelle des globalen Staubs (H.5–H.6, M):</strong> Das durch die Korotationslinie in den Ring ausgeworfene Wasser wurde von der Sonnenstrahlung zerlegt und hinterließ eine 6- bis 7-fache Anreicherung von Deuterium in der Atmosphäre (eine globale Schicht von mindestens 137 m, Villanueva et al. 2015), und der zermahlene Staub des Rings setzte sich als der gleichförmige globale Staub des Mars ab; der größte Teil des inneren Wassers des jungen Mars dagegen <strong>verließ ihn nie</strong> und blieb unter derselben undurchlässigen Kruste eingeschlossen — in den Poren der mittleren Kruste in <strong>11,5–20 km</strong> Tiefe, die der Lander InSight entdeckte (Wright et al. 2024, entsprechend einer globalen Schicht von 1–2 km Tiefe)!</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 645.0 190" role="img" aria-label="Moon diameters at release and today" style="direction:ltr"><g transform="translate(5.0,0)"><rect x="160.0" y="16" width="366.4" height="26" rx="4" fill="#9aa3af"/><text x="534.4" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦22,9⁩</text><rect x="160.0" y="56" width="356.8" height="26" rx="4" fill="#1f3a5f"/><text x="524.8" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:ltr;unicode-bidi:embed" >⁦22,3⁩</text><rect x="160.0" y="96" width="331.2" height="26" rx="4" fill="#9aa3af"/><text x="499.2" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#9aa3af" style="direction:ltr;unicode-bidi:embed" >⁦20,7⁩</text><rect x="160.0" y="136" width="198.4" height="26" rx="4" fill="#b23a2e"/><text x="366.4" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:ltr;unicode-bidi:embed" >⁦12,4⁩</text></g><text x="6.0" y="34.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Phobos · beim Auswurf</text><text x="6.0" y="74.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Phobos · heute</text><text x="6.0" y="114.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Deimos · beim Auswurf</text><text x="6.0" y="154.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="500" fill="#1d2430" style="direction:ltr;unicode-bidi:embed" >Deimos · heute</text></svg><figcaption>Der Durchmesser der beiden Monde (km) beim Auswurf und heute: Deimos, der das Herz des Rings durchquerte, verlor etwa 40% seines Durchmessers; Phobos, der am gasförmigen Rand schwebte, veränderte sich kaum.</figcaption></figure></section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>Der Mechanismus in Worten: wie der Ring Phobos auf der Korotationslinie hielt und die beiden Neigungen umkehrte</h2>
+<p>Die Teile F.1–F.6 und G von Artikel 10 zeigen, wie eine einzige physikalische Wechselwirkung — ein äquatorialer Ring aus Dampf und Staub, gespeist vom vom Mars ausgeworfenen Wasser — sowohl die extremen Unterschiede zwischen Phobos und Deimos als auch den genauen Zeitpunkt des Sturzes von Phobos erklärt:</p>
+<ol class="steps">
+<li><strong>Das Kräftegleichgewicht in der inneren „Gasleine“ (§F.4):</strong> Am inneren Rand des Rings, nahe der Korotationslinie, wird das Gas teilweise durch seinen eigenen Druck gehalten und dreht sich daher etwas langsamer als die Kepler-Bahngeschwindigkeit. So trifft Phobos auf <strong>einen schwachen Gegenwind mit einer Relativgeschwindigkeit v ≈ 100 m/s</strong>. Bei einer Gasdichte von <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8 \times 10^{-8}</annotation></semantics></math></span></span> kg/m³</strong> (so dünn wie die Erdatmosphäre in 115 km Höhe) gleicht der Gaswiderstand genau die Gezeitenbeschleunigung aus, die Phobos nach außen schiebt (~ 10⁻¹¹ m/s²). Solange der Mars Dampf ausstieß und langsamer wurde, wanderte die Korotationslinie nach außen und führte Phobos mit sich bis ~ 19 100 km.</li>
+<li><strong>Das Austrocknen des Rings von außen nach innen und das Lösen der Leine (§F.5–F.6):</strong> Der Ring wurde nur von seiner inneren Basis an der Korotationslinie gespeist (während jenseits von 13 000 km, der Roche-Grenze für Eis, das Material zu Klumpen zusammenwuchs, die nicht mehr als Ring wirkten). Als die Kruste des jungen Mars sich versteifte, differenzierte und abkühlte, versiegte der Dampfstrom, und der Ring trocknete <strong>vor 3,5–3,9 Milliarden Jahren</strong> von außen nach innen aus (ein Marstag von ~ 22 Stunden). In diesem Moment zog die Korotationslinie an Phobos vorbei (19 100 km), und Phobos begann nach innen auf seine heutige Bahn (9 375 km) zu fallen. Wäre der Ring früh ausgetrocknet, als er bei 9 900 km stand, wäre er binnen weniger als 100 Millionen Jahren gestürzt und zerbrochen!</li>
+<li><strong>Die Unterschiede im Abtrag und in der Kratertiefe (§J.1–J.2, §L):</strong> Deimos durchquerte das Herz des Rings und die Klumpen jenseits von 13 000 km über Millionen Umläufe und verlor daher 76%–83% seines Volumens (von einem Durchmesser von ~ 20,7 km auf 12,4 km abgetragen), verlor seine ursprünglichen Schlotrillen, und seine Krater sind dreimal flacher als die von Phobos (mediane Tiefe 1,9% der Breite gegenüber 5,5% auf Phobos). Phobos, der sanft am inneren gasförmigen Rand schwebte, verlor nur etwa 1% (eine Schicht von ~ 40 m Dicke) und behielt seine Rillen und Grubenketten.</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>Akademische Erklärung und die Schlüsselgleichungen</h2>
+<p>Das Gleichgewicht zwischen dem Widerstand des Gegenwinds am inneren Rand des Rings und dem Gezeitenschub des jungen Mars sowie die Rate der gezeitenbedingten Änderung der großen Halbachse da/dt werden wie folgt formuliert (§G, Anhang A):</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msub><mi>ρ</mi><mi>g</mi></msub><mi>A</mi><msubsup><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow><mn>2</mn></msubsup><mo>=</mo><msub><mi>F</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow></msub><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>≈</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup><mtext> kg/m³</mtext><mo separator="true">,</mo><mtext>  </mtext><msub><mi>v</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≈</mo><mn>100</mn><mtext> m/s</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F_{\mathrm{drag}} = \dfrac{1}{2}\rho_g A v_{\mathrm{rel}}^2 = F_{\mathrm{tide}} \quad (\rho_g \approx 3\text{–}8\times 10^{-8}\text{ kg/m³}, \; v_{\mathrm{rel}} \approx 100\text{ m/s})</annotation></semantics></math></span></div></div><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>d</mi><mi>a</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mo>±</mo><mn>3</mn><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>k</mi><mn>2</mn></msub><mi>Q</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>m</mi><mi>M</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>R</mi><mi>a</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mn>5</mn></msup><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\dfrac{da}{dt} = \pm 3\left(\dfrac{k_2}{Q}\right)\left(\dfrac{m}{M}\right)\left(\dfrac{R}{a}\right)^5 n a</annotation></semantics></math></span></div></div></div>
+<p>Wobei der Gezeitendissipationskoeffizient heute <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub><mi mathvariant="normal">/</mi><mi>Q</mi><mo>=</mo><mn>1,816</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k_2/Q = 1.816 \times 10^{-3}</annotation></semantics></math></span></span> beträgt (Lainey et al. 2021) und auf dem jungen, heißen und weichen Mars 8- bis 20-mal größer war, stieg Deimos binnen 150–370 Millionen Jahren von 14 300 km bis jenseits der endgültigen Korotationslinie (20 428 km), während Phobos von 19 119 km vor 3,9 Ga auf heute 9 375 km stürzte, mit einer Rate, die sich von 4 cm/Jahrhundert auf 1,8 m/Jahrhundert beschleunigte.</p>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>Die Signatur in der Wirklichkeit: die Matrix fester Vorhersagen für die MMX-Mission (2027–2031)</h2>
+<p>In Teil III und Anhang B stellt Artikel 10 <strong>16 quantitative Widerlegungstests (B1–B16)</strong> für die kommenden Raumfahrtmissionen auf — allen voran die <strong>MMX</strong>-Mission der JAXA (Start im Oktober 2026, Landung auf Phobos 2027 und Rückkehr von ≥ 10 Gramm Regolith zur Erde 2031):</p>
+<ul>
+<li><strong>Der entscheidende isotopische und chemische Test (N.1, B1–B4):</strong> In den Phobosproben, die MMX zurückbringen wird, werden die Isotope von <strong>Sauerstoff (O), Chrom (Cr) und Titan (Ti)</strong> <strong>nur auf der reinen Marslinie</strong> liegen, ohne jeden Anteil eines fremden Impaktors oder Asteroiden; die flüchtigen Isotope von <strong>Zink (Zn) und Kalium (K)</strong> werden keine Verdampfungsverschiebung zeigen (anders als bei einem geschmolzenen Rieseneinschlag); und die Körner werden die Textur <strong>eines abgeschreckten vulkanischen Schaums mit geschlossenen Poren und hydratisierten Mineralen</strong> zeigen (und keine aus Dampf kondensierten Glaskügelchen).</li>
+<li><strong>Der Struktur- und Schweretest von Phobos und Deimos (N.2–N.6, B5–B8):</strong> Das Schwerefeld von Phobos wird <strong>eine Verschiebung des Massenmittelpunkts um 300–500 m zum Mars hin (zum stumpfen Ende)</strong> zeigen; die Rekonstruktion der Form von Phobos zu einem langgestreckten Körper wird die Familien paralleler Rillen gerade richten; und Vorbeiflüge von MMX nahe Deimos werden eine mit Phobos identische Mars-Zusammensetzung bestätigen.</li>
+</ul>
+<h3 style="margin-top:28px">Der Laborkasten: Vergleich von Deimos und Phobos im Ring, die Gezeitenzeitlinie und die Tests der MMX-Mission (Artikel 10, Teile F–O und Anhang B)</h3>
+<div class="tw"><table class="lab">
+<tr><th>Eigenschaft</th><th>Deimos (der erste Auswurf)</th><th>Phobos (der zweite Auswurf)</th></tr>
+<tr class="hl"><td><strong>Zeitpunkt des Auswurfs und Anfangsbahn</strong></td><td>Tag von 7,3 h; eine lange elliptische Bahn (10 170–23 990 km, e = 0,41, Neigung ~ 10°)</td><td>Tag von 8,3 h; direkt in einen Kreis auf der Korotationslinie (9 870 km, e = 0,002)</td></tr>
+<tr><td><strong>Wirkungszone im Ring</strong></td><td>Durchquerte <strong>das ganze Herz des Rings</strong> und die Klumpen jenseits von 13 000 km mit Hunderten m/s</td><td>Schwebte sanft am <strong>inneren gasförmigen Rand</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>g</mi></msub><mo>=</mo><mn>3</mn><mtext>–</mtext><mn>8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_g = 3\text{–}8\times 10^{-8}</annotation></semantics></math></span></span> kg/m³)</td></tr>
+<tr class="hl"><td><strong>Abtrag und Größenänderung</strong></td><td>Von einem Durchmesser von ~ 20,7 km (6,8 × 10¹⁵ kg) auf <strong>12,4 km</strong> abgetragen (verlor 76%–83% seines Volumens)</td><td>Verlor nur ~ 1% (~ 40 m); blieb <strong>22,3 km</strong> groß (1,07 × 10¹⁶ kg)</td></tr>
+<tr><td><strong>Dichte und Oberfläche</strong></td><td><strong>1 471 kg/m³</strong> (schwammiger oberer Korken); glatt und gerundet, ohne Rillen (mediane Muldentiefe 1,9%)</td><td><strong>1 853–1 887 kg/m³</strong> (kompakter zweiter Korken); parallele Rillen, Grubenketten und Stickney (9 km)</td></tr>
+<tr class="hl"><td><strong>Bahn und Schicksal heute</strong></td><td><strong>23 463 km</strong> (e = 0,0003, i ≈ 1,8°, Umlauf 30,3 h) — jenseits der Linie, entfernt sich</td><td><strong>9 375 km</strong> (e = 0,0151, i = 1,09°, Umlauf 7,65 h) — innerhalb der Linie, stürzt (1,8 m/Jahrhundert)</td></tr>
+</table></div>
+<div class="tw"><table class="lab">
+<tr><th>Testcode</th><th>Messung und Mission</th><th>Vorhersage des LEF-Modells (Ausbuchtung und Ring)</th><th>Vorhersage der etablierten Erklärung (Einschlag / Einfang)</th></tr>
+<tr class="hl"><td><strong>B1–B3</strong></td><td>Isotope von O, Cr, Ti, D/H und Zn, K in den MMX-Proben (2031)</td><td><strong>Nur die reine Marslinie</strong>, null fremder Anteil, keine Verdampfungsverschiebung bei Zn, K</td><td>Einschlag: eine Mischung aus Mars + einem fremden Körper (30%–65%) und Verarmung an leichten Isotopen; Einfang: ein Asteroid</td></tr>
+<tr class="hl"><td><strong>B4</strong></td><td>Die Kornstruktur von Phobos (MMX, 2031)</td><td><strong>Ein abgeschreckter vulkanischer Schaum</strong> mit geschlossenen Poren und hydratisierten Mineralen</td><td>Aus Dampf geschmolzene und kondensierte Glaskügelchen</td></tr>
+<tr><td><strong>B5</strong></td><td>Das Schwerefeld von Phobos (MMX, 2027)</td><td><strong>Der Massenmittelpunkt um 300–500 m zum Mars hin verschoben (zum stumpfen Ende)</strong></td><td>Keine Vorhersage einer Verschiebung des Massenmittelpunkts</td></tr>
+<tr><td><strong>B6–B7</strong></td><td>Aufnahmen der Rillen und Grubenketten (MMX, 2027)</td><td>Auf der Westseite konzentriert, in einem langgestreckten Körper gerade gerichtet, <strong>auf dem Boden von Stickney gequetscht</strong>; parallele Ketten, die keine Rillen kreuzen</td><td>Gezeitenspannungen oder Auswurf von Stickney (kein Unterschied in Stickney oder zufälliges Kreuzen)</td></tr>
+<tr><td><strong>B10 / B14</strong></td><td>Schwere unter Pavonis / Seismologie unter Tharsis</td><td><strong>Ein Massendefizit</strong> unter der Caldera von Pavonis; eine mit flüssigem Wasser gesättigte mittlere Kruste unter ganz Tharsis</td><td>Eine gewöhnliche Schildvulkan-Caldera; keine Verbindung zwischen den Monden und dem in der Tiefe eingeschlossenen Wasser</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>Die nächste Tür</h2>
+<p>In den Kapiteln 19–20 haben wir das LEF-Prinzip über das System Erde–Mond hinaus erweitert und gezeigt, wie derselbe physikalische Mechanismus auf dem <strong>Mars</strong> wirkt: Ein junger, ausgedehnter und schneller Planet ließ an seinem Äquator <strong>die spitze Ausbuchtung von Tharsis</strong> wachsen, trug Pavonis Mons in 4 450 km Höhe unter die Bedingungen des Nettogewichts null und entließ mit routinemäßigem vulkanianischem Druck <strong>Deimos</strong> (7,3 h) und <strong>Phobos</strong> (8,3 h) in <strong>den kondensierten Dampfring</strong> — und die MMX-Mission, die 2031 Proben von Phobos zurückbringen wird, wird den entscheidenden Labortest liefern!</p>
+<a href="story21_de.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">Kapitel 21</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">Das Gesetz der Monde im Sonnensystem — das Lineal der Geburtsarten, das Pumpenprinzip und der atmosphärische Deckel →</p></div></a>
+<p style="margin-top:22px"><a href="story19_de.html">← Kapitel 19</a> · <a href="story00_de.html">Prolog</a></p>
+</section>
+</main>
+
+<footer>© 2026 Zohar Duran · Das LEF-Modell · <a href="index.html">lef-model.com</a> · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
