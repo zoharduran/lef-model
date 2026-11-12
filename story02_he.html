@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרק 2: הקרב על אורך היממה ומאזן התנע הזוויתי — מודל LEF</title>
+<meta name="description" content="פרק 2 בסיפור מודל LEF: הקרב בין האגס המאט לליבה המאיצה, יממה של 5.77 שעות ברגע השחרור, תקציב תנע זוויתי שנסגר על 1.007, גבולות רוש וקו פרשת המים הגאותי.">
+<meta name="author" content="זוהר דוראן"><link rel="canonical" href="https://lef-model.com/story02_he.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+.three div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.three b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.three h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.three p{margin:0;font-size:15.5px}
+.three.t div:nth-child(3){border-top-color:#c47f2c}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+td.ok{background:#e8f2ec!important;color:#226044!important;font-weight:700}
+td.ok2{background:#f1f8f3!important;color:#2f7d57!important}
+td.eq0{background:#fff4dc!important;color:#a06514!important;font-weight:700}
+td.bad{background:#fbeceb!important;color:#9a3f33!important;font-weight:700}
+td.bad2{background:#fdf4f2!important;color:#b0544a!important}
+table.d td:first-child{font-family:inherit;width:auto;text-align:right}
+table.d td:nth-child(2),table.d td:nth-child(3),table.d td:nth-child(4),table.d td:nth-child(5){background:#fff;font-weight:400;color:var(--ink)}
+table.d tr.hl td{font-weight:700!important}
+.lt2 td:first-child{font-family:inherit;width:auto;text-align:right}.lt2 td{background:#fff}.lt2 tr.r1 td:nth-child(2){background:#fbeceb;color:#9a3f33}.lt2 tr.r2 td:nth-child(2){background:#e8f2ec;color:#226044}.lt2 tr.hl td{background:#fff4dc!important;font-weight:700}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in"><a href="index.html">THE LEF MODEL</a><span>עברית</span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF MODEL · CHAPTER 2</p>
+<h1>פרק 2: הקרב על אורך היממה ומאזן התנע הזוויתי</h1>
+<p>מבוסס על מאמר 02 — LEF Mechanism in Principle (סעיפים A.4–A.8 ו-Part B)</p>
+</div></header>
+<main>
+
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה: האם הירח בורח מקו הסיום תוך כדי שהוא רץ אליו?</h2>
+<p class="lead">בפרק הקודם גילינו את קו הסיום שאליו החומר צריך להגיע כדי להפוך לירח: <strong>רדיוס הקורוטציה</strong>, שבנקודת הפתיחה (יממה של 5.5 שעות) ניצב במרחק של 15,818 ק"מ ממרכז כדור הארץ. אבל ברגע שהתהליך מתחיל והאגס מתארך כלפי מעלה, מתעוררת מלכודת פיזיקלית מסקרנת.</p>
+<p>חוק שימור התנע הזוויתי קובע שכמות הסיבוב הכוללת של מערכת מבודדת אינה יכולה להיווצר יש מאין. כאשר כדור הארץ מרים מסה גדולה הרחק מן הציר שלו ומאלץ אותה להמשיך להסתובב איתו באותו קצב, המסה המתרוממת "גונבת" תנע זוויתי מסיבוב כדור הארץ. כתוצאה מכך, סיבוב כדור הארץ מואט, היממה מתארכת — <strong>וקו הקורוטציה עצמו נסוג ומתרחק החוצה!</strong></p>
+<p>כאן נולדות שלוש שאלות מכריעות שחורצות את גורלו של המודל כולו:</p>
+<div class="three">
+<div><b>01</b><p><strong>האם התארכות היממה מבריחה את קו הקורוטציה רחוק מדי</strong>, או שמתרחש במקביל תהליך פנימי שמאיץ את הסיבוב ומאזן אותו?</p></div>
+<div><b>02</b><p><strong>האם תקציב התנע הזוויתי הכולל של כדור הארץ הקדום מספיק</strong> כדי לשלם את "המס" של הרמת הירח, ועדיין להשאיר בידינו בדיוק את התנע הזוויתי שנמדד במערכת ארץ-ירח כיום?</p></div>
+<div><b>03</b><p><strong>מה מונע מן הירח הצעיר להיקרע לגזרים</strong> על ידי כוחות הגאות האדירים של כדור הארץ ברגע ההיפרדות?</p></div>
+</div>
+</section>
+
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: המחליקה על הקרח שמותחת זרוע אחת — ומקפלת את השנייה</h2>
+<p>כולנו מכירים את המראה הקלאסי של מחליקה על הקרח שמסתחררת במקום: כשהיא פורשת את זרועותיה לצדדים, הסיבוב שלה מואט מיד; וכשהיא מצמידה את זרועותיה אל הגוף, היא מסתחררת במהירות מסחררת. הסיבה היא שמסה רחוקה מציר הסיבוב מגדילה את מומנט ההתמד, ומסה קרובה לציר מקטינה אותו.</p>
+<p>עכשיו דמיינו תרגיל אקרובטי מיוחד שבו המחליקה עושה <strong>שתי פעולות הפוכות בעת ובעונה אחת</strong>: ביד אחת היא מושיטה החוצה מוט ארוך וכבד ("האגס" שמתארך לעבר קו הקורוטציה ומנסה להאט אותה), ובו-זמנית היא מושכת פנימה אל מרכז גופה משקולת ברזל כבדה שהחזיקה קודם לכן הרחק מן הציר ("הליבה" ששוקעת אל מרכז כדור הארץ ומאיצה אותה).</p>
+<div class="box"><span class="tag">שני כוחות מנוגדים</span><p style="margin:0">בגלל ששני הכוחות המנוגדים הללו פועלים במקביל, המחליקה כמעט אינה מאבדת מקצב הסיבוב שלה! היא מואטת רק במעט, ונשארת יציבה בדיוק בקצב הדרוש להשלמת התרגיל.</p></div>
+</section>
+
+<section>
+<span class="lab">03 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: מדוע "פנימי אחיד" הוא תנאי סף</h2>
+<p>במודלים רבים של התפתחות כדור הארץ נוטים להניח שליבת הברזל הכבדה שלו התגבשה ושקעה אל המרכז במהירות שיא, עוד לפני שנוצר הירח. אולם מאמר 02 מראה שהנחה כזו חוסמת את תקציב התנע הזוויתי: כאשר כל הברזל מרוכז במרכז, מומנט ההתמד של כדור הארץ קטן (מקדם ההתמד יורד מ-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">k = 0.4</annotation></semantics></math></span></span> של כדור אחיד ל-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≈</mo><mn>0.33</mn></mrow><annotation encoding="application/x-tex">k \approx 0.33</annotation></semantics></math></span></span> של כדור הארץ הממוין של ימינו), ובאותה יממה של 5.5 שעות הוא אינו יכול לאגור די תנע זוויתי.</p>
+<p>במודל LEF, לעומת זאת, התארגנות הליבה אינה אירוע חד-פעמי שהסתיים לפני כן, אלא <strong>תהליך מתמשך אחד</strong>:</p>
+<ul class="pts">
+<li><strong>בתחילת העברת המסה:</strong> כדור הארץ הצעיר היה חם, תפוח (התרחבות תרמית של 120 ק"מ, בטווח המותר 98–520 ק"מ) ועדיין כמעט אחיד בהתפלגות המסה שלו (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>). במצב זה הוא אגר תקציב תנע זוויתי התחלתי של <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>.</li>
+<li class="c"><strong>במהלך התרוממות האגס:</strong> הברזל הכבד הלך ושקע פנימה אל המרכז (במודל הדו-שכבתי: יחס רדיוסים <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span> ויחס צפיפויות <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>), וייצר בדיוק את האצת הסיבוב שנדרשה כדי לאזן את התארכות האגס!</li>
+</ul>
+<div class="callout"><span class="tag">המפתח למחיר התנע הזוויתי</span>
+<p style="margin:0">במסלול הביקוע הקלאסי של יעקובי (שבו כדור הארץ מנסה להאיץ את פני השטח שלו עצמו עד לנקודת שבירה, יממה של 2.73 שעות), המערכת זקוקה ל-<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.42</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">9.42\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> — כלומר <strong>פי 2.74</strong> מהתנע הזוויתי של מערכת ארץ-ירח של ימינו (ובנקודת הייחוס המקורית פי 4.08). במודל LEF, שבו החומר מובל אל קו הקורוטציה, התקציב ההתחלתי של גוף האב עומד על <strong>1.007 פעמים</strong> התנע הזוויתי של היום — עודף זעיר של 0.7% בלבד (ובחיבור וקטורי בזוויות שנבדקו: 1.5%–2.5%), שמתאים בדיוק לאובדן המאוחר לגאות השמש!</p></div>
+<div class="vs"><div><b>4.08</b><span>ביקוע קלאסי · נקודת הייחוס המקורית</span></div><div><b>2.74</b><span>ביקוע קלאסי · נקודת הפיצול של יעקובי</span></div><div class="hit"><b>1.007</b><span>מודל LEF · שחרור בקו הקורוטציה</span></div></div>
+</section>
+
+<section>
+<span class="lab">04 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים: הקרב על היממה, גבול רוש וקו פרשת המים</h2>
+<p>בואו נעקוב צעד אחר צעד אחרי התוצאה של הקרב המרתק שמתנהל בתוך כדור הארץ בזמן שהאגס מתרומם:</p>
+<ol class="steps">
+<li><strong>האגס מנסה להאט את כדור הארץ (+0.94 שעות):</strong> העברת המסה החוצה בקורוטציה מעניקה לחומר המתרומם כ-15.6% מתקציב התנע הזוויתי בחישוב הבסיסי (וכ-16.5% בפתרון המצומד). התנע הזה נלקח מסיבוב כדור הארץ. אילו האגס היה פועל לבדו ללא התארגנות הליבה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math></span></span>), היממה הייתה מתארכת מ-5.50 ל-<strong>6.44 שעות</strong> וקו הקורוטציה היה בורח החוצה ל-<strong>17,569 ק"מ</strong>.</li>
+<li><strong>הליבה השוקעת מאיצה את כדור הארץ (−0.67 שעות):</strong> במקביל, הברזל הכבד שוקע אל מרכז כדור הארץ (בתרחיש הדו-שכבתי <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>) ומקצר את היממה ב-<strong>0.67 שעות</strong>.</li>
+<li><strong>נקודת האיזון ברגע השחרור (5.77 שעות ו-16,399 ק"מ):</strong> כששני התהליכים פועלים יחד, ההאצה של הליבה מקזזת את רוב ההאטה של האגס. היממה ברגע ההיפרדות עומדת על <strong>5.77 שעות</strong> בלבד, וקו הקורוטציה מתייצב במרחק של <strong>16,331 ק"מ</strong> (בקירוב חלקיק בוחן) או <strong>16,399 ק"מ</strong> (≃ 16,400 ק"מ) כאשר כוללים את המסה העצמית של הירח בבעיית שני גופים.</li>
+</ol>
+<figure class="fig"><svg viewBox="0 0 640 230" role="img" aria-label="Day length: start, pear slows, core speeds up, release" style="direction:ltr"><line x1="97.5" x2="97.5" y1="14" y2="196" stroke="#ece7da"/><text x="97.5" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.50</text><line x1="169.2" x2="169.2" y1="14" y2="196" stroke="#ece7da"/><text x="169.2" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">5.75</text><line x1="241.0" x2="241.0" y1="14" y2="196" stroke="#ece7da"/><text x="241.0" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.00</text><line x1="312.8" x2="312.8" y1="14" y2="196" stroke="#ece7da"/><text x="312.8" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.25</text><line x1="384.6" x2="384.6" y1="14" y2="196" stroke="#ece7da"/><text x="384.6" y="214" font-size="12" font-family="Heebo" fill="#6b7480" text-anchor="middle">6.50</text><rect x="95.5" y="22" width="6" height="26" rx="2" fill="#1f3a5f"/><text x="104.1" y="40.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#1f3a5f" style="direction:rtl;unicode-bidi:embed">נקודת הפתיחה · ⁦5.50 h⁩</text><line x1="97.5" x2="97.5" y1="48" y2="66" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="97.5" y="66" width="269.9" height="26" rx="4" fill="#b23a2e" opacity=".9"/><text x="374.1" y="84.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed">האגס מאט · ⁦+0.94 h⁩</text><line x1="367.4" x2="367.4" y1="92" y2="110" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="175.0" y="110" width="192.4" height="26" rx="4" fill="#2f7d57" opacity=".9"/><text x="374.1" y="128.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed">הליבה מאיצה · ⁦−0.67 h⁩</text><line x1="175.0" x2="175.0" y1="136" y2="154" stroke="#9aa3af" stroke-dasharray="3 3"/><rect x="173.0" y="154" width="6" height="26" rx="2" fill="#c47f2c"/><text x="181.7" y="172.0" text-anchor="end" font-family="Heebo" font-size="13" font-weight="700" fill="#c47f2c" style="direction:rtl;unicode-bidi:embed">רגע השחרור · ⁦5.77 h⁩</text><text x="226.7" y="228.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed">אורך היממה (שעות)</text></svg><figcaption>הקרב על אורך היממה: האגס לבדו היה מאריך אותה ל-6.44 שעות; הליבה השוקעת מחזירה 0.67 שעות, והיממה ברגע השחרור היא 5.77 שעות.</figcaption></figure>
+<div class="q">איך הירח שורד את גבול רוש ומתחיל להתרחק מיד?</div>
+<p>ברגע השחרור, הירח הוא גוף עגול וקשיח (רדיוסו <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>m</mi></msub><mo>=</mo><mn>1</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>890</mn></mrow><annotation encoding="application/x-tex">R_m = 1{,}890</annotation></semantics></math></span></span> ק"מ בצפיפות 2,600 ק"ג/מ³): צדו הקרוב ניצב במרחק 14,509 ק"מ ממרכז כדור הארץ (כ-7,800 ק"מ מעל פני כדור הארץ הפחוס, שרדיוסו המשווני 6,701 ק"מ), וצדו הרחוק במרחק 18,289 ק"מ. המיקום הזה נמצא בתוך <strong>גבול רוש הנוזלי</strong> (19,971 ק"מ) — המרחק שבתוכו כוחות הגאות של כדור הארץ היו קורעים לגזרים כדור נוזלי רך — אך הרחק מחוץ ל<strong>גבול רוש הקשיח</strong> (10,314 ק"מ). מכיוון שהירח כבר השלים את ההתעגלות שלו ופיתח קליפה חיצונית קשיחה (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>) עוד בהיותו מחובר לאגס, יחס הצירים שלו נשמר על לכל היותר 1.04 (כמעט כדור מושלם) והוא שורד בשלמותו!</p>
+<figure class="fig"><svg viewBox="0 0 640 210" role="img" aria-label="Moon at release between the rigid and fluid Roche limits" style="direction:ltr"><rect x="196.8" y="70" width="373.4" height="44" fill="#fff4dc"/><rect x="30" y="70" width="166.8" height="44" fill="#fbeceb"/><rect x="30" y="70" width="27.1" height="44" fill="#c4623a"/><line x1="30" x2="610" y1="114" y2="114" stroke="#5b6676"/><line x1="30.0" x2="30.0" y1="114" y2="119" stroke="#5b6676"/><text x="30.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">6,000</text><line x1="146.0" x2="146.0" y1="114" y2="119" stroke="#5b6676"/><text x="146.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">9,000</text><line x1="262.0" x2="262.0" y1="114" y2="119" stroke="#5b6676"/><text x="262.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">12,000</text><line x1="378.0" x2="378.0" y1="114" y2="119" stroke="#5b6676"/><text x="378.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">15,000</text><line x1="494.0" x2="494.0" y1="114" y2="119" stroke="#5b6676"/><text x="494.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">18,000</text><line x1="610.0" x2="610.0" y1="114" y2="119" stroke="#5b6676"/><text x="610.0" y="133" font-size="11" font-family="Heebo" fill="#6b7480" text-anchor="middle">21,000</text><rect x="359.0" y="76" width="146.2" height="32" rx="16" fill="#d9d2bf" stroke="#8a846f"/><text x="462.1" y="97" font-family="Heebo" font-size="12" font-weight="700" fill="#4a4636" text-anchor="middle" style="direction:rtl;unicode-bidi:embed">הירח</text><line x1="432.1" x2="432.1" y1="40" y2="150" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><text x="63.1" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#9b3d22" style="direction:rtl;unicode-bidi:embed">כדור הארץ · 6,701</text><line x1="57.1" x2="57.1" y1="64" y2="114" stroke="#9b3d22" stroke-width="2"/><text x="196.8" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed">גבול רוש הקשיח · 10,314</text><line x1="196.8" x2="196.8" y1="64" y2="114" stroke="#b23a2e" stroke-width="2"/><text x="432.1" y="32.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed">קו הקורוטציה · 16,399</text><text x="570.2" y="58.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#a06514" style="direction:rtl;unicode-bidi:embed">גבול רוש הנוזלי · 19,971</text><line x1="570.2" x2="570.2" y1="64" y2="114" stroke="#a06514" stroke-width="2"/><text x="359.0" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:rtl;unicode-bidi:embed">צד קרוב · 14,509</text><line x1="359.0" x2="359.0" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="505.2" y="168.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#5b6676" style="direction:rtl;unicode-bidi:embed">צד רחוק · 18,289</text><line x1="505.2" x2="505.2" y1="118" y2="154" stroke="#9aa3af" stroke-dasharray="2 3"/><text x="320.0" y="198.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="400" fill="#6b7480" style="direction:rtl;unicode-bidi:embed">מרחק ממרכז כדור הארץ (ק"מ) · הירח ברגע השחרור, רדיוס 1,890 ק"מ</text></svg><figcaption>הירח ברגע השחרור על ציר המרחק: מחוץ לגבול רוש הקשיח ובתוך גבול רוש הנוזלי, כשקו הקורוטציה עובר דרכו.</figcaption></figure>
+<p>ולבסוף, מדוע הוא מתרחק מיד ולא נופל חזרה? משום שקו הקורוטציה הוא <strong>קו פרשת מים גאותי</strong>: גוף שנמצא בדיוק על הקו שרוי בשיווי משקל ניטרלי; גוף שנמצא בתוך הקו נגרר פנימה על ידי הגאות; ואילו גוף שמשתחרר <strong>מעט מעבר לקו</strong> — במרווח של <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>r</mi><mo>≃</mo><mn>2</mn><msub><mi>d</mi><mn>0</mn></msub><mo>≈</mo><mn>210</mn></mrow><annotation encoding="application/x-tex">\Delta r \simeq 2d_0 \approx 210</annotation></semantics></math></span></span> ק"מ מעבר לקו הקורוטציה, כאשר כ-58% מנפח הירח כבר חצו אותו — נדחף קדימה והחוצה על ידי בליטת הגאות של כדור הארץ המסתובב מהר יותר ממנו, ומתחיל להתרחק מן ההקפה הראשונה!</p>
+</section>
+
+<section>
+<span class="lab">05 · THE KEY EQUATIONS</span>
+<h2>הסבר אקדמי ונוסחאות המפתח</h2>
+<p>תקציב התנע הזוויתי של המערכת (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">L_0</annotation></semantics></math></span></span>) נשמר בין המצב ההתחלתי לבין רגע השחרור, ומתחלק בין סיבוב כדור הארץ לבין מסלול הירח:</p>
+<div class="eqs">
+<div class="eq key"><div class="k"><strong>שימור התנע הזוויתי</strong></div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><msub><mi>ω</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>=</mo><msub><mi>I</mi><mo>⊕</mo></msub><mi mathvariant="normal">Ω</mi><mo>+</mo><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub><mi mathvariant="normal">Ω</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L_0 = I_0\omega_0 \simeq 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}} = I_\oplus\Omega + \mu_{\mathrm{red}}\Omega r^{2}</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">קו הקורוטציה ברגע השחרור (<span class="ltr">5.77 h</span>)</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>R</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">y</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>G</mi><mo stretchy="false">(</mo><msub><mi>M</mi><mo>⊕</mo></msub><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>16</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>399</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">r = R_{\mathrm{sync}} = \left(\dfrac{G(M_\oplus + m)}{\Omega^{2}}\right)^{1/3} \simeq 16{,}399\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+<p>ברגע ההיפרדות, מסלול הירח מחזיק <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">5.9\times10^{33}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong> (17% מן התקציב, עם המסה המצומצמת <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{red}}</annotation></semantics></math></span></span>; או <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>33</mn></msup></mrow><annotation encoding="application/x-tex">6.0\times10^{33}</annotation></semantics></math></span></span> בחישוב המסה המלאה סביב מרכז כדור הארץ), וסיבוב כדור הארץ מחזיק <strong><span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.88</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">2.88\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span></strong>. מקדם מומנט ההתמד הנגזר עבור כדור הארץ ברגע זה הוא <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.355</mn></mrow><annotation encoding="application/x-tex">k = 0.355</annotation></semantics></math></span></span> — התאמה מרשימה לערך <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = 0.360</annotation></semantics></math></span></span> של מבנה דו-שכבתי (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.55</mn></mrow><annotation encoding="application/x-tex">q = 0.55</annotation></semantics></math></span></span>, <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D = 2</annotation></semantics></math></span></span>):</p>
+<figure class="fig"><svg viewBox="0 0 640 70" role="img" aria-label="Angular momentum split at release" style="direction:ltr"><rect x="20" y="14" width="498.0" height="34" rx="4" fill="#1f3a5f"/><rect x="518.0" y="14" width="102.0" height="34" rx="4" fill="#c47f2c"/><text x="508.0" y="36.0" text-anchor="start" font-family="Heebo" font-size="13" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed">סיבוב כדור הארץ · ⁦2.88×10³⁴⁩ · 83%</text><text x="569.0" y="36.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#fff" style="direction:rtl;unicode-bidi:embed">מסלול הירח · 17%</text></svg><figcaption>חלוקת תקציב התנע הזוויתי ברגע השחרור.</figcaption></figure>
+<div class="eqs">
+<div class="eq"><div class="k">מקדם ההתמד הדו-שכבתי</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>2</mn><mn>5</mn></mfrac></mstyle><mtext> </mtext><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>5</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>5</mn></msup></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><msup><mi>q</mi><mn>3</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">k = \dfrac{2}{5}\,\dfrac{(1-q^{5}) + Dq^{5}}{(1-q^{3}) + Dq^{3}} = 0.360</annotation></semantics></math></span></div></div>
+<div class="eq"><div class="k">גבול רוש הקשיח</div><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>=</mo><mn>1.26</mn><mtext> </mtext><msub><mi>R</mi><mo>⊕</mo></msub><msup><mrow><mo fence="true">(</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>ρ</mi><mo>⊕</mo></msub><mi>ρ</mi></mfrac></mstyle><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>10</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>314</mn><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">d_{\mathrm{rigid}} = 1.26\,R_\oplus \left(\dfrac{\rho_\oplus}{\rho}\right)^{1/3} \simeq 10{,}314\ \mathrm{km}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+
+<section>
+<span class="lab">06 · THE SIGNATURE</span>
+<h2>החתימה במציאות: פובוס ודיימוס סביב מאדים</h2>
+<p>הרעיון שקו הקורוטציה משמש "קו פרשת מים" גאותי אינו השערה תיאורטית — הוא מתועד בשידור חי במערכת השמש שלנו, סביב כוכב הלכת <strong>מאדים</strong>. למאדים יש שני ירחים קטנים המקיפים אותו משני עבריו של רדיוס הקורוטציה המאדימי (20,428 ק"מ):</p>
+<ul class="pts">
+<li class="c"><strong>דיימוס (הירח החיצוני, 23,463 ק"מ):</strong> נמצא <em>מחוץ</em> לקו הקורוטציה של מאדים (מסתובב לאט יותר מקצב הסיבוב של מאדים). לכן הגאות של מאדים דוחפת אותו החוצה, והוא מתרחק ממאדים בהדרגה — בדיוק כמו הירח שלנו שהשתחרר כ-210 ק"מ מעבר לקו הקורוטציה.</li>
+<li class="a"><strong>פובוס (הירח הפנימי, כ-9,376 ק"מ):</strong> נמצא <em>בתוך</em> קו הקורוטציה (מקדים את סיבוב מאדים). לכן הגאות של מאדים בולמת אותו ומושכת אותו פנימה, והוא צונח בהדרגה לעבר התרסקות על פני מאדים בעוד עשרות מיליוני שנים.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 640 170" role="img" aria-label="Phobos inside and Deimos outside the Martian corotation radius" style="direction:ltr"><rect x="30" y="40" width="455.7" height="60" fill="#fbeceb"/><rect x="485.7" y="40" width="124.3" height="60" fill="#e8f2ec"/><defs><clipPath id="band"><rect x="30" y="40" width="580" height="60"/></clipPath></defs><circle cx="30" cy="70" r="75.6" fill="#c1440e" clip-path="url(#band)"/><line x1="485.7" x2="485.7" y1="26" y2="112" stroke="#2f7d57" stroke-width="2" stroke-dasharray="6 4"/><circle cx="239.2" cy="70" r="7" fill="#7a6a5a"/><circle cx="553.4" cy="70" r="5" fill="#7a6a5a"/><path d="M227.2,70 l-26,0" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#mi)"/><path d="M563.4,70 l22,0" stroke="#2f7d57" stroke-width="2.5" marker-end="url(#mo)"/><defs><marker id="mi" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23a2e"/></marker><marker id="mo" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d57"/></marker></defs><text x="239.2" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#b23a2e" style="direction:rtl;unicode-bidi:embed">פובוס · 9,376 ק"מ · נמשך פנימה</text><text x="485.7" y="20.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed">קו הקורוטציה של מאדים · 20,428 ק"מ</text><text x="533.4" y="128.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#2f7d57" style="direction:rtl;unicode-bidi:embed">דיימוס · 23,463 ק"מ · מתרחק</text><text x="63.5" y="150.0" text-anchor="middle" font-family="Heebo" font-size="12" font-weight="700" fill="#c1440e" style="direction:rtl;unicode-bidi:embed">מאדים</text></svg><figcaption>קו פרשת המים הגאותי סביב מאדים: פובוס בתוך הקו ונמשך פנימה, דיימוס מחוץ לו ומתרחק.</figcaption></figure>
+<h3 style="margin-top:28px">ריבוע המעבדה: מאזן היממה, התנע הזוויתי וגבולות רוש (מאמר 02, חלק B)</h3>
+<div class="tw"><table class="lt2"><tr><th>שלב / פרמטר</th><th>אורך יממת כדור הארץ</th><th>רדיוס קו הקורוטציה</th><th>משמעות וחלוקת התקציב</th></tr>
+<tr><td><strong>1. נקודת הפתיחה</strong></td><td>5.50 שעות</td><td>15,818 ק"מ</td><td>תקציב התחלתי <span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mrow><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mtext> </mtext><msup><mi mathvariant="normal">m</mi><mn>2</mn></msup><mtext> </mtext><msup><mi mathvariant="normal">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">L_0 = 3.466\times10^{34}\ \mathrm{kg\,m^2\,s^{-1}}</annotation></semantics></math></span></span> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≳</mo><mn>0.397</mn></mrow><annotation encoding="application/x-tex">k \gtrsim 0.397</annotation></semantics></math></span></span>)</td></tr>
+<tr class="r1"><td><strong>2. האגס מתארך לבדו</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math></span></span>)</td><td>6.44 שעות (<span class="ltr">+0.94 h</span>)</td><td>17,569 ק"מ</td><td>האטה עקב העברת 15.6%–16.5% מהתנע לחומר המתרומם</td></tr>
+<tr class="r2"><td><strong>3. הליבה שוקעת</strong> (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math></span></span>)</td><td><span class="ltr">−0.67</span> שעות</td><td>נמשך פנימה</td><td>האצה ("מחליקה המצמידה זרועות") המקזזת את רוב ההאטה</td></tr>
+<tr class="hl"><td><strong>4. מצב השחרור המשולב</strong></td><td>5.77 שעות</td><td>16,399 ק"מ (16,331 בוחן)</td><td>תקציב נסגר על 1.007 × היום (17% במסלול, 83% בסיבוב הארץ)</td></tr>
+<tr><td><strong>5. מרווח השחרור ורוש</strong></td><td>5.77 שעות</td><td>שחרור ב-+210 ק"מ מעבר לקו</td><td>ירח קשיח (<span class="ltr"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≥</mo><mn>10</mn><mtext> </mtext><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mu \ge 10\ \mathrm{GPa}</annotation></semantics></math></span></span>, יחס צירים ≤ 1.04) מחוץ לגבול רוש הקשיח (10,314 ק"מ)</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">07 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הוכחנו שהמכניקה של הטבע מאפשרת זאת: תקציב התנע הזוויתי נסגר בדיוק של 1.007, הקרב בין האגס לליבה השוקעת מייצב את היממה על 5.77 שעות, והירח משתחרר קשיח ועגול מעבר לקו הקורוטציה ומתחיל להתרחק מיד.</p>
+<p>אבל מאמר 02 הוכיח רק שהמסלול אפשרי <em>באופן עקרוני</em>. כעת עולה שאלת הביצוע: <strong>איזה מנוע אדיר דחף מיליארדי טונות של סלע לגובה של אלפי קילומטרים נגד כוח הכבידה?</strong> בפרק הבא — <strong>פרק 3: המנוע מבפנים — לחץ המקור של <span class="ltr">150 GPa</span> והמגמה המוקצפת</strong> (מתוך מאמר 03 — <em>LEF Mechanism in Practice</em>) — נרד לעומק כדור הארץ הקדום ונפגוש את הלחץ שהרים את הירח.</p>
+<a href="story03_he.html" style="text-decoration:none;display:block"><div class="box next"><span class="tag">פרק 3</span><p style="margin:0;font-family:'Frank Ruhl Libre',serif;font-size:20px;color:var(--navy)">המנוע מבפנים — לחץ המקור של <span class="ltr">150 GPa</span> והמגמה המוקצפת ←</p></div></a>
+<p style="margin-top:22px"><a href="story01_he.html">→ פרק 1</a> · <a href="story00_he.html">פתח דבר</a></p>
+</section>
+</main>
+<footer>© 2026 זוהר דוראן · מודל LEF · <a href="index.html" class="ltr">lef-model.com</a> · ORCID <a class="ltr" href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a></footer>
+</body></html>
