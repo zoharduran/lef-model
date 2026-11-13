@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LEF 메커니즘의 원리 — 조하르 두란 · LEF</title>
+<meta name="description" content="공회전과 각운동량">
+<link rel="canonical" href="https://lef-model.com/paper02-ko.html">
+<style>
+:root{--ink:#1d2430;--muted:#5b6472;--navy:#2a3e5c;--red:#9e2c20;--cream:#f6f4ee;--line:#d9d5ca;--bg:#ffffff;--card:#fbfaf6}
+@media (prefers-color-scheme:dark){:root{--ink:#e7e4dc;--muted:#a9a397;--navy:#9db4d8;--red:#e08a7e;--cream:#23262c;--line:#3a3d44;--bg:#181a1f;--card:#1f2228}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 Arial,"Liberation Sans",Helvetica,"Noto Sans","Noto Sans Hebrew","Noto Sans CJK SC","Noto Sans Devanagari",sans-serif}
+a{color:var(--navy)}a:hover{color:var(--red)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header.site{border-bottom:1px solid var(--line);background:var(--cream)}
+header.site .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:14px 16px}
+.brand{font:600 13px/1.2 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--red);text-decoration:none}
+nav a{font:14px/1.2 system-ui,sans-serif;margin-left:16px;text-decoration:none;color:var(--muted)}
+h1{font-size:30px;line-height:1.25;margin:34px 0 6px}
+h2{font-size:21px;margin:34px 0 10px}
+.sub{font-style:italic;color:var(--muted);font-size:19px;margin:0 0 18px}
+.meta{font:14px/1.5 system-ui,sans-serif;color:var(--muted)}
+.tag{font:600 12px/1 ui-monospace,Menlo,monospace;color:var(--red);letter-spacing:.06em}
+.box{background:var(--cream);border-left:3px solid var(--navy);padding:14px 18px;margin:18px 0}
+.papers{list-style:none;padding:0;margin:0}
+.papers li{border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:44px 1fr;gap:10px}
+.num{font:600 15px/1.6 ui-monospace,Menlo,monospace;color:var(--red)}
+.papers .t{font-size:19px;font-weight:600;text-decoration:none}
+.papers .s{color:var(--muted);font-size:15px;margin-top:2px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.btn{font:14px/1 system-ui,sans-serif;padding:9px 13px;border:1px solid var(--navy);border-radius:4px;text-decoration:none;color:var(--navy);background:var(--bg)}
+.btn.primary{background:var(--navy);color:var(--bg)}
+.fmt{display:grid;grid-template-columns:52px repeat(10,auto);gap:8px 6px;align-items:center;justify-content:start;margin:16px 0 6px;overflow-x:auto;padding-bottom:4px}
+.fmt .fl{font:600 13px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--red);letter-spacing:.04em}
+.fmt .btn{padding:8px 9px;font-size:13.5px;text-align:center;white-space:nowrap}
+.fmt .na{display:block}
+.kw{font:14px/1.6 system-ui,sans-serif;color:var(--muted)}
+pre.cite{white-space:pre-wrap;font:13px/1.5 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);padding:12px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:18px 0 30px;font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media (max-width:560px){h1{font-size:25px}nav a{margin-left:10px}.papers li{grid-template-columns:34px 1fr}}
+</style><style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style><link rel="alternate" hreflang="en" href="https://lef-model.com/paper02.html"><link rel="alternate" hreflang="he" href="https://lef-model.com/paper02-he.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/paper02-ru.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/paper02-de.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/paper02-ja.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/paper02-zh.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/paper02-ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/paper02-hi.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/paper02-es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/paper02-fr.html"><link rel="alternate" hreflang="x-default" href="https://lef-model.com/paper02.html"><style id="aboutnav">
+header.site nav a.about{display:inline-block;padding:6px 14px;border:1.5px solid var(--navy);border-radius:8px;color:var(--navy);font-weight:600}
+header.site nav a.about:hover,header.site nav a.about.on{background:var(--navy);color:var(--bg)}
+.ab{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start;margin-top:30px}
+.ab img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.facts{list-style:none;padding:0;margin:14px 0 0;font:15px/1.9 system-ui,sans-serif}
+.facts b{display:inline-block;min-width:92px;color:var(--muted);font-weight:600}
+@media (max-width:620px){.ab{grid-template-columns:1fr}.ab img{max-width:240px}}
+</style><style id="langbar">
+.lbar{background:var(--navy);color:#fff}
+.lbar .wrap{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;padding:7px 16px;font:14px/1.3 system-ui,sans-serif}
+.lbar .lb{font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;opacity:.75;margin-inline-end:6px}
+.lbar a,.lbar b{padding:4px 9px;border-radius:6px;color:#fff;text-decoration:none}
+.lbar a:hover{background:rgba(255,255,255,.18);color:#fff}
+.lbar b{background:#fff;color:var(--navy)}
+@media (prefers-color-scheme:dark){.lbar{background:#2a3e5c}.lbar b{color:#2a3e5c}}
+[dir=rtl] nav a{margin-left:0;margin-right:16px}
+[dir=rtl] .box{border-left:0;border-right:3px solid var(--navy)}
+.fmt .btn.cur{background:var(--navy);color:var(--bg)}
+.lead2{font-size:17px}
+:is([lang=he],[lang=ja],[lang=zh],[lang=ko],[lang=hi]) :is(.brand,.tag){font-family:system-ui,Arial,sans-serif;letter-spacing:0}
+</style><script id="langmem">(function(){try{var k='lef_lang',L=document.documentElement.lang||'en',s=localStorage.getItem(k),p=location.pathname;
+if(L==='en'&&/(^|\/)(index\.html)?$/.test(p)&&s&&s!=='en'&&/^(he|ru|de|ja|zh|ko|hi|es|fr)$/.test(s)){location.replace('index-'+s+'.html');return;}
+localStorage.setItem(k,L);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a){try{localStorage.setItem(k,a.getAttribute('hreflang'))}catch(x){}}});}catch(e){}})();</script><!-- gw --></head>
+<body><header class="site"><div class="wrap"><a class="brand" href="index.html">LEF 모델 · 달의 융기와 분열</a>
+<nav><a href="index-ko.html#papers">논문</a><a href="index-ko.html#story">이야기</a><a class="about" href="about-ko.html">저자 소개</a></nav></div></header>
+<div class="lbar"><div class="wrap"><span class="lb">🌐 언어</span><a href="paper02.html" hreflang="en" lang="en">English</a><a href="paper02-he.html" hreflang="he" lang="he">עברית</a><a href="paper02-ru.html" hreflang="ru" lang="ru">Русский</a><a href="paper02-de.html" hreflang="de" lang="de">Deutsch</a><a href="paper02-ja.html" hreflang="ja" lang="ja">日本語</a><a href="paper02-zh.html" hreflang="zh" lang="zh">中文</a><b lang="ko">한국어</b><a href="paper02-hi.html" hreflang="hi" lang="hi">हिन्दी</a><a href="paper02-es.html" hreflang="es" lang="es">Español</a><a href="paper02-fr.html" hreflang="fr" lang="fr">Français</a></div></div>
+<main class="wrap"><p class="tag" style="margin-top:30px">LEF 시리즈 논문 2</p>
+<h1>LEF 메커니즘의 원리</h1><p class="sub">공회전과 각운동량</p>
+<p class="meta">조하르 두란 · ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a> · 2026년 10월 15일</p>
+<div class="fmt"><span class="fl">HTML:</span><a class="btn" href="paper02_en.html" hreflang="en">English</a><a class="btn" href="paper02_he.html" hreflang="he">עברית</a><a class="btn" href="paper02_ru.html" hreflang="ru">Русский</a><a class="btn" href="paper02_de.html" hreflang="de">Deutsch</a><a class="btn" href="paper02_ja.html" hreflang="ja">日本語</a><a class="btn" href="paper02_zh.html" hreflang="zh">中文</a><a class="btn cur" href="paper02_ko.html" hreflang="ko">한국어</a><a class="btn" href="paper02_hi.html" hreflang="hi">हिन्दी</a><a class="btn" href="paper02_es.html" hreflang="es">Español</a><a class="btn" href="paper02_fr.html" hreflang="fr">Français</a><span class="fl">PDF:</span><a class="btn" href="LEF_paper02_EN.pdf">English</a><a class="btn" href="LEF_paper02_HE.pdf">עברית</a><a class="btn" href="LEF_paper02_RU.pdf">Русский</a><a class="btn" href="LEF_paper02_DE.pdf">Deutsch</a><a class="btn" href="LEF_paper02_JA.pdf">日本語</a><a class="btn" href="LEF_paper02_ZH.pdf">中文</a><a class="btn cur" href="LEF_paper02_KO.pdf">한국어</a><a class="btn" href="LEF_paper02_HI.pdf">हिन्दी</a><a class="btn" href="LEF_paper02_ES.pdf">Español</a><a class="btn" href="LEF_paper02_FR.pdf">Français</a></div><div class="btns"><a class="btn" href="LEF_code_and_data.zip">코드와 데이터</a></div>
+<h2>초록</h2><p class="lead2">달의 저장소가 분리되기 전에는 달 물질의 질량 전체가 모천체의 질량 안에 포함된다. 이동과 함께 같은 질량이 모천체에서 빠지고 전부 두 번째 천체에 배정된다. 전체 초기 질량과 기준 계산에 쓰는 질량을 구분함으로써 이중 계산과 상태의 혼동을 막는다.</p><p class="lead2">실제로 달의 질량 7.35×1022 kg은 한 번만 계산된다. 이동 전에는 모천체의 질량 6.0455×1024 kg 안에 포함되고, 이동 후에는 달이 되며, 지구에는 최종 질량 5.972×1024 kg이 남고 계에서 잃는 질량은 없다.</p><p class="lead2">착상. 자전하는 행성의 일부이거나 아직 행성에 붙어 있는 물질은 행성과 함께 돈다. 즉 행성의 하루마다 한 바퀴를 돈다. 이것이 공회전이다. 그러한 물질의 접선 속도는 자전 각속도와 중심으로부터의 거리의 곱이므로, 멀수록 커진다. 자유 원궤도에 필요한 속도는 그 반대로, 거리에 따라 줄어든다. 두 속도가 같아지는 지점이 공회전 반지름이다. 모천체와 함께 돌면서 그 거리까지 운반되어 그곳에서 방출된 물질은 이미 궤도 속도로 움직이고 있으므로, 그것을 던져 줄 메커니즘은 필요하지 않다.</p><p class="lead2">질문. 이 논문은 공회전을 유지하면서 지구형 모천체로부터 달 물질을 바깥쪽으로 이동시키는 것이, 궤도 속도와 각운동량 수지가 현재의 지구–달 계와 근사적으로 일치하는 상태에 이를 수 있는지를 검토한다. (각운동량은 계가 지닌 회전의 양이다. 내부 과정은 그것을 한 부분에서 다른 부분으로 넘겨줄 수 있을 뿐이며, 태양의 조석과 같은 외부의 힘만이 그것을 계 밖으로 가져갈 수 있다.) 핵심 구분은 방출 시점에 필요한 속도와, 그 상태에 도달하는 데 필요한 역학적 능력 및 각운동량 수지 사이의 구분이다. 중심력장 모델에서 공회전 반지름은 회전 속도와 궤도 속도를 같게 놓는 데서 정해진다. 초기 자전 주기 5.5시간에 대한 기준값은 공회전 반지름 15,818 km와 궤도 속도 5,020 m/s이다.</p><p><a class="btn primary" href="paper02_ko.html" hreflang="ko">논문 전문 읽기 →</a></p>
+<p class="meta"><a href="index-ko.html#papers">← 모든 논문</a></p></main>
+<footer class="wrap">© 2026 Zohar Duran. 논문은 크리에이티브 커먼즈 저작자표시 4.0 라이선스(CC BY 4.0)로 공개됩니다. ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a>.</footer>
+</body></html>

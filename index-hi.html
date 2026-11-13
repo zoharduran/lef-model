@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>चंद्रमा की उत्पत्ति का LEF मॉडल — ज़ोहर दुरान</title>
+<meta name="description" content="Lunar Elevation and Fission (उत्थान और विखंडन): चंद्रमा पृथ्वी से जुड़े रहते हुए पृथ्वी से बना, और सह-घूर्णन त्रिज्या पर मुक्त हुआ">
+<link rel="canonical" href="https://lef-model.com/index-hi.html">
+<style>
+:root{--ink:#1d2430;--muted:#5b6472;--navy:#2a3e5c;--red:#9e2c20;--cream:#f6f4ee;--line:#d9d5ca;--bg:#ffffff;--card:#fbfaf6}
+@media (prefers-color-scheme:dark){:root{--ink:#e7e4dc;--muted:#a9a397;--navy:#9db4d8;--red:#e08a7e;--cream:#23262c;--line:#3a3d44;--bg:#181a1f;--card:#1f2228}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 Arial,"Liberation Sans",Helvetica,"Noto Sans","Noto Sans Hebrew","Noto Sans CJK SC","Noto Sans Devanagari",sans-serif}
+a{color:var(--navy)}a:hover{color:var(--red)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header.site{border-bottom:1px solid var(--line);background:var(--cream)}
+header.site .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:14px 16px}
+.brand{font:600 13px/1.2 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--red);text-decoration:none}
+nav a{font:14px/1.2 system-ui,sans-serif;margin-left:16px;text-decoration:none;color:var(--muted)}
+h1{font-size:30px;line-height:1.25;margin:34px 0 6px}
+h2{font-size:21px;margin:34px 0 10px}
+.sub{font-style:italic;color:var(--muted);font-size:19px;margin:0 0 18px}
+.meta{font:14px/1.5 system-ui,sans-serif;color:var(--muted)}
+.tag{font:600 12px/1 ui-monospace,Menlo,monospace;color:var(--red);letter-spacing:.06em}
+.box{background:var(--cream);border-left:3px solid var(--navy);padding:14px 18px;margin:18px 0}
+.papers{list-style:none;padding:0;margin:0}
+.papers li{border-top:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:44px 1fr;gap:10px}
+.num{font:600 15px/1.6 ui-monospace,Menlo,monospace;color:var(--red)}
+.papers .t{font-size:19px;font-weight:600;text-decoration:none}
+.papers .s{color:var(--muted);font-size:15px;margin-top:2px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.btn{font:14px/1 system-ui,sans-serif;padding:9px 13px;border:1px solid var(--navy);border-radius:4px;text-decoration:none;color:var(--navy);background:var(--bg)}
+.btn.primary{background:var(--navy);color:var(--bg)}
+.fmt{display:grid;grid-template-columns:52px repeat(10,auto);gap:8px 6px;align-items:center;justify-content:start;margin:16px 0 6px;overflow-x:auto;padding-bottom:4px}
+.fmt .fl{font:600 13px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--red);letter-spacing:.04em}
+.fmt .btn{padding:8px 9px;font-size:13.5px;text-align:center;white-space:nowrap}
+.fmt .na{display:block}
+.kw{font:14px/1.6 system-ui,sans-serif;color:var(--muted)}
+pre.cite{white-space:pre-wrap;font:13px/1.5 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);padding:12px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:18px 0 30px;font:13px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media (max-width:560px){h1{font-size:25px}nav a{margin-left:10px}.papers li{grid-template-columns:34px 1fr}}
+</style><style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style><link rel="alternate" hreflang="en" href="https://lef-model.com/index.html"><link rel="alternate" hreflang="he" href="https://lef-model.com/index-he.html"><link rel="alternate" hreflang="ru" href="https://lef-model.com/index-ru.html"><link rel="alternate" hreflang="de" href="https://lef-model.com/index-de.html"><link rel="alternate" hreflang="ja" href="https://lef-model.com/index-ja.html"><link rel="alternate" hreflang="zh" href="https://lef-model.com/index-zh.html"><link rel="alternate" hreflang="ko" href="https://lef-model.com/index-ko.html"><link rel="alternate" hreflang="hi" href="https://lef-model.com/index-hi.html"><link rel="alternate" hreflang="es" href="https://lef-model.com/index-es.html"><link rel="alternate" hreflang="fr" href="https://lef-model.com/index-fr.html"><link rel="alternate" hreflang="x-default" href="https://lef-model.com/index.html"><style id="aboutnav">
+header.site nav a.about{display:inline-block;padding:6px 14px;border:1.5px solid var(--navy);border-radius:8px;color:var(--navy);font-weight:600}
+header.site nav a.about:hover,header.site nav a.about.on{background:var(--navy);color:var(--bg)}
+.ab{display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:start;margin-top:30px}
+.ab img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.facts{list-style:none;padding:0;margin:14px 0 0;font:15px/1.9 system-ui,sans-serif}
+.facts b{display:inline-block;min-width:92px;color:var(--muted);font-weight:600}
+@media (max-width:620px){.ab{grid-template-columns:1fr}.ab img{max-width:240px}}
+</style><style id="langbar">
+.lbar{background:var(--navy);color:#fff}
+.lbar .wrap{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;padding:7px 16px;font:14px/1.3 system-ui,sans-serif}
+.lbar .lb{font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;opacity:.75;margin-inline-end:6px}
+.lbar a,.lbar b{padding:4px 9px;border-radius:6px;color:#fff;text-decoration:none}
+.lbar a:hover{background:rgba(255,255,255,.18);color:#fff}
+.lbar b{background:#fff;color:var(--navy)}
+@media (prefers-color-scheme:dark){.lbar{background:#2a3e5c}.lbar b{color:#2a3e5c}}
+[dir=rtl] nav a{margin-left:0;margin-right:16px}
+[dir=rtl] .box{border-left:0;border-right:3px solid var(--navy)}
+.fmt .btn.cur{background:var(--navy);color:var(--bg)}
+.lead2{font-size:17px}
+:is([lang=he],[lang=ja],[lang=zh],[lang=ko],[lang=hi]) :is(.brand,.tag){font-family:system-ui,Arial,sans-serif;letter-spacing:0}
+</style><script id="langmem">(function(){try{var k='lef_lang',L=document.documentElement.lang||'en',s=localStorage.getItem(k),p=location.pathname;
+if(L==='en'&&/(^|\/)(index\.html)?$/.test(p)&&s&&s!=='en'&&/^(he|ru|de|ja|zh|ko|hi|es|fr)$/.test(s)){location.replace('index-'+s+'.html');return;}
+localStorage.setItem(k,L);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a){try{localStorage.setItem(k,a.getAttribute('hreflang'))}catch(x){}}});}catch(e){}})();</script><!-- gw --></head>
+<body><header class="site"><div class="wrap"><a class="brand" href="index.html">LEF मॉडल · चंद्र उत्थान और विखंडन</a>
+<nav><a href="index-hi.html#papers">शोधपत्र</a><a href="index-hi.html#story">कहानी</a><a class="about" href="about-hi.html">लेखक के बारे में</a></nav></div></header>
+<div class="lbar"><div class="wrap"><span class="lb">🌐 भाषा</span><a href="index.html" hreflang="en" lang="en">English</a><a href="index-he.html" hreflang="he" lang="he">עברית</a><a href="index-ru.html" hreflang="ru" lang="ru">Русский</a><a href="index-de.html" hreflang="de" lang="de">Deutsch</a><a href="index-ja.html" hreflang="ja" lang="ja">日本語</a><a href="index-zh.html" hreflang="zh" lang="zh">中文</a><a href="index-ko.html" hreflang="ko" lang="ko">한국어</a><b lang="hi">हिन्दी</b><a href="index-es.html" hreflang="es" lang="es">Español</a><a href="index-fr.html" hreflang="fr" lang="fr">Français</a></div></div>
+<main class="wrap"><p class="tag" style="margin-top:30px">चंद्रमा की उत्पत्ति और मंगल के उपग्रहों की उत्पत्ति पर शोधपत्रों की श्रृंखला</p>
+<h1>चंद्रमा की उत्पत्ति का LEF मॉडल</h1>
+<p class="sub">Lunar Elevation and Fission (उत्थान और विखंडन): चंद्रमा पृथ्वी से जुड़े रहते हुए पृथ्वी से बना, और सह-घूर्णन त्रिज्या पर मुक्त हुआ</p>
+<div class="box"><p style="margin:0">हम प्रस्ताव करते हैं कि चंद्रमा पृथ्वी से जुड़े रहते हुए पृथ्वी के पदार्थ से बना, और वहाँ मुक्त हुआ जहाँ पृथ्वी के घूर्णन ने उसे पहले ही कक्षीय गति दे दी थी। LEF मॉडल एक प्रक्रिया-मॉडल है: यह भौतिक घटनाओं का एक क्रम प्रस्तुत करता है, और हर घटना के लिए शोधपत्र वह संख्या देते हैं जो उसे तय करती है और वह अवलोकन जो उसकी जाँच करता है। शोधपत्र 1 पूरी प्रक्रिया प्रस्तुत करता है; शोधपत्र 2–9 और 13 उसके हिस्सों को एक-एक करके लेते हैं; शोधपत्र 10 एक संबंधित व्याख्या मंगल के उपग्रहों पर लागू करता है; शोधपत्र 14 उन शोध-विषयों को एकत्र करता है जो मॉडल खोलता है।</p></div><h2 id="papers">शोधपत्र</h2><ul class="papers"><li><span class="num">01</span><div><a class="t" href="paper01-hi.html">मॉडल</a><div class="s">चंद्रमा पृथ्वी से जुड़ा रहते हुए पृथ्वी से बना, और वहाँ मुक्त हुआ जहाँ पृथ्वी के घूर्णन ने उसे पहले ही कक्षीय वेग दे दिया था</div></div></li>
+<li><span class="num">02</span><div><a class="t" href="paper02-hi.html">LEF तंत्र: सिद्धांत में</a><div class="s">सह-घूर्णन और कोणीय संवेग</div></div></li>
+<li><span class="num">03</span><div><a class="t" href="paper03-hi.html">LEF तंत्र: व्यवहार में</a><div class="s">दाब और नाशपाती-आकृति: भीतर और बाहर से चंद्रमा का निर्माण</div></div></li>
+<li><span class="num">04</span><div><a class="t" href="paper04-hi.html">कक्षा</a><div class="s">मुक्ति के बाद: विलगन की स्थितियों से झुकाव, अस्तित्व और दूर हटना</div></div></li>
+<li><span class="num">05</span><div><a class="t" href="paper05-hi.html">सागर</a><div class="s">पोषण गुंबदों के ऊपर छिद्र</div></div></li>
+<li><span class="num">06</span><div><a class="t" href="paper06-hi.html">क्रेटर</a><div class="s">क्षुद्रग्रहों के बिना क्रेटर</div></div></li>
+<li><span class="num">07</span><div><a class="t" href="paper07-hi.html">ध्रुव</a><div class="s">ध्रुव सघन क्यों हैं</div></div></li>
+<li><span class="num">08</span><div><a class="t" href="paper08-hi.html">दक्षिणी ध्रुव–एटकेन</a><div class="s">क्रेटर-विरल केंद्र</div></div></li>
+<li><span class="num">09</span><div><a class="t" href="paper09-hi.html">धारियाँ</a><div class="s">प्रशांत महासागर के तल पर नाशपाती-आकृति का अग्र पक्ष, और वह स्थान जहाँ चंद्रमा बना</div></div></li>
+<li><span class="num">10</span><div><a class="t" href="paper10-hi.html">मंगल: उभार और वलय</a><div class="s">तेज़ी से घूमते, फैले हुए मंगल ने अपने पतले होते उभार पर स्थित ज्वालामुखी से डीमोस और फ़ोबोस को कैसे मुक्त किया</div></div></li>
+<li><span class="num">11</span><div><a class="t" href="paper11-hi.html">चंद्रमाओं का जन्म</a><div class="s">चंद्रमाओं के जन्म की एक एकीकृत क्रियाविधि, और सौरमंडल में ग्रह-दर-ग्रह उसका परीक्षण</div></div></li>
+<li><span class="num">12</span><div><a class="t" href="paper12-hi.html">वलय</a><div class="s">वलय तोड़ता है, घिसता है और लौटाता है: पदार्थ का स्रोत, उसकी गतिकी, और चंद्रमाओं तथा जनक ग्रह पर उसके चिह्न</div></div></li>
+<li><span class="num">13</span><div><a class="t" href="paper13-hi.html">आवश्यकताएँ</a><div class="s">तंत्र क्या माँगता है, चंद्रमा में क्या है, और क्या अभी खुला है</div></div></li>
+<li><span class="num">14</span><div><a class="t" href="paper14-hi.html">शोध-विषय</a><div class="s">मॉडल अन्य शोधकर्ताओं के लिए क्या खोलता है</div></div></li>
+</ul><h2 id="story">सरल शब्दों में कहानी</h2><p>सामान्य पाठक के लिए मॉडल की कहानी, कदम-दर-कदम, अध्याय-दर-अध्याय, दस भाषाओं में। हर अध्याय ऑनलाइन (HTML) पढ़ा जा सकता है या PDF के रूप में डाउनलोड किया जा सकता है।</p><ul class="papers"><li><span class="num">00</span><div><a class="t" href="story00-hi.html">प्रस्तावना: चंद्रमा के आठ रहस्य</a><div class="s"><a href="story00_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story00_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">01</span><div><a class="t" href="story01-hi.html">अध्याय 1: डार्विन की समस्या और सह-घूर्णन क्रांति</a><div class="s"><a href="story01_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story01_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">02</span><div><a class="t" href="story02-hi.html">अध्याय 2: दिन की लंबाई पर संघर्ष और कोणीय संवेग का संतुलन</a><div class="s"><a href="story02_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story02_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">03</span><div><a class="t" href="story03-hi.html">अध्याय 3: भीतर का इंजन — <span class="ltr">150 GPa</span> का स्रोत-दाब और झागदार मैग्मा</a><div class="s"><a href="story03_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story03_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">04</span><div><a class="t" href="story04-hi.html">अध्याय 4: बाहर से उठती त्वचा — गुंबद के 4 चरण और चंद्रमा के चेहरे का अनुवाद-नियम</a><div class="s"><a href="story04_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story04_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">05</span><div><a class="t" href="story05-hi.html">अध्याय 5: नाशपाती और स्टेफ़न मुक्ति — वह पुल जो चंद्रमा को ढोता है और ठीक सह-घूर्णन रेखा पर टूटता है</a><div class="s"><a href="story05_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story05_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">06</span><div><a class="t" href="story06-hi.html">अध्याय 6: नाशपाती का भाग्य और वास्तविकता के निशान — प्रशांत बेसिन से पृथ्वी के कोर तक</a><div class="s"><a href="story06_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story06_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">07</span><div><a class="t" href="story07-hi.html">अध्याय 7: कक्षा की यात्रा — घटा हुआ स्पर्शज्या नियम और 5.145° झुकाव का समाधान</a><div class="s"><a href="story07_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story07_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">08</span><div><a class="t" href="story08-hi.html">अध्याय 8: मेयर वास्तव में क्या है? — आपूर्ति-छिद्र, 73 गुरुत्व-गुंबद और जमी झील की तरह धँसा तल</a><div class="s"><a href="story08_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story08_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">09</span><div><a class="t" href="story09-hi.html">अध्याय 9: तल पर घड़ी — पिघले, फैले और तीखे क्रेटर, आपूर्ति-इंजन और उजागर होने की तीन पीढ़ियाँ</a><div class="s"><a href="story09_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story09_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">10</span><div><a class="t" href="story10-hi.html">अध्याय 10: रासायनिक उँगली-छाप — लोहे के वलय, संपर्क-क्षेत्र में थोरियम की पहेली और पाँच घड़ियाँ</a><div class="s"><a href="story10_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story10_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">11</span><div><a class="t" href="story11-hi.html">अध्याय 11: क्षुद्रग्रहों के बिना क्रेटर — प्राक्षेपिक उड़ान की भौतिकी, आघात-दाब और अग्रणी/पिछली विषमता</a><div class="s"><a href="story11_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story11_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">12</span><div><a class="t" href="story12-hi.html">अध्याय 12: क्रेटर के भीतर का रसायन, वह विदेशी द्रव्यमान जो वहाँ नहीं है, और अंतिम बिखेरक के रूप में पृथ्वी</a><div class="s"><a href="story12_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story12_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">13</span><div><a class="t" href="story13-hi.html">अध्याय 13: चंद्रमा के ध्रुव — ध्रुव क्रेटरों से घने क्यों, छह परिकल्पनाएँ ख़ारिज और त्रि-अक्षीय आकार की पुनर्प्राप्ति</a><div class="s"><a href="story13_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story13_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">14</span><div><a class="t" href="story14-hi.html">अध्याय 14: बाहरी घूर्णी विभेदन — ध्रुवीय संकुचन, पतली ध्रुवीय पपड़ी और क्रेटर-आकार के परीक्षण</a><div class="s"><a href="story14_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story14_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">15</span><div><a class="t" href="story15-hi.html">अध्याय 15: दक्षिणी ध्रुव–एटकेन बेसिन (SPA) — उपसतही बर्नर, दो केंद्र और पपड़ी के दो वलय</a><div class="s"><a href="story15_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story15_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">16</span><div><a class="t" href="story16-hi.html">अध्याय 16: SPA की गहराइयाँ, चांग'ए-6 नमूने और सतत पिंड की विभव-बाधा</a><div class="s"><a href="story16_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story16_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">17</span><div><a class="t" href="story17-hi.html">अध्याय 17: प्रशांत की धारियाँ — नाशपाती की अग्र-दीवार और चंद्रमा की दर्पण-छाप</a><div class="s"><a href="story17_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story17_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">18</span><div><a class="t" href="story18-hi.html">अध्याय 18: पूरे प्रशांत का अभिसरण, करछुल-कटक और तल की युवा आयु की पहेली का समाधान</a><div class="s"><a href="story18_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story18_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">19</span><div><a class="t" href="story19-hi.html">अध्याय 19: युवा मंगल — थारसिस का नुकीला उभार और पैवोनिस मॉन्स से डीमोस और फ़ोबोस का निष्कासन</a><div class="s"><a href="story19_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story19_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">20</span><div><a class="t" href="story20-hi.html">अध्याय 20: मंगल का भाप-वलय, वैलेस मैरिनेरिस से निकासी और MMX मिशन परीक्षण</a><div class="s"><a href="story20_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story20_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">21</span><div><a class="t" href="story21-hi.html">अध्याय 21: सौरमंडल में चंद्रमाओं का नियम — जन्म-विधाओं का पैमाना, पंप-सिद्धांत और वायुमंडलीय ढक्कन</a><div class="s"><a href="story21_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story21_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">22</span><div><a class="t" href="story22-hi.html">अध्याय 22: एक पूर्ण ग्रहीय सर्वेक्षण — बुध और शुक्र से प्लूटो, हौमिया और सीरीज़ तक</a><div class="s"><a href="story22_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story22_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">23</span><div><a class="t" href="story23-hi.html">अध्याय 23: ग्रहीय वलय — पदार्थ का स्रोत, 13.4 घंटे का दहलीज़-दिन और शनि का संतुलन-प्रवाह</a><div class="s"><a href="story23_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story23_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">24</span><div><a class="t" href="story24-hi.html">अध्याय 24: पीसने वाले वाहक के रूप में वलय, चंद्रमाओं और ग्रहों पर हस्ताक्षर, और अटाकामा खंड-परीक्षण</a><div class="s"><a href="story24_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story24_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">25</span><div><a class="t" href="story25-hi.html">अध्याय 25: LEF मॉडल की मूलभूत आवश्यकताएँ (R1–R8) — समस्थानिक, कोर, पपड़ी, द्रव्यमान-केंद्र खिसकाव और उजागर-क्षेत्र</a><div class="s"><a href="story25_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story25_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">26</span><div><a class="t" href="story26-hi.html">अध्याय 26: दस और आवश्यकताएँ (R9–R18), हैफ़नियम–टंगस्टन घड़ी और भविष्य के LEF शोध का मानचित्र</a><div class="s"><a href="story26_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story26_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">27</span><div><a class="t" href="story27-hi.html">अध्याय 27: LEF मॉडल का शोध-मानचित्र (भाग A) — प्रारंभिक पृथ्वी, चंद्रमा का निर्माण और SPA बेसिन (विषय 1–79)</a><div class="s"><a href="story27_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story27_HI.pdf">PDF</a></div></div></li>
+<li><span class="num">28</span><div><a class="t" href="story28-hi.html">अध्याय 28: LEF मॉडल का शोध-मानचित्र (भाग B) — प्रशांत, मंगल, सौरमंडल और मुख्य परीक्षण (विषय 80–132)</a><div class="s"><a href="story28_hi.html" hreflang="hi">HTML</a> · <a href="LEF_story28_HI.pdf">PDF</a></div></div></li>
+</ul><h2 id="author">लेखक के बारे में</h2>
+<p><strong>ज़ोहर दुरान</strong>, स्वतंत्र शोधकर्ता, रामला, इज़राइल। <a href="about-hi.html">लेखक के बारे में और जानकारी, संपर्क, कोड और डेटा →</a></p></main>
+<footer class="wrap">© 2026 Zohar Duran. शोधपत्र Creative Commons Attribution 4.0 लाइसेंस (CC BY 4.0) के अंतर्गत जारी हैं। ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a>.</footer>
+</body></html>
