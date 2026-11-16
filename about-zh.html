@@ -69,6 +69,7 @@ header.site nav a.about:hover,header.site nav a.about.on{background:var(--navy);
 .bigbtn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:26px 16px;border:2px solid var(--navy);border-radius:12px;text-decoration:none;color:var(--navy);font-size:23px;font-weight:600;text-align:center;background:var(--card)}
 .bigbtn small{font:13px/1 ui-monospace,Menlo,monospace;color:var(--muted);letter-spacing:.04em;font-weight:400}
 .bigbtn:hover{background:var(--navy);color:var(--bg)}.bigbtn:hover small{color:var(--bg)}
+.choose.amz{grid-template-columns:1fr;margin-top:-6px}.choose.amz .bigbtn{font-size:20px;padding:18px 16px;border-color:#c77b1e;color:#a35f0f}.choose.amz .bigbtn:hover{background:#c77b1e;color:#fff}
 @media (max-width:560px){.choose{grid-template-columns:1fr}}
 .go{display:flex;gap:8px;margin:6px 0 2px}.go .btn{padding:7px 16px}
 :is([lang=he],[lang=ja],[lang=zh],[lang=ko],[lang=hi]) :is(.brand,.tag){font-family:system-ui,Arial,sans-serif;letter-spacing:0}
@@ -92,7 +93,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <meta name="twitter:description" content="独立研究者 · 以色列拉姆拉">
 <meta name="twitter:image" content="https://lef-model.com/og_lef.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zohar Duran", "url": "https://lef-model.com/about.html", "sameAs": ["https://orcid.org/0009-0005-3194-9387", "https://doi.org/10.5281/zenodo.22743615"], "description": "Author of the LEF model (Lunar Elevation and Fission) of the Moon's origin."}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The LEF Model: How the Moon Really Formed", "alternateName": ["El modelo LEF: Cómo se formó realmente la Luna", "מודל LEF — איך הירח באמת נוצר"], "author": {"@type": "Person", "name": "Zohar Duran", "url": "https://lef-model.com/about.html", "sameAs": ["https://orcid.org/0009-0005-3194-9387", "https://doi.org/10.5281/zenodo.22743615"]}, "url": "https://lef-model.com/", "image": "https://lef-model.com/og_lef.jpg", "inLanguage": ["en", "es"], "bookFormat": ["https://schema.org/Paperback", "https://schema.org/Hardcover"], "about": "A proposed model of the Moon's origin: the Moon built from the Earth's own material while attached to it, and released at the corotation line."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The LEF Model: How the Moon Really Formed", "alternateName": ["El modelo LEF: Cómo se formó realmente la Luna", "מודל LEF — איך הירח באמת נוצר"], "author": {"@type": "Person", "name": "Zohar Duran", "url": "https://lef-model.com/about.html", "sameAs": ["https://orcid.org/0009-0005-3194-9387", "https://doi.org/10.5281/zenodo.22743615"]}, "url": "https://lef-model.com/", "image": "https://lef-model.com/og_lef.jpg", "inLanguage": ["en", "es"], "bookFormat": ["https://schema.org/Paperback", "https://schema.org/Hardcover"], "workExample": [{"@type": "Book", "bookFormat": "https://schema.org/Paperback", "inLanguage": "en", "isbn": "9798142304582", "url": "https://www.amazon.com/dp/B0HRTRZFZD"}, {"@type": "Book", "bookFormat": "https://schema.org/Hardcover", "inLanguage": "en", "url": "https://www.amazon.com/dp/B0HRSF4KD6"}, {"@type": "Book", "bookFormat": "https://schema.org/Paperback", "inLanguage": "es", "url": "https://www.amazon.es/dp/B0HRSHTNTH"}, {"@type": "Book", "bookFormat": "https://schema.org/Hardcover", "inLanguage": "es", "url": "https://www.amazon.es/dp/B0HRS7H9F9"}], "about": "A proposed model of the Moon's origin: the Moon built from the Earth's own material while attached to it, and released at the corotation line."}</script>
 <!--/seo2-->
 </head>
 <body><header class="site"><div class="wrap"><a class="brand" href="index.html">LEF模型 · 月球隆升与分裂</a>
@@ -117,7 +118,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <h2>图书</h2>
 <p><em>The LEF Model — How the Moon Really Formed</em>（《LEF模型——月球究竟是如何形成的》）将故事的28章汇集为一本带插图的印刷书。插图伴随读者，从年轻地球上隆起的形成，到月球在其顶端的生长，直到月球与地球分离、进入轨道的那一刻。</p>
 <p>本书以平装本和精装本出版，语言为希伯来语、英语、西班牙语、德语和法语。</p>
-<h2>代码与数据</h2>
+<div class="choose amz"><a class="bigbtn" href="https://www.amazon.com/dp/B0HRTRZFZD" target="_blank" rel="noopener">在亚马逊查看本书<small>Amazon · 英文版 · 平装 · 精装</small></a></div><h2>代码与数据</h2>
 <p>论文的脚本和结果表向所有希望查看计算、核对结果的人开放： <a href="LEF_code_and_data.zip">下载LEF模型的代码与数据（ZIP）</a>.</p>
 </main>
 <footer class="wrap">© 2026 Zohar Duran。论文以知识共享署名 4.0 许可协议（CC BY 4.0）发布。 ORCID <a href="https://orcid.org/0009-0005-3194-9387">0009-0005-3194-9387</a>.</footer>
