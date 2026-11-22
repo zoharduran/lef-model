@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>התוריום: מדוע הרדיואקטיביות של הירח מרוכזת באזור אחד — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך באנציקלופדיה של מודל LEF: מדוע התוריום של הירח מרוכז באזור אחד בצד הקרוב, מה נמדד, מה אומרת הספרות ומה מציע המודל.">
+<link rel="canonical" href="https://lef-model.com/enc_thorium_he.html"></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="LEF_enc_thorium_HE.pdf">PDF</a></span></div></nav>
+
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח</p>
+<h1>התוריום: מדוע הרדיואקטיביות של הירח מרוכזת באזור אחד</h1>
+<p>ערך תעלומה · מבוסס על מאמרים 3, 5, 6, 8, 13 ו-14</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← הירח ← הצד הקרוב מול הצד הרחוק ← התוריום</p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה — מדוע הרדיואקטיביות של הירח מרוכזת באזור אחד</h2>
+
+<h3>מה זה?</h3>
+<figure class="fw"><img src="enc/thorium/P05-11.jpg" style="max-height:2.9in;object-fit:contain"><figcaption>הירח, כפי שמדדה אותו הלוויינית Lunar Prospector. העיגול התכלת הוא המגע (רדיוס 1,500 ק"מ); העיגול הירוק — הגבעה (3,000 ק"מ).</figcaption></figure>
+<h3>התמונה המפתיעה מהחלל</h3>
+<p>כאשר מביטים במפה גלובלית של הירח הצבועה לפי ריכוז היסוד הרדיואקטיבי תוריום, נגלית אחת התופעות המפתיעות ביותר במדעי הירח. אילו היה התוריום מפוזר באופן אחיד על פני הירח, היינו רואים גוון אחיד למדי סביב כדור הירח כולו. בפועל, התמונה שונה לחלוטין: התוריום מרוכז כמעט כולו בכתם אחד גדול במערב הצד הקרוב — הצד הפונה תמיד אל כדור הארץ.</p>
+<p>בשנים 1998–1999 הקיפה החללית Lunar Prospector את הירח ומדדה את קרינת הגמא הנפלטת מן התוריום מכל נקודה על פני השטח. המדידות הראו כי הכתם העשיר בתוריום אינו מפוזר באקראי, אלא ממלא כמעט בדיוק את עיגול המגע (דיסקה ברדיוס של 1,500 ק"מ, המסומנת על המפה בעיגול תכלת — האזור שבו היה הירח מחובר אל קצה האגס של כדור הארץ). בשאר חלקי הירח, ובמיוחד בצד הרחוק, כמעט שאין תוריום כלל, מלבד כתם שני, חלש יותר, היושב בתחתית אגן הענק שבדרום הצד הרחוק — South Pole–Aitken (SPA).</p>
+<p>יחד עם התוריום מצויים באותו כתם עצמו גם יסודות נוספים המכונים יסודות "שאינם נכנסים לגבישים" (יסודות בלתי-מתאימים): אשלגן (K), יסודות נדירים (REE) וזרחן (P). בספרות המדעית מכונה צירוף יסודות זה בשם KREEP, והאזור כולו בצד הקרוב נקרא "טראן ה-KREEP של פרוסלארום" (PKT).</p>
+<h3>שבע השאלות של התעלומה</h3>
+<p>מדוע נאסף כמעט כל התוריום של הירח באזור אחד, דווקא במקום שבו היה הירח מחובר לכדור הארץ — ומדוע דווקא הימות הכהות שבאותו אזור עניות בו? תעלומה זו מתפרקת לשבע שאלות מוגדרות, שכל אחת מהן נשענת על מדידה ישירה:</p>
+<ol class="steps">
+<li><strong>הריכוז הגלובלי:</strong> מדוע שישית אחת בלבד מפני השטח של הירח אוצרת בתוכה 95% מעודף התוריום של הירח כולו, בעוד ששאר הירח כמעט ריק מתוריום?</li>
+<li><strong>גבולות אזור המגע:</strong> מדוע הכתם ממלא את עיגול המגע — אזור ברדיוס של 1,500 ק"מ שנקבע מראש מתוך הגיאומטריה של האגס — כמעט עד שוליו, ומחוץ לו כמעט נעלם? בתוך עיגול זה מצויים 95% מעודף התוריום ו-78% מכלל השטח הירחי שבו ריכוז התוריום עולה על 3 חלקים למיליון (ppm); ומחוץ לעיגול הגבעה (רדיוס 3,000 ק"מ) כמעט שאין תוריום כלל. גבולות הכתם חופפים אפוא לגבולות אזור המגע.</li>
+<li><strong>הדיוק במרכז הכתם:</strong> מדוע מרכז כתם התוריום יושב, בסטייה של 47 ק"מ בלבד, על הנקודה שנקבעה מראש במודל כמרכז המגע האחרון שבין הירח לבין כדור הארץ?</li>
+<li><strong>הסדר הפנימי בתוך האזור:</strong> מדוע בתוך אזור המגע נושאים מישורי הבזלת והרמות ריכוז כמעט זהה של תוריום, ואילו דווקא הימות הכהות הן הקרקע הענייה ביותר בתוריום?</li>
+<li><strong>הצד הרחוק הדל:</strong> מדוע הקרום העבה והעתיק של הצד הרחוק כמעט נקי מתוריום?</li>
+<li><strong>התבנית באגן SPA:</strong> מדוע הריכוז השני של תוריום בירח מצוי דווקא באגן הענק של הצד הרחוק (SPA), ומדוע הוא מסודר שם בצורת טבעת וסהר סביב המרכז ולא במרכז עצמו?</li>
+<li><strong>החוליה הארצית:</strong> אם הירח בנוי מחומרו של כדור הארץ, כיצד מתחלק התוריום בתוך כדור הארץ עצמו — ומה מלמדת חלוקה זו על התהליך שעיצב את הירח?</li>
+</ol>
+<h3>הכירו את החומר: מדוע התוריום הוא "גשש" מושלם</h3>
+<p>כדי להבין כיצד נוצרה חלוקה זו, עלינו להכיר תחילה את התכונות הפיזיקליות והכימיות של היסוד תוריום (Th), היסוד מספר 90 בטבלה המחזורית.</p>
+<p>כמעט כל התוריום בטבע הוא איזוטופ יחיד — תוריום-232 — שזמן מחצית החיים שלו הוא 14 מיליארד שנה (יותר מפי שלושה מגילו של כדור הארץ). המשמעות היא שכמעט כל התוריום שהיה קיים בראשית ימי המערכת עדיין קיים כיום, ולכן המפה שאנו מודדים מהחלל משקפת כמעט במדויק את הפיזור המקורי שלו. במהלך דעיכתו הרדיואקטיבית האיטית, פולט התוריום חום וקרני גמא המאפשרות למדוד אותו מרחוק.</p>
+<p>חמש תכונות יסוד קובעות היכן יימצא התוריום בכל רגע נתון:</p>
+<ul>
+<li><strong>הוא אינו נכנס לגבישים:</strong> היון של התוריום גדול מאוד ונושא מטען חשמלי גבוה, ולכן אין לו מקום במבנה המסודר של גבישים רגילים. כאשר חומר מותך מתקרר ומתגבש, התוריום נדחק החוצה, נותר בנוזל ומצטבר בשארית הנוזלית האחרונה. באופן הפוך, כאשר חומר מוצק מתחיל להימס, התוריום עובר כמעט כולו אל טיפות הנוזל הראשונות. הכלל פשוט: התוריום הולך תמיד עם הנוזל.</li>
+<li><strong>הוא "אוהב סלע" (ליתופילי):</strong> התוריום נקשר בחוזקה לחמצן ונותר תמיד בחומר הסיליקטי, ואינו שוקע עם הברזל אל ליבת כדור הארץ.</li>
+<li><strong>הוא עמיד בחום ואינו מתאדה:</strong> התוריום הוא מן היסודות העמידים ביותר בחום. כאשר חומר מתחמם לאורך זמן רב, יסודות נדיפים כמו אשלגן בורחים ומתאדים, בעוד שהתוריום נותר מאחור. משום כך משמש היחס שבין אשלגן לתוריום (K/Th) כמעין "מדחום גיאולוגי" המתעד חימום ממושך בעבר.</li>
+<li><strong>מים אינם ממיסים אותו:</strong> במים רגילים התוריום כמעט שאינו מתמוסס; הוא נע אך ורק יחד עם נוזל התכה סיליקטי או כגרגירים מוצקים.</li>
+<li><strong>הוא מייצר חום:</strong> יחד עם אורניום ואשלגן, התוריום הוא אחד ממקורות החום הפנימיים העיקריים של כוכבי לכת וירחים.</li>
+</ul>
+<p>בכדור הארץ, התוצאה של חמש תכונות אלו ברורה ומוכרת היטב: ליבת הברזל נקייה כמעט לחלוטין מתוריום; המעטפת שמתחת לקרום ענייה בו מאוד (כ-0.08 חלקים למיליון, ppm); ורוב התוריום מרוכז בקרום היבשתי הקל — הסיאל — ובמיוחד בחלקו העליון (כ-10.5 ppm).</p>
+<p>מכאן נובעת מסקנה מכרעת: התוריום אינו מסמן "חומר עמוק". להפך — הוא מסמן מקומות שבהם חומר נמס, ונוזל ההתכה נאסף והתרכז.</p>
+</section>
+
+<section>
+<span class="lab">02 · WHAT WAS MEASURED</span>
+<h2>מה נמדד — העובדות והמספרים</h2>
+
+<h3>כיצד מודדים תוריום מן החלל?</h3>
+<p>במהלך שרשרת הדעיכה הרדיואקטיבית של תוריום-232 נפלטות קרני גמא בעלות אנרגיה אופיינית, ומד-קרני-הגמא המותקן על גבי חללית מונה אותן. מאחר שקרני גמא אלו נבלעות בקלות בתוך הקרקע, המכשיר מודד את ריכוז התוריום בשכבה העליונה בלבד — בעומק של עשרות ספורות של סנטימטרים מתחת לפני השטח.</p>
+<p>החללית Lunar Prospector מיפתה את הירח כולו ברשת תאים של חצי מעלה, אך שדה הראייה של הגלאי שלה רחב: המכשיר "רואה" כתם שקוטרו כ-60 ק"מ, ולכן כל פרט קטן מכך מיטשטש במפה. מאוחר יותר מדדה החללית היפנית Kaguya את הירח שוב באמצעות מכשיר נפרד, ובשנת 2018 פרסמו Wilson ועמיתיו מפה משוחזרת וחדה יותר ברזולוציה של 26 ק"מ (מפה שנתוניה המספריים טרם נבדקו בסדרה).</p>
+<h3>הירח כולו במבט-על</h3>
+<p>ארבעה נתוני מפתח מסכמים את התמונה הגלובלית של התוריום על פני הירח:</p>
+<div class="tw"><table class="lab"><tr><th>מדד מרכזי</th><th>ערך נמדד</th><th>משמעות</th></tr>
+<tr><td>חלק מעודף התוריום (מעל 3 ppm) בדיסקת המגע</td><td>95.0%</td><td>כמעט כל עודף התוריום מרוכז בדיסקת המגע</td></tr>
+<tr><td>שטח דיסקת המגע מתוך פני הירח</td><td>17.5%</td><td>כשישית בלבד משטח הירח</td></tr>
+<tr><td>דירוג מרכז המגע מתוך 16,200 מרכזים אפשריים</td><td>מקום 3 מתוך 16,200</td><td>התאמה כמעט מושלמת למרכז שנקבע מראש</td></tr>
+<tr><td>חציון התוריום בתוך המגע לעומת מחוצה לו</td><td>5.39 ppm בתוך / 1.52 ppm מחוץ</td><td>פער של יותר מפי שלושה וחצי</td></tr>
+</table></div>
+<p>כאשר בוחנים את פני הירח לפי חלוקות גיאוגרפיות וגיאולוגיות שונות, התמונה מתחדדת:</p>
+<ul>
+<li><strong>שלושת אזורי הקרום (Jolliff et al. 2000):</strong>
+<ul>
+<li><strong>אזור התוריום של הצד הקרוב (PKT):</strong> תופס כ-10% משטח הירח (או 16% יחד עם הימות שבתוכו), וריכוז התוריום הממוצע בו הוא 4.8 ppm.</li>
+<li><strong>הרמות (Highlands):</strong> מכסות 65% משטח הירח, עם ריכוז ממוצע של כ-1 ppm, ובפנים הצד הרחוק הריכוז יורד ל-0.3 ppm בלבד.</li>
+<li><strong>אגן South Pole–Aitken (SPA):</strong> מכסה 11% משטח הירח ואוצר 5.8% מכלל התוריום שבקרום.</li>
+</ul></li>
+<li><strong>ערכי חציון על פני הירח (דוח המדידה של 10.10.2026):</strong> חציון התוריום על פני הירח כולו הוא 1.69 ppm; בימות החציון הוא 4.40 ppm; ברמות המרוחקות 300 ק"מ ויותר מכל ימה החציון יורד ל-1.24 ppm; ובאגן SPA החציון עומד על 2.13 ppm.</li>
+<li><strong>חלוקה לפי ארבעת רבעי הירח (מאמר 5, §J.5):</strong> הגזרה הקרובה מובילה עם 5.12 ppm, אחריה החצי המוביל עם 3.27 ppm, הצד הרחוק עם 2.20 ppm, והחצי הנגרר עם 2.01 ppm. בסיכום כולל, הצד הקרוב נושא פי אחד וחצי יותר תוריום מן הצד הרחוק.</li>
+</ul>
+<figure class="fw"><img src="enc/thorium/EXT-TH-HEMI.jpg"><figcaption>הצד הקרוב (משמאל) והצד הרחוק (מימין) של הירח, צבועים לפי כמות התוריום (Lunar Prospector, על תצלום הירח). סגול — כמעט כלום; כחול, ירוק, צהוב ואדום — יותר ויותר; לבן — 12 ppm ומעלה. בצד הקרוב — הכתם הגדול; בצד הרחוק — רק SPA, בדרום. קרדיט: NASA, Lunar Prospector.</figcaption></figure>
+
+<h3>אזור המגע ומה שבתוכו (מחקרים 10 ו-13 של מאמר 5)</h3>
+<p>במאמר 3 נקבעו מראש הקואורדינטות של מרכז המגע (24.1°N, 335.2°E) ורדיוסו (1,500 ק"מ) מתוך הגיאומטריה של האגס, עוד לפני שנקראו מפות התוריום.</p>
+<ul>
+<li><strong>דיסקת המגע (1,500 ק"מ):</strong> מכסה 17.5% מפני השטח של הירח, אך אוצרת בתוכה 95.0% מעודף התוריום שמעל 3 ppm ו-78% מכלל השטח הירחי שבו התוריום עולה על 3 ppm.</li>
+<li><strong>דיסקת הגבעה (3,000 ק"מ):</strong> מכסה 57.8% מפני הירח ומחזיקה 98.4% מעודף התוריום.</li>
+</ul>
+<p>כדי לבדוק האם מרכז המגע הוא אכן מרכז הריכוז האמיתי ולא חפיפה מקרית, הוזזה דיסקה ברדיוס זהה על פני 16,200 נקודות ברחבי הירח (במרווחים של 2 מעלות באורך וברוחב). המרכז האופטימלי ביותר על פני הירח כולו (23°N, 334°E) לוכד 95.14% מעודף התוריום; מרכז המגע שנקבע מראש במודל לוכד 94.99%, נמצא במרחק 47 ק"מ בלבד ממנו, ומדורג שלישי מתוך 16,200. גם בבדיקה בדיסקות ברדיוס 1,000 ק"מ ו-2,000 ק"מ הוא מדורג במקומות 5 ו-19 — תמיד בתוך 0.2% העליונים. בדיקה חוזרת עצמאית (מכתב 3, 12.10.2026) אישרה תוצאה זו. ככל שמתרחקים ממרכז המגע יורד החלק הנתפס בהדרגה (מתחת למחצית במרחק 50 מעלות, ועד אפס בצד הרחוק) — תבנית מובהקת של איסוף סביב מרכז אחד.</p>
+<figure class="ff"><img src="enc/thorium/P05-12.jpg"><figcaption>כמה מעודף התוריום "נתפס" בעיגול שממוקם בכל אחת מ-16,200 נקודות על הירח. מרכז המגע שנקבע מראש במאמר 3 (האיקס) נמצא כמעט בדיוק בנקודה הטובה ביותר.</figcaption></figure>
+
+<h3>בתוך אזור המגע: ימות, מישורי בזלת ורמות</h3>
+<p>מודל LEF מבחין בין שני סוגים של קרקע כהה בצד הקרוב: ימה היא פתח פעיל מעל כיפת הזנה — תעלה שחיברה את פנים כדור הארץ אל פנים הירח; ואילו מישור בזלת הוא קרום רגיל מתוך חתך האגס שנמס במקומו, ללא תעלה לעומק. בתוך אזור המגע שוכנות ארבע ימות: אימבריום, סרניטאטיס, קופרניקוס H וסינוס אסטואום.</p>
+<div class="tw"><table class="lab"><tr><th>סוג קרקע בתוך המגע</th><th>חלק משטח המגע</th><th>חציון תוריום</th><th>חלק מעודף התוריום של הירח</th></tr>
+<tr><td>ארבע הימות</td><td>11.1%</td><td>3.99 ppm</td><td>5.0%</td></tr>
+<tr><td>מישורי בזלת</td><td>51.8%</td><td>5.62 ppm</td><td>52.4%</td></tr>
+<tr><td>רמות</td><td>37.1%</td><td>5.48 ppm</td><td>37.6%</td></tr>
+</table></div>
+<p>הנתונים חושפים תבנית מפתיעה: מישורי הבזלת והרמות נושאים ריכוז כמעט זהה של תוריום (5.62 ו-5.48 ppm), וכל אחד מהם מחזיק כמעט בדיוק את חלקו היחסי בשטח. לעומתם, ארבע הימות מחזיקות פחות ממחצית מחלקן היחסי בשטח (5.0% מהעודף על 11.1% מהשטח). כל אחת מארבע הימות ענייה בתוריום בהשוואה לטבעת הקרקע המקיפה אותה (משפת הימה ועד 150 ק"מ החוצה): אימבריום ענייה ב-1.39 ppm, קופרניקוס H ב-1.11 ppm, סינוס אסטואום ב-1.05 ppm, וסרניטאטיס ב-0.58 ppm. מחוץ לאזור המגע, לעומת זאת, הימות שוות לטבעת שסביבן או עולות עליה (חציון של +0.17 ppm באזור הגבעה ו-+0.02 ppm מעבר לה).</p>
+<figure class="ff"><img src="enc/thorium/P05-14.jpg"><figcaption>התוריום בכל ימה פחות התוריום בטבעת שסביבה. ארבע ימות המגע (בכתום) עניות מסביבתן; ימות הגבעה ומעבר לה מפוזרות סביב האפס.</figcaption></figure>
+
+<ul>
+<li><strong>תוריום מול טיטניום:</strong> גם טיטניום נוטה להישאר בנוזל כשהמאגמה מתקררת, אך במידה פחותה: כאשר ריכוזו גבוה דיו, הוא מתגבש יחד עם ברזל כמינרל אילמניט ונותר במקום. בהתאם לכך, בקרקעיות הימות שבתוך המגע נמדד 30% פחות תוריום מאשר במישורים (טווח 20%–39%), אך רק 5% פחות טיטניום (הבדל שאינו מובהק). מחוץ למגע הקרקעיות עניות ב-12% בתוריום ועשירות ב-24% בטיטניום. בהגדרה הסופית של הימות (34 העיגולים, מכתב 6), החוסר בתוריום בתוך המגע עומד על 1.68 ppm (טווח 1.07–2.25 ppm).</li>
+</ul>
+<h3>בדיקות חוזרות, הצד הרחוק ו-SPA</h3>
+<ul>
+<li><strong>אימות במכשיר נפרד (Kaguya, מכתב 5, 13.10.2026):</strong> מדידות החללית היפנית Kaguya מאשרות כי אימבריום וסרניטאטיס עניות בתוריום מן הקרקע שסביבן, גם כאשר בודקים את הקרקעית הפנימית הרחוקה יותר מ-50 ק"מ מן השפה (אימבריום: ‎−2.75 ppm ב-Lunar Prospector ו-‎−1.90 ppm ב-Kaguya). ההבדל המצרפי בין כלל הימות לכלל המישורים אינו מובהק בנתוני Kaguya.</li>
+<li><strong>הכיפות הקבורות של הצד הרחוק (מאמר 5, חלק D):</strong> מעל 44 כיפות הזנה קבורות בצד הרחוק, ריכוז התוריום זהה לזה של סביבתן (+0.05 ppm).</li>
+<li><strong>ההילה סביב הימות ומבחן "האזור הנתפס":</strong> במאמר 6 (§L.1, §L.3) נמדד בפליטה שסביב שש ימות ריכוז של 2.16 ppm עד 50 ק"מ, 1.39 ppm ב-300–600 ק"מ, ו-1.02 ppm בביקורת רחוקה. אולם בבדיקה מדוקדקת סביב כל 34 הימות (מבחן "האזור הנתפס", 22.11.2026 — השוואת הטבעת הקרובה ב-0–150 ק"מ מול קרקע רמות רחוקה ב-300–600 ק"מ), התברר כי לאחר הסרת השיפוע האזורי של המגע (הירידה הטבעית של התוריום עם המרחק ממרכז המגע), אין עודף בטבעת הקרובה (חציון 0.00 ppm). הימה ענייה מן הטבעת שסביבה אך ורק בתוך אזור המגע (4 מתוך 4).</li>
+<li><strong>אגן South Pole–Aitken (מאמר 8):</strong>
+<ul>
+<li>בתוך 30 מעלות ממרכז האגן, ריכוז התוריום גבוה פי 2.4–3.6 מאזורי ההשוואה. הוא נמוך במרכז האגן (1.7 ppm), מגיע לשיא בטבעת של 10–20 מעלות, ויוצר צורת סהר בצד המערבי–צפון-מערבי (4–5 ppm, עם נקודות חמות המגיעות לכ-6 ppm במכתשים Birkeland ו-Oresme V).</li>
+<li><strong>הסהר הוא שכבת כיסוי שנחתה מלמעלה:</strong> בתוך 43 מכתשים התוריום זהה לזה שמחוצה להם, וריכוזו נחלש ככל שמתרחקים ממרכז האגן (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mo>−</mo><mn>0.53</mn></mrow><annotation encoding="application/x-tex">r = -0.53</annotation></semantics></math></span>). מרכז המכתשים העשירים בתוריום שוכן במרחק 6.6 מעלות מנקודת היציאה הנגדית לאימבריום.</li>
+<li>היחס בין אשלגן לתוריום (K/Th) נמוך ואחיד בכל פנים האגן (451–455), נמוך ב-16%–20% מסביבתו, ובבזלות שהחזירה משימת Chang’e-6 האשלגן והברזל כבדים איזוטופית (האטומים הקלים אבדו). מאותו אזור עצמו הגיעו שני סוגי בזלת: בזלת בת 4.203 מיליארד שנה שמקורה עשיר בתוריום (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>1</mn><mo separator="true">,</mo><mn>620</mn></mrow><annotation encoding="application/x-tex">\mu \approx 1,620</annotation></semantics></math></span>), ובזלת צעירה יותר בת 2.807 מיליארד שנה שמקורה "שטוף" ומדולדל (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>≈</mo><mn>360</mn></mrow><annotation encoding="application/x-tex">\mu \approx 360</annotation></semantics></math></span>; Zhang et al. 2025).</li>
+</ul></li></ul>
+<figure class="fw"><img src="enc/thorium/EXT-SPA-TH.jpg"><figcaption>התוריום באגן SPA בצד הרחוק, על תצלום הירח: נמוך במרכז, טבעת סביבו, וסהר עשיר במערב ובצפון-מערב. קרדיט: NASA / LRO / Lunar Prospector / Dan Moriarty et al.</figcaption></figure>
+<h3>דגימות מוחזרות, כתמים קטנים וכדור הארץ</h3>
+<ul>
+<li><strong>דגימות שהובאו לכדור הארץ:</strong>
+<ul>
+<li><strong>אפולו 12:</strong> קרקע הקשורה לקרני המכתש קופרניקוס מכילה 7.6–9.4 ppm תוריום ו-14.0%–15.7% תחמוצת ברזל, לעומת 0.83 ppm תוריום ו-20.5% תחמוצת ברזל בבזלת המקומית שמתחתיה (Korotev et al. 2011).</li>
+<li><strong>אפולו 15:</strong> בזלת KREEP מהרי האפנינים מכילה 10–15.4 ppm תוריום (Taylor et al. 2012).</li>
+<li><strong>Chang’e-5:</strong> בזלת בת 2.03 מיליארד שנה מלב אזור התוריום בצד הקרוב, שמקורה כמעט נטול KREEP (פחות מחצי אחוז), והיסודות הנדירים שבה הצטברו בתהליך של התגבשות ממושכת (Tian et al. 2021).</li>
+</ul></li>
+<li><strong>כתמים קטנים מחוץ למגע ומים:</strong>
+<ul>
+<li><strong>Compton–Belkovich:</strong> הר געש מבודד בצד הרחוק (61°N, 99.5°E) של לבה סמיכה ועשירה בצורן, שהכיל 14–26 ppm תוריום בעת התפרצותו ופוזר בפיצוץ על פני שטח של כ-40 × 75 ק"מ (Wilson et al. 2015); ייתכן שהוא צעיר יחסית, בן כמיליארד שנה.</li>
+<li><strong>הכיפות הסיליקטיות של הצד הקרוב:</strong> כיפות Gruithuisen, Hansteen Alpha ו-Lassell עשירות בתוריום ודומות לכיפות ריוליט ארציות (Hagerty et al. 2006), ולצדן זוהו כ-20 "כתמי תוריום קטנים" באזור התוריום (Lawrence et al. 2003).</li>
+<li><strong>עקבות מים:</strong> כמעט כל מרבצי הזכוכית הגעשית הגדולים על הירח מכילים מים — כ-0.05% ממשקל הזכוכית — ובהם מרבצי אריסטרכוס שבאזור התוריום ומרבצי אפולו 15 ו-17 (Milliken &amp; Li 2017).</li>
+</ul></li>
+<li><strong>השוואה לכדור הארץ:</strong>
+<ul>
+<li>בכדור הארץ (Rudnick &amp; Gao 2003), המעטפת מכילה כ-0.08 ppm תוריום, הקרום האוקייני כ-0.2 ppm, והקרום היבשתי (הסיאל) כ-5.6 ppm בממוצע — בחלוקה ברורה של 1.2 ppm בקרום התחתון, 6.5 ppm בתיכון, ו-10.5 ppm בעליון (ובליבה כמעט אין תוריום כלל). בירח, ריכוז התוריום במגע (3.99–5.62 ppm) קרוב לממוצע של הקרום היבשתי של כדור הארץ (5.6 ppm), ואילו הצד הרחוק הדל (0.3–1.24 ppm) תואם לקרום היבשתי התחתון של כדור הארץ.</li>
+<li>בבדיקת האזור שמתחת לאגס באוקיינוס השקט (25°N, 165°E, מכתב 5, מבחן B, 13.10.2026) אין רכסים אוקייניים רגילים לדגימה; בבזלות של הוואי ואיי קרולינה יחס תוריום/לנתן נמוך (0.068 מול 0.110), אך מדובר בשני ארכיפלגים בלבד (ובלעדי הוואי ההבדל נעלם), כך שהשאלה טרם הוכרעה.</li>
+</ul></li></ul>
+<figure class="ff"><img src="enc/thorium/X-CB.jpg"><figcaption>Compton–Belkovich על מפת התוריום (Lunar Prospector, מצויר מחדש): כתם בודד בצד הרחוק, הרחק מהמגע ומ-SPA. במפה הגסה הכתם נמרח; בזמן ההתפרצות הריכוז בו היה 14–26 ppm.</figcaption></figure>
+<figure class="fig"><svg viewBox="0 0 680 400" role="img" aria-label="Thorium on Earth and Moon" style="direction:ltr"><line x1="295.1" x2="295.1" y1="20" y2="360" stroke="#ece7da"/><text x="295.1" y="378" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.1</text><line x1="366.6" x2="366.6" y1="20" y2="360" stroke="#ece7da"/><text x="366.6" y="378" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.3</text><line x1="445.0" x2="445.0" y1="20" y2="360" stroke="#ece7da"/><text x="445.0" y="378" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1</text><line x1="516.5" x2="516.5" y1="20" y2="360" stroke="#ece7da"/><text x="516.5" y="378" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3</text><line x1="594.9" x2="594.9" y1="20" y2="360" stroke="#ece7da"/><text x="594.9" y="378" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10</text><text x="445.0" y="396" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">תוריום (ppm, סולם לוגריתמי)</text><text x="238" y="34" font-size="13.5" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="start" direction="rtl">כדור הארץ</text><rect x="250" y="39" width="30.6" height="17" fill="#9aa6b8" rx="2"/><text x="238" y="52" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">מעטפת</text><text x="286.6" y="52" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">0.08</text><rect x="250" y="66" width="206.9" height="17" fill="#c8a46a" rx="2"/><text x="238" y="79" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">קרום יבשתי תחתון</text><text x="462.9" y="79" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">1.2</text><rect x="250" y="93" width="316.8" height="17" fill="#c8a46a" rx="2"/><text x="238" y="106" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">קרום יבשתי תיכון</text><text x="572.8" y="106" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">6.5</text><rect x="250" y="120" width="348.1" height="17" fill="#c8a46a" rx="2"/><text x="238" y="133" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">קרום יבשתי עליון</text><text x="604.1" y="133" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">10.5</text><text x="238" y="176" font-size="13.5" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="start" direction="rtl">הירח</text><rect x="250" y="181" width="116.6" height="17" fill="#9aa6b8" rx="2"/><text x="238" y="194" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">צד רחוק, רמות פנימיות</text><text x="372.6" y="194" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">0.3</text><rect x="250" y="208" width="209.0" height="17" fill="#9aa6b8" rx="2"/><text x="238" y="221" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">רמות רחוקות מימות</text><text x="465.0" y="221" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">1.24</text><rect x="250" y="235" width="244.2" height="17" fill="#e0a07a" rx="2"/><text x="238" y="248" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">SPA</text><text x="500.2" y="248" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">2.13</text><rect x="250" y="262" width="285.1" height="17" fill="#2a6fb5" rx="2"/><text x="238" y="275" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">ימות המגע</text><text x="541.1" y="275" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">3.99</text><rect x="250" y="289" width="305.7" height="17" fill="#e0662f" rx="2"/><text x="238" y="302" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">רמות המגע</text><text x="561.7" y="302" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">5.48</text><rect x="250" y="316" width="307.4" height="17" fill="#e0662f" rx="2"/><text x="238" y="329" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="start" direction="rtl">מישורי המגע</text><text x="563.4" y="329" font-size="11.5" font-family="Heebo" font-weight="400" fill="#1f3a5f" text-anchor="start">5.62</text></svg><figcaption>התוריום בכדור הארץ ובירח, בסולם לוגריתמי. בכדור הארץ התוריום נמצא בסיאל — הקרום היבשתי — ובעיקר בחלקו העליון. בירח הוא נמצא במגע, והצד הרחוק דל כמו הקרום התחתון של כדור הארץ.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>ארבעה דימויים מוחשיים: איך תוריום נע, נאסף ונדחק</h2>
+
+<p>לפני שנשווה בין ההסברים המדעיים השונים, כדאי להבין את ההיגיון הפיזיקלי של תנועת התוריום באמצעות ארבעה דימויים מחיי היומיום. כל אחד מהם מתאר מנגנון ממשי שפעל בשלב אחר של בניית הירח:</p>
+<ol class="steps">
+<li><strong>חול רטוב בחוף (המגע):</strong><br>כאשר עומדים על חול רטוב בחוף הים ולוחצים עליו ביד שוב ושוב, גרגירי החול מתהדקים זה לזה, המים הכלואים ביניהם נדחקים כלפי מעלה, ועל פני השטח נוצרת שלולית. כך בדיוק פעל אזור המגע שבין כדור הארץ לירח: חומר חם ורווי מים שנלחץ והורפה ללא הרף, ובכל לחיצה נדחק ממנו הנוזל — ואיתו התוריום — ונאסף לכיסים ולשלוליות.</li>
+<li><strong>מוט שעובר דרך להבה (הסיאל):</strong><br>בתעשיית השבבים מטהרים מוטות של צורן (סיליקון, Si) בשיטה המכונה "זיקוק אזורי": מעבירים מוט מוצק לאט דרך אזור צר וחם שבו הוא נמס מקומית. הזיהומים שבו מעדיפים את הנוזל, נשארים לכודים באזור החם, והמוט יוצא נקי ומטוהר מן הצד השני. הסיאל של כדור הארץ עבר דרך אזור המגע החם כמו אותו מוט: הוא הותיר את התוריום מאחוריו בתוך המגע, והמשיך דל ונקי מתוריום אל הצד הרחוק.</li>
+<li><strong>מי ים קופאים (הימות):</strong><br>כאשר מי ים קופאים מלמעלה, הקרח שנוצר עשוי ממים מתוקים כמעט לגמרי, ואילו המלח נדחק החוצה אל התמלחת הנוזלית שמתחתיו. באותו אופן, כל ימה באזור המגע קפאה מפני השטח פנימה: חזית הקפיאה דחקה את התוריום אל הנוזל שנותר בתעלה, והותירה את קרקעית הימה ענייה בתוריום.</li>
+<li><strong>שקית תה שנחלטת שוב ושוב (אגן SPA):</strong><br>כאשר חולטים שקית תה במים רותחים, החליטה הראשונה יוצאת כהה ועשירה; לאחר כמה חליטות השקית כבר שטופה ודלה. מתחת לאגן South Pole–Aitken הותך הסיאל שוב ושוב במשך זמן רב: ההתכה הראשונה מיצתה ולקחה עמה את התוריום, ומה שנותר מאחור היה מדולדל ו"שטוף".</li>
+</ol>
+</section>
+
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל: שארית של אוקיינוס מגמה, או חלוקה של החומר הארצי בדרך?</h2>
+
+<p>כדי להעמיד את מודל LEF למבחן הוגן, נסכם תחילה את ארבעת ממצאי היסוד שנמדדו על הירח, נבחן כיצד מסבירה אותם הספרות המקובלת, ונראה כיצד קורא אותם מודל LEF.</p>
+<div class="blk m"><h3>1. סיכום ארבעת הממצאים</h3>
+<ul>
+<li><strong>הריכוז:</strong> 95% מעודף התוריום של הירח מצויים בשישית אחת בלבד מפני השטח, ומרכז הריכוז שוכן בטווח של 47 ק"מ ממרכז המגע שנקבע מראש.</li>
+<li><strong>בתוך האזור:</strong> מישורי הבזלת והרמות שווים כמעט בריכוזם (5.62 ו-5.48 ppm), ואילו הימות הן הקרקע הענייה ביותר (3.99 ppm), וכל ימה ענייה מסביבתה הקרובה.</li>
+<li><strong>הצד הרחוק:</strong> הקרום עני בתוריום (0.3–1.2 ppm), ומעל הכיפות הקבורות הריכוז זהה לסביבה.</li>
+<li><strong>אגן SPA:</strong> הריכוז גבוה פי 2.4–3.6 מן הסביבה, אך המרכז עצמו מדולדל ומוקף בטבעת ובסהר; היחס K/Th נמוך ואחיד; ובזלות האגן מעידות על מקור עשיר לפני 4.2 מיליארד שנה שהפך למקור שטוף לפני 2.8 מיליארד שנה.</li>
+</ul>
+</div><div class="blk i"><h3>2. מה אומרת הספרות המקובלת?</h3>
+<p>בספרות המקובלת, התפלגות התוריום מוסברת באמצעות רצף של אירועים נפרדים:</p>
+<ul>
+<li><strong>אוקיינוס המגמה:</strong> הירח הצעיר היה מכוסה באוקיינוס מגמה גלובלי שהתגבש בהדרגה. הגבישים הראשונים שקעו או צפו, ואילו הנוזל השאריתי האחרון — שהועשר בתוריום, באשלגן וביסודות נדירים (KREEP) — נאסף מתחת לקרום הצד הקרוב. החום הרדיואקטיבי של שכבה זו התיך את המעטפת והזין את התפרצויות הימות (Jolliff et al. 2000; Wieczorek &amp; Phillips 2000). בהסבר זה אין לאזור PKT מרכז גיאומטרי מוגדר מראש — זהו פשוט המקום שבו הצטברה השארית.</li>
+<li><strong>הפליטה של אגן אימבריום:</strong> אגן אימבריום נחפר על ידי פגיעה באזור עשיר בתוריום ופיזר חומר פליטה עשיר על פני הקרקע שסביבו (Haskin 1998). לפי Levin et al. (2025), פני השטח של הצד הקרוב הם שכבת פליטה עשירה המונחת מעל קרום עני (פחות מ-1 ppm), ומתחתיה מצוי מאגר בעל ריכוז של 45–120 ppm.</li>
+<li><strong>מדוע דווקא בצד הקרוב?</strong> Jones et al. (2022) הציעו שהחום מפגיעת הענק שיצרה את SPA עורר זרם הסעה חם במעטפת שדחף את שכבת ה-KREEP אל הצד הקרוב. Andrews-Hanna et al. (2025) הציעו שהגוף שיצר את SPA הגיע מצפון, כך שחומר הפליטה במערב האגן עשיר בתוריום ובמזרח עני בו משום שהפגיעה פרצה סמוך לגבול השכבה העשירה, וכי הקרום שהתעבה בצד הרחוק "סחט" את הנוזלים האחרונים אל הצד הקרוב.</li>
+<li><strong>אגן SPA:</strong> הסהר העשיר בתוריום מפורש כחשיפה של מעטפת שכבתית או של שארית אגם התכה שנחפרו על ידי מכתשים צעירים (Moriarty et al. 2021), ואילו האשלגן הכבד איזוטופית מוסבר באידוי רגעי בזמן הפגיעה.</li>
+<li><strong>מה נותר פתוח בספרות:</strong> הבזלת הצעירה שהחזירה משימת Chang’e-5 (בת 2.03 מיליארד שנה) הגיעה ממקור כמעט נטול KREEP, ולכן נותרה פתוחה השאלה מה הניע את הגעשיות הצעירה באזור (Tian et al. 2021). ההבדל הכימי והמבני בין שני צדי הירח מוגדר בספרות כ"תעלומה ותיקה".</li>
+</ul>
+</div><div class="blk l"><h3>3. מה אומר מודל LEF?</h3>
+<p>במודל LEF אין צורך בהסבר נפרד לכל ממצא: כל החומר הגיע מכדור הארץ, והשאלה אינה מאיפה בא התוריום — אלא כיצד החומר הארצי התחלק בדרך.</p>
+<ul>
+<li><strong>הריכוז והמרכז:</strong> הסיאל — הקרום הקל של כדור הארץ הנושא את התוריום — גלש במעלה האגס אל הירח. באזור המגע, שהיה חם, רטוב וסגור, עבר התוריום לנוזל ונאסף. משום כך הריכוז מסודר סביב מרכז גיאומטרי אחד: מרכז המגע.</li>
+<li><strong>בתוך האזור:</strong> מישורי הבזלת הם סיאל שנמס במקומו ושמר על התוריום שבו, בדומה לרמות שסביבם. לעומתם, הימות היו תעלות לעומק: החומר שעלה דרכן הגיע מן העומק העני בתוריום, וכאשר קפאו מבחוץ פנימה, דחפה חזית הקפיאה את התוריום פנימה אל התעלה.</li>
+<li><strong>הצד הרחוק:</strong> הסיאל חלף דרך אזור המגע החם, מסר לו את התוריום, והמשיך דל ונקי אל הצד הרחוק.</li>
+<li><strong>אגן SPA:</strong> החום והנוזל שנכנסו דרך אימבריום וסרניטאטיס ("המבער") חצו את הירח והגיעו לתחתית הצד הרחוק. שם הותך הסיאל שוב ושוב מלמטה; ההתכה הראשונה לקחה את התוריום מן המרכז, והסיבוב המהיר הסיט את החומר הנפלט הצדה ויצר את הסהר.</li>
+</ul>
+</div><h3>טבלת השוואה: ממצאים מול הסברים</h3>
+<div class="tw"><table class="lab"><tr><th>ממצא תצפיתי</th><th>ההסבר בספרות המקובלת</th><th>ההסבר במודל LEF</th></tr>
+<tr><td>95% מעודף התוריום בשישית מהירח</td><td>מסבירה: השארית הנוזלית הצטברה מתחת לצד הקרוב.</td><td>מתאים: התוריום נאסף באזור המגע.</td></tr>
+<tr><td>המרכז — 47 ק"מ ממרכז שנקבע מראש</td><td>לא צופה מרכז גיאומטרי מסוים.</td><td>מתאים: המרכז נקבע מראש מהגיאומטריה של האגס.</td></tr>
+<tr><td>מישורים = רמות; הימות הכי עניות</td><td>לא צופה: הבזלת אמורה להיות עשירה היכן שעלתה דרך השארית.</td><td>מתאים: הימות הן תעלות לעומק; חזית הקפיאה דחפה את התוריום פנימה.</td></tr>
+<tr><td>צד רחוק עני בתוריום</td><td>מסבירה: הקרום העבה סחט את הנוזל אל הצד הקרוב.</td><td>מתאים: הסיאל השאיר את התוריום במגע והמשיך דל.</td></tr>
+<tr><td>SPA: טבעת, סהר, K/Th נמוך</td><td>מסבירה כל ממצא באמצעות מנגנון נפרד.</td><td>מתאים: חימום ממושך מלמטה — הסבר פיזיקלי אחד לכל הממצאים.</td></tr>
+<tr><td>אפולו 12: עשיר בתוריום, עני בברזל</td><td>מסבירה: ערבוב עם חומר KREEP מקומי.</td><td>מתאים: לאחר הניתוק כדור הארץ זרק את החלק הקל (העשיר בתוריום ועני בברזל).</td></tr>
+</table></div>
+</section>
+
+<section>
+<span class="lab">05 · THE MECHANISM IN WORDS</span>
+<h2>המנגנון במילים — מסעו של התוריום מכדור הארץ אל הירח</h2>
+
+<p>כיצד עבר התוריום של כדור הארץ הצעיר אל הירח, מדוע נלכד כמעט כולו באזור המגע, ומה עיצב את תבניתו בימות, בצד הרחוק ובאגן SPA? במודל LEF זהו סיפור רציף אחד, המתנהל בתשעה שלבים ברורים:</p>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" aria-label="The path of thorium" style="direction:ltr"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#b23a2e"/></marker><radialGradient id="hot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f6b26b"/><stop offset="1" stop-color="#f6b26b" stop-opacity="0"/></radialGradient></defs><circle cx="120" cy="190" r="105" fill="#dfe7f1" stroke="#1f3a5f" stroke-width="2"/><path d="M47,115 A105,105 0 0 1 193,115" fill="none" stroke="#c8a46a" stroke-width="9"/><text x="120" y="200" font-size="15" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">כדור הארץ</text><text x="120" y="220" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">מעטפת עניה בתוריום</text><text x="120" y="76" font-size="12" font-family="Heebo" font-weight="700" fill="#8a6a2e" text-anchor="middle" direction="rtl">סיאל: עשיר בתוריום</text><path d="M205,150 C300,150 360,165 430,178 L430,222 C360,232 300,240 205,232 Z" fill="#e9e1cc" stroke="#1f3a5f" stroke-width="1.5"/><path d="M210,150 C300,150 360,163 430,176" fill="none" stroke="#c8a46a" stroke-width="7"/><text x="318" y="138" font-size="12" font-family="Heebo" font-weight="400" fill="#8a6a2e" text-anchor="middle" direction="rtl">הסיאל עולה במעלה האגס</text><text x="318" y="262" font-size="13" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">האגס</text><ellipse cx="448" cy="200" rx="42" ry="58" fill="url(#hot)"/><text x="448" y="286" font-size="12.5" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" direction="rtl">המגע: חם, רטוב, סגור</text><text x="448" y="303" font-size="11.5" font-family="Heebo" font-weight="400" fill="#b23a2e" text-anchor="middle" direction="rtl">מים כלואים · נשאב בכל סיבוב</text><text x="448" y="320" font-size="11.5" font-family="Heebo" font-weight="400" fill="#b23a2e" text-anchor="middle" direction="rtl">התוריום נאסף כאן</text><circle cx="560" cy="200" r="100" fill="#f1efe9" stroke="#1f3a5f" stroke-width="2"/><path d="M500,120 A100,100 0 0 1 660,200 A100,100 0 0 1 500,280" fill="none" stroke="#d9cfb4" stroke-width="7"/><text x="605" y="118" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">צד רחוק: סיאל דל</text><text x="535" y="262" font-size="15" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">הירח</text><path d="M470,175 Q520,185 575,215" fill="none" stroke="#2a4d7a" stroke-width="3" stroke-dasharray="5 4" marker-end="url(#ar)"/><text x="545" y="165" font-size="11.5" font-family="Heebo" font-weight="400" fill="#2a4d7a" text-anchor="middle" direction="rtl">ימות: זרם פנימה</text><path d="M575,215 Q620,250 640,268" fill="none" stroke="#b23a2e" stroke-width="2.5" marker-end="url(#ar)"/><circle cx="645" cy="272" r="13" fill="#f6b26b" fill-opacity=".7" stroke="#b23a2e"/><text x="585" y="318" font-size="11.5" font-family="Heebo" font-weight="400" fill="#b23a2e" text-anchor="middle" direction="rtl">SPA: סיאל שמותך שוב ושוב</text><path d="M470,150 Q520,95 600,102" fill="none" stroke="#8a6a2e" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>הדרך של התוריום. הסיאל העשיר בתוריום גולש במעלה האגס; במגע — חם, רטוב וסגור — התוריום נאסף; הסיאל ממשיך דל אל הצד הרחוק; דרך הימות זורמים חום ונוזל פנימה, וחלקם מגיע לתחתית SPA.</figcaption></figure>
+<h3>א. נקודת המוצא בכדור הארץ: התוריום בסיאל</h3>
+<p>תוריום הוא יסוד ש"אוהב סלע" (ליתופילי): הוא נקשר בחוזקה לחמצן, נותר בתוך החומר הסיליקטי, ואינו שוקע עם הברזל אל ליבת כדור הארץ. בתוך החומר הסיליקטי הוא בוחר תמיד בנוזל — משום שהיון שלו גדול ובעל מטען גבוה, אין לו מקום במבנה של גבישים רגילים.</p>
+<p>לכן, בכל פעם שחומר מוצק נמס חלקית, התוריום עובר אל טיפות הנוזל הראשונות, וכשהנוזל מתקרר ומתגבש הוא נדחק אל השארית הנוזלית האחרונה. בכדור הארץ התוצאה מוכרת היטב: המעטפת נותרה כמעט נקייה מתוריום (כ-0.08 ppm), ואילו הקרום היבשתי הקל — הסיאל, שנוצר מהתכה בנוכחות מים — ריכז בתוכו את התוריום (כ-5.6 ppm בממוצע, ועד כ-10.5 ppm בחלקו העליון).</p>
+<h3>ב. העלייה במעלה האגס: הסיאל מחליק אל הקצה</h3>
+<p>בשלב הבנייה הסתובב כדור הארץ הצעיר במהירות, והלחץ הפנימי הרים ממנו בליטה ענקית — האגס — שבקצה שלה נבנה הירח. האגס פעל כעמוד שיקוע עצום: החומר הכבד שקע בחזרה אל כדור הארץ, ואילו החומר הקל עלה אל הקצה.</p>
+<p>קליפת הסיאל הקלה והעשירה בתוריום החליקה כיריעה אחת על פני הסימה שמתחתיה, לאורך דפנות האגס ועד לקצהו (מאמר 3, §C.10). הגבול שבין הסיאל לסימה היה "משומן" היטב, משום שחומר כדור הארץ הצעיר עוד הכיל בתוכו את רוב מי האוקיינוסים של ימינו. בדרך זו הגיע החומר הנושא את התוריום אל הירח.</p>
+<h3>ג. אזור המגע: מלכודת חמה, רטובה וסגורה</h3>
+<p>אזור המגע — הממשק שבו ישב הירח על קצה האגס — היה מנגנון חם: זרם החומר העולה לאורך האגס הביא אליו חום רב, שהמיס את הסיאל והחליק את פני השטח.</p>
+<p>אך מעבר לחום, אזור המגע היה סגור לחלוטין. בכל מקום אחר על פני כדור הארץ הצעיר, תהליך המיון הפנימי שחרר את המים החוצה: בקו הקורוטציה ברחו הנדיפים לחלל, ובאזורי האוקיינוסים השתחררו המים כאדים, התעבו וירדו כגשם. באזור המגע, לעומת זאת, ישב הירח מעל כמעין מכסה אטום, והמים שנדחפו כלפי מעלה לא יכלו להימלט.</p>
+<p>המים הלכודים הצטברו, ובלחץ של כמה קילומטרים של חומר מעליהם ובטמפרטורה גבוהה הפכו למים "על-קריטיים" — מצב צבירה שבו אין עוד הבדל בין נוזל לאדים, ולכן אין התאדות ואין התעבות. מים על-קריטיים מתערבבים ישירות עם נוזל ההתכה ומורידים בחדות את טמפרטורת ההתכה של החומר (לשם השוואה, גרניט רטוב נמס כבר בכ-650°C, לעומת יותר מ-1,000°C כשהוא יבש). כך נותר אזור המגע רך ונוזלי חלקית לאורך כל שלב הבנייה.</p>
+<h3>ד. המשאבה הגאותית: שאיבה כל 2.9 שעות</h3>
+<p>האגס והירח הסתובבו יחד עם כדור הארץ (ביממה של כ-5.77 שעות). פעמיים בכל סיבוב עמדה השמש בקו אחד עם האגס, משכה את הירח ואת כדור הארץ לכיוונים מנוגדים, ומתחה את צוואר האגס; ופעמיים בכל סיבוב היא עמדה בניצב לו, וצוואר האגס התכופף.</p>
+<p>התוצאה הייתה פעולה מחזורית של לחיצה והרפיה מדי 2.9 שעות בערך (כ-3,000 מחזורים בשנה), ללא הפסקה — ממש כמו יד הלוחצת שוב ושוב על חול רטוב בחוף הים. כל לחיצה הידקה את השלד המוצק ודחקה מתוכו את הנוזל הקל: מים ונוזל התכה עשיר בתוריום, שנאספו יחד לכיסים ("שלוליות") ונותרו לכודים במגע. בסדר גודל ראשוני, הלחץ בכל מחזור היה חלש למדי — כ-0.14 אטמוספרה, בדומה ללחיצת יד על חול — אך לאורך 600 מיליון שנות הבנייה הצטבר התהליך לכ-1.8 טריליון מחזורים של שאיבה גאותית.</p>
+<figure class="fig"><svg viewBox="0 0 680 330" role="img" aria-label="Solar tide pumping" style="direction:ltr"><circle cx="60" cy="165" r="34" fill="#f6c453" stroke="#c47f2c"/><text x="60" y="222" font-size="13" font-family="Heebo" font-weight="700" fill="#c47f2c" text-anchor="middle" direction="rtl">השמש</text><circle cx="360" cy="165" r="38" fill="#dfe7f1" stroke="#1f3a5f" stroke-width="1.5"/><text x="360" y="169" font-size="11" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">כדור הארץ</text><circle cx="360" cy="165" r="118" fill="none" stroke="#ece7da" stroke-dasharray="4 5"/><line x1="322.0" y1="165.0" x2="248.0" y2="165.0" stroke="#c8a46a" stroke-width="9" stroke-linecap="round"/><circle cx="248.0" cy="165.0" r="15" fill="#f1efe9" stroke="#1f3a5f" stroke-width="1.5"/><text x="210.0" y="169.0" font-size="13" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" direction="rtl">נמתח</text><line x1="360.0" y1="127.0" x2="360.0" y2="53.0" stroke="#c8a46a" stroke-width="9" stroke-linecap="round"/><circle cx="360.0" cy="53.0" r="15" fill="#f1efe9" stroke="#1f3a5f" stroke-width="1.5"/><text x="360.0" y="19.0" font-size="13" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">מתכופף</text><line x1="398.0" y1="165.0" x2="472.0" y2="165.0" stroke="#c8a46a" stroke-width="9" stroke-linecap="round"/><circle cx="472.0" cy="165.0" r="15" fill="#f1efe9" stroke="#1f3a5f" stroke-width="1.5"/><text x="510.0" y="169.0" font-size="13" font-family="Heebo" font-weight="700" fill="#b23a2e" text-anchor="middle" direction="rtl">נמתח</text><line x1="360.0" y1="203.0" x2="360.0" y2="277.0" stroke="#c8a46a" stroke-width="9" stroke-linecap="round"/><circle cx="360.0" cy="277.0" r="15" fill="#f1efe9" stroke="#1f3a5f" stroke-width="1.5"/><text x="360.0" y="319.0" font-size="13" font-family="Heebo" font-weight="700" fill="#1f3a5f" text-anchor="middle" direction="rtl">מתכופף</text><path d="M430,55 A130,130 0 0 1 485,125" fill="none" stroke="#5b6676" stroke-width="1.5" marker-end="url(#ar2)"/><defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b6676"/></marker></defs><text x="590" y="40" font-size="12.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">יממה של כ-5.77 שעות</text><text x="590" y="60" font-size="12.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">לחיצה והרפיה כל ~2.9 שעות</text><text x="590" y="80" font-size="12.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle" direction="rtl">כ-3,000 מחזורים בשנה</text></svg><figcaption>המשאבה. הצוואר של האגס נמתח כשהשמש בקו שלו ומתכופף כשהיא בניצב — לחיצה והרפיה כל כ-2.9 שעות.</figcaption></figure>
+<h3>ה. הזיקוק: הסיאל ממשיך דל אל הצד הרחוק</h3>
+<p>כאשר הסיאל חלף דרך אזור המגע החם והרטוב, הוא השאיר בו את התוריום — בדיוק כמו מוט צורן העובר דרך להבה בתהליך של זיקוק אזורי ומשאיר בה את הזיהומים. לאחר שעבר את אזור המגע, המשיך הסיאל כשהוא נקי ודל בתוריום אל הצד הרחוק של הירח, ושם נבנתה ממנו, שכבה על גבי שכבה, הקליפה העבה. משום כך הצד הרחוק עני בתוריום (0.3–1.2 ppm, בדומה לקרום היבשתי התחתון של כדור הארץ), ומשום כך גם מעל הכיפות הקבורות שם אין כל עודף תוריום.</p>
+<h3>ו. הימות: חזית הקפיאה דחפה את התוריום פנימה</h3>
+<p>ארבע הימות שבתוך אזור המגע — ובראשן אימבריום וסרניטאטיס — היו תעלות פתוחות שחיברו את פנים כדור הארץ אל פנים הירח. דרכן זרמו חום וחומר מן העומק — חומר שעלה מתחת לשכבת הסיאל ולכן היה עני בתוריום, בדומה למעטפת של כדור הארץ.</p>
+<p>כאשר הזרם נחלש, התקררה כל ימה מפני השטח פנימה, בדומה למי ים הקופאים מלמעלה. שכבת הגבישים החיצונית שהתקשתה ראשונה דחתה מתוכה את התוריום, שברח אל הנוזל שנותר בתעלה. כך נותרו קרקעיות הימות נקיות ועניות בתוריום, בעוד שהטיטניום — שחלקו נלכד בגבישי אילמניט — נותר במקומו (ירידה של 30% בתוריום לעומת 5% בלבד בטיטניום). מחוץ לאזור המגע קפאו הימות מהר ועמדו על קרקע ענייה בתוריום ממילא, ולכן אין שם פער ניכר בין הימה לסביבתה.</p>
+<h3>ז. "המבער" ואגן SPA: חליטה חוזרת בצד הרחוק</h3>
+<p>דרך אימבריום ("המבער הראשי") וסרניטאטיס ("המבער המשני") חדרו חום ונוזל לתוך הירח, חצו אותו והגיעו אל תחתית הקרום בצד הרחוק, ממש מול שתי הימות. שם הותך הסיאל מלמטה במשך זמן רב, מבלי שלבה פרצה אל פני השטח.</p>
+<p>בכל מחזור של התכה לקח הנוזל הראשון את התוריום, ומה שנותר מאחור נשטף והתדלדל — ממש כמו שקית תה הנחלטת שוב ושוב. בראשית התהליך ירתה ימה מרכזית באגן SPA חומר אל פני השטח, והסיבוב המהיר של המערכת המחוברת (יממה של כ-5.77 שעות) הסיט את החומר הנפלט לצד אחד ויצר את הסהר העשיר בתוריום שבמערב האגן. במקביל, החום הממושך אידה את האשלגן הנדיף והותיר את התוריום העמיד, מה שיצר יחס K/Th נמוך ואחיד בכל האזור המחומם. תהליך כפול זה מסביר מדוע דגימות בזלת בנות 4.2 מיליארד שנה מאגן SPA מעידות על מקור עשיר בתוריום, ואילו בזלות בנות 2.8 מיליארד שנה מאותו אזור עצמו מעידות על מקור "שטוף" ומדולדל.</p>
+<h3>ח. רגע הניתוק: המכסה הוסר והפקק נפתח</h3>
+<p>ברגע שהירח הגיע אל קו הקורוטציה, התקלף והתקפל כלפי חוץ מקצה האגס, נפתחו הפתחים והמכסה הוסר: הלחץ הפנימי השתחרר בבת אחת, הנדיפים פרצו החוצה, ואזור המגע נחשף — ואיתו ריכוז התוריום הגדול שנאסף בו. מאותו רגע איבד הירח את נדיפיו בהדרגה, עד שהפך ליבש כפי שאנו מכירים אותו היום. מן המים הרבים שהיו כלואים בו נותרו רק עקבות: זכוכיות געשיות רטובות, ובהן אלו של אריסטרכוס השוכן בלב אזור התוריום.</p>
+<h3>ט. לאחר הניתוק: החלק הקל של כדור הארץ</h3>
+<p>גם לאחר שהירח נפרד, כדור הארץ המשיך להשליך חומר לחלל במשך תקופה מסוימת. אולם כעת, ללא גשר החיבור, רק החלק הקל ביותר הצליח להימלט מכוח המשיכה של כדור הארץ ולהגיע אל הירח, בעוד שהחומר הכבד נותר קשור לכדור הארץ. חומר קל זה הוא בדיוק החומר העשיר בתוריום והעני בברזל — וכך נראות דגימות אפולו 12 הקשורות לקרני המכתש קופרניקוס: 7.6–9.4 ppm תוריום ופחות ברזל מאשר בבזלת המקומית שעליה נחתו.</p>
+<h3>תיבות מעבדה: שלוש בדיקות עומק</h3>
+
+<div class="callout"><span class="tag">תיבת מעבדה · מבחן 16,200 המרכזים</span><p style="margin:0">כדי למנוע הטיה, משרטטים מטרה (עיגול המגע) על המפה מראש, לפני פתיחת הנתונים, ומשווים אותה לכל עיגול אחר בגודל זהה שניתן לשרטט על הירח. כל אחד מ-259,200 התאים של המפה משוקלל לפי שטחו האמיתי על הכדור, וסוכמים רק את עודף התוריום שמעל 3 ppm. מרכז המגע שנקבע מראש מדורג שלישי מתוך 16,200.</p></div>
+<div class="callout"><span class="tag">תיבת מעבדה · מבחן "האזור הנתפס"</span><p style="margin:0">נבדקה השאלה האם סביב כל ימה קיימת טבעת עשירה בתוריום. בבדיקה הראשונית נראתה סביב ימות המגע טבעת עשירה בהרבה מן הסביבה הרחוקה — אך התברר שהדבר נבע מכך שהסביבה הרחוקה פשוט רחוקה יותר ממרכז המגע. לאחר הסרת השיפוע האזורי הטבעי, העודף נעלם לחלוטין: במפה של 60 ק"מ אין טבעת כזו (ואם היא קיימת, היא צרה מכך).</p></div>
+<div class="callout"><span class="tag">תיבת מעבדה · כדור הארץ (מכתב 5)</span><p style="margin:0">אם החומר הנושא את התוריום עזב את כדור הארץ דרך האגס, האזור שמתחת לאגס באוקיינוס השקט אמור להיות שונה בתכולת התוריום שלו. בבדיקת בזלות האוקיינוס התברר שאין רכסים מרכז-אוקייניים רגילים בתוך האזור עצמו; בבזלות של הוואי ושל איי קרולינה יחס תוריום/לנתן אכן נמוך (0.068 מול 0.110), אך מדובר בשני ארכיפלגים בלבד (ובלעדי הוואי ההבדל נעלם), ולכן השאלה טרם הוכרעה.</p></div>
+
+</section>
+
+<section>
+<span class="lab">06 · THE KEY EQUATIONS</span>
+<h2>נוסחאות המפתח של פרק התוריום</h2>
+<p>מאחורי ההסבר הפיזיקלי עומדות שמונה נוסחאות יסוד, הקושרות בין תכונותיו הגרעיניות והכימיות של התוריום לבין המדידות על פני הירח:</p>
+<p><strong>1. כמה תוריום נותר מאז ראשית המערכת:</strong></p>
+<p>האיזוטופ תוריום-232 דועך בקצב איטי ביותר, בזמן מחצית חיים של 14.05 מיליארד שנה. בתוך 4.5 מיליארד שנה נותר ממנו:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><msub><mi>t</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>4.5</mn><mi mathvariant="normal">/</mi><mn>14.05</mn></mrow></msup><mo>≈</mo><mn>0.80</mn></mrow><annotation encoding="application/x-tex">\frac{N(t)}{N_{0}}=e^{-\lambda t}=2^{-t/t_{1/2}}=2^{-4.5/14.05}\approx 0.80</annotation></semantics></math></span></div></div></div>
+<p>כלומר, כ-80% מכלל התוריום שהיה קיים בהתחלה עדיין קיים כיום, ולכן המפה שאנו מודדים מהחלל משקפת כמעט במדויק את הפיזור המקורי.</p>
+<p><strong>2. מדוע התוריום נאסף בנוזל:</strong></p>
+<p>מקדם החלוקה <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> הוא היחס שבין ריכוז היסוד בגביש המתגבש לבין ריכוזו בנוזל שמסביבו. עבור תוריום, מקדם החלוקה קטן מאוד (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D \approx 0</annotation></semantics></math></span>). כאשר מאגמה מתגבשת ונותר ממנה חלק קטן <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> בלבד כנוזל, ריכוז התוריום בנוזל עולה לפי:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mtext>liquid</mtext></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><msup><mi>F</mi><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>≈</mo><mfrac><msub><mi>C</mi><mn>0</mn></msub><mi>F</mi></mfrac><mspace width="2em"/><mo stretchy="false">(</mo><mi>D</mi><mo>≈</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C_{\text{liquid}}=C_{0}F^{D-1}\approx \frac{C_{0}}{F}\qquad (D\approx 0)</annotation></semantics></math></span></div></div></div>
+<p>כאשר נותרת עשירית אחת בלבד של נוזל (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">F = 0.1</annotation></semantics></math></span>), ריכוז התוריום בו גדל פי עשרה. משוואה זו עומדת בבסיס כל השלבים: הנוזל האחרון הנדחק פנימה בימה, הנוזל הראשון הממוצה באגן SPA, והשלוליות הנאספות במגע.</p>
+<p><strong>3. הזיקוק האזורי — מעבר דרך אזור חם (Pfann 1952):</strong></p>
+<p>כאשר מוט מוצק עובר דרך אזור נמס ברוחב <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span>, ריכוז היסוד בחומר המתמצק אחריו הוא:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mrow><mo fence="true">[</mo><mn>1</mn><mo>−</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>k</mi><mi>x</mi><mi mathvariant="normal">/</mi><mi>l</mi></mrow></msup><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">C_{s}(x)=C_{0}\left[1-(1-k)e^{-kx/l}\right]</annotation></semantics></math></span></div></div></div>
+<p>כאשר מקדם החלוקה <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> קטן, החומר המתמצק מעבר לאזור החם יוצא כמעט נקי, והיסוד נותר ומצטבר באזור הנמס. במודל LEF, הסיאל הוא המוט, ואזור המגע הוא האזור הנמס.</p>
+<p><strong>4. העודף שנאסף בדיסקת המגע:</strong></p>
+<p>החלק מכלל עודף התוריום שמעל 3 ppm הלכוד בתוך עיגול נתון (כאשר כל תא במפה משוקלל לפי שטחו האמיתי <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_{i}</annotation></semantics></math></span>) הוא:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mtext>cap</mtext></mrow></munder><msub><mi>A</mi><mi>i</mi></msub><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mtext>Th</mtext><mi>i</mi></msub><mo>−</mo><mn>3</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>A</mi><mi>i</mi></msub><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mtext>Th</mtext><mi>i</mi></msub><mo>−</mo><mn>3</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mfrac><mo>=</mo><mn>94.99</mn><mi mathvariant="normal">%</mi><mspace width="2em"/><mo stretchy="false">(</mo><mtext>דירוג </mtext><mn>3</mn><mi mathvariant="normal">/</mi><mn>16</mn><mo separator="true">,</mo><mn>200</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S=\frac{\sum _{i\in \text{cap}}A_{i}\max (\text{Th}_{i}-3,0)}{\sum _{i}A_{i}\max (\text{Th}_{i}-3,0)}=94.99\%\qquad (\text{דירוג }3/16,200)</annotation></semantics></math></span></div></div></div>
+<p><strong>5. המשאבה הגאותית — גאות השמש על הירח המחובר:</strong></p>
+<p>בהערכת סדר גודל ראשונית, תאוצת הגאות של השמש והלחץ המחזורי הפועל על שטח המגע הם:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>a</mi><mo lspace="0em" rspace="0em">⊙</mo></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>G</mi><msub><mi>M</mi><mo lspace="0em" rspace="0em">⊙</mo></msub><mi>r</mi></mrow><msup><mi>d</mi><mn>3</mn></msup></mfrac><mo>≈</mo><mn>1.3</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup><msup><mtext> m s</mtext><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo separator="true">,</mo><mspace width="2em"/><mi>P</mi><mo>≈</mo><mfrac><mrow><msub><mi>M</mi><mtext>Moon</mtext></msub><msub><mi>a</mi><mo lspace="0em" rspace="0em">⊙</mo></msub></mrow><mrow><mi>π</mi><msubsup><mi>R</mi><mi>c</mi><mn>2</mn></msubsup></mrow></mfrac><mo>≈</mo><mn>1.4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mtext> Pa</mtext></mrow><annotation encoding="application/x-tex">a_{\odot }=\frac{2GM_{\odot }r}{d^{3}}\approx 1.3\times 10^{-6}\text{\ m\ s}^{-2},\qquad P\approx \frac{M_{\text{Moon}}a_{\odot }}{\pi R_{c}^{2}}\approx 1.4\times 10^{4}\text{\ Pa}</annotation></semantics></math></span></div></div></div>
+<p>כאשר <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≈</mo><mn>16</mn><mo separator="true">,</mo><mn>400</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">r \approx 16,400\text{ km}</annotation></semantics></math></span> (מרחק הירח המחובר ממרכז כדור הארץ), <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span> הוא המרחק אל השמש, ו-<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>500</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">R_c = 1,500\text{ km}</annotation></semantics></math></span> הוא רדיוס המגע. הלחץ בכל מחזור חלש — כ-0.14 אטמוספרה בלבד, בדומה ללחיצת יד על חול — אך לאורך <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>6</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mtext> yr</mtext></mrow><annotation encoding="application/x-tex">t = 6 \times 10^8\text{ yr}</annotation></semantics></math></span> וביממה של <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mtext>day</mtext></msub><mo>=</mo><mn>5.77</mn><mtext> h</mtext></mrow><annotation encoding="application/x-tex">T_{\text{day}} = 5.77\text{ h}</annotation></semantics></math></span>, מספר הלחיצות המצטבר הוא:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>N</mi><mo>≈</mo><mfrac><mrow><mn>2</mn><mi>t</mi></mrow><msub><mi>T</mi><mtext>day</mtext></msub></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mo>×</mo><mo stretchy="false">(</mo><mn>6</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mtext> yr</mtext><mo stretchy="false">)</mo></mrow><mrow><mn>5.77</mn><mtext> h</mtext></mrow></mfrac><mo>≈</mo><mn>1.8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">N\approx \frac{2t}{T_{\text{day}}}=\frac{2\times (6\times 10^{8}\text{\ yr})}{5.77\text{\ h}}\approx 1.8\times 10^{12}</annotation></semantics></math></span></div></div></div>
+<p><strong>6. מים על-קריטיים שאינם מתאדים:</strong></p>
+<p>מעל הנקודה הקריטית של המים אין עוד הבדל בין פאזת הנוזל לפאזת האדים:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mo>&gt;</mo><msub><mi>T</mi><mi>c</mi></msub><mo>=</mo><mn>37</mn><msup><mn>4</mn><mo lspace="0em" rspace="0em">∘</mo></msup><mtext>C</mtext><mo separator="true">,</mo><mspace width="2em"/><mi>P</mi><mo>&gt;</mo><msub><mi>P</mi><mi>c</mi></msub><mo>=</mo><mn>22.1</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">T&gt;T_{c}=374^{\circ }\text{C},\qquad P&gt;P_{c}=22.1\text{\ MPa}</annotation></semantics></math></span></div></div></div>
+<p><strong>7. מדחום החימום באגן SPA:</strong></p>
+<p>האשלגן נדיף ואילו התוריום עמיד בחום; ככל שהחימום ממושך וחזק יותר, היחס ביניהם יורד:</p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mtext>K</mtext><mtext>Th</mtext></mfrac><mo fence="true">)</mo></mrow><mtext>SPA</mtext></msub><mo>=</mo><mn>451</mn><mtext>–</mtext><mn>455</mn><mspace width="1em"/><mtext>לעומת</mtext><mspace width="1em"/><mn>537</mn><mtext>–</mtext><mn>567</mn><mtext> (בסביבה)</mtext></mrow><annotation encoding="application/x-tex">\left(\frac{\text{K}}{\text{Th}}\right)_{\text{SPA}}=451\text{\textendash }455\quad \text{לעומת}\quad 537\text{\textendash }567\text{\ (בסביבה)}</annotation></semantics></math></span></div></div></div>
+<p><strong>8. תוריום מול טיטניום בקרקעיות הימות:</strong></p>
+<div class="eqs"><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo stretchy="false">(</mo><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mtext>floor</mtext></msub></mrow><mrow><mo stretchy="false">(</mo><mtext>Th</mtext><mi mathvariant="normal">/</mi><msub><mtext>TiO</mtext><mn>2</mn></msub><msub><mo stretchy="false">)</mo><mtext>plain</mtext></msub></mrow></mfrac><mo>=</mo><mn>0.74</mn><mtext> (טווח </mtext><mn>0.60</mn><mtext>–</mtext><mn>0.88</mn><mtext>) בתוך המגע</mtext></mrow><annotation encoding="application/x-tex">\frac{(\text{Th}/\text{TiO}_{2})_{\text{floor}}}{(\text{Th}/\text{TiO}_{2})_{\text{plain}}}=0.74\text{\ (טווח }0.60\text{\textendash }0.88\text{) בתוך המגע}</annotation></semantics></math></span></div></div></div>
+</section>
+
+<section>
+<span class="lab">07 · THE SIGNATURE</span>
+<h2>החתימה במציאות: שבע עקבות נצפות</h2>
+
+<p>שבע תצפיות בלתי תלויות על פני הירח ובדגימות המעבדה מאשרות יחד את החלוקה שמציע המודל:</p>
+<ol class="steps">
+<li><strong>מרכז אחד:</strong> עודף התוריום נאסף סביב מרכז אחד ודועך בהדרגה עם המרחק ממנו, ומרכז זה חופף בדיוק רב למרכז המגע שנקבע מראש (מקום 3 מתוך 16,200).</li>
+<li><strong>מישורים כרמות:</strong> בתוך אזור המגע, הסיאל שנמס במקומו (מישורי הבזלת, 5.62 ppm) והרמות שסביבו (5.48 ppm) נושאים ריכוז כמעט זהה.</li>
+<li><strong>ימות נקיות:</strong> ארבע ימות המגע עניות בתוריום מסביבתן, הן בקרקעית הפנימית והן במדידות מכשיר נפרד (Kaguya), כאשר התוריום ירד במידה חדה בהרבה מן הטיטניום.</li>
+<li><strong>צד רחוק דל:</strong> ריכוז התוריום בצד הרחוק נמוך (0.3–1.2 ppm), ומעל הכיפות הקבורות הריכוז זהה לסביבה.</li>
+<li><strong>אגן SPA:</strong> מרכז מדולדל המוקף בטבעת ובסהר, יחס K/Th נמוך ואחיד, ושני מקורות בזלת בזמן (דגימות Chang’e-6: בזלת בת 4.2 מיליארד שנה ממקור עשיר בתוריום, ובזלת בת 2.8 מיליארד שנה ממקור "שטוף" ודל בתוריום וביסודות נדיפים, עם אשלגן וברזל כבדים איזוטופית).</li>
+<li><strong>החלק הקל לאחר הניתוק:</strong> דגימות אפולו 12 הקשורות לקרני קופרניקוס עשירות בתוריום (7.6–9.4 ppm) ועניות בברזל יחסית לבזלת המקומית.</li>
+<li><strong>עקבות המים:</strong> זכוכיות געשיות רטובות — ובהן מרבצי אריסטרכוס בלב אזור התוריום — וכן כיפות של לבה סמיכה ועשירה בצורן, מהסוג שבכדור הארץ נוצר בנוכחות מים.</li>
+</ol>
+<figure class="ff"><img src="enc/thorium/P08-27.jpg"><figcaption>צ'אנג'ה-6: אותו אזור, שני מקורות. בזלת בת 4.2 מיליארד שנה ממקור עשיר בתוריום; בזלת בת 2.8 מיליארד שנה ממקור "שטוף" — כמו שקית תה שכבר נחלטה.</figcaption></figure>
+<figure class="ff"><img src="enc/thorium/P08-25.jpg"><figcaption>מעטפת שאיבדה את החומרים הנדיפים: ב-SPA האשלגן והברזל "כבדים" יותר, והיחס בין אשלגן לתוריום נמוך בכל האזור שחומם ועולה רק בשוליים.</figcaption></figure>
+</section>
+
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+
+<h3>קריטריונים להפרכה</h3>
+<p>הסבר זה לתוריום יופרך אם יתגלה אחד מן הממצאים הבאים:</p>
+<ul>
+<li>מפה חדה יותר (ברזולוציה של 26 ק"מ) שבה מרכז ריכוז התוריום זז הרחק ממרכז המגע, או שבה הימות שבתוך המגע עשירות בתוריום כמו מישורי הבזלת.</li>
+<li>דגימה מן הרמות העתיקות של הצד הרחוק שתימצא עשירה בתוריום בדומה לאזור המגע.</li>
+<li>מים (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>OH</mtext></mrow><annotation encoding="application/x-tex">\text{OH}</annotation></semantics></math></span>) בזכוכיות געשיות ובמינרל אפטיט שאינם תלויים כלל במרחק ממרכז המגע — או שמתרכזים דווקא הרחק ממנו.</li>
+<li>דגימות ממעמקי אגן SPA (משימות Artemis או Chang’e עתידיות) שיימצאו ללא כל עקבות של התכה חוזרת ושל אובדן נדיפים.</li>
+</ul>
+<h3>שאלות שעוד נותרו פתוחות</h3>
+<ul>
+<li><strong>Compton–Belkovich:</strong> כתם תוריום חזק בצד הרחוק, הרחק מאזור המגע ומאגן SPA, שהתפרץ בפיצוץ מונע-גז; ייתכן שגם שם נכלאו נדיפים, אך האתר טרם נבחן במסגרת המודל.</li>
+<li><strong>הצד של כדור הארץ:</strong> מה נותר בכדור הארץ מתחת לאזור האגס לאחר שהסיאל והתוריום עלו אל המגע (בדיקת בזלות האוקיינוס במכתב 5 טרם הכריעה).</li>
+<li><strong>חישוב מלא של המשאבה הגאותית:</strong> חישוב מפורט של המתח המחזורי בצוואר האגס כתוצאה מגאות השמש, וכמות הנוזל שניתן לרכז כך בתוך חומר רווי מים, חם ורך.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">09 · THE LAB SQUARE</span>
+<h2>טבלת הסיכום ומגבלות המדידה</h2>
+
+<div class="tw"><table class="lab"><tr><th>מה נבדק</th><th>נתונים</th><th>תוצאה</th><th>מצב</th><th>משמעות</th></tr>
+<tr><td>התוריום במגע (מחקר 10)</td><td>Lunar Prospector, 259,200 תאים; 16,200 מרכזים</td><td>95.0% בשישית; מקום 3; 47 ק"מ</td><td>ירוק</td><td>התוריום נאסף באזור המגע</td></tr>
+<tr><td>התוריום בתוך המגע (מחקר 13)</td><td>Lunar Prospector + Kaguya טיטניום</td><td>ימות 3.99, מישורים 5.62, רמות 5.48; −30% Th, −5% Ti</td><td>כתום: חלק התוריום עבר, חלק הטיטניום לא הפריד</td><td>הימות נקיות; פעולת חזית הקפיאה</td></tr>
+<tr><td>בדיקה במכשיר נפרד (מכתב 5)</td><td>Kaguya</td><td>אימבריום וסרניטאטיס עניות גם בקרקעית הפנימית</td><td>לא הוכרע במצרף</td><td>החוסר בימות הגדולות חוזר על עצמו</td></tr>
+<tr><td>הכיפות הקבורות</td><td>44 כיפות GRAIL</td><td>+0.05 ppm מול הסביבה</td><td>—</td><td>החומר העולה מן העומק עני בתוריום</td></tr>
+<tr><td>האזור הנתפס (22.11)</td><td>34 ימות; רמות בלבד</td><td>אין עודף אחרי הסרת השיפוע</td><td>—</td><td>אין צורך בהילה; לבדוק ב-26 ק"מ</td></tr>
+<tr><td>אגן SPA (מאמר 8)</td><td>Lunar Prospector, Chang’e-6</td><td>פי 2.4–3.6; סהר כיסוי; K/Th 451–455; <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu </annotation></semantics></math></span>: 1,620 <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow </annotation></semantics></math></span> 360</td><td>מתאים</td><td>סיאל שהותך שוב ושוב</td></tr>
+<tr><td>אחרי הניתוק (מחקר 12)</td><td>3,478 מכתשים; אפולו 12</td><td>פליטה ענייה בברזל; 7.6–9.4 ppm</td><td>—</td><td>החלק הקל של כדור הארץ</td></tr>
+<tr><td>כדור הארץ (מכתב 5, מבחן B)</td><td>Gale 2013; Stracke 2022</td><td>הוואי וקרולינה — Th/La נמוך (2 ארכיפלגים)</td><td>פתוח</td><td>לא הוכרע</td></tr>
+</table></div>
+<ul>
+<li><strong>מגבלות שיש לזכור:</strong> המפה של Lunar Prospector גסה יחסית (כ-60 ק"מ), והמפה החדה יותר (26 ק"מ) טרם נבדקה במלואה; קו המתאר של אזור המגע במאמר 3 שורטט מתוך קווי הבזלת, ולכן ההתאמה במרכז חזקה אך אינה בלתי תלויה לחלוטין; והמדד "חלק מעודף התוריום" הוא סכום של ריכוז כפול שטח על פני השטח, ולא כמות התוריום הכוללת בגוף הירח כולו.</li>
+</ul>
+</section>
+
+<section>
+<span class="lab">10 · NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+
+<ul>
+<li><strong>ארגז הכלים — מושגי יסוד:</strong> הסיאל והסימה · האגס כעמוד שיקוע · המגע · המבער · קו הקורוטציה · הנדיפים · חזית הקפיאה · הפקק.</li>
+<li><strong>בעיות קשורות:</strong> הימות כפתחים · אגן SPA · הצד הרחוק העבה · המים בירח · הכיפות הסיליקטיות · Compton–Belkovich · מה נשאר בכדור הארץ.</li>
+<li><strong>מבחנים עתידיים:</strong> המפה המשוחזרת של 26 ק"מ · מים בזכוכיות ובאפטיט מול המרחק מהמגע · דגימות SPA (משימות Artemis ו-Chang’e) · בזלות האוקיינוס השקט · גלאי גאונייטרינו בקרקעית הים.</li>
+<li><strong>דלת להמשך:</strong> הבעיה האחות הבאה בענף הצד הקרוב מול הצד הרחוק — הימות: פתחים מעל כיפות הזנה.</li>
+</ul>
+</section>
+</main>
+</body>
+</html>
