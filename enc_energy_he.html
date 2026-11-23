@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מקור האנרגיה של ההרמה — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.04 באנציקלופדיה של מודל LEF: מי משלם על הרמת הירח והאגס — שקיעת הברזל אל הליבה משלמת על הגובה, והסיבוב של כדור הארץ על המהירות הצדית; כמה עולה, כמה משתחרר, ובאיזה קצב.">
+<link rel="canonical" href="https://lef-model.com/enc_energy_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-1.04</span> · <a href="LEF_enc_energy_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · מושג יסוד</p>
+<h1>מקור האנרגיה של ההרמה: מי משלם</h1>
+<p>ערך מושג · ב-1.04 · מבוסס על מאמרים 1, 2, 3, 6 ו-14</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 1. הכוח שמרים ← מקור האנרגיה של ההרמה · בסיפור: <a href="enc_story_he.html#c7">שלב 1 (א-07)</a> עד <a href="enc_story_he.html#c12">שלב 5 (א-12)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>הרמת מסת הירח מפני השטח של כדור הארץ אל קו הקורוטציה דורשת השקעת עבודה פיזיקלית עצומה, והרמת האגס עצמו — הכבד מן הירח פי כמה — דורשת עבודה גדולה עוד יותר. ערך זה משיב על השאלה מי משלם את מחיר האנרגיה של התהליך. התשובה מורכבת משני משלמים הפועלים במקביל: שקיעת הברזל אל הליבה משחררת אנרגיית כבידה, והיא המשלמת על ההגבהה נגד הכבידה; ואילו הסיבוב העצמי של כדור הארץ משלם על תוספת המהירות הצדית שהגוף זקוק לה כדי להמשיך ולהסתובב יחד עם כדור הארץ במרחק גדול יותר מן הציר.</p>
+</section>
+<section>
+<span class="lab">02 · HOW THE IRON PAYS</span>
+<h2>איך הברזל משלם</h2>
+<p>כדור הארץ הצעיר היה מעורבב: הברזל הכבד היה מפוזר באופן נרחב בתוך החומר כולו. הסיבוב המהיר הניע מנגנון מיון, והברזל החל לשקוע פנימה בהדרגה לאורך מאות מיליוני שנים. כל גרגר ברזל השוקע מתקרב אל מרכז הכובד, כך שכדור הארץ כולו נעשה צפוף ומהודק יותר — ובמעבר למצב מהודק זה משתחררת אנרגיית כבידה. אותה שקיעה עצמה היא גם זו הדוחקת את החומר הקל החוצה. זהו מנגנון מאוחד אחד: המיון הפנימי גם מרים את החומר הקל וגם מספק את האנרגיה המשלמת על הרמתו.</p>
+<p>אנרגיית הקשר הכבידתית של כדור הארץ — האנרגיה המחזיקה אותו כגוף שלם — אינה זמינה לניצול מעצמה. אנרגיה משתחררת אך ורק כאשר הגוף הפלנטרי עובר אל מצב צפוף יותר: כאשר החומר הכבד שוקע פנימה, כאשר הגוף מתכווץ, וכאשר הוא מתקרר.</p>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: משקולת הנגד של המעלית</h2>
+<p>במעלית פשוטה תלויה משקולת כבדה בצדו השני של הכבל. כאשר המשקולת הכבדה יורדת לאט כלפי מטה, היא מרימה את תא המעלית כלפי מעלה. היא אינה "נותנת מכה" פתאומית אחת — היא יורדת מטר אחר מטר, וכל מטר של ירידה מרים את התא עוד מעט.</p>
+<p>כך בדיוק פעל כדור הארץ הצעיר: הברזל הכבד שימש כמשקולת הנגד. הוא שקע לאט פנימה אל המרכז, ובזמן ירידתו הוא הרים את החומר הקל החוצה — אל האגס ואל קצהו.</p>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" aria-label="Counterweight" style="direction:ltr"><circle cx="340" cy="60" r="34" fill="none" stroke="#1d2430" stroke-width="3"/><circle cx="340" cy="60" r="5" fill="#1d2430"/><line x1="306" x2="306" y1="60" y2="250" stroke="#1d2430" stroke-width="2"/><line x1="374" x2="374" y1="60" y2="140" stroke="#1d2430" stroke-width="2"/><rect x="266" y="250" width="80" height="60" rx="6" fill="#6d4a33"/><text direction="rtl" x="306" y="286" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="middle">ברזל</text><rect x="344" y="140" width="60" height="44" rx="6" fill="#f3c9a3" stroke="#1d2430"/><text direction="rtl" x="374" y="167" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">חומר קל</text><path d="M230 230 L230 300" stroke="#2a5d8f" stroke-width="3"/><path d="M223 290 L230 302 L237 290" fill="none" stroke="#2a5d8f" stroke-width="3"/><path d="M450 190 L450 120" stroke="#b5562e" stroke-width="3"/><path d="M443 130 L450 118 L457 130" fill="none" stroke="#b5562e" stroke-width="3"/><text direction="rtl" x="220" y="262" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">יורד לאט — פנימה, אל הליבה</text><text direction="rtl" x="460" y="158" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="end">עולה — החוצה, אל האגס</text><text direction="rtl" x="340" y="345" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">כל מטר שהמשקולת יורדת מרים את התא עוד מעט</text></svg><figcaption>משקולת הנגד: הברזל הכבד יורד לאט פנימה, אל הליבה, ובזמן שהוא יורד הוא מרים את החומר הקל החוצה, אל האגס. סכמטי.</figcaption></figure>
+</section>
+<section>
+<span class="lab">04 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>היווצרות הליבה משחררת אנרגיה רבה:</strong> לפי הספרות הגיאופיזיקלית המקובלת, שקיעת הברזל אל מרכז כדור הארץ מעלה את הטמפרטורה הממוצעת של כוכב הלכת בכ-2,000 מעלות (Anderson &amp; Hanks 1972).</li>
+<li><strong>זרם החום של כדור הארץ היום:</strong> כ-47 טרה-ואט (<bdi dir="ltr">4.7×10¹³</bdi> ואט) נפלטים מפני השטח של כדור הארץ אל החלל (Davies &amp; Davies 2010).</li>
+<li><strong>אנרגיית הקשר של כדור הארץ:</strong> כ-<bdi dir="ltr">2.2×10³²</bdi> ג'אול.</li>
+<li><strong>הירח מתרחק היום ב-3.8 ס"מ בשנה, והיממה מתארכת:</strong> אנרגיית הסיבוב של כדור הארץ עוברת בהדרגה אל מסלול הירח — אותו עיקרון בדיוק של "הסיבוב משלם", הפועל כיום בקצב איטי מאוד.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> התגבשות הליבה משחררת אנרגיית כבידה עצומה, ורובה הופכת לחום פנימי; בנוסף, אנרגיית סיבוב יכולה לעבור מכדור הארץ אל הירח (מנגנון המרחיק את הירח גם בימינו).</li>
+<li><strong>מה ההבדל:</strong> במדע המקובל, אנרגיית שקיעת הליבה מחממת את כדור הארץ ותו לא. במודל LEF, חלק מאנרגיה זו מבצע עבודה מכנית: הוא מרים את האגס ואת הגוף הנבנה בקצהו.</li>
+<li><strong>מה לקוח ומה חדש:</strong> משוואות האנרגיה הכבידתית ואנרגיית הסיבוב לקוחות מן הפיזיקה הקלאסית. החידוש של מודל LEF הוא חשבון העלות האנרגטית של הרמת הירח והאגס, השוואתו לאנרגיה המשתחררת בתהליך המיון הפנימי, והחלוקה המדויקת בין שני המשלמים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">06 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. כמה עולה הירח</h3>
+<p>הרמת מסת הירח מנקודת המגע הראשונית (במרחק 8,991 ק"מ ממרכז כדור הארץ) אל רדיוס השחרור (16,400 ק"מ) עולה כ-<bdi dir="ltr">1.5×10³⁰</bdi> ג'אול — פחות מאחוז אחד מאנרגיית הקשר הכבידתית של כדור הארץ.</p>
+<h3>2. כמה עולה האגס</h3>
+<p>האגס כבד מן הירח פי 8.8 עד 12.1, בהתאם לרוחב בסיסו (9,000 עד 11,000 ק"מ), והרמתו עולה <bdi dir="ltr">8.1×10³⁰</bdi> עד <bdi dir="ltr">1.05×10³¹</bdi> ג'אול — פי 5.4 בקירוב מעלות הרמת הירח לבדו. בבסיס ברוחב 11,000 ק"מ, העלות האנרגטית כבר מגיעה לסדר הגודל של מלוא האנרגיה שהיווצרות הליבה מסוגלת לשחרר. משום כך, תקציב האנרגיה הוא הגורם המגביל את רוחב האגס מלמעלה.</p>
+<h3>3. מי משלם על הגובה — המיון</h3>
+<p>כמות האנרגיה שמשחרר המיון הפנימי תלויה בחלק מן הברזל שכבר שקע והתכנס אל הליבה:</p>
+<div class="tw"><table class="lab"><tr><th>כמה מן הברזל כבר בליבה</th><th>אנרגיה ששוחררה (ג'אול)</th></tr><tr><td>רבע</td><td><bdi dir="ltr">4.5×10³⁰</bdi></td></tr><tr><td>חצי</td><td><bdi dir="ltr">9.0×10³⁰</bdi></td></tr><tr><td>שלושה רבעים</td><td><bdi dir="ltr">1.35×10³¹</bdi></td></tr><tr><td>הכול</td><td><bdi dir="ltr">1.79×10³¹</bdi></td></tr></table></div>
+<p>כדי לשלם על הרמת הירח לבדו די בכך שכ-8% מן הברזל ישקעו. כדי לשלם על הרמת הירח והאגס יחד (עלות כוללת של כ-<bdi dir="ltr">9.5×10³⁰</bdi> ג'אול) נדרשת שקיעה של כמחצית מן הברזל.</p>
+<figure class="fig"><svg viewBox="0 0 680 400" role="img" aria-label="Energy cost and supply" style="direction:ltr"><line x1="60.0" x2="60.0" y1="30" y2="350" stroke="#ece7da"/><text x="60.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0</text><line x1="100.0" x2="100.0" y1="30" y2="350" stroke="#ece7da"/><text x="100.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2</text><line x1="140.0" x2="140.0" y1="30" y2="350" stroke="#ece7da"/><text x="140.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4</text><line x1="180.0" x2="180.0" y1="30" y2="350" stroke="#ece7da"/><text x="180.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">6</text><line x1="220.0" x2="220.0" y1="30" y2="350" stroke="#ece7da"/><text x="220.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">8</text><line x1="260.0" x2="260.0" y1="30" y2="350" stroke="#ece7da"/><text x="260.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10</text><line x1="300.0" x2="300.0" y1="30" y2="350" stroke="#ece7da"/><text x="300.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">12</text><line x1="340.0" x2="340.0" y1="30" y2="350" stroke="#ece7da"/><text x="340.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">14</text><line x1="380.0" x2="380.0" y1="30" y2="350" stroke="#ece7da"/><text x="380.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">16</text><line x1="420.0" x2="420.0" y1="30" y2="350" stroke="#ece7da"/><text x="420.0" y="368" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">18</text><rect x="60" y="40" width="30.0" height="26" fill="#b5562e" opacity="0.85"/><text x="96.0" y="58" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">1.5</text><text direction="rtl" x="660" y="58" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">הרמת הירח</text><rect x="60" y="76" width="162.0" height="26" fill="#b5562e" opacity="0.85"/><rect x="222.0" y="76" width="48.0" height="26" fill="#b5562e" opacity="0.35"/><text x="276.0" y="94" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">8.1–10.5</text><text direction="rtl" x="660" y="94" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">הרמת האגס</text><rect x="60" y="112" width="190.0" height="26" fill="#b5562e" opacity="0.85"/><text x="256.0" y="130" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">9.5</text><text direction="rtl" x="660" y="130" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">הירח והאגס יחד</text><line x1="60" x2="660" y1="154" y2="154" stroke="#5b6676" stroke-dasharray="3 3"/><rect x="60" y="164" width="89.2" height="26" fill="#2a5d8f" opacity="0.85"/><text x="155.2" y="182" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">4.46</text><text direction="rtl" x="660" y="182" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">רבע מן הברזל שקע</text><rect x="60" y="200" width="179.4" height="26" fill="#2a5d8f" opacity="0.85"/><text x="245.4" y="218" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">8.97</text><text direction="rtl" x="660" y="218" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">חצי</text><rect x="60" y="236" width="269.0" height="26" fill="#2a5d8f" opacity="0.85"/><text x="335.0" y="254" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">13.45</text><text direction="rtl" x="660" y="254" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">שלושה רבעים</text><rect x="60" y="272" width="358.0" height="26" fill="#2a5d8f" opacity="0.85"/><text x="424.0" y="290" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">17.9</text><text direction="rtl" x="660" y="290" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">כל הברזל</text><text direction="rtl" x="250.0" y="310" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">הקו: הירח והאגס = כחצי מן הברזל</text><line x1="250.0" x2="250.0" y1="30" y2="298" stroke="#1d2430" stroke-dasharray="4 4"/><text direction="rtl" x="250.0" y="392" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">אנרגיה (×10³⁰ ג'אול)</text></svg><figcaption>מה עולה ומה משולם, ביחידות של 10³⁰ ג'אול. באדום — העלות: הירח, האגס (לפי רוחב בסיסו), ושניהם יחד. בכחול — האנרגיה שהמיון משחרר, לפי החלק מן הברזל שכבר שקע. הירח לבדו דורש כ-8% מן הברזל; הירח והאגס יחד — כמחצית.</figcaption></figure>
+<h3>4. כמה מיון היה בתקופת האגס</h3>
+<p>כמחצית מן הברזל שקעה אל הליבה במהלך תקופת האגס, ואילו המחצית הנותרת שקעה לאחר הניתוק. חלוקה זו מיישבת בין שני צדי המשוואה הפיזיקלית: הברזל שכבר שקע מספק את האנרגיה הדרושה להרמה, ואילו הברזל שעדיין מפוזר במעטפת שומר על הסביבה כבדה ו"מלוחה", כך שהחומר הקל מוסיף לצוף דרכה בקלות (ראו <a href="enc_source150_he.html">ב-1.02</a>).</p>
+<h3>5. מי משלם על המהירות הצדית — הסיבוב</h3>
+<p>כדי שהגוף ימשיך להסתובב יחד עם כדור הארץ במרחק גדול יותר מציר הסיבוב, הוא זקוק לאנרגיה קינטית צדית גבוהה יותר — תוספת של כ-<bdi dir="ltr">7×10²⁹</bdi> ג'אול. סכום זה משולם מתוך אנרגיית הסיבוב של כדור הארץ, המועברת החוצה דרך האגס המחובר. כדור הארץ מאט מעט — מיממה של 5.5 שעות ליממה של 5.77 שעות — והאטה זו משחררת כ-<bdi dir="ltr">4.7×10²⁹</bdi> ג'אול, ערך מאותו סדר גודל. במקביל, שקיעת הברזל פנימה מאיצה את הסיבוב, בדומה לרקדנית המקרבת את ידיה אל גופה (אפקט הבלרינה), ומשלימה את ההפרש.</p>
+<h3>6. הקצב</h3>
+<p>העבודה המכנית התפרסה על פני מאות מיליוני שנים:</p>
+<div class="tw"><table class="lab"><tr><th>גוף</th><th>100 מיליון שנה</th><th>600 מיליון שנה</th></tr><tr><td>הירח</td><td><bdi dir="ltr">4.8×10¹⁴</bdi> ואט</td><td><bdi dir="ltr">7.9×10¹³</bdi> ואט</td></tr><tr><td>האגס</td><td><bdi dir="ltr">2.5×10¹⁵</bdi> ואט</td><td><bdi dir="ltr">4.2×10¹⁴</bdi> ואט</td></tr></table></div>
+<p>הרמת הירח לבדו דורשת הספק המצוי בסדר הגודל של כלל זרם החום היוצא מכדור הארץ כיום; הרמת האגס דורשת הספק הגבוה ממנו פי 10 עד 50. בכדור ארץ צעיר, לוהט ופעיל מאוד, הספקים אלה סבירים; מודל תרמי מלא יקבע את הקצב המדויק.</p>
+<figure class="fig"><svg viewBox="0 0 680 300" role="img" aria-label="Power" style="direction:ltr"><line x1="70.0" x2="70.0" y1="30" y2="250" stroke="#ece7da"/><text x="70.0" y="268" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹³</text><line x1="196.7" x2="196.7" y1="30" y2="250" stroke="#ece7da"/><text x="196.66666666666666" y="268" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁴</text><line x1="323.3" x2="323.3" y1="30" y2="250" stroke="#ece7da"/><text x="323.3333333333333" y="268" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁵</text><line x1="450.0" x2="450.0" y1="30" y2="250" stroke="#ece7da"/><text x="450.0" y="268" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁶</text><rect x="70" y="45" width="113.7" height="28" fill="#b5562e" opacity="0.85"/><text x="189.69943156345596" y="64" font-size="11" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">7.9×10¹³ W</text><text direction="rtl" x="665" y="64" font-size="12" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">הירח · 600 מיליון שנה</text><rect x="70" y="93" width="213.0" height="28" fill="#b5562e" opacity="0.85"/><text x="288.95722340090776" y="112" font-size="11" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">4.8×10¹⁴ W</text><text direction="rtl" x="665" y="112" font-size="12" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">הירח · 100 מיליון שנה</text><rect x="70" y="141" width="205.6" height="28" fill="#c97f4f" opacity="0.85"/><text x="281.6115767837341" y="160" font-size="11" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">4.2×10¹⁴ W</text><text direction="rtl" x="665" y="160" font-size="12" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">האגס · 600 מיליון שנה</text><rect x="70" y="189" width="303.7" height="28" fill="#c97f4f" opacity="0.85"/><text x="379.73906776512473" y="208" font-size="11" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">2.5×10¹⁵ W</text><text direction="rtl" x="665" y="208" font-size="12" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="start">האגס · 100 מיליון שנה</text><line x1="155.1" x2="155.1" y1="30" y2="250" stroke="#2a5d8f" stroke-width="2" stroke-dasharray="5 4"/><text direction="rtl" x="159.13239533852428" y="26" font-size="11.5" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="end">זרם החום של היום: 47 טרה-ואט</text><text direction="rtl" x="260.0" y="292" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">הספק (ואט, סולם לוגריתמי)</text></svg><figcaption>הקצב: ההספק הדרוש להרמה, אם היא נמשכת 100 או 600 מיליון שנה (סולם לוגריתמי: כל שנתה פי 10). הקו המקווקו — זרם החום שיוצא מכדור הארץ היום. הירח דורש הספק בסדר הגודל שלו; האגס — פי 10 עד 50.</figcaption></figure>
+<h3>7. רוב האנרגיה הופכת לחום</h3>
+<p>לא כל האנרגיה המשתחררת בתהליך המיון מנוצלת לעבודה מכנית של הרמת חומר — רובה הופכת לחום פנימי. ככל שהחלק המנוצל לעבודה קטן יותר, נדרש מיון רב יותר כדי להשלים את ההרמה. קביעת יחס היעילות המדויק היא דרישה פתוחה של המודל.</p>
+<h3>8. האנרגיה חוזרת</h3>
+<p>כאשר האגס נאסף בחזרה אל תוך כדור הארץ במיון איטי, אנרגיית הגובה האצורה בו משתחררת כחום ונכנסת אל המאזן התרמי של כדור הארץ. גם הירח עצמו, במהלך התעגלותו, משחרר 2–<bdi dir="ltr">3×10²⁷</bdi> ג'אול, המחממים את פנימו בכ-30–40 מעלות.</p>
+<h3>9. גם הפליטות צריכות אנרגיה</h3>
+<p>כדי להעיף חומר מן הפתחים במהירות של 5 ק"מ בשנייה נדרשת אנרגיה של 12.5 מגה-ג'אול לכל קילוגרם. אנרגיה זו מסופקת על ידי הלחץ הפנימי העובר מכדור הארץ דרך האגס, בסיוע התפשטות הנדיפים (ראו <a href="enc_foam_he.html">ב-1.03</a>).</p>
+</section>
+<section>
+<span class="lab">07 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>עבודת ההרמה נגד הכבידה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>W</mi><mo>=</mo><mi>G</mi><mtext> </mtext><mi>M</mi><mtext> </mtext><mi>m</mi><mrow><mo fence="true">(</mo><mfrac><mn>1</mn><msub><mi>r</mi><mn>0</mn></msub></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>r</mi><mn>1</mn></msub></mfrac><mo fence="true">)</mo></mrow><mo>≈</mo><mn>1.5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>30</mn></msup><mtext> J</mtext><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>8</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>991</mn><mtext> km</mtext><mo separator="true">,</mo><mtext> </mtext><msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mn>16</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>400</mn><mtext> km</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">W=G\,M\,m\left(\frac{1}{r_0}-\frac{1}{r_1}\right)\approx1.5\times10^{30}\ \text{J}\quad(r_0=8{,}991\ \text{km},\ r_1=16{,}400\ \text{km})</annotation></semantics></math></span></div></div>
+<p>תוספת המהירות הצדית:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>K</mi><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mtext> </mtext><mi>m</mi><mtext> </mtext><msup><mi>ω</mi><mn>2</mn></msup><mrow><mo fence="true">(</mo><msubsup><mi>r</mi><mn>1</mn><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>r</mi><mn>0</mn><mn>2</mn></msubsup><mo fence="true">)</mo></mrow><mo>≈</mo><mn>7</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>29</mn></msup><mtext> J</mtext></mrow><annotation encoding="application/x-tex">\Delta K=\tfrac12\,m\,\omega^2\left(r_1^2-r_0^2\right)\approx7\times10^{29}\ \text{J}</annotation></semantics></math></span></div></div>
+<p>אנרגיית הקשר של כדור אחיד:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mfrac><mn>3</mn><mn>5</mn></mfrac><mtext> </mtext><mfrac><mrow><mi>G</mi><mtext> </mtext><msup><mi>M</mi><mn>2</mn></msup></mrow><mi>R</mi></mfrac><mo>≈</mo><mo>−</mo><mn>2.2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>32</mn></msup><mtext> J</mtext></mrow><annotation encoding="application/x-tex">U=-\frac{3}{5}\,\frac{G\,M^2}{R}\approx-2.2\times10^{32}\ \text{J}</annotation></semantics></math></span></div></div>
+<p>אנרגיית הסיבוב:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mtext> </mtext><mi>I</mi><mtext> </mtext><msup><mi>ω</mi><mn>2</mn></msup><mo separator="true">,</mo><mspace width="2em"/><mi>I</mi><mo>=</mo><mn>0.4</mn><mtext> </mtext><mi>M</mi><mtext> </mtext><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E=\tfrac12\,I\,\omega^2,\qquad I=0.4\,M\,R^2</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">08 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>הליבה של כדור הארץ קיימת וגדולה:</strong> האנרגיה של היווצרותה שוחררה.</li>
+<li><strong>כדור הארץ הצעיר היה חם מאוד:</strong> חלק גדול מן האנרגיה שהשתחררה הפך לחום, כפי שהמודל מצפה.</li>
+<li><strong>הירח מתרחק עד היום, וכדור הארץ מאט:</strong> אנרגיית הסיבוב מוסיפה לעבור מכדור הארץ אל מסלול הירח.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 1 (<a href="enc_story_he.html#c7">א-07</a>): המיון הפנימי מתחיל — הברזל שוקע, והחומר הקל נדחק החוצה. שלבים 2–3 (<a href="enc_story_he.html#c8">א-08</a>, <a href="enc_story_he.html#c9">א-09</a>): הכיפה והאגס נבנים, והמיון משלם על הרמתם. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): ברגע השחרור, הסיבוב כבר העניק לגוף את מלוא מהירותו הצדית. שלב 6: האגס נאסף בחזרה אל כדור הארץ, ואנרגיית הגובה שלו הופכת לחום.</p>
+</section>
+<section>
+<span class="lab">10 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מניין האנרגיה להרים את הירח:</strong> משקיעת הברזל אל הליבה.</li>
+<li><strong>מניין המהירות הצדית:</strong> מן הסיבוב העצמי של כדור הארץ.</li>
+<li><strong>מדוע האגס אינו רחב יותר:</strong> אגס בעל בסיס רחב יותר היה דורש אנרגיה העולה על מלוא האנרגיה שמסוגלת הליבה לשחרר.</li>
+<li><strong>כיצד ההרמה והמיון מתיישבים יחד:</strong> כמחצית מן הברזל שוקעת בתקופת האגס, והמחצית השנייה שוקעת לאחר הניתוק.</li>
+</ul>
+</section>
+<section>
+<span class="lab">11 · LAB BOX</span>
+<h2>תיבת מעבדה: נסו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · שני בקבוקים וגלגלת</span>
+<p>קחו גלגלת פשוטה (או השתמשו בידית של דלת), העבירו מעליה חוט, וקשרו בקצהו האחד בקבוק מים מלא ובקצהו השני בקבוק ריק. הבקבוק המלא יירד לאט מטה וימשוך את הבקבוק הריק כלפי מעלה. כעת שפכו מים בהדרגה מן הבקבוק המלא אל הבקבוק הריק: ברגע ששני הבקבוקים ישתוו במשקלם, התנועה תיעצר לחלוטין. כך בדיוק פועל המנגנון במודל — ההרמה נמשכת כל עוד נותר חומר כבד שעדיין יכול לשקוע אל המרכז.</p></div>
+</section>
+<section>
+<span class="lab">12 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>כבר במאמר 3 נקבע כי אנרגיית הקשר הכבידתית של כדור הארץ אינה זמינה מעצמה, וכי נדרש תהליך פנימי המשחרר אנרגיה — שקיעת הברזל. עלות הרמת הירח (<bdi dir="ltr">1.47×10³⁰</bdi> ג'אול) ועלות הרמת האגס (<bdi dir="ltr">8×10³⁰</bdi> ג'אול ומעלה) חושבו שם והושוו לאנרגיית התגבשות הליבה. ב-23.11.2026 נוספו החישוב המפורט של האנרגיה כפונקציה של שיעור הברזל ששקע, החלוקה הברורה בין שני המשלמים — המיון והסיבוב — והקביעה שכמחצית מן הברזל שקעה במהלך תקופת האגס.</p>
+</section>
+<section>
+<span class="lab">13 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>עלות הרמת הירח</td><td>כ-<bdi dir="ltr">1.47×10³⁰</bdi> ג'אול</td><td>מאמר 3 §A.12</td></tr><tr><td>עלות הרמת האגס</td><td><bdi dir="ltr">8.1×10³⁰</bdi> – <bdi dir="ltr">1.05×10³¹</bdi> ג'אול</td><td>מאמר 3 §C.7, C.9</td></tr><tr><td>האנרגיה של מיון מלא</td><td>כ-<bdi dir="ltr">1.8×10³¹</bdi> ג'אול</td><td>חישוב, 23.11.2026</td></tr><tr><td>הברזל שצריך לשקוע — הירח לבדו</td><td>כ-8%</td><td>חישוב, 23.11.2026</td></tr><tr><td>הברזל שצריך לשקוע — הירח והאגס</td><td>כ-50%</td><td>חישוב, 23.11.2026</td></tr><tr><td>המהירות הצדית של הירח</td><td>כ-<bdi dir="ltr">7×10²⁹</bdi> ג'אול</td><td>חישוב, 23.11.2026</td></tr><tr><td>האטת כדור הארץ 5.5 → 5.77 שעות</td><td>כ-<bdi dir="ltr">4.7×10²⁹</bdi> ג'אול</td><td>חישוב, 23.11.2026</td></tr><tr><td>זרם החום של כדור הארץ היום</td><td>כ-47 טרה-ואט</td><td>Davies &amp; Davies 2010</td></tr></table></div>
+</section>
+<section>
+<span class="lab">14 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c7">א-07</a> · שלב 1; <a href="enc_story_he.html#c8">א-08</a> · שלב 2; <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c12">א-12</a> · שלב 5.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · <a href="enc_source150_he.html">ב-1.02 · לחץ המקור 150 GPa</a> · <a href="enc_foam_he.html">ב-1.03 · המגמה המוקצפת</a> · ב-1.05 · קצב ההזנה · ב-1.06 · ההיסטוריה התרמית ו-Q.</li>
+<li><strong>מבחנים:</strong> מודל תרמי של כדור ארץ צעיר שבו הברזל יורד והכוכב מתכווץ ומתקרר תחת אטמוספרת אדים; איזוטופי הפניום–טונגסטן (Hf–W) — מתי נפרדה המתכת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">15 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>האנרגיה קיימת, אבל באיזה קצב היא מגיעה, וכמה זמן לוקח לבנות ירח — ב-1.05 · קצב ההזנה.</p>
+</section>
+</main>
+</body>
+</html>
