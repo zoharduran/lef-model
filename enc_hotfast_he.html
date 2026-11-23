@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>כדור ארץ חם ומהיר — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.01 באנציקלופדיה של מודל LEF: כדור הארץ הצעיר — חם, מורחב, פחוס ומסתובב פעם ב-5.5 שעות — ולמה זו נקודת הפתיחה של הירח.">
+<link rel="canonical" href="https://lef-model.com/enc_hotfast_he.html"></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-1.01</span> · <a href="LEF_enc_hotfast_HE.pdf">PDF</a></span></div></nav>
+
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · מושג יסוד</p>
+<h1>כדור ארץ חם ומהיר: נקודת הפתיחה</h1>
+<p>ערך מושג · ב-1.01 · מבוסס על מאמרים 1, 2, 3 ו-11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 1. הכוח שמרים ← כדור ארץ חם ומהיר · בסיפור: <a href="enc_story_he.html#c6">שלב 0 (א-06)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>כדור הארץ שבו מתחיל הסיפור כולו: עולם צעיר, לוהט לכל עומקו, מורחב מנפח החום האצור בו, ומסתובב סביב צירו פעם בחמש וחצי שעות. בשלב מוקדם זה הליבה המתכתית שלו רק החלה להתגבש במרכז, מי האוקיינוסים של ימינו עוד מעורבבים בתוך החומר הפנימי, והירח עצמו עודנו חלק בלתי נפרד מתוכו.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: כדור מים בתחנת החלל</h2>
+<p>בתוך תחנת חלל, בסביבה נטולת משקל, טיפת מים גדולה מרחפת כפי שהיא: כדור מושלם המחזיק את עצמו בכוח מתח הפנים שלו. כאשר מסובבים את הטיפה לאט, היא שומרת על צורתה הכדורית. אולם כאשר מאיצים את סיבובה, הכוח הצנטריפוגלי מושך את החומר החוצה — הכדור מתנפח בחגורת קו המשווה שלו ונפחס בקטבים. ואם נערבב בתוך המים הללו גרגירים כבדים, הסיבוב המהיר ימיין אותם: הכבד יידחק פנימה אל הציר, והקל יידחף החוצה אל השוליים.</p>
+<p>כעת דמיינו שאנו מקפיאים את אותו כדור מים לכדור קרח מוצק, ומסובבים אותו בכל מהירות שנרצה — שום דבר לא יזוז ושום מיון לא יתרחש. כדי שיתרחש תהליך בנייה פלנטרי נדרשים שלושת התנאים יחד: חום, רכות ומהירות. כדור הארץ הצעיר היה בדיוק כדור כזה — חם, רך ומסתובב במהירות מסחררת.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>התנע הזוויתי של כדור הארץ והירח היום:</strong> 3.441 × 10³⁴ ק"ג·מ²/ש' — סכום התנע הזוויתי של סיבוב כדור הארץ העצמי ושל תנועת הירח במסלולו.</li>
+<li><strong>הירח מתרחק:</strong> כ-3.8 ס"מ בשנה (כפי שעולה ממדידות לייזר מדויקות אל מחזירי האור שהשאירו על פניו משימות אפולו).</li>
+<li>היממה התקצרה ככל שהולכים אחורה בזמן — כך מעידים משקעים גיאולוגיים עתיקים שבהם נרשמו מחזורי הגאות והעונות:</li>
+<li><strong>לפני 2.46 מיליארד שנים:</strong> אורך יממה של כ-17 שעות, כשהירח שוכן במרחק 321,800 ק"מ (Lantink et al. 2022).</li>
+<li><strong>לפני 3.2 מיליארד שנים:</strong> אורך יממה של כ-13 שעות, כשהירח נמצא בכ-70% ממרחקו הנוכחי (Eulenfeld &amp; Heubeck 2023).</li>
+<li>גאות השמש הסירה מן המערכת כ-1% מן התנע הזוויתי לאורך ההיסטוריה (1.35% כאשר עוקבים אחר מסלול הירח המתרחק).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> כמעט כל מודל מדעי להיווצרות הירח פותח בכדור ארץ צעיר, חם ומהיר-סיבוב. במודל ההתנגשות הקנוני, אורך היממה מיד לאחר ההתנגשות עומד על כחמש שעות; ובגרסתם של צ'וק וסטיוארט (2012) כדור הארץ הסתובב עוד לפני ההתנגשות פעם בשעתיים–שלוש, סמוך לגבול היציבות הסיבובית שלו. גם הטמפרטורה הגבוהה אינה שנויה במחלוקת: כדור הארץ הצעיר היה חם דיו כדי לקיים אוקיינוס מגמה.</li>
+<li><strong>מה ההבדל:</strong> במודלי ההתנגשות, הסיבוב המהיר הוא תוצר לוואי של מכת הפגיעה, והאתגר המרכזי של החוקרים הוא למצוא מנגנון שייפטר מעודף התנע הזוויתי העצום שנוצר. במודל LEF, לעומת זאת, הסיבוב המהיר הוא נקודת המוצא והמנוע הפעיל: הוא ממיין את החומר הפנימי, דוחק את המרכיבים הקלים כלפי חוץ, וקובע בדיוק היכן יעמוד קו הקורוטציה.</li>
+<li><strong>מה לקוח ומה חדש:</strong> עקרון שימור התנע הזוויתי, חישובי התפתחות הגאות (דרווין), מתמטיקת הצורה של גוף נוזלי מסתובב (מקלורן) ותמונת כדור הארץ החם — כולם לקוחים מן הפיזיקה המקובלת. החידושים של מודל LEF הם: גזירת יממה של 5.5 שעות כתוצאה ישירה של חשבון התקציב ולא כהנחה שרירותית; ההתפשטות התרמית כתנאי פיזיקלי הכרחי לסגירת תקציב התנע הזוויתי; והפיכת הסיבוב העצמי למנוע מיון המרים חומר כלפי מעלה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. למה דווקא 5.5 שעות</h3>
+<p>אורך היממה ההתחלתית אינו מספר שנבחר באקראי. כאשר מריצים את התפתחות המערכת לאחור בזמן, כל התנע הזוויתי המצוי כיום בסיבוב כדור הארץ ובמסלול הירח שב ומתכנס אל סיבובו של כדור הארץ לבדו — שכן הירח עדיין שוכן בתוכו. כדור ארץ מורחב וכמעט אחיד בצפיפותו האוצר את מלוא התנע הזה מסתובב פעם ב-5.54 שעות. מאחר שגאות השמש נטלה מאז כאחוז אחד מן התנע הזוויתי של המערכת, בראשית הדרך היה בו מעט יותר תנע — מה שמציב את היממה ההתחלתית על 5.5 שעות.</p>
+<p>חלון העבודה המותר של המודל משתרע בין 4.90 ל-5.54 שעות: ב-5.54 שעות כדור הארץ מחזיק בדיוק את התנע הזוויתי של ימינו, ואילו ב-4.90 שעות הוא מחזיק כ-15% יותר — התקרה העליונה של מה שכוחות הגאות של השמש יכלו להסיר מן המערכת בהמשך.</p>
+<h3>2. למה הוא חייב להיות חם ומורחב</h3>
+<p>גוף חם תופס נפח גדול יותר מגוף קר בעל מסה זהה. כדור הארץ הצעיר היה גדול מעט מכדור הארץ של היום: רדיוסו השקול-נפח עמד על 6,517 ק"מ, נתון הכולל התפשטות תרמית של 120 ק"מ. התפשטות זו אינה פרט שולי — היא תנאי פיזיקלי הכרחי. גוף בעל רדיוס גדול יותר נושא יותר תנע זוויתי באותה מהירות סיבוב, בדומה למחליקה על הקרח שזרועותיה פרושות לצדדים. ללא התפשטות תרמית כלל, לכדור ארץ המסתובב ב-5.5 שעות היו חסרים 3.3% מן התנע הזוויתי של ימינו. בהתפשטות של 98 ק"מ החשבון נסגר בדיוק מושלם, ובהתפשטות של 520 ק"מ העודף מגיע לתקרה של 15%. הטווח המותר במודל הוא אפוא 98–520 ק"מ, וערך העבודה שנבחר הוא 120 ק"מ.</p>
+<figure class="fig"><svg viewBox="0 30 680 210" role="img" aria-label="Expansion window" style="direction:ltr"><rect x="161.5" y="114" width="393.9" height="52" fill="#e3efe6" stroke="#2f7d57"/><rect x="70.0" y="114" width="91.5" height="52" fill="#f6e0dc" stroke="#b5562e"/><line x1="70" x2="630" y1="180" y2="180" stroke="#5b6676"/><line x1="70.0" x2="70.0" y1="176" y2="184" stroke="#5b6676"/><text x="70.0" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0</text><line x1="163.3" x2="163.3" y1="176" y2="184" stroke="#5b6676"/><text x="163.33333333333331" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">100</text><line x1="256.7" x2="256.7" y1="176" y2="184" stroke="#5b6676"/><text x="256.66666666666663" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">200</text><line x1="350.0" x2="350.0" y1="176" y2="184" stroke="#5b6676"/><text x="350.0" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">300</text><line x1="443.3" x2="443.3" y1="176" y2="184" stroke="#5b6676"/><text x="443.3333333333333" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">400</text><line x1="536.7" x2="536.7" y1="176" y2="184" stroke="#5b6676"/><text x="536.6666666666667" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">500</text><line x1="630.0" x2="630.0" y1="176" y2="184" stroke="#5b6676"/><text x="630.0" y="200" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">600</text><text direction="rtl" x="350.0" y="222" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">התפשטות מחום (ק"מ)</text><line x1="70.0" x2="70.0" y1="106" y2="174" stroke="#b5562e" stroke-width="1.5"/><line x1="161.5" x2="161.5" y1="106" y2="174" stroke="#2f7d57" stroke-width="1.5"/><line x1="182.0" x2="182.0" y1="106" y2="174" stroke="#1d2430" stroke-width="3"/><line x1="555.3" x2="555.3" y1="106" y2="174" stroke="#2f7d57" stroke-width="1.5"/><text direction="rtl" x="74.0" y="96" font-size="11.5" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="end">חסר 3.3%</text><text direction="rtl" x="157.46666666666667" y="78" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2f7d57" text-anchor="start">נסגר בדיוק</text><text direction="rtl" x="186.0" y="96" font-size="11.5" font-family="Heebo" font-weight="600" fill="#1d2430" text-anchor="end">ערך העבודה</text><text direction="rtl" x="559.3333333333334" y="96" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2f7d57" text-anchor="end">עודף 15%</text><text direction="rtl" x="398.40000000000003" y="145" font-size="13" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">הטווח המותר</text><text direction="rtl" x="115.73333333333333" y="145" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">לא נסגר</text></svg><figcaption>חלון ההתפשטות. בלי התפשטות התקציב חסר 3.3%; ב-98 ק"מ הוא נסגר בדיוק; ב-520 ק"מ העודף מגיע ל-15%, הגבול שנקבע. ערך העבודה: 120 ק"מ.</figcaption></figure>
+<h3>3. למה הוא פחוס</h3>
+<p>כדור פלסטי המסתובב במהירות מתנפח באזור קו המשווה שלו. ביממה של 5.5 שעות קיבל כדור הארץ הצעיר צורה של כדור לחוץ ופחוס: רדיוס של 6,721 ק"מ בקו המשווה לעומת 6,128 ק"מ בקטבים — הפרש גבהים של כ-600 ק"מ. כתוצאה מן הפחיסות ומן הכוח הצנטריפוגלי, גם הכבידה האפקטיבית על פני השטח לא הייתה אחידה: כ-8.25 מ'/ש² בקו המשווה לעומת כ-9.5 מ'/ש² בקו רוחב 44°. על פני השטח בקו המשווה נשא הסיבוב כל נקודה במהירות משיקית של כ-2.1 ק"מ בשנייה, והשמיים חגו מעל הראש בקצב מהיר פי ארבעה מן הקצב המוכר לנו היום.</p>
+<figure class="fig"><svg viewBox="0 0 680 385" role="img" aria-label="Then and now" style="direction:ltr"><ellipse cx="200" cy="215" rx="112.0" ry="102.1" fill="#f3c9a0" stroke="#b5562e" stroke-width="2"/><line x1="200" y1="94.9" x2="200" y2="335.1" stroke="#5b6676" stroke-dasharray="4 4"/><line x1="88.0" y1="215" x2="312.0" y2="215" stroke="#b5562e" stroke-dasharray="2 3"/><circle cx="500" cy="215" r="106.2" fill="#cfe0f2" stroke="#2a5d8f" stroke-width="2"/><line x1="500" y1="90.8" x2="500" y2="339.2" stroke="#5b6676" stroke-dasharray="4 4"/><text direction="rtl" x="200" y="40" font-size="15" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">כדור הארץ הצעיר</text><text direction="rtl" x="200" y="60" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">לפני כ-4.5 מיליארד שנים</text><text direction="rtl" x="200" y="209" font-size="11.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="middle">משווני 6,721 ק"מ</text><text direction="rtl" x="206" y="160" font-size="11.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">קוטבי 6,128</text><text direction="rtl" x="200" y="345" font-size="14" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">יממה: 5.5 שעות</text><text direction="rtl" x="200" y="365" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">חם, מורחב (+120 ק"מ), פחוס</text><text direction="rtl" x="500" y="40" font-size="15" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">כדור הארץ היום</text><text direction="rtl" x="500" y="60" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">אותו קנה מידה</text><text direction="rtl" x="500" y="219" font-size="12" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="middle">6,371 ק"מ</text><text direction="rtl" x="500" y="345" font-size="14" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">יממה: 24 שעות</text><text direction="rtl" x="500" y="365" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">קר, ממוין, כמעט עגול</text></svg><figcaption>כדור הארץ הצעיר והיום, באותו קנה מידה. הצעיר גדול מעט (רדיוס נפחי 6,517 ק"מ, כולל 120 ק"מ של התפשטות מחום) ופחוס מן הסיבוב: 6,721 ק"מ בקו המשווה ו-6,128 בקטבים.</figcaption></figure>
+<h3>4. למה הוא כמעט אחיד בפנים</h3>
+<p>בכדור הארץ של ימינו מרוכז הברזל בליבה דחוסה, כך שכשליש ממסת כוכב הלכת מרוכזת סמוך למרכזו. בכדור הארץ הצעיר, לעומת זאת, תהליך המיון הפנימי רק החל: טיפות הברזל היו עדיין בשלבי השקיעה הראשונים, והליבה רק החלה להתאסף — יותר כמעין "אגס פנימי" מתגבש מאשר כדור מוגדר. במונחי פיזיקה, כוכב הלכת התנהג כמעט כמו כדור אחיד בצפיפותו (מקדם התמד k ≈ 0.4). לנתון זה חשיבות מכרעת: אילו כדור הארץ היה ממוין לחלוטין כבר אז, חשבון התנע הזוויתי לא היה נסגר — לתנע של ימינו הייתה חסרה כשישית.</p>
+<h3>5. למה הוא רטוב</h3>
+<p>בעידן קדום זה טרם נוצרו אוקיינוסים על פני השטח. אולם המים לא חסרו — כולם כבר היו כאן, כלואים בעומק ומעורבבים בתוך החומר הפנימי, כמו גז המומס בבקבוק סגור תחת לחץ. המים השתחררו בהדרגה רק ככל שכדור הארץ התקרר ותהליך המיון הפנימי התקדם. מים כלואים אלה הם שיקציפו בהמשך את המגמה העמוקה ויורידו את צפיפותה, ובלעדיהם החומר לא היה מסוגל לצוף ולעלות כלפי מעלה.</p>
+<h3>6. הסיבוב הוא המנוע</h3>
+<p>הסיבוב המהיר יוצר לחץ צנטריפוגלי ומניע מערכת מיון מתמשכת: החומר הכבד נדחק פנימה אל המרכז, וכל שאר החומר נלחץ החוצה כלפי פני השטח. זהו מנגנון פיזיקלי אחד הפועל בשלושה מישורים. מכאן נגזר גם הכלל ההפוך: גוף פלנטרי שכבר עבר מיון מלא, או שמסתובב לאט, אינו מרים אגס ואינו מוליד ירח. נוגה, המשלימה סיבוב עצמי פעם ב-243 יום, ומרקורי, המסתובב פעם ב-59 יום, מדגימים זאת היטב — אצלן התהליך אינו מרים דבר.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>היממה ההתחלתית מתוך התנע:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><msub><mi>I</mi><mn>0</mn></msub></mrow><mi>L</mi></mfrac><mo separator="true">,</mo><mspace width="2em"/><msub><mi>I</mi><mn>0</mn></msub><mo>=</mo><mi>k</mi><mtext> </mtext><mi>M</mi><msup><mi>R</mi><mn>2</mn></msup><mo separator="true">,</mo><mspace width="1em"/><mi>k</mi><mo>≃</mo><mn>0.4</mn></mrow><annotation encoding="application/x-tex">T_0=\frac{2\pi I_0}{L},\qquad I_0=k\,M R^2,\quad k\simeq0.4</annotation></semantics></math></span></div></div>
+<p>עם התנע של היום ועם התנע ההתחלתי (כולל האחוז שאבד לשמש):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3.441</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mo>⇒</mo><mtext> </mtext><msub><mi>T</mi><mn>0</mn></msub><mo>≃</mo><mn>5.54</mn><mtext> h</mtext><mo separator="true">;</mo><mspace width="2em"/><msub><mi>L</mi><mn>0</mn></msub><mo>≃</mo><mn>3.466</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>34</mn></msup><mtext> </mtext><mo>⇒</mo><mtext> </mtext><msub><mi>T</mi><mn>0</mn></msub><mo>≃</mo><mn>5.50</mn><mtext> h</mtext></mrow><annotation encoding="application/x-tex">L=3.441\times10^{34}\ \Rightarrow\ T_0\simeq5.54\ \text{h};\qquad L_0\simeq3.466\times10^{34}\ \Rightarrow\ T_0\simeq5.50\ \text{h}</annotation></semantics></math></span></div></div>
+<p>המהירות בקו המשווה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mi mathvariant="normal">Ω</mi><msub><mi>R</mi><mrow><mi>e</mi><mi>q</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mn>19</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>800</mn><mtext> s</mtext></mrow></mfrac><mo>×</mo><mn>6</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>721</mn><mtext> km</mtext><mo>≃</mo><mn>2</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>133</mn><mtext> m/s</mtext></mrow><annotation encoding="application/x-tex">v=\Omega R_{eq}=\frac{2\pi}{19{,}800\ \text{s}}\times6{,}721\ \text{km}\simeq2{,}133\ \text{m/s}</annotation></semantics></math></span></div></div>
+<p>קו הקורוטציה בהתחלה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo>≃</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>818</mn><mtext> km</mtext><mo separator="true">,</mo><mspace width="2em"/><mi>v</mi><mo>≃</mo><mn>5</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>020</mn><mtext> m/s</mtext></mrow><annotation encoding="application/x-tex">r_c=\left(\frac{GM}{\Omega^2}\right)^{1/3}\simeq15{,}818\ \text{km},\qquad v\simeq5{,}020\ \text{m/s}</annotation></semantics></math></span></div></div>
+<p>מיקום הקו ביחס לרדיוס — תלוי רק בצפיפות ובמהירות הסיבוב (בכדור הארץ ברגע הלידה: x ≈ 2.52):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mi>G</mi><mi>ρ</mi></mrow><mrow><mn>3</mn><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">x^3=\frac{4\pi G\rho}{3\Omega^2}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>המשקעים העתיקים מתעדים יממות קצרות יותר ככל שמעמיקים לאחור בזמן: 17 שעות, 13 שעות. מודל LEF מוסיף לשרשרת זו את נקודות הקצה הקדומות ביותר: 5.77 שעות לפני 3.87 מיליארד שנים, ו-5.5 שעות בראשית התהליך.</li>
+<li>הירח המתרחק מייצג את התנע הזוויתי שעבר מסיבוב כדור הארץ אל מסלול הירח — אותו תנע שבראשית הדרך היה אצור כולו בסיבוב העצמי של כדור הארץ.</li>
+<li>מהירות הסיבוב והצפיפות קובעות בכל כוכב לכת היכן ניצב קו הקורוטציה, ומתוך כך — האם ייוולדו לו ירחים ומה יהיה אופיים.</li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 680 380" role="img" aria-label="Day length through time" style="direction:ltr"><line x1="80" x2="640" y1="320.0" y2="320.0" stroke="#ece7da"/><text x="72" y="324.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">0</text><line x1="80" x2="640" y1="266.2" y2="266.2" stroke="#ece7da"/><text x="72" y="270.15384615384613" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">5</text><line x1="80" x2="640" y1="212.3" y2="212.3" stroke="#ece7da"/><text x="72" y="216.30769230769232" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">10</text><line x1="80" x2="640" y1="158.5" y2="158.5" stroke="#ece7da"/><text x="72" y="162.46153846153848" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">15</text><line x1="80" x2="640" y1="104.6" y2="104.6" stroke="#ece7da"/><text x="72" y="108.61538461538461" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">20</text><line x1="80" x2="640" y1="50.8" y2="50.8" stroke="#ece7da"/><text x="72" y="54.769230769230774" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">25</text><text x="92.17391304347822" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4.5</text><text x="153.04347826086953" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4</text><text x="274.78260869565213" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3</text><text x="396.52173913043475" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2</text><text x="518.2608695652175" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1</text><text direction="rtl" x="640.0" y="338" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">היום</text><text direction="rtl" x="360.0" y="360" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">מיליארדי שנים לפני היום</text><text x="24" y="180.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 24 180.0)">אורך היממה (שעות)</text><polyline points="92.2,260.8 168.5,257.9" fill="none" stroke="#b5562e" stroke-width="2.5"/><polyline points="250.4,180.0 340.5,136.9 640.0,61.5" fill="none" stroke="#2a5d8f" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="92.2" cy="260.8" r="6" fill="#b5562e"/><text direction="rtl" x="92.17391304347822" y="248.76923076923077" font-size="11.5" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="end">5.5 ש' · ההתחלה</text><circle cx="168.5" cy="257.9" r="6" fill="#b5562e"/><text direction="rtl" x="168.5043478260869" y="279.8615384615385" font-size="11.5" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">5.77 ש' · השחרור</text><circle cx="250.4" cy="180.0" r="6" fill="#2a5d8f"/><text direction="rtl" x="250.4347826086956" y="204.0" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">כ-13 ש' (Eulenfeld & Heubeck 2023)</text><circle cx="340.5" cy="136.9" r="6" fill="#2a5d8f"/><text direction="rtl" x="340.52173913043475" y="120.92307692307693" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">כ-17 ש' (Lantink et al. 2022)</text><circle cx="640.0" cy="61.5" r="6" fill="#2a5d8f"/><text direction="rtl" x="640.0" y="49.53846153846155" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="start">24 ש' · היום</text><circle cx="90" cy="40" r="5" fill="#b5562e"/><text direction="rtl" x="100" y="44" font-size="11.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="end">המודל</text><circle cx="170" cy="40" r="5" fill="#2a5d8f"/><text direction="rtl" x="180" y="44" font-size="11.5" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="end">מדידות במשקעים עתיקים</text></svg><figcaption>אורך היממה לאורך הזמן. באדום — נקודות המודל: 5.5 שעות בהתחלה, 5.77 בשחרור, לפני 3.87 מיליארד שנים. בכחול — מדידות במשקעים עתיקים: כ-13 שעות לפני 3.2 מיליארד שנים, כ-17 שעות לפני 2.46 מיליארד שנים, ו-24 שעות היום. הקו המקווקו מחבר בין המדידות בלבד.</figcaption></figure>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>). כל ההתרחשויות הבאות בסיפור — התרוממות הבליטה, התעבות הכיפה, התארכות האגס והמרוץ אל קו הקורוטציה — יוצאות לדרך מתוך מצב פתיחה זה.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>תקציב התנע הזוויתי:</strong> השערת הביקוע הקלאסית של דרווין דרשה פי 2.74 מן התנע הזוויתי של ימינו; כדור ארץ חם ומורחב המסתובב ב-5.5 שעות מסתפק בתנע הזוויתי הקיים כיום במערכת.</li>
+<li><strong>הגובה של קו הקורוטציה:</strong> ביממה של 5.5 שעות הקו שוכן במרחק 15,818 ק"מ — פחות משלושה רדיוסים פלנטריים. זהו מרחק קרוב דיו כדי שאגס מחובר יוכל לצמוח ולהגיע אליו.</li>
+<li><strong>המנוע הפיזיקלי:</strong> ללא סיבוב מהיר אין מיון פנימי, ללא מיון אין דחיקה של חומר קל כלפי חוץ, וללא דחיקה החוצה אין אגס.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: נסו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · המחליקה</span>
+<p>חשבו על מחליקה על הקרח המסתובבת סביב עצמה: כאשר היא פורשת את זרועותיה לצדדים היא מאטה, וכאשר היא מצמידה אותן אל גופה היא מאיצה. התנע הזוויתי הכולל שלה לא השתנה — רק המרחק של המסה מציר הסיבוב. כדור הארץ הצעיר הוא מחליקה שזרועותיה פרושות לרווחה: חם, מורחב, והברזל שבו טרם התכנס אל המרכז. ככל שהברזל ישקע פנימה, המחליקה תצמיד את זרועותיה ותאיץ את סיבובה — האצה שתקזז את ההאטה ותציל את המרוץ אל קו הקורוטציה (ראו <a href="enc_corotation_he.html">ב-2.02</a>).</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>כבר בקורפוס העברי מיולי 2026 הופיעו כדור ארץ חם ומורחב ("התפשטות תרמית ואנומליית הצפיפות") ומהירות סיבוב קריטית — אך עם ארבע יממות שונות לרגע הפיצול: 5.01, 6, 9.3 ו-2–5 שעות. בספטמבר נקבעה היממה ההתחלתית של 5.5 שעות מתוך תקציב התנע הזוויתי של היום, ובאוקטובר נקבע הרדיוס הנפחי על 6,517 ק"מ, עם התפשטות תרמית של 120 ק"מ.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>מסה</td><td>6.0455×10²⁴ ק"ג (כדור הארץ + הירח של היום)</td><td>מאמרים 1, 2</td></tr><tr><td>רדיוס נפחי</td><td>6,517 ק"מ (התפשטות 120 ק"מ; טווח 98–520)</td><td>מאמר 2</td></tr><tr><td>רדיוס משווני / קוטבי</td><td>6,721 / 6,128 ק"מ</td><td>מאמר 1</td></tr><tr><td>יממה התחלתית</td><td>5.5 ש' (חלון 4.90–5.54)</td><td>מאמר 2</td></tr><tr><td>יממה בשחרור</td><td>5.77 ש'</td><td>מאמר 2</td></tr><tr><td>מבנה פנימי</td><td>כמעט אחיד, k ≈ 0.4</td><td>מאמרים 1, 2</td></tr><tr><td>מהירות בקו המשווה</td><td>2,133 מ'/ש' (מסלול חופשי: 7,701)</td><td>מאמר 2</td></tr><tr><td>כבידה</td><td>8.25 מ'/ש² בקו המשווה; 9.5 בקו רוחב 44°</td><td>מאמר 1</td></tr><tr><td>קו הקורוטציה בהתחלה</td><td>15,818 ק"מ, 5,020 מ'/ש'</td><td>מאמר 2</td></tr><tr><td>לחץ במקור</td><td>150 GPa</td><td>מאמר 3</td></tr><tr><td>המים</td><td>כולם בתוך החומר; אין עוד אוקיינוסים</td><td>יומן, 16.11</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> א-06 · שלב 0.</li>
+<li><strong>מושגים קשורים:</strong> ב-1.02 · לחץ המקור 150 GPa · ב-1.03 · המגמה המוקצפת · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · ב-2.04 · תקציב התנע הזוויתי.</li>
+<li><strong>מבחנים:</strong> אורך היממה בעבר (משקעי גאות); מודלים תרמיים של כדור הארץ הצעיר.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>כדור ארץ חם, מהיר ורטוב הוא חומר גלם. מה שמרים ממנו משהו הוא הלחץ שבעומקו — ב-1.02 · לחץ המקור 150 GPa.</p>
+</section>
+</main>
+</body>
+</html>
