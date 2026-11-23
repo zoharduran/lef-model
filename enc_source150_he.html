@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>לחץ המקור 150 GPa — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.02 באנציקלופדיה של מודל LEF: הלחץ במרכז כדור הארץ הצעיר, 150 GPa — האם הוא מספיק כדי לשלם את משקל החומר שבדרך, מן המרכז ועד קו הקורוטציה, ולמה ההרמה עובדת הכי טוב לפני שכדור הארץ התמיין.">
+<link rel="canonical" href="https://lef-model.com/enc_source150_he.html"><style>.tw table{width:100%}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-1.02</span> · <a href="LEF_enc_source150_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · מושג יסוד</p>
+<h1>לחץ המקור 150 GPa: הדחיפה מן העומק</h1>
+<p>ערך מושג · ב-1.02 · מבוסס על מאמרים 1, 3, 13 ו-14</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 1. הכוח שמרים ← לחץ המקור 150 GPa · בסיפור: <a href="enc_story_he.html#c6">שלב 0 (א-06)</a>, <a href="enc_story_he.html#c7">שלב 1 (א-07)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>הלחץ במרכזו של כדור הארץ הצעיר עומד על 150 ג'יגה-פסקל (GPa). לחץ זה נוצר ממשקל כל החומר המונח מעל המרכז, בעוד שהסיבוב המהיר של כוכב הלכת מקל עליו במעט. כדור הארץ הצעיר היה מעורבב, ועטף אותו חלק חיצוני אטום — בדומה לקליפה של תפוז או של פומלה. ללחץ הפנימי לא היה לאן לברוח, ולכן הוא לחץ על כל הדפנות, ובין היתר אל תוך האגס ומשם אל קצהו. אין כאן כל צנרת ואין מבנים מובחנים של הולכה — יש לחץ פנימי בלבד בתוך גוף סגור. השאלה שעליה עונה מושג זה היא שאלה כמותית חדה: האם הלחץ במרכז מספיק כדי לשלם את משקל כל החומר שבדרך, מן המרכז ועד קו הקורוטציה?</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי מוחשי: ים המלח</h2>
+<p>בים המלח אדם צף על פני המים כמעט ללא מאמץ; בבריכה של מים מתוקים אותו אדם עצמו שוקע הרבה יותר. גופו של האדם לא השתנה — מה שהשתנה הוא צפיפות המים שסביבו. מי ים המלח כבדים וצפופים יותר בשל המלח הרב המומס בהם, ולכן כוח הציפה שהם מפעילים כלפי מעלה חזק בהרבה.</p>
+<p>בכדור הארץ הצעיר, החומר המותך והקל שעולה כלפי מעלה הוא האדם השוחה, ואילו מעטפת החומר שסביבו היא המים. הברזל הכבד, שעוד היה מפוזר באופן נרחב בתוך החומר כולו, מתפקד כמו המלח במי הים: כל עוד הוא מעורבב בסביבה, החומר הסובב כבד וצפוף, והחומר הקל צף ועולה דרכו בקלות. אולם ככל שהברזל שוקע ומתכנס אל הליבה, הסביבה שמעליו "מתמתקת" ונעשית קלה יותר — ואותו חומר קל צף דרכה פחות ופחות.</p>
+</section>
+<section>
+<span class="lab">02 · A SECOND IMAGE</span>
+<h2>דימוי שני: סיר לחץ</h2>
+<p>מים חמים מסוגלים לייצר לחץ גבוה — אך ורק כאשר מונח מעליהם מכסה אטום. בתוך סיר לחץ ביתי המכסה נעול היטב; האדים החמים שואפים להתפשט, אינם מוצאים מוצא, והלחץ בתוך הסיר מטפס מעלה. לעומת זאת, בסיר פתוח אותם מים רותחים אינם מעלים את הלחץ כלל: האדים פשוט מתפשטים בחופשיות ויוצאים החוצה.</p>
+<p>בעומקו של כדור הארץ הצעיר אין מכסה קשיח — מעל המים הכלואים מצוי חומר רך וגמיש המסוגל לנוע ולהידחק. לכן המים החמים בעומק אינם מעלים שם את הלחץ; במקום זאת, הם מתפשטים, מרימים את החומר שמעליהם ומנפחים את כדור הארץ כולו. "סיר לחץ" אמיתי מתקיים אך ורק סמוך לפני השטח, מתחת לקליפה הקרה והקשיחה — ושם הוא אכן מניע את הפליטות מן הפתחים.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>הלחץ בכדור הארץ של היום:</strong> במרכז כדור הארץ עומד הלחץ כיום על כ-364 GPa; בגבול שבין הליבה למעטפת, בעומק של כ-2,890 ק"מ, הוא עומד על כ-136 GPa (לפי מודל הייחוס הסייסמי PREM). לחץ של 150 GPa שורר כיום מעט מתחת לגבול הליבה.</li>
+<li><strong>סדרי גודל:</strong> ג'יגה-פסקל אחד שווה לעשרת אלפים אטמוספרות בקירוב. 150 GPa הם לחץ הגדול פי כמיליון וחצי מלחץ האוויר שאנו נושמים בגובה פני הים.</li>
+<li>כדור אחיד בגודל כדור הארץ של היום היה מייצר במרכזו לחץ של כ-172 GPa — פחות ממחצית מ-364 GPa. כאשר המסה הכבדה מרוכזת במרכז, הלחץ במרכז גבוה בהרבה.</li>
+<li>צפיפות חומר מותך בלחצים האלה (מדידות מעבדה):<ul><li>חומר המעטפת המותך (MgSiO₃) בלחץ של גבול הליבה מגיע לצפיפות של כ-5,480 ק"ג/מ"ק, קרוב מאוד לצפיפות הגביש המוצק שסביבו (Petitgirard et al. 2015).</li><li><strong>מים מורידים את הצפיפות:</strong> תכולה של 6%–11% מים במשקל מפחיתה את צפיפות החומר המותך בכ-4%–7% בלחצים של 100–130 GPa (Karki, Ghosh &amp; Karato 2021).</li></ul></li>
+</ul>
+<figure class="fig"><svg viewBox="0 0 680 300" role="img" aria-label="Pressure scale" style="direction:ltr"><line x1="60" x2="640" y1="210" y2="210" stroke="#5b6676"/><line x1="98.7" x2="98.7" y1="206" y2="214" stroke="#5b6676"/><text x="98.66666666666666" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.0001</text><line x1="176.0" x2="176.0" y1="206" y2="214" stroke="#5b6676"/><text x="176.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.001</text><line x1="253.3" x2="253.3" y1="206" y2="214" stroke="#5b6676"/><text x="253.33333333333331" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.01</text><line x1="330.7" x2="330.7" y1="206" y2="214" stroke="#5b6676"/><text x="330.6666666666667" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0.1</text><line x1="408.0" x2="408.0" y1="206" y2="214" stroke="#5b6676"/><text x="408.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1</text><line x1="485.3" x2="485.3" y1="206" y2="214" stroke="#5b6676"/><text x="485.3333333333333" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10</text><line x1="562.7" x2="562.7" y1="206" y2="214" stroke="#5b6676"/><text x="562.6666666666667" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">100</text><line x1="640.0" x2="640.0" y1="206" y2="214" stroke="#5b6676"/><text x="640.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1,000</text><text direction="rtl" x="350.0" y="254" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">לחץ (GPa) — כל שנתה פי 10</text><line x1="99.1" x2="99.1" y1="56" y2="210" stroke="#5b6676" stroke-width="1.5"/><circle cx="99.1" cy="210" r="4" fill="#5b6676"/><text direction="rtl" x="105.10046377452835" y="60" font-size="12" font-family="Heebo" font-weight="500" fill="#5b6676" text-anchor="end">לחץ האוויר · 0.0001</text><line x1="333.9" x2="333.9" y1="146" y2="210" stroke="#2a5d8f" stroke-width="1.5"/><circle cx="333.9" cy="210" r="4" fill="#2a5d8f"/><text direction="rtl" x="339.8677009855694" y="150" font-size="12" font-family="Heebo" font-weight="500" fill="#2a5d8f" text-anchor="end">תחתית התהום העמוקה · 0.11</text><line x1="573.0" x2="573.0" y1="116" y2="210" stroke="#2a5d8f" stroke-width="1.5"/><circle cx="573.0" cy="210" r="4" fill="#2a5d8f"/><line x1="552" x2="573.0" y1="116" y2="116" stroke="#2a5d8f" stroke-width="1" stroke-dasharray="2 2"/><text direction="rtl" x="548" y="120" font-size="12" font-family="Heebo" font-weight="500" fill="#2a5d8f" text-anchor="start">גבול הליבה היום · 136</text><line x1="576.3" x2="576.3" y1="76" y2="210" stroke="#b5562e" stroke-width="3"/><circle cx="576.3" cy="210" r="6" fill="#b5562e"/><line x1="552" x2="576.3" y1="76" y2="76" stroke="#b5562e" stroke-width="1" stroke-dasharray="2 2"/><text direction="rtl" x="548" y="80" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">מרכז כדור הארץ הצעיר · 150</text><line x1="606.1" x2="606.1" y1="36" y2="210" stroke="#2a5d8f" stroke-width="1.5"/><circle cx="606.1" cy="210" r="4" fill="#2a5d8f"/><line x1="552" x2="606.1" y1="36" y2="36" stroke="#2a5d8f" stroke-width="1" stroke-dasharray="2 2"/><text direction="rtl" x="548" y="40" font-size="12" font-family="Heebo" font-weight="500" fill="#2a5d8f" text-anchor="start">מרכז כדור הארץ היום · 364</text></svg><figcaption>סדרי גודל של לחץ (סולם לוגריתמי: כל שנתה פי 10). לחץ האוויר, תחתית התהום העמוקה ביותר באוקיינוס, גבול הליבה היום, מרכז כדור הארץ הצעיר (150) ומרכז כדור הארץ היום.</figcaption></figure>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> הלחץ בעומקו של כוכב לכת נקבע על ידי משקל שכבות החומר המונחות מעליו. חומר קל מסביבתו צף ועולה, וחומר כבד ממנה שוקע — כך עולים מאגמה ובועות, וכך התגבשה הליבה. מוסכם גם שכדור הארץ הצעיר היה חם מאוד וקיים אוקיינוס מגמה.</li>
+<li><strong>מה ההבדל:</strong> במדע המקובל, עליית החומר מן העומק נעצרת על פני השטח. מודל LEF ממשיך את החשבון הלאה אל החלל: האם הלחץ במרכז כדור הארץ מספיק כדי לשלם את משקל החומר שבדרך, מן המרכז ועד קו הקורוטציה — מרחק של כ-16,000 ק"מ מן המרכז?</li>
+<li><strong>מה לקוח ומה חדש:</strong> משוואות הלחץ ההידרוסטטי, הלחץ במרכז כדור אחיד, הפוטנציאל של גוף מסתובב ועקרון הציפה — כולם לקוחים מן הפיזיקה הקלאסית. החידושים של מודל LEF הם: מבחן הלחץ הרציף מן המרכז ועד הקו; קביעת סף הצפיפות הקריטי של 3,864 ק"ג/מ"ק; תפיסת הנדיפים כגורם המפחית את הצפיפות (ולא כגורם המעלה את הלחץ); והמסקנה שהגוף הנדחק החוצה חייב להיות רחב — ומכאן צורת האגס.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. מאיפה בא הלחץ</h3>
+<p>בתוך כל גוף פלנטרי גדול נלחץ החומר שבפנים תחת משקל כל השכבות המונחות מעליו. במרכזו של כדור הארץ הצעיר יוצר משקל זה לחץ של 150.26 GPa. הסיבוב המהיר של כדור הארץ מקל על לחץ זה במעט, משום שבאזור קו המשווה הכוח הצנטריפוגלי פועל כנגד כוח הכבידה. המים והגזים אינם מוסיפים ללחץ מרכזי זה (כפי שהומחש בדימוי סיר הלחץ): תפקידם הפיזיקלי שונה לגמרי.</p>
+<h3>2. המבחן: מן המרכז ועד הקו</h3>
+<p>כדי שחומר יגיע מן העומק ועד קו הקורוטציה, הלחץ במרכז חייב לשלם את משקל כל החומר המצוי לאורך הדרך. החשבון הפיזיקלי אינו תלוי בגיאומטריה של המסלול — אין כאן צנרת מובילה, אלא רק הלחץ הפנימי ומשקל החומר שאותו הוא דוחף. הדרך מתחלקת לשני מקטעים:</p>
+<ul>
+<li><strong>החלק העמוק — מן המרכז ועד פני השטח:</strong> חומר מותך בצפיפות של 3,500 ק"ג/מ"ק.</li>
+<li><strong>החלק החיצוני — מפני השטח ועד קו הקורוטציה:</strong> אותו חומר עצמו לאחר שהוקצף מנדיפים, בצפיפות של 1,500 ק"ג/מ"ק.</li>
+</ul>
+<p>משקל החומר שבדרך הוא 139.78 GPa, בעוד שהלחץ הזמין במרכז עומד על 150.26 GPa. נותר אפוא עודף לחץ של 10.49 GPa — הדחיפה מבפנים מספיקה בהחלט.</p>
+<h3>3. הסף: 3,864</h3>
+<div class="tw"><table class="lab"><tr><th>צפיפות החומר בעומק</th><th>המשקל הנדרש (GPa)</th><th>העודף (GPa)</th></tr><tr><td>1,500</td><td>82.14</td><td>+68.12</td></tr><tr><td>3,000</td><td>125.37</td><td>+24.89</td></tr><tr><td>3,500</td><td>139.78</td><td>+10.49</td></tr><tr><td>4,000</td><td>154.19</td><td>−3.92</td></tr><tr><td>4,500</td><td>168.60</td><td>−18.33</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" aria-label="Pressure test" style="direction:ltr"><line x1="80" x2="640" y1="300.0" y2="300.0" stroke="#ece7da"/><text x="72" y="304.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">60</text><line x1="80" x2="640" y1="235.0" y2="235.0" stroke="#ece7da"/><text x="72" y="239.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">90</text><line x1="80" x2="640" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="72" y="174.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">120</text><line x1="80" x2="640" y1="105.0" y2="105.0" stroke="#ece7da"/><text x="72" y="109.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">150</text><line x1="80" x2="640" y1="40.0" y2="40.0" stroke="#ece7da"/><text x="72" y="44.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">180</text><text x="80.0" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1,500</text><text x="173.33333333333331" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2,000</text><text x="266.66666666666663" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2,500</text><text x="360.0" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3,000</text><text x="453.3333333333333" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3,500</text><text x="546.6666666666667" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4,000</text><text x="640.0" y="318" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4,500</text><text direction="rtl" x="360.0" y="342" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">צפיפות החומר בעומק (ק"ג/מ"ק)</text><text x="24" y="170.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 24 170.0)">GPa</text><line x1="80.0" x2="640.0" y1="104.4" y2="104.4" stroke="#b5562e" stroke-width="2.5"/><line x1="80.0" x2="640.0" y1="252.0" y2="64.7" stroke="#2a5d8f" stroke-width="2.5"/><line x1="521.3" x2="521.3" y1="104.4" y2="300" stroke="#1d2430" stroke-dasharray="4 4"/><circle cx="521.3" cy="104.4" r="6" fill="#1d2430"/><text direction="rtl" x="527.28" y="292" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="end">הסף 3,864</text><line x1="453.3" x2="453.3" y1="127.1" y2="104.4" stroke="#2f7d57" stroke-width="3"/><text direction="rtl" x="445.3333333333333" y="115.83333333333331" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start">עודף 10.49</text><text direction="rtl" x="98.66666666666667" y="94.4366666666667" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="end">מה שהמקור נותן: 150.26</text><text direction="rtl" x="98.66666666666667" y="267.78625166666666" font-size="12" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="end">משקל החומר שבדרך</text><text direction="rtl" x="584.0" y="76.5" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">לא מגיע</text><text direction="rtl" x="210.66666666666666" y="170.0" font-size="12" font-family="Heebo" font-weight="600" fill="#2f7d57" text-anchor="middle">מגיע אל הקו</text></svg><figcaption>מבחן הלחץ. באדום — מה שהמקור נותן: 150.26 GPa. בכחול — משקל החומר שבדרך, לפי צפיפות החומר בעומק (החלק החיצוני 1,500). הקווים נחצים ב-3,864: חומר קל ממנו מגיע אל הקו. בירוק — העודף של 10.49 GPa ב-3,500.</figcaption></figure>
+<p>גבול היכולת עובר בצפיפות של 3,864 ק"ג/מ"ק: חומר קל מערך זה מסוגל לטפס עד קו הקורוטציה, ואילו חומר כבד ממנו נעצר בדרך ואינו מגיע אל הקו.</p>
+<h3>4. מיכל מים מוטה</h3>
+<p>הלחץ במרכז שווה למשקל החומר שבדרך כאשר הוא בצפיפות הממוצעת של כדור הארץ הצעיר (5,214 ק"ג/מ"ק). חומר בצפיפות כזו היה מאוזן במדויק ולא היה יוצא מעל פני השטח; רק חומר קל מן הממוצע מרוויח עודף לחץ. ומדוע החומר נוטה לצאת דווקא אל תוך האגס? דמיינו מיכל מים רחב, שבצד אחד שלו פועלת כבידה רגילה ובצד השני כבידה חלשה: פני המים לא יעמדו ישר, אלא יתייצבו באלכסון — גבוהים בצד של הכבידה החלשה ונמוכים בצד של הכבידה החזקה. לאורך האגס הכבידה נחלשת והסיבוב מושך חזק יותר החוצה, עד שבקו הקורוטציה החומר כבר אינו שוקל דבר. לכן החומר מחליק אל האגס כמו במורד גבעה — אלא שבמורד רגיל הוא יורד בגלל הכבידה, וכאן הוא יוצא בגלל הכבידה החלשה. מבחינה כמותית, הסף שווה בקירוב לצפיפות הממוצעת של כדור הארץ פחות 0.9 מצפיפות החומר בחלק החיצוני של הדרך.</p>
+<figure class="fig"><svg viewBox="0 0 680 380" role="img" aria-label="Tilted water tank" style="direction:ltr"><path d="M110 230 L570 120 L570 300 L110 300 Z" fill="#cfe3f3"/><line x1="110" x2="570" y1="230" y2="120" stroke="#2a5d8f" stroke-width="2.5"/><path d="M110 70 L110 300 L570 300 L570 70" fill="none" stroke="#1d2430" stroke-width="2.5"/><line x1="150" x2="150" y1="20" y2="90" stroke="#b5562e" stroke-width="2.5"/><path d="M145 83 L150 90 L155 83" fill="none" stroke="#b5562e" stroke-width="2.5"/><line x1="240" x2="240" y1="20" y2="75" stroke="#b5562e" stroke-width="2.5"/><path d="M235 68 L240 75 L245 68" fill="none" stroke="#b5562e" stroke-width="2.5"/><line x1="330" x2="330" y1="20" y2="60" stroke="#b5562e" stroke-width="2.5"/><path d="M325 53 L330 60 L335 53" fill="none" stroke="#b5562e" stroke-width="2.5"/><line x1="420" x2="420" y1="20" y2="47" stroke="#b5562e" stroke-width="2.5"/><path d="M415 40 L420 47 L425 40" fill="none" stroke="#b5562e" stroke-width="2.5"/><line x1="510" x2="510" y1="20" y2="35" stroke="#b5562e" stroke-width="2.5"/><path d="M505 28 L510 35 L515 28" fill="none" stroke="#b5562e" stroke-width="2.5"/><text direction="rtl" x="150" y="326" font-size="13" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">כבידה רגילה</text><text direction="rtl" x="510" y="326" font-size="13" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">כבידה חלשה</text><text direction="rtl" x="340" y="161.0" font-size="13" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="middle">פני המים</text><text direction="rtl" x="150" y="270" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="middle">נמוך</text><text direction="rtl" x="510" y="160" font-size="12" font-family="Heebo" font-weight="400" fill="#1d2430" text-anchor="middle">גבוה</text><text direction="rtl" x="340" y="356" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">איפה שהכבידה חלשה, פני המים גבוהים — כך מטפס החומר אל האגס</text></svg><figcaption>מיכל מים מוטה. בצד אחד כבידה רגילה, בצד השני כבידה חלשה (אורך החצים). המים מתייצבים באלכסון — גבוהים בצד של הכבידה החלשה. לאורך האגס הכבידה נחלשת והסיבוב זורק החוצה, ובקו הקורוטציה החומר אינו שוקל דבר; לכן החומר נוטה לצאת אל האגס. סכמטי.</figcaption></figure>
+<h3>5. שלוש דרכים שבהן כדור הארץ הצעיר עומד בסף</h3>
+<p>ניסויי מעבדה מעניקים לחומר מותך בלחצים עמוקים צפיפות של כ-5,000–5,500 ק"ג/מ"ק, ונוכחות מים מפחיתה צפיפות זו בכמה אחוזים בלבד. מודל LEF עומד בסף הצפיפות באמצעות שילוב של שלושה גורמים הפועלים יחד:</p>
+<ul>
+<li>כדור ארץ שטרם התמיין. כל עוד הברזל מפוזר בתוך החומר כולו, הסביבה העוטפת כבדה וצפופה (בדומה למי ים המלח). אילו הברזל כבר היה מרוכז בליבה, הסביבה שמעליה הייתה נעשית קלה יותר והסף היה צונח:</li>
+</ul>
+<div class="tw"><table class="lab"><tr><th>כמה מן הברזל כבר בליבה</th><th>הלחץ במרכז</th><th>הלחץ בראש הליבה</th><th>הסף</th></tr><tr><td>כלום</td><td>150</td><td>150</td><td>3,864</td></tr><tr><td>רבע</td><td>214</td><td>145</td><td>3,660</td></tr><tr><td>חצי</td><td>243</td><td>133</td><td>3,383</td></tr><tr><td>הכול</td><td>282</td><td>108</td><td>2,724</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" aria-label="Sorting" style="direction:ltr"><line x1="90" x2="590" y1="300.0" y2="300.0" stroke="#ece7da"/><text x="82" y="304.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="end">2,500</text><line x1="90" x2="590" y1="213.3" y2="213.3" stroke="#ece7da"/><text x="82" y="217.33333333333334" font-size="10.5" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="end">3,000</text><line x1="90" x2="590" y1="126.7" y2="126.7" stroke="#ece7da"/><text x="82" y="130.66666666666669" font-size="10.5" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="end">3,500</text><line x1="90" x2="590" y1="40.0" y2="40.0" stroke="#ece7da"/><text x="82" y="44.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#2a5d8f" text-anchor="end">4,000</text><text x="598" y="304.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="start">100</text><text x="598" y="239.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="start">150</text><text x="598" y="174.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="start">200</text><text x="598" y="109.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="start">250</text><text x="598" y="44.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#b5562e" text-anchor="start">300</text><text direction="rtl" x="90" y="318" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">כלום</text><text direction="rtl" x="215.0" y="318" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">רבע</text><text direction="rtl" x="340.0" y="318" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">חצי</text><text direction="rtl" x="465.0" y="318" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">שלושה רבעים</text><text direction="rtl" x="590.0" y="318" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">הכול</text><text direction="rtl" x="340.0" y="342" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">כמה מן הברזל כבר בליבה</text><polyline points="90.0,63.6 215.0,98.9 340.0,146.9 465.0,201.0 590.0,261.2" fill="none" stroke="#2a5d8f" stroke-width="2.5"/><polyline points="90.0,235.0 215.0,151.8 340.0,114.1 465.0,86.8 590.0,63.4" fill="none" stroke="#b5562e" stroke-width="2.5" stroke-dasharray="6 4"/><circle cx="90.0" cy="63.6" r="5" fill="#2a5d8f"/><text x="90" y="83.57333333333332" font-size="11" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">3,864</text><circle cx="215.0" cy="98.9" r="5" fill="#2a5d8f"/><text x="215.0" y="118.93333333333334" font-size="11" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">3,660</text><circle cx="340.0" cy="146.9" r="5" fill="#2a5d8f"/><text x="340.0" y="166.94666666666666" font-size="11" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">3,383</text><circle cx="465.0" cy="201.0" r="5" fill="#2a5d8f"/><text x="465.0" y="221.02666666666667" font-size="11" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">3,071</text><circle cx="590.0" cy="261.2" r="5" fill="#2a5d8f"/><text x="590.0" y="281.17333333333335" font-size="11" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="middle">2,724</text><circle cx="90.0" cy="235.0" r="5" fill="#b5562e"/><text x="90" y="225.0" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">150</text><circle cx="215.0" cy="151.8" r="5" fill="#b5562e"/><text x="215.0" y="141.8" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">214</text><circle cx="340.0" cy="114.1" r="5" fill="#b5562e"/><text x="340.0" y="104.1" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">243</text><circle cx="465.0" cy="86.8" r="5" fill="#b5562e"/><text x="465.0" y="76.80000000000001" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">264</text><circle cx="590.0" cy="63.4" r="5" fill="#b5562e"/><text x="590.0" y="53.400000000000006" font-size="11" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="middle">282</text><text direction="rtl" x="100" y="28" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="end">הסף לחומר העולה (ק"ג/מ"ק)</text><text direction="rtl" x="580" y="28" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">הלחץ במרכז (GPa)</text></svg><figcaption>המיון מקשה על ההרמה. בכחול — הסף לחומר העולה (ק"ג/מ"ק), יורד מ-3,864 ל-2,724 ככל שיותר ברזל כבר בליבה. באדום, מקווקו — הלחץ במרכז (GPa), עולה מ-150 ל-282. החומר העולה יוצא מעל הליבה, ושם הסביבה נעשית קלה.</figcaption></figure>
+<p>הלחץ במרכז עצמו אמנם עולה ככל שהמיון מתקדם — אך החומר העולה יוצא מעל הליבה, מתוך המעטפת, ושם הסביבה נעשית קלה יותר. מנגנון ההרמה פועל אפוא בשיא יעילותו כאשר כדור הארץ עדיין "מלוח" בברזל מפוזר. משום כך עיקר המיון הפנימי של כדור הארץ התרחש לאחר שהירח כבר עלה, ונמשך זמן רב לאחר הניתוק.</p>
+<ul>
+<li>הקצף והאדים. ככל שהחומר בחלק החיצוני של הדרך קל ואוורירי יותר, כך החומר שבעומק יכול להיות כבד יותר ועדיין להגיע אל הקו: כאשר החלק החיצוני הוא בצפיפות 1,300 ק"ג/מ"ק (כצפיפות הגוף שבקצה), הסף עולה ל-4,044 ק"ג/מ"ק; בצפיפות 500 ק"ג/מ"ק (תערובת עשירה באדים), הסף מגיע ל-4,764 ק"ג/מ"ק; וכאשר החלק החיצוני הוא כמעט גז טהור, הסף מטפס ל-5,214 ק"ג/מ"ק.</li>
+<li>המים מעדיפים את הנוזל. מולקולות המים נכנסות בהעדפה מובהקת אל החומר המותך ולא אל הגבישים המוצקים שסביבו, ולכן הן מפחיתות את צפיפותו של החומר העולה במידה רבה יותר מאשר את צפיפות סביבתו.</li>
+</ul>
+<h3>6. הסיבוב והמיון</h3>
+<p>ביממה של 5.5 שעות, הסיבוב העצמי אינו דוחף את החומר הכבד כלפי חוץ; הוא רק מחליש את המשיכה הכבידתית פנימה — בקו המשווה בכ-7%, ובקטבים כלל לא. החומר הכבד נדחק תמיד פנימה אל המרכז. מה שבלם את השלמת המיון בשלב מוקדם היה בעיקר הערבוב התרמי והמכני: החום העז, המים המעורבבים בחומר והתנועה המתמדת בתוך גוף המסתובב במהירות.</p>
+<h3>7. הלחץ אינו מגיע כולו אל הגוף שבקצה</h3>
+<p>הלחץ גבוה ביותר במרכז ויורד ככל שמתרחקים ממנו, שכן בכל נקודה הוא כבר שילם את משקל החומר שבינה לבין המרכז. הגוף הגדל בקצה האגס אינו "סופג" לחץ של 150 GPa; משקלו העצמי מייצר במרכזו לחץ של כ-3.4 GPa בלבד — פי ארבעים פחות. הירח גם לא נבנה בעיקר מן הלחץ הפנימי: את רובו בנה הסיאל, שזרם כל הזמן מבחוץ במעלה האגס ונערם על הקצה. הלחץ הפנימי פעל לצדו — דרך אימבריום והימה השכנה לה הוא הגיע אל הימות, שזרקו החוצה את החומר החוזר.</p>
+<h3>8. למה האגס חייב להיות רחב</h3>
+<p>דרך צרה אינה יכולה לשאת את הגוף שבקצה: המבנה הנושא אותו חייב להחזיק אותו כנגד משיכת הכבידה של כדור הארץ וכנגד המשיכה הצדית של הסיבוב. רק חלק נושא שרדיוסו עולה על כ-1,000 ק"מ עומד במבחן היציבות — וחלק כזה מחזיק בתוכו כמעט מחצית ממסת הירח. בבסיס ברוחב 3,000 ק"מ נותר עודף לחץ של כ-6 GPa. אימבריום לבדה רחבה כ-1,100 ק"מ, ובסיס האגס הפנימי שהעביר דרכה חומר היה רחב ממנה בהרבה. בקנה מידה כזה אין צנרת ואין תעלות: יש אגס רחב שנלחץ מבפנים ונמשך מבחוץ בכוח הצנטריפוגלי.</p>
+<h3>9. הלחץ נגמר ברגע הניתוק</h3>
+<p>כאשר הירח מתנתק מקצה האגס, הוא חושף בבת אחת את פתחי ההזנה של האגס אל החלל, והלחץ הפנימי משתחרר החוצה — ממש כמו פקק הנשלף מבקבוק. באותו רגע חדל הלחץ שממקורו בכדור הארץ להגיע אל הירח, הפליטות מן הפתחים פוסקות, והאגס מפסיק להתארך.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הלחץ במרכז (צפיפות ממוצעת 5,214 ק"ג/מ"ק, רדיוס 6,517 ק"מ, יממה של 5.5 שעות):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mtext> </mtext><msub><mi>ρ</mi><mi>p</mi></msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>150.26</mn><mtext> GPa</mtext></mrow><annotation encoding="application/x-tex">p_s=\tfrac12\,\rho_p\left(\frac{GM_0}{R}-\omega_0^2R^2\right)=150.26\ \text{GPa}</annotation></semantics></math></span></div></div>
+<p>המדרגה העמוקה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mrow><mo fence="true">(</mo><mfrac><mrow><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub></mrow><mi>R</mi></mfrac><mo>−</mo><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>2.88173</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup><mtext> J/kg</mtext></mrow><annotation encoding="application/x-tex">I_d=\tfrac12\left(\frac{GM_0}{R}-\omega_0^2R^2\right)=2.88173\times10^{7}\ \text{J/kg}</annotation></semantics></math></span></div></div>
+<p>המדרגה החיצונית:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>o</mi></msub><mo>=</mo><mi>G</mi><msub><mi>M</mi><mn>0</mn></msub><mrow><mo fence="true">(</mo><mfrac><mn>1</mn><mi>R</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><msub><mi>r</mi><mo>∗</mo></msub></mfrac><mo fence="true">)</mo></mrow><mo>−</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mtext> </mtext><msubsup><mi>ω</mi><mn>0</mn><mn>2</mn></msubsup><mrow><mo fence="true">(</mo><msubsup><mi>r</mi><mo>∗</mo><mn>2</mn></msubsup><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>=</mo><mn>2.59450</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup><mtext> J/kg</mtext><mo separator="true">,</mo><mspace width="2em"/><msub><mi>r</mi><mo>∗</mo></msub><mo>=</mo><mn>15</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>882.9</mn><mtext> km</mtext></mrow><annotation encoding="application/x-tex">I_o=GM_0\left(\frac1R-\frac1{r_*}\right)-\tfrac12\,\omega_0^2\left(r_*^2-R^2\right)=2.59450\times10^{7}\ \text{J/kg},\qquad r_*=15{,}882.9\ \text{km}</annotation></semantics></math></span></div></div>
+<p>המשקל הנדרש:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>p</mi><mtext>head</mtext></msub><mo>=</mo><msub><mi>ρ</mi><mi>d</mi></msub><mtext> </mtext><msub><mi>I</mi><mi>d</mi></msub><mo>+</mo><msub><mi>ρ</mi><mi>o</mi></msub><mtext> </mtext><msub><mi>I</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">p_{\text{head}}=\rho_d\,I_d+\rho_o\,I_o</annotation></semantics></math></span></div></div>
+<p>המאזן המלא:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>p</mi><mtext>head</mtext></msub><mo>−</mo><msub><mi>p</mi><mtext>load</mtext></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>p</mi><mtext>loss</mtext></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_s-p_{\text{head}}-p_{\text{load}}-\Delta p_{\text{loss}}&gt;0</annotation></semantics></math></span></div></div>
+<p>הסף:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>ρ</mi><mrow><mi>d</mi><mo separator="true">,</mo><mi>max</mi><mo>⁡</mo></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>o</mi></msub><msub><mi>I</mi><mi>o</mi></msub></mrow><msub><mi>I</mi><mi>d</mi></msub></mfrac><mo>≃</mo><msub><mi>ρ</mi><mi>p</mi></msub><mo>−</mo><mn>0.9</mn><mtext> </mtext><msub><mi>ρ</mi><mi>o</mi></msub><mo>≃</mo><mn>3</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>864</mn><mtext> </mtext><msup><mtext>kg/m</mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho_{d,\max}=\frac{p_s-\rho_o I_o}{I_d}\simeq\rho_p-0.9\,\rho_o\simeq3{,}864\ \text{kg/m}^3</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>ליבה קטנה לירח וכדור ארץ שהמשיך להתמיין:</strong> ההרמה פעלה בשלב שבו הברזל עוד היה מפוזר; משום כך קיבל הירח מעט ברזל בלבד, ואילו כדור הארץ המשיך לבנות את ליבתו המתכתית זמן רב לאחר הניתוק.</li>
+<li><strong>לחץ של 364 GPa במרכז היום:</strong> זהו מצב הסיום של המיון — לאחר שכל הברזל הכבד התכנס אל ליבת כדור הארץ.</li>
+<li><strong>הפליטות נפסקו עם הניתוק:</strong> ברגע ההיפרדות פסק הלחץ הארצי מלהזין את הירח.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>): החומר בעומק, תחת לחץ של 150 GPa, סגור בתוך חלק חיצוני אטום. שלב 1 (<a href="enc_story_he.html#c7">א-07</a>): הלחץ דוחק אל תוך האגס, החומר מוקצף ומתחיל לצאת. המנגנון ממשיך לפעול עד שלב 5 (<a href="enc_story_he.html#c12">א-12</a>), שבו ברגע הניתוק משתחרר הלחץ.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מהו הכוח הדוחף:</strong> לא פיצוץ פתאומי ולא פגיעה חיצונית — אלא משקלו העצמי של כדור הארץ בשילוב עקרון הציפה.</li>
+<li><strong>מדוע נדרש אגס:</strong> רק גוף רחב, מסיבי וחם, שנלחץ מבפנים ונמשך מבחוץ, מסוגל לשאת את הגוף עד הקו ולעמוד במבחן היציבות.</li>
+<li><strong>מדוע נדרשים מים:</strong> המים מקציפים ומקלים את החומר העולה כך שצפיפותו תרד מתחת לסף הקריטי של 3,864 ק"ג/מ"ק.</li>
+<li><strong>מדוע הירח עלה לפני שכדור הארץ התמיין:</strong> מנגנון הציפה וההרמה פועל ביעילות המרבית כאשר הברזל עדיין מפוזר במעטפת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: נסו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · הביצה במים מלוחים</span>
+<p>מלאו כוס גבוהה במים מתוקים והניחו בה בעדינות ביצה טרייה — הביצה תשקע מיד אל הקרקעית. כעת הוסיפו למים כמה כפיות מלח וערבבו היטב — הביצה תתרומם ותצוף. הביצה עצמה לא השתנתה כלל; המים שסביבה נעשו כבדים וצפופים יותר. כעת דמיינו שגרגירי המלח שוקעים לאטם אל תחתית הכוס: המים יתמתקו והביצה תשקע שוב. זהו בדיוק מה שהיה קורה למנגנון ההרמה אילו הברזל הארצי כבר היה מרוכז בליבה.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>בגרסה הראשונה של החישוב (ספטמבר) עמד רדיוס כדור הארץ הצעיר על 7,157 ק"מ, והחשבון נעשה ממרכז הגוף שעל הבליטה ועד קו הקורוטציה — חישוב שהניב משקל נדרש של 68.6 GPa מול 162 GPa זמינים. בגרסה הנוכחית (מאמר 3) נמדדת הדרך כולה ממרכז כדור הארץ ועד הקו, ושני חלקיה נגזרים מאותו שדה כבידה וסיבוב עצמו (כדי שלא לשלב ערך נוח מתמונה אחת וערך לא נוח מאחרת): התוצאה היא 150.26 GPa מול 139.78 GPa, עודף לחץ של 10.49 GPa, וסף צפיפות של 3,864 ק"ג/מ"ק. המרווח הפיזיקלי אמנם צר יותר, אך המבחן שלם ועקבי לחלוטין. ב-23.11.2026 נוסף המבחן בכדור ארץ הממיין את עצמו בהדרגה.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>הלחץ במרכז</td><td>150.26 GPa</td><td>מאמר 3 §A.9</td></tr><tr><td>הצפיפות הממוצעת של כדור הארץ הצעיר</td><td>5,214 ק"ג/מ"ק</td><td>מאמר 3</td></tr><tr><td>קו הקורוטציה של גוף-האם המלא</td><td>15,882.9 ק"מ</td><td>מאמר 3 §A.9</td></tr><tr><td>המשקל הנדרש (3,500 / 1,500)</td><td>139.78 GPa</td><td>מאמר 3 §A.10</td></tr><tr><td>העודף</td><td>10.49 GPa</td><td>מאמר 3 §A.10</td></tr><tr><td>הסף</td><td>3,864 ק"ג/מ"ק</td><td>מאמר 3 §A.10</td></tr><tr><td>רגישות לעומס</td><td>34.7 ק"ג/מ"ק לכל GPa</td><td>מאמר 3 §A.10</td></tr><tr><td>הלחץ בגוף שבקצה (משקלו העצמי)</td><td>3.37 GPa</td><td>מאמר 3 §C.1</td></tr><tr><td>הרדיוס המינימלי של החלק הנושא</td><td>כ-1,000 ק"מ (0.46 מסות ירח)</td><td>מאמר 3 §A.13</td></tr><tr><td>השפעת פחיסות כדור הארץ</td><td>כ-3% (כ-4 GPa)</td><td>מאמר 3 §C.9</td></tr><tr><td>הסף בכדור ארץ ממוין לגמרי</td><td>2,724 ק"ג/מ"ק</td><td>חישוב, 23.11.2026</td></tr><tr><td>הלחץ במרכז היום</td><td>כ-364 GPa</td><td>PREM</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0; <a href="enc_story_he.html#c7">א-07</a> · שלב 1; <a href="enc_story_he.html#c12">א-12</a> · שלב 5.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · ב-1.03 · המגמה המוקצפת · ב-1.04 · מקור האנרגיה של ההרמה · ב-1.05 · קצב ההזנה · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a>.</li>
+<li><strong>מבחנים:</strong> צפיפות חומר מותך עשיר במים ב-50–150 GPa (מעבדה ומחשב); מבחן הלחץ בכדור ארץ ממוין ופחוס, עם מסת האגס.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הלחץ דוחף מלמטה, אך רק חומר קל מספיק מסוגל לטפס עד הקו. מה הופך את החומר לקל כל כך — ב-1.03 · המגמה המוקצפת.</p>
+</section>
+</main>
+</body>
+</html>
