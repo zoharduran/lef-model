@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פער המהירות של דרווין — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.06 באנציקלופדיה של מודל LEF: ההיסטוריה התרמית ומקדם הגאות Q — מאיפה בא החום, איך הירח התרחק מ-17,000 ק"מ, ובדיקה מול מרחקי הירח שנמדדו בסלעים קדומים לפני 3.2 ו-2.46 מיליארד שנה.">
+<link rel="canonical" href="https://lef-model.com/enc_darwingap_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-2.01</span> · <a href="LEF_enc_darwingap_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · הקו והתקציב</p>
+<h1>פער המהירות של דרווין: לא זורקים — נושאים</h1>
+<p>ערך מושג · ב-2.01 · מבוסס על מאמרים 1, 2, 3 ו-14</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 2. הקו והתקציב ← פער המהירות של דרווין · בסיפור: <a href="enc_story_he.html#c9">שלב 3 (א-09)</a> עד <a href="enc_story_he.html#c12">שלב 5 (א-12)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>ההפרש שבין המהירות שבה נעים פני כדור הארץ כתוצאה מן הסיבוב העצמי שלו, לבין המהירות שחומר זקוק לה כדי להקיף את כדור הארץ במסלול חופשי באותו גובה ממש. פער זה הוא המכשול שהפיל את תאוריית הפיצול המקורית של ג'ורג' דרווין משנת 1879: כדי שכדור הארץ "יזרוק" את הירח מפני השטח שלו אל החלל, הוא היה חייב להסתובב במהירות כה מסחררת עד שהיה מתפרק — ולכך אין בנמצא די תנע זוויתי במערכת. מודל LEF אינו זורק את הירח מפני השטח: הוא נושא את החומר, בעודו מחובר ומסתובב יחד עם כדור הארץ, עד למרחק שבו מהירות הסיבוב שלו כבר מספיקה מעצמה למסלול חופשי.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: קרוסלה</h2>
+<p>דמיינו קרוסלה בגן שעשועים: סמוך למרכז הקרוסלה נעים לאט, ואילו סמוך לשוליים החיצוניים נעים במהירות גבוהה. מי שמבקש להגיע למהירות גבוהה אינו מנסה לקפוץ מתוך המרכז; הוא פשוט צועד לאט מן המרכז אל השוליים, וכאשר הוא מגיע אל השפה החיצונית — המהירות כבר ממתינה לו שם. כך בדיוק פעל התהליך בכדור הארץ הצעיר: ככל שהחומר מורחק מן הציר בעודו מסתובב עם הכוכב, מהירותו הקווית גדלה — ובהגיעו אל קו הקורוטציה הוא נע בדיוק במהירות של מסלול חופשי סביב כדור הארץ.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>היום פני כדור הארץ בקו המשווה נעים במהירות של 465 מטר בשנייה, ואילו מסלול מעגלי צמוד לפני השטח דורש מהירות של 7,905 מטר בשנייה — פער של פי 17.</li>
+<li><strong>בכדור ארץ צעיר שמסתובב פעם ב-5.5 שעות:</strong> פני השטח בקו המשווה נעים במהירות של 2,133 מטר בשנייה, בעוד שמסלול באותו מקום דורש 7,701 מטר בשנייה — כמעט פי 4. הסיבוב על פני השטח מעניק אפוא רק כ-28% מן המהירות הדרושה.</li>
+<li>חומר שמשתחרר מפני השטח של כדור ארץ כזה נכנס למסלול אליפטי בעל חצי ציר ראשי של 3,495 ק"מ — כחצי מרדיוס כדור הארץ — ונופל מיד חזרה אל תוך כדור הארץ.</li>
+<li><strong>קו הקורוטציה הוא מושג ידוע ומוכר במכניקה שמימית:</strong> המרחק ממרכז כוכב הלכת שבו גוף מקיף משלים הקפה בדיוק באותו פרק זמן שבו כוכב הלכת משלים סיבוב עצמי סביב צירו (בכדור הארץ של ימינו — המסלול הגיאוסטציונרי, במרחק של כ-42,000 ק"מ מן המרכז).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> פיצול ישיר מפני השטח מחייב סיבוב עצמי מהיר עד כדי התפרקות, ותנע זוויתי הגדול פי 2.7 עד 4 מן התנע הזוויתי הקיים כיום במערכת כדור הארץ–ירח. בסימולציות נומריות, גוף נוזלי המסתובב במהירות קיצונית זורק זרועות ספירליות ולא ירח בודד, ובצמיגות של מעטפת פלנטרית אמיתית אי-היציבות הסיבובית נעלמת לחלוטין (Boss 1986; Durisen et al. 1989).</li>
+<li><strong>מה ההבדל:</strong> ההתנגדות הקלאסית חושבה על פני השטח — בתנאי שחרור שמודל LEF אינו משתמש בו כלל. הוכחה שמסלול פיצול אחד דורש עודף תנע זוויתי אינה שוללת כל מסלול מוצא מכדור הארץ. במודל LEF המהירויות משתוות בקו הקורוטציה, ותקציב התנע הזוויתי נסגר ביחס של 1.007 בלבד ביחס לתנע הזוויתי של היום.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מושג קו הקורוטציה וחישובי המהירות המסלולית והסיבובית לקוחים מן הפיזיקה הקלאסית. החידוש של LEF הוא השימוש בקו הקורוטציה כנקודת השחרור של ירח שנבנה בעודו מחובר לכדור הארץ.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הפער בפני השטח</h3>
+<p>בכדור ארץ בעל יממה של 5.5 שעות, פני השטח נעים רק בכ-28% מן המהירות הנדרשת למסלול מעגלי. כל חומר שנזרק מפני השטח ללא תוספת מהירות חיצונית נופל בחזרה. כדי לסגור פער זה בגובה פני השטח, היה כדור הארץ חייב להסתובב מהר יותר פי 3.6 — קצב הקרוב לסף התפרקות סיבובית.</p>
+<figure class="fig"><svg viewBox="0 0 680 380" role="img" style="direction:ltr"><line x1="80" x2="640" y1="310.0" y2="310.0" stroke="#ece7da"/><text x="72" y="314.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">0</text><line x1="80" x2="640" y1="263.3" y2="263.3" stroke="#ece7da"/><text x="72" y="267.3333333333333" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">1,500</text><line x1="80" x2="640" y1="216.7" y2="216.7" stroke="#ece7da"/><text x="72" y="220.66666666666669" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">3,000</text><line x1="80" x2="640" y1="170.0" y2="170.0" stroke="#ece7da"/><text x="72" y="174.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">4,500</text><line x1="80" x2="640" y1="123.3" y2="123.3" stroke="#ece7da"/><text x="72" y="127.33333333333334" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">6,000</text><line x1="80" x2="640" y1="76.7" y2="76.7" stroke="#ece7da"/><text x="72" y="80.66666666666666" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">7,500</text><line x1="80" x2="640" y1="30.0" y2="30.0" stroke="#ece7da"/><text x="72" y="34.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">9,000</text><text x="80.0" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">5,000</text><text x="173.33333333333331" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">7,500</text><text x="266.66666666666663" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10,000</text><text x="360.0" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">12,500</text><text x="453.3333333333333" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">15,000</text><text x="546.6666666666667" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">17,500</text><text x="640.0" y="328" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">20,000</text><rect x="80" y="30" width="64.3" height="280" fill="#efe3d3"/><text direction="rtl" x="112.12533333333334" y="48" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">בתוך</text><text direction="rtl" x="112.12533333333334" y="62" font-size="11" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">כדור הארץ</text><polyline fill="none" stroke="#b5562e" stroke-width="2.5" points="144.3,243.6 146.7,243.0 149.2,242.3 151.7,241.7 154.2,241.0 156.7,240.4 159.2,239.7 161.7,239.0 164.2,238.4 166.7,237.7 169.2,237.1 171.7,236.4 174.1,235.7 176.6,235.1 179.1,234.4 181.6,233.8 184.1,233.1 186.6,232.4 189.1,231.8 191.6,231.1 194.1,230.5 196.6,229.8 199.1,229.2 201.5,228.5 204.0,227.8 206.5,227.2 209.0,226.5 211.5,225.9 214.0,225.2 216.5,224.5 219.0,223.9 221.5,223.2 224.0,222.6 226.5,221.9 229.0,221.2 231.4,220.6 233.9,219.9 236.4,219.3 238.9,218.6 241.4,218.0 243.9,217.3 246.4,216.6 248.9,216.0 251.4,215.3 253.9,214.7 256.4,214.0 258.8,213.3 261.3,212.7 263.8,212.0 266.3,211.4 268.8,210.7 271.3,210.0 273.8,209.4 276.3,208.7 278.8,208.1 281.3,207.4 283.8,206.8 286.2,206.1 288.7,205.4 291.2,204.8 293.7,204.1 296.2,203.5 298.7,202.8 301.2,202.1 303.7,201.5 306.2,200.8 308.7,200.2 311.2,199.5 313.7,198.8 316.1,198.2 318.6,197.5 321.1,196.9 323.6,196.2 326.1,195.6 328.6,194.9 331.1,194.2 333.6,193.6 336.1,192.9 338.6,192.3 341.1,191.6 343.5,190.9 346.0,190.3 348.5,189.6 351.0,189.0 353.5,188.3 356.0,187.6 358.5,187.0 361.0,186.3 363.5,185.7 366.0,185.0 368.5,184.4 371.0,183.7 373.4,183.0 375.9,182.4 378.4,181.7 380.9,181.1 383.4,180.4 385.9,179.7 388.4,179.1 390.9,178.4 393.4,177.8 395.9,177.1 398.4,176.5 400.8,175.8 403.3,175.1 405.8,174.5 408.3,173.8 410.8,173.2 413.3,172.5 415.8,171.8 418.3,171.2 420.8,170.5 423.3,169.9 425.8,169.2 428.2,168.5 430.7,167.9 433.2,167.2 435.7,166.6 438.2,165.9 440.7,165.3 443.2,164.6 445.7,163.9 448.2,163.3 450.7,162.6 453.2,162.0 455.7,161.3 458.1,160.6 460.6,160.0 463.1,159.3 465.6,158.7 468.1,158.0 470.6,157.3 473.1,156.7 475.6,156.0 478.1,155.4 480.6,154.7 483.1,154.1 485.5,153.4 488.0,152.7 490.5,152.1 493.0,151.4 495.5,150.8 498.0,150.1 500.5,149.4 503.0,148.8 505.5,148.1 508.0,147.5 510.5,146.8 512.9,146.1 515.4,145.5 517.9,144.8 520.4,144.2 522.9,143.5 525.4,142.9 527.9,142.2 530.4,141.5 532.9,140.9 535.4,140.2 537.9,139.6 540.4,138.9 542.8,138.2 545.3,137.6 547.8,136.9 550.3,136.3 552.8,135.6 555.3,134.9 557.8,134.3 560.3,133.6 562.8,133.0 565.3,132.3 567.8,131.7 570.2,131.0 572.7,130.3 575.2,129.7 577.7,129.0 580.2,128.4 582.7,127.7 585.2,127.0 587.7,126.4 590.2,125.7 592.7,125.1 595.2,124.4 597.6,123.7 600.1,123.1 602.6,122.4 605.1,121.8 607.6,121.1 610.1,120.5 612.6,119.8 615.1,119.1 617.6,118.5 620.1,117.8 622.6,117.2 625.1,116.5 627.5,115.8 630.0,115.2 632.5,114.5 635.0,113.9 637.5,113.2 640.0,112.5"/><polyline fill="none" stroke="#2a5d8f" stroke-width="2.5" points="144.3,70.4 146.7,71.6 149.2,72.8 151.7,73.9 154.2,75.0 156.7,76.1 159.2,77.2 161.7,78.3 164.2,79.4 166.7,80.4 169.2,81.5 171.7,82.5 174.1,83.5 176.6,84.5 179.1,85.5 181.6,86.5 184.1,87.4 186.6,88.4 189.1,89.3 191.6,90.2 194.1,91.2 196.6,92.1 199.1,92.9 201.5,93.8 204.0,94.7 206.5,95.6 209.0,96.4 211.5,97.2 214.0,98.1 216.5,98.9 219.0,99.7 221.5,100.5 224.0,101.3 226.5,102.1 229.0,102.8 231.4,103.6 233.9,104.4 236.4,105.1 238.9,105.8 241.4,106.6 243.9,107.3 246.4,108.0 248.9,108.7 251.4,109.4 253.9,110.1 256.4,110.8 258.8,111.5 261.3,112.2 263.8,112.8 266.3,113.5 268.8,114.1 271.3,114.8 273.8,115.4 276.3,116.1 278.8,116.7 281.3,117.3 283.8,117.9 286.2,118.5 288.7,119.1 291.2,119.7 293.7,120.3 296.2,120.9 298.7,121.5 301.2,122.1 303.7,122.7 306.2,123.2 308.7,123.8 311.2,124.3 313.7,124.9 316.1,125.4 318.6,126.0 321.1,126.5 323.6,127.0 326.1,127.6 328.6,128.1 331.1,128.6 333.6,129.1 336.1,129.6 338.6,130.1 341.1,130.6 343.5,131.1 346.0,131.6 348.5,132.1 351.0,132.6 353.5,133.1 356.0,133.6 358.5,134.0 361.0,134.5 363.5,135.0 366.0,135.4 368.5,135.9 371.0,136.3 373.4,136.8 375.9,137.2 378.4,137.7 380.9,138.1 383.4,138.6 385.9,139.0 388.4,139.4 390.9,139.9 393.4,140.3 395.9,140.7 398.4,141.1 400.8,141.5 403.3,141.9 405.8,142.4 408.3,142.8 410.8,143.2 413.3,143.6 415.8,144.0 418.3,144.4 420.8,144.7 423.3,145.1 425.8,145.5 428.2,145.9 430.7,146.3 433.2,146.7 435.7,147.0 438.2,147.4 440.7,147.8 443.2,148.2 445.7,148.5 448.2,148.9 450.7,149.2 453.2,149.6 455.7,150.0 458.1,150.3 460.6,150.7 463.1,151.0 465.6,151.4 468.1,151.7 470.6,152.0 473.1,152.4 475.6,152.7 478.1,153.1 480.6,153.4 483.1,153.7 485.5,154.0 488.0,154.4 490.5,154.7 493.0,155.0 495.5,155.3 498.0,155.7 500.5,156.0 503.0,156.3 505.5,156.6 508.0,156.9 510.5,157.2 512.9,157.5 515.4,157.8 517.9,158.1 520.4,158.4 522.9,158.7 525.4,159.0 527.9,159.3 530.4,159.6 532.9,159.9 535.4,160.2 537.9,160.5 540.4,160.8 542.8,161.1 545.3,161.4 547.8,161.7 550.3,161.9 552.8,162.2 555.3,162.5 557.8,162.8 560.3,163.0 562.8,163.3 565.3,163.6 567.8,163.9 570.2,164.1 572.7,164.4 575.2,164.7 577.7,164.9 580.2,165.2 582.7,165.5 585.2,165.7 587.7,166.0 590.2,166.2 592.7,166.5 595.2,166.7 597.6,167.0 600.1,167.2 602.6,167.5 605.1,167.7 607.6,168.0 610.1,168.2 612.6,168.5 615.1,168.7 617.6,169.0 620.1,169.2 622.6,169.5 625.1,169.7 627.5,169.9 630.0,170.2 632.5,170.4 635.0,170.6 637.5,170.9 640.0,171.1"/><line x1="144.3" x2="144.3" y1="243.6" y2="70.4" stroke="#1d2430" stroke-width="2" stroke-dasharray="4 3"/><text direction="rtl" x="152.2506666666667" y="157.55555555555557" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="end">הפער בפני השטח:</text><text direction="rtl" x="152.2506666666667" y="173.11111111111111" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="end">2,133 מול 7,701</text><circle cx="483.9" cy="153.8" r="7" fill="#2f7d57"/><text direction="rtl" x="483.89438248345476" y="179.82977664088364" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">קו הקורוטציה: 15,819 ק"מ</text><text direction="rtl" x="483.89438248345476" y="195.82977664088364" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2f7d57" text-anchor="middle">המהירויות שוות</text><text direction="rtl" x="602.6666666666666" y="140.4211793816195" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">מהירות הסיבוב</text><text direction="rtl" x="229.33333333333334" y="92.9567899560555" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="end">מהירות מסלול</text><text direction="rtl" x="360.0" y="350" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">מרחק ממרכז כדור הארץ (ק"מ)</text><text x="22" y="170.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 22 170.0)" direction="rtl">מהירות (מטר בשנייה)</text></svg><figcaption>שתי מהירויות לפי המרחק ממרכז כדור ארץ צעיר שמסתובב פעם ב-5.5 שעות. באדום — המהירות של חומר שמסתובב יחד עם כדור הארץ: גדלה ככל שמתרחקים. בכחול — המהירות הדרושה למסלול: קטנה ככל שמתרחקים. בפני השטח הפער גדול כמעט פי 4; בקו הקורוטציה הקווים נפגשים, ואין צורך בזריקה.</figcaption></figure>
+<h3>2. המחיר בתנע זוויתי</h3>
+<div class="tw"><table class="lab"><tr><th>דרך</th><th>איפה המהירויות משתוות</th><th>יממה</th><th>תנע זוויתי ביחס להיום</th></tr><tr><td>פיצול קלאסי (נקודת הייחוס המקורית)</td><td>פני השטח</td><td>—</td><td>כ-4 (4.08)</td></tr><tr><td>פיצול קלאסי (התפצלות יעקובי)</td><td>פני השטח</td><td>2.73 שעות</td><td>2.74</td></tr><tr><td>LEF</td><td>קו הקורוטציה (15,818 ק"מ בהתחלה, 16,399 בשחרור)</td><td>5.5 → 5.77 שעות</td><td>1.007</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 230" role="img" style="direction:ltr"><line x1="60.0" x2="60.0" y1="20" y2="170" stroke="#ece7da"/><text x="60.0" y="186" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0</text><line x1="144.4" x2="144.4" y1="20" y2="170" stroke="#ece7da"/><text x="144.44444444444446" y="186" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1</text><line x1="228.9" x2="228.9" y1="20" y2="170" stroke="#ece7da"/><text x="228.88888888888889" y="186" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2</text><line x1="313.3" x2="313.3" y1="20" y2="170" stroke="#ece7da"/><text x="313.3333333333333" y="186" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3</text><line x1="397.8" x2="397.8" y1="20" y2="170" stroke="#ece7da"/><text x="397.77777777777777" y="186" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4</text><rect x="60" y="30" width="344.5" height="30" fill="#c97f4f"/><text x="410.53333333333336" y="50" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">4.08</text><text direction="rtl" x="665" y="50" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">פיצול קלאסי (פני השטח)</text><rect x="60" y="76" width="231.4" height="30" fill="#c97f4f"/><text x="297.3777777777778" y="96" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">2.74</text><text direction="rtl" x="665" y="96" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">פיצול קלאסי (יעקובי)</text><rect x="60" y="122" width="85.0" height="30" fill="#2f7d57"/><text x="151.03555555555556" y="142" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">1.007</text><text direction="rtl" x="665" y="142" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">LEF (קו הקורוטציה)</text><line x1="144.4" x2="144.4" y1="20" y2="170" stroke="#2a5d8f" stroke-width="2" stroke-dasharray="5 4"/><text direction="rtl" x="148.44444444444446" y="16" font-size="11.5" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="end">מה שיש היום: 1</text><text direction="rtl" x="250.0" y="218" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">תנע זוויתי ביחס לזה של מערכת כדור הארץ–ירח היום</text></svg><figcaption>כמה תנע זוויתי דורשת כל דרך, ביחס לזה של מערכת כדור הארץ–ירח היום. הפיצול הקלאסי, שמשווה מהירויות בפני השטח, צריך פי 2.7 עד 4; LEF, שמשווה אותן בקו הקורוטציה, צריך כמעט בדיוק את מה שיש.</figcaption></figure>
+<h3>3. לא זורקים — נושאים</h3>
+<p>במודל LEF החומר אינו נזרק לחלל. הוא נישא על גבי האגס, בעודו מחובר ומסתובב יחד עם כדור הארץ. ככל שהוא מורחק מן הציר, מהירותו הצדית גדלה מאליה — ללא כל זריקה או פיצוץ. כאשר הוא מגיע אל קו הקורוטציה, מהירותו הקווית שווה בדיוק למהירות של מסלול חופשי. בנקודה זו הגוף כבר "מקיף" את כדור הארץ מבחינה דינמית, אף שהוא עדיין מחובר אליו.</p>
+<h3>4. הסיבוב לבדו אינו מרים</h3>
+<p>הסיבוב העצמי מספק את המהירות הצדית, אך לבדו אינו מרים את החומר למעלה. את עבודת ההרמה מבצעים הלחץ הפנימי והאגס (ראו <a href="enc_source150_he.html">ב-1.02</a> ו-<a href="enc_energy_he.html">ב-1.04</a>), יחד עם קליפת הסיאל המטפסת מבחוץ במעלה האגס (ראו <a href="enc_feedrate_he.html">ב-1.05</a>).</p>
+<h3>5. פואנקרה–דרווין ו-LEF</h3>
+<p>בתאוריה הקלאסית נמתח האגס באמצעות הכוח הצנטריפוגלי של הסיבוב בלבד, ולכן נדרש סיבוב קיצוני הקרוב להתפרקות. במודל LEF נלחץ האגס מבפנים ונמשך מבחוץ, תחת סיבוב מתון של 5.5 שעות — וקצהו מגיע עד קו הקורוטציה.</p>
+<h3>6. מה דרווין עצמו חישב</h3>
+<p>דרווין הריץ לאחור את התרחקותו של הירח והגיע אל כדור ארץ המסתובב פעם ב-6 שעות ו-45 דקות — ובנקודה זו עצר. לאורך כל החישוב שלו עמדו לפניו שני גופים נפרדים לחלוטין; התצורה המחוברת, שבה הגוף יושב על קצה האגס ומסתובב עמו כגוף אחד, כלל לא הופיעה במשוואותיו.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>מהירות פני השטח (ω — קצב הסיבוב, R — הרדיוס):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mi>ω</mi><mtext> </mtext><mi>R</mi></mrow><annotation encoding="application/x-tex">v=\omega\,R</annotation></semantics></math></span></div></div>
+<p>מהירות מסלול מעגלי במרחק r:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>v</mi><mtext>orb</mtext></msub><mo>=</mo><msqrt><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><mi>r</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">v_{\text{orb}}=\sqrt{\frac{GM}{r}}</annotation></semantics></math></span></div></div>
+<p>קו הקורוטציה — המרחק שבו השתיים שוות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>ω</mi><mn>2</mn></msup></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_c=\left(\frac{GM}{\omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>התנע הזוויתי של מערכת כדור הארץ–ירח היום:</strong> תואם לחלוטין לתחזית LEF (1.007), ורחוק מן הערך הנדרש בתאוריית הפיצול הקלאסית (2.7–4).</li>
+<li><strong>כיוון ההקפה:</strong> הירח מקיף את כדור הארץ באותו כיוון שבו כדור הארץ מסתובב סביב צירו, בדיוק כפי שצפוי מגוף שנישא על גבי כדור ארץ מסתובב.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 3 (<a href="enc_story_he.html#c9">א-09</a>): האגס נושא את הגוף כלפי חוץ, בעודו מחובר ומסתובב יחד עם כדור הארץ. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): מרכז המסה של הגוף מגיע אל קו הקורוטציה — המהירויות משתוות במדויק, והגוף משתחרר למסלול.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>ההתנגדות הוותיקה ביותר למוצא ארצי של הירח:</strong> היא חושבה עבור שיגור מפני השטח, ואינה חלה כלל על נשיאה מחוברת עד קו הקורוטציה.</li>
+<li><strong>מניין המהירות הצדית של הירח:</strong> מן הסיבוב העצמי של כדור הארץ, המועבר אליו דרך החיבור.</li>
+<li><strong>מדוע אין צורך בתנע זוויתי עודף:</strong> המהירויות משתוות בקו הקורוטציה ללא כל זריקה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: נסו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · מטבע על צלחת מסתובבת</span>
+<p>הניחו מטבע קטן על גבי פטיפון או על צלחת מסתובבת — פעם אחת קרוב למרכז הצלחת, ופעם שנייה קרוב לשוליים החיצוניים — וסובבו את הצלחת בקצב קבוע. סמוך למרכז המטבע נותר במקומו; סמוך לשוליים הוא נזרק החוצה. קצב הסיבוב היה זהה לחלוטין בשני המקרים — רק המרחק מציר הסיבוב השתנה. ככל שמתרחקים מן הציר, הסיבוב לבדו מעניק מהירות קווית גבוהה יותר.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>ג'ורג' דרווין הציע בשנת 1879 שכדור הארץ השיל את הירח באמצעות סיבוב מהיר. בתוך כמה עשורים נזנחה ההצעה, בעיקר בשל החשבון הדינמי: פיצול מפני השטח מחייב תנע זוויתי הגדול פי כמה מן המצוי במערכת. במאמר 2 של מודל LEF נבחן תנאי המהירות בקו הקורוטציה במקום על פני השטח, והתקציב נסגר ביחס של 1.007 ביחס לערך של ימינו.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>מהירות פני השטח (יממה 5.5 שעות)</td><td>2,133 מ' לשנייה</td><td>מאמר 2 §A.1.2</td></tr><tr><td>מהירות מסלול באותו מקום</td><td>7,701 מ' לשנייה</td><td>מאמר 2 §A.1.2</td></tr><tr><td>ציר המסלול של חומר שנזרק מפני השטח</td><td>3,495 ק"מ</td><td>מאמר 2 §A.1.2</td></tr><tr><td>תנע זוויתי — פיצול קלאסי</td><td>2.74–4.08 מהיום</td><td>מאמר 1 טבלה A.3</td></tr><tr><td>תנע זוויתי — LEF</td><td>1.007 מהיום</td><td>מאמר 2 §B.6</td></tr><tr><td>קו הקורוטציה בשחרור</td><td>16,399 ק"מ</td><td>מאמר 1 טבלה A.3</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c12">א-12</a> · שלב 5.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · <a href="enc_source150_he.html">ב-1.02 · לחץ המקור 150 GPa</a> · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · ב-2.04 · תקציב התנע הזוויתי.</li>
+<li><strong>מבחנים:</strong> חישוב חוזר של דרך הפיצול הקלאסית (מאמר 14, נושא 11).</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הקו הוא המקום שבו המהירויות משתוות. מה הוא בדיוק, ולמה הוא משנה את חוקי המשחק — <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper01_he.html">מאמר 1 · המודל</a></li><li><a href="paper02_he.html">מאמר 2 · מנגנון LEF בעיקרון</a></li><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper14_he.html">מאמר 14 · נושאי מחקר</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Darwin, G. H. (1879). On the precession of a viscous spheroid, and on the remote history of the Earth. Philosophical Transactions of the Royal Society of London, 170, 447–538. <a href="https://doi.org/10.1098/rstl.1879.0073" rel="noopener">doi.org/10.1098/rstl.1879.0073</a></li><li>Boss, A. P. (1986). The origin of the Moon. Science, 231, 341–345. <a href="https://doi.org/10.1126/science.231.4736.341" rel="noopener">doi.org/10.1126/science.231.4736.341</a></li><li>Durisen, R. H., Yang, S., & Grabhorn, R. (1989). Numerical simulations of fission. Highlights of Astronomy, 8, 133–135. <a href="https://doi.org/10.1017/S1539299600007619" rel="noopener">doi.org/10.1017/S1539299600007619</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב, 23.11.2026" נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
