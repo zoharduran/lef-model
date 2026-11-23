@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>קו הקורוטציה כגבול גודל האגס — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.06 באנציקלופדיה של מודל LEF: ההיסטוריה התרמית ומקדם הגאות Q — מאיפה בא החום, איך הירח התרחק מ-17,000 ק"מ, ובדיקה מול מרחקי הירח שנמדדו בסלעים קדומים לפני 3.2 ו-2.46 מיליארד שנה.">
+<link rel="canonical" href="https://lef-model.com/enc_corolimit_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-2.03</span> · <a href="LEF_enc_corolimit_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · הקו והתקציב</p>
+<h1>קו הקורוטציה כגבול גודל האגס: האגס נגמר בקו</h1>
+<p>ערך מושג · ב-2.03 · מבוסס על מאמרים 1, 2, 3, 9, 11 ו-14</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 2. הקו והתקציב ← קו הקורוטציה כגבול גודל האגס · בסיפור: <a href="enc_story_he.html#c9">שלב 3 (א-09)</a> עד <a href="enc_story_he.html#c13">שלב 6 (א-13)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>קו הקורוטציה הוא הקובע עד כמה יכול האגס לגדול. האגס גדל מעצמו: הלחץ הפנימי דוחף אותו מבפנים, והסיבוב מושך אותו מבחוץ. הקו אינו מאט את הגדילה הזאת; הוא המקום שבו היא מסתיימת. כאשר מרכז המסה של הגוף שבקצה מגיע אל הקו, הגוף נפרד, הלחץ שהחזיק את האגס משתחרר, והאגס נאסף בחזרה אל כדור הארץ. לפיכך, אורך האגס שווה בדיוק למרחק מפני השטח ועד הקו, וכל האגס מצוי בתוכו.</p>
+</section>
+<section>
+<span class="lab">02 · IN PLAIN WORDS</span>
+<h2>במילים פשוטות</h2>
+<p>ככל שהחומר מתרחק מכדור הארץ לאורך האגס, משקלו האפקטיבי הולך ופוחת. סמוך לפני השטח הוא שוקל כמעט כרגיל; בעשירית האחרונה של הדרך הוא שוקל פחות מ-5% ממשקלו; ועל קו הקורוטציה עצמו הוא אינו שוקל דבר. בנקודה זו הגוף שבקצה כבר נע במהירות של מסלול חופשי, ושום כוח אינו מחזיק אותו עוד אל האגס. הוא נפרד, ועם היפרדותו מסתיים גם תפקידו של האגס.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>קו הקורוטציה הוא מושג מוכר וידוע בפיזיקה:</strong> המרחק ממרכז כוכב הלכת שבו גוף מקיף משלים הקפה בדיוק באותו פרק זמן שבו כוכב הלכת משלים סיבוב עצמי סביב צירו.</li>
+<li>במחקר המקובל על גופים חמים המסתובבים במהירות קיים מושג מקביל, "גבול הקורוטציה": מעבר למרחק מסוים גוף אינו יכול להסתובב כגוש אחיד, והחומר שמעבר לו עובר למסלול (Lock &amp; Stewart 2017).</li>
+<li><strong>הירח יבש:</strong> יסודות נדיפים כמו אבץ ואשלגן חסרים בו, והאיזוטופים שנותרו בו "כבדים" — חתימה כימית מוכרת של אובדן נדיפים בתהליך אידוי (Paniello et al. 2012; Wang &amp; Jacobsen 2016).</li>
+<li>באטמוספרה של כדור הארץ יש פחות קסנון מן הצפוי, והקסנון שנותר ממוין לפי משקל. ההסבר המקובל לתופעה זו הוא זרם נרחב של מימן שברח לחלל וסחף עמו גזים כבדים (Hunten et al. 1987; Zahnle et al. 2019).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> לכל כוכב לכת מסתובב קיים קו קורוטציה, ועל קו זה גוף המסתובב יחד עם הכוכב נע במהירות מסלולית. מתחת לקו גוברת הכבידה והחומר נותר קשור לכוכב.</li>
+<li><strong>מה ההבדל:</strong> במודל LEF הקו אינו רק גבול גיאומטרי על גבי מפה — הוא קובע את ממדיו הפיזיים של מבנה ממשי. האגס מגיע עד הקו ומסתיים בו, ולכן אורכו ומסתו מוכתבים ישירות על ידי מיקום הקו.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מושג קו הקורוטציה וחישובי הכבידה לקוחים מן הפיזיקה הקלאסית. החידוש של מודל LEF הוא תפיסת הקו כגבול שבו האגס מסתיים והירח נפרד.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. האגס גדל מעצמו</h3>
+<p>הלחץ הפנימי דוחף את החומר כלפי חוץ, והסיבוב מושך אותו מבחוץ. האגס הולך ומתארך, והגוף הנבנה בקצהו גדל בהתמדה. לאורך כל התהליך הזה שוכן האגס כולו בתוך קו הקורוטציה, והכבידה האפקטיבית לאורכו מכוונת פנימה אל כדור הארץ. משום כך הוא נדחס לאורך צירו, אינו מפתח מותניים צרות העלולות להיצבט, ונותר חלק בלתי נפרד מכדור הארץ.</p>
+<h3>2. החומר שוקל פחות ככל שהוא מתרחק</h3>
+<p>ערכי הכבידה האפקטיבית לאורך ציר האגס, ביממה של 5.77 שעות:</p>
+<div class="tw"><table class="lab"><tr><th>המרחק מהמרכז (חלק מהמרחק לקו)</th><th>הכבידה האפקטיבית (מ' לשנייה²)</th></tr><tr><td>פני השטח (39%)</td><td>9.2</td></tr><tr><td>50%</td><td>5.2</td></tr><tr><td>70%</td><td>2.0</td></tr><tr><td>80%</td><td>1.1</td></tr><tr><td>90%</td><td>0.50</td></tr><tr><td>95%</td><td>0.24</td></tr><tr><td>98%</td><td>0.09</td></tr><tr><td>בקו</td><td>0</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" style="direction:ltr"><rect x="98.9" y="290" width="507.1" height="14" fill="#efe3d3"/><text direction="rtl" x="352.42992442637313" y="301" font-size="10.5" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">האגס — כולו בתוך הקו</text><line x1="80" x2="640" y1="290.0" y2="290.0" stroke="#ece7da"/><text x="72" y="294.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">0</text><line x1="80" x2="640" y1="238.0" y2="238.0" stroke="#ece7da"/><text x="72" y="242.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">2</text><line x1="80" x2="640" y1="186.0" y2="186.0" stroke="#ece7da"/><text x="72" y="190.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">4</text><line x1="80" x2="640" y1="134.0" y2="134.0" stroke="#ece7da"/><text x="72" y="138.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">6</text><line x1="80" x2="640" y1="82.0" y2="82.0" stroke="#ece7da"/><text x="72" y="86.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">8</text><line x1="80" x2="640" y1="30.0" y2="30.0" stroke="#ece7da"/><text x="72" y="34.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">10</text><text x="80.0" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">6,000</text><text x="181.8181818181818" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">8,000</text><text x="283.6363636363636" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10,000</text><text x="385.45454545454544" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">12,000</text><text x="487.2727272727273" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">14,000</text><text x="589.090909090909" y="320" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">16,000</text><polyline fill="none" stroke="#2a5d8f" stroke-width="2.6" points="98.9,49.8 101.4,53.9 104.0,57.9 106.5,61.8 109.1,65.6 111.6,69.3 114.2,73.0 116.7,76.6 119.3,80.1 121.8,83.5 124.3,86.8 126.9,90.1 129.4,93.3 132.0,96.5 134.5,99.5 137.1,102.6 139.6,105.5 142.2,108.4 144.7,111.3 147.3,114.1 149.8,116.8 152.3,119.5 154.9,122.1 157.4,124.7 160.0,127.2 162.5,129.7 165.1,132.1 167.6,134.5 170.2,136.9 172.7,139.2 175.3,141.4 177.8,143.7 180.3,145.9 182.9,148.0 185.4,150.1 188.0,152.2 190.5,154.2 193.1,156.2 195.6,158.2 198.2,160.1 200.7,162.0 203.3,163.9 205.8,165.7 208.3,167.5 210.9,169.3 213.4,171.1 216.0,172.8 218.5,174.5 221.1,176.2 223.6,177.8 226.2,179.4 228.7,181.0 231.3,182.6 233.8,184.1 236.3,185.6 238.9,187.1 241.4,188.6 244.0,190.1 246.5,191.5 249.1,192.9 251.6,194.3 254.2,195.6 256.7,197.0 259.3,198.3 261.8,199.6 264.3,200.9 266.9,202.2 269.4,203.5 272.0,204.7 274.5,205.9 277.1,207.1 279.6,208.3 282.2,209.5 284.7,210.6 287.3,211.8 289.8,212.9 292.3,214.0 294.9,215.1 297.4,216.2 300.0,217.3 302.5,218.3 305.1,219.4 307.6,220.4 310.2,221.4 312.7,222.4 315.3,223.4 317.8,224.4 320.3,225.3 322.9,226.3 325.4,227.2 328.0,228.2 330.5,229.1 333.1,230.0 335.6,230.9 338.2,231.8 340.7,232.7 343.3,233.5 345.8,234.4 348.3,235.2 350.9,236.1 353.4,236.9 356.0,237.7 358.5,238.5 361.1,239.3 363.6,240.1 366.2,240.9 368.7,241.7 371.3,242.4 373.8,243.2 376.3,244.0 378.9,244.7 381.4,245.4 384.0,246.2 386.5,246.9 389.1,247.6 391.6,248.3 394.2,249.0 396.7,249.7 399.3,250.4 401.8,251.0 404.3,251.7 406.9,252.4 409.4,253.0 412.0,253.7 414.5,254.3 417.1,255.0 419.6,255.6 422.2,256.2 424.7,256.8 427.3,257.5 429.8,258.1 432.3,258.7 434.9,259.3 437.4,259.9 440.0,260.4 442.5,261.0 445.1,261.6 447.6,262.2 450.2,262.7 452.7,263.3 455.3,263.8 457.8,264.4 460.3,264.9 462.9,265.5 465.4,266.0 468.0,266.5 470.5,267.1 473.1,267.6 475.6,268.1 478.2,268.6 480.7,269.1 483.3,269.6 485.8,270.1 488.3,270.6 490.9,271.1 493.4,271.6 496.0,272.1 498.5,272.6 501.1,273.1 503.6,273.5 506.2,274.0 508.7,274.5 511.3,274.9 513.8,275.4 516.3,275.9 518.9,276.3 521.4,276.8 524.0,277.2 526.5,277.6 529.1,278.1 531.6,278.5 534.2,279.0 536.7,279.4 539.3,279.8 541.8,280.2 544.3,280.6 546.9,281.1 549.4,281.5 552.0,281.9 554.5,282.3 557.1,282.7 559.6,283.1 562.2,283.5 564.7,283.9 567.3,284.3 569.8,284.7 572.3,285.1 574.9,285.5 577.4,285.9 580.0,286.2 582.5,286.6 585.1,287.0 587.6,287.4 590.2,287.7 592.7,288.1 595.3,288.5 597.8,288.8 600.3,289.2 602.9,289.6 605.4,289.9"/><circle cx="522.8" cy="277.0" r="4.5" fill="#2a5d8f"/><circle cx="589.3" cy="287.6" r="4.5" fill="#2a5d8f"/><text direction="rtl" x="522.8298639674717" y="265.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="middle">90% מהדרך: 0.5</text><line x1="606.0" x2="606.0" y1="30" y2="290" stroke="#2f7d57" stroke-width="2" stroke-dasharray="5 4"/><text direction="rtl" x="599.9725761254736" y="44" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start">קו הקורוטציה</text><text direction="rtl" x="599.9725761254736" y="60" font-size="11.5" font-family="Heebo" font-weight="600" fill="#2f7d57" text-anchor="start">הכבידה: 0</text><text direction="rtl" x="106.88727272727273" y="42.80000000000001" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="end">פני השטח: 9.2</text><text direction="rtl" x="360.0" y="342" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">מרחק ממרכז כדור הארץ (ק"מ)</text><text x="22" y="160.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 22 160.0)" direction="rtl">כבידה אפקטיבית (מ׳ לשנייה²)</text></svg><figcaption>הכבידה האפקטיבית לאורך ציר האגס, ביממה של 5.77 שעות: המשיכה של כדור הארץ פנימה פחות הדחיפה של הסיבוב החוצה. בפני השטח החומר שוקל כמעט כרגיל; בעשירית האחרונה של הדרך — פחות מ-5% מזה; ובקו הקורוטציה — אפס. האגס כולו נמצא בתוך הקו, ושם הוא נגמר.</figcaption></figure>
+<h3>3. בקו הקצה נפרד</h3>
+<p>כאשר מרכז המסה של הגוף שבקצה מגיע אל קו הקורוטציה, הכוח שהחזיק אותו צמוד אל הבסיס מתאפס לחלוטין. הגוף כבר נע במהירות של מסלול חופשי, והוא נפרד. השחרור הסופי מתרחש במרחק של כ-210 ק"מ מעבר לקו. הקו אינו מרים את החומר — האגס הוא שמרים אותו; אך הקו הוא הנקודה המשחררת את הירח.</p>
+<h3>4. ההיפרדות מסיימת את האגס</h3>
+<p>עם היפרדותו של הירח נחשפים הפתחים שבקצה האגס, והלחץ הפנימי שהאריך אותו משתחרר בבת אחת. במקביל, מסת הירח — שמשכה את האגס כלפי חוץ — אינה מחוברת אליו עוד. לאגס אין שום סיבה להמשיך ולעמוד, והוא נאסף בחזרה אל כדור הארץ — כולו, משום שכולו שכן בתוך הקו. שום חלק ממנו אינו נותר במסלול.</p>
+<h3>5. הגודל שהקו קבע</h3>
+<div class="tw"><table class="lab"><tr><th>בהתחלה (הגוף ב-13,000 ק"מ, יממה 5.5 שעות)</th><th>בשחרור (מרכז הירח ב-17,287 ק"מ, יממה 5.77 שעות)</th></tr><tr><td>אורך, מפני השטח עד המגע</td><td>כ-4,000 ק"מ</td><td>כ-8,700 ק"מ</td></tr><tr><td>רוחב הקצה (המגע)</td><td>6,000 ק"מ</td><td>3,000 ק"מ</td></tr><tr><td>רוחב הבסיס</td><td><bdi dir="ltr">9,000–11,000</bdi> ק"מ</td><td><bdi dir="ltr">9,000–11,000</bdi> ק"מ</td></tr></table></div>
+<p>מסת האגס בשחרור — חסם עליון מתקציב האנרגיה:</p>
+<div class="tw"><table class="lab"><tr><th>רוחב הבסיס</th><th>מסת האגס (מסות ירח)</th><th>עבודת ההרמה (ג'אול)</th></tr><tr><td>9,000 ק"מ</td><td>8.8</td><td><bdi dir="ltr">8.1×10³⁰</bdi></td></tr><tr><td>10,000 ק"מ</td><td>10.4</td><td><bdi dir="ltr">9.3×10³⁰</bdi></td></tr><tr><td>11,000 ק"מ</td><td>12.1</td><td><bdi dir="ltr">1.05×10³¹</bdi></td></tr></table></div>
+<p>בסיס רחב יותר היה דורש אנרגיה החורגת מסדר הגודל של מלוא האנרגיה המשתחררת מהיווצרות הליבה, ולכן בסיס האגס אינו יכול להיות רחב יותר.</p>
+<h3>6. מה קורה לנדיפים בקו</h3>
+<p>סמוך לפני השטח מחזיקה הכבידה את האדים בשכבה דקה וצפופה, והם שבים ויורדים. ככל שמתקרבים אל קו הקורוטציה, שכבה זו "מתנפחת" כלפי מעלה, ועל הקו עצמו אין עוד שום כוח המחזיק אותה:</p>
+<div class="tw"><table class="lab"><tr><th>איפה</th><th>הגובה שהכבידה מחזיקה בו אדי מים (1,500 K)</th></tr><tr><td>פני השטח</td><td>כ-75 ק"מ</td></tr><tr><td>70% מהדרך</td><td>כ-350 ק"מ</td></tr><tr><td>90% מהדרך</td><td>כ-1,400 ק"מ</td></tr><tr><td>98% מהדרך</td><td>כ-7,600 ק"מ</td></tr><tr><td>בקו</td><td>אין גבול</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 260" role="img" style="direction:ltr"><line x1="40.0" x2="40.0" y1="14" y2="214" stroke="#ece7da"/><text x="40.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10</text><line x1="155.0" x2="155.0" y1="14" y2="214" stroke="#ece7da"/><text x="155.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">100</text><line x1="270.0" x2="270.0" y1="14" y2="214" stroke="#ece7da"/><text x="270.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1,000</text><line x1="385.0" x2="385.0" y1="14" y2="214" stroke="#ece7da"/><text x="385.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10,000</text><line x1="500.0" x2="500.0" y1="14" y2="214" stroke="#ece7da"/><text x="500.0" y="230" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">100,000</text><rect x="40" y="20" width="100.6" height="28" fill="#9fb8d1"/><text x="146.6320452900455" y="39" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">75</text><text direction="rtl" x="670" y="39" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">פני השטח</text><rect x="40" y="60" width="177.6" height="28" fill="#7397bd"/><text x="223.5678251002817" y="79" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">350</text><text direction="rtl" x="670" y="79" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">70% מהדרך</text><rect x="40" y="100" width="246.8" height="28" fill="#4c78a6"/><text x="292.8047241029974" y="119" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">1,400</text><text direction="rtl" x="670" y="119" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">90% מהדרך</text><rect x="40" y="140" width="331.3" height="28" fill="#2a5d8f"/><text x="377.293563112291" y="159" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">7,600</text><text direction="rtl" x="670" y="159" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="start">98% מהדרך</text><rect x="40" y="180" width="490" height="28" fill="#2f7d57" opacity="0.85"/><polygon points="530,176 546,194 530,212" fill="#2f7d57"/><text direction="rtl" x="670" y="199" font-size="12" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="start">בקו: אין גבול</text><text direction="rtl" x="270.0" y="252" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">הגובה שהכבידה מחזיקה בו אדי מים (ק"מ, סולם לוגריתמי)</text></svg><figcaption>כמה גבוה הכבידה יכולה להחזיק אדי מים חמים (1,500 K) בנקודות שונות לאורך האגס. ליד פני השטח — שכבה של כ-75 ק"מ; ליד הקו השכבה גדלה מהר; ובקו עצמו אין דבר שמחזיק אותה.</figcaption></figure>
+<p>על קו הקורוטציה נע החומר כבר במהירות של כ-4.9 ק"מ בשנייה, בעוד מהירות הבריחה שם עומדת על כ-7.0 ק"מ בשנייה, כך שחסרים רק כ-2 ק"מ בשנייה. אטומי מימן חמים חוצים פער זה בקלות, וזרם אדיר של מימן הנמלט לחלל סוחף עמו אדים וגזים כבדים. הלחץ והחום בפתחים מוסיפים דחיפה נוספת. בדרך זו תפקד האגס גם כפתח הנידוף הראשי של כדור הארץ הצעיר (ראו ב-3.05 · האגס כפתח נידוף).</p>
+<h3>7. למה הירח יבש ונפרד כגוש אחד</h3>
+<p>המבנה הפנימי של הגוף שבקצה היה יבש, וכדור הארץ שכן קרוב יחסית אל השמש. תנאים אלה הובילו ליצירת ירח יבש שנפרד כגוש אחד שלם. אילו התנאים לא היו משתנים ומתייבשים, ייתכן שכדור הארץ היה מוציא ירחים נוספים — בדומה לכוכבי הלכת המרוחקים מן השמש, שבהם נותרו המים בשפע וסביבם מקיפים ירחים רבים.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הכבידה האפקטיבית לאורך ציר האגס (Ω — קצב הסיבוב, r — המרחק מהמרכז):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>g</mi><mtext>eff</mtext></msub><mo>=</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac><mo>−</mo><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mi>r</mi></mrow><annotation encoding="application/x-tex">g_{\text{eff}}=\frac{GM}{r^2}-\Omega^2 r</annotation></semantics></math></span></div></div>
+<p>קו הקורוטציה — המרחק שבו הכבידה האפקטיבית מתאפסת:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>r</mi><mi>c</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_c=\left(\frac{GM}{\Omega^2}\right)^{1/3}</annotation></semantics></math></span></div></div>
+<p>הגובה שהכבידה מחזיקה בו גז (T — טמפרטורה, m — מסת המולקולה); כש-g שואפת לאפס, H גדל בלי גבול:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo>=</mo><mfrac><mrow><mi>k</mi><mi>T</mi></mrow><mrow><mi>m</mi><mtext> </mtext><msub><mi>g</mi><mtext>eff</mtext></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">H=\frac{kT}{m\,g_{\text{eff}}}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>אורך הפסים = אורך האגס:</strong> פסי קרקעית צפון האוקיינוס השקט מגיעים לאורך של 9,360 ק"מ, לעומת אורך האגס מן השטח עד הקו העומד על <bdi dir="ltr">9,680–9,800</bdi> ק"מ — קצרים ב-4% בלבד.</li>
+<li><strong>אין חומר במסלול:</strong> אין טבעת ואין ירח שני — האגס כולו שכן בתוך הקו ונאסף בחזרה אל כדור הארץ.</li>
+<li><strong>מסת האגס במעטפת:</strong> כ-9 מסות ירח שנאספו בחזרה מתחת לבסיס — זוהי פרובינציית המהירות הנמוכה (LLVP) של האוקיינוס השקט.</li>
+<li>ירח יבש, הנושא איזוטופים כבדים של אבץ ואשלגן.</li>
+<li>הקסנון החסר והממוין של כדור הארץ — מתיישב עם נדיפים שנסחפו החוצה דרך הקו (מבחן פתוח).</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 3 (<a href="enc_story_he.html#c9">א-09</a>): האגס גדל, כולו בתוך הקו. המרוץ (<a href="enc_story_he.html#c11">א-11</a>): הקצה מתקרב אל הקו, והקו נסוג החוצה. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): מרכז המסה מגיע אל הקו, והירח נפרד. שלב 6 (<a href="enc_story_he.html#c13">א-13</a>): האגס נאסף בחזרה אל כדור הארץ.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מדוע האגס לא המשיך לגדול:</strong> על קו הקורוטציה נפרד הקצה, והלחץ שהאריך את האגס השתחרר.</li>
+<li><strong>מדוע אין טבעת סביב כדור הארץ ואין ירח שני:</strong> האגס כולו היה בתוך הקו ונאסף בחזרה.</li>
+<li><strong>מדוע הפסים של האוקיינוס השקט הם באורך הזה:</strong> זהו בדיוק האורך שהקו הכתיב לאגס.</li>
+<li><strong>לאן נעלמו חלק מן הנדיפים של כדור הארץ הצעיר:</strong> הם ברחו לחלל דרך הקצה, סמוך לקו הקורוטציה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · מוצאים את הקו במחשבון</span>
+<p>באמצעות מחשבון פשוט תוכלו למצוא את הקו בעצמכם: כדור הארץ מסתובב פעם ב-5.77 שעות, כלומר מהירותו הזוויתית היא Ω = 0.0003025 לשנייה. בחרו מרחק r מן המרכז (במטרים), חשבו את המשיכה הכבידתית פנימה, GM/r² (כאשר GM = <bdi dir="ltr">3.986×10¹⁴</bdi>), והחסירו ממנה את הדחיפה הצנטריפוגלית החוצה, Ω²r. במרחק 6,400 ק"מ תקבלו כ-9.2 מטר לשנייה²; במרחק 14,700 ק"מ תקבלו כ-0.5 מטר לשנייה²; ובמרחק 16,300 ק"מ התוצאה צונחת לכמעט אפס. זהו קו הקורוטציה — ושם האגס מסתיים.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>קו הקורוטציה מוכר זה מכבר בפיזיקה, למשל כגובה המסלול הגיאוסטציונרי. Lock ו-Stewart (2017) הראו כי הוא משמש גם כגבול לגודלו של גוף חם המסתובב במהירות. במודל LEF משמש הקו כגבול הפיזי לגודל האגס: האגס גדל עד הקו, והיפרדות הירח בנקודה זו מסיימת את קיומו.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>קו הקורוטציה בשחרור</td><td>16,399 ק"מ</td><td>מאמר 1 B.5</td></tr><tr><td>אורך האגס עד המגע בשחרור</td><td>כ-8,700 ק"מ</td><td>מאמר 3 §C.7</td></tr><tr><td>רוחב הקצה: התחלה / שחרור</td><td>6,000 / 3,000 ק"מ</td><td>מאמר 3 §C.7</td></tr><tr><td>רוחב הבסיס</td><td><bdi dir="ltr">9,000–11,000</bdi> ק"מ</td><td>מאמר 3 §C.7</td></tr><tr><td>מסת האגס</td><td><bdi dir="ltr">8.8–12.1</bdi> מסות ירח</td><td>מאמר 3 §C.7</td></tr><tr><td>מרחק השחרור מעבר לקו</td><td>כ-210 ק"מ</td><td>מאמר 3 §C.5</td></tr><tr><td>אורך הפסים מול אורך האגס</td><td>9,360 מול <bdi dir="ltr">9,680–9,800</bdi> ק"מ</td><td>מאמר 9 §C.4</td></tr><tr><td>הכבידה האפקטיבית ב-90% מהדרך</td><td>0.50 מ' לשנייה²</td><td>חישוב, 23.11.2026</td></tr><tr><td>גובה האדים בפני השטח / ב-90%</td><td>75 / 1,400 ק"מ</td><td>חישוב, 23.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c11">א-11</a> · המרוץ; <a href="enc_story_he.html#c12">א-12</a> · שלב 5; <a href="enc_story_he.html#c13">א-13</a> · שלב 6.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_foam_he.html">ב-1.03 · המגמה המוקצפת</a> · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · ב-3.05 · האגס כפתח נידוף · ב-4.03 · מרחק השחרור 210 · ב-4.04 · גורל האגס · ב-4.05 · כמעט בלי ירח.</li>
+<li><strong>חומרים:</strong> ג-5.03 · קסנון והגזים האצילים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הקו קבע את גודל האגס ואת רגע השחרור. אבל כל הדרך עד אליו כדור הארץ נתן לחומר תנע זוויתי, וסיבובו השתנה. כמה תנע זה עלה, ולמה החשבון נסגר — ב-2.04 · תקציב התנע הזוויתי.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper01_he.html">מאמר 1 · המודל</a></li><li><a href="paper02_he.html">מאמר 2 · מנגנון LEF בעיקרון</a></li><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper09_he.html">מאמר 9 · הפסים</a></li><li><a href="paper11_he.html">מאמר 11 · לידת ירחים</a></li><li><a href="paper14_he.html">מאמר 14 · נושאי מחקר</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Lock, S. J., & Stewart, S. T. (2017). The structure of terrestrial bodies: Impact heating, corotation limits, and synestias. Journal of Geophysical Research: Planets, 122, 950–982. <a href="https://doi.org/10.1002/2016JE005239" rel="noopener">doi.org/10.1002/2016JE005239</a></li><li>Paniello, R. C., Day, J. M. D., & Moynier, F. (2012). Zinc isotopic evidence for the origin of the Moon. Nature, 490, 376–379. <a href="https://doi.org/10.1038/nature11507" rel="noopener">doi.org/10.1038/nature11507</a></li><li>Wang, K., & Jacobsen, S. B. (2016). Potassium isotopic evidence for a high-energy giant impact origin of the Moon. Nature, 538, 487–490. <a href="https://doi.org/10.1038/nature19341" rel="noopener">doi.org/10.1038/nature19341</a></li><li>Hunten, D. M., Pepin, R. O., & Walker, J. C. G. (1987). Mass fractionation in hydrodynamic escape. Icarus, 69, 532–549. <a href="https://doi.org/10.1016/0019-1035(87)90022-4" rel="noopener">doi.org/10.1016/0019-1035(87)90022-4</a></li><li>Zahnle, K. J., Gacesa, M., & Catling, D. C. (2019). Strange messenger: A new history of hydrogen on Earth, as told by Xenon. Geochimica et Cosmochimica Acta, 244, 56–85. <a href="https://doi.org/10.1016/j.gca.2018.09.017" rel="noopener">doi.org/10.1016/j.gca.2018.09.017</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב, 23.11.2026" נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
