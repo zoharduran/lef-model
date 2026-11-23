@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>טמפרטורה, צמיגות, זמן — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-1.06 באנציקלופדיה של מודל LEF: ההיסטוריה התרמית ומקדם הגאות Q — מאיפה בא החום, איך הירח התרחק מ-17,000 ק"מ, ובדיקה מול מרחקי הירח שנמדדו בסלעים קדומים לפני 3.2 ו-2.46 מיליארד שנה.">
+<link rel="canonical" href="https://lef-model.com/enc_viscosity_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-1.07</span> · <a href="LEF_enc_viscosity_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · מושג יסוד</p>
+<h1>טמפרטורה, צמיגות, זמן: מה זורם ומה נשמר</h1>
+<p>ערך מושג · ב-1.07 · מבוסס על מאמרים 3, 5, 6, 7, 8, 11 ו-13</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 1. הכוח שמרים ← טמפרטורה, צמיגות, זמן · בסיפור: <a href="enc_story_he.html#c6">שלב 0 (א-06)</a> עד <a href="enc_story_he.html#c16">שלב 8 (א-16)</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>צמיגות היא מידת ההתנגדות של חומר לזרימה. למים יש צמיגות נמוכה מאוד, לדבש צמיגות גבוהה יותר, ואילו לחומר המרכיב את מעטפת כדור הארץ יש צמיגות עצומה. בפיזיקה נמדדת הצמיגות ביחידות של פסקל·שנייה (Pa·s). תכונה זו תלויה באופן קיצוני בטמפרטורה: חומר חם הוא רך וזורם, ואילו חומר קר הוא קשה ונוקשה. אך הצמיגות תלויה גם בפרק הזמן העומד לרשות התהליך: חומר הנראה לעינינו כמוצק לחלוטין זורם לאט, אם רק ממתינים מספיק זמן. שלושת המשתנים הללו — טמפרטורה, צמיגות וזמן — הם שקובעים במודל LEF איזה חלק מן החומר זורם, איזה חלק שומר על צורתו, ואילו תוואי שטח נשמרים עד ימינו.</p>
+</section>
+<section>
+<span class="lab">02 · HOW IT WORKS</span>
+<h2>איך זה עובד</h2>
+<p>כל חומר בטבע ניתן למיקום על גבי סולם צמיגות רציף אחד. בתחתית הסולם מצוי חומר מותך ולוהט הזורם בתוך שניות בודדות. במעלה הסולם מצוי חומר הזורם על פני שנים, אלפי שנים או מיליוני שנים. ובראש הסולם ניצב חומר קר וקשה שאינו זז ממקומו גם בחלוף מיליוני שנים. אותו חומר עצמו מסוגל לנוע לאורך הסולם: כאשר הוא מתחמם הוא יורד בסולם ונעשה זורם ונייד, וכאשר הוא מתקרר הוא מטפס במעלה הסולם ונעשה קשה. לפיכך, השאלה הפיזיקלית היא תמיד שאלה כפולה: כמה חם החומר, וכמה זמן עומד לרשותו.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>מגמת בזלת מן הירח, סמוך לנקודת ההיתוך שלה (כ-1,200 מעלות), היא בעלת צמיגות של כ-1 Pa·s בלבד — נוזלית וזורמת ממש כמו שמן קל (על פי מדידות שנערכו בדגימות משימות אפולו).</li>
+<li><strong>המעטפת של כדור הארץ זורמת:</strong> חצי האי סקנדינביה וצפון קנדה מוסיפים להתרומם עד ימינו, בקצב של כמעט סנטימטר אחד בשנה, כעשרת אלפים שנה לאחר שנמסו כיפות הקרח העבות שלחצו עליהן. מתוך קצב התרוממות זה חושבה צמיגות המעטפת של כדור הארץ: כ-10²¹ Pa·s (Haskell 1935; Peltier 1981).</li>
+<li><strong>סולם יומיומי:</strong> מים כ-10⁻³ Pa·s; דבש כ-10 Pa·s; קרח של קרחונים כ-10¹³ Pa·s; המעטפת העליונה של כדור הארץ 10²⁰–10²¹ Pa·s; המעטפת התחתונה כ-10²² Pa·s; והקליפה החיצונית הקרה (הליתוספרה) 10²³ Pa·s ומעלה.</li>
+<li>עלייה של כ-100 מעלות בטמפרטורת המעטפת מפחיתה את צמיגותה בקירוב פי 10.</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> הצמיגות תלויה באופן הדוק בטמפרטורה ובתכולת המים; מעטפת כוכב הלכת זורמת לאט לאורך תקופות זמן ממושכות; מכתשים נשמרים לאורך זמן רק בתוך קליפה קשיחה; ומאגמה לוהטת זורמת בקלות.</li>
+<li><strong>מה ההבדל:</strong> במודל LEF אותם חוקי צמיגות קובעים את מהלך הבנייה כולו — איזה חומר זורם אל תוך האגס, אילו תוואים נשמרים על גבי הקליפה העולה עם הגוף, מתי הצד הקרוב של הירח נותר רך ומתי הוא קפא.</li>
+<li><strong>מה לקוח ומה חדש:</strong> הפיזיקה של הצמיגות וערכי המדידה המעבדתיים והגיאופיזיקליים לקוחים מן הספרות המקובלת. החידוש של LEF הוא בניית סולם הצמיגויות השלם של המודל, שבו לכל שלב ולכל שכבה בגוף המתפתח יש מיקום מוגדר ומשמעות פיזיקלית ברורה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. סולם הצמיגויות של המודל</h3>
+<div class="tw"><table class="lab"><tr><th>מה</th><th>צמיגות (Pa·s)</th><th>מה זה אומר</th></tr><tr><td>המגמה בימות הירח, ליד ההיתוך</td><td>כ-1</td><td>זורמת כמו שמן קל; לכן קרקעית הימות חלקה</td></tr><tr><td>שכבת המגע ברגע השחרור</td><td>10¹³–10¹⁷</td><td>השחרור לוקח בין 250 שנה ל-2.5 מיליון שנה</td></tr><tr><td>החומר שמזין את הקצה</td><td>כ-10¹⁹</td><td>זורם בקלות; הפסד הלחץ לחיכוך זניח</td></tr><tr><td>פנים הירח כשהפחיסות דעכה</td><td>10¹⁹–10²⁰ או פחות</td><td>קרוב למצב מותך בחלקו; הצורה משתנה בתוך מאות שנים</td></tr><tr><td>פנים הירח בשלב המחובר</td><td>10²¹–10²²</td><td>עוקב אחרי צורתו בתוך אלף עד עשרת אלפים שנה</td></tr><tr><td>הקליפה</td><td>10²³ ומעלה</td><td>שומרת מכתש ברוחב 100 ק"מ במשך 10 מיליון שנה</td></tr></table></div>
+<figure class="fig"><svg viewBox="0 0 680 360" role="img" style="direction:ltr"><line x1="53.9" x2="53.9" y1="20" y2="315" stroke="#ece7da"/><text x="53.92857142857143" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10⁻³</text><line x1="95.7" x2="95.7" y1="20" y2="315" stroke="#ece7da"/><text x="95.71428571428571" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10⁰</text><line x1="137.5" x2="137.5" y1="20" y2="315" stroke="#ece7da"/><text x="137.5" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10³</text><line x1="179.3" x2="179.3" y1="20" y2="315" stroke="#ece7da"/><text x="179.28571428571428" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10⁶</text><line x1="221.1" x2="221.1" y1="20" y2="315" stroke="#ece7da"/><text x="221.07142857142858" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10⁹</text><line x1="262.9" x2="262.9" y1="20" y2="315" stroke="#ece7da"/><text x="262.85714285714283" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹²</text><line x1="304.6" x2="304.6" y1="20" y2="315" stroke="#ece7da"/><text x="304.64285714285717" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁵</text><line x1="346.4" x2="346.4" y1="20" y2="315" stroke="#ece7da"/><text x="346.42857142857144" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁸</text><line x1="388.2" x2="388.2" y1="20" y2="315" stroke="#ece7da"/><text x="388.2142857142857" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²¹</text><line x1="430.0" x2="430.0" y1="20" y2="315" stroke="#ece7da"/><text x="430.0" y="332" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²⁴</text><circle cx="53.9" cy="37" r="7" fill="#2a5d8f"/><text direction="rtl" x="670" y="42" font-size="12" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="start">מים</text><circle cx="95.7" cy="67" r="7" fill="#b5562e"/><text direction="rtl" x="670" y="72" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">מגמת בזלת בימות הירח</text><circle cx="109.6" cy="97" r="7" fill="#2a5d8f"/><text direction="rtl" x="670" y="102" font-size="12" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="start">דבש</text><circle cx="276.8" cy="127" r="7" fill="#2a5d8f"/><text direction="rtl" x="670" y="132" font-size="12" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="start">קרח קרחונים</text><rect x="276.8" y="150" width="55.7" height="14" rx="7" fill="#b5562e"/><text direction="rtl" x="670" y="162" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">שכבת המגע בשחרור</text><circle cx="360.4" cy="187" r="7" fill="#b5562e"/><text direction="rtl" x="670" y="192" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">חומר ההזנה</text><rect x="360.4" y="210" width="13.9" height="14" rx="7" fill="#b5562e"/><text direction="rtl" x="670" y="222" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">פנים הירח (דעיכת הפחיסות)</text><rect x="374.3" y="240" width="27.9" height="14" rx="7" fill="#2a5d8f"/><text direction="rtl" x="670" y="252" font-size="12" font-family="Heebo" font-weight="600" fill="#2a5d8f" text-anchor="start">מעטפת כדור הארץ היום</text><rect x="388.2" y="270" width="13.9" height="14" rx="7" fill="#b5562e"/><text direction="rtl" x="670" y="282" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">פנים הירח (שלב מחובר)</text><rect x="416.1" y="300" width="13.9" height="14" rx="7" fill="#b5562e"/><text direction="rtl" x="670" y="312" font-size="12" font-family="Heebo" font-weight="600" fill="#b5562e" text-anchor="start">הקליפה</text><text direction="rtl" x="235.0" y="352" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">צמיגות (Pa·s, סולם לוגריתמי: כל שנתה פי 1,000)</text></svg><figcaption>סולם הצמיגויות. בכחול — חומרים מוכרים ומדידות מכדור הארץ; באדום — הערכים של המודל. מן המגמה בימות, שזורמת כמו שמן קל, ועד הקליפה, שאינה זזה במיליוני שנים — הפרש של פי מיליארד מיליארדים.</figcaption></figure>
+<h3>2. הזמן קובע אם חומר "מוצק" או "נוזל"</h3>
+<p>כל חומר מגיב להפעלת כוח בשתי דרכים, בהתאם למשך הפעולה: אם הכוח פועל לזמן קצר — החומר מתנהג כמו מוצק אלסטי וקופץ בחזרה; אם הכוח נמשך די זמן — החומר נכנע וזורם. פרק הזמן המפריד בין התנהגות מוצקה להתנהגות זורמת תלוי בצמיגות:</p>
+<div class="tw"><table class="lab"><tr><th>צמיגות (Pa·s)</th><th>מעבר ממוצק לזורם אחרי</th></tr><tr><td>10¹³</td><td>כמה דקות</td></tr><tr><td>10¹⁷</td><td>כשבועיים</td></tr><tr><td>10¹⁹</td><td>כ-4.5 שנים</td></tr><tr><td>10²¹</td><td>כ-450 שנה</td></tr><tr><td>10²³</td><td>כ-45,000 שנה</td></tr></table></div>
+<p>מכאן עולה כי אפילו הקליפה הקשה והנוקשה ביותר "זורמת" בסופו של דבר — אך תהליך זה מתרחש רק על פני עשרות אלפי שנים ויותר.</p>
+<h3>3. כמה זמן נשמר מכתש</h3>
+<p>מכתש שקוטרו 100 ק"מ שוקע ומטשטש לאטו, בקצב הנקבע לפי צמיגות החומר ועוצמת הכבידה המקומית:</p>
+<div class="tw"><table class="lab"><tr><th>צמיגות (Pa·s)</th><th>על הירח היום</th><th>על קצה האגס (כבידה גבוהה יותר)</th></tr><tr><td>10¹⁹</td><td>כ-4,000 שנה</td><td>כ-800 שנה</td></tr><tr><td>10²¹</td><td>כ-400,000 שנה</td><td>כ-80,000 שנה</td></tr><tr><td>10²³</td><td>כ-40 מיליון שנה</td><td>כ-8 מיליון שנה</td></tr></table></div>
+<p>משום כך, הקליפה החיצונית שעלתה יחד עם הגוף אל קצה האגס חייבת להיות בעלת צמיגות של 10²³ Pa·s ומעלה — אחרת המכתשים שהוטבעו בה היו שוקעים ונמחקים עוד במהלך העלייה.</p>
+<figure class="fig"><svg viewBox="0 0 680 320" role="img" style="direction:ltr"><line x1="90.0" x2="90.0" y1="30" y2="260" stroke="#ece7da"/><text x="90.0" y="278" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10¹⁹</text><line x1="217.5" x2="217.5" y1="30" y2="260" stroke="#ece7da"/><text x="217.5" y="278" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²⁰</text><line x1="345.0" x2="345.0" y1="30" y2="260" stroke="#ece7da"/><text x="345.0" y="278" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²¹</text><line x1="472.5" x2="472.5" y1="30" y2="260" stroke="#ece7da"/><text x="472.5" y="278" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²²</text><line x1="600.0" x2="600.0" y1="30" y2="260" stroke="#ece7da"/><text x="600.0" y="278" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10²³</text><line x1="90" x2="600" y1="260.0" y2="260.0" stroke="#ece7da"/><text direction="rtl" x="82" y="264.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">100 שנה</text><line x1="90" x2="600" y1="221.7" y2="221.7" stroke="#ece7da"/><text direction="rtl" x="82" y="225.66666666666669" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">אלף שנה</text><line x1="90" x2="600" y1="183.3" y2="183.3" stroke="#ece7da"/><text direction="rtl" x="82" y="187.33333333333334" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">10 אלף</text><line x1="90" x2="600" y1="145.0" y2="145.0" stroke="#ece7da"/><text direction="rtl" x="82" y="149.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">100 אלף</text><line x1="90" x2="600" y1="106.7" y2="106.7" stroke="#ece7da"/><text direction="rtl" x="82" y="110.66666666666669" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">מיליון</text><line x1="90" x2="600" y1="68.3" y2="68.3" stroke="#ece7da"/><text direction="rtl" x="82" y="72.33333333333331" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">10 מיליון</text><line x1="90" x2="600" y1="30.0" y2="30.0" stroke="#ece7da"/><text direction="rtl" x="82" y="34.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="start">100 מיליון</text><line x1="90.0" y1="198.2" x2="600.0" y2="44.9" stroke="#2a5d8f" stroke-width="2.5"/><text direction="rtl" x="594.0" y="36.85774682525985" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="start">על הירח היום</text><line x1="90.0" y1="225.3" x2="600.0" y2="72.0" stroke="#b5562e" stroke-width="2.5"/><text direction="rtl" x="594.0" y="87.95707262887277" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">על קצה האגס</text><line x1="90" x2="600" y1="68.3" y2="68.3" stroke="#1d2430" stroke-dasharray="5 4"/><text direction="rtl" x="96" y="62.333333333333314" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="end">זמן העלייה — לפחות 10 מיליון שנה</text><text direction="rtl" x="345.0" y="300" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">צמיגות הקליפה (Pa·s)</text></svg><figcaption>כמה זמן נשמר מכתש ברוחב 100 ק"מ, לפי צמיגות הקליפה (שני הצירים לוגריתמיים). רק קליפה בצמיגות 10²³ Pa·s ומעלה שומרת אותו לאורך העלייה, שנמשכה לפחות 10 מיליון שנה.</figcaption></figure>
+<h3>4. כדור הארץ כתנור</h3>
+<p>במשך כל הזמן שבו היה הירח מחובר אל האגס, פנה צדו הקרוב אל כדור ארץ לוהט — בטמפרטורה של כ-2,000 מעלות קלווין — שמילא כחמישית מכיפת השמיים שלו. קרינת חום אדירה זו החזיקה את פני השטח של הצד הקרוב בטמפרטורה של כ-1,345 מעלות קלווין, מעל נקודת ההיתוך: הצד הקרוב לא יכול היה לקפוא, והפתחים שבו נותרו פתוחים ופעילים. לעומתו, הצד הרחוק פנה אל החלל הקר וקפא. בדרך זו קבעה הטמפרטורה את הצמיגות, והצמיגות קבעה אילו תוואים יישמרו: בצד הרחוק — מכתשים מרובים; בצד הקרוב — ימות חלקות.</p>
+<figure class="fig"><svg viewBox="0 0 680 300" role="img" style="direction:ltr"><defs><radialGradient id="eg"><stop offset="0" stop-color="#f6b26b"/><stop offset="1" stop-color="#c0392b"/></radialGradient></defs><circle cx="150" cy="150" r="110" fill="url(#eg)"/><text direction="rtl" x="150" y="145" font-size="14" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="middle">כדור הארץ</text><text direction="rtl" x="150" y="165" font-size="13" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="middle">כ-2,000 K</text><line x1="270" x2="400" y1="100" y2="120.0" stroke="#e67e22" stroke-width="2" stroke-dasharray="6 5"/><line x1="270" x2="400" y1="130" y2="138.0" stroke="#e67e22" stroke-width="2" stroke-dasharray="6 5"/><line x1="270" x2="400" y1="160" y2="156.0" stroke="#e67e22" stroke-width="2" stroke-dasharray="6 5"/><line x1="270" x2="400" y1="190" y2="174.0" stroke="#e67e22" stroke-width="2" stroke-dasharray="6 5"/><path d="M480 70 A80 80 0 0 0 480 230 Z" fill="#e8743b"/><path d="M480 70 A80 80 0 0 1 480 230 Z" fill="#9db7cf"/><circle cx="480" cy="150" r="80" fill="none" stroke="#1d2430" stroke-width="2"/><text direction="rtl" x="445" y="145" font-size="12" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="middle">הצד הקרוב</text><text direction="rtl" x="445" y="163" font-size="12" font-family="Heebo" font-weight="700" fill="#fff" text-anchor="middle">כ-1,345 K</text><text direction="rtl" x="518" y="145" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">הצד הרחוק</text><text direction="rtl" x="518" y="163" font-size="12" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">קפא</text><text direction="rtl" x="445" y="262" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">רך: הפתחים פתוחים, הימות חלקות</text><text direction="rtl" x="560" y="262" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="end">קשה: שומר מכתשים</text><text direction="rtl" x="335" y="290" font-size="11.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">סכמטי: קרינת החום מכדור הארץ החזיקה את הצד הקרוב מעל נקודת ההיתוך</text></svg><figcaption>כדור הארץ כתנור. בזמן החיבור, קרינת החום מכדור ארץ של כ-2,000 K החזיקה את הצד הקרוב של הירח בכ-1,345 K — מעל נקודת ההיתוך. הצד הקרוב נשאר רך והפתחים בו פתוחים; הצד הרחוק פנה לחלל, קפא ושמר את מכתשיו.</figcaption></figure>
+<h3>5. קליפה קשה מעל בסיס רך</h3>
+<p>המודל דורש קיומם בו-זמנית של קליפה חיצונית קשה, השומרת על המכתשים שעליה, ושל בסיס רך מתחתיה, שעליו היא מסוגלת להחליק במעלה האגס. הגורם המרכך את הבסיס הוא המים הכלואים בחומר: הם משמנים את הגבול שבין הסיאל לסימה ומפחיתים בחדות את הצמיגות.</p>
+<h3>6. הימות קפאו כמו אגם</h3>
+<p>ברגע השחרור היו הימות לוהטות ובעלות צמיגות נמוכה מאוד — ולכן קרקעיתן חלקה, בדומה לפניו של אגם שקפא. הימות התקררו וקפאו בהדרגה, מן השוליים החיצוניים פנימה, ועברו שלושה שלבים פיזיקליים: נוזל, עיסה חצי-מוצקה, ומוצק קשיח. חומר חוזר שנחת על ימה נוזלית נבלע בה לחלוטין; חומר שנחת על עיסה חצי-מוצקה נמרח עליה; וחומר שנחת לאחר שהתמצקה הותיר בה מכתש ברור. ככל שהימה התרכזה בברזל, צמיגותה עלתה, והחומר שנזרק ממנה הגיע למרחקים קצרים יותר.</p>
+<h3>7. גופים כבדים שוקעים לאט</h3>
+<p>גוף כבד הנמצא בתוך חומר רך שוקע כלפי מטה בקצב המוכתב על ידי הצמיגות. גוף שרדיוסו 50 ק"מ שוקע למרחק של 300 ק"מ: בתוך כ-250 אלף שנה בצמיגות 10¹⁹ Pa·s; בתוך כ-25 מיליון שנה בצמיגות 10²¹ Pa·s; בתוך כ-250 מיליון שנה בצמיגות 10²² Pa·s; ובתוך כ-2.4 מיליארד שנה בצמיגות 10²³ Pa·s. בחומר חם מתרחש המיון הפנימי במהירות; בחומר קר הוא נעצר כמעט לחלוטין.</p>
+<h3>8. חלון הלידה</h3>
+<p>ירח נולד אך ורק כאשר כוכב הלכת הצעיר חם, בעל צמיגות נמוכה, טרם השלים את המיון הפנימי שלו ומסתובב במהירות. חלון ההזדמנויות נסגר כאשר כוכב הלכת מתקרר, צמיגותו עולה, המים נמלטים מתוכו והחומר מתמיין לשכבות.</p>
+<h3>9. הצורה קופאת</h3>
+<p>לאחר השחרור התקרר הירח בהדרגה, וצמיגות פנימו טיפסה לכיוון 10²³ Pa·s. זמן התגובה המכני שלו התארך למאות אלפי שנים, כך שצורתו החיצונית כבר לא הספיקה להסתגל להאטת הסיבוב — והיא קפאה במקומה. זוהי הבליטה המאובנת הנמדדת בירח עד ימינו.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הזמן שבו חומר עובר ממוצק לזורם (זמן מקסוול; μ — מקדם הגזירה):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>τ</mi><mi>M</mi></msub><mo>=</mo><mfrac><mi>η</mi><mi>μ</mi></mfrac><mspace width="2em"/><mo stretchy="false">(</mo><mi>μ</mi><mo>≈</mo><mn>7</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>10</mn></msup><mtext> Pa</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tau_M=\frac{\eta}{\mu}\qquad(\mu\approx7\times10^{10}\ \text{Pa})</annotation></semantics></math></span></div></div>
+<p>זמן ההרפיה של שקע ברוחב λ (ρ — צפיפות, g — כבידה):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>τ</mi><mo>≈</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mtext> </mtext><mi>η</mi></mrow><mrow><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\tau\approx\frac{4\pi\,\eta}{\rho\,g\,\lambda}</annotation></semantics></math></span></div></div>
+<p>מהירות השקיעה של גוף כבד ברדיוס r (חוק סטוקס; Δρ — הפרש הצפיפות):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><msup><mi>r</mi><mn>2</mn></msup></mrow><mrow><mn>9</mn><mtext> </mtext><mi>η</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">v=\frac{2\,\Delta\rho\,g\,r^2}{9\,\eta}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>קרקעית הימות חלקה וכמעט ללא מכתשים גדולים:</strong> היא הייתה נוזלית בעת שרוב החומר החוזר נחת עליה.</li>
+<li><strong>הצד הרחוק עמוס מכתשים:</strong> הוא קפא מוקדם ושמר את תוואי הפגיעה.</li>
+<li><strong>הבליטה המאובנת של הירח:</strong> צורה גיאומטרית שקפאה כאשר פנים הירח התקרר והתקשה.</li>
+<li><strong>כדור הארץ עדיין זורם:</strong> ההתרוממות המתמשכת של הקרקע באזורים שמהם נמסו הקרחונים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>): כדור ארץ חם, רך ומעורבב. שלבים 1–3 (<a href="enc_story_he.html#c7">א-07</a> עד <a href="enc_story_he.html#c9">א-09</a>): החומר הרך זורם אל האגס, והקליפה הקשה עולה עם הגוף ושומרת את המכתשים. שלב 4: הגוף נפחס ומתעגל — פנימו רך דיו כדי לשנות צורה. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): השחרור — שכבת המגע נמתחת ונפתחת. לאחר השחרור: הימות קופאות, והצורה הירחית קופאת.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>כיצד מכתשים שנוצרו על כדור הארץ שרדו את העלייה:</strong> הקליפה החיצונית הייתה קשיחה דיה.</li>
+<li><strong>מדוע הצד הקרוב חלק והצד הרחוק עמוס מכתשים:</strong> קרינת החום מכדור הארץ החזיקה את הצד הקרוב רך ונוזלי.</li>
+<li><strong>כיצד הירח שינה צורה ובכל זאת שמר את מכתשיו:</strong> פנים רך וגמיש מתחת לקליפה חיצונית קשיחה.</li>
+<li><strong>מדוע חלון ההזדמנויות ללידת ירח נפתח ונסגר:</strong> הצמיגות עולה ככל שכוכב הלכת מתקרר ומתמיין.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: נסו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · דבש קר ודבש חם</span>
+<p>הכניסו שתי כפיות דבש למקרר, והשאירו שתי כפיות דבש על השיש בטמפרטורת החדר. כעבור שעה הטו את כל ארבע הכפיות בבת אחת ומדדו כמה זמן נדרש לדבש לנזול מכל כפית. הדבש הקר זורם לאט פי כמה מן הדבש החם — אותו חומר בדיוק ואותה כמות, ורק הטמפרטורה שונה. כעת הניחו כפית של דבש קר על צלחת נטויה והשאירו אותה למשך הלילה: בבוקר תגלו שגם הדבש הקר נזל והתפשט. מה שנראה במבט ראשון מוצק וכמעט קשיח, זורם לבסוף — אם רק ממתינים מספיק זמן.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>במאמר 3 נקבע כי הקליפה החיצונית חייבת להיות בעלת צמיגות של 10²³ Pa·s ומעלה כדי לשמר את המכתשים, מעל פנים חם ונייד. במאמר 5 חושב כי חומו של כדור הארץ החזיק את הצד הקרוב מעל נקודת ההיתוך, ונקבע שפתח הוא אזור של נוזל שגבולו מוגדר על ידי הבדל בצמיגות — ולא צינור מוצק. במאמר 7 נקבעו ערכי הצמיגות של פנים הירח לפני השחרור ולאחריו. ב-23.11.2026 רוכזו כל הערכים לסולם אחיד אחד, ונוספו החישובים של זמן המעבר ממוצק לזורם ושל זמן ההרפיה של מכתש.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>מגמת בזלת ירחית ליד ההיתוך</td><td>כ-1 Pa·s</td><td>דגימות אפולו (מאמר 5 G.3)</td></tr><tr><td>החומר שמזין את הקצה</td><td>כ-10¹⁹ Pa·s</td><td>מאמר 3 §A.13</td></tr><tr><td>פנים הירח בשלב המחובר</td><td>10²¹–10²² Pa·s</td><td>מאמר 7 C.7</td></tr><tr><td>הקליפה</td><td>10²³ Pa·s ומעלה</td><td>מאמר 3 §B.3</td></tr><tr><td>צמיגות המעטפת של כדור הארץ היום</td><td>כ-10²¹ Pa·s</td><td>Haskell 1935; Peltier 1981</td></tr><tr><td>פני הצד הקרוב בזמן החיבור</td><td>כ-1,345 K</td><td>מאמר 5 H.4</td></tr><tr><td>מכתש 100 ק"מ בקליפה של 10²³</td><td>נשמר כ-8–40 מיליון שנה</td><td>חישוב, 23.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0; <a href="enc_story_he.html#c7">א-07</a> · שלב 1; <a href="enc_story_he.html#c12">א-12</a> · שלב 5.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · <a href="enc_foam_he.html">ב-1.03 · המגמה המוקצפת</a> · <a href="enc_feedrate_he.html">ב-1.05 · קצב ההזנה</a> · <a href="enc_thermalq_he.html">ב-1.06 · ההיסטוריה התרמית ו-Q</a> · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a>.</li>
+<li><strong>מבחנים:</strong> פתרון תרמי ושל זרימה משולב — קליפה קשה מעל ממשק רך באותו זמן; מדידות צמיגות של חומר רטוב בלחצים גבוהים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>כאן נגמר הפרק "הכוח שמרים". הפרק הבא עוסק בקו ובתקציב — המקום שבו הגוף משתחרר, וכמה תנע הוא לוקח איתו — ב-2.01 · פער המהירות של דרווין.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper05_he.html">מאמר 5 · הימות</a></li><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li><li><a href="paper07_he.html">מאמר 7 · הקטבים</a></li><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li><li><a href="paper11_he.html">מאמר 11 · לידת ירחים</a></li><li><a href="paper13_he.html">מאמר 13 · הדרישות</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Haskell, N. A. (1935). The motion of a viscous fluid under a surface load. Physics, 6, 265–269. <a href="https://doi.org/10.1063/1.1745329" rel="noopener">doi.org/10.1063/1.1745329</a></li><li>Peltier, W. R. (1981). Ice age geodynamics. Annual Review of Earth and Planetary Sciences, 9, 199–225. <a href="https://doi.org/10.1146/annurev.ea.09.050181.001215" rel="noopener">doi.org/10.1146/annurev.ea.09.050181.001215</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב, 23.11.2026" נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
