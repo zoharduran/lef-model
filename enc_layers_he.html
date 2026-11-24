@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>שלוש שכבות מאגס אחד — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-3.09 באנציקלופדיה של מודל LEF: האגס קבע ממה הירח עשוי — רובו סיאל שגלש מבחוץ ונערם על הקצה, חרוט של חומר פנימי מתחת לימות, ומעט ברזל במרכז; רוב הברזל חזר במורד האגס, והמיון לא הושלם.">
+<link rel="canonical" href="https://lef-model.com/enc_layers_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-3.09</span> · <a href="LEF_enc_layers_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · האגס והגוף שבקצהו</p>
+<h1>שלוש שכבות מאגס אחד: ממה הירח עשוי</h1>
+<p>ערך מושג · ב-3.09 · מבוסס על מאמר 3 ועל ההחלטות של 23.11–24.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 3. האגס והגוף שבקצהו ← שלוש שכבות מאגס אחד · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>האגס לא רק נשא את הגוף שבקצהו — הוא קבע ממה הגוף עשוי. לכל אחד מחלקיו העיקריים של הירח יש מקור מוגדר באגס. הקרום והחלק הגדול של הפנים: שכבת הסיאל שגלשה מבחוץ במעלה האגס ונערמה על הקצה. המרכז: מעט חומר כבד — ברזל של כדור הארץ שהצליח להגיע עד הקצה. רוב הברזל שנכנס לאגס חזר במורדו אל כדור הארץ, ולכן ליבת הירח קטנה כל כך.</p>
+</section>
+<section>
+<span class="lab">02 · IN PLAIN WORDS</span>
+<h2>במילים פשוטות</h2>
+<p>בתוך האגס, החומר הכבד ירד והחומר הקל עלה. לאורך כל אורכו של האגס מכוון הווקטור המקוזז פנימה אל כדור הארץ, ולכן הברזל הכבד חזר במורד האגס, ואילו שכבת הסיאל הקלה המשיכה לטפס אל הקצה. אולם המיון הזה לא הושלם עד תום: מעולם לא נוצרו שלוש שכבות נקיות ונפרדות לחלוטין. הירח התקרר וקפא לפני שתהליך המיון הסתיים, ולכן נותר בו חומר כבד יחסית גם בשכבות החיצוניות.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>לירח ליבה קטנה:</strong> רדיוס של כ-330 ק"מ, המהווה אחוז עד שניים ממסת הירח — לעומת כשליש בכדור הארץ (Weber et al. 2011).</li>
+<li><strong>קרום הירח עשיר באלומיניום, ועבה במיוחד בצד הרחוק:</strong> בממוצע <bdi dir="ltr">34–43</bdi> ק"מ (Wieczorek et al. 2013, GRAIL).</li>
+<li>האיזוטופים של הירח — חמצן, טיטניום ואחרים — כמעט זהים לחלוטין לאלה של כדור הארץ (Wiechert et al. 2001; Zhang et al. 2012; Young et al. 2016).</li>
+<li><strong>הירח אינו ממוין עד הסוף:</strong> גם בשכבות החיצוניות שלו מצוי חומר כבד יחסית.</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> בגוף חם וצמיג, החומר הכבד שוקע פנימה והחומר הקל עולה. לירח ליבה קטנה, קרום עשיר באלומיניום, והרכב איזוטופי זהה לזה של כדור הארץ.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל נוצר הירח מענן חומר שנזרק בפגיעה ענקית, וחלקיו הפנימיים התמיינו מאוחר יותר באוקיינוס מגמה על הירח עצמו. הליבה הקטנה והאיזוטופים הזהים מהווים קושי שהמודל המקובל מנסה ליישב. במודל LEF החל המיון בתוך האגס עצמו, והחומר כולו הגיע מכדור הארץ.</li>
+<li><strong>מה לקוח ומה חדש:</strong> עקרון המיון לפי משקל לקוח מן הפיזיקה הקלאסית. החידוש של מודל LEF: האגס כמרחב שבו המיון קבע ממה הירח בנוי — שכבת הסיאל אל הקצה, והברזל בחזרה אל כדור הארץ.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הסיאל גלש אל הקצה</h3>
+<p>מעל אזור הבנייה, החומר העליון של כדור הארץ היה שכבת הסיאל — חומר קל, חם וגמיש, העשיר בצורן ובאלומיניום. כאשר האגס נמשך כלפי חוץ, גלשה שכבת הסיאל על גבי הסימה, במעלה דפנות האגס, אל עבר הקצה (ב-3.04). שם היא נערמה, חלק על גבי חלק.</p>
+<h3>2. הסיאל בנה את רוב הגוף</h3>
+<p>רוב החומר של הירח טיפס במעלה האגס מבחוץ — זוהי שכבת הסיאל שחסרה כיום בקרקעית האוקיינוס השקט. הסיאל בנה את השכבות החיצוניות, ובנה גם את רוב השכבות הפנימיות. ייתכן שהחומר הקל מצוי דווקא בשיעור גבוה יותר בחלק הפנימי.</p>
+<h3>3. מה הגיע מבפנים</h3>
+<p>מבפנים הגיעו בעיקר חום, נדיפים ולחץ. הם פעלו דרך אימבריום והימה השכנה. הימות ופנים הירח השוכנים מתחתיהן הם חומר פנימי — מעין חרוט, רחב באזור הימות וצר לכיוון מרכז הירח.</p>
+<h3>4. הברזל חזר במורד</h3>
+<p>ברזל רב נכנס אל האגס, ופחות ממנו ככל שמתקרבים אל הקצה. כל האגס שוכן בתוך קו הקורוטציה, ולכן לאורך כולו מכוון הווקטור המקוזז פנימה אל כדור הארץ. החומר הכבד ירד בחזרה במורד האגס, ואילו החומר הקל המשיך אל הקצה. ברגע הניתוק היה החומר הכבד מרוכז בשליש האחרון של הגוף; הוא לא חצה את קו הקורוטציה, ונאסף בחזרה אל כדור הארץ.</p>
+<figure class="fig"><svg viewBox="0 0 680 320" role="img" style="direction:ltr"><line x1="80" x2="640" y1="270.0" y2="270.0" stroke="#ece7da"/><text x="72.0" y="274.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">0</text><line x1="80" x2="640" y1="222.0" y2="222.0" stroke="#ece7da"/><text x="72.0" y="226.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">2</text><line x1="80" x2="640" y1="174.0" y2="174.0" stroke="#ece7da"/><text x="72.0" y="178.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">4</text><line x1="80" x2="640" y1="126.0" y2="126.0" stroke="#ece7da"/><text x="72.0" y="130.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">6</text><line x1="80" x2="640" y1="78.0" y2="78.0" stroke="#ece7da"/><text x="72.0" y="82.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">8</text><line x1="80" x2="640" y1="30.0" y2="30.0" stroke="#ece7da"/><text x="72.0" y="34.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">10</text><text x="80.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0</text><text x="192.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2,000</text><text x="304.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4,000</text><text x="416.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">6,000</text><text x="528.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">8,000</text><text x="640.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">10,000</text><line x1="80" x2="640" y1="270" y2="270" stroke="#5b6676"/><text direction="rtl" x="360.0" y="310.0" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">גובה מעל פני השטח (ק"מ)</text><text x="20" y="150.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 20 150.0)" direction="rtl">הווקטור המקוזז (מ' לשנייה²)</text><polyline fill="none" stroke="#2a5d8f" stroke-width="2.6" points="80.0,49.7 82.8,53.5 85.6,57.2 88.4,60.8 91.2,64.3 94.0,67.8 96.8,71.2 99.6,74.5 102.4,77.7 105.2,80.9 108.0,84.0 110.8,87.0 113.6,90.0 116.4,92.9 119.2,95.8 122.0,98.6 124.8,101.3 127.6,104.0 130.4,106.6 133.2,109.2 136.0,111.7 138.8,114.2 141.6,116.7 144.4,119.1 147.2,121.4 150.0,123.7 152.8,126.0 155.6,128.2 158.4,130.4 161.2,132.5 164.0,134.6 166.8,136.7 169.6,138.7 172.4,140.7 175.2,142.6 178.0,144.6 180.8,146.5 183.6,148.3 186.4,150.1 189.2,151.9 192.0,153.7 194.8,155.4 197.6,157.2 200.4,158.8 203.2,160.5 206.0,162.1 208.8,163.7 211.6,165.3 214.4,166.8 217.2,168.4 220.0,169.9 222.8,171.4 225.6,172.8 228.4,174.2 231.2,175.7 234.0,177.1 236.8,178.4 239.6,179.8 242.4,181.1 245.2,182.4 248.0,183.7 250.8,185.0 253.6,186.2 256.4,187.5 259.2,188.7 262.0,189.9 264.8,191.1 267.6,192.3 270.4,193.4 273.2,194.6 276.0,195.7 278.8,196.8 281.6,197.9 284.4,199.0 287.2,200.0 290.0,201.1 292.8,202.1 295.6,203.1 298.4,204.1 301.2,205.1 304.0,206.1 306.8,207.1 309.6,208.1 312.4,209.0 315.2,209.9 318.0,210.9 320.8,211.8 323.6,212.7 326.4,213.6 329.2,214.5 332.0,215.3 334.8,216.2 337.6,217.0 340.4,217.9 343.2,218.7 346.0,219.5 348.8,220.3 351.6,221.1 354.4,221.9 357.2,222.7 360.0,223.5 362.8,224.3 365.6,225.0 368.4,225.8 371.2,226.5 374.0,227.2 376.8,228.0 379.6,228.7 382.4,229.4 385.2,230.1 388.0,230.8 390.8,231.5 393.6,232.2 396.4,232.9 399.2,233.5 402.0,234.2 404.8,234.8 407.6,235.5 410.4,236.1 413.2,236.8 416.0,237.4 418.8,238.0 421.6,238.6 424.4,239.2 427.2,239.8 430.0,240.4 432.8,241.0 435.6,241.6 438.4,242.2 441.2,242.8 444.0,243.4 446.8,243.9 449.6,244.5 452.4,245.0 455.2,245.6 458.0,246.1 460.8,246.7 463.6,247.2 466.4,247.8 469.2,248.3 472.0,248.8 474.8,249.3 477.6,249.8 480.4,250.3 483.2,250.9 486.0,251.4 488.8,251.9 491.6,252.3 494.4,252.8 497.2,253.3 500.0,253.8 502.8,254.3 505.6,254.8 508.4,255.2 511.2,255.7 514.0,256.2 516.8,256.6 519.6,257.1 522.4,257.5 525.2,258.0 528.0,258.4 530.8,258.9 533.6,259.3 536.4,259.7 539.2,260.2 542.0,260.6 544.8,261.0 547.6,261.4 550.4,261.9 553.2,262.3 556.0,262.7 558.8,263.1 561.6,263.5 564.4,263.9 567.2,264.3 570.0,264.7 572.8,265.1 575.6,265.5 578.4,265.9 581.2,266.3 584.0,266.7 586.8,267.0 589.6,267.4 592.4,267.8 595.2,268.2 598.0,268.5 600.8,268.9 603.6,269.3 606.4,269.7 609.2,270.0"/><circle cx="80.0" cy="49.7" r="4.5" fill="#b5562e"/><text x="88.0" y="41.7" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">9.18</text><circle cx="304.0" cy="206.1" r="4.5" fill="#b5562e"/><text x="312.0" y="198.1" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="start">2.66</text><circle cx="528.0" cy="258.4" r="4.5" fill="#b5562e"/><text x="520.0" y="250.4" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="end">0.48</text><text direction="rtl" x="611.2" y="256.0" font-size="12" font-family="Heebo" font-weight="700" fill="#5b6676" text-anchor="end">הקו</text></svg><figcaption>הווקטור המקוזז לאורך האגס, מפני השטח ועד הקו (יממה של 5.5 שעות). בכל מקום הוא מכוון אל כדור הארץ, ולכן הכבד יורד במורד האגס. אבל הוא נחלש מהר עם הגובה — ולכן המיון נעשה איטי ככל שעולים, וכמעט נעצר בקצה.</figcaption></figure>
+<h3>5. הליבה הקטנה</h3>
+<p>מה שנותר בתוך הירח הוא מעט ברזל ארצי שהספיק להגיע עד הקצה. במרכז הגוף הצטבר מעט חומר כבד — וממנו נבנתה הליבה הקטנה. רוב הברזל שב אל כדור הארץ יחד עם האגס שנאסף בחזרה.</p>
+<h3>6. המיון נמשך — ונעצר</h3>
+<p>לאחר שהתקלף ונפרד מקצה האגס, המשיך הירח להתמיין בעצמו: חומרים כבדים נמשכו פנימה אל המרכז. אולם הירח התקרר וקפא לפני שתהליך המיון הושלם. משום כך נותר בו חומר כבד יחסית גם בשכבות החיצוניות, ללא הפרדה מלאה לשלוש שכבות נקיות.</p>
+<h3>7. הצד הרחוק</h3>
+<p>הקרום בצד הרחוק עבה במיוחד, מפני ששם הצטבר סיאל דחוס רב, יחד עם החומר שנזרק מן הימות וחזר ונחת עליו (ב-5.03).</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הכוח על גרגר באגס (ρ_g — צפיפות הגרגר, ρ_s — צפיפות הסביבה, g — הווקטור המקוזז):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>s</mi></msub><mo stretchy="false">)</mo><mtext> </mtext><mi>V</mi><mtext> </mtext><mi>g</mi></mrow><annotation encoding="application/x-tex">F=(\rho_{g}-\rho_{s})\,V\,g</annotation></semantics></math></span></div></div>
+<p>מהירות השקיעה של גרגר (חוק סטוקס; r — רדיוס הגרגר, η — צמיגות):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mtext> </mtext><mo stretchy="false">(</mo><msub><mi>ρ</mi><mi>g</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>s</mi></msub><mo stretchy="false">)</mo><mtext> </mtext><mi>g</mi><mtext> </mtext><msup><mi>r</mi><mn>2</mn></msup></mrow><mrow><mn>9</mn><mtext> </mtext><mi>η</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">v=\frac{2\,(\rho_{g}-\rho_{s})\,g\,r^2}{9\,\eta}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>ליבה קטנה:</strong> הברזל ירד בחזרה במורד האגס אל כדור הארץ.</li>
+<li><strong>קרום עשיר באלומיניום:</strong> שכבת הסיאל, העשירה באלומיניום, גלשה אל הקצה.</li>
+<li><strong>איזוטופים כמו של כדור הארץ:</strong> החומר כולו הגיע מכדור הארץ.</li>
+<li><strong>חומר כבד יחסית בשכבות החיצוניות:</strong> הירח קפא לפני שהתמיין עד הסוף.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 3 (<a href="enc_story_he.html#c9">א-09</a>): שכבת הסיאל גולשת מעלה, והברזל מתחיל לחזור מטה. שלב 4 (<a href="enc_story_he.html#c10">א-10</a>): הגוף שבקצה מתעגל, וגדל מתוך הסיאל. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): הניתוק — החומר הכבד שבשליש האחרון חוזר. שלב 8 (<a href="enc_story_he.html#c15">א-15</a>): שלושת הגורלות במקומם.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מדוע ליבת הירח קטנה כל כך:</strong> רוב הברזל חזר אל כדור הארץ.</li>
+<li><strong>מדוע הירח דומה לכדור הארץ באיזוטופים:</strong> הוא בנוי מחומר של כדור הארץ.</li>
+<li><strong>מדוע הקרום עשיר באלומיניום ועבה בצד הרחוק:</strong> שכבת הסיאל גלשה אל הקצה ונערמה שם.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · לאן נע גרגר כבד</span>
+<p>לאן נע גרגר כבד בתוך האגס? חשבו את הווקטור המקוזז בכמה גבהים מעל פני השטח (r = 6,371 ק"מ + הגובה, במטרים): הכבידה GM/r², כאשר GM = <bdi dir="ltr">3.986×10¹⁴</bdi>, פחות דחיפת הסיבוב Ω²r, כאשר Ω = 0.0003173 לשנייה (יממה של 5.5 שעות). ב-0 ק"מ: 9.18 מטר לשנייה²; ב-4,000 ק"מ: 2.66; ב-8,000 ק"מ: 0.48. בכל הגבהים התוצאה חיובית — כלומר מכוונת אל כדור הארץ. לפיכך, גרגר כבד מן הסביבה שלו נע במורד האגס, וגרגר קל נדחק במעלה. אולם ככל שעולים, הווקטור המקוזז נחלש, והמיון נעשה איטי — ובקצה הוא כמעט נעצר.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>הרעיון שגוף חם ממיין את עצמו פנימה אל ליבה, מעטפת וקרום ותיק בגאופיזיקה. בשנת 2011 זוהתה בנתוני הסייסמומטרים של אפולו ליבת הירח הקטנה. בשנת 2012 הראה GRAIL שקרום הירח דק מכפי שסברו בעבר. ובמהלך שני העשורים האחרונים נמצא שוב ושוב שהאיזוטופים של הירח כמעט זהים לאלה של כדור הארץ. במודל LEF נקבע הרכב הירח כבר בתוך האגס: שכבת הסיאל אל הקצה, והברזל בחזרה אל כדור הארץ.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>רדיוס ליבת הירח</td><td>כ-330 ק"מ</td><td>Weber et al. 2011</td></tr><tr><td>הליבה ממסת הירח / בכדור הארץ</td><td><bdi dir="ltr">1–2</bdi>% / כשליש</td><td>מאמר 3 §C.10</td></tr><tr><td>עובי הקרום הממוצע</td><td><bdi dir="ltr">34–43</bdi> ק"מ</td><td>Wieczorek et al. 2013</td></tr><tr><td>הסף לחומר שהלחץ מרים</td><td>כ-3,864 ק"ג למ"ק</td><td>מאמר 3 §A.10</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c10">א-10</a> · שלב 4; <a href="enc_story_he.html#c12">א-12</a> · שלב 5; <a href="enc_story_he.html#c15">א-15</a> · שלב 8.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_sialslide_he.html">ב-3.04 · הסיאל מחליק על הסימה</a> · <a href="enc_bulgepear_he.html">ב-3.02 · מבליטה לאגס</a> · <a href="enc_vent_he.html">ב-3.08 · האגס כפתח נידוף</a> · ב-5.03 · החומר החוזר.</li>
+<li><strong>תעלומות:</strong> ג-1.3.29 · קרום דו-שכבתי.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>החומר הגיע לקצה, והגוף גדל. אבל הוא לא שמר על צורה אחת: הוא התעגל, נפחס, והתעגל שוב. איך — <a href="enc_rounding_he.html">ב-3.10 · ההתעגלות החוצה, פחוס, פנימה</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Weber, R. C., Lin, P.-Y., Garnero, E. J., Williams, Q., & Lognonné, P. (2011). Seismic detection of the lunar core. Science, 331, 309–312. <a href="https://doi.org/10.1126/science.1199375" rel="noopener">doi.org/10.1126/science.1199375</a></li><li>Wieczorek, M. A., et al. (2013). The crust of the Moon as seen by GRAIL. Science, 339, 671–675. <a href="https://doi.org/10.1126/science.1231530" rel="noopener">doi.org/10.1126/science.1231530</a></li><li>Wiechert, U., Halliday, A. N., Lee, D.-C., Snyder, G. A., Taylor, L. A., & Rumble, D. (2001). Oxygen isotopes and the Moon-forming giant impact. Science, 294, 345–348. <a href="https://doi.org/10.1126/science.1063037" rel="noopener">doi.org/10.1126/science.1063037</a></li><li>Zhang, J., Dauphas, N., Davis, A. M., Leya, I., & Fedkin, A. (2012). The proto-Earth as a significant source of lunar material. Nature Geoscience, 5, 251–255. <a href="https://doi.org/10.1038/ngeo1429" rel="noopener">doi.org/10.1038/ngeo1429</a></li><li>Young, E. D., et al. (2016). Oxygen isotopic evidence for vigorous mixing during the Moon-forming giant impact. Science, 351, 493–496. <a href="https://doi.org/10.1126/science.aad0525" rel="noopener">doi.org/10.1126/science.aad0525</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
