@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>תחילת הבליטה — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-3.01 באנציקלופדיה של מודל LEF: תחילת הבליטה — בכדור ארץ מעורבב בלי ליבה, אזור עשיר בברזל עובר לקו המשווה, מושך אליו סיאל קל ורטוב, ושם הלחץ הפנימי מוצא דרך החוצה; הכבד לא שקע — הקל עזב אותו.">
+<link rel="canonical" href="https://lef-model.com/enc_bulgeonset_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-3.01</span> · <a href="LEF_enc_bulgeonset_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · האגס והגוף שבקצהו</p>
+<h1>תחילת הבליטה: ריכוז ברזל במשווה</h1>
+<p>ערך מושג · ב-3.01 · מבוסס על מאמרים 3, 11 ו-14 ועל ההחלטות של 24.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 3. האגס והגוף שבקצהו ← תחילת הבליטה · בסיפור: <a href="enc_story_he.html#c6">א-06</a> עד <a href="enc_story_he.html#c8">א-08</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>כיצד ומדוע נולדה הבליטה דווקא במקום אחד מוגדר על פני כדור הארץ הצעיר. באותה עת היה כדור הארץ חם, מעורבב ומסתובב במהירות. עדיין לא הייתה לו ליבה מתכתית: הברזל היה מפוזר בכל רחבי החומר, אך לא באופן אחיד לגמרי — באזור אחד היה ריכוז גבוה יותר שלו. אזור זה הוא שקבע את מיקום הבליטה. הסיבוב העצמי העביר אזור זה אל קו המשווה, כוח הכבידה המקומי שלו משך אליו חומר קל ורטוב — הסיאל — ודרך חומר קל ורך זה מצא הלחץ הפנימי של כדור הארץ נתיב יציאה כלפי חוץ.</p>
+<p>ערך זה פותח סדרה של שלושה ערכים המספרים סיפור רציף אחד: תחילת הבליטה (ב-3.01), מבליטה לאגס (ב-3.02), ופנגיאה מהעומק (ב-3.03).</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: הבלון והים</h2>
+<p>דמיינו בלון גומי מלא מים, שבצדו הפנימי מוצמדת פיסת ברזל המוחזקת במקומה באמצעות מגנט חיצוני. כאשר מסובבים את הבלון במהירות, הצד שבו נמצא הברזל נמתח כלפי חוץ יותר מכל שאר הדופן, והמים זורמים אל הבליטה שנפתחה שם. עודף מסה בצד אחד — והבליטה נולדת דווקא בנקודה זו.</p>
+<p>ובעולם האמיתי, בימינו: לוויינים המודדים את גובה פני הים מגלים כי מעל הרי ים תת-ימיים, השוכנים עמוק בקרקעית האוקיינוס, פני המים גבוהים בכמה מטרים. עודף המסה של ההר מושך אליו את המים שמעליו. באופן דומה, ריכוז הברזל בכדור הארץ הצעיר משך אליו את החומר הקל שמסביבו.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>בתוך כדור, אך ורק המסה המצויה מתחת לנקודה נתונה מושכת אותה פנימה; הקליפות המקיפות אותה מבחוץ מבטלות זו את זו לחלוטין (משפט הקליפות, ניוטון 1687). לפיכך, בכדור אחיד צפיפות, הכבידה נחלשת ככל שמעמיקים פנימה, ובמרכז הכדור היא מתאפסת.</li>
+<li>כוכב לכת מסתובב מסדר את התפלגות המסה שלו כך שעודף מסה מתיישב על קו המשווה — תופעה המכונה "נדידת קטבים אמיתית" (Gold 1955; Goldreich &amp; Toomre 1969).</li>
+<li>פני הים גבוהים יותר מעל עודפי מסה בקרקעית האוקיינוס — תופעה הנמדדת בדיוק מלוויינים (Sandwell &amp; Smith 1997).</li>
+<li>באוקיינוס מגמה, טיפות מתכת וגבישים נותרים מרחפים בתוך הזרם כל עוד מהירות הערבוב גבוהה ממהירות השקיעה שלהם (Solomatov 2000).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> עודף מסה נודד אל קו המשווה; עודף מסה מושך אליו חומר חופשי; בכדור נטול ליבה הכבידה הפנימית חלשה ויורדת לאפס במרכז; וערבוב תרמי חזק מעכב את שקיעת הברזל.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל נתפס כדור הארץ הצעיר כגוף שבו הברזל שקע במהירות אל הליבה. במודל LEF השלב הראשון קודם להתגבשות הליבה: הברזל עודנו מפוזר בחומר, וריכוז מקומי אחד שלו קובע היכן תיוולד הבליטה.</li>
+<li><strong>מה לקוח ומה חדש:</strong> משפט הקליפות, נדידת הקטבים ומשיכת עודף המסה — לקוחים מן הספרות הפיזיקלית. החידוש של LEF: חיבורם לשרשרת סיבתית אחת המסבירה מדוע נולדה הבליטה במקום אחד מסוים, על קו המשווה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. ברזל מפוזר, לא אחיד</h3>
+<p>כדור הארץ הצעיר היה חם ומעורבב, בעל צמיגות נמוכה ועשיר במים. עדיין לא הייתה לו ליבה. כדי שגרגרי ברזל ישקעו פנימה נדרש כוח כבידה שימשוך אותם, אך בכדור מעורבב הכבידה בפנים חלשה, ובמרכז היא שווה לאפס. הזרמים הפנימיים ערבבו את הברזל מהר יותר מכפי שהספיק לשקוע, והוא נותר מפוזר. גוף חם ומעורבב לעולם אינו אחיד לחלוטין: באזור אחד הצטבר מעט יותר ברזל מאשר באזורים האחרים.</p>
+<figure class="fig"><svg viewBox="0 0 680 320" role="img" style="direction:ltr"><line x1="80" x2="640" y1="270.0" y2="270.0" stroke="#ece7da"/><text x="72.0" y="274.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">0</text><line x1="80" x2="640" y1="230.0" y2="230.0" stroke="#ece7da"/><text x="72.0" y="234.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">2</text><line x1="80" x2="640" y1="190.0" y2="190.0" stroke="#ece7da"/><text x="72.0" y="194.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">4</text><line x1="80" x2="640" y1="150.0" y2="150.0" stroke="#ece7da"/><text x="72.0" y="154.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">6</text><line x1="80" x2="640" y1="110.0" y2="110.0" stroke="#ece7da"/><text x="72.0" y="114.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">8</text><line x1="80" x2="640" y1="70.0" y2="70.0" stroke="#ece7da"/><text x="72.0" y="74.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">10</text><line x1="80" x2="640" y1="30.0" y2="30.0" stroke="#ece7da"/><text x="72.0" y="34.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="end">12</text><text x="80.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">0</text><text x="167.9" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">1,000</text><text x="255.8" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">2,000</text><text x="343.7" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">3,000</text><text x="431.6" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">4,000</text><text x="519.5" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">5,000</text><text x="640.0" y="288.0" font-size="10.5" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">6,371</text><line x1="80" x2="640" y1="270" y2="270" stroke="#5b6676"/><text direction="rtl" x="360.0" y="310.0" font-size="12" font-family="Heebo" font-weight="400" fill="#5b6676" text-anchor="middle">מרחק מן המרכז (ק"מ)</text><text x="20" y="150.0" font-size="12" font-family="Heebo" fill="#5b6676" text-anchor="middle" transform="rotate(-90 20 150.0)" direction="rtl">כבידה (מ׳ לשנייה²)</text><polyline fill="none" stroke="#b5562e" stroke-width="2.6" points="80.0,270.0 84.4,268.5 88.8,266.9 93.2,265.4 97.6,263.8 102.0,262.3 106.4,260.8 110.8,259.2 115.2,257.7 119.6,256.1 123.9,254.6 128.3,253.0 132.7,251.5 137.1,250.0 141.5,248.4 145.9,246.9 150.3,245.3 154.7,243.8 159.1,242.3 163.5,240.7 167.9,239.2 172.3,237.6 176.7,236.1 181.1,234.5 185.5,233.0 189.9,231.5 194.3,229.9 198.7,228.4 203.1,226.8 207.5,225.3 211.8,223.8 216.2,222.2 220.6,220.7 225.0,219.1 229.4,217.6 233.8,216.1 238.2,214.5 242.6,213.0 247.0,211.4 251.4,209.9 255.8,208.3 260.2,206.8 264.6,205.3 269.0,203.7 273.4,202.2 277.8,200.6 282.2,199.1 286.6,197.6 291.0,196.0 295.4,194.5 299.7,192.9 304.1,191.4 308.5,189.8 312.9,188.3 317.3,186.8 321.7,185.2 326.1,183.7 330.5,182.1 334.9,180.6 339.3,179.1 343.7,177.5 348.1,176.0 352.5,174.4 356.9,172.9 361.3,171.4 365.7,169.8 370.1,168.3 374.5,166.7 378.9,165.2 383.2,163.6 387.6,162.1 392.0,160.6 396.4,159.0 400.8,157.5 405.2,155.9 409.6,154.4 414.0,152.9 418.4,151.3 422.8,149.8 427.2,148.2 431.6,146.7 436.0,145.1 440.4,143.6 444.8,142.1 449.2,140.5 453.6,139.0 458.0,137.4 462.4,135.9 466.8,134.4 471.1,132.8 475.5,131.3 479.9,129.7 484.3,128.2 488.7,126.7 493.1,125.1 497.5,123.6 501.9,122.0 506.3,120.5 510.7,118.9 515.1,117.4 519.5,115.9 523.9,114.3 528.3,112.8 532.7,111.2 537.1,109.7 541.5,108.2 545.9,106.6 550.3,105.1 554.7,103.5 559.0,102.0 563.4,100.5 567.8,98.9 572.2,97.4 576.6,95.8 581.0,94.3 585.4,92.7 589.8,91.2 594.2,89.7 598.6,88.1 603.0,86.6 607.4,85.0 611.8,83.5 616.2,82.0 620.6,80.4 625.0,78.9 629.4,77.3 633.8,75.8 638.2,74.2"/><polyline fill="none" stroke="#2a5d8f" stroke-width="2.4" stroke-dasharray="6 4" points="80.0,270.0 187.3,182.0 385.9,56.4 431.6,64.0 519.5,71.0 581.1,70.0 640.0,73.6"/><text direction="rtl" x="484.3" y="162.2" font-size="12" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">כדור ארץ מעורבב, בלי ליבה</text><text direction="rtl" x="385.9" y="46.4" font-size="12" font-family="Heebo" font-weight="700" fill="#2a5d8f" text-anchor="middle">היום, עם ליבה</text><text direction="rtl" x="141.5" y="262.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="end">במרכז: אפס</text></svg><figcaption>הכבידה בתוך כדור הארץ. בכדור מעורבב, בלי ליבה (אדום), היא יורדת בקו ישר מ-9.8 בפני השטח עד אפס במרכז — אין במרכז שום דבר שמושך את הברזל. היום, עם ליבה (מקווקו), היא כמעט קבועה לאורך כל המעטפת ומגיעה ל-10.7 בגבול הליבה.</figcaption></figure>
+<h3>2. הנסיעה אל המשווה</h3>
+<p>אזור שבו יש יותר ברזל מהווה עודף מסה. כדור הארץ התגלגל סביב ציר הסיבוב שלו עד שאזור עודף מסה זה התיישב על קו המשווה. בקו המשווה הסיבוב העצמי מחליש מעט את המשיכה הכבידתית פנימה — בכ-7% ביממה של 5.5 שעות — ולכן הברזל שבריכוז זה שוקע שם לאט יותר מבכל מקום אחר על פני הכוכב, ונותר במקומו.</p>
+<h3>3. החומר הקל נמשך אל הריכוז</h3>
+<p>הכבידה הנוספת של אזור עודף המסה הרימה מעט את המפלס שמעליו. לחומר חופשי ונייד נוח יותר להתכנס אל נקודה זו, ולכן הסיאל — החומר הקל והרטוב — זרם אליה מכל הכיוונים. כך נוצרה כיפה רחבה ונמוכה. כל חומר שהתווסף לכיפה הגדיל את המסה המקומית, הגביר את המשיכה, ומשך אליו חומר נוסף.</p>
+<h3>4. הווקטורים המקוזזים</h3>
+<p>נמתח קווים דמיוניים מפני השטח אל מרכז כדור הארץ. על כל קילוגרם של חומר לאורך כל קו פועלים שני כוחות מנוגדים: הכבידה המושכת פנימה, והסיבוב הדוחף החוצה. השקול הנותר לאחר הקיזוז ביניהם הוא הווקטור המקוזז. קו העובר דרך חומר קל ורטוב — הסיאל המוקצף, בצפיפות של כ-1,700 ק"ג למ"ק לעומת כ-3,300 ק"ג למ"ק של החומר שסביבו — נושא וקטורים מקוזזים קטנים יותר מאלה של שכניו. החומר השכן הכבד לוחץ בעוצמה רבה יותר, ודוחף את החומר הקל כלפי מעלה.</p>
+<h3>5. הלחץ הפנימי מוצא דרך</h3>
+<p>החומר הקל והרטוב, שהיה חם ובעל צמיגות נמוכה, היווה את הנקודה החלשה ביותר בשכבה החיצונית. הלחץ הפנימי של כדור הארץ, שלחץ מבפנים על כל הדפנות בדומה לתפוז סגור, נפתח החוצה דווקא דרכו. ככל שהחומר עלה למעלה, הלחץ שמעליו ירד, המים והגזים הכלואים בו התפשטו, והוא הוקצף, נעשה קל עוד יותר וצף הלאה כלפי מעלה. כך נולדה הבליטה.</p>
+<h3>6. הכבד לא שקע — הקל עזב אותו</h3>
+<p>בבליטה הצעירה הברזל לא שקע אל ליבה, משום שעדיין לא הייתה ליבה. ההפרדה התרחשה בכיוון ההפוך: הקצף הקל עלה כלפי מעלה, ואילו גרגרי הברזל הכבדים, שלא יכלו להשתלב בו, נותרו מאחור.</p>
+<h3>7. מה עוד לא פועל</h3>
+<p>בבליטה קטנה, בגובה של הר רגיל, אין כמעט הבדל במשקל החומר בין פסגתה לבסיסה: 9.18 מטר לשנייה² בפני השטח לעומת 9.15 בגובה 9 ק"מ. לפיכך, בשלב ראשוני זה המנוע הפיזיקלי הוא הציפה והמשיכה של הריכוז. כאשר הכיפה מגיעה לגובה של כאלף קילומטרים, נכנס לפעולה מנוע חדש — ראו ב-3.02.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הכבידה בתוך כדור אחיד — יורדת לאפס במרכז:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac></mstyle><mtext> </mtext><mi>G</mi><mtext> </mtext><mi>ρ</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">g(r)=\tfrac{4\pi}{3}\,G\,\rho\,r</annotation></semantics></math></span></div></div>
+<p>כמה הסיבוב מחליש את המשיכה פנימה במשווה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac></mstyle><mtext> </mtext><mi>G</mi><mtext> </mtext><mi>ρ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\Omega^2}{\tfrac{4\pi}{3}\,G\,\rho}</annotation></semantics></math></span></div></div>
+<p>הגובה שהמפלס עולה מעל עודף מסה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>N</mi><mo>≈</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>U</mi></mrow><mi>g</mi></mfrac></mrow><annotation encoding="application/x-tex">\Delta N\approx\frac{\Delta U}{g}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>בסיס האגס ישב על קו המשווה של הפסים של האוקיינוס השקט — המקום המדויק שבו עודף מסה צפוי להתיישב (ג-2.2.02).</li>
+<li><strong>הירח דל בברזל:</strong> הוא נבנה מחומר קל שעזב את הברזל מאחור.</li>
+<li><strong>מבחן:</strong> אם הבליטה נולדה מעל ריכוז ברזל, מתחת לאוקיינוס השקט, בבסיס המעטפת, צפוי עקב של ברזל שירד שם מאוחר יותר. תחזית זו מתאימה לתחזית שכבר מופיעה במאמרים: האגס נשא עמו את רוב הברזל שעלה לתוכו, ולאחר השחרור שקע החלק הכבד שלו מתחת לבסיסו — ולכן האזור הפסיפי בבסיס המעטפת צפוי להיות עשיר בברזל וצפוף יותר מן האזור האפריקאי (מאמר 3 §E.2; מאמר 14, נושא 89).</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>): כדור הארץ הצעיר — חם, מעורבב, בלי ליבה. שלב 1 (<a href="enc_story_he.html#c7">א-07</a>): הבליטה נולדת מעל ריכוז הברזל, על קו המשווה. שלב 2 (<a href="enc_story_he.html#c8">א-08</a>): הכיפה מתרוממת.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מדוע נוצרה בליטה אחת ולא בליטות רבות בכל מקום:</strong> היכן שהיה עודף ברזל.</li>
+<li><strong>מדוע הבליטה ישבה על קו המשווה:</strong> לשם הסיבוב העצמי מעביר עודף מסה.</li>
+<li><strong>מניין הגיע החומר שבנה אותה:</strong> הסיאל שנמשך אל הריכוז מכל הכיוונים.</li>
+<li><strong>כיצד נפרדה הבליטה מן הברזל בטרם הייתה ליבה שתמשוך אותו:</strong> הקל עזב את הכבד.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · הכבידה בתוך כדור בלי ליבה</span>
+<p>בכדור בעל צפיפות אחידה, עוצמת הכבידה בעומק כלשהו שווה לכבידה בפני השטח כפול היחס שבין המרחק מן המרכז לבין רדיוס הכדור. בכדור הארץ: 9.8 מטר לשנייה² בפני השטח, רדיוס 6,371 ק"מ. בחצי הדרך למרכז (3,185 ק"מ מן המרכז) — 4.9. במרחק 1,000 ק"מ מן המרכז — כ-1.5. במרכז עצמו — אפס. בכדור ארץ חסר ליבה, אין במרכז שום גורם המושך את הברזל אליו.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>אייזק ניוטון הראה בשנת 1687 כי בתוך כדור רק המסה שמתחת לנקודה מושכת אותה פנימה. Gold (1955), ואחריו Goldreich ו-Toomre (1969), הראו שכוכב מסתובב מסדר את עצמו כך שעודפי מסה מתמקמים על קו המשווה. במודל LEF שני כלים פיזיקליים אלה, יחד עם משיכת עודף המסה וציפת חומר קל, מסבירים היכן ומדוע נולדה הבליטה.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>יממה</td><td>5.5 שעות</td><td>ב-1.01</td></tr><tr><td>הכבידה במרכז כדור הארץ, בלי ליבה</td><td>0</td><td>משפט הקליפות</td></tr><tr><td>החלשת המשיכה פנימה במשווה</td><td>כ-7%</td><td>חישוב, 24.11.2026</td></tr><tr><td>עודף מסה בדוגמה (2,000 × 500 ק"מ, 5% יותר ברזל)</td><td>כ-<bdi dir="ltr">3×10²⁰</bdi> ק"ג</td><td>חישוב, 24.11.2026</td></tr><tr><td>עליית המפלס מעליו</td><td>כמה ק"מ (<bdi dir="ltr">2–4</bdi>)</td><td>חישוב, 24.11.2026</td></tr><tr><td>צפיפות הסיאל המוקצף מול החומר שסביבו</td><td>כ-1,700 מול כ-3,300 ק"ג למ"ק</td><td>ב-1.03</td></tr><tr><td>הכבידה האפקטיבית: פני השטח / 9 ק"מ מעליהם</td><td>9.18 / 9.15 מ' לשנייה²</td><td>חישוב, 24.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0; <a href="enc_story_he.html#c7">א-07</a> · שלב 1; <a href="enc_story_he.html#c8">א-08</a> · שלב 2.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · <a href="enc_source150_he.html">ב-1.02 · לחץ המקור 150 GPa</a> · <a href="enc_foam_he.html">ב-1.03 · המגמה המוקצפת</a> · <a href="enc_viscosity_he.html">ב-1.07 · טמפרטורה, צמיגות, זמן</a> · <a href="enc_bulgepear_he.html">ב-3.02 · מבליטה לאגס</a> · <a href="enc_pangaeadepth_he.html">ב-3.03 · פנגיאה מהעומק</a>.</li>
+<li><strong>תעלומות:</strong> ג-2.2.02 · בסיס האגס על קו המשווה של הפסים · ג-5.01 · ברזל.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הכיפה נולדה, והיא גדלה מעצמה. אבל ככל שהיא עולה, משהו משתנה: החומר בראשה שוקל פחות ופחות. איך כיפה הופכת לאגס — <a href="enc_bulgepear_he.html">ב-3.02 · מבליטה לאגס</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper11_he.html">מאמר 11 · לידת ירחים</a></li><li><a href="paper14_he.html">מאמר 14 · נושאי מחקר</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Gold, T. (1955). Instability of the Earth's axis of rotation. Nature, 175, 526–529. <a href="https://doi.org/10.1038/175526a0" rel="noopener">doi.org/10.1038/175526a0</a></li><li>Goldreich, P., & Toomre, A. (1969). Some remarks on polar wandering. Journal of Geophysical Research, 74, 2555–2567. <a href="https://doi.org/10.1029/JB074i010p02555" rel="noopener">doi.org/10.1029/JB074i010p02555</a></li><li>Sandwell, D. T., & Smith, W. H. F. (1997). Marine gravity anomaly from Geosat and ERS 1 satellite altimetry. Journal of Geophysical Research, 102, 10039–10054. <a href="https://doi.org/10.1029/96JB03223" rel="noopener">doi.org/10.1029/96JB03223</a></li><li>Solomatov, V. S. (2000). Fluid dynamics of a terrestrial magma ocean. In R. M. Canup & K. Righter (Eds.), Origin of the Earth and Moon (pp. 323–338). University of Arizona Press.</li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

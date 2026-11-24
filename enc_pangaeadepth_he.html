@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פנגיאה מהעומק — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-3.03 באנציקלופדיה של מודל LEF: פנגיאה מהעומק — האגס שנאסף שקע מתחת לאוקיינוס השקט כזרם יורד, החומר בבסיס המעטפת נדחק לצד הנגדי ועלה שם, והחלקים הקלים שהתמיינו שוב בנו את חומר היבשות; שני גושי ה-LLVP זה מול זה.">
+<link rel="canonical" href="https://lef-model.com/enc_pangaeadepth_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-3.03</span> · <a href="LEF_enc_pangaeadepth_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · האגס והגוף שבקצהו</p>
+<h1>פנגיאה מהעומק: האגס שחזר והאיזון האנטיפודי</h1>
+<p>ערך מושג · ב-3.03 · מבוסס על מאמרים 1, 3 ו-14 ועל ההחלטות של 24.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 3. האגס והגוף שבקצהו ← פנגיאה מהעומק · בסיפור: <a href="enc_story_he.html#c13">א-13</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>מה קרה לאגס לאחר שהירח נפרד, וכיצד השפיע הדבר על הצד הנגדי של כדור הארץ. האגס — מסה השקולה לכתשע מסות ירח של חומר — נאסף בחזרה ושקע עמוק אל תוך כדור הארץ מתחת לאוקיינוס השקט. שקיעה זו יצרה זרם יורד עצום. החומר שבבסיס המעטפת נדחק ממנו לכל הצדדים, נפגש בצד הנגדי של כדור הארץ, ונאלץ לעלות שם כלפי מעלה. החלקים הקלים שנגררו למטה יחד עם החומר הכבד התמיינו מחדש בבסיס המעטפת, וצפו כלפי מעלה דווקא בצד השני. בדרך זו נבנה החומר של היבשות מן העומק — ומעליו התאספה יבשת העל פנגיאה.</p>
+<p>כל התהליך הזה התרחש בתוך המעטפת: לא בליבה, ולא באמצעות החלקה על פני הקרום אל הצד השני.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: מסוע</h2>
+<p>דמיינו מסוע עצום היורד בצד אחד, נע לאורך התחתית ועולה בצד הנגדי. בצד הפסיפי מתרחשת הירידה: האגס שנאסף ושוקע פנימה. לאורך בסיס המעטפת מתבצעת התנועה האופקית: החומר נדחק לצדדים. ובצד הנגדי מתרחשת העלייה: החומר שהגיע לשם אינו יכול להמשיך לצדדים אלא לעלות כלפי מעלה, והמרכיב הקל שבו עולה ראשון.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>בבסיס המעטפת שוכנים שני אזורים עצומים, בגודל של יבשת, שבהם גלי רעידות האדמה נעים לאט — אזורי המהירות הנמוכה (LLVP): האחד מתחת לאוקיינוס השקט והאחר מתחת לאפריקה. שני האזורים ניצבים כמעט בדיוק זה מול זה, משני עבריו של כדור הארץ (Garnero &amp; McNamara 2008).</li>
+<li>האזור האפריקאי מתנשא לגובה רב יותר; האזור הפסיפי נמוך ורחב יותר (מאמר 3, חלק E).</li>
+<li>בשחזור מיקומה הקדום של פנגיאה מתברר כי יבשת העל ישבה מעל האזור האפריקאי. התפרצויות הלבה הענקיות של 300 מיליון השנים האחרונות, וכן הסלעים שהעלו יהלומים מן העומק, בקעו משולי שני האזורים הללו (Burke &amp; Torsvik 2004; Torsvik et al. 2010).</li>
+<li>זרימת הסעה במעטפת בדפוס של "צד אחד יורד, צד שני עולה" מוכרת במחקר הגיאופיזיקלי, ומקושרת למחזורי ההתאספות וההתפרקות של יבשות העל (Zhong et al. 2007).</li>
+<li>סביב האוקיינוס השקט משתרעת טבעת רציפה של אזורי הפחתה — "טבעת האש" — שבהם קרום שוקע אל תוך המעטפת.</li>
+<li>חלק ניכר מן הקרום היבשתי הקיים כיום נוצר כבר לפני יותר מ-2.5 מיליארד שנה (Hawkesworth &amp; Kemp 2006).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> שני אזורי ה-LLVP קיימים וניצבים זה מול זה; האזור הפסיפי נמוך ורחב, ואילו האפריקאי גבוה; יבשות העל התאספו מעל הצד האפריקאי; ובמעטפת פועלת זרימה גלובלית היורדת בצד אחד ועולה בצד הנגדי.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל מוצאם של שני האזורים עדיין שנוי במחלוקת — חומר קדום שלא השלים את התמיינותו, או שריד של גוף פלנטרי שהתנגש בכדור הארץ (מאמר 3, E.3) — והדפוס של צד יורד וצד עולה מפורש כתוצאה מקרית של הסעה תרמית. במודל LEF יש לדפוס זה סיבה פיזיקלית מוגדרת: האגס שנאסף בחזרה ושקע בצד הפסיפי.</li>
+<li><strong>מה לקוח ומה חדש:</strong> שני אזורי ה-LLVP, ההסעה מצד לצד ומחזור יבשות העל לקוחים מן הספרות המדעית. החידוש של LEF: זיהוי האגס שנאסף ושקע כזרם היורד, ואת החומר הקל שהתמיין מחדש ועלה בצד הנגדי כמקור החומר של היבשות.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. בזמן שהאגס גדל — הצד השני מתרוקן</h3>
+<p>כאשר האגס צמח והתארך, נמשך אליו חומר מכל הכיוונים, וחומר מן הסביבה זרם פנימה כדי למלא את החסר. בדרך זו הזין גם הצד הנגדי של כדור הארץ את האגס בעקיפין. כל עוד האגס עמד וגדל, כדור הארץ היה "שמן" ומוטה מסה בצד אחד.</p>
+<h3>2. האגס נאסף ושוקע</h3>
+<p>לאחר שהירח נפרד, האגס — מסה השקולה לכתשע מסות ירח, כ-11% ממסת כדור הארץ — נאסף בחזרה אל כדור הארץ. חלקו הכבד, שנשא את רוב הברזל שעלה לתוכו, שקע עמוק אל בסיס המעטפת, ממש מתחת לבסיס האגס — במקום שבו מזוהה כיום האזור הפסיפי. חוסר האיזון במסה לא נעלם עם היפרדות הירח: הוא שב פנימה כעודף מסה בצד הפסיפי.</p>
+<h3>3. המסוע</h3>
+<p>החומר השוקע דוחק את החומר המצוי בבסיס המעטפת לכל הצדדים. זרמים אופקיים אלה נעים לאורך תחתית המעטפת ונפגשים בצד הנגדי של כדור הארץ, ושם החומר נאלץ לעלות כלפי מעלה. בצד הפסיפי פועל זרם יורד; בצד הנגדי פועל זרם עולה.</p>
+<figure class="fig"><svg viewBox="0 0 680 350" role="img" style="direction:ltr"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#b5562e"/></marker></defs><circle cx="340" cy="175" r="150" fill="#f3ece0" stroke="#5b6676"/><circle cx="340" cy="175" r="70" fill="#e2d6c2" stroke="#5b6676"/><text direction="rtl" x="340.0" y="180.0" font-size="12" font-family="Heebo" font-weight="700" fill="#5b6676" text-anchor="middle">ליבה</text><path d="M 208 135 Q 200 175 208 215 Q 250 205 256 175" fill="#c98b6b" opacity="0.85"/><path d="M 416 120 Q 450 80 460 105 L 460 245 Q 450 270 416 230 Z" fill="#d9c3a3" opacity="0.7"/><path d="M 195 65 L 230 155" stroke="#b5562e" stroke-width="3" fill="none" marker-end="url(#ah)"/><path d="M 260 225 Q 340 310 425 230" stroke="#b5562e" stroke-width="3" fill="none" marker-end="url(#ah)"/><path d="M 260 125 Q 340 40 425 120" stroke="#b5562e" stroke-width="3" fill="none" marker-end="url(#ah)"/><path d="M 450 175 L 510 175" stroke="#2f7d57" stroke-width="3.5" fill="none" marker-end="url(#ah)"/><rect x="508" y="145" width="16" height="60" fill="#2f7d57" opacity="0.6"/><text direction="rtl" x="180.0" y="50.0" font-size="12.5" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">הצד הפסיפי: האגס שוקע</text><text direction="rtl" x="210.0" y="250.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">הגוש הפסיפי</text><text direction="rtl" x="340.0" y="343.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#b5562e" text-anchor="middle">לאורך בסיס המעטפת</text><text direction="rtl" x="516.0" y="135.0" font-size="12.5" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="middle">פנגיאה</text><text direction="rtl" x="440.0" y="275.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#1d2430" text-anchor="middle">הגוש האפריקאי</text><text direction="rtl" x="500.0" y="230.0" font-size="11.5" font-family="Heebo" font-weight="700" fill="#2f7d57" text-anchor="end">הקל עולה</text></svg><figcaption>המסוע, בחתך של כדור הארץ (ציור עקרוני, לא בקנה מידה): האגס שנאסף שוקע בצד הפסיפי; החומר בבסיס המעטפת נדחק לצדדים ונפגש בצד הנגדי; שם הוא עולה, והחלקים הקלים שהתמיינו שוב צפים ובונים את חומר היבשות — ומעליו התאספה פנגיאה. כל התנועה בתוך המעטפת.</figcaption></figure>
+<h3>4. המיון השני</h3>
+<p>יחד עם חלקו הכבד של האגס נגררו מטה אל העומק גם מרכיבים קלים. בדרך, בבסיס המעטפת, נפרדו המרכיבים הקלים מן הכבדים ועלו מעלה עם הזרם העולה. קצב עלייתו של חומר קל תלוי בממדיו ובצמיגות המעטפת המקיפה אותו:</p>
+<div class="tw"><table class="lab"><tr><th>גוש קל (צפיפות נמוכה ב-300 ק"ג למ"ק)</th><th>צמיגות המעטפת (Pa·s)</th><th>מהירות עלייה</th><th>זמן לעלות 2,900 ק"מ</th></tr><tr><td>רדיוס 50 ק"מ</td><td>10²¹</td><td>כ-4.7 ס"מ בשנה</td><td>כ-60 מיליון שנה</td></tr><tr><td>רדיוס 100 ק"מ</td><td>10²¹</td><td>כ-19 ס"מ בשנה</td><td>כ-15 מיליון שנה</td></tr><tr><td>רדיוס 50 ק"מ</td><td>10²²</td><td>כ-0.5 ס"מ בשנה</td><td>כ-600 מיליון שנה</td></tr></table></div>
+<p>(חוק סטוקס; חישוב סדר גודל.) מהירויות אלה מצויות בדיוק בסדר הגודל של תנועת הלוחות הטקטוניים בימינו — סנטימטרים ספורים בשנה.</p>
+<h3>5. פנגיאה מן העומק</h3>
+<p>החומר הקל שעלה בצד הנגדי צף אל פני השטח ובנה שם קרום יבשתי. החומר של היבשות לא נדד אל הצד השני בהחלקה על פני הקרום — הוא עלה אליו מלמטה, מן העומק. מעל תשתית זו, לאורך מאות מיליוני שנים, התאספו היבשות שוב ושוב; יבשת העל פנגיאה היא האחרונה בשרשרת זו.</p>
+<h3>6. האיזון קל יותר כשהסיבוב מאט</h3>
+<p>כאשר כדור הארץ הסתובב במהירות, הדחיפה הצנטריפוגלית של הסיבוב החזיקה את המסה מרוכזת סביב קו המשווה והגבירה את הבליטה — ובכך פעלה כנגד האיזון הפנימי. כאשר הסיבוב האט, מיממה של 5.77 שעות והלאה, נחלשה אחיזה זו, והחומר יכול היה להתחלק ולהתאזן בין שני צדי כדור הארץ.</p>
+<h3>7. רק במעטפת</h3>
+<p>כל תנועת ההסעה הזו התרחשה בתוך המעטפת בלבד. הליבה המתכתית לא השתתפה בה, והחומר לא החליק על פני הקרום אל הצד הנגדי: הוא ירד בצד הפסיפי, נע לאורך בסיס המעטפת ועלה בצד הנגדי.</p>
+<h3>8. התמונה לאורך הזמן</h3>
+<div class="tw"><table class="lab"><tr><th>שלב</th><th>מה קורה</th></tr><tr><td>בזמן שהאגס גדל</td><td>החומר נודד אל האגס; הצד הנגדי מתרוקן</td></tr><tr><td>השחרור</td><td>האגס נאסף ושוקע בצד הפסיפי</td></tr><tr><td>מיליוני עד מיליארד שנים</td><td>המסוע מעביר חומר לאורך בסיס המעטפת; הקל עולה בצד הנגדי</td></tr><tr><td>היום</td><td>שני אזורי LLVP זה מול זה; האוקיינוס השקט בצד אחד, ויבשות העל התאספו בצד השני</td></tr></table></div>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>מהירות העלייה של גוש קל (חוק סטוקס; a — רדיוס הגוש, η — צמיגות המעטפת):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><msup><mi>a</mi><mn>2</mn></msup></mrow><mrow><mn>9</mn><mtext> </mtext><mi>η</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">v=\frac{2\,\Delta\rho\,g\,a^2}{9\,\eta}</annotation></semantics></math></span></div></div>
+<p>הזמן לעלות לאורך מרחק L:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mi>L</mi><mi>v</mi></mfrac></mrow><annotation encoding="application/x-tex">t=\frac{L}{v}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li><strong>שני אזורי LLVP ניצבים זה מול זה משני עברי כדור הארץ:</strong> האזור הפסיפי — מתחת לבסיס האגס, סמוך לקיריטימטי; והאזור האפריקאי — בצד הנגדי.</li>
+<li>האזור הפסיפי נמוך ורחב, בדומה לערימה של חומר כבד ששקע אל התחתית; האזור האפריקאי — האונה שמנגד — מתנשא לגובה רב, ומעליו עולה החומר.</li>
+<li>יבשת העל פנגיאה ישבה מעל האזור האפריקאי.</li>
+<li>סביב האוקיינוס השקט משתרעת טבעת של אזורי הפחתה ושקיעה.</li>
+<li><strong>מבחן:</strong> אם חומר היבשות אכן עלה מן העומק לאחר מיון שני בבסיס המעטפת, הקרום היבשתי העתיק חייב לשאת חתימה כימית המעידה על מעבר בבסיס המעטפת. מבחן נוסף (מאמר 14, נושא 89): האזור הפסיפי עשיר יותר בברזל וצפוף יותר מן האזור האפריקאי.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 6 (<a href="enc_story_he.html#c13">א-13</a>): גורל האגס — הוא נאסף בחזרה ושוקע. שלב 7 (<a href="enc_story_he.html#c14">א-14</a>): הירח מתרחק, הסיבוב מאט, והאיזון הפנימי נעשה קל יותר. שלב 8 (<a href="enc_story_he.html#c15">א-15</a>): היום — שני האזורים בבסיס המעטפת, האוקיינוס השקט ויבשות העל.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li>מדוע קיימים בבסיס המעטפת שני אזורים גדולים, ומדוע הם עומדים זה מול זה: האזור הפסיפי הוא האגס שנאסף ושקע; האזור האפריקאי הוא האונה שמנגד, ומעליה עלה החומר.</li>
+<li>מדוע האזור הפסיפי נמוך ורחב, ואילו האזור האפריקאי גבוה.</li>
+<li>מדוע יבשות העל התאספו דווקא מעל הצד האפריקאי.</li>
+<li><strong>מניין הגיע החומר שבנה את היבשות:</strong> הוא עלה מן העומק, בצד הנגדי לאגס.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה זמן לוקח לעלות</span>
+<p>חשבו כמה זמן נדרש לגוש חומר קל לעלות מבסיס המעטפת אל פני השטח. קחו גוש ברדיוס 50 ק"מ (a = 50,000 מטר), קל מן הסביבה ב-300 ק"ג למ"ק, בשדה כבידה של 9 מטר לשנייה², ובצמיגות מעטפת של 10²¹ Pa·s. הציבו בחוק סטוקס: v = 2 × 300 × 9 × (50,000)² / (9 × 10²¹). תקבלו מהירות של כ-<bdi dir="ltr">1.5×10⁻⁹</bdi> מטר לשנייה — כ-4.7 ס"מ בשנה. כדי לטפס מרחק של 2,900 ק"מ זקוק הגוש לכ-60 מיליון שנה. כעת נסו להכפיל את הרדיוס: מהירות העלייה גדלה פי ארבעה.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>אלפרד ואגנר הציע בשנת 1912 כי היבשות היו מחוברות בעבר ליבשת-על אחת, פנגיאה. בשנות ה-80 של המאה העשרים חשפה הטומוגרפיה הסייסמית את שני האזורים הענקיים בבסיס המעטפת. Burke ו-Torsvik הראו בשנת 2004 כי התפרצויות הלבה הגדולות בוקעות משולי האזורים הללו, ו-Zhong ועמיתיו קשרו בשנת 2007 את מחזור יבשות העל לזרימת הסעה היורדת בצד אחד ועולה בצד הנגדי. במודל LEF יש לדפוס גלובלי זה נקודת פתיחה פיזיקלית ברורה: האגס שנאסף בחזרה ושקע בצד הפסיפי.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>מסת האגס שנאסף</td><td>כתשע מסות ירח (<bdi dir="ltr">7–12</bdi>), כ-11% ממסת כדור הארץ</td><td>מאמר 14, נושא 89</td></tr><tr><td>בסיס האגס</td><td>ליד קיריטימטי (1.9° צפון, 157.5° מערב)</td><td>מאמר 1; מאמר 3 §E.4</td></tr><tr><td>האזור הפסיפי מול האפריקאי</td><td>נמוך ורחב / גבוה</td><td>מאמר 3, חלק E</td></tr><tr><td>יממה בשחרור</td><td>5.77 שעות</td><td>מאמר 1</td></tr><tr><td>מהירות עלייה של גוש קל (50 ק"מ, 10²¹)</td><td>כ-4.7 ס"מ בשנה</td><td>חישוב, 24.11.2026</td></tr><tr><td>זמן עלייה של 2,900 ק"מ</td><td><bdi dir="ltr">15–600</bdi> מיליון שנה (לפי גודל וצמיגות)</td><td>חישוב, 24.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c13">א-13</a> · שלב 6; <a href="enc_story_he.html#c14">א-14</a> · שלב 7; <a href="enc_story_he.html#c15">א-15</a> · שלב 8.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_viscosity_he.html">ב-1.07 · טמפרטורה, צמיגות, זמן</a> · <a href="enc_corolimit_he.html">ב-2.03 · קו הקורוטציה כגבול גודל האגס</a> · <a href="enc_bulgeonset_he.html">ב-3.01 · תחילת הבליטה</a> · <a href="enc_bulgepear_he.html">ב-3.02 · מבליטה לאגס</a> · ב-4.04 · גורל האגס.</li>
+<li><strong>תעלומות:</strong> ג-2.1.03 · LLVP שני המחוזות.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הסיפור של הבליטה, האגס ופנגיאה הוא סיפור אחד, שהתרחש כולו בתוך כדור הארץ. אבל על האגס עצמו, כל עוד עמד, נעו שתי שכבות זו על זו — הסיאל הקל על הסימה הכבדה. איך — <a href="enc_sialslide_he.html">ב-3.04 · הסיאל מחליק על הסימה</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper01_he.html">מאמר 1 · המודל</a></li><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper14_he.html">מאמר 14 · נושאי מחקר</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Garnero, E. J., & McNamara, A. K. (2008). Structure and dynamics of Earth's lower mantle. Science, 320, 626–628. <a href="https://doi.org/10.1126/science.1148028" rel="noopener">doi.org/10.1126/science.1148028</a></li><li>Burke, K., & Torsvik, T. H. (2004). Derivation of Large Igneous Provinces of the past 200 million years from long-term heterogeneities in the deep mantle. Earth and Planetary Science Letters, 227, 531–538. <a href="https://doi.org/10.1016/j.epsl.2004.09.015" rel="noopener">doi.org/10.1016/j.epsl.2004.09.015</a></li><li>Torsvik, T. H., Burke, K., Steinberger, B., Webb, S. J., & Ashwal, L. D. (2010). Diamonds sampled by plumes from the core–mantle boundary. Nature, 466, 352–355. <a href="https://doi.org/10.1038/nature09216" rel="noopener">doi.org/10.1038/nature09216</a></li><li>Zhong, S., Zhang, N., Li, Z.-X., & Roberts, J. H. (2007). Supercontinent cycles, true polar wander, and very long-wavelength mantle convection. Earth and Planetary Science Letters, 261, 551–564. <a href="https://doi.org/10.1016/j.epsl.2007.07.049" rel="noopener">doi.org/10.1016/j.epsl.2007.07.049</a></li><li>Hawkesworth, C. J., & Kemp, A. I. S. (2006). Evolution of the continental crust. Nature, 443, 811–817. <a href="https://doi.org/10.1038/nature05191" rel="noopener">doi.org/10.1038/nature05191</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
