@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>בזלתים קבורות — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.4.09 באנציקלופדיה של מודל LEF: ב-SPA רק 4.1% בזלת גלויה; הבזלת המוסתרת רק בעיגול של 15° — מקום הימה המרכזית; הסהר הוא מה שהיא זרקה כשהירח המחובר הסתובב מהר; והגילים הם רצף אחד ממקור שהתחיל עשיר ונשטף.">
+<link rel="canonical" href="https://lef-model.com/enc_spaburied_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.4.09</span> · <a href="LEF_enc_spaburied_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>בזלתים קבורות: הימה המרכזית והשקית שנשטפה</h1>
+<p>ערך תעלומה · ג-1.4.09 · מבוסס על מאמר 8 ועל ההחלטות של 4.10, 5.10, 17.10, 24.11 ו-26.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← בזלתים קבורות · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>לבה עולה היכן שהקרום דק והקרקע נמוכה. בצד הקרוב, האגנים העמוקים בעלי קרום דק מוצפים בבזלת כהה. SPA הוא האגן העמוק מכולם, והקרום שבו דק כמו שלהם — ובכל זאת רק כ-4% ממנו מכוסים בבזלת גלויה. מתחת לכיסוי בהיר, במרכז, מצויה בזלת מוסתרת. ובזלות מאותו אזור מגיעות מגילים שונים מאוד: מ-4.2 מיליארד שנה ועד 2.2 מיליארד שנה. מדוע מצויה שם בזלת גלויה מעטה כל כך? מדוע המוסתרת שוכנת דווקא במרכז? ומדוע הפעילות נמשכה זמן רב כל כך, בכמויות שהלכו וקטנו?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>בזלת גלויה בטבעות סביב מרכז הכיפה:</strong> 8.5% ב-0°–10°, 9.2% ב-10°–20°, 3.4% ב-20°–30°, 1.3% ב-30°–40°, 0.7% בשפה (40°–50°). ב-300 הק"מ הפנימיים — 14.6%; בכיפה מרכזית ברוחב של כ-900 ק"מ (בגודל של אגן בצד הקרוב) — 8.4%; ב-SPA כולו — 4.1% (מפת LROC; מאמר 8).</li>
+<li><strong>אגנים בעלי קרום דק מ-30 ק"מ במרכזם:</strong> Serenitatis — קרום 7.8 ק"מ, 67.2% בזלת; Imbrium — 14.1, 70.8%; Crisium — 14.9, 32.7%; Humorum — 16.6, 44.2%; SPA — 16.7, 4.1%; Nectaris — 16.8, 22.2%. בצד הרחוק: Moscoviense N — 22.0, 7.1%; Freundlich-Sharonov — 25.0, 0.6%; Mendel-Rydberg — 27.2, 0.7% (מאמר 8).</li>
+<li><strong>בדיקה:</strong> הבזלת הגלויה על פני כל הירח 16.2% (בספרות כ-16%–17%); בצד הקרוב 30.1%; בצד הרחוק 2.3% (מאמר 8).</li>
+<li><strong>בזלת מוסתרת:</strong> 13.6%–24.1% מן העיגול המרכזי של 15° (גבול מינימלי ומקסימלי), ומחוץ לעיגול — כמעט אינה מצויה (Wang et al. 2024; מאמר 8).</li>
+<li><strong>129 מרבצים של בזלת גלויה בתוך SPA ובסביבתו:</strong> עובי של כ-<bdi dir="ltr">31–273</bdi> מטר, נפח של כ-<bdi dir="ltr">1–2,630</bdi> קמ"ק כל אחד (Pasckert et al. 2018).</li>
+<li><strong>הגילים:</strong> נוריטים — 4,247 ± 5 מיליון שנה (Su et al. 2025); שבר בזלת עשיר באלומיניום, ממקור עשיר ב-KREEP (μ ≈ 1,620) — 4,203 ± 4 מיליון שנה (Zhang et al. 2025b); ספירת מכתשים על 101 מתוך 129 המרבצים — <bdi dir="ltr">3.7–2.2</bdi> מיליארד שנה, שיא ב-<bdi dir="ltr">3.6–3.2</bdi>; כ-99% משברי הבזלת של Chang'e-6, ממקור מדולדל (μ ≈ 360) — 2,807 ± 3 מיליון שנה (Zhang et al. 2025b; Cui et al. 2024).</li>
+<li><strong>המקור של הבזלות הצעירות "מדולדל במיוחד":</strong> ⁸⁷Sr/⁸⁶Sr התחלתי <bdi dir="ltr">0.699237–0.699329,</bdi> εNd <bdi dir="ltr">15.80–16.13</bdi> (Zhou et al. 2025).</li>
+<li>אתר Chang'e-6 (כ-41.6°S, כ-206°E) שוכן כ-11.6° ממרכז הכיפה, בתוך העיגול של 15°. כל הגילים מן המעבדה באים מתוכו (מאמר 8).</li>
+<li><strong>במחקר המקובל:</strong> בצד הרחוק מצויים פחות מקורות חום (ה-KREEP מרוכז בצד הקרוב), והמעטפת מתחת ל-SPA מדולדלת — לפיכך פחות מגמה הגיעה אל פני השטח. בזלת מוסתרת היא געשיות קדומה שכוסתה בחומר שנזרק מהתנגשויות מאוחרות (Whitten &amp; Head 2015). הגעשיות בצד הרחוק נמשכה לפחות 1.4 מיליארד שנה, ממקורות שונים, ודעכה (Li et al. 2024). את 4.25 ו-3.87 מיליארד שנה מסבירות שתי התנגשויות באותו מקום; את המקור העשיר והמדולדל — שני מקורות נפרדים במעטפת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: שקית תה שחולטים שוב ושוב</h2>
+<p>שמים שקית תה בכוס מים רותחים. הכוס הראשונה כהה וחזקה. מוציאים את השקית, שמים אותה בכוס חדשה — והכוס השנייה בהירה יותר. כל כוס חלשה מקודמתה, כי מה שמתמוסס בקלות כבר יצא. בסוף נשארת שקית כמעט שטופה, שכמעט לא נותנת כלום. מי שרואה שורה של כוסות, מהכהה לבהירה, יודע שזו אותה שקית — ולא שקיות שונות (מאמר 8).</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> מצויה בזלת גלויה מעטה; מצויה בזלת מוסתרת במרכז; הפעילות נמשכה לפחות כמיליארד וחצי שנה ודעכה; המקור הצעיר מדולדל מאוד.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל כל ממצא מקבל הסבר — אולם דרך אירועים ומקורות נפרדים: שתי התנגשויות באותה נקודה, ושני מקורות במעטפת. וקרום דק הוא דרך, ולא מקור חום: הוא מקל על הנוזל לצאת, אולם גורם כלשהו נדרש לייצר אותו, ובצד הרחוק הספקת החום הרדיואקטיבי קטנה (מאמר 8). במודל LEF זהו רצף אחד: חימום בעת שהירח מחובר, הניתוק, וזנב ארוך של התקררות, ממקור אחד שהחל עשיר והלך ונשטף.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מפת הבזלת, מפת הבזלת המוסתרת, הגילים והאיזוטופים לקוחים מן הספרות המדעית. החידוש: מיקום הימה המרכזית — בעיגול של 15° סביב מרכז הכיפה — כתחזית שנבדקה; וקריאת הגילים כרצף אחד.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. חימום מלמטה, לא שפיכה</h3>
+<p>SPA עבר חימום והתכה מלמטה — ללא התפרצות וללא בעבוע (זוהר, 4.10.2026). רוב האגן הוא אזור מחומם שממנו לא יצאה לבה; הוא נכנס לחישוב האחוזים כשטח עצום ומדלל אותו. אך ורק במרכז, היכן שהחום היה הגבוה ביותר, הגיע החומר למצב נוזלי דיו כדי להגיע אל פני השטח (מאמר 8). בשאר SPA לא פרצה לבה ולא זרמה: החומרים הנדיפים חלחלו החוצה דרך פתחים שפתחו לעצמם, ואלה נסגרו (זוהר, 17.10.2026).</p>
+<h3>2. הימה המרכזית</h3>
+<p>בתחילה, בכיפה, בין 0° ל-15°, הייתה ימה גדולה, רגילה וסוערת — פתח. דרכה נזרק חומר שנחת במקומות שונים, לאו דווקא בחזרה לתוכה. לאחר מכן היא חוממה יחד עם כל האזור, התבשלה ונמחקה בדרגות שונות (זוהר, 4.10.2026; מאמר 8). המודל מיקם את הימה בעיגול של 15° — והבזלת המוסתרת נמצאה בעיגול זה, וכמעט בשום מקום אחר.</p>
+<h3>3. מה מוסתר שם</h3>
+<p>הבזלת המוסתרת של המרכז היא החומר שבין המבער לבין החלק החיצוני של SPA, שהחום המיס במקום — והימה המרכזית בתוכו — שחומם עם האזור ונמחק. הוא מצוי מתחת לפני השטח, ומעולם לא נשפך על פניו. לאחר הניתוק הוא קפא לאט, מבחוץ פנימה (מאמר 8).</p>
+<h3>4. הסהר — מה שהימה זרקה</h3>
+<p>בעת שהירח היה מחובר והסתובב במהירות עם כדור הארץ, הקצה הרחוק שלו ניצב מעבר לקו הקורוטציה. חומר שהימה המרכזית זרקה שהה באוויר כ-<bdi dir="ltr">35–40</bdi> דקות, והקרקע הסתובבה מתחתיו — לפיכך נחת מאחור, בצד המאסף. זהו סהר התוריום, במערב-צפון-מערב (מאמר 8; זוהר, 4.10.2026). בהדמיה, ביממה של 5.77 שעות, זריקה של כ-<bdi dir="ltr">0.95–1.0</bdi> ק"מ/ש' מניבה סהר: 74%–96% מן החומר בצד המאסף, 29°–32° מן הימה.</p>
+<h3>5. אחרי הניתוק: בלי סהר</h3>
+<p>לאחר הניתוק הירח לא הסתובב עוד עם היממה המהירה של כדור הארץ, והקצה הרחוק שלו לא ניצב עוד מעבר לקו. לחץ כדור הארץ נפסק; הלחץ של הירח עצמו נמשך זמן קצר ודעך (זוהר, 24.11.2026 ו-26.11.2026). הימה נרגעה, נותרה חמה וקפאה לאט במקום. משום כך אין סהר מתקופה זו, והבזלת הגלויה הצעירה מצויה במרכז ומצפון לו — ולא בסהר (מאמר 8).</p>
+<h3>6. רצף אחד, מקור אחד</h3>
+<p>4.25 ו-4.20 מיליארד שנה — התכה ולבה בזמן המבער: הנוריטים, והבזלת העשירה שהגיעה מכדור הארץ במצב עשיר. 3.873 — הניתוק עצמו, ולא התנגשות שנייה (זוהר, 5.10.2026). לאחריו — אך חום שארי, ברציפות ובדעיכה איטית, במקום שבו נשמר החום במשך הזמן הרב ביותר: קרום דק, פתחים קיימים, חום שנאסף (מאמר 8).</p>
+<h3>7. השקית נשטפה</h3>
+<p>חום מלמטה המיס את המעטפת שוב ושוב בזמן החיבור; בכל פעם הנוזל יצא — מעלה והחוצה — ונטל עמו את היסודות הבורחים אל הנוזל. התכה אחת מותירה שארית מדולדלת בחלקה; התכות חוזרות מותירות את הדלדול הקיצוני. לפיכך אותו מקום הניב תחילה בזלת עשירה (μ ≈ 1,620) ולאחר מכן בזלת מדולדלת (μ ≈ 360). והיסודות החסרים במקור לא אבדו: הם מצויים בסהר (מאמר 8; ג-1.4.05). שארית שטופה קשה להתיך — משום כך הלבה המאוחרת מעטה.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>שיעור הבזלת — אזור מחומם גדול מדלל את האחוז:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><msub><mi>A</mi><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>a</mi><mi>l</mi><mi>t</mi></mrow></msub><msub><mi>A</mi><mrow><mi>r</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\frac{A_{basalt}}{A_{region}}</annotation></semantics></math></span></div></div>
+<p>מדד הדלדול במקור:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>μ</mi><mo>=</mo><mfrac><mrow><msup><mrow></mrow><mn>238</mn></msup><mi mathvariant="normal">U</mi></mrow><mrow><msup><mrow></mrow><mn>204</mn></msup><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">b</mi></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">\mu=\frac{^{238}\mathrm{U}}{^{204}\mathrm{Pb}}</annotation></semantics></math></span></div></div>
+<p>כמה הקרקע זזה מתחת לחומר שבאוויר:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo>≈</mo><mi mathvariant="normal">Ω</mi><mtext> </mtext><mi>t</mi><mtext> </mtext><mi>r</mi></mrow><annotation encoding="application/x-tex">s\approx\Omega\,t\,r</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>בזלת גלויה מעטה, מרוכזת במרכז.</li>
+<li>בזלת מוסתרת בעיגול של 15° בלבד.</li>
+<li>סהר תוריום בצד אחד, הנחלש עם המרחק.</li>
+<li>מקור עשיר תחילה, מדולדל לאחר מכן — באותו מקום.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> בזלת מוסתרת נרחבת מחוץ לעיגול המרכזי; או בזלת צעירה בתוך הסהר.</li>
+<li><strong>פתוח:</strong> גיל הבזלת המוסתרת בעיגול המרכזי — האם היא מתקופת המבער, או שקפאה לאט לאחר הניתוק (<bdi dir="ltr">3.87–3.6</bdi> מיליארד שנה)? המודל צופה שחלק הימה המרכזית עתיק יותר. כבידה המראה את משקל מילוי הבזלת המוסתר מעבר לכתמים הגלויים. הדמיה חוזרת של הסהר עם ירח מוארך לכיוון כדור הארץ, עם טווח של זוויות, ועם מרכז הירח מתחת לקו (מאמר 8).</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · למה האחוז נמוך</span>
+<p>מדוע האחוז נמוך כל כך? ב-300 הק"מ הפנימיים מצויים 14.6% בזלת. SPA כולו גדול בהרבה, וכמעט כל השטח הנוסף הוא קרקע מחוממת שלא התפרצה — לפיכך אותה בזלת, על מכנה גדול בהרבה, מניבה 4.1%. וכמה נשטף המקור? μ ירד מכ-1,620 לכ-360: 1,620 / 360 = 4.5 — המקור המאוחר מחזיק בין רבע לחמישית מן האורניום של המוקדם. וכמה זמן כיסו המרבצים הגלויים? 3.7 − 2.2 = 1.5 מיליארד שנה.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>בזלת גלויה: 0°–10° / 10°–20° / 20°–30° / 30°–40° / שפה</td><td>8.5% / 9.2% / 3.4% / 1.3% / 0.7%</td><td>מאמר 8</td></tr><tr><td>300 ק"מ פנימיים / כיפה של 900 ק"מ / SPA כולו</td><td>14.6% / 8.4% / 4.1%</td><td>מאמר 8</td></tr><tr><td>SPA מול Crisium, Humorum, Nectaris</td><td>4.1% מול 22.2%–44.2% (קרום <bdi dir="ltr">15–17</bdi> ק"מ)</td><td>מאמר 8</td></tr><tr><td>הירח כולו / צד קרוב / צד רחוק</td><td>16.2% / 30.1% / 2.3%</td><td>מאמר 8</td></tr><tr><td>בזלת מוסתרת בעיגול של 15°</td><td>13.6%–24.1%</td><td>Wang et al. 2024</td></tr><tr><td>מרבצים גלויים: מספר / עובי / נפח</td><td>129 / <bdi dir="ltr">31–273</bdi> מ' / <bdi dir="ltr">1–2,630</bdi> קמ"ק</td><td>Pasckert et al. 2018</td></tr><tr><td>גילים: נוריטים / בזלת עשירה / ניתוק</td><td>4,247 / 4,203 / 3,873 מיליון שנה</td><td>Su et al. 2025; Zhang et al. 2025b</td></tr><tr><td>גילים: מרבצים גלויים / Chang'e-6</td><td><bdi dir="ltr">3.7–2.2</bdi> (שיא <bdi dir="ltr">3.6–3.2</bdi>) / 2.807 מיליארד שנה</td><td>Pasckert et al. 2018; Zhang et al. 2025b</td></tr><tr><td>μ: עשיר / מדולדל</td><td>כ-1,620 / כ-360</td><td>Zhang et al. 2025b</td></tr><tr><td>εNd של הבזלות הצעירות</td><td><bdi dir="ltr">15.80–16.13</bdi></td><td>Zhou et al. 2025</td></tr><tr><td>סהר בהדמיה, 5.77 שעות</td><td><bdi dir="ltr">0.95–1.0</bdi> ק"מ/ש'; 74%–96% מאחור; 29°–32°</td><td>מאמר 8</td></tr><tr><td>יחס μ / משך המרבצים</td><td>4.5 / 1.5 מיליארד שנה</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c14">א-14</a> · שלב 7 · ההתרחקות.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · <a href="enc_mare_he.html">ב-5.01 · מהי ימה</a> · <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_thorium_he.html">ג-1.1.01 · תוריום</a> · <a href="enc_clocks_he.html">ג-1.1.07 · שעונים</a> · <a href="enc_mburied_he.html">ג-1.2.02 · כיפות ההזנה הקבורות</a> · <a href="enc_spavolat_he.html">ג-1.4.05 · מעטפת שאיבדה נדיפים</a> · <a href="enc_spametal_he.html">ג-1.4.06 · מתכות בנוריטים Chang'e-6</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.03 · GRAIL.</li>
+<li><strong>דלת להמשך:</strong> החום של המבער לא רק המיס — הוא גם בישל ודחס את הקרקע. מה זה עשה לחללים שבה? <a href="enc_spapores_he.html">ג-1.4.10 · נקבוביות SPA</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li><li><a href="paper05_he.html">מאמר 5 · הימות</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Wang, et al. (2024). Cryptomare in the South Pole–Aitken basin. JGR Planets. <a href="https://doi.org/10.1029/2023JE008176" rel="noopener">doi.org/10.1029/2023JE008176</a></li><li>Pasckert, J. H., Hiesinger, H., & van der Bogert, C. H. (2018). Lunar farside volcanism in and around the South Pole–Aitken basin. Icarus, 299, 538–562. <a href="https://doi.org/10.1016/j.icarus.2017.07.023" rel="noopener">doi.org/10.1016/j.icarus.2017.07.023</a></li><li>Su, B., et al. (2025). South Pole–Aitken massive impact 4.25 billion years ago revealed by Chang’e-6 samples. National Science Review, 12, nwaf103. <a href="https://doi.org/10.1093/nsr/nwaf103" rel="noopener">doi.org/10.1093/nsr/nwaf103</a></li><li>Zhang, Q. W. L., et al. (2025). Lunar farside volcanism 2.8 billion years ago from Chang’e-6 basalts. Nature, 643. <a href="https://doi.org/10.1038/s41586-024-08382-0" rel="noopener">doi.org/10.1038/s41586-024-08382-0</a></li><li>Cui, Z., et al. (2024). A sample of the Moon’s far side retrieved by Chang’e-6 contains 2.83-billion-year-old basalt. Science. <a href="https://doi.org/10.1126/science.adt1093" rel="noopener">doi.org/10.1126/science.adt1093</a></li><li>Zhou, Q., Yang, W., Chu, Z., et al. (2025). Ultra-depleted mantle source of basalts from the South Pole–Aitken basin. Nature, 643, 371–375. <a href="https://doi.org/10.1038/s41586-025-09131-7" rel="noopener">doi.org/10.1038/s41586-025-09131-7</a></li><li>Whitten, J. L., & Head, J. W. (2015). Lunar cryptomaria: Physical characteristics, distribution, and implications for ancient volcanism. Icarus, 247, 150–171. <a href="https://doi.org/10.1016/j.icarus.2014.09.031" rel="noopener">doi.org/10.1016/j.icarus.2014.09.031</a></li><li>Moriarty, D. P., et al. (2021). The search for lunar mantle rocks exposed on the surface of the Moon. Nature Communications / JGR Planets. <a href="https://doi.org/10.1029/2020JE006589" rel="noopener">doi.org/10.1029/2020JE006589</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

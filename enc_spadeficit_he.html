@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>חוסר במכתשים במרכז SPA — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.4.01 באנציקלופדיה של מודל LEF: מרכז SPA מחזיק כמחצית מן המכתשים שמחוץ לשפה (0.51), והחוסר מעמיק כשמוציאים את המשטחים הצעירים; המינימום על קו האורך של הנקודה שמול Serenitatis; הבינוניים חסרים, הקטנים כמעט לא, והשפות גבוהות — החום של המבער מחק מלמטה.">
+<link rel="canonical" href="https://lef-model.com/enc_spadeficit_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.4.01</span> · <a href="LEF_enc_spadeficit_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>חוסר במכתשים במרכז SPA: החום מלמטה מחק</h1>
+<p>ערך תעלומה · ג-1.4.01 · מבוסס על מאמר 8 ועל ההחלטות של 6.10 ו-11.10</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← חוסר במכתשים במרכז SPA · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>אגן SPA — אגן קוטב דרום–Aitken — הוא האגן הגדול והעתיק ביותר על הירח. מכתשים הם השעון של הירח: משטח אוסף אותם כל זמן שהוא חשוף, ומאבד אותם אך ורק אם גורם כלשהו מוחק או מכסה אותו. משום כך קרקעיתו של האגן העתיק ביותר הייתה נדרשת להיות מן הצפופות ביותר. אולם מרכזו מחזיק רק כמחצית מן המכתשים של הקרקע שממש מחוץ לו. מדוע המרכז ריק? מדוע המקום הריק ביותר אינו המרכז עצמו, אלא מצוי מצפון-צפון-מזרח לו? מדוע חסרים בעיקר המכתשים הבינוניים, והקטנים כמעט לא? ומדוע המכתשים שנשארו רדודים — ודווקא השפות שלהם גבוהות?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<p>כל המספרים בערך זה הם מקרקע עתיקה בלבד: מכתשים בקוטר 20 ק"מ ומעלה מקטלוג Robbins (2019), וקטנים יותר — לרבות העומקים — מקטלוג Wang et al. (2021). משני צדי ההשוואה הוצאו מישורי הבזלת (מפת LROC), 34 הימות עם כיפות ההזנה שלהן, והילה של 200 ק"מ סביב כל ימה. חוזק הרישום הוא מספר המכתשים חלקי המספר הצפוי לפי הצפיפות בטבעת שממש מחוץ לשפה — 39.6°–50° מן המרכז, 53°S 191°E (מאמר 8).</p>
+<ul>
+<li>SPA כולו מחזיק 213.9 מכתשים בקוטר 20 ק"מ ומעלה למיליון קמ"ר, מול 230.2 בשאר הירח — 7% פחות; ומול שאר הירח באותם קווי רוחב (90°S עד 13.4°S) — 213.9 מול 239.5, 11% פחות (מאמר 8).</li>
+<li><strong>החוסר מרוכז במרכז. בטבעות מן המרכז החוצה, 20 ק"מ ומעלה:</strong> 0.51, 0.81, 0.92, 0.91, ומחוץ לשפה 1.00; ו-40 ק"מ ומעלה: 0.57, 0.77, 0.88, 0.88, 1.00. בטבעת המרכזית 29 מכתשים בלבד (מאמר 8).</li>
+<li><strong>ככל שהניקוי חמור יותר, החוסר במרכז עמוק יותר:</strong> 0.59 על כל הקרקע, 0.56 ללא מישורי הבזלת והימות, 0.51 גם ללא ההילות (מאמר 8).</li>
+<li>החוסר שורד גם כאשר מודדים על האליפסה של האגן (2,400 × 2,050 ק"מ) ולא על עיגול: 122 ו-132 מכתשים למיליון קמ"ר בליבה, מול <bdi dir="ltr">230–235</bdi> בחצי החיצוני ו-<bdi dir="ltr">231–248</bdi> ממש מחוץ לו (מאמר 8).</li>
+<li>המינימום — המקום בעל המספר הנמוך ביותר של מכתשים — מצוי ב-45.4°S, 197.9°E, כ-270 ק"מ מצפון-צפון-מזרח למרכז, בשלושה גדלים של חלון מדידה (150, 200 ו-250 ק"מ). חוזק הרישום שם 0.45. הוא שוכן על קו האורך של הנקודה שמול Serenitatis (197.9° מול 198.8°), 606 ק"מ ממנה ו-860 ק"מ מן הנקודה שמול Imbrium; אתר הנחיתה של Chang'e-6 שוכן 212 ק"מ ממנו (מאמר 8).</li>
+<li><strong>בשמונה גזרות סביב המרכז:</strong> הצפון-מזרחית מחזיקה 45 מכתשים למיליון קמ"ר והצפונית 112, מול <bdi dir="ltr">144–251</bdi> באחרות (מאמר 8).</li>
+<li><strong>לפי גודל, במרכז מול הטבעת שמחוץ לשפה:</strong> 0.91 מן המכתשים בקוטר <bdi dir="ltr">10–20</bdi> ק"מ, 0.47 מאלה בקוטר <bdi dir="ltr">20–40</bdi> ק"מ, 0.72 מאלה בקוטר <bdi dir="ltr">40–60</bdi> ק"מ, ו-0.53 מן הגדולים. היחס בין קטנים לגדולים במרכז: 4.62 (<bdi dir="ltr">3.18–7.20</bdi>), מול 2.13 (<bdi dir="ltr">1.99–2.28</bdi>) באותם קווי רוחב מחוץ ל-SPA (מאמר 8).</li>
+<li><strong>יחס עומק לקוטר, במרכז מול מחוץ לשפה:</strong> <bdi dir="ltr">10–20</bdi> ק"מ — 0.075 מול 0.078; <bdi dir="ltr">20–40</bdi> ק"מ — 0.066 מול 0.076; <bdi dir="ltr">40–80</bdi> ק"מ — 0.045 מול 0.061. במבחן המחמיר, מכתשים בקוטר <bdi dir="ltr">40–80</bdi> ק"מ ב-20° המרכזיות רדודים ב-18% (4%–33%) (מאמר 8).</li>
+<li><strong>השפות של המכתשים ב-20° המרכזיות גבוהות מן הרגיל:</strong> 1.35 מול 0.92 בקבוצת ביקורת באותו קו רוחב ובאותו קוטר (מפת הגבהים LOLA, 1,058 מכתשים בקוטר <bdi dir="ltr">20–80</bdi> ק"מ) (מאמר 8).</li>
+<li><strong>במחקר המקובל:</strong> מכתשים רדודים באופן חריג נמצאו ב-SPA גם לאחר שהוצאו ממנו האגנים בעלי ימות גלויות (Sori &amp; Zuber 2012).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: שעווה מעל פלטה חמה</h2>
+<p>פורסים יריעה של שעווה על שולחן, ולוחצים עליה הרבה חותמות קטנות וגדולות. מתחת לחלק אחד של השולחן מדליקים פלטה חמה, ומשאירים אותה דולקת זמן רב. לאט לאט, מעל המקום החם ביותר, החותמות מתרככות ונעלמות; בשוליים הקרים הן נשארות חדות. אחרי שהפלטה נכבית והשעווה מתקשה, לוחצים עוד כמה חותמות קטנות. מי שמסתכל אחר כך על היריעה רואה כתם ריק, ויכול לדעת איפה עמדה הפלטה ואיפה היא הייתה הכי חמה — גם בלי לראות אותה.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> מרכז SPA עני במכתשים; משטח מאבד מכתשים כאשר גורם כלשהו מוחק או מכסה אותו; חום מלמטה מקל על מחיקה.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל SPA הוא שקע של התנגשות ענק לפני כ-4.25 מיליארד שנה, וקרקעיתו החלה מחדש ברגע ההתנגשות. מוצעים כמה תהליכים לרישום חלש: שקיעה איטית של התבליט מעל פנים חם; הצפה בלבה מאוחרת; כיסוי בחומר שנזרק מאגנים מאוחרים; משטח צעיר יותר; רוויה, שבה כל מכתש חדש מוחק בערך כמו שהוא מוסיף (Fassett et al. 2012); ומכתשים משניים. כל אחד מהם מסביר תכונה אחת, אולם צופה תבנית שלא נמדדה. במודל LEF המרכז נמחק בחום שעלה מלמטה — המבער (ג-1.4.02) — והחוסר נוטה לכיוון שממנו החום הגיע.</li>
+<li><strong>מה לקוח ומה חדש:</strong> הקטלוגים, מפת הימות ומפת הגבהים לקוחים מן הספרות המדעית. החידוש: מדידה של קרקע עתיקה מול קרקע עתיקה, כאשר הימות וההילות שלהן מחוץ לספירה משני הצדדים; מפה רציפה של החוסר, לפי כיוון ולפי גודל; ומדידה של השפות והקרקעיות מול קבוצת ביקורת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. החום מלמטה מחק</h3>
+<p>החום של המבער עלה מתחת לאזור כולו, בחלק העבה ובחלק הדק שלו, והמיס אותו. המכתשים שהיו על פני השטח נמחקו, או התרככו ושקעו. החוסר עמוק ביותר היכן שהחום היה חזק ביותר — במרכז (מאמר 8).</p>
+<h3>2. לא לבה ולא משטח צעיר</h3>
+<p>אילו הלבה הייתה הסיבה, הוצאת מישורי הבזלת והימות הייתה מעלה את הספירה במרכז. היא עושה ההפך: עם כל משטח צעיר שמוצא מן הספירה, המרכז נעשה עני יותר — 0.59, 0.56, 0.51. המשטחים הצעירים רק מטשטשים את החוסר; אין הם יוצרים אותו (מאמר 8).</p>
+<h3>3. הכיוון — אל הנקודה שמול Serenitatis</h3>
+<p>החום יצא אל הצד הרחוק דרך שני מוצאים: Imbrium, הראשי, ו-Serenitatis, המשני (זוהר, 6.10.2026). המוצא של Serenitatis, הקרוב יותר לנקודה שפנתה אל כדור הארץ, הזין את החום לכיוון הנקודה שמולו. משום כך המינימום אינו במרכז, אלא כ-270 ק"מ מצפון-צפון-מזרח לו — על קו האורך של הנקודה שמול Serenitatis (מאמר 8).</p>
+<h3>4. למה חסרים דווקא הבינוניים</h3>
+<p>המכתשים הגדולים והבינוניים הם האוכלוסייה העתיקה: נחתו מוקדם, בטרם החום פעל, ונמחקו עם המשטח העתיק. רוב הקטנים הגיעו מאוחר יותר, מן החומר שכדור הארץ המשיך לזרוק לאחר הניתוק — חתיכות קטנות ובינוניות שהתפזרו באופן אחיד על פני כל הירח (זוהר, 11.10.2026; ג-1.3.18) — ונחתו על המשטח שהחום כבר פעל עליו. משום כך הקטנים כמעט אינם חסרים: 0.91 מהם נותרו, מול 0.47 מן הבינוניים (מאמר 8).</p>
+<h3>5. קרקע מבושלת: שפות גבוהות</h3>
+<p>החומר החוזר שבנה את הצד הרחוק היה נקבובי, מלא חללים. החום מלמטה בישל אותו ודחס אותו, בדומה לשלג רך המתחמם מלמטה והופך לקרום צפוף. מכתש הנוחת על קרקע דחוסה משקיע פחות אנרגיה במעיכת חללים, ויותר בבניית השפה — ולכן השפות במרכז גבוהות. בחגורה שמחוץ לשפה החומר החוזר לא התבשל ושמר על החללים, והמכתשים שם עמוקים במיוחד (מאמר 8; Housen et al. 1999).</p>
+<h3>6. רישום של הפעילות האחרונה</h3>
+<p>זוהר הציע שצפיפות המכתשים בתוך SPA ממפה את הפעילות האחרונה של הימות, ולא גיל: ימה פעילה זורקת חומר ומפזרת מכתשים סביבה, ולכן הצד הצפון-מערבי, סביב Ingenii, עשיר — זהו רישום אחרון שהונח על מכתשים עתיקים שנמחקו (רעיון של זוהר, 6.10.2026). קריאה זו עודנה פתוחה: סמוך למינימום מצוי בערך אותו שטח של ימות כמו בצפון-מערב.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>חוזק הרישום:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mi>A</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mi>A</mi><msub><mo stretchy="false">)</mo><mtext>outside</mtext></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">S=\frac{(N/A)}{(N/A)_{\text{outside}}}</annotation></semantics></math></span></div></div>
+<p>צפיפות מכתשים, למיליון קמ"ר:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ρ</mi><mo>=</mo><mfrac><mi>N</mi><mi>A</mi></mfrac></mrow><annotation encoding="application/x-tex">\rho=\frac{N}{A}</annotation></semantics></math></span></div></div>
+<p>יחס קטנים לגדולים:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>R</mi><mo>=</mo><mfrac><msub><mi>N</mi><mrow><mn>10</mn><mtext>–</mtext><mn>20</mn></mrow></msub><msub><mi>N</mi><mrow><mn>20</mn><mtext>–</mtext><mn>80</mn></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">R=\frac{N_{10\text{–}20}}{N_{20\text{–}80}}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>חוסר מרוכז במרכז, המתחזק כאשר מוציאים משטחים צעירים.</li>
+<li>מינימום מצפון-צפון-מזרח למרכז, על קו האורך של הנקודה שמול Serenitatis.</li>
+<li>הבינוניים חסרים, הקטנים כמעט לא.</li>
+<li>מכתשים רדודים בעלי שפות גבוהות.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> מינימום שאינו נוטה לשום מוצא; או חוסר הנעלם כאשר מוציאים את הבזלת.</li>
+<li><strong>פתוח:</strong> לחלק את המכתשים שבתוך SPA לשתי אוכלוסיות לפי גיל יחסי — מכתש החותך מכתש אחר צעיר ממנו — מכתש אחר מכתש; למדוד את רכס השפות במפות גבהים מדויקות יותר; לבדוק את המכתשים הקטנים שנחתו על מכתשים גדולים (מאמר 8); ולבדוק את הקריאה של זוהר בדבר הפעילות האחרונה של הימות.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה בטוח החוסר</span>
+<p>כמה שטח נותר במרכז לאחר הניקוי? כיפה של 10° סביב המרכז היא 2π × 1,737² × (1 − cos 10°) ≈ 0.29 מיליון קמ"ר. נספרו בה 29 מכתשים, בצפיפות 125.7 — כלומר נמדדו 29 / 125.7 ≈ 0.23 מיליון קמ"ר של קרקע עתיקה. וכמה בטוח החוסר? עם 29 מכתשים, הטעות של ספירה היא כ-1/√29 ≈ 19%. החוסר — 0.51 במקום 1.00 — גדול פי שניים וחצי מכך.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>SPA כולו מול שאר הירח</td><td>213.9 מול 230.2 — 7% פחות</td><td>מאמר 8</td></tr><tr><td>SPA מול אותם קווי רוחב</td><td>213.9 מול 239.5 — 11% פחות</td><td>מאמר 8</td></tr><tr><td>טבעות, 20 ק"מ ומעלה</td><td>0.51 / 0.81 / 0.92 / 0.91 / 1.00</td><td>מאמר 8</td></tr><tr><td>טבעות, 40 ק"מ ומעלה</td><td>0.57 / 0.77 / 0.88 / 0.88 / 1.00</td><td>מאמר 8</td></tr><tr><td>המרכז לפי חומרת הניקוי</td><td>0.59 / 0.56 / 0.51</td><td>מאמר 8</td></tr><tr><td>ליבת האליפסה מול החצי החיצוני</td><td><bdi dir="ltr">122–132</bdi> מול <bdi dir="ltr">230–235</bdi></td><td>מאמר 8</td></tr><tr><td>המינימום</td><td>45.4°S, 197.9°E; 0.45; כ-270 ק"מ מן המרכז</td><td>מאמר 8</td></tr><tr><td>גזרות: צפון-מזרח / צפון / אחרות</td><td>45 / 112 / <bdi dir="ltr">144–251</bdi></td><td>מאמר 8</td></tr><tr><td>לפי גודל: <bdi dir="ltr">10–20</bdi> / <bdi dir="ltr">20–40</bdi> / <bdi dir="ltr">40–60</bdi> / 60 ומעלה</td><td>0.91 / 0.47 / 0.72 / 0.53</td><td>מאמר 8</td></tr><tr><td>קטנים לגדולים: מרכז / בחוץ</td><td>4.62 (<bdi dir="ltr">3.18–7.20</bdi>) / 2.13 (<bdi dir="ltr">1.99–2.28</bdi>)</td><td>מאמר 8</td></tr><tr><td>רדודים, <bdi dir="ltr">40–80</bdi> ק"מ</td><td>18% (4%–33%)</td><td>מאמר 8</td></tr><tr><td>שפות: מרכז / ביקורת</td><td>1.35 / 0.92</td><td>מאמר 8</td></tr><tr><td>שטח הקרקע הישנה במרכז</td><td>כ-0.23 מתוך 0.29 מיליון קמ"ר</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c15">א-15</a> · שלב 8 · היום.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a> · <a href="enc_record_he.html">ב-5.04 · מכתש ורישום</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_clast_he.html">ג-1.3.18 · כדור הארץ כמפזר האחרון</a> · <a href="enc_cclean_he.html">ג-1.3.24 · ספירה נקייה</a> · <a href="enc_spapores_he.html">ג-1.4.10 · נקבוביות SPA</a> · <a href="enc_spatwopop_he.html">ג-1.4.12 · שתי אוכלוסיות מכתשים בתוך SPA</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> אם החום מלמטה מחק את המכתשים — מאיפה בא החום, ולמה הוא הגיע דווקא לכאן? <a href="enc_spaburner_he.html">ג-1.4.02 · המבער התת-קרקעי</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Robbins, S. J. (2019). A new global database of lunar impact craters >1–2 km. Journal of Geophysical Research: Planets, 124, 871–892. <a href="https://doi.org/10.1029/2018JE005592" rel="noopener">doi.org/10.1029/2018JE005592</a></li><li>Wang, Y., Wu, B., Xue, H., Li, X., & Ma, J. (2021). An improved global catalog of lunar impact craters (≥1 km) with 3D morphometric information and updates on global crater analysis. Journal of Geophysical Research: Planets, 126, e2020JE006728. <a href="https://doi.org/10.1029/2020JE006728" rel="noopener">doi.org/10.1029/2020JE006728</a></li><li>Fassett, C. I., et al. (2012). Lunar impact basins: Stratigraphy, sequence and ages from superposed impact crater populations measured from Lunar Orbiter Laser Altimeter (LOLA) data. JGR Planets, 117, E00H06. <a href="https://doi.org/10.1029/2011JE003951" rel="noopener">doi.org/10.1029/2011JE003951</a></li><li>Housen, K. R., Holsapple, K. A., & Voss, M. E. (1999). Compaction as the origin of the unusual craters on the asteroid Mathilde. Nature, 402, 155–157. <a href="https://doi.org/10.1038/45985" rel="noopener">doi.org/10.1038/45985</a></li><li>Sori, M. M., & Zuber, M. T. (2012). Anomalously shallow craters in the South Pole–Aitken basin. (as cited in Paper 8)</li><li>Garrick-Bethell, I., & Zuber, M. T. (2009). Elliptical structure of the lunar South Pole–Aitken basin. Icarus, 204, 399–408. <a href="https://doi.org/10.1016/j.icarus.2009.05.032" rel="noopener">doi.org/10.1016/j.icarus.2009.05.032</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

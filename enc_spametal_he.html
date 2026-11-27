@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מתכות בנוריטים Chang'e-6 — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.4.06 באנציקלופדיה של מודל LEF: גרגרי ברזל-ניקל בנוריטים בני 4.25 מיליארד שנה, Ni/Co 8.5–11. יחס כזה מתקבל גם מברזל של כדור הארץ שהתאזן בסביבה דלת חמצן והתערבב במתכת שכבר בירח; רק האיזוטופים של המתכת יכריעו — והמודל צופה חתימה של כדור הארץ.">
+<link rel="canonical" href="https://lef-model.com/enc_spametal_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.4.06</span> · <a href="LEF_enc_spametal_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>מתכות בנוריטים Chang'e-6: האיזוטופים יכריעו</h1>
+<p>ערך תעלומה · ג-1.4.06 · מבוסס על מאמר 8 ועל ההחלטות של 5.10, 8.10 ו-16.10</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← מתכות בנוריטים Chang'e-6 · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>בתוך שני שברים של נוריט, בני 4.25 מיליארד שנה, ש-Chang'e-6 הביאה מתוך SPA, מצויים גרגרים של מתכת — ברזל וניקל. היחס שבין ניקל לקובלט בהם <bdi dir="ltr">8.5–11</bdi>: גבוה מן המתכת שכבר בירח, ונמוך מכדור הארץ ומן המטאוריטים. המחקר המקובל קורא אותם כחומר של הגוף שהתנגש. אולם הגרגרים היו בתוך הנוריטים מן הרגע שבו התגבשו. מהיכן הגיעה מתכת כזו? ומה מסוגל להכריע בין כדור הארץ לגוף זר?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>נוריט הוא התכה שהתגבשה, בעיקר מפלגיוקלז — המינרל הבהיר של רמות הירח — ומפירוקסן דל סידן. נוריטי Chang'e-6 הם שברים בתוך האדמה שהוחזרה (מאמר 8).</li>
+<li>כ-20 שברי נוריט, שנבחרו מתוך כ-1,600 שברים בשתי דגימות, תוארכו בשיטת עופרת–עופרת במינרלים המכילים צירקוניום. הם התגבשו לפני 4,247 ± 5 מיליון שנה. אירוע מאוחר יותר אתחל את גילם לפני 3,873 ± 8 מיליון שנה (Su et al. 2025).</li>
+<li>בשני שברים (CE6C0100YJFM002-158 ו-CE6C0200YJFM001EGP07-16) מצויים גרגרי מתכת של ברזל וניקל, עם Ni/Co של <bdi dir="ltr">8.5–11</bdi> — מעל ערכי המתכת שכבר בירח (מתחת ל-5) (Su et al. 2025; מאמר 8).</li>
+<li><strong>לשם השוואה:</strong> המעטפת של כדור הארץ — 18.7; מטאוריטים פרימיטיביים (CI) — 21.0 (McDonough &amp; Sun 1995); ליבת כדור הארץ — כ-20, בסדר הגודל של מטאוריטים (מאמר 8).</li>
+<li>גרגרי המתכת היו בתוך הנוריטים בעת שאלה התגבשו. הם חלק מן הדגימה מלידתה — ולא אבק שנפל על פני השטח לאחר מכן (מאמר 8).</li>
+<li>באדמה של Chang'e-6 נמצאו גם אירידיום וזהב בגרגרי מתכת, בשברים שהמחברים מסווגים כשברי התנגשות, ולא בנוריטים המתוארכים (Liu et al. 2026; מאמר 8).</li>
+<li>באדמה של Chang'e-6 נמצאו גם שבעה שברים עשירים באוליבין, מתוך יותר מ-5,000, שהיחסים שבין ברזל, מנגן וניקל בהם מתאימים למטאוריטים מסוג CI, ואיזוטופי החמצן שלהם קרובים לאלה של האסטרואידים Ryugu ו-Bennu (Wang et al. 2025, PNAS).</li>
+<li><strong>במחקר המקובל:</strong> היחס הגבוה הוא מטאוריטי — חומר של הגוף שהתנגש, שנלכד באגם ההתכה (Su et al. 2025).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: דבש ואבקת הפרחים</h2>
+<p>כוורן מוכר דבש. בכל שנה הוא ממיס אותו מחדש, מערבב אותו עם דבש ישן מן המחסן, ולפעמים מוסיף מעט מים. בכל פעם המתיקות משתנה, והסמיכות משתנה. מי שטועם בלבד לא יכול לדעת מאיזה שדה הגיע הדבש. אבל בתוך הדבש יש גרגרי אבקה של הפרחים שמהם הוא נאסף — וההמסה, הערבוב והמים לא משנים אותם. מי שמסתכל באבקה במיקרוסקופ, יודע את השדה.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> היחס Ni/Co בגרגרים גבוה מזה של המתכת שכבר בירח; הגרגרים היו בנוריטים מראשיתם; הנוריטים התגבשו מהתכה לפני כ-4.25 מיליארד שנה.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל, יחס גבוה פירושו חומר של גוף זר. במודל LEF המתכת היא ברזל מכדור הארץ, שהגיע אל הבסיס של SPA ונלכד בנוריטים כאשר אגם ההתכה מעל המבער התגבש (מאמר 8). והיחס Ni/Co אינו מכריע: גם ברזל מכדור הארץ מניב יחס גבוה, והיחס משתנה בכל התכה.</li>
+<li><strong>מה לקוח ומה חדש:</strong> הגילים, הגרגרים והיחסים לקוחים מן הספרות המדעית. החידוש: שתי דרכים שבהן ברזל מכדור הארץ מגיע אל היחס שנמדד, והמבחן המכריע — האיזוטופים של המתכת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. מתי ואיפה</h3>
+<p>הנוריטים של SPA התגבשו לפני 4,247 מיליון שנה, מעל המבער, בעת שהירח עוד היה מחובר (ג-1.1.07). האירוע שאתחל את שעוניהם לפני 3,873 מיליון שנה הוא הניתוק עצמו — סוף השלב המחובר (זוהר, 5.10.2026). בין השניים — כ-374 מיליון שנה.</p>
+<h3>2. ברזל מכדור הארץ</h3>
+<p>באותה עת לכדור הארץ עוד לא היו מעטפת וליבה מסודרות. הברזל הגיע מן הברזל העמוק של כדור הארץ, בעת שליבתו עוד הייתה בהתארגנות — חומר טרום-ליבה שנכנס לאגס — ולכן היחס שלו אינו נדרש להיות 20 של הליבה של ימינו (מאמר 8). ליבת הירח עצמה היא ברזל של כדור הארץ (זוהר, 16.10.2026).</p>
+<h3>3. דרך ראשונה: התאזנות בסביבה דלת חמצן</h3>
+<p>ניקל וקובלט שניהם מעדיפים מתכת על פני סיליקט. אולם ניקל נכנס למתכת כמעט בכל תנאי, ואילו קובלט מצטרף אליה בכמות גדולה אך ורק כאשר החמצן מועט. ככל שהסביבה דלה יותר בחמצן, המתכת קולטת יותר קובלט, והיחס Ni/Co יורד. המעטפת מתחת ל-SPA דלה מאוד בחמצן (ג-1.4.05), והמתכת הותכה מחדש באגם ההתכה, בלחץ נמוך (מאמר 8).</p>
+<h3>4. דרך שנייה: ערבוב עם המתכת שכבר בירח</h3>
+<p>מתכת מן הברזל העמוק של כדור הארץ (כ-20), המתערבבת בערך חצי-חצי עם המתכת שכבר בירח — שגם היא מכדור הארץ, אולם התאזנה בירח זמן רב (מתחת ל-5) — מניבה כ-<bdi dir="ltr">10–12</bdi>: הטווח שנמדד (מאמר 8).</p>
+<h3>5. מה מכריע: האיזוטופים</h3>
+<p>גרגר מתכת אינו דגימה אטומה של מקורו: בכל פעם שהוא נמס, הוא מחליף ניקל וקובלט עם הסיליקט ועם הגופרית שסביבו, והיחס שלו נע. לפיכך Ni/Co אינו מכריע. גופים במערכת השמש נוצרו באזורים שונים של הדיסקה הקדומה, וכל אזור קיבל תערובת שונה במעט של איזוטופים של כרום, טיטניום, מוליבדן, רותניום ואוסמיום. כדור הארץ והירח חולקים חתימה אחת; רוב המטאוריטים נושאים חתימות שונות. התכה, קירור, התאזנות וערבוב אינם משנים את החתימה. אם המתכת בנוריטים היא מכדור הארץ — האיזוטופים שלה יתאימו לכדור הארץ (מאמר 8).</p>
+<h3>6. האבק מן החלל — מותר</h3>
+<p>האירידיום והזהב, והשברים מסוג CI, נמצאו באדמה העליונה, בשברים שלא תוארכו, ולא בנוריטים. אדמת הירח אוספת חומר מבחוץ לאורך כל תולדותיו. המודל מתיר אבק דק מן החלל, שהירח משך אליו מאוחר אל פני השטח — ואולי מטאוריט אחד או שניים בארבעה מיליארד שנה (מאמר 8). חומר זר — אם בכלל — רק בכמויות קטנות מאוד (זוהר, 8.10.2026). ואירידיום וזהב אינם מבדילים בין אסטרואיד לבין מתכת מפנים כדור הארץ, העשיר ביסודות ההולכים עם הברזל (מאמר 8).</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>היחס, במשקל:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">i</mi></mrow><mi mathvariant="normal">/</mi><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mrow></mrow><annotation encoding="application/x-tex">\mathrm{Ni}/\mathrm{Co}</annotation></semantics></math></span></div></div>
+<p>ערבוב של שני מקורות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">i</mi></mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>m</mi><mi>i</mi><mi>x</mi></mrow></msub><mo>=</mo><mfrac><mrow><mi>f</mi><mtext> </mtext><msub><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">i</mi></mrow><mn>1</mn></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>f</mi><mo stretchy="false">)</mo><mtext> </mtext><msub><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">i</mi></mrow><mn>2</mn></msub></mrow><mrow><mi>f</mi><mtext> </mtext><msub><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mrow><mn>1</mn></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>f</mi><mo stretchy="false">)</mo><mtext> </mtext><msub><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mrow><mn>2</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\left(\frac{\mathrm{Ni}}{\mathrm{Co}}\right)_{mix}=\frac{f\,\mathrm{Ni}_1+(1-f)\,\mathrm{Ni}_2}{f\,\mathrm{Co}_1+(1-f)\,\mathrm{Co}_2}</annotation></semantics></math></span></div></div>
+<p>החתימה האיזוטופית, בעשרות-אלפיות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo>=</mo><mrow><mo fence="true">[</mo><mfrac><msub><mi>R</mi><mi>s</mi></msub><msub><mi>R</mi><mrow><mi>s</mi><mi>t</mi><mi>d</mi></mrow></msub></mfrac><mo>−</mo><mn>1</mn><mo fence="true">]</mo></mrow><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\varepsilon=\left[\frac{R_s}{R_{std}}-1\right]\times10^4</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>מתכת בתוך נוריטים שהתגבשו בעת שהירח היה מחובר.</li>
+<li>יחס Ni/Co בין המתכת שכבר בירח לבין כדור הארץ.</li>
+<li>סביבה דלה מאוד בחמצן מתחת ל-SPA.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> איזוטופים של כרום, טיטניום, מוליבדן, רותניום או אוסמיום בגרגרי המתכת של שני הנוריטים, המראים חתימה מטאוריטית ברורה.</li>
+<li><strong>פתוח:</strong> זוהי התחזית החדה ביותר של מאמר 8 — האיזוטופים של המתכת בשני השברים נדרשים לשאת חתימה של כדור הארץ, ללא סטייה מטאוריטית. והאם זהו אותו ברזל המצוי במסה הצפופה ובמעטפת דלת החמצן — הנתונים חסרים (מאמר 8; ג-1.4.04).</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · ערבוב חצי-חצי</span>
+<p>נניח שבשני סוגי המתכת מצויה בערך אותה כמות קובלט. או-אז הערבוב חצי-חצי מניב בערך את ממוצע היחסים: (20 + 3) / 2 ≈ 11.5, ו-(20 + 4) / 2 = 12 — קרוב לגבול העליון של הטווח הנמדד, <bdi dir="ltr">8.5–11.</bdi> אם המתכת של כדור הארץ נכנסה ביחס של כ-18.7, בדומה למעטפת: (18.7 + 3) / 2 ≈ 10.9 — בתוך הטווח. והדרך הראשונה, ההתאזנות בסביבה דלת חמצן, מורידה את היחס עוד. ומהו המרחק בזמן שבין ההתגבשות לאתחול? 4,247 − 3,873 = 374 מיליון שנה.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>גיל ההתגבשות של הנוריטים</td><td>4,247 ± 5 מיליון שנה</td><td>Su et al. 2025</td></tr><tr><td>גיל האתחול</td><td>3,873 ± 8 מיליון שנה</td><td>Su et al. 2025</td></tr><tr><td>שברי נוריט שתוארכו / שברים שנבדקו</td><td>כ-20 / כ-1,600</td><td>Su et al. 2025</td></tr><tr><td>Ni/Co בגרגרים</td><td><bdi dir="ltr">8.5–11</bdi></td><td>Su et al. 2025</td></tr><tr><td>המתכת שכבר בירח</td><td>מתחת ל-5</td><td>מאמר 8</td></tr><tr><td>מעטפת כדור הארץ / CI</td><td>18.7 / 21.0</td><td>McDonough &amp; Sun 1995</td></tr><tr><td>ליבת כדור הארץ</td><td>כ-20</td><td>מאמר 8</td></tr><tr><td>שברים מסוג CI באדמה</td><td>7 מתוך יותר מ-5,000</td><td>Wang et al. 2025</td></tr><tr><td>ערבוב חצי-חצי</td><td>כ-<bdi dir="ltr">10.9–12</bdi></td><td>חישוב, 27.11.2026</td></tr><tr><td>בין ההתגבשות לאתחול</td><td>374 מיליון שנה</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c15">א-15</a> · שלב 8 · היום.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · <a href="enc_stefan_he.html">ב-4.02 · המגע הצמיג</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_clocks_he.html">ג-1.1.07 · שעונים</a> · <a href="enc_spamass_he.html">ג-1.4.04 · המסה הצפופה</a> · <a href="enc_spavolat_he.html">ג-1.4.05 · מעטפת שאיבדה נדיפים</a> · ג-1.5.01 · זהות איזוטופית · ג-1.5.02 · אין חומר זר · ג-1.5.08 · 3.87 מיליארד.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> החום של המבער לא רק ריכז ברזל — הוא גם אידה חלק ממנו. מה נשאר מן האדים? <a href="enc_spavapour_he.html">ג-1.4.07 · אדים שאידו מתכות</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li><li><a href="paper01_he.html">מאמר 1 · המודל</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Su, B., et al. (2025). South Pole–Aitken massive impact 4.25 billion years ago revealed by Chang’e-6 samples. National Science Review, 12, nwaf103. <a href="https://doi.org/10.1093/nsr/nwaf103" rel="noopener">doi.org/10.1093/nsr/nwaf103</a></li><li>McDonough, W. F., & Sun, S.-s. (1995). The composition of the Earth. Chemical Geology, 120, 223–253. <a href="https://doi.org/10.1016/0009-2541(94)00140-4" rel="noopener">doi.org/10.1016/0009-2541(94)00140-4</a></li><li>Wang, J., Lin, M., Xu, Y.-G., et al. (2025). CI-chondrite-like clasts in Chang’e-6 far-side soil. PNAS. <a href="https://www.scientificamerican.com/article/chinas-change-6-mission-found-rare-meteorite-fragments-on-moon/" rel="noopener">www.scientificamerican.com/article/chinas-change-6-mission-found-rare-meteorite-fragments-on-moon/</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

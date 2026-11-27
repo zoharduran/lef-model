@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>אדים שאידו מתכות — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.4.07 באנציקלופדיה של מודל LEF: ב-SPA הברזל והאשלגן כבדים איזוטופית, נתרן ואשלגן התעבו על חרוזי זכוכית, והמטיט נוצר מאדים מחמצנים — ליד המעטפת הדלה ביותר בחמצן. חום ממושך הוציא את נושאי החמצן, והחמצן הלך למקום אחר.">
+<link rel="canonical" href="https://lef-model.com/enc_spavapour_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.4.07</span> · <a href="LEF_enc_spavapour_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>אדים שאידו מתכות: מה נשאר ומה יצא</h1>
+<p>ערך תעלומה · ג-1.4.07 · מבוסס על מאמר 8 ועל ההחלטות של 6.10 ו-17.10</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← אדים שאידו מתכות · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>ברזל הוא מתכת שקשה מאוד לאדות: נדרש חום עז כדי שאטומי ברזל יעזבו את החומר. ובכל זאת, בבזלות ש-Chang'e-6 הביאה מתוך SPA, הברזל כבד מן הרגיל — חלק מן האטומים הקלים שלו יצאו. באדמת אותו מקום מצויים גרגרים של המטיט ומגהמיט — ברזל מחומצן, "חלודה" — על ירח שבדרך כלל דל בחמצן. ובזכוכיות זעירות מאותו מקום, נתרן ואשלגן התאדו ונחתו בחזרה על פני טיפות מותכות. מה אידה כאן מתכות? לאן הלכו האדים? וכיצד נוצרה חלודה במקום שבו המעטפת היא הדלה ביותר בחמצן המוכרת לנו?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>δ⁵⁶Fe בבזלות של Chang'e-6:</strong> <bdi dir="ltr">0.13–0.21</bdi>‰, מול <bdi dir="ltr">0–0.11</bdi>‰ בבזלות של אפולו ושל Chang'e-5. הערך החיובי יותר פירושו ברזל כבד יותר: האטומים הקלים יצאו (מאמר 8; Tian et al. 2026).</li>
+<li><strong>δ⁴¹K באותן בזלות:</strong> 0 עד +0.09‰, מול −0.29 עד −0.04‰ באפולו וב-Chang'e-5. המחברים שללו קרינה קוסמית, התמיינות בזמן ההתגבשות וחומר של גוף זר (Tian et al. 2026).</li>
+<li>בזכוכיות של Chang'e-6 (חרוזי זכוכית שנוצרו בחום העולה על 2,000 קלווין): נתרן ואשלגן מועשרים לכיוון שפת החרוז, הברזל החמצני מדולדל, ונוצרו גרגרים זעירים של ברזל מתכתי. הפירוש של המחברים: אדי נתרן ואשלגן התעבו על הטיפות בסביבה דלת חמצן, ונטלו את החמצן מן הברזל. קצב הקירור — כ-10³–10⁴ מעלות לשנייה (Li et al. 2026, EPSL).</li>
+<li>באדמת Chang'e-6 נמצאו גרגרים של המטיט (α-Fe₂O₃) בגודל של מיקרונים, יחד עם מגהמיט (γ-Fe₂O₃) ומגנטיט. לדברי המחברים, הם נוצרו מאדים מחמצנים קצרי חיים: החום פירק את המינרל טרואיליט (גופרית של ברזל), שחרר יוני ברזל, והם התחמצנו ושקעו מן האדים. זוהי העדות הראשונה מדגימות להמטיט שנוצר בדרך זו על הירח, והם הוצעו כנושאים של האנומליות המגנטיות בצפון-מערב SPA (Science Advances, 2025; מאמר 8).</li>
+<li><strong>המעטפת שמתחת לאתר היא הדלה ביותר בחמצן זמין המוכרת על הירח:</strong> ΔIW = −1.93, מול −0.80 מתחת לצד הקרוב (Zhang et al. 2025; ג-1.4.05).</li>
+<li>היחס שבין אשלגן לתוריום נמוך ושטוח בכל האזור המחומם — <bdi dir="ltr">451–455</bdi> — ושב לרמה של הרמות אך ורק בשוליים, 567 (מאמר 8).</li>
+<li><strong>במחקר המקובל:</strong> ההתאדות והחלודה נוצרו בחום של התנגשויות — ההתנגשות שיצרה את SPA, והתנגשויות מאוחרות יותר שאידו את פני השטח.</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: קומקום על הכיריים כל הלילה</h2>
+<p>משאירים קומקום עם מים קשים על להבה קטנה כל הלילה. האדים יוצאים מן הפתח, נוגעים בקיר הקר של המטבח, ומשאירים עליו טיפות וכתמים. בבוקר המים בקומקום כמעט נגמרו, ובתחתית נשאר משקע קשה, מרוכז. מי שרואה רק את הקיר, יודע שמשהו רתח זמן רב לידו. מי שרואה רק את הקומקום, יודע מה יצא ממנו. צריך את שניהם כדי לספר את הסיפור כולו.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> הברזל והאשלגן כבדים משום שחלק מן האטומים הקלים יצאו; ההמטיט נוצר מאדים מחמצנים; האדים לא נותרו כולם במקום.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל החום הוא של התנגשות — עז מאוד אולם קצר — ולכן קשה להבין כיצד הברזל, המתאדה אך ורק בחום עז וממושך, נעשה כבד, וכיצד החוסר באשלגן אחיד על פני כל האזור. במודל LEF החום הוא המבער: פחות חם, אולם ממושך, ופועל על האזור כולו (ג-1.4.02). אותו חום הוציא את החומרים נושאי החמצן — ואלה עברו למקומות אחרים (מאמר 8).</li>
+<li><strong>מה לקוח ומה חדש:</strong> האיזוטופים, הזכוכיות וגרגרי ההמטיט לקוחים מן הספרות המדעית. החידוש: קריאת שלושתם יחד — מה נותר בחומר, מה יצא ממנו, ולאן הגיע — כפעולתו של מקור חום אחד ממושך.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. חום ממושך אידה גם מה שקשה לאדות</h3>
+<p>מים וחומרים נדיפים התאדו בבירור. העיקר: חום עז, מרוכז וממושך אידה גם יסודות פחות נדיפים. הברזל לא התאדה ונותר, אולם החום הממושך נטל חלק קטן מן האטומים הקלים ביותר שלו — לפיכך הברזל שנותר כבד. וייתכן שגם חומרים אחרים, פחות נדיפים, הושפעו (מאמר 8).</p>
+<h3>2. החומר מאבד את החמצן</h3>
+<p>חום ממושך, יציאת גזים והתאדות הוציאו מן החומר את מרכיביו נושאי החמצן. הברזל שהגיע מכדור הארץ קשר את מה שנותר. משום כך המקור במעטפת דל מאוד בחמצן (מאמר 8; ג-1.4.05).</p>
+<h3>3. החמצן הלך למקום אחר</h3>
+<p>המודל קורא את גרגרי ההמטיט והמגהמיט כחמצן שנדחק למקומות אחרים: האדים יצאו מן האזור החם, ובמקום שבו פגשו ברזל בתנאים אחרים — ברזל התחמצן ושקע מהם (מאמר 8). בדרך זו, באותו אזור, מצויים גם המעטפת הדלה ביותר בחמצן וגם חלודה: האחד הוא מה שנותר, והשני הוא מה שיצא.</p>
+<h3>4. החומרים הנדיפים יצאו דרך פתחים שנסגרו</h3>
+<p>החומרים הנדיפים חלחלו החוצה דרך פתחים שפתחו לעצמם, ואלה נסגרו שוב בחום. שום נוזל לא פרץ החוצה (זוהר, 17.10.2026). מעברם הותיר את החלק העליון מלא חללים (ג-1.4.10).</p>
+<h3>5. זכוכיות: אותה כימיה, בקטן</h3>
+<p>בחרוזי הזכוכית, אדי נתרן ואשלגן התעבו על טיפה מותכת, ונטלו חמצן מן הברזל שבה — וכך נוצר ברזל מתכתי. זהו תהליך של אדים חמים בסביבה דלת חמצן. המודל אינו דורש שכל חרוז ייווצר במבער; החרוזים מראים בקטן את פעולתם של אדים חמים על ברזל (Li et al. 2026).</p>
+<h3>6. איפה החלודה, ואיפה המגנטיות</h3>
+<p>המגנטיות החזקה של SPA מצויה בצפון, במערב ובצפון-מערב — בצד המאסף, סמוך ל-Ingenii (ג-1.4.08). לפי המודל, הברזל והחומר הכבד נישאו עם הנוזל אל צד זה ונותרו שם (זוהר, 6.10.2026). אם ההמטיט והמגהמיט הם נושאי המגנטיות שם, הם נדרשים להופיע בשיעור גבוה יותר בצד זה מאשר במרכז. זוהי בדיקה פתוחה.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>שינוי איזוטופי:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>δ</mi><mn>56</mn></msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><mo>=</mo><mrow><mo fence="true">[</mo><mfrac><mrow><msup><mo stretchy="false">(</mo><mn>56</mn></msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><msup><mi mathvariant="normal">/</mi><mn>54</mn></msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><msub><mo stretchy="false">)</mo><mi>s</mi></msub></mrow><mrow><msup><mo stretchy="false">(</mo><mn>56</mn></msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><msup><mi mathvariant="normal">/</mi><mn>54</mn></msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><msub><mo stretchy="false">)</mo><mrow><mi>s</mi><mi>t</mi><mi>d</mi></mrow></msub></mrow></mfrac><mo>−</mo><mn>1</mn><mo fence="true">]</mo></mrow><mo>×</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">\delta^{56}\mathrm{Fe}=\left[\frac{(^{56}\mathrm{Fe}/^{54}\mathrm{Fe})_{s}}{(^{56}\mathrm{Fe}/^{54}\mathrm{Fe})_{std}}-1\right]\times1000</annotation></semantics></math></span></div></div>
+<p>התאדות בריק (ריילי), כש-f החלק שנשאר:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>δ</mi><mo>≈</mo><mo>−</mo><mn>1000</mn><mo stretchy="false">(</mo><mi>α</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi>ln</mi><mo>⁡</mo><mi>f</mi><mo separator="true">,</mo><mspace width="2em"/><mi>α</mi><mo>≈</mo><msqrt><mrow><msub><mi>m</mi><mrow><mi>l</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>m</mi><mrow><mi>h</mi><mi>e</mi><mi>a</mi><mi>v</mi><mi>y</mi></mrow></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">\Delta\delta\approx-1000(\alpha-1)\ln f,\qquad \alpha\approx\sqrt{m_{light}/m_{heavy}}</annotation></semantics></math></span></div></div>
+<p>התעבות על טיפה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>2</mn><mtext> </mtext><msub><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">K</mi></mrow><mrow><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo></mrow></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">O</mi></mrow><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></msub><mo>→</mo><msub><mrow><mi mathvariant="normal">N</mi><msub><mi mathvariant="normal">a</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mi mathvariant="normal">/</mi><msub><mi mathvariant="normal">K</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi></mrow><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></msub><mo>+</mo><msup><mrow><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi></mrow><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">2\,\mathrm{Na/K}_{(g)}+\mathrm{FeO}_{(l)}\rightarrow\mathrm{Na_2O/K_2O}_{(l)}+\mathrm{Fe}^0</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>ברזל ואשלגן כבדים איזוטופית בבזלות מתוך SPA.</li>
+<li>מעטפת דלה בחמצן במרכז, וברזל מחומצן שהתעבה מאדים.</li>
+<li>יחס אשלגן לתוריום נמוך ושטוח בכל האזור, ועולה בשוליים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> ברזל כבד ואשלגן כבד אך ורק סביב נקודה אחת, ולא על פני כל האזור המחומם; או המטיט המתברר כצעיר, מן השנים האחרונות של הירח, ולא מתקופת החום.</li>
+<li><strong>פתוח:</strong> לאן הלכו האדים — אל החלל דרך הפתח, התעבו בשוליים, או שניהם? כמה אבד — מעט על שטח עצום, או הרבה? (מאמר 8); למדוד δ⁵⁶Fe ו-δ⁴¹K בבזלת מן הצד הרחוק מחוץ ל-SPA; ולבחון אם ההמטיט מרוכז בצד המאסף, סמוך למגנטיות.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה ברזל צריך לאבד</span>
+<p>כמה ברזל נדרש לאבד כדי שיהיה כבד בכ-0.11‰? בהתאדות אידיאלית בריק, α ≈ √(54/56) ≈ 0.982, ולכן כל אובדן של 1% מעלה את δ⁵⁶Fe בכ-0.18‰. כדי לקבל 0.11‰: ln f ≈ −0.11 / 18 ≈ −0.006 — כלומר כ-0.6% מן הברזל. ובאשלגן: α ≈ √(39/41) ≈ 0.975, ו-0.17‰ דורשים כ-0.7%. זהו האובדן הקטן ביותר האפשרי — בהתאדות אידיאלית. בתנאים ממשיים, שבהם חלק מן האדים שבים, נדרש לאבד יותר; במודל של Tian et al. — כ-2% מן האשלגן.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>δ⁵⁶Fe: Chang'e-6 / אפולו ו-Chang'e-5</td><td><bdi dir="ltr">0.13–0.21</bdi>‰ / <bdi dir="ltr">0–0.11</bdi>‰</td><td>מאמר 8</td></tr><tr><td>δ⁴¹K: Chang'e-6 / אפולו ו-Chang'e-5</td><td>0 עד +0.09‰ / −0.29 עד −0.04‰</td><td>Tian et al. 2026</td></tr><tr><td>אובדן אשלגן לפי מודל ההתנגשות</td><td>כ-2%</td><td>Tian et al. 2026</td></tr><tr><td>חרוזי זכוכית: טמפרטורה / קצב קירור</td><td>יותר מ-2,000 קלווין / 10³–10⁴ מעלות לשנייה</td><td>Li et al. 2026</td></tr><tr><td>המטיט ומגהמיט באדמה</td><td>גרגרים בגודל מיקרונים</td><td>Science Advances, 2025</td></tr><tr><td>ΔIW: מתחת ל-SPA / מתחת לצד הקרוב</td><td>−1.93 / −0.80</td><td>Zhang et al. 2025</td></tr><tr><td>K/Th: בפנים / בשוליים</td><td><bdi dir="ltr">451–455</bdi> / 567</td><td>מאמר 8</td></tr><tr><td>אובדן מינימלי בהתאדות אידיאלית: ברזל / אשלגן</td><td>כ-0.6% / כ-0.7%</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c15">א-15</a> · שלב 8 · היום.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_thermalq_he.html">ב-1.06 · ההיסטוריה התרמית ו-Q</a> · <a href="enc_vent_he.html">ב-3.08 · האגס כפתח נידוף</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_spamass_he.html">ג-1.4.04 · המסה הצפופה</a> · <a href="enc_spavolat_he.html">ג-1.4.05 · מעטפת שאיבדה נדיפים</a> · <a href="enc_spapores_he.html">ג-1.4.10 · נקבוביות SPA</a> · ג-1.5.09 · נדיפים ומים · ג-1.5.12 · מעטפת דלת חמצן.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> אם הברזל נישא אל צד אחד של האגן — האם המגנטיות מראה את זה? <a href="enc_spamag_he.html">ג-1.4.08 · מגנטיות ומערבולות אור</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Tian, H.-C., et al. (2026). Potassium isotopes of Chang’e-6 basalts and volatile loss in the South Pole–Aitken basin. PNAS. <a href="https://doi.org/10.1073/pnas.2515408123" rel="noopener">doi.org/10.1073/pnas.2515408123</a></li><li>Li, et al. (2026). Lunar transient atmosphere recorded in Chang’e-6 impact glass beads. Earth and Planetary Science Letters. <a href="https://doi.org/10.1016/j.epsl.2026.119980" rel="noopener">doi.org/10.1016/j.epsl.2026.119980</a></li><li>IGCAS & Shandong University team (2025). Impact-formed hematite and maghemite in Chang’e-6 soil. Science Advances. <a href="https://doi.org/10.1126/sciadv.ady5169" rel="noopener">doi.org/10.1126/sciadv.ady5169</a></li><li>Zhang, et al. (2025a). A reduced lunar farside mantle from Chang’e-6 basalts. Nature Communications, 16. <a href="https://doi.org/10.1038/s41467-025-62341-5" rel="noopener">doi.org/10.1038/s41467-025-62341-5</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
