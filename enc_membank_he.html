@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>הסוללה ההיקפית — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.2.05 באנציקלופדיה של מודל LEF: סביב הימות של הצד הרחוק הקרקע עולה לסוללה — 742 מטר סביב הקבורים, מול 122 בבקרה — וסביב ימות המגע אין סוללה. לפי LEF הסוללה בנויה משכבות של חומר חוזר שהים עצמו זרק.">
+<link rel="canonical" href="https://lef-model.com/enc_membank_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.2.05</span> · <a href="LEF_enc_membank_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · הימות</p>
+<h1>הסוללה ההיקפית: מה שהים זרק ונחת סביבו</h1>
+<p>ערך תעלומה · ג-1.2.05 · מבוסס על מאמר 5 ועל ההחלטות של 16.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.2 הימות ← הסוללה ההיקפית · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c12">א-12</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>סביב הימות של הצד הרחוק הקרקע אינה ישרה. היא עולה מקצה כיפת ההזנה החוצה, מגיעה לרכס רחב במרחק של <bdi dir="ltr">150–300</bdi> ק"מ, ויורדת מעבר לו — כמו סוללה המקיפה את הים. סביב הימות של אזור המגע אין סוללה היקפית כזו: הקרקע יורדת אל הים כל הדרך. במחקר המקובל הקרקע הגבוהה סביב אגן היא השפה שלו, שהורמה בפגיעה שחפרה אותו. אולם אם זו שפה של פגיעה, מדוע היא קיימת סביב ימות מסוג אחד וחסרה סביב ימות מסוג אחר?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>סביב 17 הימות הקבורים של הצד הרחוק, הקרקע במרחק <bdi dir="ltr">150–300</bdi> ק"מ מקצה כיפת ההזנה עומדת בחציון 742 מטר מעל הקרקע שב-<bdi dir="ltr">300–600</bdi> ק"מ; הסוללה ההיקפית חיובית סביב 14 מתוך 17 (מאמר 5).</li>
+<li>סביב 10 הימות הפתוחים של הצד הרחוק — 207 מטר; חיובית סביב 6 מתוך 10 (מאמר 5).</li>
+<li><strong>סביב 4 ימות המגע — אין סוללה היקפית:</strong> הקרקע ב-<bdi dir="ltr">150–300</bdi> ק"מ נמוכה ב-137 מטר מזו שמעבר לה, סביב כל הארבעה (מאמר 5).</li>
+<li><strong>בקרה:</strong> 170 נקודות רחוקות מכל ים ומכל בזלת, שנמדדו באותה דרך — 122 מטר (מאמר 5).</li>
+<li><strong>כל הימות הרחוקים יחד:</strong> 471 מטר, חיובית סביב 20 מתוך 27; ההבדל מן הבקרה מובהק (מבחן Mann–Whitney, p = 0.009). הקבורים לבדם מול הבקרה: p = 0.001 (מאמר 5).</li>
+<li><strong>בזלת כמעט אינה מצויה על הקרקע הזו:</strong> <bdi dir="ltr">0–7</bdi>% מן השטח ההיקפי סביב הימות הרחוקים (Moscoviense 1%, Orientale 1%, Smythii 3%, Nectaris 7%) (מאמר 5).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: כף דייסה חמה על צלחת</h2>
+<p>מפילים כף דייסה חמה על צלחת. היא אינה שומרת צורה של מכתש — היא מתפזרת ומשאירה שכבה. כף אחרי כף, השכבות נערמות, והגובה עולה ליד הסיר. כך נבנתה הסוללה ההיקפית: מכל מה שהים זרק ונחת סביבו חם ונוזלי.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> סביב אגנים רבים הקרקע גבוהה; הימות של הצד הרחוק עמוקים מתחת לסביבתם.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל הקרקע סביב אגן היא החומר שהעיף הגוף שבא מבחוץ, עבה ביותר בשפה ודק יותר החוצה, והשפה עצמה הורמה בדחיפה ממרכז הפגיעה. במודל LEF הסוללה ההיקפית בנויה משכבות של חומר שהים עצמו זרק — החומר החוזר שנחת סביבו חם ומתפזר. ימות המגע הוזנו עד הסוף ולא זרקו, ולכן אין סביבם סוללה היקפית.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מפת הגבהים לקוחה מן הספרות המדעית. החידוש: מדידה סביב כל ים, מול בקרה רחוקה מכל ים, וההבחנה בין ימות רחוקים לימות המגע.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הים זורק חומר</h3>
+<p>ים הוא פתח שחיבר את עומק כדור הארץ אל פני הירח. בשיא סערת המגמה הוא זרק כמויות גדולות של חומר החוצה, בלחץ הפנימי מכדור הארץ ובעזרת הכוח הצנטריפוגלי.</p>
+<h3>2. רוב החומר חוזר לים</h3>
+<p>רוב החומר שנזרק נפל בחזרה לתוך הים — ונעלם מבלי להשאיר רישום. חלק קטן נחת בשוליים, ובנה את השכבות ואת הגובה. חלק נוסף נחת רחוק יותר, מחוץ לים, ויצר מכתשים.</p>
+<h3>3. נוחת חם ומתפזר</h3>
+<p>ליד הים, החומר החוזר היה חם וצמיגותו נמוכה. כאשר נחת, הוא לא שמר על צורת מכתש — הוא התמרח והשאיר שכבה. שכבה על שכבה, נבנתה הסוללה ההיקפית. אין מדובר בנתך שגלש מעל השפה: אילו כך היה, הקרקע סביב הייתה בזלת — והיא כמעט אינה.</p>
+<h3>4. הפיצפוצים</h3>
+<p>כאשר סערת המגמה דעכה, נותרו רק פיצפוצים — בועות של חומר מבעבע שהתפוצצו מעל הים. גם הם נחתו קרוב, והוסיפו לסוללה ההיקפית.</p>
+<h3>5. ים אינו מכתש</h3>
+<p>מכתש בונה את השפה שלו בדרך אחרת: האנרגיה במרכז דוחפת חומר החוצה, והדחיפה מערימה את השפה. השוליים של ים — מלבד ימות המגע — אינם שפה כזו: הם שכבות של חומר שיצא ממנו.</p>
+<h3>6. ימות המגע</h3>
+<p>Imbrium, Serenitatis, Sinus Aestuum ו-Copernicus H הוזנו עד הסוף ולא זרקו חומר של ממש. משום כך אין סביבם סוללה היקפית, והקרקע יורדת אליהם כל הדרך. סביב Serenitatis מצויה רק רצועה של רסס מן הפיצפוצים הקלים שלו בזמן ההתקלפות.</p>
+<h3>7. למה הסוללה ברורה ביותר סביב הקבורים</h3>
+<p>סביב הימות הקבורים שום בזלת מאוחרת לא כיסתה את הסוללה ההיקפית, ולכן היא נשמרה בגובה המלא. סביב הימות הפתוחים של הצד הרחוק היא קטנה יותר, ואינה נפרדת מן הבקרה.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>גובה הסוללה — הגובה החציוני של הקרקע (בלי בזלת) ב-<bdi dir="ltr">150–300</bdi> ק"מ מקצה הכיפה, פחות הגובה החציוני ב-<bdi dir="ltr">300–600</bdi> ק"מ; ים אחר ים, ומדווח החציון:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo>=</mo><msub><mover accent="true"><mi>h</mi><mo>~</mo></mover><mrow><mn>150</mn><mtext>–</mtext><mn>300</mn><mtext> km</mtext></mrow></msub><mo>−</mo><msub><mover accent="true"><mi>h</mi><mo>~</mo></mover><mrow><mn>300</mn><mtext>–</mtext><mn>600</mn><mtext> km</mtext></mrow></msub></mrow><annotation encoding="application/x-tex">H=\tilde h_{150\text{–}300\ \text{km}}-\tilde h_{300\text{–}600\ \text{km}}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>סוללה היקפית סביב הימות הקבורים של הצד הרחוק — 742 מטר, מול 122 מטר בבקרה.</li>
+<li>אין סוללה היקפית סביב ימות המגע.</li>
+<li>כמעט אין בזלת על הסוללה ההיקפית.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> סוללה היקפית באותו גובה סביב ימות המגע; או קרקע סביב הימות הרחוקים שאינה שונה מן הבקרה.</li>
+<li><strong>פתוח:</strong> הרכב השכבות של הסוללה ההיקפית — האם הן נושאות את החתימה הכימית של הים שלידן; מודל של המרחק שאליו נזרק החומר, לפי גודל ומהירות; ומפת גבהים ברזולוציה טובה יותר מ-7.6 ק"מ, כדי להפריד גם את הימות הפתוחים של הצד הרחוק.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה חומר בסוללה</span>
+<p>סוללה היקפית של 742 מטר ברוחב של כ-150 ק"מ, סביב ים שקצה כיפת ההזנה שלו ברדיוס 300 ק"מ. כמה חומר זה? רצועה היקפית שבין 450 ל-600 ק"מ מן המרכז: שטח ≈ π × (600² − 450²) ≈ 3.14 × 157,500 ≈ 495,000 קמ"ר. אם הגובה הממוצע על פני הרצועה הוא חצי מן השיא, כ-0.37 ק"מ: נפח ≈ 495,000 × 0.37 ≈ 180,000 קמ"ק. וזהו החלק הקטן בלבד — רוב מה שהים זרק חזר לתוכו.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>סוללה סביב הימות הקבורים (17)</td><td>742 מ'; חיובית ב-14 / 17; p = 0.001</td><td>מאמר 5</td></tr><tr><td>סוללה סביב הימות הפתוחים הרחוקים (10)</td><td>207 מ'; חיובית ב-6 / 10</td><td>מאמר 5</td></tr><tr><td>כל הימות הרחוקים (27)</td><td>471 מ'; חיובית ב-20 / 27; p = 0.009</td><td>מאמר 5</td></tr><tr><td>ימות המגע (4)</td><td>−137 מ'; בלי סוללה</td><td>מאמר 5</td></tr><tr><td>בקרה (170 נקודות)</td><td>122 מ'</td><td>מאמר 5</td></tr><tr><td>בזלת בטבעת סביב הימות הרחוקים</td><td><bdi dir="ltr">0–7</bdi>%</td><td>מאמר 5</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c10">א-10</a> · שלב 4 · ההתעגלות; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_mare_he.html">ב-5.01 · מהי ימה</a> · <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a> · <a href="enc_craters_he.html">ב-5.03 · מכתשים בלי אסטרואידים</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_mburied_he.html">ג-1.2.02 · כיפות ההזנה הקבורות</a> · <a href="enc_msunk_he.html">ג-1.2.03 · הקרקעית ששקעה</a> · <a href="enc_mengine_he.html">ג-1.2.06 · מנוע הפתחים</a> · ג-1.3.03 · רישום המכתשים = רישום הימות.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> מה הניע את הזריקה הזו, ובאיזה קצב? <a href="enc_mengine_he.html">ג-1.2.06 · מנוע הפתחים</a>: שטף קריטי.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper05_he.html">מאמר 5 · הימות</a></li><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Zuber, M. T., et al. (2013). Gravity field of the Moon from the Gravity Recovery and Interior Laboratory (GRAIL) mission. Science, 339, 668–671. <a href="https://doi.org/10.1126/science.1231507" rel="noopener">doi.org/10.1126/science.1231507</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

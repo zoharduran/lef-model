@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>חוק הירחים — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-6.01 באנציקלופדיה של מודל LEF: חוק הירחים — כוכב צעיר, מהיר ורך מעלה חומר אל קו הקורוטציה, ומה שחוצה אותו הופך לירח; שלושה אופני לידה — נבנה (רק הירח שלנו), נפלט, התפצל — וחלון לידה הנקבע לפי שלב המיון.">
+<link rel="canonical" href="https://lef-model.com/enc_moonlaw_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-6.01</span> · <a href="LEF_enc_moonlaw_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · הכלים של מערכת השמש</p>
+<h1>חוק הירחים: כלל אחד, שלושה אופני לידה</h1>
+<p>ערך מושג · ב-6.01 · מבוסס על מאמרים 10 ו-11 ועל ההחלטות של 3.11–8.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 6. הכלים של מערכת השמש ← חוק הירחים · בסיפור: <a href="enc_story_he.html#c6">א-06</a> עד <a href="enc_story_he.html#c12">א-12</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>חוק הירחים הוא כלל אחד המסביר כיצד נולדים ירחים בכל רחבי מערכת השמש. כוכב צעיר, מהיר ורך מעלה חומר מתוכו אל קו הקורוטציה. חומר החוצה את הקו מקבל מהירות מסלולית משלו והופך לירח. הכוכב ממשיך להתמיין ולהאט, ובשלב מסוים הלידה נחסמת. ההבדלים בין מערכות הירחים השונות — כמה ירחים נוצרו, באיזה גודל ובאיזו צפיפות — נובעים מצפיפות הכוכב, מקצב הסיבוב שלו, מכמות המים שבו, משלב המיון הפנימי ומן המרחק מן השמש, ולא ממנגנונים נפרדים. קו הקורוטציה עצמו אינו המצאה של LEF; החידוש הוא ההרכבה: כלל אחד המחבר את קו הקורוטציה, את המיון הפנימי ואת אופן הלידה.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: חמת מים מסתובבת</h2>
+<p>דמיינו חמת מים אטומה מכל צדדיה, שבנקודה אחת בקו המשווה שלה יש חור. כאשר היא מסתובבת, הלחץ שבפנים דוחף את המים אל החור, והסיבוב מתיז אותם החוצה בטיפות. כך פועל כוכב צעיר: הלחץ הפנימי דוחף חומר אל הפתח, והסיבוב מוציא אותו אל קו הקורוטציה.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>מסת הירח שלנו היא 1.2% ממסת כדור הארץ. מסת כל הירחים הסדירים של צדק, שבתאי ואורנוס היא 0.01%–0.025% ממסת כוכב האם. כארון הוא כ-11% ממסת הזוג פלוטו–כארון (מאמר 11).</li>
+<li>ירחים סדירים נעים בכיוון הסיבוב של כוכב האם, במישור המשווה שלו, במסלול כמעט מעגלי.</li>
+<li><strong>צפיפות הירחים יורדת ככל שמתרחקים מן השמש:</strong> הירח שלנו 3,344 ק"ג/מ"ק, הירחים הגליליאניים בממוצע כ-2,600, ירחי שבתאי כ-1,350 (מאמר 11).</li>
+<li><strong>בצדק, סדר הצפיפות הוא סדר המרחק:</strong> קליסטו 1,834, גנימד 1,936, אירופה 3,013, איו 3,528 ק"ג/מ"ק. קליסטו כמעט אינו ממוין (מקדם מומנט אינרציה 0.355); איו ממוין לגמרי, עם ליבת מתכת.</li>
+<li>פובוס ודימוס קטנים ואינם עגולים, ונקבוביים מאוד (כ-30% בפובוס); הירח שלנו גדול ועגול.</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> קו הקורוטציה קיים לכל כוכב; ירחים סדירים נולדו קשורים לכוכב שלהם ולא נלכדו מבחוץ; מישור המשווה של הכוכב קובע את מישור המסלול.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל יש לכל מערכת הסבר משלה — הירח שלנו נוצר מהתנגשות ענק, ירחי הענקים מדיסקת גז ואבק סביב הכוכב, ירחי מאדים מלכידה או מהתנגשות, וכארון מהתנגשות. במודל LEF פועל כלל אחד: החומר הגיע מתוך כוכב האם, עלה אל קו הקורוטציה וחצה אותו.</li>
+<li><strong>מה לקוח ומה חדש:</strong> נוסחת הקו, המסות, הצפיפויות והמסלולים לקוחים מן המדידות. החידוש: סרגל אחיד של אופני לידה, חלון לידה הנקבע לפי שלב המיון, וצפיפות הירח כעדות לשלב שבו נולד.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הקו ביחידות של רדיוס</h3>
+<p>כאשר מודדים את מיקום קו הקורוטציה ביחידות של רדיוס הכוכב (x), המסה והגודל מצטמצמים, ונותר רק היחס שבין קצב הסיבוב לצפיפות. בדרך זו ניתן להעמיד כל גוף במערכת השמש על אותו סרגל אחיד.</p>
+<h3>2. שלושה אופני לידה</h3>
+<ul>
+<li><strong>נבנה:</strong> אגס הרים חומר מתוך הכוכב, והירח נבנה על קצהו לאורך זמן עד שמרכזו חצה את קו הקורוטציה. זהו הירח שלנו — היחיד שנבנה. הקו עמד בכ-2.5 רדיוסים.</li>
+<li><strong>נפלט:</strong> הר געש — על בליטה או בלעדיה — פלט חומר אל קו הקורוטציה. כך נולדו פובוס ודימוס, מהר געש על הבליטה של מאדים, וכן רוב ירחי הענקים, עם כמויות מים גדולות. הקו עמד בכ-2 רדיוסים כאשר קיימת בליטה, וקרוב יותר לפני השטח (<bdi dir="ltr">1.1–1.5</bdi>) כשאין בליטה.</li>
+<li><strong>התפצל:</strong> הגוף כולו הסתובב במהירות עד שקיבל צורת בוטן, ולבסוף נחצה בצווארו. כך נולדו פלוטו וכארון. הקו עמד בכרדיוס אחד.</li>
+</ul>
+<h3>3. חלון הלידה — לפי המיון, לא לפי שעון</h3>
+<p>גוף שכבר התמיין לגמרי, או שמסתובב לאט, אינו מוליד ירח. הלידה אפשרית אך ורק בשלב שבו המיון הפנימי פעיל וטרם הסתיים. הלחץ הפנימי, לחץ קבוע, דוחף מים וחומר קל מן הפנים אל הפתח. המיון גם מקרב את קו הקורוטציה: הפנים מתכווץ והכוכב מאיץ, החוץ מתנפח, והקו מתקרב אל פני השטח. חלון הלידה פתוח כל עוד יש לחץ ויש לו מוצא.</p>
+<h3>4. מה הירח נושא איתו</h3>
+<ul>
+<li><strong>הצפיפות:</strong> צפיפות הירח משקפת את החומר ששכן בפתח ברגע הלידה. בראשית המיון יוצא חומר המייצג את הכוכב כולו; באמצע — חומר עמוס מים, שלאחר בריחת המים מותיר גוף נקבובי; ובסוף — שארית צפופה ויבשה. בצדק: קליסטו נולד ראשון ואיו אחרון. כוכב האם צפוף תמיד מירחיו, כאשר משווים לגוף הפנימי ללא מעטה הגז.</li>
+<li><strong>הצורה:</strong> ירח קטן, דליל ושאינו עגול — נפלט מהר געש; ירח גדול, עגול וצפוף — נבנה.</li>
+<li><strong>הסיבוב:</strong> ירח שנבנה נולד נעול, ופונה תמיד באותו צד אל כוכב האם. ירח המסתובב סביב צירו זקוק לליבה פעילה משלו.</li>
+<li><strong>המסלול:</strong> בכיוון הסיבוב של האם, במישור המשווה שלה, במסלול כמעט מעגלי.</li>
+</ul>
+<h3>5. ירח שנלכד אינו חלק מהכלל</h3>
+<p>ירח שהגיע מבחוץ אינו חלק מן החוק. כדי להבחין ביניהם קיים כלל ניקוד: ירח הצובר לפחות 3 נקודות נחשב נלכד, ומסלול הפוך לבדו שווה 2. טריטון מזוהה כירח שנלכד.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>מקום הקו ביחידות רדיוס (ρ — הצפיפות הממוצעת, Ω — מהירות הסיבוב, P — היממה):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mtext> </mtext><mi>G</mi><mtext> </mtext><mi>ρ</mi></mrow><mrow><mn>3</mn><mtext> </mtext><msup><mi mathvariant="normal">Ω</mi><mn>2</mn></msup></mrow></mfrac><mo separator="true">,</mo><mspace width="2em"/><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mi>P</mi></mfrac></mrow><annotation encoding="application/x-tex">x^3=\frac{4\pi\,G\,\rho}{3\,\Omega^2},\qquad \Omega=\frac{2\pi}{P}</annotation></semantics></math></span></div></div>
+<p>יממת הלידה לפי הצפיפות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><msqrt><mfrac><mrow><mn>3</mn><mi>π</mi><mtext> </mtext><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mi>G</mi><mtext> </mtext><mi>ρ</mi></mrow></mfrac></msqrt></mrow><annotation encoding="application/x-tex">P=\sqrt{\frac{3\pi\,x^3}{G\,\rho}}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>ירח שנבנה הוא גדול ביחס לכוכב האם (1.2%); ירחים שנפלטו זעירים (0.01%–0.02%).</li>
+<li>בצדק עולה הצפיפות מבחוץ פנימה, מקליסטו הלא־ממוין ועד איו הממוין — כסדר הלידה שלהם.</li>
+<li>ירחי מאדים נקבוביים ואינם עגולים, בדומה לגושים שנפלטו מהר געש.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>): כדור הארץ צעיר, חם ומהיר, והמיון הפנימי פעיל. שלב 3 (<a href="enc_story_he.html#c9">א-09</a>): האגס מרים חומר אל קו הקורוטציה, והירח נבנה על קצהו. שלב 5 (<a href="enc_story_he.html#c12">א-12</a>): מרכז הירח חוצה את הקו והירח משתחרר. סיפור זה הוא מקרה פרטי אחד של חוק הירחים — המקרה היחיד של "נבנה".</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li>מדוע לכדור הארץ יש ירח אחד גדול, ואילו למאדים שני ירחים קטנים: נבנה מול נפלט.</li>
+<li><strong>מדוע הירחים הסדירים נעים במישור המשווה ובכיוון הסיבוב:</strong> הם יצאו מן המשווה של כוכב מסתובב.</li>
+<li><strong>מדוע צפיפויות ירחי צדק מסודרות לפי המרחק:</strong> הם נולדו בשלבים שונים של המיון הפנימי.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · הקו של כדור הארץ ושל מאדים</span>
+<p>היכן עמד קו הקורוטציה של כדור הארץ ברגע הלידה? הרדיוס אז היה 6,517 ק"מ, ולכן הצפיפות הממוצעת עמדה על כ-5,150 ק"ג/מ"ק. היממה נמשכה 5.77 שעות, כלומר Ω = 2π / 20,772 שניות ≈ <bdi dir="ltr">3.02×10⁻⁴</bdi> לשנייה. לפיכך x³ = 4π × <bdi dir="ltr">6.674×10⁻¹¹</bdi> × 5,150 / (3 × (<bdi dir="ltr">3.02×10⁻⁴</bdi>)²) ≈ 15.7, ו-x ≈ 2.5 — בתוך טווח האגס. ובמאדים: בצפיפות 1,170 ק"ג/מ"ק ו-x = 2, יממת הלידה היא √(3π × 8 / (<bdi dir="ltr">6.674×10⁻¹¹</bdi> × 1,170)) ≈ 31,000 שניות — כ-8.6 שעות, בתוך הטווח של <bdi dir="ltr">7–9</bdi> שעות.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>בשנת 1879 הציע ג'ורג' דרווין שהירח נפרד מכדור הארץ המסתובב במהירות, והרעיון נזנח. בשנת 1969 סיכם צ'נדראסקהר את צורות שיווי המשקל של גופים מסתובבים, ובהן הצורה המוארכת וההתפצלות. מאז שנות השבעים מסביר המחקר המקובל כל מערכת ירחים בדרך אחרת: התנגשות ענק לירח שלנו, דיסקה סביב הכוכב לירחי הענקים, לכידה או התנגשות לירחי מאדים ולכארון. בשנת 2006 הראו Canup ו-Ward שמסת הירחים של ענקי הגז היא כחלק אחד מעשרת אלפים ממסת האם. במודל LEF נקראות כל המערכות בכלל אחד: חומר מתוך האם עלה אל קו הקורוטציה וחצה אותו.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>סרגל אופני הלידה (x)</td><td>אגס/בליטה <bdi dir="ltr">1.75–2.5</bdi> · הר געש בלי בליטה <bdi dir="ltr">1.1–1.5</bdi> · בוטן 1.53 · פיצול כ-1</td><td>ב-2.02; מאמר 11</td></tr><tr><td>כדור הארץ בלידה</td><td>רדיוס 6,517 ק"מ; יממה 5.77 שעות; x = 2.52</td><td>ב-2.02</td></tr><tr><td>מאדים בלידה</td><td>רדיוס 5,085 ק"מ (פי 1.5); יממה <bdi dir="ltr">7–9</bdi> שעות; x = <bdi dir="ltr">1.74–2.06</bdi></td><td>מאמר 10; מאמר 11</td></tr><tr><td>פלוטו–כארון כגוף אחד</td><td>יממה <bdi dir="ltr">1.9–2.5</bdi> שעות; x כ-<bdi dir="ltr">0.85–1.02</bdi></td><td>מאמר 11</td></tr><tr><td>מסת הירחים ביחס לאם</td><td>נבנה 1.2% · נפלט 0.01%–0.02% · התפצל כ-11%</td><td>מאמר 11</td></tr><tr><td>צפיפות הירחים</td><td>הירח שלנו 3,344 · גליליאניים כ-2,600 · ירחי שבתאי כ-1,350 ק"ג/מ"ק</td><td>מאמר 11</td></tr><tr><td>ירחי צדק (צפיפות)</td><td>קליסטו 1,834 · גנימד 1,936 · אירופה 3,013 · איו 3,528 ק"ג/מ"ק</td><td>מאמר 11</td></tr><tr><td>ירח נלכד</td><td>3 נקודות ומעלה; מסלול הפוך = 2</td><td>מאמר 11 (L.3)</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0; <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c12">א-12</a> · שלב 5.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · <a href="enc_corolimit_he.html">ב-2.03 · קו הקורוטציה כגבול גודל האגס</a> · <a href="enc_vent_he.html">ב-3.08 · האגס כפתח נידוף</a> · <a href="enc_birtharc_he.html">ב-6.02 · קשת הלידות</a> · <a href="enc_twolines_he.html">ב-6.03 · שני קווים סביב כל כוכב</a>.</li>
+<li><strong>תעלומות:</strong> ג-3.1.01 · שני ירחים משני צדי הקו · ג-4.1.02 · הענקים והגוף הפנימי · ג-4.1.03 · סדר צפיפויות ירחי שבתאי ואורנוס · ג-4.2.01 · פלוטו וכרון · ג-4.2.04 · ירחים נתפסים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>אם הכלל אחד, למה לחמה ולנוגה אין ירחים, ולשבתאי עשרות? המרחק מהשמש קובע כמה זמן הכלל יכול לפעול — <a href="enc_birtharc_he.html">ב-6.02 · קשת הלידות</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper10_he.html">מאמר 10 · מאדים: הבליטה והטבעת</a></li><li><a href="paper11_he.html">מאמר 11 · לידת ירחים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Darwin, G. H. (1879). On the precession of a viscous spheroid, and on the remote history of the Earth. Philosophical Transactions of the Royal Society of London, 170, 447–538. <a href="https://doi.org/10.1098/rstl.1879.0073" rel="noopener">doi.org/10.1098/rstl.1879.0073</a></li><li>Chandrasekhar, S. (1969). Ellipsoidal Figures of Equilibrium. Yale University Press.</li><li>Canup, R. M., & Ward, W. R. (2006). A common mass scaling for satellite systems of gaseous planets. Nature, 441, 834–839. <a href="https://doi.org/10.1038/nature04860" rel="noopener">doi.org/10.1038/nature04860</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

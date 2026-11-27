@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מסקונים — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.2.15 באנציקלופדיה של מודל LEF: מתחת לימות הכבידה חזקה יותר — מסקונים, מאז 1968. לפי LEF המסקון הוא כיפת ההזנה עצמה, שקפאה לגוף עשיר בברזל ובטיטניום; לכן יש 73 כאלה, 44 בלי ים, וחזקים לא פחות מאלה של הימות.">
+<link rel="canonical" href="https://lef-model.com/enc_mmascon_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.2.15</span> · <a href="LEF_enc_mmascon_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · הימות</p>
+<h1>מסקונים: כיפת ההזנה היא הגוף הצפוף</h1>
+<p>ערך תעלומה · ג-1.2.15 · מבוסס על מאמר 5</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.2 הימות ← מסקונים · בסיפור: <a href="enc_story_he.html#c8">א-08</a> עד <a href="enc_story_he.html#c14">א-14</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>בשנת 1968 גילו מולר ושוגרן, מתוך מסלולי החלליות שהקיפו את הירח, שמתחת לימות הגדולים הכבידה חזקה יותר: קיימים שם ריכוזי מסה — מסקונים. חלליות שחלפו מעליהם הוסטו ממסלולן. מתחת לים, המהווה שקע, היה צפוי דווקא חוסר מסה. מהו הגוף הצפוף הזה, כיצד הגיע לשם, ומדוע מצויים מסקונים חזקים גם מתחת לרמות, שאין עליהן ים כלל?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>בשדה הכבידה של GRAIL מצויים 73 גופים צפופים ועגולים, בקוטר של 100 ק"מ ומעלה ובעודף של 50 mGal ומעלה במרכזם (מאמר 5).</li>
+<li>העוצמה — עודף הכבידה במרכז מעל הרצועה ההיקפית — בימות הפתוחים: Orientale 740 mGal, Moscoviense 689, Nectaris 538, Crisium 527, Smythii 484, Serenitatis 412, Humorum 400, Grimaldi 333, Imbrium 309 (מאמר 5).</li>
+<li><strong>מתחת לרמות, ללא ים:</strong> Freundlich–Sharonov 519, Mendel–Rydberg 479, Hertzsprung 470 — חזקים ממש כמו הימות הגדולים (מאמר 5).</li>
+<li>ככל שהגוף הצפוף חזק יותר, מרכז הים שמעליו נמוך יותר (ρ = −0.59) (ג-1.2.03).</li>
+<li>מעל כיפת הזנה פתוחה הקרקע עשירה בברזל מסביבתה ב-1.47%, גם ללא פיקסלי הבזלת (מאמר 5).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: מעיין שמרים תלולית</h2>
+<p>מעיין חזק שעולה מן האדמה מרים תלולית של חול וחצץ מעל המוצא שלו, כל עוד הוא זורם. כשהמעיין נעצר, התלולית נשארת — ומה שנשאר בה הוא החומר הכבד, שהמים לא סחפו. כך כיפת ההזנה: הזרימה בנתה אותה, וכשנעצרה, קפאה לגוף צפוף.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> מתחת לימות הגדולים מצויים גופים צפופים; הם גורמים לרצפה לשקוע במרכז, לשוליים להימתח ולפנים להילחץ.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל המסקון נוצר בשני שלבים: פגיעה שחפרה אגן והרימה מתחתיו את המעטפת הצפופה, ולאחר מכן בזלת כבדה שמילאה אותו (Melosh et al. 2013). במודל LEF המסקון הוא כיפת ההזנה עצמה — הגוף שדרכו עלה החומר אל הפתח, אשר קפא לגוף עשיר בברזל ובטיטניום כאשר ההזנה נפסקה. משום כך קיימים מסקונים גם מתחת לפתחים קבורים, ללא בזלת.</li>
+<li><strong>מה לקוח ומה חדש:</strong> שדה הכבידה והעוצמות לקוחים מן הספרות המדעית. החידוש: המסקון ככיפת הזנה, ומציאת 73 כאלה בחיפוש אוטומטי — 44 מהם ללא ים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הכיפה נבנית</h3>
+<p>חומר נדחף כלפי מעלה ממוקד בעומק. הדחיפה הרימה את המרכז והרחיבה את השוליים — בדומה לכף יד הלוחצת מלמטה על בצק רך. דרך כיפת ההזנה עלה החומר אל הפתח, וברוב הפתחים נזרק החוצה.</p>
+<h3>2. הכיפה קופאת</h3>
+<p>כאשר ההזנה נפסקה, החומר שנותר בכיפת ההזנה קפא במקומו — לגוף עשיר בברזל ובטיטניום, צפוף יותר מן הקרום שסביבו. זהו הגוף ששדה הכבידה מזהה כיום: עגול, וחזק ביותר במרכזו.</p>
+<h3>3. מסקון מתחת לרמות</h3>
+<p>פתחים שפעלו מוקדם, נאטמו ונקברו, הותירו את כיפות ההזנה שלהם מתחת לשכבות. כיפות הזנה אלה חזקות לא פחות מכיפות ההזנה של הימות הגדולים. פתח קבור אינו פתח חלש — רק הכיסוי שלו שונה.</p>
+<h3>4. המסקון והרצפה</h3>
+<p>מעל כיפת ההזנה הצפופה שקע המרכז — עמוק יותר ככל שכיפת ההזנה חזקה יותר. השוליים נמתחו, והפנים נלחץ (ג-1.2.03, ג-1.2.04).</p>
+<h3>5. המסקונים של המגע</h3>
+<p>ימות המגע, Imbrium ו-Serenitatis, נושאים מסקונים חזקים אך רצפה בולטת — משום שקפאו בעת שכדור הארץ עוד משך אותם. התחזית של המודל: באזור המגע — מסקונים ללא טבעות כבידה סביבם; בחגורה — מסקונים עם טבעות (ג-1.2.10).</p>
+<h3>6. ב-SPA</h3>
+<p>מתחת לימות שמעל SPA אין כיפות הזנה: החום הגדול שמתחת לאגן מחק אותן.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>עוצמת המסקון, ב-mGal (1 mGal = 10⁻⁵ מ'/ש²):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>g</mi><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mtext>center</mtext><mo stretchy="false">)</mo><mo>−</mo><mi>g</mi><mo stretchy="false">(</mo><mtext>ring</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Delta g=g(\text{center})-g(\text{ring})</annotation></semantics></math></span></div></div>
+<p>עודף כבידה של לוח אינסופי בעובי t ובהפרש צפיפות Δρ:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>g</mi><mo>≈</mo><mn>2</mn><mi>π</mi><mi>G</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>ρ</mi><mtext> </mtext><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta g\approx 2\pi G\,\Delta\rho\,t</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>73 מסקונים, 44 מהם ללא ים מעליהם.</li>
+<li>מסקונים קבורים חזקים ממש כמו מסקונים של ימות.</li>
+<li>רצפה שוקעת עמוק יותר מעל מסקון חזק יותר.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> מסקונים קבורים שהכיסוי מעליהם שונה מן הסביבה, או שאין מעליהם קרום עבה יותר (ג-1.2.02); או מסקונים שאין להם שום קשר לשקיעת הרצפה.</li>
+<li><strong>פתוח:</strong> טבעות הכבידה לפי אזור — עם טבעת בחגורה, ללא טבעת באזור המגע; והרכב הגוף הצפוף, שאותו ניתן לבחון רק בדגימות מעומק.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה עבה הגוף הצפוף</span>
+<p>כמה עבה צריך להיות גוף צפוף כדי ליצור 400 mGal? נניח הפרש צפיפות של 500 ק"ג/מ"ק בין כיפת ההזנה לקרום. 400 mGal = 0.004 מ'/ש². t ≈ Δg / (2πGΔρ) = 0.004 / (2 × 3.14 × <bdi dir="ltr">6.674×10⁻¹¹</bdi> × 500) ≈ 0.004 / <bdi dir="ltr">2.1×10⁻⁷</bdi> ≈ 19,000 מטר — גוף צפוף בעובי של כ-19 ק"מ. זהו קירוב גס של לוח רחב; בכיפת הזנה עגולה העובי גדול יותר.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>גופים צפופים (≥100 ק"מ, ≥50 mGal)</td><td>73; 44 בלי ים</td><td>מאמר 5</td></tr><tr><td>עוצמה, ימות פתוחים</td><td>Orientale 740 · Moscoviense 689 · Nectaris 538 · Crisium 527 mGal</td><td>מאמר 5</td></tr><tr><td>עוצמה, ימות המגע</td><td>Serenitatis 412 · Imbrium 309 mGal</td><td>מאמר 5</td></tr><tr><td>עוצמה, קבורים</td><td>Freundlich–Sharonov 519 · Mendel–Rydberg 479 · Hertzsprung 470 mGal</td><td>מאמר 5</td></tr><tr><td>שקיעת המרכז מול עוצמת הכיפה</td><td>ρ = −0.59</td><td>מאמר 5</td></tr><tr><td>ברזל מעל כיפה פתוחה מול סביבתה</td><td>+1.47%</td><td>מאמר 5</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c8">א-08</a> · שלב 2 · הכיפה; <a href="enc_story_he.html#c10">א-10</a> · שלב 4 · ההתעגלות; <a href="enc_story_he.html#c14">א-14</a> · שלב 7 · ההתרחקות.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_mare_he.html">ב-5.01 · מהי ימה</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_mcount_he.html">ג-1.2.01 · ספירת הימות 34 / 73</a> · <a href="enc_mburied_he.html">ג-1.2.02 · כיפות ההזנה הקבורות</a> · <a href="enc_msunk_he.html">ג-1.2.03 · הקרקעית ששקעה</a> · <a href="enc_mzone_he.html">ג-1.2.10 · אופי הפתח לפי אזור</a> · ג-1.4.04 · המסה הצפופה · <a href="enc_comoffset_he.html">ג-1.1.05 · הסטת מרכז המסה</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.03 · GRAIL.</li>
+<li><strong>דלת להמשך:</strong> הימות נספרו עד כאן כקבוצה אחת. כאשר מחלקים אותם לפי הצד שבו הם יושבים, מתגלה תמונה הפוכה מזו שמראה הבזלת — <a href="enc_mnearfar_he.html">ג-1.2.16 · ימות קרוב מול רחוק</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper05_he.html">מאמר 5 · הימות</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Muller, P. M., & Sjogren, W. L. (1968). Mascons: lunar mass concentrations. Science, 161, 680–684. <a href="https://doi.org/10.1126/science.161.3842.680" rel="noopener">doi.org/10.1126/science.161.3842.680</a></li><li>Zuber, M. T., et al. (2013). Gravity field of the Moon from the Gravity Recovery and Interior Laboratory (GRAIL) mission. Science, 339, 668–671. <a href="https://doi.org/10.1126/science.1231507" rel="noopener">doi.org/10.1126/science.1231507</a></li><li>Melosh, H. J., et al. (2013). The origin of lunar mascon basins. Science, 340, 1552–1555. <a href="https://doi.org/10.1126/science.1235768" rel="noopener">doi.org/10.1126/science.1235768</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

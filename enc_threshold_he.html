@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>יממת הסף 13.4 — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-6.04 באנציקלופדיה של מודל LEF: יממת הסף — קו הקורוטציה נמצא בתוך גבול רוש רק כשהיממה קצרה מ-13.4 שעות (לחלקיקי קרח; לסיליקט 7.3), בלי תלות במסה ובגודל; טבעת מסיבית דורשת גם דליפה מן הכוכב — כמו בשבתאי היום ובמאדים הקדום.">
+<link rel="canonical" href="https://lef-model.com/enc_threshold_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-6.04</span> · <a href="LEF_enc_threshold_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · הכלים של מערכת השמש</p>
+<h1>יממת הסף 13.4: מתי כוכב מחזיק טבעת</h1>
+<p>ערך מושג · ב-6.04 · מבוסס על מאמרים 10 ו-12 ועל ההחלטות של 26.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 6. הכלים של מערכת השמש ← יממת הסף 13.4 · בסיפור: <a href="enc_story_he.html#c6">א-06</a> עד <a href="enc_story_he.html#c9">א-09</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>יממת הסף היא אורך היום שמתחתיו כוכב מסוגל להחזיק טבעת מסיבית. כאשר משווים את נוסחת קו הקורוטציה לנוסחת גבול רוש, צפיפות הכוכב מצטמצמת, ונותר רק אורך היממה. התוצאה: קו הקורוטציה מצוי בתוך גבול רוש אם ורק אם היממה קצרה מ-13.4 שעות — עבור כל כוכב, ללא תלות במסתו, בגודלו או בעוצמת הכבידה שלו. זהו התנאי הראשון. התנאי השני: הכוכב חייב לדלוף חומר מתוכו אל הקו. אך ורק כאשר שני התנאים מתקיימים יחד נוצרת טבעת מסיבית. המספר 13.4 מתאים לחלקיקי קרח; עבור חלקיקי סיליקט, שהם צפופים יותר, הסף קצר יותר — 7.3 שעות.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: רשת וכדורים</h2>
+<p>כדי לתפוס כדורים נדרשים שני דברים: רשת המוצבת במקום הנכון, ומישהו שזורק כדורים. הרשת היא התנאי הראשון — קו הקורוטציה המצוי בתוך גבול רוש. הזריקה היא התנאי השני — דליפה מן הכוכב. רשת ללא זורק נותרת ריקה; זורק ללא רשת — הכדורים חולפים הלאה.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>שבתאי:</strong> יממה של 10.6 שעות — קצרה מן הסף. המעטה דולף, ויש לו הטבעת המסיבית ביותר במערכת השמש: <bdi dir="ltr">1.54×10¹⁹</bdi> ק"ג, 95%–99% קרח מים.</li>
+<li><strong>צדק:</strong> יממה של 9.9 שעות — גם היא קצרה מן הסף, אך מעטה הגז העבה כמעט אינו דולף מים. יש לו רק טבעת אבק דלילה מירחיו הפנימיים.</li>
+<li><strong>אורנוס ונפטון:</strong> 17.2 ו-16.1 שעות — ארוכות מן הסף. נותרו להן טבעות צרות וכהות.</li>
+<li><strong>מאדים היום:</strong> 24.6 שעות, ללא טבעת. מאדים הצעיר הסתובב ב-<bdi dir="ltr">7–9</bdi> שעות, ולפי מאמר 10 הייתה לו טבעת.</li>
+<li><strong>כאשר מודדים את מרחק הקו ביחס לגבול רוש של היום מתקבלת צורת U:</strong> בצדק ובשבתאי הקו בתוך האזור (0.82 ו-0.86); באורנוס ובנפטון מעט מחוצה לו (1.18 ו-1.13); במאדים ובכדור הארץ הרחק מחוצה לו (1.50 ו-1.47); בחמה ובנוגה פי 22 ופי 57 (מאמר 12).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> שתי הנוסחאות, של קו הקורוטציה ושל גבול רוש; המדידות של הטבעות ושל אורך היום; טבעות שבתאי עשויות כמעט כולן קרח.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל אין סף אחד; כל טבעת מוסברת בנפרד, לרוב כשריד של ירח שהתפרק או של חומר שלא התגבש. במודל LEF פועל כלל אחד, התלוי אך ורק באורך היממה, לצד תנאי שני של הזנה מבפנים.</li>
+<li><strong>מה לקוח ומה חדש:</strong> שתי הנוסחאות והמדידות לקוחות מן הספרות המדעית. החידוש: צירופן ליממת סף אחת, 13.4 שעות, ותנאי ההזנה כתנאי שני.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. למה הצפיפות מתבטלת</h3>
+<p>מיקום קו הקורוטציה ביחידות של רדיוס הכוכב תלוי ביחס שבין הסיבוב לצפיפות (ב-6.01). גם גבול רוש, ביחידות של רדיוס, תלוי בצפיפות הכוכב — ביחס לצפיפות החלקיקים. כאשר מחלקים אחד בשני, צפיפות הכוכב מצטמצמת, ונותרים רק אורך היממה וצפיפות החלקיקים.</p>
+<h3>2. התנאי הראשון: הקו בתוך גבול רוש</h3>
+<p>חומר הדולף מן הכוכב מגיע אל אזור הקו. אם קו הקורוטציה שוכן בתוך גבול רוש, החומר אינו מסוגל להתגבש ונותר כטבעת. אם הקו מצוי מחוץ לגבול רוש, החומר אינו נלכד כטבעת.</p>
+<h3>3. התנאי השני: דליפה מהכוכב</h3>
+<p>מעטה הגז אינו אוטם לחלוטין, והחלק החיצוני של הכוכב לא קפא ולא התייבש. הלחץ הפנימי דוחף מים וחומר קל החוצה, וחלקם מגיע אל קו הקורוטציה.</p>
+<h3>4. מי עומד בשני התנאים</h3>
+<p>רק שבתאי היום ומאדים הקדום. צדק עומד בתנאי הראשון, אך עקרון המכסה העבה שלו חוסם את הדליפה. כדור הארץ בלידה עמד בראשון, אך התייבש במהירות; ובנוסף, האגס שבנה את הירח אסף לתוכו את הרצועה המשוונית שבה הייתה נוצרת טבעת. אורנוס ונפטון הסתובבו בעבר במהירות, אך כיום הם איטיים מיממת הסף, והקרום שלהם קפוא.</p>
+<h3>5. קרח או סיליקט — 13.4 או 7.3</h3>
+<p>13.4 שעות הוא הסף עבור חלקיקי קרח (900 ק"ג/מ"ק). עבור חלקיקי סיליקט (3,000 ק"ג/מ"ק) הסף קצר יותר: 7.3 שעות. טבעת מאדים נשאה כמות עצומה של מים ונדיפים (מאמר 10), ולכן היממה שלו, <bdi dir="ltr">7–9</bdi> שעות, עומדת בסף של הקרח.</p>
+<h3>6. הסף והזמן</h3>
+<p>כאשר הכוכב מאט, היממה מתארכת, קו הקורוטציה נודד החוצה ויוצא מגבול רוש. אם באותו זמן גם ההזנה נפסקת, הטבעת מתרוקנת ונעלמת. כך נעלמה הטבעת של מאדים.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>היחס בין הקו לגבול רוש:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><msub><mi>x</mi><mi>c</mi></msub><msub><mi>x</mi><mi>R</mi></msub></mfrac><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mi>P</mi><msup><mi>P</mi><mo>∗</mo></msup></mfrac><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\frac{x_c}{x_R}=\left(\frac{P}{P^*}\right)^{2/3}</annotation></semantics></math></span></div></div>
+<p>יממת הסף — בקרח (900 ק"ג/מ"ק): כ-13.4 שעות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mn>2</mn><mi>π</mi><msqrt><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2.4</mn><msup><mn>6</mn><mn>3</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><mtext> </mtext><mi>G</mi><mtext> </mtext><msub><mi>ρ</mi><mtext>particle</mtext></msub></mrow></mfrac></msqrt></mrow><annotation encoding="application/x-tex">P^*=2\pi\sqrt{\frac{3\cdot 2.46^3}{4\pi\,G\,\rho_{\text{particle}}}}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>שבתאי — הכוכב היחיד כיום עם טבעת מסיבית — הוא גם היחיד כיום שעומד בשני התנאים.</li>
+<li>לצדק, העומד בתנאי הראשון בלבד, יש רק טבעת אבק מירחים.</li>
+<li>לכוכבים שהיממה שלהם ארוכה מיממת הסף יש רק טבעות צרות, או שאין להם טבעות כלל.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 0 (<a href="enc_story_he.html#c6">א-06</a>): כדור הארץ הצעיר מסתובב ב-5.5 שעות — הרחק מתחת ליממת הסף. שלב 3 (<a href="enc_story_he.html#c9">א-09</a>): האגס אוסף את הרצועה המשוונית אל הירח הנבנה, וכדור הארץ מתייבש — ולכן אין טבעת, ויש ירח.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מדוע לשבתאי טבעת מסיבית ולצדק לא, אף ששניהם מהירים:</strong> עקרון המכסה של צדק חוסם את ההזנה.</li>
+<li><strong>מדוע לכדור הארץ ולמאדים אין טבעות כיום:</strong> היממה התארכה וקו הקורוטציה יצא מגבול רוש.</li>
+<li><strong>מדוע טבעות אורנוס ונפטון צרות:</strong> הם איטיים מיממת הסף.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · מחשבים את הסף</span>
+<p>חשבו את הסף עבור קרח. 2.46³ ≈ 14.89; כפול 3 — 44.7. במכנה: 4π × <bdi dir="ltr">6.674×10⁻¹¹</bdi> × 900 ≈ <bdi dir="ltr">7.55×10⁻⁷</bdi>. היחס: 44.7 / <bdi dir="ltr">7.55×10⁻⁷</bdi> ≈ <bdi dir="ltr">5.92×10⁷</bdi>; השורש — כ-7,690 שניות; כפול 2π — כ-48,300 שניות, כלומר 13.4 שעות. כעת נסו סיליקט, 3,000 ק"ג/מ"ק: המכנה גדל פי 3.33, והשורש קטן פי 1.83 — כ-7.3 שעות.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>גבול רוש חושב בשנת 1848, וקו הקורוטציה מוכר ממכניקת המסלולים. Cassini מדדה בשנים <bdi dir="ltr">2004–2017</bdi> את מסת טבעות שבתאי ואת "גשם הטבעות" היורד מהן אל הכוכב. צירופן של שתי הנוסחאות ליממת סף אחת, התלויה רק באורך היממה, הוא תוצאה של מודל LEF (מאמר 12).</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הכוכב</th><th>יממה (שעות)</th><th>הקו (R)</th><th>גבול רוש לקרח (R)</th><th>תנאי 1</th><th>תנאי 2</th><th>התוצאה</th></tr><tr><td>שבתאי היום</td><td>10.6</td><td>1.92</td><td>2.24</td><td>כן</td><td>כן: המכסה דולף</td><td>טבעת מסיבית</td></tr><tr><td>מאדים הצעיר</td><td><bdi dir="ltr">7–9</bdi></td><td><bdi dir="ltr">1.74–2.05</bdi></td><td>2.68</td><td>כן</td><td>כן: הר געש על בליטה</td><td>הייתה טבעת</td></tr><tr><td>צדק היום</td><td>9.9</td><td>2.29</td><td>2.80</td><td>כן</td><td>כמעט אין: מכסה עבה</td><td>טבעת אבק מירחים</td></tr><tr><td>כדור הארץ בלידה</td><td>5.77</td><td>2.52</td><td>4.40</td><td>כן</td><td>לא: התייבש מהר</td><td>אין טבעת; הירח נבנה</td></tr><tr><td>אורנוס היום</td><td>17.2</td><td>3.26</td><td>2.76</td><td>לא</td><td>לא: המים ברחו, קפא</td><td>טבעות צרות</td></tr><tr><td>נפטון היום</td><td>16.1</td><td>3.39</td><td>3.00</td><td>לא</td><td>לא: קפא</td><td>טבעות צרות</td></tr><tr><td>מאדים היום</td><td>24.6</td><td>6.03</td><td>4.02</td><td>לא</td><td>לא: הקרקע נסגרה</td><td>הטבעת נעלמה</td></tr><tr><td>כדור הארץ היום</td><td>23.9</td><td>6.62</td><td>4.49</td><td>לא</td><td>לא</td><td>אין טבעת</td></tr></table></div>
+<p>(מאמר 12, B.5; שורת כדור הארץ בלידה — לפי רדיוס 6,517 ק"מ, כמו ב-2.02)</p>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>יממת הסף לפי צפיפות החלקיק</td><td>קרח 900 → 13.4 · 1,500 → 10.4 · 2,000 → 9.0 · סיליקט 3,000 → 7.3 שעות</td><td>מאמר 12; חישוב, 26.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0; <a href="enc_story_he.html#c9">א-09</a> · שלב 3.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · <a href="enc_roche_he.html">ב-2.05 · גבול רוש</a> · <a href="enc_twolines_he.html">ב-6.03 · שני קווים סביב כל כוכב</a> · <a href="enc_conveyor_he.html">ב-6.05 · טבעת שוברת וטוחנת: המסוע</a>.</li>
+<li><strong>תעלומות:</strong> ג-3.2.01 · טבעת הקיטור · ג-4.3.02 · זרימת שיווי משקל שבתאי · ג-4.3.03 · מחזור חיים של טבעת.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>נוצרה טבעת. מה היא עושה לירחים ולגושים שעוברים בה? היא לא בונה אותם — היא שוברת וטוחנת: <a href="enc_conveyor_he.html">ב-6.05 · טבעת שוברת וטוחנת: המסוע</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper10_he.html">מאמר 10 · מאדים: הבליטה והטבעת</a></li><li><a href="paper12_he.html">מאמר 12 · הטבעות</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Iess, L., et al. (2019). Measurement and implications of Saturn’s gravity field and ring mass. Science, 364, eaat2965. <a href="https://doi.org/10.1126/science.aat2965" rel="noopener">doi.org/10.1126/science.aat2965</a></li><li>Cuzzi, J. N., et al. (2010). An evolving view of Saturn’s dynamic rings. Science, 327, 1470–1475. <a href="https://doi.org/10.1126/science.1179118" rel="noopener">doi.org/10.1126/science.1179118</a></li><li>Waite, J. H., et al. (2018). Chemical interactions between Saturn’s atmosphere and its rings. Science, 362, eaat2382. <a href="https://doi.org/10.1126/science.aat2382" rel="noopener">doi.org/10.1126/science.aat2382</a></li><li>O’Donoghue, J., et al. (2019). Observations of the chemical and thermal response of ‘ring rain’ on Saturn’s ionosphere. Icarus, 322, 251–260. <a href="https://doi.org/10.1016/j.icarus.2018.10.027" rel="noopener">doi.org/10.1016/j.icarus.2018.10.027</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
