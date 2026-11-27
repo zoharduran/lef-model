@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>תוריום — פריסת החומר — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-5.14 באנציקלופדיה של מודל LEF: התוריום הולך עם הנוזל ולא מתאדה, ולכן המפה שלו היא מפה של הדרך — מן הסיאל של כדור הארץ, דרך המגע והימות, אל תחתית SPA (מרכז 1.7, סהר 4–5 ppm), ואחרי הניתוק החלק הקל שכדור הארץ זרק (אפולו 12).">
+<link rel="canonical" href="https://lef-model.com/enc_thdist_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-5.14</span> · <a href="LEF_enc_thdist_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · החומרים</p>
+<h1>תוריום — פריסת החומר: מפה של הדרך שהנוזל הלך</h1>
+<p>ערך חומר · ג-5.14 · מבוסס על מאמרים 3, 5 ו-8 ועל ההחלטות של 1.10, 4.10, 6.10, 11.10, 12.10, 16.11 ו-22.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 5. החומרים ← תוריום — פריסת החומר · בסיפור: <a href="enc_story_he.html#c6">א-06</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>התוריום הוא יסוד רדיואקטיבי שכמעט לא השתנה מאז ראשית מערכת השמש, ושאפשר למדוד אותו מן החלל. משום כך המפה שלו היא מפה של היכן הלך החומר. על הירח הוא אינו מפוזר: כתם גדול בצד הקרוב, כתם שני בתחתית אגן SPA בצד הרחוק — ושם דווקא לא במרכז אלא בטבעת ובסהר — כתמים קטנים ובודדים, ודגימות עשירות במקומות בלתי צפויים. ובכדור הארץ הוא יושב כמעט כולו בקרום הקל, הסיאל. כיצד התחלק התוריום בדרך מכדור הארץ אל הירח ובתוכו? ומה חלוקה זו מספרת?</p>
+<p>ערך זה עוסק בפריסת החומר. ההבדל בין שני צדדיו של הירח מצוי בערך <a href="enc_thorium_he.html">ג-1.1.01 · תוריום</a>.</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>תוריום-232 הוא כמעט כל התוריום בטבע; זמן מחצית החיים שלו 14.05 מיליארד שנה. ב-4.5 מיליארד שנה נותר ממנו כ-80%, ולכן המפה של ימינו משקפת כמעט את הפיזור המקורי (מאמר 5).</li>
+<li><strong>חמש תכונות קובעות היכן יימצא:</strong> הוא אינו נכנס לגבישים והולך תמיד עם הנוזל; הוא נקשר לחמצן ונותר בחומר הסיליקטי, ואינו שוקע עם הברזל; הוא עמיד בחום ואינו מתאדה — לפיכך היחס שבין אשלגן לתוריום (K/Th) הוא מדחום של חימום ממושך; מים רגילים כמעט אינם ממיסים אותו; והוא מייצר חום (מאמר 5).</li>
+<li><strong>בכדור הארץ:</strong> בליבה כמעט אינו מצוי; במעטפת כ-0.08 ppm; בקרום האוקייני כ-0.2; בסיאל כ-5.6 בממוצע — 1.2 בתחתון, 6.5 בתיכון, 10.5 בעליון (Rudnick &amp; Gao 2003).</li>
+<li><strong>על הירח:</strong> חציון 1.69 ppm על פני הירח כולו; 4.40 בימות; 1.24 ברמות המרוחקות 300 ק"מ ויותר מכל ימה; 2.13 באגן SPA (מאמר 5). 95.0% מעודף התוריום שמעל 3 ppm בדיסקת המגע, שהיא 17.5% מן השטח (מאמר 5; ג-1.1.01).</li>
+<li><strong>SPA:</strong> בתוך 30° מן המרכז, פי <bdi dir="ltr">2.4–3.6</bdi> מן הסביבה; 1.7 ppm במרכז, שיא בטבעת 10°–20°, וסהר במערב-צפון-מערב — <bdi dir="ltr">4–5</bdi> ppm, ועד כ-6 ppm במכתשים Birkeland ו-Oresme V (מאמר 8).</li>
+<li><strong>הסהר הוא כיסוי שנחת מלמעלה:</strong> בתוך 43 מכתשים התוריום זהה לריכוז מחוצה להם, והוא נחלש עם המרחק מן המרכז (r = −0.53). מרכז המכתשים העשירים 6.6° מן הנקודה שמול Imbrium (מאמר 8).</li>
+<li><strong>K/Th ב-SPA:</strong> <bdi dir="ltr">451–455</bdi> בכל הפנים, 16%–20% מתחת לסביבה; בבזלות Chang'e-6 האשלגן והברזל כבדים איזוטופית. מאותו אזור: בזלת בת 4.203 מיליארד שנה ממקור עשיר בתוריום (μ ≈ 1,620), ובזלת בת 2.807 מיליארד שנה ממקור מדולדל (μ ≈ 360) (Zhang et al. 2025; מאמר 8).</li>
+<li><strong>דגימות:</strong> אפולו 12 — קרקע הקשורה לקרני Copernicus, <bdi dir="ltr">7.6–9.4</bdi> ppm תוריום ו-14.0%–15.7% תחמוצת ברזל, מול 0.83 ppm ו-20.5% בבזלת המקומית שמתחתיה (Korotev et al. 2011). אפולו 15 — בזלת KREEP, <bdi dir="ltr">10–15.4</bdi> ppm (Taylor et al. 2012). Chang'e-5 — בזלת בת 2.03 מיליארד שנה מלב אזור התוריום, ממקור בעל פחות מחצי אחוז KREEP (Tian et al. 2021).</li>
+<li><strong>כתמים קטנים מחוץ למגע:</strong> Compton–Belkovich (61°N, 99.5°E, בצד הרחוק) — לבה סמיכה ועשירה בצורן, <bdi dir="ltr">14–26</bdi> ppm בזמן ההתפרצות, פוזרה בפיצוץ על כ-40 × 75 ק"מ; אולי בת כמיליארד שנה בלבד (Wilson et al. 2015). כיפות Gruithuisen, Hansteen Alpha ו-Lassell — עשירות בתוריום, דומות לכיפות ריוליט בכדור הארץ (Hagerty et al. 2006); וכ-20 "כתמי תוריום קטנים" באזור התוריום (Lawrence et al. 2003).</li>
+<li><strong>מים:</strong> כמעט כל מרבצי הזכוכית הגעשית הגדולים מכילים מים — כ-0.05% מן המשקל — ובהם Aristarchus שבלב אזור התוריום (Milliken &amp; Li 2017).</li>
+<li><strong>מבחן "האזור הנתפס" סביב 34 הימות (22.11.2026):</strong> לאחר שמוציאים את הירידה הטבעית של התוריום עם המרחק ממרכז המגע, אין עודף בטבעת שסביב הימה (חציון 0.00 ppm) (מאמר 5).</li>
+<li><strong>בכדור הארץ, מתחת לאזור האגס (25°N, 165°E):</strong> אין רכסים אוקייניים רגילים לדגום; בבזלות הוואי ואיי קרולינה Th/La נמוך (0.068 מול 0.110), אולם אך ורק בשני ארכיפלגים, וללא הוואי ההבדל נעלם — לא הוכרע (13.10.2026).</li>
+<li><strong>במחקר המקובל:</strong> אוקיינוס מגמה, שהנוזל האחרון שלו נאסף מתחת לצד הקרוב (Jolliff et al. 2000); הסהר של SPA — חשיפה של המעטפת או של שארית אגם התכה (Moriarty et al. 2021); האשלגן הכבד — התאדות רגעית בהתנגשות; עושר אפולו 12 — ערבוב עם חומר KREEP מקומי.</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: נהר שנושא בוץ</h2>
+<p>נהר יורד מן ההרים ונושא איתו בוץ דק. איפה שהוא זורם מהר — הבוץ נשאר במים. איפה שהוא מאט, נכנס לאגם או נעצר מאחורי סכר — הבוץ שוקע ונערם. איפה שהוא מסתובב בפיתול — הבוץ נזרק לצד אחד. אחרי שנים, מי שמסתכל על מפת הבוץ בעמק רואה את כל הדרך של הנהר: איפה עבר, איפה עצר, ואיפה פנה — גם אם הנהר עצמו כבר יבש.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> התוריום הולך עם הנוזל ולא עם הכובד; הוא אינו מתאדה; בכדור הארץ הוא מצוי בסיאל; היחס K/Th מעיד על חימום.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל כל ריכוז מקבל מנגנון משלו — אוקיינוס מגמה, פליטה של Imbrium, חום מ-SPA, חשיפה של חומר עמוק, ערבוב מקומי. במודל LEF "הכל הגיע מכדור הארץ — החלוקה היא הסיפור" (זוהר, 22.11.2026): כל ריכוז הוא מקום שבו הנוזל שנשא את התוריום נאסף, נעצר או הוסט, בדרך אחת.</li>
+<li><strong>מה לקוח ומה חדש:</strong> המדידות, הדגימות וההרכב של כדור הארץ לקוחים מן הספרות המדעית. החידוש: לקרוא את כל הריכוזים כתחנות במסע אחד של החומר הארצי.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. נקודת המוצא: הסיאל</h3>
+<p>בכדור הארץ התוריום נותר בחומר הסיליקטי, ובתוכו בחר בנוזל. משום כך הוא התרכז בסיאל — הקרום הקל שנוצר מהתכה בנוכחות מים — והמעטפת נותרה כמעט נקייה. התוריום עלה אל הירח עם הסיאל, ולא מן העומק (זוהר, 22.11.2026).</p>
+<h3>2. הדרך: במעלה האגס</h3>
+<p>הסיאל החליק על הסימה לאורך האגס עד הקצה (רעיון של זוהר, 1.10.2026; מאמר 3). הגבול ביניהם היה רטוב: באותה עת רוב מי האוקיינוסים עוד שהו בתוך החומר (זוהר, 16.11.2026).</p>
+<h3>3. התחנה הראשונה: המגע</h3>
+<p>במגע — חם, רטוב וסגור — התוריום עבר אל הנוזל ונאסף, והשאיבה של הסיבוב אל השמש וממנה דחקה אותו לכיסים. הסיאל המשיך דל אל הצד הרחוק. זהו הכתם הגדול של הצד הקרוב (ג-1.1.01).</p>
+<h3>4. הימות: התוריום הלך פנימה</h3>
+<p>דרך הימות הזרימה הלכה פנימה, אל הנוזל, וכאשר קפאו מבחוץ התוריום נדחק עם כיוון הקפיאה אל הנוזל שנותר — פנימה (זוהר, 22.11.2026). לפיכך הימות של המגע עניות.</p>
+<h3>5. התחנה השנייה: תחתית SPA</h3>
+<p>חלק מן התוריום שהצטבר במגע הופנה, עם החום שאימבריום וסרניטאטיס החדירו פנימה — המבער — אל תחתית SPA, שבה הסיאל נמס זמן רב בחום שהגיע מן הצד הקרוב (זוהר, 22.11.2026). שם הנוזל הראשון נטל את התוריום מן המרכז, והמרכז נותר מדולדל — 1.7 ppm. הנוזל זרם החוצה והוסט בסיבוב אל צד אחד (זוהר, 6.10.2026). נוסף על כך, הימה המרכזית של SPA זרקה חומר ששהה באוויר, והקרקע הסתובבה מתחתיו — הוא נחת מאחור, בצד המאסף (רעיון של זוהר, 4.10.2026). בדרך זו נוצר הסהר: כיסוי הנחלש עם המרחק, ו-Birkeland ו-Oresme V הם המקומות שבהם החומר נחת ישירות (ג-1.4.09).</p>
+<h3>6. החום הארוך: אשלגן יצא, תוריום נשאר</h3>
+<p>החום הממושך של המבער אידה את האשלגן והותיר את התוריום — לפיכך K/Th נמוך ואחיד בכל האזור. וההתכה החוזרת שטפה את המקור, בדומה לשקית תה: תחילה בזלת ממקור עשיר, לאחר מכן ממקור מדולדל (ג-1.4.05; ג-1.4.09).</p>
+<h3>7. למה לא ישר מן המבערים</h3>
+<p>אילו התוריום של SPA היה מגיע ישר מן המבערים, הוא היה מצוי גם מול Serenitatis — ואינו שם. משום כך נדידת התוריום עם הנוזל נותרת (זוהר, 6.10.2026).</p>
+<h3>8. אחרי הניתוק: החלק הקל</h3>
+<p>לאחר הניתוק כדור הארץ המשיך לזרוק חומר. ללא החיבור, אך ורק החלק הקל הצליח להימלט מן המשיכה שלו; הכבד נותר קשור. החלק הקל — עשיר בתוריום ועני בברזל (זוהר, 11.10.2026). זהו הממצא הנראה באפולו 12, בקרני Copernicus: <bdi dir="ltr">7.6–9.4</bdi> ppm תוריום, ופחות ברזל מן הבזלת שעליה נחת.</p>
+<h3>9. מבחן המקור: מכתש שנושא את החתימה</h3>
+<p>זוהר הציע מבחן כללי לכל הימות, וכינה אותו "חשוב מאוד": מכתשים סביב ים הנושאים את החתימה הכימית שלו — למשל תוריום — באו מים זה; מכתשים ללא החתימה באו ממקום אחר, אולי רחוק (רעיון של זוהר, 4.10.2026; ג-1.3.01).</p>
+<h3>10. מה נשאר בכדור הארץ</h3>
+<p>אם הסיאל עם התוריום עזב את כדור הארץ דרך האגס, באזור בסיס האגס נדרש להימצא חוסר תוריום. חוסר כזה בפתחי בסיס האגס יהווה "תגלית גדולה" (זוהר, 12.10.2026). מיקומם טרם נודע, והבדיקה הראשונה לא הכריעה.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הדעיכה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><msub><mi>N</mi><mn>0</mn></msub></mfrac><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>t</mi><mi mathvariant="normal">/</mi><msub><mi>t</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>4.5</mn><mi mathvariant="normal">/</mi><mn>14.05</mn></mrow></msup><mo>≈</mo><mn>0.80</mn></mrow><annotation encoding="application/x-tex">\frac{N(t)}{N_0}=2^{-t/t_{1/2}}=2^{-4.5/14.05}\approx0.80</annotation></semantics></math></span></div></div>
+<p>ריכוז בנוזל השארית:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mrow><mi>l</mi><mi>i</mi><mi>q</mi><mi>u</mi><mi>i</mi><mi>d</mi></mrow></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><msup><mi>F</mi><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>≈</mo><mfrac><msub><mi>C</mi><mn>0</mn></msub><mi>F</mi></mfrac><mspace width="1em"/><mo stretchy="false">(</mo><mi>D</mi><mo>≈</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C_{liquid}=C_0F^{D-1}\approx\frac{C_0}{F}\quad(D\approx0)</annotation></semantics></math></span></div></div>
+<p>המדחום של החימום — מול <bdi dir="ltr">537–567</bdi> בסביבה:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mi mathvariant="normal">K</mi><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>S</mi><mi>P</mi><mi>A</mi></mrow></msub><mo>=</mo><mn>451</mn><mtext>–</mtext><mn>455</mn></mrow><annotation encoding="application/x-tex">\left(\frac{\mathrm{K}}{\mathrm{Th}}\right)_{SPA}=451\text{–}455</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>ריכוז גדול סביב מרכז המגע, וצד רחוק דל.</li>
+<li><strong>ב-SPA:</strong> מרכז מדולדל, טבעת, וסהר כיסוי בצד אחד; K/Th נמוך; מקור עשיר ולאחריו מקור שטוף.</li>
+<li>דגימות עשירות בתוריום ועניות בברזל מן החומר שהגיע לאחר הניתוק.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> תוריום בסהר של SPA המתברר כחומר עמוק שנחשף — עשיר יותר בתוך המכתשים מאשר מחוצה להם; דגימות מעמק SPA ללא שום סימן של התכה חוזרת ושל אובדן נדיפים.</li>
+<li><strong>פתוח:</strong> Compton–Belkovich — כתם חזק בצד הרחוק, רחוק מן המגע ומ-SPA, שהתפרץ בפיצוץ של גזים; ייתכן שגם שם נכלאו נדיפים, אולם טרם נבדק במודל. מה נותר בכדור הארץ מתחת לאגס. המים בזכוכיות ובמינרל אפטיט — האם הם קשורים למרחק ממרכז המגע. ומבחן המקור, מכתש אחר מכתש.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה תוריום מתרכז בנוזל</span>
+<p>כמה תוריום מתרכז בנוזל? כאשר התוריום כמעט אינו נכנס לגבישים (D ≈ 0), והמגמה מתגבשת עד שנותרת עשירית ממנה כנוזל (F = 0.1), הריכוז בנוזל עולה פי 10. אם המקור היה בדומה לסיאל של כדור הארץ, 5.6 ppm, הנוזל האחרון יגיע לכ-56 ppm. ובכיוון ההפוך: ההתכה הראשונה של SPA נוטלת כמעט את כל התוריום, והשארית נותרת דלה — 1.7 ppm במרכז, מול <bdi dir="ltr">4–5</bdi> ppm בסהר. וכמה נותר מן התוריום מאז ההתחלה? 2^(−4.5 / 14.05) = 2^(−0.32) ≈ 0.80.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>זמן מחצית החיים / מה שנשאר אחרי 4.5 מיליארד שנה</td><td>14.05 מיליארד שנה / כ-80%</td><td>מאמר 5</td></tr><tr><td>כדור הארץ: מעטפת / קרום אוקייני / סיאל</td><td>0.08 / 0.2 / 5.6 ppm</td><td>Rudnick &amp; Gao 2003</td></tr><tr><td>סיאל: תחתון / תיכון / עליון</td><td>1.2 / 6.5 / 10.5 ppm</td><td>Rudnick &amp; Gao 2003</td></tr><tr><td>חציונים: הירח / ימות / רמות רחוקות / SPA</td><td>1.69 / 4.40 / 1.24 / 2.13 ppm</td><td>מאמר 5</td></tr><tr><td>SPA: פי / מרכז / סהר</td><td><bdi dir="ltr">2.4–3.6</bdi> / 1.7 / <bdi dir="ltr">4–5</bdi> (עד כ-6) ppm</td><td>מאמר 8</td></tr><tr><td>הסהר: מכתשים / ירידה עם המרחק</td><td>43; בפנים = בחוץ / r = −0.53</td><td>מאמר 8</td></tr><tr><td>K/Th: SPA / סביבה</td><td><bdi dir="ltr">451–455</bdi> / <bdi dir="ltr">537–567</bdi></td><td>מאמר 8</td></tr><tr><td>μ: 4.203 / 2.807 מיליארד שנה</td><td>כ-1,620 / כ-360</td><td>Zhang et al. 2025</td></tr><tr><td>אפולו 12: תוריום / FeO</td><td><bdi dir="ltr">7.6–9.4</bdi> ppm / 14.0%–15.7% (מול 0.83 / 20.5%)</td><td>Korotev et al. 2011</td></tr><tr><td>אפולו 15: בזלת KREEP</td><td><bdi dir="ltr">10–15.4</bdi> ppm</td><td>Taylor et al. 2012</td></tr><tr><td>Compton–Belkovich</td><td><bdi dir="ltr">14–26</bdi> ppm; כ-40 × 75 ק"מ</td><td>Wilson et al. 2015</td></tr><tr><td>מים בזכוכיות געשיות</td><td>כ-0.05%</td><td>Milliken &amp; Li 2017</td></tr><tr><td>כדור הארץ מתחת לאגס: Th/La</td><td>0.068 מול 0.110 — לא הוכרע</td><td>13.10.2026</td></tr><tr><td>ריכוז בנוזל ב-F = 0.1</td><td>פי 10</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0 · כדור הארץ הצעיר; <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c15">א-15</a> · שלב 8 · היום.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_sialslide_he.html">ב-3.04 · הסיאל מחליק על הסימה</a> · <a href="enc_vent_he.html">ב-3.08 · האגס כפתח נידוף</a> · <a href="enc_mare_he.html">ב-5.01 · מהי ימה</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_thorium_he.html">ג-1.1.01 · תוריום</a> · <a href="enc_kreep_he.html">ג-1.1.02 · KREEP</a> · <a href="enc_csource_he.html">ג-1.3.01 · המקור אינו מקום הנחיתה</a> · <a href="enc_clast_he.html">ג-1.3.18 · כדור הארץ כמפזר האחרון</a> · <a href="enc_spavolat_he.html">ג-1.4.05 · מעטפת שאיבדה נדיפים</a> · <a href="enc_spaburied_he.html">ג-1.4.09 · בזלתים קבורות</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> התוריום הלך עם הנוזל. הברזל הלך עם הכובד — או נשאר במקום. כיצד הוא התחלק? ג-5.01 · ברזל.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper03_he.html">מאמר 3 · מנגנון LEF בפועל</a></li><li><a href="paper05_he.html">מאמר 5 · הימות</a></li><li><a href="paper08_he.html">מאמר 8 · South Pole–Aitken</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Rudnick, R. L., & Gao, S. (2003). Composition of the continental crust. Treatise on Geochemistry, 3, 1–64. <a href="https://doi.org/10.1016/B0-08-043751-6/03016-4" rel="noopener">doi.org/10.1016/B0-08-043751-6/03016-4</a></li><li>Jolliff, B. L., Gillis, J. J., Haskin, L. A., Korotev, R. L., & Wieczorek, M. A. (2000). Major lunar crustal terranes: surface expressions and crust–mantle origins. Journal of Geophysical Research, 105(E2), 4197–4216. <a href="https://doi.org/10.1029/1999JE001103" rel="noopener">doi.org/10.1029/1999JE001103</a></li><li>Korotev, R. L., Jolliff, B. L., Zeigler, R. A., Seddio, S. M., & Haskin, L. A. (2011). Apollo 12 revisited. Geochimica et Cosmochimica Acta, 75, 1540–1573. <a href="https://doi.org/10.1016/j.gca.2010.12.016" rel="noopener">doi.org/10.1016/j.gca.2010.12.016</a></li><li>Zhang, Q. W. L., et al. (2025). Lunar farside volcanism 2.8 billion years ago from Chang’e-6 basalts. Nature, 643. <a href="https://doi.org/10.1038/s41586-024-08382-0" rel="noopener">doi.org/10.1038/s41586-024-08382-0</a></li><li>Tian, H.-C., et al. (2021). Non-KREEP origin for Chang’e-5 basalts in the Procellarum KREEP Terrane. Nature, 600, 59–63. <a href="https://doi.org/10.1038/s41586-021-04119-5" rel="noopener">doi.org/10.1038/s41586-021-04119-5</a></li><li>Wilson, J. T., et al. (2015). Evidence for explosive silicic volcanism on the Moon from the extended distribution of thorium near the Compton–Belkovich Volcanic Complex. JGR Planets, 120, 92–108. <a href="https://doi.org/10.1002/2014JE004719" rel="noopener">doi.org/10.1002/2014JE004719</a></li><li>Hagerty, J. J., et al. (2006). Refined thorium abundances for lunar red spots. JGR Planets, 111, E06002. <a href="https://pubs.usgs.gov/publication/70202244" rel="noopener">pubs.usgs.gov/publication/70202244</a></li><li>Lawrence, D. J., et al. (2003). Small-area thorium features on the lunar surface. JGR Planets, 108, 5102. <a href="https://doi.org/10.1029/2003JE002050" rel="noopener">doi.org/10.1029/2003JE002050</a></li><li>Milliken, R. E., & Li, S. (2017). Remote detection of widespread indigenous water in lunar pyroclastic deposits. Nature Geoscience, 10, 561–565. <a href="https://doi.org/10.1038/ngeo2993" rel="noopener">doi.org/10.1038/ngeo2993</a></li><li>Moriarty, D. P., et al. (2021). The search for lunar mantle rocks exposed on the surface of the Moon. Nature Communications / JGR Planets. <a href="https://doi.org/10.1029/2020JE006589" rel="noopener">doi.org/10.1029/2020JE006589</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
