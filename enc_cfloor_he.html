@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>קרקעית מתחת לקרקע — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.3.15 באנציקלופדיה של מודל LEF: בצד הרחוק הקרקעיות עמוקות פי שניים מבקרוב, ועל מישורי הבזלת שליש מן המכתשים הגדולים יושבים מעל הבזלת שבחוץ. נחיתה על קרקע רכה הרימה את הרצפה, וחלק מן הרצפות קפאו לפני ששקעו בחזרה.">
+<link rel="canonical" href="https://lef-model.com/enc_cfloor_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.3.15</span> · <a href="LEF_enc_cfloor_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>קרקעית מתחת לקרקע: רצפות שקפאו גבוה</h1>
+<p>ערך תעלומה · ג-1.3.15 · מבוסס על מאמר 6 ועל ההחלטות של 10.10 ו-11.10</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← קרקעית מתחת לקרקע · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>הקרקעית של מכתש יושבת מתחת לקרקע שסביבו — זוהי ההגדרה של בור. במחקר המקובל עומק הקרקעית תלוי בגודל המכתש ובגילו: מכתש ישן מתמלא ונעשה רדוד. אולם במכתשים באותו גודל, בצד הרחוק הקרקעיות עמוקות פי שניים מאשר בצד הקרוב. ועל מישורי הבזלת של הצד הקרוב, המכתשים הגדולים כמעט אינם שקועים כלל — ושליש מהם ניצבים אפילו גבוה יותר מן הבזלת שסביבם. כיצד קרקעית של מכתש יכולה להימצא מעל הקרקע שמחוצה לו?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>עומק הקרקעית מתחת לקרקע, באלפיות הקוטר, ללא הפסגה המרכזית, ללא הימות, SPA והאגנים: <bdi dir="ltr">20–30</bdi> ק"מ — חצי מוביל 41, צד רחוק 54, חצי מאסף 38, צד קרוב 27; <bdi dir="ltr">30–50</bdi> ק"מ — 24, 47, 29, 25; <bdi dir="ltr">50–100</bdi> ק"מ — 22, 36, 27, 17 (מאמר 6).</li>
+<li>הצד הרחוק עמוק מן החצי המאסף ב-9 עד 18 אלפיות הקוטר, בכל גודל, וכל הטווחים מעל האפס; בין החצי המוביל לחצי המאסף אין הבדל (מאמר 6).</li>
+<li>מכתשים בקוטר 40 ק"מ ומעלה על הבזלת של הצד הקרוב, מול הבזלת בטבעת שמחוץ להם (<bdi dir="ltr">1.6–2.4</bdi> רדיוסים): מומסים — 52 מכתשים, חציון −46 מ', 15 מהם גבוהים ביותר מ-50 מ' מן הבזלת; מרוחים — 24, חציון −107 מ', 9 גבוהים; חדים — 10, חציון −1,388 מ', 1 גבוה; מכתשי רמות באותם גדלים — 411, חציון −1,575 מ', 12 גבוהים (מאמר 6).</li>
+<li>Plato ניצב 500 מ' מעל הבזלת של Imbrium; מכתש בקוטר 182 ק"מ באוקיינוס הסערות — 518 מ' מעל מישור הבזלת (מאמר 6).</li>
+<li><strong>השיעור הניצב מעל הבזלת עולה עם הגודל:</strong> 5% ב-<bdi dir="ltr">5–10</bdi> ק"מ, 8% ב-<bdi dir="ltr">10–20,</bdi> 20% ב-<bdi dir="ltr">20–40,</bdi> 28% ב-<bdi dir="ltr">40–80</bdi> ו-41% מעל 80 ק"מ; ביחס לקוטר — <bdi dir="ltr">5–11</bdi>% בכל גודל (מאמר 6).</li>
+<li>על רצפות הימות של הצד הרחוק המכתשים עמוקים יותר מאשר בצד הקרוב: עומק חלקי קוטר 0.026 מול 0.021 ב-<bdi dir="ltr">20–40</bdi> ק"מ, 0.028 מול 0.020 ב-<bdi dir="ltr">40–80,</bdi> 0.021 מול 0.010 מעל 80 ק"מ; ופחות מהם מומסים — 38% מול 50% (מאמר 6).</li>
+<li><strong>מתחת למכתשים, לפי הכבידה:</strong> מתחת למכתשי רמות בסיס הקרום נמוך ב-0.41 ק"מ; מתחת למכתשים המומסים על מישורי הבזלת — +0.08 ק"מ (מאמר 6).</li>
+<li><strong>בספרות המדעית, רצפות מורמות מוכרות במכתשים בעלי רצפה סדוקה:</strong> מגמה שעלתה מתחת למכתש והתפשטה כשכבה ("סיל") הרימה את הרצפה מלמטה (מאמר 6).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: אבן בשעווה שמתקררת</h2>
+<p>זורקים אבן קטנה לסיר של שעווה חמה שמתקררת לאט. במקום שבו נפלה, פני השעווה מתרוממים ואחר כך שוקעים בחזרה לאט. אם השעווה עוד חמה — הכול מתיישר. אם היא מתקררת מהר מספיק — הגל קופא באמצע הדרך, ונשאר עומד גבוה מן השעווה שסביבו. ואם זורקים את האבן לתוך ערימת דפים, היא שוקעת עמוק; על קרש — היא נשארת למעלה.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> העומקים עצמם; מכתשים על מישורי הבזלת רדודים; רצפות מורמות קיימות.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל מכתש על בזלת נחפר בקרקע מוצקה, ולאחר מכן הבזלת הציפה אותו מבחוץ — ולכן הרצפה נדרשת להיות בגובה הבזלת שבחוץ או מתחתיה, בדומה למים בשני כלים מחוברים. רצפה המצויה מעל הבזלת מוסברת שם במגמה שעלתה מלמטה והרימה רצפה מוצקה. במודל LEF הנחיתה עצמה, על קרקע נוזלית או רכה, הרימה את הרצפה; הרצפה שקעה חזרה לאט בעת שהקרקע התקררה, וחלק מן הרצפות קפאו בטרם שבו מטה. רצפה הניצבת מעל הבזלת שבחוץ לא התמלאה ממנה — היא התמלאה מבפנים, בגובה משלה.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מודל הגבהים (LOLA, SLDEM2015), מפת הבזלת (LROC), קטלוגי המכתשים והכבידה של GRAIL לקוחים מן הספרות המדעית. החידוש: מדידה של כל מכתש מול הבזלת שבטבעת שממש מחוצה לו, רצפות הימות ומישורי הבזלת בנפרד, מול מכתשי רמות באותו גודל — תוך הוצאת הפסגה המרכזית מן הקרקעית.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. הקרקעית — לפי הקרקע</h3>
+<p>הקרקעית מתעדת את הקרקע שעליה נחת החומר, ואת החומר שמילא אותה לאחר מכן (ג-1.3.02). משום כך היא אינה נבדלת בין החצי המוביל לחצי המאסף — שני החצאים ניצבים על קרקע מאותו סוג — אלא בין הצד הרחוק לצד הקרוב.</p>
+<h3>2. הצד הרחוק — ערימת שכבות</h3>
+<p>הצד הרחוק בנוי שכבות: סיאל וחומר חוזר, שכבה על גבי שכבה. חומר חם שנחת עליהן מלמעלה מעך אותן והמיס אותן מתחתיו, והקרקעית שקעה לתוכן (רעיון של זוהר, 10.10.2026). בדומה למגהץ חם הנלחץ אל ערימת דפים.</p>
+<h3>3. הצד הקרוב — קרש</h3>
+<p>בצד הקרוב החומר לא נחת על שכבות שניתן למעוך. וכל שכבה או רצפה שהתווספה לאחר מכן — לרבות של הימות — רק הגביהה את הקרקעית ביחס לקרקע (רעיון של זוהר, 10.10.2026). בדומה למגהץ על קרש.</p>
+<h3>4. על בזלת רכה — הרצפה עולה</h3>
+<p>נחיתה גדולה על קרקע שעוד הייתה נוזלית או רכה — מישור בזלת שנמס בחום של כדור הארץ, או ים — הרימה את המפלס מתחתיה, גבוה יותר ממה שנמדד כיום. לאחר מכן הרצפה שקעה חזרה, אולם השקיעה נמשכת זמן, והקרקע התקררה בינתיים. במקום שבו הקירור גבר, הרצפה קפאה גבוה — כשליש מן המכתשים הגדולים. במקום שבו נותר זמן, היא שבה לגובה הקרקע או מעט מתחתיו (רעיון של זוהר, 11.10.2026).</p>
+<h3>5. מכתש רמות — עומק של מכתש</h3>
+<p>מכתש ברמות נחת על קרקע מוצקה. שום גורם לא הרים את הרצפה שלו, והוא שמר עומק של מכתש: כ-1,600 מ' מתחת לקרקע. ומתחתיו — חוסר מסה, משום שהנחיתה שברה את הקרקע לחומר קל ומפורר. מתחת למכתשים המומסים על מישורי הבזלת אין חוסר כזה: הקרקע הייתה רכה.</p>
+<h3>6. הכבידה — רכה בצד הקרוב, כפולה ברחוק</h3>
+<p>על הצד הקרוב חומר שהגיע מכדור הארץ נמשך אל פני השטח בכבידת הירח, בעת שמשיכת כדור הארץ פעלה לכיוון הנגדי. השתיים קיזזו זו את זו חלקית, הנחיתות היו רכות, ורצפות רבות קפאו בטרם שבו מטה. הצד הרחוק קיבל נחיתות בזמן החיבור, בכבידה הכפולה של הירח ושל כדור הארץ: הנחיתות היו קשות יותר, והמכתשים שלו — על הימות וגם ברמות — עמוקים יותר (רעיון של זוהר, 11.10.2026).</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>עומק הקרקעית מתחת לקרקע, מנורמל, כשהפסגה מוצאת מן הקרקעית:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mi>D</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{d}{D}</annotation></semantics></math></span></div></div>
+<p>גובה הרצפה מול הבזלת שבחוץ; מעל 50 מ' — "מעל", בתוך 50 מ' — "בגובה", מתחת ל-50 מ' — "מתחת":</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>h</mi><mo>=</mo><msub><mi>h</mi><mtext>floor</mtext></msub><mo>−</mo><msub><mi>h</mi><mrow><mtext>basalt</mtext><mtext> </mtext><mo stretchy="false">(</mo><mn>1.6</mn><mtext>–</mtext><mn>2.4</mn><mi>R</mi><mo stretchy="false">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta h=h_{\text{floor}}-h_{\text{basalt}\,(1.6\text{–}2.4R)}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>בכל גודל — הקרקעיות העמוקות ביותר בצד הרחוק, והגבוהות ביותר בצד הקרוב.</li>
+<li><strong>על הבזלת:</strong> רצפות בגובה הבזלת, ושליש מהן מעליה — ולא בעומק של מכתש.</li>
+<li>על רצפות הימות של הצד הרחוק — מכתשים עמוקים יותר מאשר בצד הקרוב.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> רצפות של מכתשים על הבזלת שלעולם אינן ניצבות מעל הבזלת שבחוץ; או קרקעיות באותו עומק בצד הרחוק ובצד הקרוב, במכתשים באותו גודל.</li>
+<li><strong>פתוח:</strong> הבזלת שבחוץ נמדדת כחציון של טבעת, ובמקום שבו הים נוטה צד אחד עשוי להיראות גבוה; העלייה של השיעור עם הגודל מתקיימת במטרים אך לא ביחס לקוטר; רצפה גבוהה לבדה אינה מבדילה בין עלייה שקפאה לבין חדירה מלמטה. מה שעשוי להבדיל — צורת הרצפה: גבוהה יותר במרכז, בדומה לגל שקפא, או שטוחה; וביצוע אותה מדידה על הימות של הצד הרחוק.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · מכתש של 25 ק"מ</span>
+<p>במכתש בקוטר 25 ק"מ: עומק של 54 אלפיות הקוטר בצד הרחוק הוא 0.054 × 25,000 = 1,350 מטר; בצד הקרוב, 27 אלפיות — 675 מטר. מחצית בדיוק. וכעת המכתשים הגדולים על הבזלת: חציון של −46 מ' למכתשים המומסים, מול −1,575 מ' למכתשי רמות באותם גדלים — הרצפה של מכתש מומס יושבת פי 34 קרוב יותר לפני הקרקע.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>קרקעית מתחת לקרקע, <bdi dir="ltr">20–30</bdi> ק"מ: מוביל / רחוק / מאסף / קרוב</td><td>41 / 54 / 38 / 27 אלפיות הקוטר</td><td>מאמר 6</td></tr><tr><td>רחוק פחות מאסף, בכל גודל</td><td>+9 עד +18 אלפיות הקוטר</td><td>מאמר 6</td></tr><tr><td>40 ק"מ ומעלה על הבזלת: מומסים / מרוחים / חדים / רמות (חציון)</td><td>−46 / −107 / −1,388 / −1,575 מ'</td><td>מאמר 6</td></tr><tr><td>מעל הבזלת שבחוץ: מומסים / מרוחים / רמות</td><td>15 מ-52 / 9 מ-24 / 12 מ-411</td><td>מאמר 6</td></tr><tr><td>Plato / מכתש 182 ק"מ באוקיינוס הסערות, מעל הבזלת</td><td>500 / 518 מ'</td><td>מאמר 6</td></tr><tr><td>ימות הצד הרחוק מול הקרוב, עומק חלקי קוטר, <bdi dir="ltr">40–80</bdi> ק"מ</td><td>0.028 / 0.020</td><td>מאמר 6</td></tr><tr><td>בסיס הקרום מתחת: רמות / מומסים על המישורים</td><td>−0.41 / +0.08 ק"מ</td><td>מאמר 6</td></tr><tr><td>קרקעית במכתש של 25 ק"מ: רחוק / קרוב</td><td>כ-1,350 / כ-675 מ'</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c10">א-10</a> · שלב 4 · ההתעגלות; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c15">א-15</a> · שלב 8 · היום.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a> · <a href="enc_record_he.html">ב-5.04 · מכתש ורישום</a> · ב-1.07 · טמפרטורה צמיגות זמן.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_cheights_he.html">ג-1.3.02 · שלושת הגבהים</a> · <a href="enc_cstates_he.html">ג-1.3.05 · מומסים, מרוחים, חדים</a> · <a href="enc_cswallow_he.html">ג-1.3.06 · מכתשים שנבלעו: עקבות כבידה</a> · <a href="enc_cnearfar_he.html">ג-1.3.07 · קרובים מול רחוקים</a> · <a href="enc_mproc_he.html">ג-1.2.12 · פרוקללרום</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.03 · GRAIL · ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> רצפה שקפאה גבוה ורצפה ששקעה נמוך — האם הן עשויות מאותו חומר? <a href="enc_cfloorfe_he.html">ג-1.3.16 · ברזל בקרקעיות גבוהות ונמוכות</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Wang, Y., Wu, B., Xue, H., Li, X., & Ma, J. (2021). An improved global catalog of lunar impact craters (≥1 km) with 3D morphometric information and updates on global crater analysis. Journal of Geophysical Research: Planets, 126, e2020JE006728. <a href="https://doi.org/10.1029/2020JE006728" rel="noopener">doi.org/10.1029/2020JE006728</a></li><li>Barker, M. K., et al. (2016). A new lunar digital elevation model from the Lunar Orbiter Laser Altimeter and SELENE Terrain Camera. Icarus, 273, 346–355.</li><li>Zuber, M. T., et al. (2013). Gravity field of the Moon from the Gravity Recovery and Interior Laboratory (GRAIL) mission. Science, 339, 668–671. <a href="https://doi.org/10.1126/science.1231507" rel="noopener">doi.org/10.1126/science.1231507</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>

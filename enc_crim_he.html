@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>השפה בארבעה קווי אורך — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.3.13 באנציקלופדיה של מודל LEF: השפות הגבוהות ביותר בצד הרחוק, הנמוכות בקרוב, והשבורות והמוארכות בחצי המוביל — לפי קריאת ארבעת הצדדים של זוהר. על מישורי הבזלת של המגע החום אכל את השפה בצד המישור.">
+<link rel="canonical" href="https://lef-model.com/enc_crim_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.3.13</span> · <a href="LEF_enc_crim_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>השפה בארבעה קווי אורך: הכוחות ברגע הנחיתה</h1>
+<p>ערך תעלומה · ג-1.3.13 · מבוסס על מאמר 6 ועל ההחלטות של 10.10, 13.10 ו-17.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← השפה בארבעה קווי אורך · בסיפור: <a href="enc_story_he.html#c9">א-09</a> עד <a href="enc_story_he.html#c14">א-14</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>השפה של מכתש היא החומה המקיפה אותו. במחקר המקובל היא נבנית מן החומר שנזרק מן הבור ונערם סביבו, וצורתה תלויה בגודל המכתש ובגילו — ולא במקום שבו הוא יושב. אולם כאשר משווים מכתשים באותו גודל בארבעה אזורים של הירח, השפות שונות: בצד הרחוק הן הגבוהות ביותר, בצד הקרוב הן הנמוכות ביותר, ובחצי המוביל הן שבורות, משוננות ומוארכות יותר. ועל מישורי הבזלת של אזור המגע, לשפות חסר דווקא הצד הפונה אל המישור. מה רשום בשפה של מכתש?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li>1,457 מכתשים בקוטר <bdi dir="ltr">20–100</bdi> ק"מ בארבע כיפות של 30° על קו המשווה — החצי המוביל (90°W), הצד הרחוק (180°), החצי המאסף (90°E) והצד הקרוב (0°) — ללא הימות, ללא SPA וללא האגנים הגדולים. השפה נמדדה ב-72 כיוונים סביב כל מכתש, והכול חולק בקוטר המכתש (מאמר 6).</li>
+<li>אי-סדירות השפה, במכתשים בקוטר <bdi dir="ltr">20–30</bdi> ק"מ, בחצי השמור יותר של כל סל: חצי מוביל 9.2, צד רחוק 7.5, חצי מאסף 7.4, צד קרוב 7.1 אלפיות הקוטר; חצי מוביל חלקי חצי מאסף 1.25 (<bdi dir="ltr">1.00–1.48</bdi>) (מאמר 6).</li>
+<li><strong>קפיצת השפה בין כיוונים סמוכים:</strong> 3.9, 3.5, 3.5, 3.4 אלפיות הקוטר; חצי מוביל חלקי חצי מאסף 1.14 (<bdi dir="ltr">1.03–1.39</bdi>) (מאמר 6).</li>
+<li><strong>שפות מוארכות מאוד (הקוטר הארוך גדול ביותר מחמישית מן הקצר):</strong> 17% בחצי המוביל, 12% בחצי המאסף (מאמר 6).</li>
+<li>גובה השפה מעל הקרקע, באלפיות הקוטר — <bdi dir="ltr">20–30</bdi> ק"מ: חצי מוביל 12.7, צד רחוק 15.8, חצי מאסף 17.2, צד קרוב 15.2; <bdi dir="ltr">30–50</bdi> ק"מ: 14.4, 18.7, 13.1, 13.6; <bdi dir="ltr">50–100</bdi> ק"מ: 12.5, 17.4, 14.3, 10.3 (מאמר 6).</li>
+<li><strong>על מישורי הבזלת של אזור המגע, במכתשים בקוטר 40 ק"מ ומעלה:</strong> פסגת השפה נמוכה ב-375 מ' מאשר על מישורי הבזלת שמחוץ לאזור המגע, וב-345 מ' מאשר ברמות; השפה חסרה ב-24% יותר מן הכיוונים הפונים אל מישור הבזלת מאשר מן הכיוונים הפונים אל הרמה (<bdi dir="ltr">10–35</bdi>%); מחוץ לאזור המגע — 0% (מאמר 6).</li>
+<li>באותם מכתשים של אזור המגע, הפסגה שנותרה בצד מישור הבזלת קהה יותר: חדות נמוכה ב-35 מ'/קמ"ר, רוחב גדול ב-0.14 ק"מ, וזווית רחבה ב-5.3° (מאמר 6).</li>
+<li><strong>בדיקת ההטיה של 17.11.2026:</strong> אילו רצפה קפאה ברגע השחרור, היא הייתה נוטה עד 187 מ' לכל ק"מ; הרצפות של היום נוטות בתבנית זו לכל היותר 4 מ' לק"מ, ותבנית מסובבת למיקום אחר התאימה לשפות לפחות כמו המקורית ב-20% מן הפעמים (בדיקה, 17.11.2026).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: אובניים של קדר</h2>
+<p>על אובניים מסתובבים, הקדר מרים דופן של חימר רך. כשהגלגל מסתובב מהר, החימר נמשך כלפי חוץ, והדופן עולה ונפתחת. אם הקדר לוחץ בידו מבחוץ, הדופן נשארת נמוכה. כשהחימר מתייבש, הצורה נשארת — ובה רשום הכוח שפעל עליו כל הזמן שהיה רך. כך השפה של מכתש: היא עמדה רכה רגע אחרי הנחיתה, והכוחות של הסיבוב המשותף עיצבו אותה עד שקפאה.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> השפה בנויה מחומר שנזרק מן המכתש; צורתה משתנה עם הגודל והגיל; על מישורי הבזלת שפות רבות נמוכות.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל המכתשים נוצרו מגופים מבחוץ, ושפה נמוכה על מישור בזלת היא שפה שהבזלת הציפה מסביב: הפסגה עצמה נותרת שלמה, ורק המדרון התחתון מוסתר — בדומה לארמון חול שהמים עולים סביבו. במודל LEF המכתשים נוצרו בעת שהגוף הסתובב יחד עם כדור הארץ, והשפה רשמה את הכוחות שפעלו על החומר הרך ברגע הנחיתה. על מישורי הבזלת החמים של אזור המגע, החום שעלה מלמטה שחק את השפה בצד שנגע במישור הבזלת, והפסגה עצמה ירדה והתקהתה.</li>
+<li><strong>מה לקוח ומה חדש:</strong> מודל הגבהים (SLDEM2015, LOLA), קטלוגי המכתשים (Robbins; Wang &amp; Wu 2021) ומפת הבזלת (LROC) לקוחים מן הספרות המדעית. החידוש: מדידת השפה ב-72 כיוונים בארבעה קווי אורך, מכתשים באותו גודל, ללא הימות; והפרדה בין הצד של השפה הפונה אל מישור הבזלת לבין הצד הפונה אל הרמה, כאשר כל מכתש משמש ביקורת לעצמו.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. השפה רושמת את הכוחות</h3>
+<p>בכל מכתש כל חלק שומר רישום משלו: הקרקעית — את הקרקע שעליה נחת החומר; המרכז — את אנרגיית הנחיתה; השפה — את הכוחות שפעלו ברגע הנחיתה (ג-1.3.02).</p>
+<h3>2. הצד הרחוק — נמשך החוצה</h3>
+<p>בסיבוב המשותף הצד הרחוק פנה החוצה, הרחק מכדור הארץ. הדחיפה כלפי חוץ של הסיבוב פעלה שם כנגד הכבידה של הגוף, והחומר שנזרק כלפי מעלה עלה ונותר גבוה — בדומה למים הנזרקים מן השפה החיצונית של גלגל מסתובב. משום כך מעל 30 ק"מ השפות שם הן הגבוהות ביותר.</p>
+<h3>3. החצי המוביל — נלחץ</h3>
+<p>החצי המוביל רץ אל תוך החומר שנפל עליו (ג-1.3.08). החומר ירד עם הכבידה ועם תנועת הקרקע לקראתו, והשפה נלחצה נמוך. אותה נחיתה קשה שברה את השפה — שפה משוננת — ומתחה אותה, משום שחומר הפוגש קרקע נעה מגיע באלכסון. כל שלושת הסימנים מצביעים לאותו כיוון.</p>
+<h3>4. החצי המאסף — רגיל</h3>
+<p>בחצי המאסף הנחיתה הייתה רגילה, והקרקע שנסוגה מן החומר משכה מעט את הקרקעית עמה — ולכן השפה ניצבת מעט גבוה יותר מאשר בחצי המוביל.</p>
+<h3>5. הצד הקרוב — נדחס</h3>
+<p>הצד הקרוב פנה אל כדור הארץ. אותה דחיפה כלפי חוץ פנתה שם לתוך הקרקע, והשפה נדחסה. משום כך במכתשים הגדולים שם מצויות השפות הנמוכות מכולן.</p>
+<p>קריאת ארבעת הצדדים — רחוק נמשך, מוביל נלחץ, מאסף רגיל, קרוב נדחס — היא של זוהר (10.10.2026); לדבריו, "תיארתי לעצמי שאלה יהיו הנתונים".</p>
+<h3>6. שחיקה, לא טריות</h3>
+<p>השפות של החצי המוביל הן גם השחוקות ביותר: הן פונות אל כיוון התנועה, ונשחקו לאורך השנים. השפות של החצי המאסף מוגנות מכיוון זה. זו שחיקה, לא טריות (רעיון של זוהר, 10.10.2026). משום כך אי-הסדירות נמדדה אך ורק בחצי השמור יותר של כל סל גודל.</p>
+<h3>7. על המישור החם — נאכלת מלמטה</h3>
+<p>מישורי הבזלת של אזור המגע ישבו מעל כדור הארץ, והחום הגיע אליהם מלמטה. מכתש שנחת עליהם פגש מישור בזלת חם, והמישור שחק את השפה בצד שנגע בו: הפסגה עצמה ירדה והתקהתה. הצפה אינה מסוגלת לגרום לכך — היא אינה מגיעה אל הפסגה (רעיון של זוהר, 13.10.2026). על מישורי הבזלת שמחוץ לאזור המגע, שלא חוממו מלמטה, השפה אינה חסרה יותר בצד מישור הבזלת. שני הדברים מתקיימים יחד: הצפה, הנראית בכל מישור בזלת, ושחיקה מן החום — רק באזור המגע.</p>
+<h3>8. רגע השחרור — לא נשמר</h3>
+<p>זוהר שאל (17.11.2026) אם השפות והרצפות שומרות גם את המתיחה של רגע השחרור — שפות הנוטות כלפי חוץ בצד הרחוק, וכלפי כדור הארץ בצד הקרוב. הבדיקה לא מצאה רישום: הרצפות נוטות לכל היותר כ-2% ממה שהיה נשמר אילו קפאו באותו רגע. הסיבה, לדבריו: חלון הזמן היה קצר, ומשפחת המכתשים מאותו רגע קטנה וקשה לזיהוי.</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>כל גובה מנורמל בקוטר, באלפיות:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>h</mi><mi>D</mi></mfrac><mtext>  </mtext><mo stretchy="false">(</mo><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\frac{h}{D}\ \ (\times10^{-3})</annotation></semantics></math></span></div></div>
+<p>יחס בין שני אזורים; יחס של 1 — אין הבדל:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mtext>leading</mtext><mtext>trailing</mtext></mfrac></mrow><annotation encoding="application/x-tex">\frac{\text{leading}}{\text{trailing}}</annotation></semantics></math></span></div></div>
+<p>הטיה — שיפוע בעלייה של מטרים לכל קילומטר:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>187</mn><mtext> m/km</mtext><mo>≈</mo><mn>10.</mn><msup><mn>6</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">187\ \text{m/km}\approx10.6^\circ</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>השפות הגבוהות ביותר בצד הרחוק, והנמוכות ביותר בצד הקרוב.</li>
+<li>שפות משוננות ומוארכות יותר בחצי המוביל, במכתשים בקוטר <bdi dir="ltr">20–30</bdi> ק"מ.</li>
+<li><strong>על מישורי הבזלת של אזור המגע:</strong> פסגות נמוכות וקהות, ושפה חסרה בצד מישור הבזלת — ורק שם.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> שפות באותו גובה ובאותה אי-סדירות בכל ארבעת קווי האורך, במכתשים באותו גודל; או אובדן שפה בצד מישור הבזלת גם על מישורי הבזלת שמחוץ לאזור המגע.</li>
+<li><strong>פתוח:</strong> חלק מן הטווחים, בשפות של המכתשים הגדולים, כוללים את האפס; הקרקע של הצד הקרוב קטנה לאחר שמוציאים את הימות, והמדגם שם הוא הקטן ביותר; מכתש ישן הוא גם רדוד יותר, ולכן הצורה לבדה אינה מפרידה עד הסוף בין גיל לבין נחיתה. נדרש מודל של שפה הנבנית בנחיתה תחת הסיבוב המשותף, שיניב את הגודל הצפוי של כל הבדל; ואותן מדידות במכתשים בקוטר <bdi dir="ltr">5–20</bdi> ק"מ.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה מטרים</span>
+<p>כמה מטרים הם 4.5 אלפיות הקוטר? במכתש בקוטר 25 ק"מ: 0.0045 × 25,000 ≈ 112 מטר — בכמה השפה של החצי המוביל נמוכה משל החצי המאסף. ואי-הסדירות: 9.2 אלפיות הקוטר הן כ-230 מטר, מול כ-185 מטר בחצי המאסף. וכעת ההטיה: 187 מטר לכל ק"מ הם זווית של כ-10.6°; 4 מטר לק"מ הם כרבע מעלה — כ-2% ממה שהיה נשמר.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>אי-סדירות השפה, <bdi dir="ltr">20–30</bdi> ק"מ: מוביל / רחוק / מאסף / קרוב</td><td>9.2 / 7.5 / 7.4 / 7.1 אלפיות הקוטר</td><td>מאמר 6</td></tr><tr><td>מוביל חלקי מאסף: אי-סדירות / קפיצה</td><td>1.25 (<bdi dir="ltr">1.00–1.48</bdi>) / 1.14 (<bdi dir="ltr">1.03–1.39</bdi>)</td><td>מאמר 6</td></tr><tr><td>שפות מוארכות מאוד: מוביל / מאסף</td><td>17% / 12%</td><td>מאמר 6</td></tr><tr><td>גובה השפה, <bdi dir="ltr">50–100</bdi> ק"מ: מוביל / רחוק / מאסף / קרוב</td><td>12.5 / 17.4 / 14.3 / 10.3 אלפיות הקוטר</td><td>מאמר 6</td></tr><tr><td>מישורי המגע: פסגה נמוכה מן המישורים שבחוץ / מן הרמות</td><td>375 / 345 מ'</td><td>מאמר 6</td></tr><tr><td>שפה חסרה בצד המישור: מגע / מחוץ למגע</td><td>+24% (<bdi dir="ltr">10–35</bdi>%) / 0%</td><td>מאמר 6</td></tr><tr><td>הטיית רצפות: צפוי ברגע השחרור / נמדד</td><td>187 / לכל היותר 4 מ' לק"מ</td><td>בדיקה, 17.11.2026</td></tr><tr><td>4.5 אלפיות הקוטר במכתש של 25 ק"מ</td><td>כ-112 מ'</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c10">א-10</a> · שלב 4 · ההתעגלות; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור; <a href="enc_story_he.html#c14">א-14</a> · שלב 7 · ההתרחקות.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a> · <a href="enc_craters_he.html">ב-5.03 · מכתשים בלי אסטרואידים</a> · <a href="enc_stefan_he.html">ב-4.02 · המגע הצמיג</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_cheights_he.html">ג-1.3.02 · שלושת הגבהים</a> · <a href="enc_cnearfar_he.html">ג-1.3.07 · קרובים מול רחוקים</a> · <a href="enc_cleadtrail_he.html">ג-1.3.08 · מוביל מול נגרר</a> · <a href="enc_cstates_he.html">ג-1.3.05 · מומסים, מרוחים, חדים</a> · <a href="enc_mproc_he.html">ג-1.2.12 · פרוקללרום</a>.</li>
+<li><strong>מבחנים:</strong> ד-2.06 · נתונים ציבוריים.</li>
+<li><strong>דלת להמשך:</strong> השפה רושמת את הכוחות. את האנרגיה של הנחיתה רושם מה שעומד באמצע: <a href="enc_cpeak_he.html">ג-1.3.14 · הפסגה המרכזית</a>.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Robbins, S. J. (2019). A new global database of lunar impact craters >1–2 km. Journal of Geophysical Research: Planets, 124, 871–892. <a href="https://doi.org/10.1029/2018JE005592" rel="noopener">doi.org/10.1029/2018JE005592</a></li><li>Wang, Y., Wu, B., Xue, H., Li, X., & Ma, J. (2021). An improved global catalog of lunar impact craters (≥1 km) with 3D morphometric information and updates on global crater analysis. Journal of Geophysical Research: Planets, 126, e2020JE006728. <a href="https://doi.org/10.1029/2020JE006728" rel="noopener">doi.org/10.1029/2020JE006728</a></li><li>Barker, M. K., et al. (2016). A new lunar digital elevation model from the Lunar Orbiter Laser Altimeter and SELENE Terrain Camera. Icarus, 273, 346–355.</li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
