@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>g = 8.25 — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ג-1.3.12 באנציקלופדיה של מודל LEF: על פני כדור הארץ הצעיר הכבידה הייתה 8.25 מ&#x27;/ש², על הגוף בקצה האגס כ-0.87. בכבידה חזקה מכתש נרגע ונמחק פי כ-9.5 מהר יותר — ולכן הרישום נשמר רק על האגס ועל הגוף, לא על כדור הארץ.">
+<link rel="canonical" href="https://lef-model.com/enc_cgravity_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ג-1.3.12</span> · <a href="LEF_enc_cgravity_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · עץ התעלומות · הירח · המכתשים</p>
+<h1>g = 8.25: איפה הרישום יכול היה להישמר</h1>
+<p>ערך תעלומה · ג-1.3.12 · מבוסס על מאמרים 1 ו-6 ועל ההחלטה של 24.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← עץ התעלומות ← 1. הירח ← 1.3 המכתשים והקטבים ← g = 8.25 · בסיפור: <a href="enc_story_he.html#c6">א-06</a> עד <a href="enc_story_he.html#c12">א-12</a></p></div>
+</section>
+<section>
+<span class="lab">01 · THE MYSTERY</span>
+<h2>התעלומה</h2>
+<p>על פני כדור הארץ הצעיר, בקו המשווה, עמדה הכבידה על 8.25 מטר לשנייה בריבוע — פחות מאשר בימינו, משום שהסיבוב המהיר נשא כל נקודה כלפי חוץ. מספר זה חוזר בחישובי המכתשים של מאמר 6: במסלולים, בשכבת האדים ובגודל המכתש. אולם הכבידה קובעת גם כמה זמן מכתש שורד בטרם הוא נרגע ונעלם. אם הכבידה על פני כדור הארץ הייתה חזקה פי עשרה מזו של הגוף שנבנה על קצה האגס — היכן ניתן היה לשמור רישום של מכתשים, והיכן לא?</p>
+</section>
+<section>
+<span class="lab">02 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>כבידה אפקטיבית על פני כדור הארץ הצעיר:</strong> 8.25 מ'/ש² בקו המשווה (רדיוס 6,721 ק"מ), כ-9.5 מ'/ש² בקו רוחב 44°, ביממה של 5.5 שעות (ב-1.01; מאמר 1).</li>
+<li>כבידת הגוף המחובר, בצפיפות 1,300 ק"ג/מ"ק וברדיוס של כ-2,381 ק"מ: כ-0.87 מ'/ש² (ג-1.3.04).</li>
+<li>מהירות נחיתה על מטרה גבוהה יותר, המסתובבת יחד עם כדור הארץ, בזריקה במהירות 8 ק"מ בשנייה: ברדיוס 8,000 ק"מ — 6.834 ק"מ/ש'; ב-10,000 — 5.491; ב-12,000 — 4.597. המהירות המינימלית להגיע לשם: 4.226, 6.072 ו-7.050 ק"מ/ש' (מאמר 6).</li>
+<li><strong>בדיקת הרגישות של מאמר 6:</strong> לאותו מכתש, נחיתה במהירות 5 ק"מ/ש' בכבידה של 8.25 דורשת פי 7.45 עד 23.47 מסה מגוף מבחוץ במהירות 15 ק"מ/ש' על הירח של היום (מאמר 6); ועל הגוף עצמו, במהירות 2 ק"מ/ש' ובכבידה 0.87 — פי כ-6 עד 17 (ג-1.3.04).</li>
+<li>זמן השמירה של מכתש ברוחב 100 ק"מ, בצמיגות 10²³ Pa·s ובצפיפות 1,300 ק"ג/מ"ק, בכבידה של 8.25: כ-19 מיליון שנה (ב-3.06).</li>
+<li>הרישום מתחיל עם האגס ועם הקרום הקשיח; בשלב השטוח — בעבוע ולבה, ללא רישום (החלטה, 24.11.2026; ב-5.04).</li>
+</ul>
+</section>
+<section>
+<span class="lab">03 · AN IMAGE</span>
+<h2>דימוי: חותמת בבצק</h2>
+<p>לוחצים חותמת לתוך בצק. על השולחן, הבצק כבד ושוקע בחזרה, והחותם נעלם לאחר רגע. אותו בצק, כשהוא קל יותר — שומר את החותם זמן רב בהרבה. הגורם המוחק את החותם הוא משקל הבצק עצמו: ככל שהוא כבד יותר, הוא נרגע מהר יותר. כך מכתש: בכבידה חזקה הוא שוקע ונעלם, ובכבידה חלשה הוא נותר במקומו.</p>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> כבידה חזקה יותר מקטינה מכתש מאותה נחיתה, ומקצרת את הזמן שבו מכתש שורד במשטח רך; כדור המסתובב במהירות מאבד בקו המשווה חלק מן הכבידה; חוקי הדמיון של מכתשים (Housen &amp; Holsapple 2011).</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל מכתשי הירח נוצרו על הירח, בכבידה של היום או קרוב לה, מגופים מבחוץ. במודל LEF פעלו כמה כבידות במקביל: על פני כדור הארץ — 8.25; לאורך האגס — פחות ופחות ככל שעולים; על הגוף עצמו — כ-0.87. הרישום נשמר אך ורק במקום שבו הכבידה הייתה חלשה והקרום קשיח — על האגס ועל הגוף — ולא על פני כדור הארץ.</li>
+<li><strong>מה לקוח ומה חדש:</strong> חוקי הדמיון של המכתשים, נוסחת ההרגעה של משטח צמיג והכבידה האפקטיבית של כדור מסתובב לקוחים מן הספרות המדעית. החידוש: השוואה בין הכבידות של שלושת המקומות — כדור הארץ, האגס והגוף — וקריאה של המקום שבו הרישום יכול היה להישמר.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. מאיפה 8.25</h3>
+<p>כדור הארץ הצעיר הסתובב פעם אחת ב-5.5 שעות. הסיבוב נשא כל נקודה בקו המשווה במהירות צידית, ודחף אותה כלפי חוץ — ובכך הפחית מן הכבידה. בקווי רוחב גבוהים יותר הדחיפה חלשה יותר, והכבידה חזקה יותר.</p>
+<h3>2. לאורך האגס הכבידה נחלשת</h3>
+<p>ככל שעולים לאורך האגס, משיכת כדור הארץ נחלשת ודחיפת הסיבוב גדלה. במרחק 10,000 ק"מ מן המרכז נותרים כשלושה מ'/ש²; סמוך לקו הקורוטציה — כמעט אפס. שם הכבידה העצמית של הגוף היא העיקר.</p>
+<h3>3. מכתש גדול יותר מאותה מסה</h3>
+<p>בכבידה חלשה, אותה נחיתה חופרת מכתש רחב יותר. משום כך אין לחשב את גודל המכתשים שעל הירח לפי הכבידה של כדור הארץ, וגם לא לפי זו של הירח בימינו.</p>
+<h3>4. נחיתה רכה יותר למעלה</h3>
+<p>חומר שנזרק מכדור הארץ ונחת על מטרה גבוהה — על דופן האגס או על הגוף — פגש אותה במהירות נמוכה ממהירות הזריקה. ככל שהמטרה גבוהה יותר, הנחיתה רכה יותר, עד קו הקורוטציה.</p>
+<h3>5. כבידה חזקה מוחקת</h3>
+<p>מכתש במשטח רך נרגע ושוקע במשקלו שלו. זמן ההרגעה הפוך לכבידה: בכבידה של 8.25 הוא קצר פי כ-9.5 מאשר על הגוף. על פני כדור הארץ הצעיר, החם והרך, מכתשים נמחקו במהירות — וזאת עוד לפני הבעבוע והלבה של השלב השטוח. ייתכן שגם אז התקיימו זריקות, אך המשטח החם המוקדם לא יכול היה לשמור רישום (זוהר, 24.11.2026).</p>
+<h3>6. איפה הרישום נשמר</h3>
+<p>הרישום נשמר במקום שבו התקיימו שני תנאים: כבידה חלשה וקרום קשיח — על האגס, ועל הגוף שבקצהו. הדוגמאות של מאמר 6 על פני כדור הארץ, בכבידה של 8.25, מדגימות את הפיזיקה — ולא את המקום שבו נשמרו המכתשים שאנו רואים כיום (ב-5.04).</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>כבידה אפקטיבית בקו המשווה של כדור מסתובב:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>G</mi><mi>M</mi></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>r</mi></mrow><annotation encoding="application/x-tex">g(r)=\frac{GM}{r^2}-\omega^2 r</annotation></semantics></math></span></div></div>
+<p>זמן ההרגעה של מכתש במשטח צמיג:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>τ</mi><mo>≈</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mtext> </mtext><mi>η</mi></mrow><mrow><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\tau\approx\frac{4\pi\,\eta}{\rho\,g\,\lambda}</annotation></semantics></math></span></div></div>
+<p>מסה דרושה לאותו מכתש:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>m</mi><mo>∝</mo><msup><mi>g</mi><mrow><mn>3</mn><mi>μ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mtext> </mtext><msup><mi>v</mi><mrow><mo>−</mo><mn>3</mn><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m\propto g^{3\mu/2}\,v^{-3\mu}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>מכתשים שנוצרו בכבידה חלשה מן הכבידה של הירח היום — יחס בין גודל המכתש לגודל הגוש המתאים לכבידה של הגוף, ולא של הירח בימינו.</li>
+<li>קרקעיות ושפות המראות את הכוחות של הסיבוב המשותף, ולא רק את כבידת הירח (ג-1.3.13, ג-1.3.14).</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · WHAT WOULD REFUTE IT</span>
+<h2>מה יפריך את הקריאה, ומה עוד פתוח?</h2>
+<ul>
+<li><strong>יפריך:</strong> רישום מכתשים שנשמר על פני כדור הארץ הצעיר עצמו, למשל בגושים העתיקים ביותר של הקרום שלו; או מכתשים על הירח שגודלם מתאים אך ורק לכבידה של 8.25.</li>
+<li><strong>פתוח:</strong> הכבידה לאורך האגס חושבה ללא המסה של האגס עצמו וללא זו של הגוף; הצמיגות של הקרום בכל שלב אינה ידועה; וחומר מכדור הארץ שנחת על הגוף — באיזו מהירות, ובאיזה שלב.</li>
+</ul>
+</section>
+<section>
+<span class="lab">09 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · הכבידה לאורך האגס</span>
+<p>הכבידה האפקטיבית לאורך קו המשווה: g(r) = G·M / r² − ω²·r, עם המסה המוקדמת של כדור הארץ (G·M ≈ <bdi dir="ltr">4.03×10¹⁴</bdi> מ"ק/ש²) ויממה של 5.5 שעות (ω ≈ <bdi dir="ltr">3.17×10⁻⁴</bdi> לשנייה). ב-6,721 ק"מ: 8.93 − 0.68 ≈ 8.25. ב-8,000 ק"מ: כ-5.5. ב-10,000: 4.03 − 1.01 ≈ 3.0. ב-12,000: כ-1.6. ב-14,000: כ-0.65. ב-15,883 ק"מ — קו הקורוטציה בדוגמה זו — אפס. וכעת זמן ההרגעה של מכתש ברוחב 100 ק"מ (λ ≈ 200,000 מ'), בצמיגות 10²³ ובצפיפות 1,300: בכבידה של 8.25 — כ-19 מיליון שנה; בכבידה של 0.87 — כ-176 מיליון שנה.</p></div>
+</section>
+<section>
+<span class="lab">10 · SUMMARY TABLE</span>
+<h2>טבלת הסיכום</h2>
+<div class="tw"><table class="lab"><tr><th>המדד</th><th>הערך</th><th>המקור</th></tr><tr><td>כבידה בקו המשווה / בקו רוחב 44°</td><td>8.25 / כ-9.5 מ'/ש²</td><td>מאמר 1; ב-1.01</td></tr><tr><td>כבידת הגוף המחובר</td><td>כ-0.87 מ'/ש²</td><td>ג-1.3.04</td></tr><tr><td>נחיתה ב-8 ק"מ/ש' על מטרה ב-8,000 / 10,000 / 12,000 ק"מ</td><td>6.834 / 5.491 / 4.597 ק"מ/ש'</td><td>מאמר 6</td></tr><tr><td>מסה לאותו מכתש: 5 ק"מ/ש' ב-8.25 מול 15 ק"מ/ש' ב-1.62</td><td>פי <bdi dir="ltr">7.45–23.47</bdi></td><td>מאמר 6</td></tr><tr><td>כבידה אפקטיבית ב-8,000 / 10,000 / 12,000 / 14,000 / 15,883 ק"מ</td><td>5.5 / 3.0 / 1.6 / 0.65 / 0 מ'/ש²</td><td>חישוב, 27.11.2026</td></tr><tr><td>שמירת מכתש של 100 ק"מ (10²³): ב-8.25 / ב-0.87</td><td>כ-19 / כ-176 מיליון שנה</td><td>חישוב, 27.11.2026</td></tr></table></div>
+</section>
+<section>
+<span class="lab">11 · LINKS AND NEXT</span>
+<h2>קישורים ודלת להמשך</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c6">א-06</a> · שלב 0 · כדור הארץ הצעיר; <a href="enc_story_he.html#c8">א-08</a> · שלב 2 · הכיפה; <a href="enc_story_he.html#c9">א-09</a> · שלב 3 · האגס; <a href="enc_story_he.html#c12">א-12</a> · שלב 5 · השחרור.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_hotfast_he.html">ב-1.01 · כדור ארץ חם ומהיר</a> · ב-1.07 · טמפרטורה צמיגות זמן · <a href="enc_corotation_he.html">ב-2.02 · קו הקורוטציה</a> · <a href="enc_flatstage_he.html">ב-3.05 · השלב השטוח והסיאל שנאסף</a> · <a href="enc_shelltip_he.html">ב-3.06 · קרום הירח הנבנה יושב בקצה, חומר חם זורם מתחתיו ואליו</a> · <a href="enc_record_he.html">ב-5.04 · מכתש ורישום</a>.</li>
+<li><strong>תעלומות קרובות:</strong> <a href="enc_cmass_he.html">ג-1.3.04 · גודל מכתש ומסת הגוף</a> · ג-1.3.09 · קו האורך · ג-1.3.11 · אטמוספרת האדים · ג-1.3.13 · השפה בארבעה קווי אורך.</li>
+<li><strong>מבחנים:</strong> ד-1.04 · סימולציה תלת-ממדית.</li>
+<li><strong>דלת להמשך:</strong> הכבידה והסיבוב לא רק קבעו איפה נשמרו המכתשים — הם עיצבו גם את השפה שלהם, אחרת בכל צד: ג-1.3.13 · השפה בארבעה קווי אורך.</li>
+</ul>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper01_he.html">מאמר 1 · המודל</a></li><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Housen, K. R., & Holsapple, K. A. (2011). Ejecta from impact craters. Icarus, 211, 856–875. <a href="https://doi.org/10.1016/j.icarus.2010.09.017" rel="noopener">doi.org/10.1016/j.icarus.2010.09.017</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
