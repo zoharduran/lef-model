@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מכתש ורישום — האנציקלופדיה של מודל LEF</title>
+<meta name="author" content="זוהר דוראן"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a5f;--navy2:#2a4d7a;--ink:#1d2430;--mute:#5b6676;--cream:#fbf6ea;--cream2:#f4ecd8;--line:#e3dccb;--red:#b23a2e;--bg:#fdfcf8;
+--meas:#eef1f5;--imp:#fbeceb;--impb:#c86a5e;--lef:#e8f2ec;--lefb:#2f7d57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.hero{background:linear-gradient(160deg,#16294a 0%,#1f3a5f 55%,#2a4d7a 100%);color:#fff;padding:64px 20px 56px;position:relative;overflow:hidden}
+.hero .in{max-width:860px;margin:0 auto;position:relative}
+.hero .kick{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;color:#f2c9a0;margin:0 0 14px;direction:ltr;text-align:right}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1.15;margin:0 0 14px}
+.hero p{margin:0;color:#d6dfeb;font-size:19px;max-width:620px}
+.moon{position:absolute;inset-inline-end:-40px;top:-30px;width:300px;height:300px;opacity:.9}
+@media(max-width:640px){.moon{width:190px;height:190px;inset-inline-end:-70px;top:-40px;opacity:.5}}
+section{margin-top:56px}
+.lab{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--red);margin-bottom:6px}
+h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(25px,4vw,32px);line-height:1.3;color:var(--navy);margin:0 0 18px}
+h3{font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:19px}
+.q{border-inline-start:4px solid var(--red);background:var(--cream);padding:18px 22px;margin:22px 0;font-family:"Frank Ruhl Libre",serif;font-size:21px;color:var(--navy);border-radius:0 6px 6px 0}
+.box{background:var(--cream);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:20px 22px;margin:20px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;background:var(--navy);color:#fff;padding:2px 9px;border-radius:3px;margin-bottom:10px}
+.top{background:#12223d;color:#cfd8e6;font:500 13px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;gap:12px}
+.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}
+.callout{background:#fff8e6;border:1px solid #f0dca8;border-inline-start:5px solid #c47f2c;border-radius:6px;padding:16px 20px;margin:20px 0}
+.callout .tag{background:#c47f2c}
+.twoq{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:640px){.twoq{grid-template-columns:1fr}}
+.twoq div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:14px 16px}
+.twoq b{display:block;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+.twoq h4{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.twoq p{margin:0;font-size:15.5px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+@media(max-width:640px){.spec{grid-template-columns:1fr 1fr}}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.spec b{display:block;font:700 22px "Frank Ruhl Libre",serif;color:var(--navy)}
+.spec span{font-size:13.5px;color:var(--mute)}
+.pts{list-style:none;padding:0;margin:16px 0}
+.pts li{border-inline-start:4px solid #c3ccd8;padding:6px 16px;margin-bottom:12px}
+.pts li.a{border-color:var(--red)}.pts li.c{border-color:var(--lefb);background:var(--lef);border-radius:0 6px 6px 0}
+.carousel{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:18px;align-items:center;margin:18px 0}
+@media(max-width:700px){.carousel{grid-template-columns:1fr}}
+.carousel svg{width:100%;height:auto}
+.lt td:first-child{font-family:inherit;text-align:right;width:auto;color:var(--navy)}
+.lt td:nth-child(2){font-weight:400;color:var(--ink)}.lt td:nth-child(3){background:var(--lef)}.lt td:nth-child(4){background:#fff}.lt td:nth-child(5){background:#fff}
+.lt tr.hl td{font-weight:700}.lt tr.hl td:nth-child(2){background:var(--imp);color:#9a3f33}.lt tr.hl td:nth-child(3){color:var(--lefb)}
+table.lab td:first-child{font-family:inherit;width:auto;text-align:right;color:var(--navy)}
+table.lab td,table.lab td:nth-child(n){background:#fff;font-family:Heebo,"Segoe UI",Arial,sans-serif;font-weight:400;color:var(--ink);text-align:right;width:auto}table.lab td:first-child{font-weight:700;color:var(--navy)}
+table.lab tr.hl td:nth-child(n){background:var(--lef)!important;font-weight:700;color:#1d4d36}
+table.lab tr.bad td:nth-child(n){background:var(--imp)!important;color:#7a3329}
+table.lab tr.mid td:nth-child(n){background:#fff4dc!important}
+.eq .f{overflow-x:auto;overflow-y:hidden}
+.eq.nolab{grid-template-columns:1fr}
+.zones{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+@media(max-width:700px){.zones{grid-template-columns:1fr}}
+/* vault */
+.vault{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:640px){.vault{grid-template-columns:1fr}}
+.vault .side{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.vault .side.a{border-top:4px solid var(--impb)}
+.vault .side.b{border-top:4px solid var(--lefb)}
+.vault svg{width:100%;height:auto;display:block;margin:4px 0 10px}
+.vault h4{margin:0 0 6px;font-size:16px}
+.vault p{font-size:15.5px;color:var(--mute);margin:0}
+/* cards */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--mute);margin:6px 0 18px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend .m::before{background:#c3ccd8}.legend .i::before{background:var(--impb)}.legend .l::before{background:var(--lefb)}
+.cards{display:grid;gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card header{display:flex;align-items:baseline;gap:12px;padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--cream)}
+.card .n{font-family:"IBM Plex Mono",monospace;font-size:14px;color:#fff;background:var(--navy);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.card h3{margin:0;font-size:21px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 18px;border-top:1px solid #f0ece2;font-size:16px}
+.row:first-of-type{border-top:0}
+.row .k{font-weight:700;font-size:14px;padding-top:2px}
+.row.m{background:var(--meas)}.row.m .k{color:#3d4a5c}
+.row.i{background:var(--imp)}.row.i .k{color:#9a3f33}
+.row.l{background:var(--lef)}.row.l .k{color:#226044}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:2px}}
+.num{font-weight:700;color:var(--ink);white-space:nowrap}
+/* darwin */
+.steps{counter-reset:s;margin:18px 0;padding:0;list-style:none}
+.steps li{position:relative;padding-inline-start:46px;margin-bottom:14px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:500 14px "IBM Plex Mono",monospace;display:flex;align-items:center;justify-content:center}
+.fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px 8px;margin:22px 0}
+.fig svg{width:100%;height:auto;display:block;direction:ltr}
+.fig figcaption{font-size:14px;color:var(--mute);padding:6px 6px 4px}
+.gr{stroke:#ece7da;stroke-width:1}.ax{stroke:#9aa3af;stroke-width:1.2}
+.tk{font:12px Heebo,sans-serif;fill:#6b7480}
+.rot{fill:none;stroke:var(--red);stroke-width:3}.orb{fill:none;stroke:var(--navy);stroke-width:3}
+.gap{stroke:#9aa3af;stroke-width:2;stroke-dasharray:4 4}.dash{stroke:var(--lefb);stroke-width:1.5;stroke-dasharray:5 4}
+.pt{fill:var(--lefb);stroke:#fff;stroke-width:2.5}
+.lb{font:13px Heebo,sans-serif;fill:var(--ink)}.lb.strong{font-weight:700;fill:var(--lefb)}.rott{fill:var(--red);font-weight:500}.orbt{fill:var(--navy);font-weight:500}.gapt{fill:#5b6676}
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+.vs div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center}
+.vs b{display:block;font:700 26px "Frank Ruhl Libre",serif;color:var(--navy);direction:ltr}
+.vs span{font-size:14px;color:var(--mute)}
+.vs .hit{border-color:var(--lefb);background:var(--lef)}.vs .hit b{color:var(--lefb)}
+/* formulas */
+.eqs{display:grid;gap:10px;margin:16px 0}
+.eq{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.eq .k{font-size:15px;color:var(--mute)}
+.eq .f{direction:ltr;text-align:center;font-size:20px}
+.eq.key{border:2px solid var(--navy);background:var(--cream)}
+@media(max-width:640px){.eq{grid-template-columns:1fr}}
+math{font-size:1.05em}
+/* roadmap */
+.road{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:center}
+.road span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 14px;font-size:15px}
+.road i{color:var(--red);font-style:normal}
+.road span.end{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* table */
+.tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px;background:#fff}
+th{background:var(--navy);color:#fff;font-weight:500;text-align:right;padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid #eee7d8;vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace;color:var(--navy);font-weight:500;text-align:center;width:36px}
+td:nth-child(2){font-weight:700;color:var(--navy)}
+td:nth-child(3){background:var(--meas)}
+td:nth-child(4){background:var(--imp)}
+td:nth-child(5){background:var(--lef)}
+table.am{min-width:640px}
+table.am td{background:#fff!important;font-family:inherit!important;color:var(--ink)!important;font-weight:400!important;text-align:right!important;width:auto!important}
+table.am td.no{color:#9a3f33!important;background:var(--imp)!important}
+table.am tr.hl td{background:var(--lef)!important;font-weight:500!important}
+table.am tr.hl td strong{color:var(--lefb)}
+.ltr{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+footer{max-width:860px;margin:0 auto;padding:22px 20px 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media print{.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card,.box,.fig,.eq{break-inside:avoid}}
+table.lab{letter-spacing:normal}
+</style>
+<style id="homebtn">
+a.brand[href="index.html"],.top .in>a[href="index.html"]{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;text-decoration:none!important;background:rgba(178,58,46,.08);cursor:pointer;transition:background .15s,color .15s;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.top .in{align-items:center}
+.top .in>a[href="index.html"]{background:rgba(255,255,255,.12)}
+a.brand[href="index.html"]::before,.top .in>a[href="index.html"]::before{content:"\2302";font-size:1.3em;line-height:1}
+a.brand[href="index.html"]:hover{background:var(--red,#b23a2e);color:#fff}
+.top .in>a[href="index.html"]:hover{background:#fff;color:#12223d}
+@media (max-width:560px){a.brand[href="index.html"]{display:inline-block;white-space:normal;max-width:100%;box-sizing:border-box}a.brand[href="index.html"]::before{margin-inline-end:6px;vertical-align:-1px}}
+</style>
+
+
+
+
+
+
+<style>.ff,.fw{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}
+.ff img,.fw img{width:100%;display:block;border-radius:6px}.ff figcaption,.fw figcaption{font-size:14px;color:var(--mute);padding:8px 4px 2px}
+@media(min-width:760px){.ff{float:left;width:46%;margin:6px 0 14px 22px}}
+section{clear:both}.twoq b{margin-bottom:6px}</style><style>.blk{border:1px solid var(--line);border-radius:8px;padding:14px 18px 6px;margin:16px 0;break-inside:auto}.blk h3{margin-top:0}.blk.m{background:var(--meas)}.blk.i{background:var(--imp)}.blk.i h3{color:#9a3f33}.blk.l{background:var(--lef)}.blk.l h3{color:#226044}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.pair{grid-template-columns:1fr}}</style><style id="topnav">.top{background:#12223d;color:#cfd8e6;font:500 12.5px "IBM Plex Mono",monospace}.top .in{max-width:860px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.top a{color:#fff;text-decoration:none}.top a:hover{text-decoration:underline}.top .in>a.home{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 10px;border:1.5px solid currentColor;border-radius:8px;background:rgba(255,255,255,.12);white-space:nowrap}.top .in>a.home::before{content:"\2302";font-size:1.3em;line-height:1}.top .in>a.home:hover{background:#fff;color:#12223d;text-decoration:none}</style>
+<meta name="description" content="ערך ב-5.04 באנציקלופדיה של מודל LEF: מכתש נוצר בכל נחיתה, רישום הוא מה שנשמר. לפני האגס — אולי מכתשים, אבל לא רישום ולא ימות; אחר כך מכתשים נבלעו בימות פעילים או נקברו עם מקורם. Sinus Iridum — חצי רישום, חצי מחוק.">
+<link rel="canonical" href="https://lef-model.com/enc_record_he.html"><style>.tw table,.tw table.lab{width:100%!important;display:table!important}</style></head>
+<body><nav class="top" dir="rtl"><div class="in"><a class="home" href="index-he.html">THE LEF MODEL</a><span><a href="encyclopedia-he.html">האנציקלופדיה</a> · <a href="encyclopedia-toc-he.html">תוכן העניינים</a> · <span dir="ltr">ב-5.04</span> · <a href="LEF_enc_record_HE.pdf">PDF</a></span></div></nav>
+<header class="hero"><div class="in">
+<p class="kick">LEF ENCYCLOPEDIA · ארגז הכלים · הכלים של פני הירח</p>
+<h1>מכתש ורישום: מה שנוצר ומה שנשמר</h1>
+<p>ערך מושג · ב-5.04 · מבוסס על מאמר 6, על ב-1.07 ועל ההחלטות של 12.10, 24.11 ו-27.11</p>
+</div></header>
+<main>
+<section>
+<div class="box"><span class="tag">מיקום בעץ</span>
+<p style="margin:0">מודל LEF ← ארגז הכלים ← 5. הכלים של פני הירח ← מכתש ורישום · בסיפור: <a href="enc_story_he.html#c7">א-07</a> עד <a href="enc_story_he.html#c15">א-15</a></p></div>
+</section>
+<section>
+<span class="lab">01 · WHAT IS IT</span>
+<h2>מה זה</h2>
+<p>מכתש ורישום אינם אותו דבר. מכתש נוצר בכל פעם שחומר חוזר נוחת. רישום הוא מה שנותר ממנו עד היום. בין השניים ניצב המשטח שקיבל את הנחיתה: משטח קשיח משמר את המכתש — וזהו רישום; משטח חם, רך או נוזלי סוגר אותו — וזהו מכתש מחוק. במודל LEF רוב המכתשים שנוצרו אי-פעם נמחקו: חלקם עוד לפני האגס, בעת שפני כדור הארץ היו חמים מכדי לשמר דבר; חלקם בתוך הימות הפעילים; וחלקם נקברו יחד עם הפתחים שיצרו אותם. מה שנראה כיום על פני הירח הוא הרישום — ולא כל המכתשים. ולא רק הרישום דורש משטח קשיח: גם ים דורש אותו. ים נוצר אך ורק כאשר קיים קרום המגדיר את גבולותיו; לפני האגס, בעת שהכול היה לבה רותחת ומעורבבת, לא התקיימו ימות — התקיים בעבוע.</p>
+</section>
+<section>
+<span class="lab">02 · AN IMAGE</span>
+<h2>דימוי: כתיבה על שעווה חמה</h2>
+<p>כותבים באצבע על משטח של שעווה. כשהשעווה חמה ונוזלית, האותיות נסגרות מיד ולא נשאר כלום — כתבו, אבל לא נרשם. כשהיא מתחילה להתקשות, האותיות נשארות מטושטשות. כשהיא קשה, כל אות נשארת חדה. ואם חצי מן המשטח קשה וחצי עוד נוזלי, אות שנכתבה על הגבול נשארת רק בחצי.</p>
+</section>
+<section>
+<span class="lab">03 · WHAT IS MEASURED</span>
+<h2>מה נמדד</h2>
+<ul>
+<li><strong>Sinus Iridum, מכתש בקוטר 246 ק"מ על שפת Mare Imbrium:</strong> השפה הצפונית, שניצבה על קרקע מוצקה, עומדת עד היום כהרי Jura — הרכס שלה מתנשא כ-1,721 מטר מעל הקרקע; החצי הדרומי, שניצב על הים, איננו. עומקו רבע מזה של מכתש ברמות באותו גודל: 0.008 מול 0.034 (מאמר 6).</li>
+<li>על רצפות הימות 62% מן המכתשים בקוטר 10 ק"מ ומעלה מומסים — נותרה מהם רק טבעת; במישורי הבזלת 46% (מאמר 6).</li>
+<li><strong>מכתשים חדים בקוטר 20 ק"מ ומעלה, שנוצרו לאחר שהקרקע קפאה:</strong> 0.8 למיליון קמ"ר על רצפות הימות, 18 במישורי הבזלת, 207 ברמות. על רצפות ימות המגע — אף לא מכתש אחד בקוטר 20 ק"מ ומעלה, מומס או חד (מאמר 6).</li>
+<li>מתחת למכתשים המומסים על רצפות הימות, בסיס הקרום מורם ב-0.8 ק"מ נוספים מעבר לרצפה שלהם, ב-13 מתוך 16 — ללא שפה של גוף (מאמר 6).</li>
+<li><strong>כמה זמן נשמר מכתש בקוטר 100 ק"מ:</strong> בצמיגות 10¹⁹ Pa·s — כ-4,000 שנה; ב-10²³ — כ-40 מיליון שנה (על הירח של היום). רישום נשמר אך ורק בחומר בצמיגות 10²³ Pa·s ומעלה (ב-1.07).</li>
+<li>על כיפות ההזנה הקבורות של הצד הרחוק, צפיפות המכתשים היא <bdi dir="ltr">0.48–0.95</bdi> מזו שבסביבה — המכתשים של זמנן נקברו עמן (מאמר 6).</li>
+</ul>
+</section>
+<section>
+<span class="lab">04 · SCIENCE AND MODEL</span>
+<h2>מדע מול מודל</h2>
+<ul>
+<li><strong>מה מסכימים עליו:</strong> משטח משמר אך ורק את החומר שנחת עליו לאחר שהתקשה; חום, זרימה וכיסוי מוחקים מכתשים; מכתשים "רפאים" על פני הימות ידועים מאז המפות הראשונות; צפיפות המכתשים מודדת כמה זמן משטח משמר.</li>
+<li><strong>מה ההבדל:</strong> במחקר המקובל המחיקה היא תופעת לוואי — כיסוי בלבה מאוחרת או שקיעה איטית — ורוב המכתשים נשמרו; גם מכתש רדוד על פני ים הוא מכתש שנחפר בקרקע מוצקה ולאחר מכן הוצף, כלומר "קבור". במודל LEF המחיקה היא חלק מרכזי בסיפור: רוב המכתשים נוצרו על משטחים שלא יכלו לשמר אותם, ומכתש על ים פעיל אינו קבור — הוא נמחק במקום שבו נחת.</li>
+<li><strong>מה לקוח ומה חדש:</strong> המדידות, הקטלוגים והצמיגויות לקוחים מן הספרות המדעית. החידוש: ההפרדה בין מכתש לרישום, ודרכי המחיקה של המודל — לפני האגס, בתוך הים שזרק, בים פעיל, ובקבורה יחד עם המקור.</li>
+</ul>
+</section>
+<section>
+<span class="lab">05 · THE MECHANISM</span>
+<h2>המנגנון במילים</h2>
+<h3>1. מכתש — אירוע; רישום — מה שנשאר</h3>
+<p>כל נחיתה של החומר החוזר יוצרת מכתש. אולם מכתש נותר אך ורק אם המשטח שמתחתיו קשיח דיו, ולאורך זמן מספיק. משטח רך סוגר אותו בתוך אלפי שנים; משטח נוזלי — כמעט מיד.</p>
+<h3>2. לפני האגס: אולי מכתשים, אבל לא רישום ולא ימות</h3>
+<p>בשלב השטוח, לפני האגס, כדור הארץ הסתובב במהירות, וגם החלק החיצוני שלו נע — באיזה כיוון, טרם ידוע. הוא עוד לא היה ממוין, והיה אדום מלהט: הכול היה לבה רותחת, תחת אטמוספרה של אדים. הלחץ הפנימי התפזר על פני כל האזור, והבעבוע לא פסק: חומר יצא וחזר כל העת, וייתכן שאף יצר מכתשים — אולם המשטח לא יכול היה לשמר אותם. לא התקיים מבנה הממקד את הלחץ, ולא התקיימה סערה. גם ימות לא התקיימו: ים נדרש לקרום, למשהו קשיח שיגדיר את גבולותיו. הרישום והימות מתחילים אך ורק עם האגס ועם קרום קשיח (ב-3.05).</p>
+<h3>3. מה יש מתחת לים</h3>
+<p>ההתמצקות לא התרחשה בבת אחת; היא נמשכה מיליוני שנים של התקררות. ההתקררות יצרה מעין שכבות עומדות, החודרות אל עומק הקרום, והחלקים שלא קפאו בתוך שכבות אלה נותרו מעברים — ודרכם עבר חומר נוזלי החוצה ויצר ים. משום כך מתחת לים מצוי מעבר מוגדר, קרוב לפני השטח; וככל שמעמיקים הוא נעשה בלתי מוגדר — שלב ביניים בין נוזליות להתמצקות, עד הפנים המעורבב, שבו שורר רק לחץ. ים הוא שני הדברים יחד: מעבר בקרום מתקרר, וחור בבלון שכל תוכו מעורבב.</p>
+<h3>4. ככל שהקרום מתעבה — פחות ימות</h3>
+<p>ככל שהקרום מתקרר ומתעבה, נותרים בו פחות מעברים שלא קפאו, ומספר הימות הפעילים יורד. תהליך זה נמשך עד ימינו: הרי הגעש של כדור הארץ הם סוג של ים, המותאם לתנאים של היום.</p>
+<h3>5. איך נבנה בסיס האגס</h3>
+<p>הלבה זרמה אל האגס שהחל להיווצר. ככל שגבה, הוא התקרר, וחוקי הקור חלו עליו: לדפנות העולות שלו היה חלק חיצוני קשיח. חומר שנורה סמוך לבסיס האגס — חלקו שב לקרקע, וחלקו נדבק לבליטה, התקרר עליה ובנה אותה. בדרך זו מתקבלת דרך נוספת שבה החומר החוזר אינו מותיר רישום: הוא לא יצר מכתש, אלא נעשה חלק מן הבליטה. הבסיס קיבל קור גם מן הקצה פנימה, והדבר קיבע אותו. ולאחר שהתקיימה בליטה, החומר שזרם על פני כדור הארץ פשוט עלה עליה ובנה את האגס: האגס היה תקוע, הסיבוב סובב אותו, והחומר החיצוני של כדור הארץ פיגר מעט וזרם במעלה האגס. ייתכן שלא החומר זרם, אלא האגס הקדים את עצמו קדימה — אל תוכו.</p>
+<h3>6. בתוך הים שזרק</h3>
+<p>רוב החומר שים זרק נפל בחזרה לתוכו, נמס מחדש, ולא הותיר שום סימן (ב-5.02). זהו חומר חוזר שנחת — ולא נרשם.</p>
+<h3>7. בים פעיל: מומס ונבלע</h3>
+<p>חומר שנחת על ים שעוד היה נוזלי שקע בו והתערבב. המכתש נסגר מאחוריו; לכל היותר נותרה טבעת — מכתש מומס. המסה שלו נותרה בים, אך ללא צורה (ג-1.3.06). על ים שהתעבה לדייסה המכתש נמרח; ורק על ים שכבר קפא הוא נותר חד (ג-1.3.05).</p>
+<h3>8. חצי רישום, חצי מחוק</h3>
+<p>Sinus Iridum הוא הדוגמה המובהקת ביותר. הוא נחת על הגבול שבין קרקע מוצקה לבין ים שעוד היה נוזלי. החצי שניצב על הקרקע המוצקה נשמר — הרי Jura; החצי שניצב על הים נבלע. באותו מכתש אחד נראים הן רישום והן מחיקה. ומכתש בממדים כאלה מעיד על נחיתה גדולה שהתרחשה לאחר ש-Imbrium כבר התרומם והגוף השתחרר — בעת שהים עוד היה נוזלי. מהיכן הגיע החומר שיצר אותו — מן הירח עצמו או מכדור הארץ — שאלה זו עודנה פתוחה: ברגע הניתוק דחף הלחץ של הירח חומר החוצה דרך Imbrium, והחלק שלא חצה את נקודת האפס שב לתוכו (ב-5.01); בימים הראשונים שלאחר הניתוק הסערה עוד נמשכה, מכוח הלחץ של הירח עצמו; וכדור הארץ המשיך לזרוק חומר — בתחילה גדול וחם (ג-1.3.18).</p>
+<h3>9. נקבר עם המקור</h3>
+<p>בצד הרחוק, פתחים שפעלו מוקדם נאטמו, ושכבות של סיאל ושל החומר החוזר כיסו אותם — יחד עם המכתשים שהם עצמם יצרו (ג-1.2.02). זהו רישום קיים, אך מוסתר: רואים את כיפת ההזנה בשדה הכבידה, ולא את המכתשים.</p>
+<h3>10. החום מוחק</h3>
+<p>באזור המגע החם, ובמישורי הבזלת שנמסו במקומם, החום סגר מכתשים עתיקים ולא היה גורם שייצור חדשים. גם על הימות הגדולים של המגע נחת חומר — חומר ארצי שהותז אליהם — אולם החום שלהם מחק את הרישום. משום כך ימות המגע כמעט ריקים. האם ימות המגע עצמם פלטו חומר — אין ודאות בדבר; ייתכן שכן.</p>
+<h3>11. מה הרישום מספר</h3>
+<p>הרישום הוא האחרון שנכתב, ולא הראשון. משטח משמר אך ורק את החומר שנחת עליו מאז שקפא בפעם האחרונה. משום כך ספירת מכתשים מדרגת משטחים — אך אינה סופרת את כל החומר שנחת עליהם, ואינה מספקת גיל בשנים (ג-1.3.03).</p>
+</section>
+<section>
+<span class="lab">06 · KEY EQUATIONS</span>
+<h2>נוסחאות המפתח</h2>
+<div class="eqs">
+<p>הזמן שבו מכתש נרגע ונמחק (η — צמיגות, ρ — צפיפות, g — כבידה, λ — אורך הגל של המכתש, כפעמיים הרוחב):</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>τ</mi><mo>≈</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mtext> </mtext><mi>η</mi></mrow><mrow><mi>ρ</mi><mtext> </mtext><mi>g</mi><mtext> </mtext><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\tau\approx\frac{4\pi\,\eta}{\rho\,g\,\lambda}</annotation></semantics></math></span></div></div>
+<p>עובי הקרום הקפוא מעל ים שמתקרר (κ ≈ 10⁻⁶ מ"ר/ש', λ — מקדם בסדר גודל של אחד); כל עוד הקרום דק, מה שנוחת על הים נבלע:</p><div class="eq nolab"><div class="f"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>δ</mi><mo>≈</mo><mn>2</mn><mi>λ</mi><msqrt><mrow><mi>κ</mi><mtext> </mtext><mi>t</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\delta\approx 2\lambda\sqrt{\kappa\,t}</annotation></semantics></math></span></div></div>
+</div>
+</section>
+<section>
+<span class="lab">07 · IN REALITY</span>
+<h2>החתימה במציאות</h2>
+<ul>
+<li>Sinus Iridum — חצי שפה על הקרקע המוצקה, וחצי שנעלם בים.</li>
+<li>רצפות הימות כמעט ריקות ממכתשים חדים גדולים, ורוב החומר שנותר עליהן מומס.</li>
+<li>עודף מסה ללא צורה מתחת למכתשים המומסים — המכתש נמחק, המסה נותרה.</li>
+<li>אין רישום מן התקופה שלפני האגס.</li>
+<li>הרי הגעש של היום — ימות מעטים שנותרו פעילים בקרום עבה.</li>
+</ul>
+</section>
+<section>
+<span class="lab">08 · IN THE STORY</span>
+<h2>איפה זה פועל בסיפור</h2>
+<p>שלב 1 (<a href="enc_story_he.html#c7">א-07</a>): בעבוע ולבה על פני כדור הארץ החמים — אולי מכתשים, אך ללא רישום וללא ימות. שלבים <bdi dir="ltr">2–3</bdi> (<a href="enc_story_he.html#c8">א-08</a>, <a href="enc_story_he.html#c9">א-09</a>): הבליטה מתקררת, חומר נדבק לבסיסה, והחומר החיצוני עולה עליה ובונה את האגס; האגס ממקד את הלחץ, והקרום הקשיח על הגוף שבקצהו מתחיל לשמר ולהגדיר ימות. שלב 4 (<a href="enc_story_he.html#c10">א-10</a>): סערת המגמה — רוב המכתשים נוצרים; רבים נבלעים בימות הפעילים. שלבים <bdi dir="ltr">5–7</bdi> (<a href="enc_story_he.html#c12">א-12</a> עד <a href="enc_story_he.html#c14">א-14</a>): הימות של הצד הקרוב קופאים מבחוץ פנימה; החומר הנוחת עליהם כעת נותר במקומו. שלב 8 (<a href="enc_story_he.html#c15">א-15</a>): היום — רואים את הרישום, ולא את כל המכתשים.</p>
+</section>
+<section>
+<span class="lab">09 · WHAT IT SOLVES</span>
+<h2>אילו בעיות זה פותר</h2>
+<ul>
+<li><strong>מדוע רצפות הימות הגדולים כמעט ריקות:</strong> החומר שנחת עליהן בעת שהיו פעילות נבלע.</li>
+<li><strong>מדוע אין רישום מן התקופה הראשונה של כדור הארץ:</strong> המשטח היה חם מכדי לשמר.</li>
+<li><strong>מדוע מכתש אחד יכול להיות חצי שמור וחצי נעלם:</strong> הוא נחת על הגבול שבין קרקע מוצקה לים פעיל.</li>
+<li>מדוע לא התקיימו ימות לפני האגס, ומדוע מספר הימות הפעילים ירד עם הזמן: ים נדרש לקרום, וקרום המתעבה מותיר פחות מעברים.</li>
+</ul>
+</section>
+<section>
+<span class="lab">10 · LAB BOX</span>
+<h2>תיבת מעבדה: חשבו בעצמכם</h2>
+<div class="callout"><span class="tag">תיבת מעבדה · כמה זמן נשאר מכתש</span>
+<p>כמה זמן נותר מכתש בקוטר 100 ק"מ (λ ≈ 200,000 מטר) על הירח של היום (g = 1.62 מ'/ש², ρ ≈ 3,000 ק"ג/מ"ק)? בצמיגות 10¹⁹ Pa·s: τ ≈ 4π × 10¹⁹ / (3,000 × 1.62 × 200,000) ≈ <bdi dir="ltr">1.26×10²⁰</bdi> / <bdi dir="ltr">9.7×10⁸</bdi> ≈ <bdi dir="ltr">1.3×10¹¹</bdi> שניות — כ-4,000 שנה. בצמיגות 10²³: פי עשרת אלפים — כ-40 מיליון שנה. ההבדל שבין מחיקה לרישום הוא אך ורק הצמיגות של המשטח.</p></div>
+</section>
+<section>
+<span class="lab">11 · HISTORY</span>
+<h2>תולדות הרעיון בקצרה</h2>
+<p>כבר במפות הראשונות של הירח נראו על פני הימות מכתשים שנותרה מהם רק טבעת — "מכתשי רפאים". בשנות השישים פותח במדעי הכוכבים המושג "גיל שימור מכתשים": ספירת המכתשים אינה מודדת מתי נוצר משטח, אלא מתי החל לשמר. במודל LEF הרעיון מורחב: רוב המכתשים שנוצרו נמחקו, והמחיקה עצמה — לפני האגס, בימות הפעילים ובקבורה יחד עם המקור — היא חלק מן הסיפור.</p>
+</section>
+<section>
+<span class="lab">12 · AT A GLANCE</span>
+<h2>ריבוע המעבדה</h2>
+<div class="tw"><table class="lab"><tr><th>הפרמטר</th><th>הערך</th><th>המקור</th></tr><tr><td>Sinus Iridum: קוטר / עומק מול רמות</td><td>246 ק"מ / 0.008 מול 0.034</td><td>מאמר 6</td></tr><tr><td>Sinus Iridum: הרכס הצפוני מעל הקרקע</td><td>1,721 מ'</td><td>מאמר 6</td></tr><tr><td>מומסים ≥10 ק"מ: רצפות / מישורים</td><td>62% / 46%</td><td>מאמר 6</td></tr><tr><td>חדים ≥20 ק"מ: רצפות / מישורים / רמות</td><td>0.8 / 18 / 207 למיליון קמ"ר</td><td>מאמר 6</td></tr><tr><td>עודף מסה מתחת למומסים, מעבר לרצפה</td><td>+0.8 ק"מ, ב-13 מתוך 16</td><td>מאמר 6</td></tr><tr><td>שמירת מכתש של 100 ק"מ: 10¹⁹ / 10²³ Pa·s</td><td>כ-4,000 שנה / כ-40 מיליון שנה</td><td>ב-1.07</td></tr><tr><td>מכתשים על כיפות קבורות מול הסביבה</td><td><bdi dir="ltr">0.48–0.95</bdi></td><td>מאמר 6</td></tr></table></div>
+</section>
+<section>
+<span class="lab">13 · LINKS</span>
+<h2>קישורים</h2>
+<ul>
+<li><strong>בסיפור:</strong> <a href="enc_story_he.html#c7">א-07</a> · שלב 1; <a href="enc_story_he.html#c9">א-09</a> · שלב 3; <a href="enc_story_he.html#c10">א-10</a> · שלב 4; <a href="enc_story_he.html#c12">א-12</a> · שלב 5; <a href="enc_story_he.html#c14">א-14</a> · שלב 7; <a href="enc_story_he.html#c15">א-15</a> · שלב 8.</li>
+<li><strong>מושגים קשורים:</strong> <a href="enc_viscosity_he.html">ב-1.07 · טמפרטורה, צמיגות, זמן</a> · <a href="enc_flatstage_he.html">ב-3.05 · השלב השטוח והסיאל שנאסף</a> · <a href="enc_shelltip_he.html">ב-3.06 · קרום הירח הנבנה יושב בקצה, חומר חם זורם מתחתיו ואליו</a> · <a href="enc_returned_he.html">ב-5.02 · החומר החוזר</a> · <a href="enc_craters_he.html">ב-5.03 · מכתשים בלי אסטרואידים</a>.</li>
+<li><strong>תעלומות:</strong> <a href="enc_mburied_he.html">ג-1.2.02 · כיפות ההזנה הקבורות</a> · <a href="enc_crecord_he.html">ג-1.3.03 · רישום המכתשים = רישום הימות</a> · <a href="enc_cstates_he.html">ג-1.3.05 · מומסים, מרוחים, חדים</a> · <a href="enc_cswallow_he.html">ג-1.3.06 · מכתשים שנבלעו: עקבות כבידה</a>.</li>
+</ul>
+</section>
+<section>
+<span class="lab">14 · STILL OPEN</span>
+<h2>מה עוד פתוח</h2>
+<ul>
+<li>מהיכן הגיע החומר שיצר את Sinus Iridum — מן הירח עצמו או מכדור הארץ.</li>
+<li>האם ימות המגע הגדולים פלטו חומר בעצמם.</li>
+<li>לאיזה כיוון נע החלק החיצוני של כדור הארץ לפני האגס.</li>
+<li>האם החומר זרם במעלה האגס, או שהאגס הקדים את עצמו קדימה אל תוכו.</li>
+<li>עד איזה עומק המעבר מתחת לים מוגדר, והיכן הוא הופך לפנים מעורבב.</li>
+</ul>
+</section>
+<section>
+<span class="lab">15 · NEXT</span>
+<h2>דלת להמשך</h2>
+<p>הרישום הוא מה שנשאר. בכרך ג׳ קוראים אותו: איפה המכתשים צפופים, מה כל אחד מהם שומר, ומה נבלע — <a href="enc_csource_he.html">ג-1.3.01 · המקור אינו מקום הנחיתה</a>.</p>
+</section>
+<section id="sources">
+<span class="lab">SOURCES</span>
+<h2>מקורות</h2>
+<h3>מאמרי מודל LEF</h3>
+<ul><li><a href="paper06_he.html">מאמר 6 · המכתשים</a></li><li><a href="paper07_he.html">מאמר 7 · הקטבים</a></li></ul>
+<h3>ספרות ונתונים מבחוץ</h3>
+<ol dir="ltr" style="text-align:left;font-size:14.5px;line-height:1.55"><li>Wang, Y., Wu, B., Xue, H., Li, X., & Ma, J. (2021). An improved global catalog of lunar impact craters (≥1 km) with 3D morphometric information and updates on global crater analysis. Journal of Geophysical Research: Planets, 126, e2020JE006728. <a href="https://doi.org/10.1029/2020JE006728" rel="noopener">doi.org/10.1029/2020JE006728</a></li><li>Murase, T., & McBirney, A. R. (1970). Viscosity of lunar lavas. Science, 167, 1491–1493. <a href="https://doi.org/10.1126/science.167.3924.1491" rel="noopener">doi.org/10.1126/science.167.3924.1491</a></li><li>Evans, A. J., Soderblom, J. M., Andrews-Hanna, J. C., Solomon, S. C., & Zuber, M. T. (2016). Identification of buried lunar impact craters from GRAIL data and implications for the nearside maria. Geophysical Research Letters, 43, 2445–2455. <a href="https://doi.org/10.1002/2015GL067394" rel="noopener">doi.org/10.1002/2015GL067394</a></li></ol>
+<p style="font-size:14px;color:#5b6676">חישובים שמסומנים "חישוב" עם תאריך נעשו לצורך הערך, על בסיס הנתונים והמקורות שלמעלה.</p>
+</section>
+</main>
+</body>
+</html>
